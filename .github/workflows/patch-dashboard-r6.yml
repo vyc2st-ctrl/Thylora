@@ -1,0 +1,78 @@
+name: Patch THYLORA dashboard R6
+
+on:
+  push:
+    paths:
+      - '.github/workflows/patch-dashboard-r6.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch-dashboard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Add interactive idea/product/production workspaces
+        shell: python
+        run: |
+          from pathlib import Path
+          p = Path('dashboard-current-head.html')
+          s = p.read_text()
+          old_release = 'THY-UI-20260823-0925-R5'
+          new_release = 'THY-UI-20260823-1345-R6'
+          if old_release not in s:
+              raise SystemExit('Expected R5 release marker not found; refusing to patch another baseline.')
+          s = s.replace(old_release, new_release)
+          s = s.replace('Good morning, Chairman Vyc.', 'Welcome back, Vyc.')
+          s = s.replace('.card{border:1px solid #26313e;background:#0b121a;border-radius:12px;padding:10px}', '.card{border:1px solid #26313e;background:#0b121a;border-radius:12px;padding:10px}.work-card{cursor:pointer;transition:border-color .15s ease,transform .15s ease}.work-card:hover,.work-card:focus-within{border-color:#8d6a2c}.work-card:active{transform:scale(.995)}')
+          s = s.replace("let activeDepartment=null,departmentRows=[],moduleRows=[],activeModule=null,promptRows=[]", "let activeDepartment=null,departmentRows=[],moduleRows=[],activeModule=null,activeWork=null,promptRows=[]")
+
+          marker = "async function loadAll(){"
+          if marker not in s:
+              raise SystemExit('loadAll marker missing')
+          insert = r'''
+function workCard(x,kind){return '<button class="card work-card" style="width:100%;text-align:left;color:inherit" data-work-kind="'+esc(kind)+'" data-work-id="'+esc(x.idea_id||x.product_id||x.production_id||x.id||'')+'"><div class="card-title">'+esc(titleFor(x))+'</div>'+(summaryFor(x)?'<div class="summary">'+esc(summaryFor(x))+'</div>':'')+'<div class="meta" style="margin-top:8px">Open · talk · keep working</div></button>'}
+async function loadIdeas(){try{const d=await table('idea_registry','select=idea_id,title,state,priority,department_owner,connected_projects,connected_products,current_blocker,next_action,updated_at&order=updated_at.desc&limit=40');$('ideas').innerHTML=d.length?d.map(x=>workCard(x,'idea')).join(''):'<div class="empty">No ideas yet.</div>'}catch(e){$('ideas').innerHTML='<div class="empty">Ideas are unavailable in this session.</div>'}}
+async function loadProductsInteractive(){try{const d=await table('products','select=*&order=created_at.desc&limit=20');$('products').innerHTML=d.length?d.map(x=>workCard(x,'product')).join(''):'<div class="empty">No products yet.</div>'}catch(e){$('products').innerHTML='<div class="empty">Products are unavailable in this session.</div>'}}
+async function loadProductionsInteractive(){try{const d=await table('productions','select=*&order=created_at.desc&limit=20');$('productions').innerHTML=d.length?d.map(x=>workCard(x,'production')).join(''):'<div class="empty">No productions yet.</div>'}catch(e){$('productions').innerHTML='<div class="empty">Productions are unavailable in this session.</div>'}}
+async function openWork(kind,id){if(!id)return;const cfg={idea:{table:'idea_registry',field:'idea_id',dept:'PRODUCT_DEVELOPMENT',label:'IDEA',studio:true},product:{table:'products',field:'id',dept:'PRODUCT_DEVELOPMENT',label:'PRODUCT',studio:false},production:{table:'productions',field:'id',dept:'PRODUCTION',label:'PRODUCTION',studio:true}}[kind];if(!cfg)return;$('viewerSection').textContent=cfg.label;$('viewerTitle').textContent='Opening…';$('viewer').classList.add('open');setDrawer(false);lockBody(true);const body=$('viewerBody');body.innerHTML='<div class="empty">Loading…</div>';try{let d=await table(cfg.table,'select=*&'+cfg.field+'=eq.'+encodeURIComponent(id)+'&limit=1');if(!d.length&&cfg.field==='id'&&kind!=='idea'){d=await table(cfg.table,'select=*&limit=50');d=d.filter(x=>String(x.product_id||x.production_id||x.id)===String(id)).slice(0,1)}const x=d[0];if(!x){body.innerHTML='<div class="empty">Record not found.</div>';return}activeWork={kind,cfg,record:x};$('viewerTitle').textContent=titleFor(x);const details=recordCard(x);const studioButton=cfg.studio?'<button class="btn" id="workStudio">Studio</button>':'';body.innerHTML='<div class="panel"><span class="pill">'+esc(cfg.label)+'</span>'+details+'<div class="actions" style="margin-top:12px"><button class="btn primary" id="workTalk">Talk</button><button class="btn" id="workDevelop">Keep working</button>'+studioButton+'</div><div class="sub" style="margin-top:10px">This opens a continuing conversation with this exact record already named. Nothing moves to production until you send the instruction.</div></div>';setTimeout(()=>{const wt=$('workTalk'),wd=$('workDevelop'),ws=$('workStudio');if(wt)wt.onclick=()=>openWorkTalk(false);if(wd)wd.onclick=()=>openWorkTalk(false,true);if(ws)ws.onclick=()=>openWorkTalk(true)},0)}catch(e){body.innerHTML='<div class="bad">'+esc(e.message)+'</div>'}}
+function openWorkTalk(toStudio=false,develop=false){if(!activeWork)return;const x=activeWork.record,title=titleFor(x),id=x.idea_id||x.product_id||x.production_id||x.id||'';let code=activeWork.cfg.dept;let prompt='Work only on this '+activeWork.kind+': '+title+' ['+id+']. Continue from its current THYLORA record and prior decisions. Do not restart it or duplicate it.';if(develop)prompt+=' Develop the next useful step with me now and tell me what is already connected, what needs my decision, and what can move without me.';if(toStudio){code='CREATIVE_AND_PRODUCTION';prompt+=' I want to move this into the Studio/production path. First show me the existing connections and current stage, then help me continue the writing/design/production sequence without creating duplicate records.'}closeViewer();openTalk(code);setTimeout(()=>{$('talkInput').value=prompt;$('talkInput').focus()},180)}
+'''
+          s = s.replace(marker, insert + '\n' + marker, 1)
+
+          old = "loadSimple('idea_registry','ideas','select=idea_id,title,state,priority,department_owner,current_blocker,next_action,updated_at&order=updated_at.desc&limit=12'),loadSimple('products','products','select=*&order=created_at.desc&limit=8')"
+          new = "loadIdeas(),loadProductsInteractive()"
+          if old not in s:
+              raise SystemExit('Expected R5 idea/product loader not found')
+          s = s.replace(old, new, 1)
+          s = s.replace("loadSimple('productions','productions','select=*&order=created_at.desc&limit=8')", "loadProductionsInteractive()", 1)
+
+          click_old = "const o=e.target.closest('[data-open-talk]');if(o)openTalk(o.dataset.openTalk)"
+          click_new = "const o=e.target.closest('[data-open-talk]');if(o)openTalk(o.dataset.openTalk);const w=e.target.closest('[data-work-kind]');if(w)openWork(w.dataset.workKind,w.dataset.workId)"
+          if click_old not in s:
+              raise SystemExit('Document click marker missing')
+          s = s.replace(click_old, click_new, 1)
+          p.write_text(s)
+      - name: Verify R6
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q 'THY-UI-20260823-1345-R6' dashboard-current-head.html
+          grep -q 'Welcome back, Vyc.' dashboard-current-head.html
+          grep -q 'function openWork' dashboard-current-head.html
+          grep -q 'function openWorkTalk' dashboard-current-head.html
+          grep -q 'loadIdeas()' dashboard-current-head.html
+          grep -q 'loadProductsInteractive()' dashboard-current-head.html
+          grep -q 'loadProductionsInteractive()' dashboard-current-head.html
+          grep -q "code='CREATIVE_AND_PRODUCTION'" dashboard-current-head.html
+      - name: Commit R6
+        shell: bash
+        run: |
+          git config user.name 'THYLORA continuity bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add dashboard-current-head.html
+          git commit -m 'Make ideas products and productions interactive in R6'
+          git push
