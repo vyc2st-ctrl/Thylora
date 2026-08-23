@@ -76,3 +76,5 @@ function openWorkTalk(toStudio=false,develop=false){if(!activeWork)return;const 
           git add dashboard-current-head.html
           git commit -m 'Make ideas products and productions interactive in R6'
           git push
+
+# retrigger 2026-08-23
