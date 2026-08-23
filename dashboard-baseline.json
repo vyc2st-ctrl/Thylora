@@ -1,0 +1,25 @@
+{
+  "baseline_id": "THY-DASH-FLOOR-20260823-001",
+  "source_file": "dashboard-current-head.html",
+  "backend_project": "jvsdxhrfhtlgaknhjxlz",
+  "required_capabilities": [
+    "THYLORA CURRENT HEAD",
+    "Prompts & Continuity",
+    "Current Head",
+    "Product & Storefront",
+    "Commerce Proof",
+    "Chairman Command",
+    "System Health",
+    "Required Chairman Action",
+    "Departments",
+    "Approvals",
+    "Production",
+    "Products",
+    "Digital Product Passports",
+    "Orders",
+    "Entitlements",
+    "Continuity",
+    "Connection Evidence"
+  ],
+  "rule": "Future dashboard versions must preserve or improve every baseline capability. A redesign may change appearance but may not silently remove a baseline capability, disconnect the existing backend, or replace the current head with an older state."
+}
