@@ -1,0 +1,132 @@
+name: Build THYLORA R8 workspace dashboard
+
+on:
+  push:
+    paths:
+      - '.github/triggers/r8-dashboard.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  build-r8:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Build R8 from protected R5 floor
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          p=Path('dashboard-current-head.html')
+          s=p.read_text()
+          if 'THY-UI-20260824-1300-R8' in s:
+              print('R8 already present')
+              raise SystemExit(0)
+          if 'THY-UI-20260823-0925-R5' not in s:
+              raise SystemExit('Protected R5 floor missing; refusing to patch another baseline')
+          s=s.replace('THY-UI-20260823-0925-R5','THY-UI-20260824-1300-R8')
+          s=s.replace('Good morning, Chairman Vyc.','Welcome back, Vyc.')
+
+          css_old='.card{border:1px solid #26313e;background:#0b121a;border-radius:12px;padding:10px}'
+          css_new=css_old+'.work-card{cursor:pointer;transition:border-color .15s ease,transform .15s ease}.work-card:hover,.work-card:focus-within{border-color:#8d6a2c}.work-card:active{transform:scale(.995)}.room-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}.room{border:1px solid #303b49;background:linear-gradient(180deg,#151e29,#0f161f);border-radius:14px;padding:14px;min-height:105px;text-align:left;color:var(--text)}.room b{display:block;font-size:16px;margin-bottom:5px}.room .sub{line-height:1.35}.section-note{color:var(--muted);margin:-3px 0 11px}.reply-tools{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}.reply-tools button,.reply-tools select{font:inherit;border:1px solid #3a4654;background:#171f2a;color:#fff;border-radius:9px;padding:6px 9px}.data-sink{display:none!important}'
+          if css_old not in s: raise SystemExit('CSS floor marker missing')
+          s=s.replace(css_old,css_new,1)
+
+          family='''<h2 id="family-section" class="section-title">Family & Home</h2><div class="section-note">People first. Open the room you want; records stay behind the room.</div><section class="panel"><div class="room-grid"><button class="room" data-module-open="family-priority"><b>Six Priority</b><span class="sub">Protected direct family access.</span></button><button class="room" data-module-open="six-dashboards"><b>Six Dashboards</b><span class="sub">Their business, learning and nightly view.</span></button><button class="room" data-module-open="family-video-room"><b>Family Video Room</b><span class="sub">LiveKit connection room.</span></button><button class="room" data-module-open="family-media"><b>Photos & Media</b><span class="sub">Family images, video and archive.</span></button><button class="room" data-module-open="family-posts"><b>Family Posts</b><span class="sub">Moments, notes and family history.</span></button><button class="room" data-module-open="family-reports"><b>Family Reports</b><span class="sub">Nightly and saved reports.</span></button></div><div class="data-sink"><div id="familyProfiles"></div><div id="familyMedia"></div><div id="familyReports"></div></div></section>'''
+          s=re.sub(r'<h2 id="family-section".*?(?=<h2 id="ideas-section")',family+'\n',s,flags=re.S)
+
+          ideas='''<h2 id="ideas-section" class="section-title">Ideas & Creation</h2><div class="section-note">Open an idea and work inside that exact idea.</div><section class="grid"><article class="panel"><h3>Ideas</h3><div id="ideas" class="list"></div></article><article class="panel"><h3>Products</h3><div id="products" class="list"></div></article><article class="panel"><h3>Production Queue</h3><div id="production" class="list"></div></article></section>'''
+          s=re.sub(r'<h2 id="ideas-section".*?(?=<h2 id="studio-section")',ideas+'\n',s,flags=re.S)
+
+          studio='''<h2 id="studio-section" class="section-title">Studio & Media</h2><div class="section-note">The studio is a workspace, not a dump of department records.</div><section class="grid"><article class="panel"><h3>Studio Rooms</h3><div class="room-grid"><button class="room" data-module-open="studio"><b>Studio</b><span class="sub">Create, direct and coordinate.</span></button><button class="room" data-module-open="feed"><b>Media Feed</b><span class="sub">World and studio media.</span></button><button class="room" data-module-open="previs"><b>Previsualization</b><span class="sub">Plan the look before production.</span></button><button class="room" data-module-open="channels"><b>Channels</b><span class="sub">Publishing and channel control.</span></button></div></article><article class="panel"><h3>Productions</h3><div id="productions" class="list"></div></article><div class="data-sink"><div id="studio"></div><div id="assets"></div></div></section>'''
+          s=re.sub(r'<h2 id="studio-section".*?(?=<h2 id="money-section")',studio+'\n',s,flags=re.S)
+
+          money='''<h2 id="money-section" class="section-title">Money & Commerce</h2><div class="section-note">Open the desk you need. Raw IDs stay in the records, not across the home screen.</div><section class="panel"><div class="room-grid"><button class="room" data-module-open="accounting-costs"><b>Accounting & Costs</b><span class="sub">Fees, services and cost tracking.</span></button><button class="room" data-module-open="commerce"><b>Commerce</b><span class="sub">Orders, payments and entitlement evidence.</span></button><button class="room" data-module-open="finance"><b>Finance / REE</b><span class="sub">Currency and finance records.</span></button><button class="room" data-module-open="trusted-services"><b>Trusted Services</b><span class="sub">Services and business network.</span></button></div><div class="data-sink"><div id="orders"></div><div id="payments"></div><div id="entitlements"></div><div id="finance"></div></div></section>'''
+          s=re.sub(r'<h2 id="money-section".*?(?=<h2 id="world-section")',money+'\n',s,flags=re.S)
+
+          world='''<h2 id="world-section" class="section-title">Our World</h2><div class="section-note">Enter the world through rooms, not database floor codes.</div><section class="panel"><div class="room-grid"><button class="room" data-module-open="counterpart-desk"><b>Counterpart Desk</b><span class="sub">Your EdereAriah counterpart.</span></button><button class="room" data-module-open="world-view"><b>Our World Viewer</b><span class="sub">Places, life and world view.</span></button><button class="room" data-module-open="hq"><b>Headquarters</b><span class="sub">Building-first headquarters room.</span></button><button class="room" data-module-open="flags"><b>Flags & Place Names</b><span class="sub">Names, emblems and places.</span></button></div><div class="data-sink"><div id="world"></div><div id="hq"></div></div></section>'''
+          s=re.sub(r'<h2 id="world-section".*?(?=<h2 id="departments-section")',world+'\n',s,flags=re.S)
+
+          departments='''<h2 id="departments-section" class="section-title">People & Work</h2><div class="section-note">Your most-used desks are here. Every department remains available behind the three lines.</div><section class="grid"><article class="panel"><h3>Quick Desks</h3><div class="room-grid"><button class="room" data-module-open="legal-desk"><b>Legal Desk</b><span class="sub">Trusts, family, commerce, tax and property counsel.</span></button><button class="room" data-module-open="accounting-costs"><b>Accounting</b><span class="sub">Track fees and costs.</span></button><button class="room" data-open-talk="SPORTS_FRONT_OFFICE"><b>Sports Front Office</b><span class="sub">Teams, games and league work.</span></button><button class="room" data-open-talk="WELLNESS_AND_DAILY_LIFE"><b>Wellness</b><span class="sub">Food, daily life and clear guidance.</span></button><button class="room" data-module-open="customer-help"><b>Customer Help</b><span class="sub">Problems, questions and follow-through.</span></button><button class="room" data-open-talk="CREATIVE_AND_PRODUCTION"><b>Production Team</b><span class="sub">Move creative work forward.</span></button></div></article><article class="panel"><h3>Chairman Command</h3><div class="field"><textarea id="command" maxlength="20000" rows="7" placeholder="Tell THYLORA what you want done"></textarea></div><div class="actions" style="margin-top:8px"><button class="btn voice" id="commandVoice">🎙 Talk</button><button class="btn primary" id="commandSend">Route command</button></div><div id="commandResult" class="sub" style="margin-top:8px"></div></article><div class="data-sink"><div id="departments"></div></div></section>'''
+          s=re.sub(r'<h2 id="departments-section".*?(?=</main>)',departments+'\n',s,flags=re.S)
+
+          # auth repair: fresh sign-in must not inherit a stale bearer
+          old_req="async function req(path,opt={}){const h={'Content-Type':'application/json',apikey:KEY,...(opt.headers||{})};if(token)h.Authorization='Bearer '+token;const r=await fetch(URL+path,{...opt,headers:h});const t=await r.text();let d={};try{d=t?JSON.parse(t):{}}catch{d={message:t}}if(!r.ok)throw new Error(d.detail||d.error||d.message||('HTTP '+r.status));return d}"
+          new_req="async function req(path,opt={}){const noAuth=!!opt.noAuth;const clean={...opt};delete clean.noAuth;const h={'Content-Type':'application/json',apikey:KEY,...(clean.headers||{})};if(token&&!noAuth)h.Authorization='Bearer '+token;const r=await fetch(URL+path,{...clean,headers:h});const t=await r.text();let d={};try{d=t?JSON.parse(t):{}}catch{d={message:t}}if(!r.ok){const e=new Error(d.detail||d.error||d.message||('HTTP '+r.status));e.status=r.status;throw e}return d}"
+          if old_req in s:s=s.replace(old_req,new_req,1)
+          old_sign="async function signIn(){try{const d=await req('/auth/v1/token?grant_type=password',{method:'POST',body:JSON.stringify({email:$('email').value,password:$('password').value})});token=d.access_token;refreshToken=d.refresh_token||'';localStorage.setItem('thy_access_token',token);localStorage.setItem('thy_refresh_token',refreshToken);currentEmail=$('email').value;await loadAll()}catch(e){$('authMsg').textContent='Sign-in failed: '+e.message}}"
+          new_sign="async function signIn(){try{token='';const d=await req('/auth/v1/token?grant_type=password',{method:'POST',noAuth:true,body:JSON.stringify({email:$('email').value,password:$('password').value})});token=d.access_token||'';refreshToken=d.refresh_token||'';localStorage.setItem('thy_access_token',token);localStorage.setItem('thy_refresh_token',refreshToken);currentEmail=$('email').value;await loadAll()}catch(e){$('authMsg').textContent='Sign-in failed: '+e.message}}async function refreshSession(){if(!refreshToken)return false;try{const d=await req('/auth/v1/token?grant_type=refresh_token',{method:'POST',noAuth:true,body:JSON.stringify({refresh_token:refreshToken})});token=d.access_token||'';refreshToken=d.refresh_token||refreshToken;if(!token)return false;localStorage.setItem('thy_access_token',token);localStorage.setItem('thy_refresh_token',refreshToken);return true}catch(e){token='';refreshToken='';localStorage.removeItem('thy_access_token');localStorage.removeItem('thy_refresh_token');return false}}"
+          if old_sign in s:s=s.replace(old_sign,new_sign,1)
+          old_load="async function loadAll(){if(!token){$('authMsg').textContent='Sign in first.';return}$('backendStatus').textContent='Connecting…';try{const u=await req('/auth/v1/user');currentEmail=u.email||currentEmail;"
+          new_load="async function loadAll(){if(!token){$('authMsg').textContent='Sign in first.';return}$('backendStatus').textContent='Connecting…';try{let u;try{u=await req('/auth/v1/user')}catch(e){if((e.status===401||e.status===403)&&await refreshSession())u=await req('/auth/v1/user');else throw e}currentEmail=u.email||currentEmail;"
+          if old_load in s:s=s.replace(old_load,new_load,1)
+
+          state_old="let activeDepartment=null,departmentRows=[],moduleRows=[],activeModule=null,promptRows=[],talkBusy=false,talkPoll=null,drawerScrollY=0,currentEmail=''"
+          state_new="let activeDepartment=null,departmentRows=[],moduleRows=[],activeModule=null,activeWork=null,activeWorkContext=null,promptRows=[],talkRows=[],talkBusy=false,talkPoll=null,drawerScrollY=0,currentEmail='',speechRate=1.5,currentUtterance=null"
+          if state_old in s:s=s.replace(state_old,state_new,1)
+
+          marker='async function loadAll(){'
+          insert=r'''
+function workCard(x,kind){return '<button class="card work-card" style="width:100%;text-align:left;color:inherit" data-work-kind="'+esc(kind)+'" data-work-id="'+esc(x.idea_id||x.product_id||x.production_id||x.id||'')+'"><div class="card-title">'+esc(titleFor(x))+'</div>'+(summaryFor(x)?'<div class="summary">'+esc(summaryFor(x))+'</div>':'')+'<div class="meta" style="margin-top:8px">Open · talk · keep working</div></button>'}
+async function loadIdeas(){try{let d;try{d=await table('thylora_idea_workspaces','select=*&limit=40')}catch{d=await table('idea_registry','select=*&order=updated_at.desc&limit=40')}$('ideas').innerHTML=d.length?d.map(x=>workCard(x,'idea')).join(''):'<div class="empty">No ideas yet.</div>'}catch(e){$('ideas').innerHTML='<div class="empty">Ideas are unavailable in this session.</div>'}}
+async function loadProductsInteractive(){try{const d=await table('products','select=*&order=created_at.desc&limit=20');$('products').innerHTML=d.length?d.map(x=>workCard(x,'product')).join(''):'<div class="empty">No products yet.</div>'}catch(e){$('products').innerHTML='<div class="empty">Products are unavailable in this session.</div>'}}
+async function loadProductionsInteractive(){try{const d=await table('productions','select=*&order=created_at.desc&limit=20');$('productions').innerHTML=d.length?d.map(x=>workCard(x,'production')).join(''):'<div class="empty">No productions yet.</div>'}catch(e){$('productions').innerHTML='<div class="empty">Productions are unavailable in this session.</div>'}}
+async function openWork(kind,id){if(!id)return;const cfg={idea:{table:'thylora_idea_workspaces',field:'idea_id',dept:'PRODUCT_DEVELOPMENT',label:'IDEA',studio:true},product:{table:'products',field:'product_id',dept:'PRODUCT_DEVELOPMENT',label:'PRODUCT',studio:false},production:{table:'productions',field:'production_id',dept:'CREATIVE_AND_PRODUCTION',label:'PRODUCTION',studio:true}}[kind];if(!cfg)return;$('viewerSection').textContent=cfg.label;$('viewerTitle').textContent='Opening…';$('viewer').classList.add('open');setDrawer(false);lockBody(true);const body=$('viewerBody');body.innerHTML='<div class="empty">Loading…</div>';try{let d;try{d=await table(cfg.table,'select=*&'+cfg.field+'=eq.'+encodeURIComponent(id)+'&limit=1')}catch(e){if(kind==='idea')d=await table('idea_registry','select=*&idea_id=eq.'+encodeURIComponent(id)+'&limit=1');else throw e}const x=d[0];if(!x){body.innerHTML='<div class="empty">Record not found.</div>';return}activeWork={kind,cfg,record:x};activeWorkContext={kind,id,title:titleFor(x),state:x.state||x.status||x.stage||'',department_code:cfg.dept,next_action:x.next_action||'',summary:summaryFor(x)};$('viewerTitle').textContent=titleFor(x);const studioButton=cfg.studio?'<button class="btn" id="workStudio">Studio</button>':'';body.innerHTML='<div class="panel"><span class="pill">'+esc(cfg.label)+'</span>'+recordCard(x)+'<div class="actions" style="margin-top:12px"><button class="btn primary" id="workTalk">Talk</button><button class="btn" id="workDevelop">Keep working</button>'+studioButton+'</div><div class="sub" style="margin-top:10px">This exact record stays selected behind the box.</div></div>';setTimeout(()=>{if($('workTalk'))$('workTalk').onclick=()=>openWorkTalk(false);if($('workDevelop'))$('workDevelop').onclick=()=>openWorkTalk(false);if($('workStudio'))$('workStudio').onclick=()=>openWorkTalk(true)},0)}catch(e){body.innerHTML='<div class="bad">'+esc(e.message)+'</div>'}}
+function openWorkTalk(toStudio=false){if(!activeWork)return;const x=activeWork.record;let code=toStudio?'CREATIVE_AND_PRODUCTION':activeWork.cfg.dept;if(activeWorkContext)activeWorkContext.department_code=code;closeViewer();openTalk(code);setTimeout(()=>{const box=$('talkInput');box.value='';box.placeholder='Talk about '+titleFor(x);box.focus();$('talkStatus').textContent='Selected: '+titleFor(x)},120)}
+function openModuleKey(key){const m=moduleRows.find(x=>x.module_key===key);if(m)openModule(key);else setDrawer(true)}
+function plainText(html){const d=document.createElement('div');d.innerHTML=html;return (d.textContent||'').trim()}
+function speakReply(i){const r=talkRows[i];if(!r||!r.response_message)return;window.speechSynthesis.cancel();currentUtterance=new SpeechSynthesisUtterance(plainText(r.response_message));currentUtterance.rate=speechRate;window.speechSynthesis.speak(currentUtterance)}
+function stopSpeech(){window.speechSynthesis.cancel();currentUtterance=null}
+function toggleSpeech(){if(!window.speechSynthesis.speaking)return;if(window.speechSynthesis.paused)window.speechSynthesis.resume();else window.speechSynthesis.pause()}
+function setRate(v){speechRate=Math.max(.6,Math.min(2.5,Number(v)||1.5));if(window.speechSynthesis.speaking&&currentUtterance){const text=currentUtterance.text;stopSpeech();currentUtterance=new SpeechSynthesisUtterance(text);currentUtterance.rate=speechRate;window.speechSynthesis.speak(currentUtterance)}}
+'''
+          if marker not in s: raise SystemExit('loadAll marker missing')
+          s=s.replace(marker,insert+'\n'+marker,1)
+
+          old_loaders="loadSimple('idea_registry','ideas','select=idea_id,title,state,priority,department_owner,current_blocker,next_action,updated_at&order=updated_at.desc&limit=12'),loadSimple('products','products','select=*&order=created_at.desc&limit=8')"
+          if old_loaders in s:s=s.replace(old_loaders,"loadIdeas(),loadProductsInteractive()",1)
+          old_prod="loadSimple('productions','productions','select=*&order=created_at.desc&limit=8')"
+          if old_prod in s:s=s.replace(old_prod,"loadProductionsInteractive()",1)
+
+          send_old="await invoke('thylora-department-talk',{department_code:activeDepartment.department_code,module_key:activeModule?.module_key||null,message})"
+          send_new="await invoke('thylora-department-talk',{department_code:activeDepartment.department_code,module_key:activeModule?.module_key||null,work_context:activeWorkContext,message})"
+          if send_old in s:s=s.replace(send_old,send_new,1)
+
+          hist_old="const rows=d.slice().reverse();h.innerHTML=rows.length?rows.map((r,i)=>'<div class=\"talk-msg '+(i===rows.length-1?'latest':'')+'\"><div class=\"meta\">'+esc(r.created_at?new Date(r.created_at).toLocaleString():'')+'</div><div class=\"who\">You</div><div>'+esc(r.user_message||'')+'</div>'+(r.response_message?'<div class=\"who\">Department</div><div class=\"reply\">'+formatReply(r.response_message)+'</div>':'')+'</div>').join(''):'<div class=\"empty\">No prior conversation yet.</div>';if(forceBottom||rows.length)requestAnimationFrame(()=>h.scrollTop=h.scrollHeight)"
+          hist_new="const nearBottom=(h.scrollHeight-h.scrollTop-h.clientHeight)<120;const rows=d.slice().reverse();talkRows=rows;h.innerHTML=rows.length?rows.map((r,i)=>'<div class=\"talk-msg '+(i===rows.length-1?'latest':'')+'\"><div class=\"meta\">'+esc(r.created_at?new Date(r.created_at).toLocaleString():'')+'</div><div class=\"who\">You</div><div>'+esc(r.user_message||'')+'</div>'+(r.response_message?'<div class=\"who\">Department</div><div class=\"reply\">'+formatReply(r.response_message)+'</div><div class=\"reply-tools\"><button data-hear-index=\"'+i+'\">🔊 Hear</button><button data-speech-toggle>Pause / Resume</button><button data-speech-stop>Stop</button><select data-speech-rate><option value=\"1\">1×</option><option value=\"1.5\" selected>1.5×</option><option value=\"2\">2×</option><option value=\"2.5\">2.5×</option></select></div>':'')+'</div>').join(''):'<div class=\"empty\">No prior conversation yet.</div>';if(forceBottom||nearBottom)requestAnimationFrame(()=>h.scrollTop=h.scrollHeight)"
+          if hist_old in s:s=s.replace(hist_old,hist_new,1)
+
+          click_old="const o=e.target.closest('[data-open-talk]');if(o)openTalk(o.dataset.openTalk)"
+          click_new="const o=e.target.closest('[data-open-talk]');if(o){activeWorkContext=null;openTalk(o.dataset.openTalk)}const mo=e.target.closest('[data-module-open]');if(mo)openModuleKey(mo.dataset.moduleOpen);const w=e.target.closest('[data-work-kind]');if(w)openWork(w.dataset.workKind,w.dataset.workId);const hi=e.target.closest('[data-hear-index]');if(hi)speakReply(Number(hi.dataset.hearIndex));if(e.target.closest('[data-speech-toggle]'))toggleSpeech();if(e.target.closest('[data-speech-stop]'))stopSpeech()"
+          if click_old in s:s=s.replace(click_old,click_new,1)
+          key_old="document.addEventListener('keydown',e=>{if(e.key==='Escape'){setDrawer(false);closeTalk();closeViewer()}});"
+          key_new="document.addEventListener('change',e=>{const sr=e.target.closest?.('[data-speech-rate]');if(sr)setRate(sr.value)});document.addEventListener('keydown',e=>{if(e.key==='Escape'){setDrawer(false);closeTalk();closeViewer();stopSpeech()}});"
+          if key_old in s:s=s.replace(key_old,key_new,1)
+          p.write_text(s)
+
+      - name: Verify R8
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q 'THY-UI-20260824-1300-R8' dashboard-current-head.html
+          grep -q 'workspace, not a dump of department records' dashboard-current-head.html
+          grep -q 'Raw IDs stay in the records' dashboard-current-head.html
+          grep -q 'function openWork' dashboard-current-head.html
+          grep -q 'function refreshSession' dashboard-current-head.html
+          grep -q 'data-module-open="legal-desk"' dashboard-current-head.html
+          grep -q '2.5×' dashboard-current-head.html
+      - name: Commit R8
+        shell: bash
+        run: |
+          git config user.name 'THYLORA continuity bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add dashboard-current-head.html
+          if git diff --cached --quiet; then
+            echo 'No dashboard changes to commit'
+          else
+            git commit -m 'Promote workspace-first THYLORA R8 dashboard'
+            git push
+          fi
