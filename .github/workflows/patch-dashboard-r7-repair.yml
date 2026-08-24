@@ -1,0 +1,104 @@
+name: Build repaired THYLORA R7
+
+on:
+  push:
+    paths:
+      - '.github/workflows/patch-dashboard-r7-repair.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  repair-dashboard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Preserve R5 feel and add R6/R7 function
+        shell: python
+        run: |
+          from pathlib import Path
+          p=Path('dashboard-current-head.html')
+          s=p.read_text()
+          old='THY-UI-20260823-0925-R5'
+          new='THY-UI-20260823-2130-R7'
+          if old not in s:
+              raise SystemExit('Protected R5 floor marker missing; refusing to patch another baseline')
+          s=s.replace(old,new)
+          s=s.replace('Good morning, Chairman Vyc.','Welcome back, Vyc.')
+
+          # Keep the proven R5 visual/buttons. Add only forward functionality.
+          s=s.replace('.card{border:1px solid #26313e;background:#0b121a;border-radius:12px;padding:10px}', '.card{border:1px solid #26313e;background:#0b121a;border-radius:12px;padding:10px}.work-card{cursor:pointer;transition:border-color .15s ease,transform .15s ease}.work-card:hover,.work-card:focus-within{border-color:#8d6a2c}.work-card:active{transform:scale(.995)}.reply-tools{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}.reply-tools button,.reply-tools select{font:inherit;border:1px solid #3a4654;background:#171f2a;color:#fff;border-radius:9px;padding:6px 9px}')
+          s=s.replace("let activeDepartment=null,departmentRows=[],moduleRows=[],activeModule=null,promptRows=[],talkBusy=false,talkPoll=null,drawerScrollY=0,currentEmail=''", "let activeDepartment=null,departmentRows=[],moduleRows=[],activeModule=null,activeWork=null,activeWorkContext=null,promptRows=[],talkRows=[],talkBusy=false,talkPoll=null,drawerScrollY=0,currentEmail='',speechRate=1.5,currentUtterance=null")
+
+          # AUTH REPAIR: a stale saved bearer must never poison a fresh sign-in.
+          old_req="async function req(path,opt={}){const h={'Content-Type':'application/json',apikey:KEY,...(opt.headers||{})};if(token)h.Authorization='Bearer '+token;const r=await fetch(URL+path,{...opt,headers:h});const t=await r.text();let d={};try{d=t?JSON.parse(t):{}}catch{d={message:t}}if(!r.ok)throw new Error(d.detail||d.error||d.message||('HTTP '+r.status));return d}"
+          new_req="async function req(path,opt={}){const noAuth=!!opt.noAuth;const clean={...opt};delete clean.noAuth;const h={'Content-Type':'application/json',apikey:KEY,...(clean.headers||{})};if(token&&!noAuth)h.Authorization='Bearer '+token;const r=await fetch(URL+path,{...clean,headers:h});const t=await r.text();let d={};try{d=t?JSON.parse(t):{}}catch{d={message:t}}if(!r.ok){const e=new Error(d.detail||d.error||d.message||('HTTP '+r.status));e.status=r.status;throw e}return d}"
+          if old_req not in s: raise SystemExit('req marker missing')
+          s=s.replace(old_req,new_req,1)
+
+          old_sign="async function signIn(){try{const d=await req('/auth/v1/token?grant_type=password',{method:'POST',body:JSON.stringify({email:$('email').value,password:$('password').value})});token=d.access_token;refreshToken=d.refresh_token||'';localStorage.setItem('thy_access_token',token);localStorage.setItem('thy_refresh_token',refreshToken);currentEmail=$('email').value;await loadAll()}catch(e){$('authMsg').textContent='Sign-in failed: '+e.message}}"
+          new_sign="async function signIn(){try{token='';const d=await req('/auth/v1/token?grant_type=password',{method:'POST',noAuth:true,body:JSON.stringify({email:$('email').value,password:$('password').value})});token=d.access_token||'';refreshToken=d.refresh_token||'';localStorage.setItem('thy_access_token',token);localStorage.setItem('thy_refresh_token',refreshToken);currentEmail=$('email').value;await loadAll()}catch(e){$('authMsg').textContent='Sign-in failed: '+e.message}}async function refreshSession(){if(!refreshToken)return false;try{const d=await req('/auth/v1/token?grant_type=refresh_token',{method:'POST',noAuth:true,body:JSON.stringify({refresh_token:refreshToken})});token=d.access_token||'';refreshToken=d.refresh_token||refreshToken;if(!token)return false;localStorage.setItem('thy_access_token',token);localStorage.setItem('thy_refresh_token',refreshToken);return true}catch(e){token='';refreshToken='';localStorage.removeItem('thy_access_token');localStorage.removeItem('thy_refresh_token');return false}}"
+          if old_sign not in s: raise SystemExit('signIn marker missing')
+          s=s.replace(old_sign,new_sign,1)
+
+          old_load="async function loadAll(){if(!token){$('authMsg').textContent='Sign in first.';return}$('backendStatus').textContent='Connecting…';try{const u=await req('/auth/v1/user');currentEmail=u.email||currentEmail;$('backendStatus').textContent='CONNECTED';$('backendStatus').className='status good';$('authMsg').textContent='Chairman session verified. '+RELEASE+' is live.';"
+          new_load="async function loadAll(){if(!token){$('authMsg').textContent='Sign in first.';return}$('backendStatus').textContent='Connecting…';try{let u;try{u=await req('/auth/v1/user')}catch(e){if((e.status===401||e.status===403)&&await refreshSession())u=await req('/auth/v1/user');else throw e}currentEmail=u.email||currentEmail;$('backendStatus').textContent='CONNECTED';$('backendStatus').className='status good';$('authMsg').textContent='Chairman session verified. '+RELEASE+' is live.';"
+          if old_load not in s: raise SystemExit('loadAll marker missing')
+          s=s.replace(old_load,new_load,1)
+
+          marker='async function loadAll(){'
+          insert=r'''
+function workCard(x,kind){return '<button class="card work-card" style="width:100%;text-align:left;color:inherit" data-work-kind="'+esc(kind)+'" data-work-id="'+esc(x.idea_id||x.product_id||x.production_id||x.id||'')+'"><div class="card-title">'+esc(titleFor(x))+'</div>'+(summaryFor(x)?'<div class="summary">'+esc(summaryFor(x))+'</div>':'')+'<div class="meta" style="margin-top:8px">Open · talk · keep working</div></button>'}
+async function loadIdeas(){try{let d;try{d=await table('thylora_idea_workspaces','select=*&limit=40')}catch{d=await table('idea_registry','select=*&order=updated_at.desc&limit=40')}$('ideas').innerHTML=d.length?d.map(x=>workCard(x,'idea')).join(''):'<div class="empty">No ideas yet.</div>'}catch(e){$('ideas').innerHTML='<div class="empty">Ideas are unavailable in this session.</div>'}}
+async function loadProductsInteractive(){try{const d=await table('products','select=*&order=created_at.desc&limit=20');$('products').innerHTML=d.length?d.map(x=>workCard(x,'product')).join(''):'<div class="empty">No products yet.</div>'}catch(e){$('products').innerHTML='<div class="empty">Products are unavailable in this session.</div>'}}
+async function loadProductionsInteractive(){try{const d=await table('productions','select=*&order=created_at.desc&limit=20');$('productions').innerHTML=d.length?d.map(x=>workCard(x,'production')).join(''):'<div class="empty">No productions yet.</div>'}catch(e){$('productions').innerHTML='<div class="empty">Productions are unavailable in this session.</div>'}}
+async function openWork(kind,id){if(!id)return;const cfg={idea:{table:'thylora_idea_workspaces',field:'idea_id',dept:'PRODUCT_DEVELOPMENT',label:'IDEA',studio:true},product:{table:'products',field:'product_id',dept:'PRODUCT_DEVELOPMENT',label:'PRODUCT',studio:false},production:{table:'productions',field:'production_id',dept:'CREATIVE_AND_PRODUCTION',label:'PRODUCTION',studio:true}}[kind];if(!cfg)return;$('viewerSection').textContent=cfg.label;$('viewerTitle').textContent='Opening…';$('viewer').classList.add('open');setDrawer(false);lockBody(true);const body=$('viewerBody');body.innerHTML='<div class="empty">Loading…</div>';try{let d;try{d=await table(cfg.table,'select=*&'+cfg.field+'=eq.'+encodeURIComponent(id)+'&limit=1')}catch(e){if(kind==='idea')d=await table('idea_registry','select=*&idea_id=eq.'+encodeURIComponent(id)+'&limit=1');else throw e}const x=d[0];if(!x){body.innerHTML='<div class="empty">Record not found.</div>';return}activeWork={kind,cfg,record:x};activeWorkContext={kind,id,title:titleFor(x),state:x.state||x.status||x.stage||'',department_code:cfg.dept,next_action:x.next_action||'',summary:summaryFor(x)};$('viewerTitle').textContent=titleFor(x);const studioButton=cfg.studio?'<button class="btn" id="workStudio">Studio</button>':'';body.innerHTML='<div class="panel"><span class="pill">'+esc(cfg.label)+'</span>'+recordCard(x)+'<div class="actions" style="margin-top:12px"><button class="btn primary" id="workTalk">Talk</button><button class="btn" id="workDevelop">Keep working</button>'+studioButton+'</div><div class="sub" style="margin-top:10px">This exact record stays selected behind the box.</div></div>';setTimeout(()=>{if($('workTalk'))$('workTalk').onclick=()=>openWorkTalk(false);if($('workDevelop'))$('workDevelop').onclick=()=>openWorkTalk(false);if($('workStudio'))$('workStudio').onclick=()=>openWorkTalk(true)},0)}catch(e){body.innerHTML='<div class="bad">'+esc(e.message)+'</div>'}}
+function openWorkTalk(toStudio=false){if(!activeWork)return;const x=activeWork.record;let code=toStudio?'CREATIVE_AND_PRODUCTION':activeWork.cfg.dept;if(activeWorkContext)activeWorkContext.department_code=code;closeViewer();openTalk(code);setTimeout(()=>{const box=$('talkInput');box.value='';box.placeholder='Talk about '+titleFor(x);box.focus();$('talkStatus').textContent='Selected: '+titleFor(x)},120)}
+function plainText(html){const d=document.createElement('div');d.innerHTML=html;return (d.textContent||'').trim()}
+function speakReply(i){const r=talkRows[i];if(!r||!r.response_message)return;window.speechSynthesis.cancel();currentUtterance=new SpeechSynthesisUtterance(plainText(r.response_message));currentUtterance.rate=speechRate;window.speechSynthesis.speak(currentUtterance)}
+function stopSpeech(){window.speechSynthesis.cancel();currentUtterance=null}
+function toggleSpeech(){if(!window.speechSynthesis.speaking)return;if(window.speechSynthesis.paused)window.speechSynthesis.resume();else window.speechSynthesis.pause()}
+function setRate(v){speechRate=Math.max(.6,Math.min(2.5,Number(v)||1.5));if(window.speechSynthesis.speaking&&currentUtterance){const text=currentUtterance.text;stopSpeech();currentUtterance=new SpeechSynthesisUtterance(text);currentUtterance.rate=speechRate;window.speechSynthesis.speak(currentUtterance)}}
+'''
+          s=s.replace(marker,insert+'\n'+marker,1)
+
+          old_loaders="loadSimple('idea_registry','ideas','select=idea_id,title,state,priority,department_owner,current_blocker,next_action,updated_at&order=updated_at.desc&limit=12'),loadSimple('products','products','select=*&order=created_at.desc&limit=8')"
+          if old_loaders not in s: raise SystemExit('idea/product loader marker missing')
+          s=s.replace(old_loaders,"loadIdeas(),loadProductsInteractive()",1)
+          s=s.replace("loadSimple('productions','productions','select=*&order=created_at.desc&limit=8')","loadProductionsInteractive()",1)
+
+          send_old="await invoke('thylora-department-talk',{department_code:activeDepartment.department_code,module_key:activeModule?.module_key||null,message})"
+          send_new="await invoke('thylora-department-talk',{department_code:activeDepartment.department_code,module_key:activeModule?.module_key||null,work_context:activeWorkContext,message})"
+          if send_old in s:s=s.replace(send_old,send_new,1)
+
+          hist_old="const rows=d.slice().reverse();h.innerHTML=rows.length?rows.map((r,i)=>'<div class=\"talk-msg '+(i===rows.length-1?'latest':'')+'\"><div class=\"meta\">'+esc(r.created_at?new Date(r.created_at).toLocaleString():'')+'</div><div class=\"who\">You</div><div>'+esc(r.user_message||'')+'</div>'+(r.response_message?'<div class=\"who\">Department</div><div class=\"reply\">'+formatReply(r.response_message)+'</div>':'')+'</div>').join(''):'<div class=\"empty\">No prior conversation yet.</div>';if(forceBottom||rows.length)requestAnimationFrame(()=>h.scrollTop=h.scrollHeight)"
+          hist_new="const nearBottom=(h.scrollHeight-h.scrollTop-h.clientHeight)<120;const rows=d.slice().reverse();talkRows=rows;h.innerHTML=rows.length?rows.map((r,i)=>'<div class=\"talk-msg '+(i===rows.length-1?'latest':'')+'\"><div class=\"meta\">'+esc(r.created_at?new Date(r.created_at).toLocaleString():'')+'</div><div class=\"who\">You</div><div>'+esc(r.user_message||'')+'</div>'+(r.response_message?'<div class=\"who\">Department</div><div class=\"reply\">'+formatReply(r.response_message)+'</div><div class=\"reply-tools\"><button data-hear-index=\"'+i+'\">🔊 Hear</button><button data-speech-toggle>Pause / Resume</button><button data-speech-stop>Stop</button><select data-speech-rate><option value=\"1\">1×</option><option value=\"1.5\" selected>1.5×</option><option value=\"2\">2×</option><option value=\"2.5\">2.5×</option></select></div>':'')+'</div>').join(''):'<div class=\"empty\">No prior conversation yet.</div>';if(forceBottom||nearBottom)requestAnimationFrame(()=>h.scrollTop=h.scrollHeight)"
+          if hist_old in s:s=s.replace(hist_old,hist_new,1)
+
+          click_old="const o=e.target.closest('[data-open-talk]');if(o)openTalk(o.dataset.openTalk)"
+          click_new="const o=e.target.closest('[data-open-talk]');if(o){activeWorkContext=null;openTalk(o.dataset.openTalk)}const w=e.target.closest('[data-work-kind]');if(w)openWork(w.dataset.workKind,w.dataset.workId);const hi=e.target.closest('[data-hear-index]');if(hi)speakReply(Number(hi.dataset.hearIndex));if(e.target.closest('[data-speech-toggle]'))toggleSpeech();if(e.target.closest('[data-speech-stop]'))stopSpeech()"
+          if click_old in s:s=s.replace(click_old,click_new,1)
+          s=s.replace("document.addEventListener('keydown',e=>{if(e.key==='Escape'){setDrawer(false);closeTalk();closeViewer()}});", "document.addEventListener('change',e=>{const sr=e.target.closest?.('[data-speech-rate]');if(sr)setRate(sr.value)});document.addEventListener('keydown',e=>{if(e.key==='Escape'){setDrawer(false);closeTalk();closeViewer();stopSpeech()}});",1)
+          p.write_text(s)
+
+      - name: Verify repaired R7
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q 'THY-UI-20260823-2130-R7' dashboard-current-head.html
+          grep -q 'async function refreshSession' dashboard-current-head.html
+          grep -q 'noAuth:true' dashboard-current-head.html
+          grep -q 'function openWork' dashboard-current-head.html
+          grep -q 'work_context:activeWorkContext' dashboard-current-head.html
+          grep -q '2.5×' dashboard-current-head.html
+          grep -q 'nearBottom' dashboard-current-head.html
+      - name: Commit repaired R7
+        shell: bash
+        run: |
+          git config user.name 'THYLORA continuity bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add dashboard-current-head.html
+          git commit -m 'Repair auth and restore R5-grade controls in R7'
+          git push
