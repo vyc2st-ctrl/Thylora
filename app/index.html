@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<title>THYLORA App</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<header class="topbar"><div><p class="eyebrow">THYLORA APP</p><h1>Enter the world.</h1></div><button id="installBtn" hidden>Install</button></header>
+<main>
+<section class="hero"><p>Explore, learn, watch, build, shop, contribute, and carry your family history forward from one place.</p><div class="quick"><button data-view="explore">Explore World</button><button data-view="watch">Watch</button><button data-view="learn">Learn</button><button data-view="business">Business</button></div></section>
+
+<nav class="tabs" aria-label="App sections">
+<button class="active" data-view="home">Home</button><button data-view="explore">Explore</button><button data-view="edf">EDF</button><button data-view="stories">Family Stories</button><button data-view="business">Business</button><button data-view="account">Account</button>
+</nav>
+
+<section id="home" class="view active-view">
+<div class="grid"><article><p class="eyebrow">LIVE NUMBERS</p><h2>Public trail</h2><p id="metricVisitors">Loading verified traffic…</p><p id="metricSales">Loading verified sales…</p></article><article><p class="eyebrow">WORLD ACCESS</p><h2>One doorway</h2><p>World Explorer, VYCFLX, learning, released products, Business Residency and protected family spaces live under the same app language.</p></article></div>
+</section>
+
+<section id="explore" class="view"><p class="eyebrow">WORLD EXPLORER</p><h2>Map the world through place, time and activity.</h2><p class="muted">Current build surface. Future layers: planet → region → city → street → building → historical time slider → approved live activity.</p><div class="card"><strong>Where Am I Going?</strong><p>Navigation challenges use aircraft, heading, weather, time and location clues with sealed answers and evidence after reveal.</p></div></section>
+
+<section id="edf" class="view"><p class="eyebrow">ERSATZ DIGITAL FORMAT</p><h2>Read. Hear. Watch. Explore.</h2><div class="grid"><article>READ<br><span>Designed reports and e-books</span></article><article>HEAR<br><span>Narrated editions</span></article><article>WATCH<br><span>Video explanation</span></article><article>EXPLORE<br><span>Sources, numbers and interactive evidence</span></article></div></section>
+
+<section id="stories" class="view"><p class="eyebrow">FAMILY STORY ARCHIVE</p><h2>Stories can outlive the moment.</h2><p>Accepted members can preserve a family story, identify who told it, attach protected source documents, separate memory from interpretation, and invite family access.</p><div class="card"><strong>Archive rule</strong><p>Stories are append-oriented for family continuity. Leaving the service can revoke future access; family access can continue where authorized. Private source documents are never public by default. Legal privacy/deletion requirements still override archival preference.</p></div><button id="storyDraftBtn">Start a private story draft</button><p id="storyStatus" class="muted"></p></section>
+
+<section id="business" class="view"><p class="eyebrow">BUSINESS RESIDENCY</p><h2>Money cannot buy admission.</h2><p>Truth, evidence, treatment of people, safety, correction willingness and contribution matter more than influence.</p><a class="button-link" href="../public-site/#admission">Apply for World Consideration</a></section>
+
+<section id="account" class="view"><p class="eyebrow">ACCOUNT</p><h2>Protected access is being wired separately.</h2><p>Public app functions work without exposing private Command Center or family records. Member sign-in will unlock licensed EDFs, family archives, REE/world accounts and approved experiences.</p></section>
+</main>
+<footer>THYLORA · app source in active build</footer>
+<script src="./app.js"></script>
+</body>
+</html>
