@@ -1,0 +1,5 @@
+THYLORA HEAD - SPINE FORWARD
+Target: BOTH dashboard-current-head.html and app/index.html
+Directive: voice input + backend-first command routing + hear/stop + readable response cards
+No regression. No Lovable. Preserve current authority and Build 7 floor.
+Triggered: 2026-08-27
