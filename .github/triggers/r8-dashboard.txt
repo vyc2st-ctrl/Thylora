@@ -1,3 +1,4 @@
 THYLORA R8 trigger
-2026-08-24
+2026-08-28
 Preserve R5 feel. Replace raw record walls with grouped working rooms. Keep thylora-dash backend. No regression.
+Reconcile current-head source now; do not leave stale deployment/source split unresolved.
