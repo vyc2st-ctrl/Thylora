@@ -114,3 +114,62 @@ Connection Evidence. This repair introduced **zero** baseline regressions.
 ```
 
 Regression test: `tests/regression-continuity-floor.sql`
+
+---
+
+# Addendum — Authoritative repo port + security fix (2026-09-04)
+
+## Security fix: SECURITY DEFINER functions were readable by any authenticated user
+
+The six continuity RPCs were created `SECURITY DEFINER` (so they can read
+Chairman-only tables) with `EXECUTE` granted to `authenticated`. That combination
+**bypassed RLS for any signed-in user**, including
+`query_chairman_exact_source()`, which returns exact verbatim Chairman text.
+
+Each function now enforces `public.thylora_is_chairman()` internally and raises
+`insufficient_privilege` (SQLSTATE 42501). Verified both directions:
+
+| Caller | Result |
+|---|---|
+| `postgres`, no JWT (non-Chairman) | `DENIED_42501` |
+| Simulated Chairman JWT | floor seq 263, 3 exact-source rows, clock `UNVERIFIED_OPEN_SESSION` |
+
+The advisor lint `authenticated_security_definer_function_executable` still
+reports these six functions. That lint detects the **grant shape**, which is
+structurally required — the dashboard signs in as an authenticated Chairman. The
+exposure it warns about is closed by the internal guard above. This is a known,
+mitigated WARN, not an open finding. `anon` can execute none of them.
+
+## Dashboard authority is now read, not hardcoded
+
+`thylora_continuity_floor_state()` previously returned a **hardcoded** commerce
+literal. It now reads `thylora_commerce_provider_authority` and
+`thylora_dashboard_authority_lock`, so the dashboard cannot display authority it
+invented in its own SQL. Both are backend rows, `state = LOCKED`.
+
+## Port target
+
+The authoritative repo (`vyc2st-ctrl/thylora-executive-dashboard`, branch
+`master`) is at **Build 8** — a modular architecture (`js/`, `css/tokens.css`,
+`vendor/supabase-2.57.0.umd.js`) that is **newer** than this repository's
+`dashboard-current-head.html` monolith (Release THY-UI-20260823-0925-R5).
+
+Copying the monolith across would have been a regression. Instead the continuity
+floor was reimplemented as `js/continuity-floor.js` following Build 8 panel
+conventions. The Build 8 architecture is untouched.
+
+The same defect class exists in Build 8 and was **not** removed: `js/restart-record.js`
+still reads `restart_records` pinned to the hardcoded
+`THY-RESTART-20260828-DASH-APP-VOICE-001`. It is left in place as the operational
+restart card; the Continuity Floor panel is the authoritative spine surface.
+
+## Live verification could not be performed
+
+This environment's network egress policy blocks outbound HTTPS to
+`thylora-public-world.vercel.app` and to `jvsdxhrfhtlgaknhjxlz.supabase.co`
+(403 at CONNECT; `google.com` is blocked too). Only the MCP and git paths are open.
+The Vercel connector authenticates and lists the `Thylora` team, but
+`list_projects` returns empty — the grant does not include project access.
+
+Deploying without being able to verify the result is the exact false-completion
+class this work exists to remove, so no deployment was performed.
