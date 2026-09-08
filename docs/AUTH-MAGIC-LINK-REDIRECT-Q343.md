@@ -76,3 +76,45 @@ ORDER ✅ · WEBHOOK ✅ · ENTITLEMENT ✅ · DELIVERY ❌ · FIRST ACCESS ❌ 
 
 `thylora_payment_capture_witness` remains empty. `real_money_captured: false`.
 Nothing in this run touched payment status.
+
+---
+
+## 7. RESOLVED — 2026-09-08T19:43Z
+
+Chairman added both URLs to the Supabase redirect allow list. The identical probe was
+re-run before any email was sent:
+
+| `redirect_to` requested | before | after |
+| --- | --- | --- |
+| `https://thylora-library.vercel.app/` | couldn't connect | **200 · 9,696 bytes · `Your THYLORA library`** |
+| `https://thylora-public-world.vercel.app/` | couldn't connect | **200 · 18,929 bytes · `THYLORA Current Head`** |
+| `https://example.com/` — negative control, deliberately not added | couldn't connect | **couldn't connect** |
+
+The negative control is what makes this conclusive. Before the fix all three failed
+identically. After the fix, exactly the two added URLs resolve and the one not added
+still falls back to the unreachable host. The allow list is enforcing, not merely
+permitting everything. **`localhost:3000` is no longer used for the library redirect.**
+
+### Magic link sent
+
+`POST /auth/v1/otp?redirect_to=https://thylora-library.vercel.app/` for
+`vyc2st+library@gmail.com` returned **HTTP 200** at `2026-09-08T19:43:10Z`.
+
+### Baseline recorded immediately before sign-in
+
+| | |
+| --- | --- |
+| `vyc2st+library@gmail.com` created | `2026-09-08T19:43:10Z` |
+| **email_confirmed** | **false** |
+| pending claim | `PENDING` |
+| access log total / first / reaccess | `0` / `0` / `0` |
+| active entitlements | `1` (order #1002) |
+| delivery attempts | `PENDING 1` |
+| payment capture witness rows | `0` |
+
+The unconfirmed user is itself evidence the guard is armed: the claim **cannot** release
+until the address is confirmed by clicking the link. Everything downstream of that click
+is now staged so a single sign-in proves SIGN-IN → CLAIM RELEASE → LIBRARY →
+FIRST ACCESS → REACCESS on production data.
+
+PAYMENT untouched: capture witness empty, `real_money_captured: false`.
