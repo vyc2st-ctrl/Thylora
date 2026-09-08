@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Your THYLORA library</title>
+<meta name="theme-color" content="#080b10">
+<meta name="robots" content="noindex,nofollow">
+<style>
+  :root{--bg:#080b10;--ink:#f4efe6;--dim:#95a0b0;--line:#232c39;--card:#0d1219;--gold:#d6a348}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  main{max-width:760px;margin:0 auto;padding:26px 18px 80px}
+  header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:22px}
+  .brand{font-weight:800;letter-spacing:.14em;font-size:13px;color:var(--gold)}
+  h1{font-size:23px;margin:6px 0 0}
+  .sub{color:var(--dim);font-size:14px}
+  .card{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:18px;margin:14px 0}
+  label{display:block;font-size:13px;color:var(--dim);margin:12px 0 5px}
+  input{width:100%;padding:11px 12px;border-radius:9px;border:1px solid var(--line);background:#070a0e;color:var(--ink);font-size:16px}
+  input:focus{outline:2px solid var(--gold);outline-offset:1px}
+  button{font:inherit;font-weight:650;cursor:pointer;border-radius:9px;padding:11px 16px;border:1px solid var(--line);background:#151c26;color:var(--ink)}
+  button:hover:not(:disabled){border-color:var(--gold)}
+  button:disabled{opacity:.55;cursor:default}
+  button.primary{background:var(--gold);color:#171106;border-color:var(--gold)}
+  .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .msg{margin-top:14px;padding:11px 13px;border-radius:9px;font-size:14px;border:1px solid var(--line)}
+  .msg.err{border-color:#7d2f2f;background:#1b0f10}
+  .msg.ok{border-color:#2d6b45;background:#0d1712}
+  .item{border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0;background:var(--card)}
+  .item h3{margin:0 0 3px;font-size:17px}
+  .meta{color:var(--dim);font-size:13px}
+  .tag{display:inline-block;font-size:11px;letter-spacing:.09em;font-weight:800;border:1px solid var(--line);border-radius:999px;padding:3px 9px;color:var(--gold);margin-right:6px}
+  .reader{border:1px solid var(--line);border-radius:12px;padding:20px 22px;background:#0a0e14;margin-top:16px}
+  .reader h2{font-size:24px;margin:.2em 0 .5em}
+  .reader h3{font-size:16px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin:1.7em 0 .5em}
+  .reader p{margin:0 0 1.05em;font-size:17px;line-height:1.72}
+  .reader hr{border:0;border-top:1px solid var(--line);margin:1.8em 0}
+  .quiet{color:var(--dim);font-size:13px;margin-top:22px;border-top:1px solid var(--line);padding-top:14px}
+  [hidden]{display:none!important}
+</style>
+</head><body>
+<main>
+  <header>
+    <div><div class="brand">THYLORA</div><h1>Your library</h1></div>
+    <div><button id="signout" hidden>Sign out</button></div>
+  </header>
+
+  <section id="authView">
+    <div class="card">
+      <p style="margin-top:0">Sign in with <strong>the email address you bought with</strong>. Your purchase is attached to that address.</p>
+      <label for="email">Email address</label>
+      <input id="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com">
+      <div class="row"><button class="primary" id="linkBtn">Email me a sign-in link</button></div>
+      <p class="sub" style="margin-top:12px">The link proves the address is yours. That is what releases a purchase, so nobody else can claim what you bought. No password needed.</p>
+      <details style="margin-top:18px">
+        <summary class="sub" style="cursor:pointer">I already have a THYLORA password</summary>
+        <label for="pw">Password</label>
+        <input id="pw" type="password" autocomplete="current-password">
+        <div class="row"><button id="pwBtn">Sign in</button></div>
+      </details>
+      <div id="authMsg" class="msg" hidden></div>
+    </div>
+  </section>
+
+  <section id="libView" hidden>
+    <p class="sub" id="whoami"></p>
+    <div id="claimMsg" class="msg" hidden></div>
+    <div id="items"></div>
+    <div id="reader"></div>
+    <p class="quiet">Anything you own stays yours. Leave this page, come back next month or next year, sign in with the same address, and open it again. Re-reading costs nothing and does not expire.</p>
+  </section>
+</main>
+
+<script type="module">
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+const sb = createClient('https://jvsdxhrfhtlgaknhjxlz.supabase.co', 'sb_publishable_ta33XJ9rtS8VljoUYw-GuA_Pi4OycpQ', { auth:{ persistSession:true, autoRefreshToken:true, detectSessionInUrl:true } });
+
+const $ = function(id){ return document.getElementById(id); };
+const esc = function(s){ return String(s === null || s === undefined ? '' : s).replace(/[&<>"']/g, function(c){ return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]; }); };
+function say(el, text, kind){ el.className = 'msg' + (kind ? ' ' + kind : ''); el.textContent = text; el.hidden = false; }
+
+$('linkBtn').onclick = async function(){
+  const email = $('email').value.trim();
+  if (!email) return say($('authMsg'), 'Enter the email address you bought with.', 'err');
+  $('linkBtn').disabled = true;
+  const res = await sb.auth.signInWithOtp({ email, options:{ emailRedirectTo: location.origin + location.pathname } });
+  $('linkBtn').disabled = false;
+  if (res.error) return say($('authMsg'), res.error.message, 'err');
+  say($('authMsg'), 'Check that inbox. The link signs you in and opens anything waiting for you.', 'ok');
+};
+
+$('pwBtn').onclick = async function(){
+  const email = $('email').value.trim(), password = $('pw').value;
+  if (!email || !password) return say($('authMsg'), 'Enter both the email address and the password.', 'err');
+  $('pwBtn').disabled = true;
+  const res = await sb.auth.signInWithPassword({ email, password });
+  $('pwBtn').disabled = false;
+  if (res.error) return say($('authMsg'), res.error.message, 'err');
+};
+
+$('signout').onclick = async function(){ await sb.auth.signOut(); location.href = location.pathname; };
+
+// The auth client fires several events on a single page load (INITIAL_SESSION,
+// SIGNED_IN, TOKEN_REFRESHED). The first build reloaded the library on every one of
+// them, which the request log shows as three concurrent thylora_customer_library_v1
+// calls per load - three concurrent claim attempts and three racing DOM rebuilds.
+// Load once per signed-in user instead.
+let inFlight = false;
+let shownUserId = null;
+
+async function loadLibrary(session){
+  if (inFlight) return;
+  if (shownUserId === session.user.id) return;
+  inFlight = true;
+  try {
+    $('authView').hidden = true; $('libView').hidden = false; $('signout').hidden = false;
+    $('whoami').textContent = 'Signed in as ' + session.user.email;
+    $('reader').innerHTML = '';
+    $('items').innerHTML = '<p class="sub">Opening your library&hellip;</p>';
+
+    const res = await sb.rpc('thylora_customer_library_v1');
+    if (res.error){ $('items').innerHTML = ''; return say($('claimMsg'), 'Could not load your library: ' + res.error.message, 'err'); }
+    const data = res.data || {};
+    shownUserId = session.user.id;
+
+    const claimed = (data.claim_check && data.claim_check.claimed) || 0;
+    if (data.awaiting_confirmation){ say($('claimMsg'), data.claim_check.customer_message, 'err'); }
+    else if (claimed > 0){ say($('claimMsg'), claimed + (claimed === 1 ? ' purchase was' : ' purchases were') + ' just added to your library.', 'ok'); }
+    else { $('claimMsg').hidden = true; }
+
+    const items = Array.isArray(data.items) ? data.items : [];
+    if (!items.length){
+      $('items').innerHTML = '<div class="card"><p style="margin:0">Nothing is in this library yet.</p><p class="sub" style="margin-bottom:0">If you have just bought something, make sure you signed in with the same email address you used at checkout &mdash; that is what a purchase is attached to.</p></div>';
+      return;
+    }
+
+    $('items').innerHTML = items.map(function(it){
+      const control = it.openable
+        ? '<button class="primary" data-open="' + esc(it.external_product_id) + '">Read it</button>'
+        : '<span class="meta">' + esc(it.not_openable_reason || 'Not available to open yet.') + '</span>';
+      return '<div class="item"><h3>' + esc(it.title || it.edf_code || 'Untitled') + '</h3><div class="meta">' + esc(it.edf_code || '') + '</div><div class="row">' + control + '</div></div>';
+    }).join('');
+
+    const btns = document.querySelectorAll('[data-open]');
+    for (let i = 0; i < btns.length; i++){
+      btns[i].onclick = (function(b){ return function(){ openItem(b); }; })(btns[i]);
+    }
+  } finally { inFlight = false; }
+}
+
+// A visit label is a claim about what the database recorded. It may only be made when
+// the response carries access_id - the primary key of the row that was actually
+// committed. The first build used a two-way test on access_kind, so ANY unexpected or
+// missing value fell through to "Opened again" and the page could claim a re-access
+// that no row backed. This version never says "Opened again" without proof, and never
+// invents a visit number.
+function visitLabel(data){
+  const durable = typeof data.access_id === 'string' && data.access_id.length > 0;
+  const n = data.access_number;
+  const numbered = (typeof n === 'number' && isFinite(n) && Math.floor(n) === n && n >= 1);
+  if (!durable) return 'Opened';
+  if (data.access_kind === 'REACCESS' && numbered && n >= 2) return 'Opened again · visit ' + n;
+  if (data.access_kind === 'FIRST_ACCESS') return 'First time opening this';
+  return 'Opened';
+}
+
+async function openItem(btn){
+  const productId = btn.getAttribute('data-open');
+  btn.disabled = true; btn.textContent = 'Opening…';
+  const res = await sb.rpc('thylora_open_edf_v1', { p_external_product_id: productId });
+  btn.disabled = false; btn.textContent = 'Read it';
+  if (res.error) return say($('claimMsg'), res.error.message, 'err');
+  const data = res.data || {};
+  if (!data.delivered) return say($('claimMsg'), data.customer_message || 'This could not be opened yet.', 'err');
+
+  const blocks = Array.isArray(data.blocks) ? data.blocks : [];
+  const body = blocks.map(function(b){
+    const t = esc(b.text);
+    if (b.type === 'TITLE')   return '<h2>' + t + '</h2>';
+    if (b.type === 'HEADING') return '<h3>' + t + '</h3>';
+    if (b.type === 'BREAK')   return '<hr>';
+    return '<p>' + t + '</p>';
+  }).join('');
+
+  $('reader').innerHTML = '<div class="reader"><div><span class="tag">' + esc(data.age_classification || '') + '</span><span class="meta">' + esc(visitLabel(data)) + '</span></div>' + body + '</div>';
+  $('reader').scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+sb.auth.onAuthStateChange(function(_e, session){
+  if (session) loadLibrary(session);
+  else { shownUserId = null; $('libView').hidden = true; $('authView').hidden = false; $('signout').hidden = true; }
+});
+</script>
+</body></html>
