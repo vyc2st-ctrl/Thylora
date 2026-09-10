@@ -52,8 +52,14 @@
       <label for="email">Email address</label>
       <input id="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com">
       <div class="row"><button class="primary" id="linkBtn">Email me a sign-in link</button></div>
+
+      <p class="locked" style="margin-top:18px">Then come back to this page and paste that link into the box below. Tapping the link straight from your mail app will not land you back here yet, so pasting it in is the way in. You only do this once on this device &mdash; after that you stay signed in.</p>
+      <label for="pasted">The sign-in link from that email</label>
+      <textarea id="pasted" rows="3" spellcheck="false" autocapitalize="off" placeholder="Paste the whole link here"></textarea>
+      <div class="row"><button class="primary" id="pasteBtn">Sign me in with this link</button></div>
+
       <details style="margin-top:16px">
-        <summary class="sub" style="cursor:pointer">The link did not work &mdash; I have a code instead</summary>
+        <summary class="sub" style="cursor:pointer">The email gave me a six-digit code instead</summary>
         <label for="code">Six-digit code from the email</label>
         <input id="code" type="text" inputmode="numeric" autocomplete="one-time-code" placeholder="000000">
         <div class="row"><button id="codeBtn">Sign in with the code</button></div>
@@ -101,7 +107,38 @@ $('linkBtn').onclick = async function(){
   const res = await sb.auth.signInWithOtp({ email, options:{ emailRedirectTo: location.origin + location.pathname } });
   $('linkBtn').disabled = false;
   if (res.error) return say($('authMsg'), res.error.message, 'err');
-  say($('authMsg'), 'Check that inbox. If the link bounces, open the code option below and type the code from the same email.', 'ok');
+  say($('authMsg'), 'Sent. Open that email, copy the sign-in link, and paste it into the box below on this page.', 'ok');
+};
+
+function readLinkToken(raw){
+  const text = String(raw || '').trim();
+  if (!text) return null;
+  const hash = (text.match(/[?&#](?:token_hash|token)=([^&\s#"']+)/) || [])[1]
+            || (/^[A-Za-z0-9._~+\/=-]{16,}$/.test(text) ? text : null);
+  if (!hash) return null;
+  const type = (text.match(/[?&#]type=([A-Za-z_]+)/) || [])[1] || null;
+  return { token_hash: decodeURIComponent(hash), type: type };
+}
+
+async function verifyLinkToken(parsed){
+  const types = parsed.type ? [parsed.type] : ['magiclink','email','signup','invite'];
+  let last = null;
+  for (const t of types){
+    const res = await sb.auth.verifyOtp({ token_hash: parsed.token_hash, type: t });
+    if (!res.error) return res;
+    last = res;
+  }
+  return last;
+}
+
+$('pasteBtn').onclick = async function(){
+  const parsed = readLinkToken($('pasted').value);
+  if (!parsed) return say($('authMsg'), 'That does not look like the sign-in link. Copy the whole link out of the email and paste it again.', 'err');
+  $('pasteBtn').disabled = true;
+  const res = await verifyLinkToken(parsed);
+  $('pasteBtn').disabled = false;
+  if (res && res.error) return say($('authMsg'), res.error.message + ' — a sign-in link can only be used once, and it expires. Send yourself a fresh one above.', 'err');
+  hide($('authMsg'));
 };
 
 $('codeBtn').onclick = async function(){
@@ -363,5 +400,14 @@ sb.auth.onAuthStateChange(function(_e, session){
   if (session) load(session, false);
   else { shownUserId = null; $('workView').hidden = true; $('authView').hidden = false; $('signout').hidden = true; }
 });
+
+// If a sign-in link ever lands on this page directly, finish it without asking.
+(async function(){
+  const parsed = readLinkToken(location.search || location.hash);
+  if (!parsed) return;
+  history.replaceState(null, '', location.pathname);
+  const res = await verifyLinkToken(parsed);
+  if (res && res.error) say($('authMsg'), res.error.message + ' — send yourself a fresh sign-in link above.', 'err');
+})();
 </script>
 </body></html>

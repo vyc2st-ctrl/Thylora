@@ -385,7 +385,9 @@
   <h2>Already bought something?</h2>
   <p>Your library is where it lives. It opens with your email address — the same one you checked out with — and it stays yours to reopen.</p>
   <a class="lib" href="https://thylora-library.vercel.app">Open your library</a>
-  <p class="after"><a href="https://ersatzreality.myshopify.com/pages/refunds-and-cancellation">Refunds and cancellation</a> &middot; <a href="https://ersatzreality.myshopify.com/pages/terms-of-sale">Terms of sale</a></p>
+  <p style="margin-top:22px">Ordered something <strong>made for you</strong> instead? That has its own page, because you have to send us something and approve the result before it counts as delivered.</p>
+  <a class="lib" href="https://thylora-submit.vercel.app">Open your order</a>
+  <p class="after"><a href="https://ersatzreality.myshopify.com/pages/your-order">How your order reaches you</a> &middot; <a href="https://ersatzreality.myshopify.com/pages/refunds-and-cancellation">Refunds and cancellation</a> &middot; <a href="https://ersatzreality.myshopify.com/pages/terms-of-sale">Terms of sale</a></p>
 </div>
 
 <footer class="ops">
@@ -397,6 +399,8 @@
     <tr><td class="k">CATALOG</td><td class="pass">1 OPEN</td><td>13 drafts: 8 made-for-you, 3 services, 2 not for sale</td></tr>
     <tr><td class="k">SUBMIT</td><td class="pass">BUILT</td><td>8 wares supported, 36 probes passed, 0 rows left behind</td></tr>
     <tr><td class="k">SUBMIT USED</td><td class="fail">0</td><td>no real customer has passed through it yet</td></tr>
+    <tr><td class="k">SIGN-IN</td><td class="pass">PASS</td><td>link token exchanged for a real session with no redirect allow-list involved</td></tr>
+    <tr><td class="k">HANDOFF</td><td class="pass">PASS</td><td>/pages/your-order live and linked from the first made-for-you ware</td></tr>
     <tr><td class="k">CHECKOUT</td><td class="fail">NOT PROVEN</td><td>needs a real buyer through storefront checkout</td></tr>
     <tr><td class="k">PAYMENT</td><td class="fail">UNPROVEN</td><td>real money not yet captured — 0 capture witnesses</td></tr>
     <tr><td class="k">ORDER</td><td class="pass">PASS</td><td>2 orders ingested</td></tr>
@@ -406,7 +410,7 @@
     <tr><td class="k">FIRST ACCESS</td><td class="pass">PASS</td><td>2 recorded</td></tr>
     <tr><td class="k">REACCESS</td><td class="fail">0</td><td>no second opening recorded yet</td></tr>
   </table>
-  <p>Read from live records at 2026-09-10T08:30Z. A step is marked PASS only where a row exists; nothing here is set by hand. PAYMENT stays UNPROVEN until a genuine processor capture is witnessed — a free, discounted, draft, manual, test or rolled-back transaction does not count and must never be shown as one.</p>
+  <p>Read from live records at 2026-09-10T12:30Z. A step is marked PASS only where a row exists; nothing here is set by hand. PAYMENT stays UNPROVEN until a genuine processor capture is witnessed — a free, discounted, draft, manual, test or rolled-back transaction does not count and must never be shown as one.</p>
 </footer>
 
 </div>
