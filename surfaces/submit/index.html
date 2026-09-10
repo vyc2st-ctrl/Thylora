@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Your THYLORA order</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+  :root{--bg:#0a0d12;--ink:#f3efe7;--dim:#96a1b0;--line:#232c39;--card:#0e141c;--gold:#d6a348;--ok:#4fae7c;--no:#c9605a}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+  main{max-width:740px;margin:0 auto;padding:24px 18px 90px}
+  header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:20px}
+  .brand{font-weight:800;letter-spacing:.14em;font-size:13px;color:var(--gold)}
+  h1{font-size:22px;margin:6px 0 0}
+  h2{font-size:18px;margin:0 0 2px}
+  .sub{color:var(--dim);font-size:14px}
+  .card{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:18px;margin:16px 0}
+  .stage{display:inline-block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;border:1px solid var(--gold);color:var(--gold);border-radius:999px;padding:3px 10px}
+  label{display:block;font-size:13px;color:var(--dim);margin:14px 0 5px}
+  input[type=text],input[type=email],input[type=password],textarea,select{width:100%;padding:11px 12px;border-radius:9px;border:1px solid var(--line);background:#070a0e;color:var(--ink);font:inherit}
+  textarea{min-height:70px}
+  input[type=file]{width:100%;padding:10px;border:1px dashed var(--line);border-radius:9px;background:#070a0e;color:var(--dim)}
+  button{font:inherit;font-weight:650;cursor:pointer;border-radius:9px;padding:11px 16px;border:1px solid var(--line);background:#151d27;color:var(--ink)}
+  button:hover:not(:disabled){border-color:var(--gold)}
+  button:disabled{opacity:.5;cursor:default}
+  button.primary{background:var(--gold);color:#171106;border-color:var(--gold)}
+  button.danger{border-color:#6d3330;color:#e6a49f;background:#170f0f}
+  .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .msg{margin-top:14px;padding:11px 13px;border-radius:9px;font-size:14px;border:1px solid var(--line)}
+  .msg.err{border-color:#7d2f2f;background:#1b0f10}
+  .msg.ok{border-color:#2d6b45;background:#0d1712}
+  dl{margin:12px 0 0;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:14px}
+  dt{color:var(--dim)} dd{margin:0}
+  .check{display:flex;gap:10px;align-items:flex-start;margin:12px 0;font-size:14px;line-height:1.5}
+  .check input{margin-top:4px;width:18px;height:18px;flex:0 0 auto}
+  .locked{color:var(--dim);font-size:13px;border-left:3px solid var(--line);padding-left:12px;margin:12px 0}
+  .files{font-size:13px;color:var(--dim);margin:8px 0 0;padding-left:18px}
+  .quiet{color:var(--dim);font-size:13px;margin-top:26px;border-top:1px solid var(--line);padding-top:14px}
+  a{color:var(--gold)}
+  [hidden]{display:none!important}
+</style>
+</head><body>
+<main>
+  <header>
+    <div><div class="brand">THYLORA</div><h1>Your order</h1></div>
+    <div><button id="signout" hidden>Sign out</button></div>
+  </header>
+
+  <section id="authView">
+    <div class="card">
+      <p style="margin-top:0">Sign in with <strong>the email address you bought with</strong>. Your order is attached to that address, so there is no order number to type and no reference to keep.</p>
+      <label for="email">Email address</label>
+      <input id="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com">
+      <div class="row"><button class="primary" id="linkBtn">Email me a sign-in link</button></div>
+      <details style="margin-top:16px">
+        <summary class="sub" style="cursor:pointer">The link did not work &mdash; I have a code instead</summary>
+        <label for="code">Six-digit code from the email</label>
+        <input id="code" type="text" inputmode="numeric" autocomplete="one-time-code" placeholder="000000">
+        <div class="row"><button id="codeBtn">Sign in with the code</button></div>
+      </details>
+      <details style="margin-top:12px">
+        <summary class="sub" style="cursor:pointer">I have a THYLORA password</summary>
+        <label for="pw">Password</label>
+        <input id="pw" type="password" autocomplete="current-password">
+        <div class="row"><button id="pwBtn">Sign in</button></div>
+      </details>
+      <div id="authMsg" class="msg" hidden></div>
+    </div>
+  </section>
+
+  <section id="workView" hidden>
+    <p class="sub" id="whoami"></p>
+    <div id="topMsg" class="msg" hidden></div>
+    <div id="items"></div>
+    <p class="quiet">Everything you send is private by default. It is used to make your order and nothing else &mdash; never published, never shown as an example, never used to train anything. You can ask for it to be deleted at any time, and the files really are removed, not just marked.</p>
+  </section>
+</main>
+
+<script type="module">
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.4';
+const SB_URL = 'https://jvsdxhrfhtlgaknhjxlz.supabase.co';
+const SB_KEY = 'sb_publishable_ta33XJ9rtS8VljoUYw-GuA_Pi4OycpQ';
+const BUCKET = 'thylora-submit-private';
+const sb = createClient(SB_URL, SB_KEY, { auth:{ persistSession:true, autoRefreshToken:true, detectSessionInUrl:true } });
+
+const $ = function(id){ return document.getElementById(id); };
+const esc = function(s){ return String(s === null || s === undefined ? '' : s).replace(/[&<>"']/g, function(c){ return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]; }); };
+function say(el, text, kind){ el.className = 'msg' + (kind ? ' ' + kind : ''); el.textContent = text; el.hidden = false; }
+function hide(el){ el.hidden = true; }
+
+async function sha256Hex(file){
+  const buf = await file.arrayBuffer();
+  const d = await crypto.subtle.digest('SHA-256', buf);
+  return Array.from(new Uint8Array(d)).map(function(b){ return b.toString(16).padStart(2,'0'); }).join('');
+}
+
+$('linkBtn').onclick = async function(){
+  const email = $('email').value.trim();
+  if (!email) return say($('authMsg'), 'Enter the email address you bought with.', 'err');
+  $('linkBtn').disabled = true;
+  const res = await sb.auth.signInWithOtp({ email, options:{ emailRedirectTo: location.origin + location.pathname } });
+  $('linkBtn').disabled = false;
+  if (res.error) return say($('authMsg'), res.error.message, 'err');
+  say($('authMsg'), 'Check that inbox. If the link bounces, open the code option below and type the code from the same email.', 'ok');
+};
+
+$('codeBtn').onclick = async function(){
+  const email = $('email').value.trim(), token = $('code').value.trim();
+  if (!email || !token) return say($('authMsg'), 'Enter both the email address and the code.', 'err');
+  $('codeBtn').disabled = true;
+  const res = await sb.auth.verifyOtp({ email, token, type:'email' });
+  $('codeBtn').disabled = false;
+  if (res.error) return say($('authMsg'), res.error.message, 'err');
+};
+
+$('pwBtn').onclick = async function(){
+  const email = $('email').value.trim(), password = $('pw').value;
+  if (!email || !password) return say($('authMsg'), 'Enter both the email address and the password.', 'err');
+  $('pwBtn').disabled = true;
+  const res = await sb.auth.signInWithPassword({ email, password });
+  $('pwBtn').disabled = false;
+  if (res.error) return say($('authMsg'), res.error.message, 'err');
+};
+
+$('signout').onclick = async function(){ await sb.auth.signOut(); location.href = location.pathname; };
+
+let inFlight = false, shownUserId = null;
+
+async function load(session, force){
+  if (inFlight) return;
+  if (!force && shownUserId === session.user.id) return;
+  inFlight = true;
+  try {
+    $('authView').hidden = true; $('workView').hidden = false; $('signout').hidden = false;
+    $('whoami').textContent = 'Signed in as ' + session.user.email;
+    if (!force) $('items').innerHTML = '<p class="sub">Finding your order&hellip;</p>';
+    const res = await sb.rpc('thylora_submit_my_submissions_v1');
+    if (res.error){ $('items').innerHTML = ''; return say($('topMsg'), 'Could not load your order: ' + res.error.message, 'err'); }
+    shownUserId = session.user.id;
+    const data = res.data || {};
+    const list = Array.isArray(data.submissions) ? data.submissions : [];
+    if (!list.length){
+      $('items').innerHTML = '<div class="card"><p style="margin:0">Nothing is waiting for you here yet.</p><p class="sub" style="margin-bottom:0">If you have just ordered something made for you, sign in with the same email address you used at checkout &mdash; that is what an order is attached to. Reading material you bought lives in <a href="https://thylora-library.vercel.app">your library</a> instead.</p></div>';
+      return;
+    }
+    hide($('topMsg'));
+    $('items').innerHTML = list.map(render).join('');
+    wire(list);
+  } finally { inFlight = false; }
+}
+
+function render(s){
+  const req = s.requires || {}, con = s.consents || {}, up = s.uploads || [];
+  const editable = (s.state === 'AWAITING_SUBMISSION' || s.state === 'REVISION_REQUESTED');
+  let h = '<div class="card" data-sub="' + esc(s.submission_id) + '">';
+  h += '<span class="stage">' + esc(s.stage_label) + '</span>';
+  h += '<h2 style="margin-top:10px">' + esc(s.title) + '</h2>';
+  h += '<dl><dt>Order</dt><dd>' + esc(s.order_reference) + '</dd>';
+  h += '<dt>Price paid</dt><dd>$' + esc(s.price_usd) + ' USD</dd>';
+  h += '<dt>Privacy</dt><dd>' + (s.privacy_state === 'PRIVATE' ? 'Private &mdash; only you' : 'Named family only') + (s.protection_level === 'ELEVATED' ? ' &middot; extra protection, because a child or a pregnancy may appear' : '') + '</dd>';
+  h += '<dt>Who makes it</dt><dd>' + (s.fulfilment_mode === 'HUMAN' ? 'A person, by hand' : 'Automated') + '</dd>';
+  h += '<dt>Opened</dt><dd>' + esc(s.opened_times) + ' time' + (s.opened_times === 1 ? '' : 's') + '</dd></dl>';
+
+  if (editable){
+    h += '<label>Your photograph or file</label>';
+    h += '<input type="file" data-file="1">';
+    if (up.length) h += '<ul class="files">' + up.map(function(u){ return '<li>' + esc(u.original_filename || u.storage_path) + ' &middot; ' + esc(u.byte_size) + ' bytes</li>'; }).join('') + '</ul>';
+    h += '<div class="row"><button data-upload="1">Add this file</button></div>';
+    if (req.photo && !up.length) h += '<p class="sub" style="margin-top:6px">A photograph is required for this one.</p>';
+
+    const b = s.brief || {};
+    h += '<label>Style' + (req.style ? ' (required)' : '') + '</label><textarea data-brief="style">' + esc(b.style) + '</textarea>';
+    h += '<label>Where it is set' + (req.location ? ' (required)' : '') + '</label><textarea data-brief="location">' + esc(b.location) + '</textarea>';
+    if (req.clothing !== false) h += '<label>Clothing' + (req.clothing ? ' (required)' : ' (optional)') + '</label><textarea data-brief="clothing">' + esc(b.clothing) + '</textarea>';
+    h += '<label>Words to carry with it' + (req.text ? ' (required)' : ' (optional)') + '</label><textarea data-brief="text">' + esc(b.text) + '</textarea>';
+    h += '<label>How private</label><select data-privacy="1"><option value="PRIVATE"' + (s.privacy_state === 'PRIVATE' ? ' selected' : '') + '>Private &mdash; only me</option><option value="NAMED_FAMILY_ONLY"' + (s.privacy_state === 'NAMED_FAMILY_ONLY' ? ' selected' : '') + '>Named family only</option></select>';
+    h += '<div class="row"><button data-savebrief="1">Save what I have written</button></div>';
+
+    h += '<label style="margin-top:20px">Before we can start</label>';
+    h += '<div class="check"><input type="checkbox" data-consent="RIGHT_TO_SUBMIT"' + (con.RIGHT_TO_SUBMIT ? ' checked' : '') + '><span>These photographs are mine to send, and every adult in them agrees to appear.</span></div>';
+    if (s.guardian_consent_required)
+      h += '<div class="check"><input type="checkbox" data-consent="GUARDIAN_CONSENT"' + (con.GUARDIAN_CONSENT ? ' checked' : '') + '><span>I am the parent or legal guardian of the child in these photographs, and I am sending them myself.</span></div>';
+    if (s.publication_consent_offerable)
+      h += '<div class="check"><input type="checkbox" data-consent="PUBLICATION_CONSENT"' + (con.PUBLICATION_CONSENT ? ' checked' : '') + '><span>You may show this publicly. <strong>Leaving this unticked is the default and costs you nothing.</strong></span></div>';
+    else
+      h += '<p class="locked">This kind of picture is never shown publicly. There is no yes to give here, and that is deliberate.</p>';
+    h += '<div class="row"><button data-saveconsent="1">Record my answers</button></div>';
+
+    h += '<div class="row" style="margin-top:22px"><button class="primary" data-ready="1">This is everything &mdash; start making it</button></div>';
+    h += '<p class="sub" style="margin-top:6px">Look over what you have written above first. Nothing is sent to the maker until you press this.</p>';
+  }
+
+  if (s.state === 'AWAITING_CUSTOMER_REVIEW'){
+    h += '<p style="margin-top:16px"><strong>It is ready for you to look at.</strong> Nothing counts as delivered until you say yes.</p>';
+    h += '<div class="row"><button data-view="' + esc(s.presented_storage_path) + '">Open what was made</button></div>';
+    h += '<div class="row"><button class="primary" data-approve="1">That is right &mdash; approve it</button><button data-revise="1">Ask for a change</button></div>';
+    h += '<label>What should change?</label><textarea data-note="1" placeholder="Only needed if you are asking for a change."></textarea>';
+    if (s.revision_count > 0) h += '<p class="sub">Changes asked for so far: ' + esc(s.revision_count) + '</p>';
+  }
+
+  if (s.state === 'APPROVED')
+    h += '<p style="margin-top:16px">You approved it. The maker is putting the final file in place; this page will show it when it is there.</p>';
+
+  if (s.delivery){
+    h += '<p style="margin-top:16px"><strong>Yours.</strong></p>';
+    h += '<p class="sub">' + esc(s.delivery.provenance_note) + '</p>';
+    h += '<div class="row"><button class="primary" data-open="1">Open it</button></div>';
+    h += '<p class="sub" style="margin-top:6px">Opening it again later costs nothing and does not expire. Every opening is recorded, first time and every time after.</p>';
+  }
+
+  if (s.state !== 'DELETED_AT_CUSTOMER_REQUEST' && !s.deletion_requested)
+    h += '<div class="row" style="margin-top:22px"><button class="danger" data-delete="1">Delete everything I sent</button></div>';
+  if (s.deletion_requested)
+    h += '<p class="sub" style="margin-top:18px">You asked for this to be deleted. The request is on record, and the files are removed from storage &mdash; not merely marked.</p>';
+
+  h += '<div class="msg" data-msg="1" hidden></div></div>';
+  return h;
+}
+
+function wire(list){
+  list.forEach(function(s){
+    const card = document.querySelector('[data-sub="' + s.submission_id + '"]');
+    if (!card) return;
+    const msg = card.querySelector('[data-msg]');
+    const id = s.submission_id;
+
+    const upBtn = card.querySelector('[data-upload]');
+    if (upBtn) upBtn.onclick = async function(){
+      const input = card.querySelector('[data-file]');
+      const f = input.files && input.files[0];
+      if (!f) return say(msg, 'Choose a file first.', 'err');
+      upBtn.disabled = true; say(msg, 'Sending your file…');
+      try {
+        const hash = await sha256Hex(f);
+        const path = id + '/' + Date.now() + '-' + f.name.replace(/[^A-Za-z0-9._-]/g, '_');
+        const put = await sb.storage.from(BUCKET).upload(path, f, { contentType: f.type || 'application/octet-stream', upsert:false });
+        if (put.error) throw new Error(put.error.message);
+        const reg = await sb.rpc('thylora_submit_register_upload_v1', {
+          p_submission_id:id, p_storage_path:path, p_content_type:(f.type || 'application/octet-stream'),
+          p_byte_size:f.size, p_sha256:hash, p_original_filename:f.name });
+        if (reg.error) throw new Error(reg.error.message);
+        if (reg.data && reg.data.registered !== true) throw new Error(reg.data.reason);
+        say(msg, 'Added.', 'ok'); refresh();
+      } catch(e){ say(msg, 'That file did not go through: ' + e.message, 'err'); }
+      upBtn.disabled = false;
+    };
+
+    const briefBtn = card.querySelector('[data-savebrief]');
+    if (briefBtn) briefBtn.onclick = async function(){
+      const brief = {};
+      card.querySelectorAll('[data-brief]').forEach(function(el){ brief[el.getAttribute('data-brief')] = el.value.trim(); });
+      const priv = card.querySelector('[data-privacy]').value;
+      briefBtn.disabled = true;
+      const r = await sb.rpc('thylora_submit_save_brief_v1', { p_submission_id:id, p_brief:brief, p_privacy_state:priv });
+      briefBtn.disabled = false;
+      if (r.error) return say(msg, r.error.message, 'err');
+      if (r.data && r.data.saved !== true) return say(msg, r.data.reason, 'err');
+      say(msg, 'Saved.', 'ok');
+    };
+
+    const conBtn = card.querySelector('[data-saveconsent]');
+    if (conBtn) conBtn.onclick = async function(){
+      conBtn.disabled = true;
+      const boxes = Array.from(card.querySelectorAll('[data-consent]'));
+      const texts = {
+        RIGHT_TO_SUBMIT:'These photographs are mine to send, and every adult in them agrees to appear.',
+        GUARDIAN_CONSENT:'I am the parent or legal guardian of the child in these photographs, and I am sending them myself.',
+        PUBLICATION_CONSENT:'You may show this publicly. Leaving this unticked is the default and costs nothing.'
+      };
+      let bad = null;
+      for (const b of boxes){
+        const kind = b.getAttribute('data-consent');
+        const r = await sb.rpc('thylora_submit_record_consent_v1', {
+          p_submission_id:id, p_consent_kind:kind, p_granted:b.checked, p_statement_text:texts[kind] });
+        if (r.error){ bad = r.error.message; break; }
+        if (r.data && r.data.recorded !== true){ bad = r.data.customer_message || r.data.reason; break; }
+      }
+      if (!s.publication_consent_offerable){
+        await sb.rpc('thylora_submit_record_consent_v1', { p_submission_id:id, p_consent_kind:'PUBLICATION_CONSENT',
+          p_granted:false, p_statement_text:'This kind of picture is never shown publicly, and no is the only answer offered here.' });
+      }
+      conBtn.disabled = false;
+      if (bad) return say(msg, bad, 'err');
+      say(msg, 'Recorded.', 'ok'); refresh();
+    };
+
+    const readyBtn = card.querySelector('[data-ready]');
+    if (readyBtn) readyBtn.onclick = async function(){
+      readyBtn.disabled = true;
+      const r = await sb.rpc('thylora_submit_mark_ready_v1', { p_submission_id:id });
+      readyBtn.disabled = false;
+      if (r.error) return say(msg, r.error.message, 'err');
+      if (r.data && r.data.ready !== true){
+        const miss = (r.data.missing || []).join(', ');
+        return say(msg, 'Not quite yet. Still needed: ' + (miss || r.data.reason), 'err');
+      }
+      say(msg, r.data.customer_message, 'ok'); refresh();
+    };
+
+    const viewBtn = card.querySelector('[data-view]');
+    if (viewBtn) viewBtn.onclick = async function(){
+      const path = viewBtn.getAttribute('data-view');
+      if (!path || path === 'null') return say(msg, 'There is nothing to open yet.', 'err');
+      const r = await sb.storage.from(BUCKET).createSignedUrl(path, 300);
+      if (r.error) return say(msg, r.error.message, 'err');
+      window.open(r.data.signedUrl, '_blank', 'noopener');
+    };
+
+    const okBtn = card.querySelector('[data-approve]');
+    const noBtn = card.querySelector('[data-revise]');
+    async function decide(decision){
+      const note = card.querySelector('[data-note]');
+      const r = await sb.rpc('thylora_submit_customer_decide_v1', {
+        p_submission_id:id, p_decision:decision,
+        p_presented_sha256:(s.presented_sha256 || ''), p_note:(note ? note.value.trim() : null) });
+      if (r.error) return say(msg, r.error.message, 'err');
+      if (r.data && r.data.recorded !== true) return say(msg, r.data.reason, 'err');
+      say(msg, decision === 'APPROVED' ? 'Approved, and that is on record.' : 'Sent back with your note.', 'ok');
+      refresh();
+    }
+    if (okBtn) okBtn.onclick = function(){ okBtn.disabled = true; decide('APPROVED'); };
+    if (noBtn) noBtn.onclick = function(){
+      const note = card.querySelector('[data-note]');
+      if (!note || !note.value.trim()) return say(msg, 'Say what should change, so the maker knows.', 'err');
+      noBtn.disabled = true; decide('REVISION_REQUESTED');
+    };
+
+    const openBtn = card.querySelector('[data-open]');
+    if (openBtn) openBtn.onclick = async function(){
+      openBtn.disabled = true;
+      const r = await sb.rpc('thylora_submit_open_delivery_v1', { p_submission_id:id });
+      openBtn.disabled = false;
+      if (r.error) return say(msg, r.error.message, 'err');
+      if (r.data && r.data.opened !== true) return say(msg, r.data.reason, 'err');
+      const label = r.data.access_kind === 'FIRST_ACCESS' ? 'First time opening this.'
+        : 'Opened again · visit ' + r.data.access_number + '.';
+      const su = await sb.storage.from(BUCKET).createSignedUrl(r.data.storage_path, 300);
+      if (su.error) return say(msg, label + ' The file could not be opened: ' + su.error.message, 'err');
+      say(msg, label, 'ok');
+      window.open(su.data.signedUrl, '_blank', 'noopener');
+      refresh();
+    };
+
+    const delBtn = card.querySelector('[data-delete]');
+    if (delBtn) delBtn.onclick = async function(){
+      if (!window.confirm('Delete everything you sent for this order? The files are removed from storage. This cannot be undone.')) return;
+      delBtn.disabled = true;
+      const r = await sb.rpc('thylora_submit_request_deletion_v1', { p_submission_id:id });
+      delBtn.disabled = false;
+      if (r.error) return say(msg, r.error.message, 'err');
+      if (r.data && r.data.requested !== true) return say(msg, r.data.reason, 'err');
+      say(msg, r.data.customer_message, 'ok'); refresh();
+    };
+  });
+}
+
+async function refresh(){
+  const { data } = await sb.auth.getSession();
+  if (data && data.session) await load(data.session, true);
+}
+
+sb.auth.onAuthStateChange(function(_e, session){
+  if (session) load(session, false);
+  else { shownUserId = null; $('workView').hidden = true; $('authView').hidden = false; $('signout').hidden = true; }
+});
+</script>
+</body></html>
