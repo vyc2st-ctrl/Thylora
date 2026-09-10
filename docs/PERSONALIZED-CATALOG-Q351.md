@@ -11,7 +11,7 @@ Read at `2026-09-09T18:52Z`.
 |---|---|---|---|
 | THYLORA Anywhere Portrait | `7965307142221` · `thylora-anywhere-portrait` | DRAFT | pending, not authorized |
 | THYLORA Celebration Card Studio | `7965307961421` · `thylora-celebration-card-studio` | DRAFT | pending, not authorized |
-| EdereAriah MirrorWardrobe Portrait Catalog | `7965308452941` · `edereariah-mirrorwardrobe-portrait-catalog` | DRAFT | pending, not authorized |
+| EdereAirah MirrorWardrobe Portrait Catalog | `7965308452941` · `edereariah-mirrorwardrobe-portrait-catalog` | DRAFT | pending, not authorized |
 | Family Image Storybook | `7965308616781` · `family-image-storybook` | DRAFT | pending, not authorized |
 
 `onlineStoreUrl` is `null` on all four — they are not reachable by a customer on the storefront, which
@@ -61,7 +61,7 @@ But "sold" is not "made", and the honest line falls somewhere else entirely:
 - **DELIVER has no path.** The customer library serves published EDF packages, not per-customer
   files. A personalized artifact has nowhere to land.
 
-**MirrorWardrobe is blocked for a different reason and price will not unblock it.** Zero EdereAriah
+**MirrorWardrobe is blocked for a different reason and price will not unblock it.** Zero EdereAirah
 houses and zero looks are published. The product's central act is choosing a house and a look; today
 that is choosing from an empty rail. The card supports multiple houses structurally and says so, and
 no house names were invented to fill the gap.
@@ -82,3 +82,18 @@ Sell the item that is already for sale. One real $1.99 purchase of *Twelve Miles
 the storefront proves CHECKOUT, writes the first PAYMENT witness, and confirms test mode is off — all
 three from one event. Every personalized product here waits on a submit-and-consent runtime that does
 not exist yet; the story waits on nothing.
+
+
+---
+
+## Correction, 2026-09-10
+
+The spelling in this document and on the cards it describes was wrong. The controlling spelling is
+**`EdereAirah`** — AIRAH, not ARIAH. Corrected here and in the live Shopify record; the product was
+renamed from *EdereAriah MirrorWardrobe Portrait Catalog* to **EdereAirah MirrorWardrobe Portrait**
+and its handle from `edereariah-...` to `edereairah-mirrorwardrobe-portrait`. Its price is now
+authorized at $34.99. The Earth-facing brand is **ErsatzV**.
+
+Prices for all eight personalized items were authorized on 2026-09-10 and are recorded in
+`docs/CATALOG-25-SPEC-Q351.md`. Authorization did not open any of them: every one stays DRAFT
+because its submit, consent, approval and delivery mechanisms still do not exist.
