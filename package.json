@@ -1,0 +1,9 @@
+{
+  "name": "thylora",
+  "private": true,
+  "type": "module",
+  "description": "THYLORA source: public site, member app, RAE Link media network, backend migrations.",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  }
+}

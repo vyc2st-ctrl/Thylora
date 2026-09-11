@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<title>RAE Link — THYLORA owned media network</title>
+<meta name="description" content="RAE Link is THYLORA's owned audience and creator media network: channels, governed media publication, audience interaction, transparent creator earnings and payout evidence.">
+<link rel="stylesheet" href="./styles.css">
+<link rel="manifest" href="./manifest.webmanifest">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="mark" aria-hidden="true">◈</span>
+    <div><p class="eyebrow">THYLORA</p><h1>RAE Link</h1></div>
+  </div>
+  <div class="top-actions">
+    <span class="chip" id="backendChip" title="Backend provisioning state">BACKEND · CHECKING</span>
+    <span class="chip who" id="whoChip">SIGNED OUT</span>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="RAE Link sections">
+  <button class="active" data-view="watch">Watch</button>
+  <button data-view="search">Search</button>
+  <button data-view="following">Following</button>
+  <button data-view="studio">Creator Studio</button>
+  <button data-view="earnings">Earnings</button>
+  <button data-view="library">My Library</button>
+  <button data-view="partnership">Family Partnership</button>
+  <button data-view="build">Build Map</button>
+  <button data-view="account">Account</button>
+</nav>
+
+<main id="main">
+
+<!-- WATCH ------------------------------------------------------------------->
+<section id="watch" class="view active-view">
+  <div class="hero">
+    <p class="eyebrow">OWNED AUDIENCE · GOVERNED PUBLICATION</p>
+    <h2>The audience is ours. So is the record of what it paid for.</h2>
+    <p>RAE Link carries THYLORA media, EdereAriah world channels and admitted creators through one governed pipeline: rights first, then upload, validation, encoding, captions, moderation, publication, audience, ledger, payout evidence.</p>
+  </div>
+  <div class="notice" id="watchNotice" hidden></div>
+  <div class="row-head"><h3>Latest published</h3><button class="ghost" id="refreshFeed" type="button">Refresh</button></div>
+  <div class="feed" id="feedGrid"><p class="muted">Loading the published feed…</p></div>
+</section>
+
+<!-- SEARCH ------------------------------------------------------------------>
+<section id="search" class="view">
+  <p class="eyebrow">SEARCH</p><h2>Find a channel, a work, or a world.</h2>
+  <form class="searchbar" id="searchForm" role="search">
+    <label class="sr-only" for="searchInput">Search RAE Link</label>
+    <input id="searchInput" type="search" placeholder="Title, subject, channel, world place…" autocomplete="off">
+    <button type="submit">Search</button>
+  </form>
+  <div class="chips" id="searchFilters">
+    <button class="chip-btn active" data-kind="ALL" type="button">All</button>
+    <button class="chip-btn" data-kind="VIDEO" type="button">Video</button>
+    <button class="chip-btn" data-kind="AUDIO" type="button">Audio</button>
+    <button class="chip-btn" data-kind="IMAGE" type="button">Image</button>
+    <button class="chip-btn" data-kind="EDF" type="button">EDF</button>
+  </div>
+  <div class="feed" id="searchResults"><p class="muted">Enter a search to read the published index.</p></div>
+</section>
+
+<!-- FOLLOWING --------------------------------------------------------------->
+<section id="following" class="view">
+  <p class="eyebrow">FOLLOWING</p><h2>Channels you follow.</h2>
+  <p class="muted">Earth creators, businesses and EdereAriah world channels are always labelled by class. A world channel can never be presented as an Earth person.</p>
+  <div class="feed" id="followingList"><p class="muted">Sign in to load the channels you follow.</p></div>
+</section>
+
+<!-- CREATOR STUDIO ---------------------------------------------------------->
+<section id="studio" class="view">
+  <p class="eyebrow">CREATOR STUDIO</p><h2>Rights first. Then the work moves.</h2>
+  <div class="notice" id="studioNotice" hidden></div>
+
+  <div class="stage-rail" id="stageRail" aria-label="Media pipeline">
+    <span data-stage="INPUT">Input</span><span data-stage="RIGHTS_GATE">Rights</span>
+    <span data-stage="UPLOAD">Upload</span><span data-stage="VALIDATION">Validation</span>
+    <span data-stage="TRANSCODE">Encode</span><span data-stage="METADATA">Metadata</span>
+    <span data-stage="POSTER">Poster</span><span data-stage="MODERATION">Moderation</span>
+    <span data-stage="PUBLISHED">Publication</span>
+  </div>
+
+  <div class="split">
+    <form class="card form" id="assetForm">
+      <h3>1 · Declare the work</h3>
+      <label>Channel
+        <select name="channel_id" id="studioChannel" required><option value="">Loading channels…</option></select>
+      </label>
+      <label>Title<input name="title" required maxlength="180" placeholder="What is this work called?"></label>
+      <label>Kind
+        <select name="media_kind">
+          <option value="VIDEO">Video</option><option value="AUDIO">Audio</option>
+          <option value="IMAGE">Image</option><option value="EDF">EDF</option>
+          <option value="DOCUMENT">Document</option>
+        </select>
+      </label>
+      <label>Description<textarea name="description" rows="3" placeholder="What a viewer should understand before watching."></textarea></label>
+
+      <h3>2 · Rights and authority</h3>
+      <label>Ownership basis
+        <select name="ownership_basis" id="ownershipBasis" required>
+          <option value="">Select…</option>
+          <option value="OWNED_ORIGINAL">I own this original work</option>
+          <option value="AUTHORIZED_BY_RIGHTS_HOLDER">Authorized by the rights holder</option>
+          <option value="LICENSED">Licensed</option>
+          <option value="PUBLIC_DOMAIN">Public domain</option>
+          <option value="FAMILY_CONSENT">Family consent</option>
+          <option value="WORLD_PRODUCTION">World production (EdereAriah)</option>
+        </select>
+      </label>
+      <label>Rights holder<input name="rights_holder_name" placeholder="Required unless the work is your own original"></label>
+      <label>Licence reference<input name="license_ref" placeholder="Contract, licence or release reference"></label>
+      <label>Provenance<textarea name="provenance" rows="2" placeholder="Where this came from: captured, created, derived, restored, AI-assisted…"></textarea></label>
+      <label class="check"><input type="checkbox" name="ai_disclosure"> This work used generative tooling and will be labelled</label>
+      <button type="submit">Save draft and run the rights gate</button>
+      <p class="status" id="assetStatus"></p>
+    </form>
+
+    <div class="card">
+      <h3>3 · Publication gate</h3>
+      <p class="muted">Every unmet prerequisite is listed with the route that clears it. A creator is never told only “not ready”.</p>
+      <div id="gateReport"><p class="muted">Select a draft to check its gate.</p></div>
+      <h3>Your drafts</h3>
+      <div id="draftList"><p class="muted">Sign in to load your channel drafts.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EARNINGS ---------------------------------------------------------------->
+<section id="earnings" class="view">
+  <p class="eyebrow">CREATOR EARNINGS</p><h2>No opaque net proceeds.</h2>
+  <p class="muted">Every lane shows gross revenue, processor fees, refunds, chargebacks, tax state, platform share, creator or beneficiary share, net payable, payment date and payment evidence.</p>
+  <div class="notice" id="earningsNotice" hidden></div>
+  <form class="searchbar" id="statementForm">
+    <label class="sr-only" for="statementChannel">Channel</label>
+    <select id="statementChannel"><option value="">Select a channel…</option></select>
+    <input type="date" id="statementFrom" aria-label="Period start">
+    <input type="date" id="statementTo" aria-label="Period end">
+    <button type="submit">Read statement</button>
+  </form>
+  <div id="statementOut"><p class="muted">Select a channel and period.</p></div>
+
+  <h3>Worked example</h3>
+  <p class="muted">Computed live by <code>rae-link/lib/ledger.js</code>, the same math the backend settlement function uses. Change a number and the whole statement re-derives.</p>
+  <form class="calc" id="calcForm">
+    <label>Lane<select name="lane_code" id="calcLane"></select></label>
+    <label>Gross (minor units)<input name="gross_minor" type="number" value="10000" min="0" step="1"></label>
+    <label>Processor fee<input name="processor_fee_minor" type="number" value="320" min="0" step="1"></label>
+    <label>Refunds<input name="refund_minor" type="number" value="0" min="0" step="1"></label>
+    <label>Chargebacks<input name="chargeback_minor" type="number" value="0" min="0" step="1"></label>
+    <label>Tax<input name="tax_minor" type="number" value="0" min="0" step="1"></label>
+    <label>Tax state<select name="tax_state">
+      <option value="NOT_APPLICABLE">Not applicable</option>
+      <option value="PLATFORM_REMITTED">Platform remitted</option>
+      <option value="CREATOR_RESPONSIBLE">Creator responsible</option>
+      <option value="UNRESOLVED">Unresolved</option>
+    </select></label>
+    <label>Platform share (bp)<input name="platform_share_bp" type="number" value="2000" min="0" max="10000" step="1"></label>
+    <label>Creator share (bp)<input name="creator_share_bp" type="number" value="8000" min="0" max="10000" step="1"></label>
+    <label>Beneficiary share (bp)<input name="beneficiary_share_bp" type="number" value="0" min="0" max="10000" step="1"></label>
+    <label>Beneficiary<input name="beneficiary_ref" placeholder="Named beneficiary (required if share > 0)"></label>
+  </form>
+  <div id="calcOut"></div>
+</section>
+
+<!-- LIBRARY ----------------------------------------------------------------->
+<section id="library" class="view">
+  <p class="eyebrow">MY LIBRARY</p><h2>What you paid for stays yours.</h2>
+  <p class="muted">A purchase grants a perpetual entitlement. Ending a subscription ends future subscription-only access; it never deletes a purchased entitlement, and it never erases a creator's own archive.</p>
+  <div class="feed" id="libraryList"><p class="muted">Sign in to load your entitlements.</p></div>
+</section>
+
+<!-- FAMILY PARTNERSHIP ------------------------------------------------------->
+<section id="partnership" class="view">
+  <p class="eyebrow">FAMILY STORY PARTNERSHIP · GIVEFORWARD STUDIO</p>
+  <h2>Help without a spectacle, and without a hidden percentage.</h2>
+  <p>A family may take part voluntarily and choose how the story is told: private, pseudonymous, limited or public. The beneficiary percentage is declared before publication and is shown with the story and in every statement.</p>
+  <div class="prohibitions" id="prohibitionList"></div>
+  <div class="split">
+    <form class="card form" id="partnershipForm">
+      <h3>Declare a partnership</h3>
+      <label>Family label<input name="family_label" required placeholder="Family or branch name, or a chosen pseudonym"></label>
+      <label>How should the story be told?
+        <select name="storytelling_mode">
+          <option value="PRIVATE">Private — no public story</option>
+          <option value="PSEUDONYMOUS">Pseudonymous — told without real names</option>
+          <option value="LIMITED">Limited — a stated audience only</option>
+          <option value="PUBLIC">Public</option>
+        </select>
+      </label>
+      <label>Who receives the beneficiary share?<input name="beneficiary_ref" required placeholder="Named beneficiary"></label>
+      <label>Beneficiary share (basis points, 10000 = 100%)<input name="beneficiary_share_bp" type="number" min="1" max="10000" value="5000" required></label>
+      <label>Purpose, in the family's own words<textarea name="purpose_statement" rows="3" required></textarea></label>
+      <label>Is any participant a child?
+        <select name="subject_kind"><option value="ADULT">No</option><option value="MINOR">Yes — guardian authority required</option><option value="FAMILY">A family group</option></select>
+      </label>
+      <button type="submit">Check this declaration</button>
+      <p class="status" id="partnershipStatus"></p>
+    </form>
+    <div class="card">
+      <h3>What this declaration produces</h3>
+      <div id="partnershipPreview"><p class="muted">Fill the form to see the split, the mode and the safeguards that apply.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BUILD MAP --------------------------------------------------------------->
+<section id="build" class="view">
+  <p class="eyebrow">PROVIDER MAP</p><h2>Capabilities, not vendors.</h2>
+  <p class="muted">Every capability names at least two alternates and an exit cost. An unchosen provider shows as an open decision rather than a silent default. Nothing here opens an account or stores a credential.</p>
+  <div class="stats" id="lockinStats"></div>
+  <div class="provider-table" id="providerTable"></div>
+</section>
+
+<!-- ACCOUNT ----------------------------------------------------------------->
+<section id="account" class="view">
+  <p class="eyebrow">ACCOUNT</p><h2>One THYLORA sign-in.</h2>
+  <p class="muted">RAE Link uses the same protected THYLORA identity as the member app. Signing in here signs you in there. Credentials go straight to THYLORA authentication and are never written into media, family or ledger records.</p>
+  <div class="card form" id="signedOut">
+    <label>Email<input id="loginEmail" type="email" autocomplete="username"></label>
+    <label>Password<input id="loginPassword" type="password" autocomplete="current-password"></label>
+    <div class="btn-row">
+      <button id="signInBtn" type="button">Sign in</button>
+      <button id="signUpBtn" class="ghost" type="button">Create viewer account</button>
+    </div>
+    <p class="status" id="authStatus"></p>
+  </div>
+  <div class="card" id="signedIn" hidden>
+    <strong id="memberLabel">Signed in</strong>
+    <p class="muted">Creator tools, earnings, library and partnership records now read under owner-scoped backend rules.</p>
+    <button id="signOutBtn" class="ghost" type="button">Sign out</button>
+  </div>
+  <div class="card">
+    <h3>What RAE Link stores about a viewer</h3>
+    <ul class="plain">
+      <li>Account identity held by THYLORA authentication.</li>
+      <li>Coarse country and a rotating session key on view events. No IP address and no precise location.</li>
+      <li>Follows, reactions, comments and purchases you made.</li>
+      <li>No advertising identifier, and no cross-site tracking identifier.</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>RAE Link · Workroom WR-RAELINK-001 · one backend · one source of truth · access is not authority</p>
+  <p class="muted">Earth creators are real people. EdereAriah inhabitants and world channels are simulated world media and are labelled as such wherever they appear.</p>
+</footer>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>
