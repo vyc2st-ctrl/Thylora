@@ -252,14 +252,173 @@ If this work resumes cold, start here:
 
 ---
 
+
+---
+
+# DELTA 2 · MVP production slice
+**Opened:** 2026-09-11 · continues from the merged spine at `61b974a`. The
+architecture was not redesigned; this slice builds the first usable creator and
+viewer path on top of it.
+
+## WHAT BUILT
+
+### Creator path — create channel → upload → rights → draft → publish check
+
+| Piece | Where |
+|---|---|
+| Channel creation, with class truth checked before insert | `rael_create_channel` · `views/studio-upload.js` |
+| Resumable upload engine (chunk plan, progress, pause, resume, retry with backoff, recovery) | `lib/upload.js` |
+| Upload custody in our own database (session resumes, never restarts) | `rael_start_upload` / `rael_record_chunk` / `rael_complete_upload` |
+| TUS 1.0.0 transport — the real protocol, provider-agnostic, carries no credential of its own | `lib/upload.js` |
+| Structural file validation by magic bytes, size and content hash | `lib/media.js` · `rael_record_validation` |
+| Poster and thumbnail capture in the browser (no transcode provider needed) | `lib/media.js` `capturePoster` |
+| Metadata normalization and caption (WebVTT) validation | `lib/media.js` |
+| Publication gate, already built in the spine, now reachable from the draft list | `rael_publish_gate` |
+
+### Viewer path — open channel → watch → follow → comment/react
+
+| Piece | Where |
+|---|---|
+| Channel page with follower count, follow toggle, staff-only draft visibility | `rael_channel_page` · `views/channel.js` |
+| Watch page with player, captions track, rights line, version marker | `rael_watch_page` · `views/watch.js` |
+| Follows and five reaction kinds | `rael_toggle_follow` · `rael_set_reaction` |
+| Governed comments: structural screening, rate limit, held-not-deleted | `rael_post_comment` · `rael_screen_comment` · `lib/moderation.js` |
+| Comment visibility decided server-side; author and staff always see held comments | `rael_list_comments` |
+| Staff moderation with a checked transition and a recorded reason | `rael_moderate_comment` · `rael_comment_moderation` |
+| Report hooks routing rights claims to takedown and safety to review | `rael_submit_report` · `lib/moderation.js` `routeReport` |
+
+### Cross-cutting
+
+- **QYRIS error and gap surface** (`lib/qyris.js`): every failure becomes a record
+  with severity, route, whether the work survived, and what to do next. Database
+  constraint names are translated into sentences a person can act on.
+- **Accessibility hooks** (`lib/a11y.js`): live-region announcements, focus
+  management on view change, focus trap and restore in the report dialog,
+  reduced-motion respect, and a spoken description of the Earth/simulated
+  distinction so the class label is not colour-only.
+- **Shareable routes** (`lib/router.js`): `#channel/<slug>` and `#player/<asset>`
+  are real addresses, and a param route with no param falls back instead of
+  rendering nothing.
+- **Deployment config** (`config.js`): one place to wire an upload endpoint. It is
+  `null`, and the surface says so rather than pretending.
+
+### Schema
+
+`db/rae-link/0011_mvp_slice.sql` — 601 lines, additive. One new table
+(`rael_comment_moderation`), four new columns, 14 new functions. Totals after
+0011: **41 tables · 28 functions · 39 RLS policies · 90 check constraints.**
+
+## WHAT TESTED
+
+| Suite | Result |
+|---|---|
+| `npm test` — unit | **104 passing** (ledger 15, pipeline 15, rights 13, providers 5, upload 18, media 12, moderation 15, qyris 11) |
+| `npm run test:db` — schema | **exit 0**: 11 migrations apply cleanly, then again for idempotency; 10/10 constraint rejections fire |
+| `npm run test:db` — isolation | **23/23 passing** cross-user checks |
+| `npm run test:e2e` — browser | **18 passing** in Chromium at 390×844 and 320×640 |
+
+Against the mission's test list:
+
+| Required | Evidence |
+|---|---|
+| Build | Page loads in Chromium with no uncaught script error |
+| Unit tests | 104 passing |
+| Rights gate | Gate returns every unmet prerequisite with its route; unresolved basis never passes; expired term blocks |
+| Unauthorized path | Member A cannot start an upload, record a chunk, moderate a comment, publish, read a statement or settle money on member B's records — 23 checks, all refused |
+| Failed upload recovery | Persistent failure returns `recoverable`, keeps recorded chunks, and a fresh engine recovers server-side state and finishes without re-sending chunk 0 |
+| Private/draft/public states | A draft is invisible to a stranger on the table, on the channel page and on the watch page; visible to its own channel staff |
+| Comment moderation state | Screening holds rather than deletes; REMOVED is terminal; an author always sees their own held comment; a stranger never does |
+| Mobile viewport | No horizontal scroll at 390px or 320px; 44px touch targets; heading clears the sticky bar |
+| No cross-user data leakage | 23/23 — including upload sessions, entitlements, ledger entries, revenue events, payouts and consents |
+
+### Three real defects the tests caught and this delta fixes
+
+1. **RLS was never the thing deciding access.** The migrations granted no table
+   privileges to `anon`/`authenticated`, so on a clean Postgres every policy was
+   dead weight behind a blanket table-level denial. Supabase projects usually
+   carry blanket grants, but the live backend could not be inspected (B1), so
+   assuming them was exactly the wrong move. `0008` now states the privileges it
+   needs — read granted broadly and narrowed by policy, write granted only where
+   a policy exists, and never on money, consent or audit tables.
+2. **`[hidden]` did not hide.** `.form label{display:block}` overrode it, which
+   showed the simulated-media disclosure field on an Earth channel — a mislabeling
+   bug in the exact place this product must not have one.
+3. **Touch targets were 36px**, below the 44px minimum, on the primary navigation.
+
+Each now has a test that fails if it regresses.
+
+## WHAT IS LIVE
+
+**Nothing is live.** No deployment happened in this slice and none was requested.
+The surface runs locally; the branch is pushed; the Chairman dashboard, its
+baseline and its authority document remain untouched.
+
+## WHAT IS ONLY LOCAL
+
+| Item | Status |
+|---|---|
+| `db/rae-link/0001…0011` | Validated on local PostgreSQL 16 — **not applied to the live backend** |
+| The RAE Link surface | Runs against a local static server; not deployed |
+| Backend reads | Never executed against `thylora-dash` — egress to that host is denied (B1) |
+| Upload bytes | Never moved. No storage or upload provider is configured, and none was invented |
+| Screenshots | `tests/e2e/evidence-*.png`, captured locally at 390px |
+
+## BLOCKERS
+
+Carried from the spine, unchanged unless noted:
+
+- **B1 · Backend unreachable** — `jvsdxhrfhtlgaknhjxlz.supabase.co:443` still
+  returns 403 on CONNECT from this session's egress policy. Everything in this
+  slice is therefore validated locally and unverified against the live backend.
+- **B2 · Production DDL held** for Chairman execution. 0011 joins 0001–0010.
+- **B3/B4 · Provider decisions** — 16 open. This slice is blocked most directly by
+  `object_storage` + `resumable_upload` (no bytes move) and `video_transcode`
+  (no playback). The engine, the custody records and the TUS client are finished
+  and waiting on an endpoint, not on more code.
+- **B5 · Legal** · **B6 · Mobile store acceptance** · **B7 · Costs modelled, not quoted** — unchanged.
+- **New, minor: no automated malware scan.** `lib/media.js` checks structure and
+  says plainly it is not a malware scan; the publish gate blocks on a missing
+  scan regardless. Closing this needs the `virus_scan` provider decision.
+
+## NEXT EXECUTABLE
+
+None of these needs an authority this session lacked:
+
+1. Playback controls and resume position on the watch page (tables exist).
+2. Comment threading in the UI — `parent_id` is already stored and returned.
+3. Notification surface reading `rael_notifications` (follows, held comments, moderation outcomes).
+4. Creator moderation queue: one page listing held comments and open reports across a channel's media.
+5. Caption upload wired to `rael_media_captions` using the existing `validateVtt`.
+6. Channel settings: rename, description, avatar, staff roles via `rael_channel_members`.
+
+Blocked until a provider decision: real byte upload, transcoding, playback URLs,
+malware scanning.
+
+## RESTART VECTOR — DELTA 2
+
+1. `npm test` → 104 passing. `npm run test:e2e` → 18 passing (needs
+   `/opt/pw-browsers/chromium`). `sudo service postgresql start && npm run test:db`
+   → exit 0, 23/23 isolation.
+2. Check B1 first: if the backend is reachable, read the live schema, then apply
+   `0001…0011` under Chairman execution.
+3. If the migrations are applied: open `/rae-link#studio`, create a channel, select
+   the draft, attach a file. Everything up to the byte transfer will work; the
+   upload panel will name the missing provider.
+4. To wire uploads: set `upload_endpoint` in `rae-link/config.js` to a TUS endpoint
+   and nothing else changes — the engine, the chunk map and the recovery path are done.
+5. Do not: deploy, apply DDL without Chairman execution, open a vendor account,
+   default an OPEN provider decision, or build a dashboard here.
+
 ## 7 · State
 
 | | |
 |---|---|
 | Workroom | **OPEN** |
-| Schema | Written · **validated on PostgreSQL 16** · idempotent · **not applied to the live backend** (B1, B2) |
-| Surface | Built · runs · degrades honestly without the backend |
-| Tests | 48 / 48 JavaScript · 10 / 10 migrations applied · 10 / 10 constraint rejections · SQL↔JS parity confirmed |
+| Schema | 0001–0011 written · **validated on PostgreSQL 16** · idempotent · **not applied to the live backend** (B1, B2) |
+| Surface | Spine + MVP slice built · runs · degrades honestly without the backend · not deployed |
+| Tests | **104 unit · 18 browser · 23 cross-user isolation · 10 constraint rejections · 11 migrations × 2 passes** |
+| Creator path | Create channel → upload (engine done, transport open) → rights → draft → publish check |
+| Viewer path | Open channel → watch → follow → comment/react → report |
 | Provider decisions | 9 of 25 chosen · 16 open (B3, B4) |
 | Legal | Held (B5) |
 | Mobile store | Held (B6) |

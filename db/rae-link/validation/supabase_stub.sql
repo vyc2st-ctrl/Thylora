@@ -11,3 +11,9 @@ create or replace function auth.uid() returns uuid language sql stable as $$
 $$;
 do $$ begin create role anon; exception when duplicate_object then null; end $$;
 do $$ begin create role authenticated; exception when duplicate_object then null; end $$;
+
+-- Supabase grants the client roles usage on the auth schema so policies can call
+-- auth.uid(). Reproduced here so local validation matches the real environment.
+grant usage on schema auth to anon, authenticated;
+grant usage on schema public to anon, authenticated;
+grant select on table auth.users to authenticated;

@@ -87,6 +87,8 @@
     <span data-stage="PUBLISHED">Publication</span>
   </div>
 
+  <div id="channelFormHost"></div>
+
   <div class="split">
     <form class="card form" id="assetForm">
       <h3>1 · Declare the work</h3>
@@ -131,7 +133,15 @@
       <div id="draftList"><p class="muted">Sign in to load your channel drafts.</p></div>
     </div>
   </div>
+
+  <div id="uploadHost"></div>
 </section>
+
+<!-- CHANNEL PAGE (route: #channel/<slug>) ----------------------------------->
+<section id="channel" class="view" aria-label="Channel"></section>
+
+<!-- WATCH PAGE (route: #player/<asset id>) ---------------------------------->
+<section id="player" class="view" aria-label="Watch"></section>
 
 <!-- EARNINGS ---------------------------------------------------------------->
 <section id="earnings" class="view">

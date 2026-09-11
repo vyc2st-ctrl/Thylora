@@ -259,4 +259,59 @@ create policy rael_partnership_read on rael_family_partnerships
     )
   );
 
+
+-- Table privileges -----------------------------------------------------------
+-- RLS only narrows what a role may already touch. Without an explicit grant the
+-- client roles are denied at the table level and every policy above is dead
+-- weight. Supabase projects usually carry blanket grants on the public schema,
+-- but this migration does not assume that: it states the privileges it needs, so
+-- the same schema behaves identically on any Postgres.
+--
+-- Read is granted broadly and constrained by policy. Write is granted ONLY where
+-- a matching policy exists, and never on money, consent or audit tables — those
+-- are written by security-definer functions under the service role.
+
+do $$
+declare t text;
+begin
+  -- Public-readable surfaces: anyone, including a signed-out viewer.
+  foreach t in array array[
+    'rael_profiles','rael_channels','rael_media_assets','rael_media_renditions',
+    'rael_media_captions','rael_revenue_lanes','rael_split_policies',
+    'rael_partnership_prohibitions','rael_subscription_plans','rael_asset_products',
+    'rael_comments','rael_reactions','rael_follows','rael_family_partnerships'
+  ] loop
+    execute format('grant select on table %I to anon, authenticated', t);
+  end loop;
+
+  -- Member-only reads. Every one of these is row-restricted by policy above.
+  foreach t in array array[
+    'rael_channel_members','rael_upload_sessions','rael_pipeline_events',
+    'rael_scan_results','rael_moderation_reviews','rael_rights_records',
+    'rael_provenance_events','rael_consents','rael_asset_consents',
+    'rael_reports','rael_appeals','rael_takedown_requests','rael_notifications',
+    'rael_revenue_events','rael_ledger_entries','rael_payouts','rael_payout_lines',
+    'rael_adjustments','rael_entitlements','rael_purchases','rael_subscriptions',
+    'rael_partnership_assets','rael_accessibility_waivers','rael_view_rollup_daily'
+  ] loop
+    execute format('grant select on table %I to authenticated', t);
+  end loop;
+
+  -- Writes, only where a policy exists to constrain them.
+  execute 'grant insert, update on table rael_profiles to authenticated';
+  execute 'grant insert, update on table rael_channels to authenticated';
+  execute 'grant insert, update, delete on table rael_follows to authenticated';
+  execute 'grant insert, update, delete on table rael_reactions to authenticated';
+  execute 'grant insert, update on table rael_comments to authenticated';
+  execute 'grant insert on table rael_reports to authenticated';
+  execute 'grant insert, update on table rael_media_assets to authenticated';
+  execute 'grant insert, update on table rael_rights_records to authenticated';
+  execute 'grant insert on table rael_provenance_events to authenticated';
+  execute 'grant update on table rael_notifications to authenticated';
+end $$;
+
+-- Deliberately NOT granted to any client role: rael_view_events (written only by
+-- rael_capture_view), rael_rate_counters (limits a client must not be able to
+-- reset), rael_comment_moderation, and every money table's write side.
+
 commit;

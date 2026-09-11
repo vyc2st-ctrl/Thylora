@@ -7,6 +7,9 @@
   --good:#82d8a0; --warn:#f0c674; --bad:#ff9a9a; --radius:16px;
 }
 *{box-sizing:border-box}
+/* A hidden element stays hidden, whatever a later display rule says. Without
+   this, `.form label{display:block}` re-showed fields the code had hidden. */
+[hidden]{display:none!important}
 body{margin:0;background:var(--bg);color:var(--text);
   font:16px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   -webkit-text-size-adjust:100%}
@@ -37,11 +40,16 @@ code{background:#0a1119;border:1px solid var(--line);border-radius:6px;padding:1
 .tabs{display:flex;gap:8px;overflow-x:auto;padding:12px 16px;border-bottom:1px solid var(--line);
   position:sticky;top:0;z-index:30;background:rgba(10,14,20,.96);backdrop-filter:blur(10px)}
 .tabs button{flex:0 0 auto;border:1px solid var(--line);background:#131a25;color:var(--text);
-  border-radius:999px;padding:9px 15px;font-weight:700;font-size:.92rem;cursor:pointer}
+  border-radius:999px;padding:11px 16px;min-height:44px;font-weight:700;font-size:.92rem;cursor:pointer}
 .tabs button.active{background:var(--gold-deep);border-color:#a0792d;color:#fff}
 
 main{max-width:1180px;margin:0 auto;padding:20px 16px 64px}
 .view{display:none}.view.active-view{display:block}
+/* The tab bar is sticky, so anything scrolled to must clear it — otherwise
+   focusing a view puts its own heading underneath the navigation. */
+html{scroll-padding-top:84px}
+.view,.comments,.channel-head{scroll-margin-top:84px}
+.view:focus{outline:none}
 
 .hero{border:1px solid #3b2f1d;border-radius:22px;padding:24px;margin-bottom:18px;
   background:radial-gradient(circle at 82% 12%,rgba(224,179,91,.18),transparent 32%),
@@ -64,7 +72,7 @@ main{max-width:1180px;margin:0 auto;padding:20px 16px 64px}
 .form .check{display:flex;align-items:center;gap:9px;font-weight:600}
 .form .check input{width:auto;margin:0}
 button{border:1px solid #3a4654;background:#1a2330;color:var(--text);border-radius:11px;
-  padding:11px 16px;font-weight:750;font-size:.95rem;cursor:pointer}
+  padding:11px 16px;min-height:44px;font-weight:750;font-size:.95rem;cursor:pointer}
 button[type=submit],#signInBtn{background:var(--gold-deep);border-color:#a0792d;color:#fff}
 button.ghost{background:#131a25}
 button:disabled{opacity:.55;cursor:not-allowed}
@@ -75,7 +83,7 @@ button:disabled{opacity:.55;cursor:not-allowed}
 .searchbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
 .searchbar input,.searchbar select{flex:1 1 180px;margin-top:0;width:auto}
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
-.chip-btn{border-radius:999px;padding:8px 14px;font-size:.86rem}
+.chip-btn{border-radius:999px;padding:10px 14px;min-height:44px;font-size:.86rem}
 .chip-btn.active{background:var(--gold-deep);border-color:#a0792d}
 
 .feed{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
@@ -157,3 +165,97 @@ footer{border-top:1px solid var(--line);padding:20px 16px 40px;text-align:center
   body{font-size:17px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ============================================================================
+   MVP SLICE · channel page, watch page, upload custody
+   Mobile-first: every rule below is written for a phone, then widened.
+   ========================================================================== */
+
+.crumbs{display:flex;gap:8px;align-items:center;font-size:.85rem;margin-bottom:12px;flex-wrap:wrap}
+.crumbs a{text-decoration:none}
+
+/* --- channel page ---------------------------------------------------------- */
+.channel-head{border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin-bottom:18px;
+  background:linear-gradient(160deg,var(--panel),var(--panel-2))}
+.channel-head.is-world{border-color:#5a4a86;
+  background:linear-gradient(160deg,#171430,#0d0f1c)}
+.channel-head h2{margin-bottom:10px}
+.channel-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:14px}
+.disclosure{border-left:3px solid #8b78c9;background:#141230;border-radius:0 12px 12px 0;
+  padding:11px 14px;margin:12px 0;font-size:.92rem}
+.tag.draft{border-color:#6b5a2f;color:var(--warn)}
+.tag.staff{border-color:#2f6b46;color:var(--good)}
+.tag.held{border-color:#6b5a2f;color:var(--warn)}
+
+/* tiles become links in this slice; keep them keyboard-visible */
+a.tile{text-decoration:none;color:var(--text);display:flex;flex-direction:column}
+a.tile:focus-visible,button:focus-visible,a:focus-visible,input:focus-visible,
+select:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.tile .poster{position:relative;overflow:hidden}
+.tile .poster img{width:100%;height:100%;object-fit:cover}
+.tile .poster .length{position:absolute;right:7px;bottom:7px;background:rgba(0,0,0,.78);
+  border-radius:6px;padding:2px 6px;font-size:.72rem;font-weight:700}
+
+/* --- watch page ------------------------------------------------------------ */
+.player{border-radius:var(--radius);overflow:hidden;background:#05080d;border:1px solid var(--line);
+  margin-bottom:14px}
+.player.is-world{border-color:#5a4a86}
+.player video,.player audio{width:100%;display:block;background:#000}
+.player audio{padding:14px;background:var(--panel)}
+.player-empty{padding:22px;text-align:center}
+.player-empty .poster-still{max-width:100%;border-radius:12px;margin-top:12px}
+.meta-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:.9rem;margin-bottom:10px}
+.description{white-space:pre-wrap;overflow-wrap:anywhere}
+.rights-line{font-size:.84rem}
+.reaction-row{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0;padding-bottom:16px;
+  border-bottom:1px solid var(--line)}
+.reaction-row .chip-btn b{font-variant-numeric:tabular-nums;margin-left:4px}
+.chip-btn.report{margin-left:auto}
+
+/* --- comments -------------------------------------------------------------- */
+.comment-form textarea{width:100%;background:#070c12;color:var(--text);border:1px solid #33414f;
+  border-radius:11px;padding:12px;font:inherit;resize:vertical}
+.comment-form .btn-row{margin-top:9px;align-items:center}
+.comment{border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:9px;background:var(--panel-2)}
+.comment.is-held{border-left:3px solid var(--warn)}
+.comment .who{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:.82rem;margin-bottom:6px}
+.comment .body{margin:0;white-space:pre-wrap;overflow-wrap:anywhere}
+.comment .notice-line{margin:8px 0 0;font-size:.82rem;color:var(--warn)}
+.staff-actions{margin-top:9px}
+.staff-actions button{padding:9px 12px;min-height:44px;font-size:.84rem}
+
+/* --- dialog ---------------------------------------------------------------- */
+.modal{position:fixed;inset:0;z-index:200;background:rgba(4,7,11,.82);display:flex;
+  align-items:flex-end;justify-content:center;padding:0}
+.modal[hidden]{display:none}
+.modal-card{width:100%;max-width:520px;background:var(--panel);border:1px solid var(--line);
+  border-radius:18px 18px 0 0;padding:20px;max-height:88dvh;overflow:auto}
+.modal-card label{display:block;margin-bottom:12px;font-size:.86rem;font-weight:700;color:var(--muted)}
+.modal-card input,.modal-card select,.modal-card textarea{width:100%;margin-top:6px;background:#070c12;
+  color:var(--text);border:1px solid #33414f;border-radius:11px;padding:12px;font:inherit;font-weight:400}
+
+/* --- upload custody -------------------------------------------------------- */
+.draft-item{width:100%;text-align:left;display:block;margin-bottom:8px;cursor:pointer}
+.draft-item.selected{border-color:var(--gold);background:#1a1509}
+.progress-shell{margin:14px 0}
+.progress-bar{height:10px;border-radius:999px;background:#0a1119;border:1px solid var(--line);overflow:hidden}
+.progress-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold-deep),var(--gold));
+  transition:width .25s ease}
+.progress-line{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin:8px 0 0;font-size:.88rem}
+.progress-line #progressText{font-weight:800;font-variant-numeric:tabular-nums}
+dl.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:12px 0;font-size:.88rem}
+dl.kv dt{color:var(--muted);font-weight:700}
+dl.kv dd{margin:0;overflow-wrap:anywhere}
+dl.kv dd.good{color:var(--good)}
+dl.kv dd.bad{color:var(--bad)}
+.poster-preview{margin:12px 0 0}
+.poster-preview img{max-width:100%;border-radius:12px;border:1px solid var(--line)}
+.notice .recovery{display:block;margin-top:6px;color:var(--text)}
+
+@media (prefers-reduced-motion:reduce){.progress-bar i{transition:none}}
+
+@media (min-width:760px){
+  .modal{align-items:center;padding:20px}
+  .modal-card{border-radius:18px}
+  .player video{max-height:70dvh}
+}

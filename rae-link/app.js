@@ -14,23 +14,45 @@ import { publishGate, STAGES } from './lib/pipeline.js';
 import { evaluateRightsGate, validatePartnership, validateChannelTruth, PARTNERSHIP_PROHIBITIONS }
   from './lib/rights.js';
 import { CAPABILITIES, resolve, lockInRisk } from './lib/providers.js';
+import { classify, gapReport } from './lib/qyris.js';
+import { announce, focusView } from './lib/a11y.js';
+import { renderChannel, classBadge } from './views/channel.js';
+import { renderWatch } from './views/watch.js';
+import { renderChannelForm, renderUploadPanel } from './views/studio-upload.js';
+import { parseRoute, buildHash } from './lib/router.js';
 
 const $ = id => document.getElementById(id);
 const esc = (value = '') => String(value).replace(/[&<>'"]/g,
   c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[c]));
 
 /* ---------------------------------------------------------------- navigation */
-function showView(id) {
+let currentRoute = { view: 'watch', param: null };
+
+function showView(id, param = null, { updateHash = true } = {}) {
   const target = document.getElementById(id) ? id : 'watch';
+  currentRoute = { view: target, param };
   document.querySelectorAll('.view').forEach(v => v.classList.toggle('active-view', v.id === target));
   document.querySelectorAll('[data-view]').forEach(b => b.classList.toggle('active', b.dataset.view === target));
-  history.replaceState(null, '', `#${target}`);
+  if (updateHash) history.replaceState(null, '', buildHash(target, param));
+
   if (target === 'following') loadFollowing();
   if (target === 'studio') loadStudio();
   if (target === 'earnings') loadChannelOptions($('statementChannel'));
   if (target === 'library') loadLibrary();
+  if (target === 'channel' && param) renderChannel(param, $('channel'));
+  if (target === 'player' && param) renderWatch(param, $('player'));
+  if (!['channel', 'player'].includes(target)) focusView(document.getElementById(target));
 }
-document.querySelectorAll('[data-view]').forEach(b => b.addEventListener('click', () => showView(b.dataset.view)));
+
+document.querySelectorAll('[data-view]').forEach(b =>
+  b.addEventListener('click', () => showView(b.dataset.view)));
+
+window.addEventListener('hashchange', () => {
+  const route = parseRoute(location.hash);
+  if (route.view !== currentRoute.view || route.param !== currentRoute.param) {
+    showView(route.view, route.param, { updateHash: false });
+  }
+});
 
 /* ----------------------------------------------------------- backend posture */
 function notice(element, { title, detail, hint, bad = false }) {
@@ -124,14 +146,15 @@ function tile(item) {
   const channel = item.channel ?? {};
   const seconds = Number(item.duration_seconds || 0);
   const length = seconds ? `${Math.floor(seconds / 60)}m ${seconds % 60}s` : '';
-  return `<article class="tile">
-    <div class="poster" aria-hidden="true">${item.media_kind === 'AUDIO' ? '♪' : item.media_kind === 'EDF' ? '◆' : '▷'}</div>
-    <div class="body">
+  const href = item.asset_id ? `#player/${esc(item.asset_id)}` : '#watch';
+  return `<a class="tile" href="${href}">
+    <span class="poster" aria-hidden="true">${item.media_kind === 'AUDIO' ? '♪' : item.media_kind === 'EDF' ? '◆' : '▷'}</span>
+    <span class="body">
       <strong>${esc(item.title)}</strong>
       <span class="meta">${esc(channel.name ?? 'Channel')}${length ? ` · ${length}` : ''}</span>
       <span class="meta">${item.published_at ? new Date(item.published_at).toLocaleDateString() : ''}</span>
-      ${classTag(channel)}
-    </div></article>`;
+      ${classBadge(channel)}
+    </span></a>`;
 }
 
 async function loadFeed() {
@@ -222,6 +245,8 @@ async function loadChannelOptions(select) {
 let studioDrafts = [];
 
 async function loadStudio() {
+  if ($('channelFormHost') && !$('channelForm')) renderChannelForm($('channelFormHost'));
+  if ($('uploadHost') && !$('uploadCard')) renderUploadPanel($('uploadHost'), {});
   await loadChannelOptions($('studioChannel'));
   const list = $('draftList');
   if (!getSession()?.access_token) { list.innerHTML = '<p class="muted">Sign in to load your channel drafts.</p>'; return; }
@@ -235,12 +260,18 @@ async function loadStudio() {
   }
   studioDrafts = result.data ?? [];
   list.innerHTML = studioDrafts.length ? studioDrafts.map(d =>
-    `<button type="button" class="card" style="width:100%;text-align:left" data-draft="${esc(d.id)}">
+    `<button type="button" class="card draft-item" data-draft="${esc(d.id)}" data-title="${esc(d.title)}">
       <strong>${esc(d.title)}</strong>
       <span class="meta muted">${esc(d.asset_code ?? '')} · ${esc(d.media_kind)} · ${esc(d.pipeline_state)}</span>
     </button>`).join('') : '<p class="muted">No drafts on your channels yet.</p>';
   list.querySelectorAll('[data-draft]').forEach(button =>
-    button.addEventListener('click', () => runGate(button.dataset.draft)));
+    button.addEventListener('click', () => {
+      list.querySelectorAll('[data-draft]').forEach(b => b.classList.remove('selected'));
+      button.classList.add('selected');
+      runGate(button.dataset.draft);
+      renderUploadPanel($('uploadHost'), { assetId: button.dataset.draft, assetTitle: button.dataset.title });
+      announce(`Selected draft ${button.dataset.title}.`);
+    }));
   paintStages(studioDrafts[0]?.pipeline_state ?? 'INPUT');
 }
 
@@ -577,6 +608,12 @@ function populateLanes() {
   renderProviders();
   renderPartnership();
   authUI();
-  showView((location.hash || '#watch').slice(1));
+  const route = parseRoute(location.hash || '#watch');
+  showView(route.view, route.param, { updateHash: false });
+  document.addEventListener('rael:channels-changed', () => {
+    loadChannelOptions($('studioChannel'));
+    loadChannelOptions($('statementChannel'));
+  });
+  document.addEventListener('rael:asset-changed', () => loadStudio());
   checkBackend().then(loadFeed);
 })();
