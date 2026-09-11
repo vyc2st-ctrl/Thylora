@@ -1,8 +1,25 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/", "destination": "/public-site/index.html" },
-    { "source": "/app", "destination": "/app/index.html" },
-    { "source": "/app/", "destination": "/app/index.html" }
+    {
+      "source": "/",
+      "destination": "/public-site/index.html"
+    },
+    {
+      "source": "/app",
+      "destination": "/app/index.html"
+    },
+    {
+      "source": "/app/",
+      "destination": "/app/index.html"
+    },
+    {
+      "source": "/rae-link",
+      "destination": "/rae-link/index.html"
+    },
+    {
+      "source": "/rae-link/",
+      "destination": "/rae-link/index.html"
+    }
   ]
 }

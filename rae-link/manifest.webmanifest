@@ -1,0 +1,10 @@
+{
+  "name": "RAE Link — THYLORA",
+  "short_name": "RAE Link",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0a0e14",
+  "theme_color": "#0d1117",
+  "description": "THYLORA's owned audience and creator media network."
+}
