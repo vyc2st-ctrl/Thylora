@@ -1,0 +1,16 @@
+{
+  "name": "THYLORA",
+  "short_name": "THYLORA",
+  "description": "THYLORA mobile: transmissions in your language, the evidence behind each story, Ask Ersatz, the storefront, and the Chairman workspace for authorized identity.",
+  "start_url": "/thylora-app/#home",
+  "scope": "/thylora-app/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0d1117",
+  "theme_color": "#0d1117",
+  "shortcuts": [
+    { "name": "Transmissions", "short_name": "Watch", "url": "/thylora-app/#transmissions" },
+    { "name": "Casefiles", "short_name": "Evidence", "url": "/thylora-app/#casefiles" },
+    { "name": "Ask Ersatz", "short_name": "Ask", "url": "/thylora-app/#ask-ersatz" }
+  ]
+}

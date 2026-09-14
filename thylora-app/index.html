@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<title>THYLORA — Transmissions, Casefiles and the Chairman workspace</title>
+<meta name="description" content="THYLORA mobile: watch transmissions in your language, open the evidence behind a story, ask Ersatz, and — for authorized identity only — the Chairman workspace.">
+<link rel="stylesheet" href="./styles.css">
+<link rel="manifest" href="./manifest.webmanifest">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="mark" aria-hidden="true">◈</span>
+    <div><p class="eyebrow">THYLORA</p><h1 id="surfaceTitle">Home</h1></div>
+  </div>
+  <div class="top-actions">
+    <span class="chip" id="backendChip" title="Backend posture">BACKEND · CHECKING</span>
+    <span class="chip who" id="whoChip">SIGNED OUT</span>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs" aria-label="THYLORA sections"></nav>
+
+<main id="main">
+
+<!-- Routing refusals live here, not in a section's own notice: the backend
+     posture check owns #homeNotice and clears it when the backend is healthy,
+     which would silently wipe a refusal the reader needs to see. -->
+<div class="notice bad" id="routeNotice" hidden></div>
+
+<!-- HOME ------------------------------------------------------------------ -->
+<section class="view" id="home" aria-labelledby="homeHead">
+  <div class="hero">
+    <p class="eyebrow">ONE DOORWAY</p>
+    <h2 id="homeHead">Watch the transmission. Open the evidence. Ask the question.</h2>
+    <p>THYLORA in your hand: transmissions in your language, the casefile behind each story, the mirror world alongside it, and a storefront that only sells what has been cleared.</p>
+  </div>
+  <div class="notice" id="homeNotice" hidden></div>
+  <div class="stat-row">
+    <div class="stat"><b id="homeArrivals">—</b><span>PAGE OPENS</span></div>
+    <div class="stat"><b id="homeSessions">—</b><span>SESSIONS</span></div>
+    <div class="stat"><b id="homeUnits">—</b><span>VERIFIED UNITS SOLD</span></div>
+  </div>
+  <h3>Open a room</h3>
+  <div class="card-grid" id="homeRooms"></div>
+  <h3>Backend posture</h3>
+  <div id="homePosture" class="posture"><p class="muted">Checking the canonical THYLORA backend…</p></div>
+</section>
+
+<!-- TRANSMISSIONS --------------------------------------------------------- -->
+<section class="view" id="transmissions" aria-labelledby="txHead">
+  <div class="hero compact">
+    <p class="eyebrow">TRANSMISSIONS</p>
+    <h2 id="txHead">Watch in your language.</h2>
+  </div>
+  <div class="player-wrap">
+    <video id="txPlayer" class="player" controls playsinline preload="none" aria-label="THYLORA transmission player"></video>
+    <p class="player-empty" id="txPlayerEmpty">Choose a transmission to open the player.</p>
+  </div>
+  <div class="controls" role="group" aria-label="Playback preferences">
+    <label class="control">
+      <span>Language</span>
+      <select id="txLanguage" aria-label="Transmission language"></select>
+    </label>
+    <label class="control switch">
+      <input type="checkbox" id="txSubtitles" checked>
+      <span>English subtitles</span>
+    </label>
+    <button type="button" id="txReadback" class="ghost">Readback</button>
+  </div>
+  <p class="muted" id="txStatus">Loading transmissions…</p>
+  <div class="notice" id="txNotice" hidden></div>
+  <div class="card-grid" id="txList"></div>
+</section>
+
+<!-- EARTH WATCH ----------------------------------------------------------- -->
+<section class="view" id="earth-watch" aria-labelledby="ewHead">
+  <div class="hero compact">
+    <p class="eyebrow">EARTH WATCH</p>
+    <h2 id="ewHead">What THYLORA is watching on Earth.</h2>
+    <p>Every signal carries its confidence and, where one exists, the casefile behind it.</p>
+  </div>
+  <div class="notice" id="ewNotice" hidden></div>
+  <div class="card-grid" id="ewList"><p class="muted">Loading Earth Watch…</p></div>
+</section>
+
+<!-- EDEREARIAH ------------------------------------------------------------ -->
+<section class="view" id="edereariah" aria-labelledby="edHead">
+  <div class="hero compact">
+    <p class="eyebrow">MIRROR WORLD</p>
+    <h2 id="edHead">EdereAriah companion.</h2>
+    <p>Everyone here is world-simulated, and every card says so. A world channel is never presented as an Earth person.</p>
+  </div>
+  <div class="notice" id="edNotice" hidden></div>
+  <div class="card-grid" id="edList"><p class="muted">Loading the mirror world…</p></div>
+</section>
+
+<!-- ASK ERSATZ ------------------------------------------------------------ -->
+<section class="view" id="ask-ersatz" aria-labelledby="aeHead">
+  <div class="hero compact">
+    <p class="eyebrow">ASK ERSATZ</p>
+    <h2 id="aeHead">Ask your question.</h2>
+    <p>An answer from Ersatz is an interpretation and is labelled as one. It is not presented as a settled fact.</p>
+  </div>
+  <form id="askForm" class="form">
+    <label class="control">
+      <span>Your question</span>
+      <textarea id="askText" name="question_text" rows="5" required
+        placeholder="Ask about a transmission, a casefile, a place, a lineage or a claim."></textarea>
+    </label>
+    <p class="muted" id="askDraftState"></p>
+    <div class="form-actions">
+      <button type="submit" id="askSubmit">Submit question</button>
+      <button type="button" id="askClear" class="ghost">Clear</button>
+    </div>
+  </form>
+  <p class="muted" id="askStatus"></p>
+  <div class="notice" id="aeNotice" hidden></div>
+</section>
+
+<!-- CASEFILES ------------------------------------------------------------- -->
+<section class="view" id="casefiles" aria-labelledby="cfHead">
+  <div class="hero compact">
+    <p class="eyebrow">CASEFILES</p>
+    <h2 id="cfHead">Open the evidence.</h2>
+    <p>Documents, provenance and confidence, stated plainly. A weak source is labelled weak.</p>
+  </div>
+  <div class="notice" id="cfNotice" hidden></div>
+  <div class="card-grid" id="cfList"><p class="muted">Loading casefiles…</p></div>
+  <div id="cfDetail" class="detail" hidden></div>
+</section>
+
+<!-- WORLD MAP ------------------------------------------------------------- -->
+<section class="view" id="world-map" aria-labelledby="wmHead">
+  <div class="hero compact">
+    <p class="eyebrow">WORLD MAP</p>
+    <h2 id="wmHead">Where the world arrives from.</h2>
+  </div>
+  <div class="notice" id="wmNotice" hidden></div>
+  <div class="stat-row">
+    <div class="stat"><b id="wmArrivals">—</b><span>ARRIVALS</span></div>
+    <div class="stat"><b id="wmCountries">—</b><span>COUNTRIES</span></div>
+    <div class="stat"><b id="wmTop">—</b><span>TOP REGION</span></div>
+  </div>
+  <div class="map-wrap"><div id="wmMap" class="map" role="img" aria-label="Arrival map"></div></div>
+  <div id="wmRegions" class="bars"></div>
+</section>
+
+<!-- STORE ----------------------------------------------------------------- -->
+<section class="view" id="store" aria-labelledby="stHead">
+  <div class="hero compact">
+    <p class="eyebrow">STORE</p>
+    <h2 id="stHead">Only a cleared product gets a purchase button.</h2>
+    <p>Reports, stories and products run through the one approved THYLORA commerce path. Nothing here claims a live charge it cannot complete.</p>
+  </div>
+  <div class="notice" id="stNotice" hidden></div>
+  <div class="card-grid" id="stList"><p class="muted">Loading the storefront…</p></div>
+  <p class="muted" id="stStatus"></p>
+</section>
+
+<!-- MY PURCHASES ---------------------------------------------------------- -->
+<section class="view" id="my-purchases" aria-labelledby="mpHead">
+  <div class="hero compact">
+    <p class="eyebrow">MY PURCHASES</p>
+    <h2 id="mpHead">What you own.</h2>
+  </div>
+  <div class="notice" id="mpNotice" hidden></div>
+  <div id="mpList"><p class="muted">Loading your purchases…</p></div>
+</section>
+
+<!-- MY QUESTIONS ---------------------------------------------------------- -->
+<section class="view" id="my-questions" aria-labelledby="mqHead">
+  <div class="hero compact">
+    <p class="eyebrow">MY QUESTIONS</p>
+    <h2 id="mqHead">What you asked, and what came back.</h2>
+  </div>
+  <div class="notice" id="mqNotice" hidden></div>
+  <div id="mqList"><p class="muted">Loading your questions…</p></div>
+</section>
+
+<!-- PEOPLE / CORRESPONDENTS ----------------------------------------------- -->
+<section class="view" id="people" aria-labelledby="pcHead">
+  <div class="hero compact">
+    <p class="eyebrow">PEOPLE / CORRESPONDENTS</p>
+    <h2 id="pcHead">Follow the ones you want to hear from.</h2>
+  </div>
+  <div class="notice" id="pcNotice" hidden></div>
+  <p class="muted" id="pcFollowState"></p>
+  <div class="card-grid" id="pcList"><p class="muted">Loading correspondents…</p></div>
+</section>
+
+<!-- LIVE LINK ------------------------------------------------------------- -->
+<section class="view" id="live-link" aria-labelledby="llHead">
+  <div class="hero compact">
+    <p class="eyebrow">LIVE LINK</p>
+    <h2 id="llHead">When THYLORA is live, this is the door.</h2>
+  </div>
+  <div class="notice" id="llNotice" hidden></div>
+  <div id="llList"><p class="muted">Checking for a live session…</p></div>
+</section>
+
+<!-- CHAIRMAN WORKSPACE ---------------------------------------------------- -->
+<!-- Drawn only for an authorized identity. lib/router.js refuses the route and
+     the canonical backend refuses the same identity independently. -->
+<section class="view chairman" id="chairman" aria-labelledby="chHead">
+  <div class="hero compact gold">
+    <p class="eyebrow">CHAIRMAN WORKSPACE</p>
+    <h2 id="chHead">Command, mark, approve, route.</h2>
+    <p id="chIdentity" class="muted"></p>
+  </div>
+
+  <h3>Voice command</h3>
+  <div class="command">
+    <textarea id="chCommand" rows="3" placeholder="Speak or type the command."></textarea>
+    <div class="form-actions">
+      <button type="button" id="chListen">🎙 Speak</button>
+      <button type="button" id="chRoute">Route command</button>
+      <button type="button" id="chHear" class="ghost">Readback</button>
+      <select id="chRate" aria-label="Readback speed">
+        <option value="0.75">0.75×</option><option value="1">1×</option>
+        <option value="1.25">1.25×</option><option value="1.5">1.5×</option>
+        <option value="2">2×</option><option value="2.5">2.5×</option>
+      </select>
+    </div>
+    <p class="muted" id="chStatus">The backend is checked first, then the command is routed and preserved.</p>
+    <div id="chResult" class="detail" hidden></div>
+  </div>
+
+  <h3>Route to department</h3>
+  <div class="controls">
+    <label class="control"><span>Department</span><select id="chDepartment"></select></label>
+    <button type="button" id="chRouteDept">Route to department</button>
+  </div>
+  <p class="muted" id="chDeptStatus"></p>
+
+  <h3>Approvals</h3>
+  <div class="notice" id="chApprovalNotice" hidden></div>
+  <div id="chApprovals"><p class="muted">Loading approvals…</p></div>
+
+  <h3>Margin notes</h3>
+  <div class="command">
+    <textarea id="chNote" rows="3" placeholder="Margin note on the current subject."></textarea>
+    <div class="form-actions">
+      <button type="button" id="chNoteSave">Save margin note</button>
+      <span class="muted" id="chNoteDraftState"></span>
+    </div>
+    <p class="muted" id="chNoteStatus"></p>
+  </div>
+  <div id="chNotes"></div>
+
+  <h3>Sketch and markup</h3>
+  <p class="muted">Stylus, finger or mouse. Pressure is used where the stylus reports it.</p>
+  <div class="sketch-wrap">
+    <canvas id="chSketch" class="sketch" aria-label="Chairman sketch surface"></canvas>
+  </div>
+  <div class="form-actions">
+    <button type="button" id="chSketchSave">Save sketch</button>
+    <button type="button" id="chSketchUndo" class="ghost">Undo stroke</button>
+    <button type="button" id="chSketchClear" class="ghost">Clear</button>
+    <label class="control switch"><input type="checkbox" id="chMarkup"><span>Markup mode</span></label>
+    <span class="muted" id="chSketchState">0 strokes</span>
+  </div>
+  <p class="muted" id="chSketchStatus"></p>
+
+  <h3>Store money-distance</h3>
+  <div class="notice" id="chMoneyNotice" hidden></div>
+  <div class="stat-row">
+    <div class="stat"><b id="chMoneyTotal">—</b><span>REVENUE</span></div>
+    <div class="stat"><b id="chMoneyDistance">—</b><span>REVENUE-WEIGHTED DISTANCE</span></div>
+    <div class="stat"><b id="chMoneyOrders">—</b><span>ORDERS</span></div>
+  </div>
+  <div id="chMoneyBands" class="bars"></div>
+  <p class="muted" id="chMoneyNotes"></p>
+
+  <h3>Global arrivals</h3>
+  <div id="chArrivals"><p class="muted">Loading arrivals…</p></div>
+
+  <h3>Prompt coverage ledger</h3>
+  <div class="notice" id="chLedgerNotice" hidden></div>
+  <div class="stat-row">
+    <div class="stat"><b id="chCoverage">—</b><span>COVERAGE</span></div>
+    <div class="stat"><b id="chDelivery">—</b><span>DELIVERED</span></div>
+    <div class="stat"><b id="chGap">—</b><span>COVERED · NOT DELIVERED</span></div>
+  </div>
+  <div id="chLedger"></div>
+</section>
+
+<!-- ACCOUNT --------------------------------------------------------------- -->
+<section class="view" id="account" aria-labelledby="acHead">
+  <div class="hero compact">
+    <p class="eyebrow">ACCOUNT</p>
+    <h2 id="acHead">One THYLORA sign-in.</h2>
+    <p>The same session works across this shell, the member app and RAE Link.</p>
+  </div>
+  <div id="signedOut">
+    <form id="signInForm" class="form">
+      <label class="control"><span>Email</span><input type="email" id="signInEmail" autocomplete="email" required></label>
+      <label class="control"><span>Password</span><input type="password" id="signInPassword" autocomplete="current-password" required></label>
+      <div class="form-actions"><button type="submit" id="signInBtn">Sign in</button></div>
+    </form>
+  </div>
+  <div id="signedIn" hidden>
+    <p id="memberLabel" class="muted"></p>
+    <div class="form-actions"><button type="button" id="signOutBtn" class="ghost">Sign out</button></div>
+  </div>
+  <p class="muted" id="authStatus"></p>
+  <p class="muted" id="storageState"></p>
+</section>
+
+</main>
+
+<footer>
+  <p>THYLORA · canonical backend <code id="footBackend"></code> · this shell adds surfaces, it does not replace the Chairman dashboard.</p>
+</footer>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>

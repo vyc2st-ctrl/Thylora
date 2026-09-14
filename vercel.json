@@ -20,6 +20,14 @@
     {
       "source": "/rae-link/",
       "destination": "/rae-link/index.html"
+    },
+    {
+      "source": "/thylora-app",
+      "destination": "/thylora-app/index.html"
+    },
+    {
+      "source": "/thylora-app/",
+      "destination": "/thylora-app/index.html"
     }
   ]
 }
