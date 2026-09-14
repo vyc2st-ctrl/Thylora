@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>THYLORA · Chairman Workspace R6</title>
+<link rel="stylesheet" href="./workspace.css">
+<style>
+:root{--bg:#080b10;--panel:#111720;--line:#293342;--text:#f4efe6;--muted:#9fa8b5;--accent:#d6a348}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#080b10,#0b0f15 48%,#080b10);color:var(--text);
+     font:15px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+     padding:max(16px,env(safe-area-inset-top)) 16px max(16px,env(safe-area-inset-bottom))}
+.wrap{max-width:900px;margin:0 auto}
+h1{font-size:17px;letter-spacing:.12em;font-weight:900;margin:0 0 4px}
+.sub{color:var(--muted);font-size:12px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:14px}
+.panel h2{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+ol,ul{margin:8px 0 0;padding-left:20px;font-size:14px}
+li{margin-bottom:6px}
+code{background:#0b111a;border:1px solid var(--line);border-radius:5px;padding:1px 5px;font-size:12px}
+.open-btn{min-height:52px;padding:0 20px;border-radius:12px;border:1px solid var(--accent);
+          background:var(--accent);color:#10141b;font-weight:900;letter-spacing:.05em;cursor:pointer;margin-top:12px}
+.note{border-left:2px solid var(--accent);padding-left:10px;color:var(--muted);font-size:13px;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>THYLORA · CHAIRMAN WORKSPACE R6</h1>
+  <div class="sub">Live readback + margin-note workspace · THY-DASH-R6-WORKSPACE-001</div>
+
+  <div class="panel">
+    <h2>What this surface is</h2>
+    <p style="font-size:14px;margin:0">
+      The witness surface for the R6 lane. The same modules load into the authoritative
+      dashboard through one added script tag; this page exists so the lane can be opened,
+      driven and witnessed on iPad on its own, without the rest of the head in the way.
+    </p>
+    <button class="open-btn" id="openWorkspace" type="button">OPEN THE CHAIRMAN WORKSPACE</button>
+    <div class="note">
+      Readback needs a real user gesture before iPadOS will speak. Press Open, then Speak.
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Witness sequence — iPad first</h2>
+    <ol>
+      <li>Open the workspace. Paste or load a response into the left lane, press <code>Load response</code>.</li>
+      <li>Press <code>Speak</code>. The spoken words highlight in place; read-ahead shows what is still coming.</li>
+      <li>Press <code>Pause</code>, then <code>Resume</code> — it continues mid-sentence, not from the top.</li>
+      <li>Press <code>↺ 10s</code> and <code>10s ↻</code> during readback. Drag the speed slider while it speaks.</li>
+      <li>Hold the microphone and speak. The readback ducks; the transcript builds; on release the note lands with its anchor percentage.</li>
+      <li>Select two notes, press <code>BUILD NEXT PROMPT FROM SELECTED NOTES</code>.</li>
+      <li>Draw on the canvas with Apple Pencil. Rest your palm on the glass — it must not draw.</li>
+      <li>Preview room: open an image, enlarge it, mark it up, drop a pin, approve.</li>
+      <li>Coverage ledger: atomize a prompt, resolve atoms, try <code>DEFERRED_WITH_REASON</code> with no reason — it must refuse.</li>
+      <li>Arrival matrix and money-distance: load from backend and read what it reports.</li>
+    </ol>
+  </div>
+
+  <div class="panel">
+    <h2>Authority</h2>
+    <p style="font-size:14px;margin:0">
+      This repository is not the deployment source of truth for the Chairman dashboard.
+      Per <code>DASHBOARD_AUTHORITY.md</code>, changes intended for the live dashboard must be
+      merged into <code>vyc2st-ctrl/thylora-executive-dashboard</code> and witnessed on
+      <code>thylora-public-world</code> before they are called live. Nothing here has been
+      deployed, and nothing here replaces the current head.
+    </p>
+  </div>
+</div>
+
+<script type="module">
+  import { mountChairmanWorkspace } from './workspace.js';
+  window.thyR6 = window.thyR6 || mountChairmanWorkspace({ autoOpen: false });
+  document.getElementById('openWorkspace').addEventListener('click', () => window.thyR6.open());
+</script>
+</body>
+</html>

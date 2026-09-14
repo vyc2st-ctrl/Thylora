@@ -20,6 +20,14 @@
     {
       "source": "/rae-link/",
       "destination": "/rae-link/index.html"
+    },
+    {
+      "source": "/workspace",
+      "destination": "/dashboard/r6/index.html"
+    },
+    {
+      "source": "/workspace/",
+      "destination": "/dashboard/r6/index.html"
     }
   ]
 }

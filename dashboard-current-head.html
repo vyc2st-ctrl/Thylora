@@ -108,4 +108,18 @@ const quick=[['Chairman','home'],['Family','family-section'],['Ideas','ideas-sec
 })();
 </script>
 
+<!-- THYLORA Dashboard R6 · Chairman readback + margin-note workspace
+     Canonical backend records: THY-DASH-VOICE-SPINE-001,
+     THY-IDEA-DASHBOARD-SCREEN-ARCHITECTURE-001,
+     THY-IDEA-READBACK-MARGIN-NOTES-001, THY-IDEA-PROMPT-COVERAGE-LEDGER-001
+
+     Additive. These two lines are the entire footprint of the R6 lane on the
+     current head: one stylesheet and one module, both namespaced, both
+     self-mounting. No existing rule, element, handler or backend call above is
+     modified. Removing these two lines returns the head to exactly its prior
+     state, and every baseline capability in dashboard-baseline.json is
+     untouched either way. -->
+<link rel="stylesheet" href="./dashboard/r6/workspace.css">
+<script type="module" src="./dashboard/r6/workspace.js"></script>
+
 </body></html>
