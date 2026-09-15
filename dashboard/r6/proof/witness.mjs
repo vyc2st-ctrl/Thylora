@@ -463,7 +463,72 @@ async function run(label, contextOptions, shotPrefix) {
 
   await page.screenshot({ path: `${OUT}/${shotPrefix}-5-arrival.png` });
 
-  // ---- 14. persistence across reload --------------------------------------
+  // ---- 14. media router ----------------------------------------------------
+  await page.click('button[data-room="MEDIA"]');
+  await page.waitForTimeout(250);
+
+  const offers = await page.evaluate(() => {
+    const cards = [...document.querySelectorAll('#thyMROffers .thy-r6-note')];
+    return cards.map(c => c.innerText);
+  });
+  const discloses = offers.length > 0 && offers.every(t =>
+    /Estimated cost/.test(t) && /Expected duration/.test(t) && /Resolution/.test(t) && /Audio/.test(t));
+  record(`${label}: every provider offer discloses cost, duration, resolution and audio`,
+    discloses, `${offers.length} offer(s) rendered, all five disclosures present`);
+
+  const blocked = await page.evaluate(() => ({
+    verdict: document.getElementById('thyMRDecision').textContent,
+    authoriseDisabled: document.getElementById('thyMRAuthorise').disabled
+  }));
+  record(`${label}: spend is blocked while rate cards are unverified and keys absent`,
+    blocked.authoriseDisabled && /Cannot generate/.test(blocked.verdict),
+    blocked.verdict.slice(0, 130));
+
+  const noPrice = await page.evaluate(() =>
+    [...document.querySelectorAll('#thyMROffers .thy-r6-note')].every(c => /cost unknown/.test(c.innerText)));
+  record(`${label}: no invented price is shown for an unverified rate card`,
+    noPrice, 'every offer reads "cost unknown" rather than a fabricated number');
+
+  // Naming a provider that cannot serve must refuse and offer a named substitute.
+  const substitution = await page.evaluate(async () => {
+    const op = document.getElementById('thyMROperation');
+    op.value = 'VIDEO_TO_VIDEO';
+    op.dispatchEvent(new Event('change', { bubbles: true }));
+    const prov = document.getElementById('thyMRProvider');
+    prov.value = 'runway';                       // runway cannot do video-to-video
+    prov.dispatchEvent(new Event('change', { bubbles: true }));
+    await new Promise(r => setTimeout(r, 60));
+    return {
+      verdict: document.getElementById('thyMRDecision').textContent,
+      consentOffered: !!document.getElementById('thyMRConsent'),
+      consentLabel: document.getElementById('thyMRConsent')?.innerText || ''
+    };
+  });
+  record(`${label}: a provider that cannot serve is refused, not swapped`,
+    /SUBSTITUTION_REQUIRES_CONSENT|OPERATION_UNSUPPORTED/.test(substitution.verdict),
+    substitution.verdict.slice(0, 130));
+  // With no provider funded, there is no runnable substitute to offer. The
+  // contract is then that the capable-but-blocked provider is still disclosed,
+  // and that no "use this instead" control appears.
+  const offersSwap = /Name /.test(substitution.consentLabel);
+  record(`${label}: no substitute is offered when none can actually run`,
+    !offersSwap, offersSwap ? 'a swap control appeared with nothing funded' : 'no swap control offered');
+  record(`${label}: the capable-but-unfunded provider is still named`,
+    /can perform VIDEO_TO_VIDEO/.test(substitution.consentLabel),
+    substitution.consentLabel.replace(/\s+/g, ' ').slice(0, 120));
+
+  const moneyDistance = await page.evaluate(() => ({
+    line: document.getElementById('thyMRMoneyLine').textContent,
+    open: [...document.querySelectorAll('#thyMRMoney .thy-r6-gate-line')].filter(g => /OPEN/.test(g.innerText)).length,
+    closed: [...document.querySelectorAll('#thyMRMoney .thy-r6-gate-line')].filter(g => /evidenced/.test(g.innerText)).length
+  }));
+  record(`${label}: money-distance to a finished clip is measured and stated`,
+    /Money-distance/.test(moneyDistance.line) && moneyDistance.open > 0,
+    `${moneyDistance.line} (${moneyDistance.closed} closed, ${moneyDistance.open} open)`);
+
+  await page.screenshot({ path: `${OUT}/${shotPrefix}-6-media.png` });
+
+  // ---- 15. persistence across reload --------------------------------------
   await page.reload();
   await page.waitForFunction(() => !!window.thyR6);
   const restored = await page.evaluate(() => ({

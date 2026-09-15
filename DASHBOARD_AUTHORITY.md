@@ -35,3 +35,18 @@ workflows in `.github/workflows/` reference markers through
 `THY-UI-20260824-1300-R8`. This snapshot is therefore behind the authoritative
 head, which is a further reason the R6 lane must be applied to the authoritative
 repository rather than deployed from here.
+
+**THYLORA Media Router** (`THY-MEDIA-ROUTER-001`) — provider-agnostic video
+generation from registered THYLORA assets, driving the `studio_render_jobs`
+pipeline that already exists on `thylora-dash`.
+
+- Source: `dashboard/r6/lib/media-router.js`, `dashboard/r6/lib/media-provenance.js`,
+  `dashboard/r6/media-router-room.js`; migration `db/dashboard/0002_media_router.sql`;
+  account in `workrooms/WR-MEDIA-ROUTER-001.md`.
+- Creates no new pipeline and no new job table. The backend read of 2026-09-15
+  confirmed `studio_render_jobs` and `studio_render_attempts` already exist with
+  zero rows; this lane is their missing driver.
+- **Cannot spend money as shipped.** Every provider rate card is unverified and
+  every provider credential is absent, by design, until the Chairman supplies
+  both.
+- **Not deployed. Not witnessed on iPad. No provider has ever been called.**

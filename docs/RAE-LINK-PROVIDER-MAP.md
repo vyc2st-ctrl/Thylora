@@ -17,6 +17,7 @@ Provider credentials are Chairman-supplied and live in backend secrets only.
 | object_storage | Media | — | **OPEN** | supabase-storage, s3, r2, gcs, b2 | MEDIUM |
 | resumable_upload | Media | — | **OPEN** | tus, s3-multipart, uppy-companion | LOW |
 | video_transcode | Media | — | **OPEN** | mux, cloudflare-stream, ffmpeg-worker, mediaconvert | MEDIUM |
+| video_generation | Media | — | **OPEN** | runway, fal, future-approved | LOW |
 | audio_processing | Media | — | **OPEN** | ffmpeg-worker, dolby-io, auphonic | LOW |
 | image_processing | Media | — | **OPEN** | imgproxy, cloudinary, sharp-worker | LOW |
 | streaming_cdn | Delivery | — | **OPEN** | cloudflare, fastly, bunny, cloudfront | LOW |
@@ -38,7 +39,7 @@ Provider credentials are Chairman-supplied and live in backend secrets only.
 | mobile_android | Runtime | — | **OPEN** | pwa-installed, capacitor, native-kotlin | MEDIUM |
 | backups | Continuity | — | **OPEN** | provider-pitr, scheduled-dump-to-cold-storage | LOW |
 
-**25 capabilities mapped · 16 open decisions · 1 high exit cost · 0 without two alternates.**
+**26 capabilities mapped · 17 open decisions · 1 high exit cost · 0 without two alternates.**
 
 ## Why these stay open
 
@@ -55,6 +56,14 @@ choosing any of the alternates later is a configuration change:
 - **Originals are always retained**, so any transcoder can re-encode.
 - **Moderation verdicts store the policy version**, not just a vendor score.
 - **Captions are stored as WebVTT**, which every player reads.
+- **Video generation is addressed by adapter, not by vendor.** `video_generation`
+  is served by the THYLORA Media Router (`dashboard/r6/lib/media-router.js`),
+  which holds Runway and fal.ai behind one interface and maps both onto the
+  render-job columns that already exist on thylora-dash. Adding a provider is
+  one catalogue entry plus one adapter; nothing else in the router names a
+  vendor. Exit cost is LOW because no provider's job shape is stored — only the
+  provider-agnostic row is. The decision stays **OPEN** because choosing one
+  commits a credential and money, which only the Chairman can do.
 - **Payout identity is the one high-cost exit** — a new payout provider re-verifies
   every creator. That is inherent to payout regulation, not a design flaw; it is
   flagged so the first choice is made deliberately rather than by momentum.

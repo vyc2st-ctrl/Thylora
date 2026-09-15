@@ -31,6 +31,7 @@ import {
 import { measureStore, portfolioDistance, readingsFromRows, MONEY_GATES, GATE_STATES } from './lib/money-distance.js';
 import { buildMatrix, summarise, proofGap, ARRIVAL_LANES, ARRIVAL_STATES } from './lib/arrival-matrix.js';
 import { Custody } from './custody.js';
+import { buildMediaRouterRoom } from './media-router-room.js';
 
 const RELEASE = 'THY-DASH-R6-WORKSPACE-001';
 
@@ -94,7 +95,8 @@ export function mountChairmanWorkspace(options = {}) {
     roomButton('WORKSPACE', 'Workspace'),
     roomButton('PREVIEW', 'Preview room'),
     roomButton('COVERAGE', 'Coverage ledger'),
-    roomButton('ARRIVAL', 'Arrival matrix')
+    roomButton('ARRIVAL', 'Arrival matrix'),
+    roomButton('MEDIA', 'Media router')
   ]);
 
   ui.shell = el('div', { class: 'thy-r6 thy-r6-shell', id: 'thyR6Shell', role: 'dialog', 'aria-label': 'Chairman workspace' }, [
@@ -358,7 +360,12 @@ export function mountChairmanWorkspace(options = {}) {
     ])
   ]);
 
-  ui.body.append(ui.workspaceRoom, ui.previewRoom, ui.coverageRoom, ui.arrivalRoom);
+  // The Media Router is its own module: it drives the render pipeline that
+  // already exists on thylora-dash rather than adding one here.
+  const mediaRouter = buildMediaRouterRoom({ custody, onStatus: (m, k) => state.say(m, k) });
+  ui.mediaRoom = mediaRouter.node;
+
+  ui.body.append(ui.workspaceRoom, ui.previewRoom, ui.coverageRoom, ui.arrivalRoom, ui.mediaRoom);
   host.append(ui.launch, ui.shell);
 
   function btn(primary = false) {
@@ -992,7 +999,7 @@ export function mountChairmanWorkspace(options = {}) {
 
   function showRoom(code) {
     state.room = code;
-    const map = { WORKSPACE: ui.workspaceRoom, PREVIEW: ui.previewRoom, COVERAGE: ui.coverageRoom, ARRIVAL: ui.arrivalRoom };
+    const map = { WORKSPACE: ui.workspaceRoom, PREVIEW: ui.previewRoom, COVERAGE: ui.coverageRoom, ARRIVAL: ui.arrivalRoom, MEDIA: ui.mediaRoom };
     for (const [key, node] of Object.entries(map)) node.classList.toggle('active', key === code);
     ui.rooms.querySelectorAll('button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.room === code)));
     // Canvases sized while hidden measure zero; re-measure on reveal.
@@ -1020,7 +1027,7 @@ export function mountChairmanWorkspace(options = {}) {
   if (options.autoOpen) open();
 
   return {
-    open, close, showRoom, loadResponse, engine, canvas, previewCanvas, mic, custody,
+    open, close, showRoom, loadResponse, engine, canvas, previewCanvas, mic, custody, mediaRouter,
     get notes() { return state.notes; },
     get ledger() { return state.ledger; },
     buildNextPrompt: doBuildNextPrompt,

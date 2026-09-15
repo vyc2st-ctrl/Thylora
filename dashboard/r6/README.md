@@ -15,6 +15,9 @@ Full account of the lane, including what is proven and what is not:
 | `lib/coverage-ledger.js` | Prompt atomization, resolution states, the completion gate. |
 | `lib/money-distance.js` | Gates between a store and money arriving. |
 | `lib/arrival-matrix.js` | Territory × lane arrival grading. |
+| `lib/media-router.js` | Provider adapters, offer disclosure, no-silent-substitution rule. |
+| `lib/media-provenance.js` | Continuity clearance, immutable master, derivative lineage. |
+| `media-router-room.js` | The Media Router room. Drives the render pipeline that already exists on thylora-dash. |
 | `readback-engine.js` | Drives `speechSynthesis` from the position model. |
 | `note-mic.js` | Hold-to-speak: anchor, duck, listen, restore, commit. |
 | `canvas.js` | Pointer-events canvas with Pencil pressure and palm rejection. |
@@ -61,3 +64,9 @@ Chairman's iPad.
 - Completion fails when an atom that existed earlier is missing now.
 - Arrival above `ABSENT` and a closed money gate both require an evidence
   record. A claim with nothing behind it reads `UNPROVEN`, never as arrived.
+- A provider is never substituted without the Chairman naming the substitute.
+- No paid generation runs against an unverified rate card, and no invented price
+  is ever displayed — an unpriced offer reads "cost unknown".
+- A master still is never modified. Every generated clip is a new record with
+  `predecessor_id` pointing back at it.
+- A character with no reference approved for generation cannot be generated.

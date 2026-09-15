@@ -45,8 +45,8 @@ export const MONEY_GATES = Object.freeze([
  * reported separately so the gap between what is said and what is evidenced
  * stays visible.
  */
-export function measureStore({ store_code, label, readings = {}, currency = 'USD' } = {}) {
-  const gates = MONEY_GATES.map(gate => {
+export function measureStore({ store_code, label, readings = {}, currency = 'USD', gates: gateSet = MONEY_GATES } = {}) {
+  const gates = gateSet.map(gate => {
     const reading = readings[gate.code] || {};
     const state = reading.state || GATE_STATES.OPEN;
     return {
@@ -74,9 +74,10 @@ export function measureStore({ store_code, label, readings = {}, currency = 'USD
     open_gates: open.map(g => g.code),
     blocked_gates: blocked.map(g => g.code),
     unproven_claims: claimedNotProven.map(g => g.code),
+    total_gates: gateSet.length,
     statement: open.length === 0
-      ? 'Money-distance 0 — funds have settled and the settlement is evidenced.'
-      : `Money-distance ${open.length} — next gate: ${nextGate.label}.`
+      ? 'Money-distance 0 — every gate is closed and evidenced.'
+      : `Money-distance ${open.length} of ${gateSet.length} — next gate: ${nextGate.label}.`
   };
 }
 
