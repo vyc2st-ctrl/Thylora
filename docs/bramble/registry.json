@@ -1,0 +1,153 @@
+{
+  "registry_id": "ER-REG-BRAMBLE-EP001",
+  "program": "ER-PROGRAM-BRAMBLE-WYCK",
+  "episode": "ER-EP-001",
+  "transmission_card": "ER-TX-001-BRAMBLE-V2",
+  "opened": "2026-09-16",
+  "status": "DEVELOPMENT",
+  "rule": "Every record here is EdereAriah simulation design. No row describes a real school, child, family or business. Earth facts are held only in SOURCES-1945.md and are referenced here by source ID.",
+  "custody_records": [
+    {
+      "id": "ER-CUSTODY-BRAMBLE-0001",
+      "subject": "Canonical public spelling of the companion name",
+      "prior_value": "WICK",
+      "prior_location": "app/index.html — World Shows section",
+      "corrected_value": "WYCK",
+      "authority": "Chairman correction carried in the EP001 build instruction",
+      "supersession_test": "A newer live backend lock would override. Backend jvsdxhrfhtlgaknhjxlz unreachable from build session (403 on CONNECT). Correction stands.",
+      "disposition": "RECONCILED",
+      "reversal_condition": "A live backend lock dated later than this record carrying WICK supersedes it; reconciliation must again be through custody, never silent."
+    },
+    {
+      "id": "ER-CUSTODY-BRAMBLE-0002",
+      "subject": "Version mark",
+      "values_in_conflict": ["EPISODE 1 V4 (app/index.html row)", "ER-TX-001-BRAMBLE-V2 (poster asset)"],
+      "disposition": "UNRESOLVED",
+      "decision_ref": "U-02"
+    }
+  ],
+  "era_lock": {
+    "inherited": "1930s-1940s",
+    "episode_year": 1945,
+    "inside_lock": true,
+    "exception_required": false
+  },
+  "episode_date": {
+    "date": "1945-11-22",
+    "weekday": "Thursday",
+    "verified_by": ["S-27", "date -d 1945-11-22 +%A on build machine, 2026-09-16"]
+  },
+  "school": {
+    "name_in_use": "Corvesley Church of England School",
+    "name_coming_into_use": "Corvesley Church of England Primary School",
+    "reason_for_change": "Education Act 1944 Parts II and IV in force 1 April 1945; term 'elementary school' abolished",
+    "source": "S-02",
+    "built": 1876,
+    "address": "Church Street, Corvesley, Shropshire",
+    "type": "Voluntary school, Church of England foundation",
+    "status_under_1944_act": "NOT YET ELECTED — aided / special agreement / controlled",
+    "status_source": "S-04",
+    "roll": 114,
+    "classes": 3
+  },
+  "class_iii": {
+    "teacher": "Mrs Edith Mary Harrowell",
+    "ages": "9-10",
+    "on_roll": 38,
+    "desk_places": 40,
+    "vacant_places": 2,
+    "absent_on_issue_day": ["WAKELEY, Donald A. (1166)", "WHITTINGSLOW, Sheila R. (1126)"]
+  },
+  "cognitive_team": [
+    { "role": "WHY", "child": "Thomas Edward Bramble", "adm": 1161, "desk": "D21" },
+    { "role": "SEQUENCE / WHAT HAPPENED BEFORE", "child": "Ronald Pargeter", "adm": 1168, "desk": "D22" },
+    { "role": "PHYSICAL EVIDENCE / WHAT CHANGED", "child": "Alfred Noakes", "adm": 1124, "desk": "D29" },
+    { "role": "DOCUMENTARY EVIDENCE / WHAT DOES THE RECORD SAY", "child": "Pearl Emanuel", "adm": 1186, "desk": "D14" }
+  ],
+  "serial_formats": {
+    "exercise_book_stock_number": "CVS/EB/45/nnn",
+    "printer_imprint": "HALLAM & RUDGE LTD · LEEDS · <batch>",
+    "requisition": "REQ/CVS/45/nn",
+    "delivery_note": "H&R D/N nnnnn",
+    "stock_ledger_entry": "SL p.nnn / l.n",
+    "class_stock_book_entry": "CSB III p.nn",
+    "log_book_entry": "LB p.nnn · dd.xi.45",
+    "admission_number": "nnnn",
+    "desk_and_peg": "Dnn",
+    "salvage_weight_book": "SWB/45/wknn",
+    "desk_casting": "BIDWELL & COPE · WOLVERHAMPTON · 1876 · B&C nnnn"
+  },
+  "record_books": [
+    { "ref": "R1", "name": "School log book", "kept_by": "Head", "pattern_source": "S-10", "rule": "Daily entry by the principal teacher; an entry once made may only be amended by a further entry, never deleted or changed" },
+    { "ref": "R2", "name": "Admission register", "kept_by": "Head", "pattern_source": "S-11" },
+    { "ref": "R3", "name": "Attendance register", "kept_by": "Class teacher", "pattern_source": "S-11", "rule": "Marked twice daily" },
+    { "ref": "R4", "name": "Punishment book", "kept_by": "Head", "pattern_source": "S-11" },
+    { "ref": "R5", "name": "School stock ledger", "kept_by": "Head", "pattern_source": "S-14" },
+    { "ref": "R6", "name": "Class stock book", "kept_by": "Class teacher", "pattern_source": "S-14" },
+    { "ref": "R7", "name": "Requisition and order file", "kept_by": "Correspondent", "pattern_source": "S-05" },
+    { "ref": "R8", "name": "Delivery notes and invoices", "kept_by": "Head" },
+    { "ref": "R9", "name": "Managers' minute book", "kept_by": "Correspondent", "pattern_source": "S-06" },
+    { "ref": "R10", "name": "Milk record", "kept_by": "Milk monitor and teacher", "pattern_source": "S-16" },
+    { "ref": "R11", "name": "Council salvage weight book", "kept_by": "UDC refuse and salvage foreman", "pattern_source": "S-19" }
+  ],
+  "custody_chain_exercise_books": {
+    "quantity_received": 48,
+    "quantity_issued": 36,
+    "balance_recorded": 12,
+    "balance_counted": 11,
+    "discrepancy": 1,
+    "interval": { "from": "1945-11-19", "to": "1945-11-22" },
+    "links": [
+      { "ref": "L1", "date": "1945-05", "event": "Requisition prepared and countersigned", "record": "REQ/CVS/45/17" },
+      { "ref": "L2", "date": "1945-06", "event": "Order placed with Hallam & Rudge", "record": "REQ/CVS/45/17" },
+      { "ref": "L3", "date": "1945-09-14", "event": "Part-delivery: four dozen of six dozen ordered", "record": "H&R D/N 44162", "condition_source": "S-12" },
+      { "ref": "L4", "date": "1945-09-14", "event": "Entered received in school stock ledger", "record": "SL p.088 / l.4" },
+      { "ref": "L5", "date": "1945-09-17", "event": "Issued from head's store to Class III", "record": "CSB III p.12" },
+      { "ref": "L6", "date": "1945-09-17/18", "event": "Numbered CVS/EB/45/001-048, stamped, placed on shelf 2", "record": "CSB III p.12" },
+      { "ref": "L7", "date": "1945-11-19", "event": "36 issued, one per child present; 2 on roll absent and not issued", "record": "CSB III p.12" },
+      { "ref": "L8", "date": "1945-11-19", "event": "Balance written: Remaining, 12", "record": "CSB III p.12" },
+      { "ref": "L9", "date": "1945-11-19", "event": "Cupboard locked. One key on teacher's ring; duplicate in head's desk; caretaker's master does not open it" },
+      { "ref": "L10", "date": "1945-11-19/22", "event": "THE INTERVAL" },
+      { "ref": "L11", "date": "1945-11-22T09:44", "event": "Cupboard opened to issue to returning absentee. Count: eleven" },
+      { "ref": "L12", "date": "1945-11-22", "event": "Recount: eleven" }
+    ]
+  },
+  "candidate_explanations": {
+    "rule": "ELEVEN CANDIDATES, NONE CONFIRMED, NONE ELIMINATED. Selection held for Chairman as U-01.",
+    "candidates": [
+      { "id": "C-01", "summary": "Only 47 were delivered", "instrument": "RECORD" },
+      { "id": "C-02", "summary": "Two books stuck together at the bindery and issued as one", "instrument": "OBJECT", "condition_source": "S-13" },
+      { "id": "C-03", "summary": "A thirty-seventh book issued and not logged", "instrument": "RECORD+OBJECT" },
+      { "id": "C-04", "summary": "A book spoiled and replaced without record", "instrument": "OBJECT" },
+      { "id": "C-05", "summary": "A book went into the paper salvage sack in error", "instrument": "OBJECT", "condition_source": "S-12,S-19" },
+      { "id": "C-06", "summary": "The head took it as a specimen for managers or HMI", "instrument": "RECORD" },
+      { "id": "C-07", "summary": "A child took one home unaware", "instrument": "SEQUENCE+OBJECT" },
+      { "id": "C-08", "summary": "It was used for something else", "instrument": "RECORD" },
+      { "id": "C-09", "summary": "Still in the building, in the wrong place", "instrument": "OBJECT" },
+      { "id": "C-10", "summary": "The balance of twelve was worked out, never counted", "instrument": "WHY" },
+      { "id": "C-11", "summary": "Someone took one because paper has value", "instrument": "ALL_OR_NONE", "gate": "May only be reached after C-01 to C-10 are each tested and recorded" }
+    ]
+  },
+  "visual_law": {
+    "medium": "screen-relative viewing medium; subjects move behind it",
+    "permitted": ["optical softness", "aged-film / picture-tube texture", "minute reflections", "haze", "micro-scratches", "glass-like interference"],
+    "prohibited": ["bubble", "portal", "force field", "visible dimension wall", "any edge or seam reading as an object", "character awareness of the medium", "use as a WYCK manifestation"],
+    "poster_seam": { "status": "KEY ART ONLY", "decision_ref": "U-03" }
+  },
+  "bramble_pending_changes": [
+    { "id": "C-1", "change": "Deep-red period winter cap with soft pom/ball top" },
+    { "id": "C-2", "change": "Selective deep-red scarf accents" },
+    { "id": "C-3", "change": "All other brown/earth clothing treatment preserved unless historically or physically inconsistent" },
+    { "id": "C-4", "change": "Realistic human facial anatomy; no cartoon anatomy" }
+  ],
+  "palette_reservation": {
+    "colour": "deep red",
+    "reserved_to": "Bramble",
+    "locations": ["winter cap", "scarf accents"],
+    "rule": "No other Class III child wears deep red in EP001"
+  },
+  "image_generation": {
+    "performed": false,
+    "instruction": "DO NOT GENERATE AN IMAGE"
+  }
+}
