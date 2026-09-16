@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THYLORA — Production Conveyor</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<header class="top">
+  <p class="eyebrow">WR-CONVEYOR-001 · CONTINUOUS PRODUCTION CONVEYOR</p>
+  <h1>Every idea on a belt, and every belt still moving.</h1>
+  <p id="meta">Reading the conveyor registry…</p>
+</header>
+<main>
+  <section>
+    <h2>Executable now · one per lane</h2>
+    <ul id="moving"><li>Loading…</li></ul>
+  </section>
+  <section>
+    <h2>Idle lanes</h2>
+    <ul id="idle"><li>Loading…</li></ul>
+  </section>
+  <section>
+    <h2>Closest to money</h2>
+    <ul id="money"><li>Loading…</li></ul>
+  </section>
+  <section>
+    <h2>Chairman gates · <span id="gateCount">—</span></h2>
+    <ul id="gates"><li>Loading…</li></ul>
+  </section>
+  <section>
+    <h2>Lanes</h2>
+    <div id="lanes"></div>
+  </section>
+</main>
+<footer>
+  Read-only production board. Not the Chairman dashboard: no sign-in, no command, no write path.
+  Deployment authority for the dashboard remains as stated in DASHBOARD_AUTHORITY.md.
+  Nothing on this page claims publication, payment or availability.
+</footer>
+<script type="module" src="./app.js"></script>
+</body>
+</html>

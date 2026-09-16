@@ -1,0 +1,47 @@
+{
+  "record_id": "THY-CONV-RIGHTS-INTERNAL-001",
+  "workroom": "WR-CONVEYOR-001",
+  "declared_at": "2026-09-16",
+  "declaration": "The artifacts listed below were originated inside this repository under THYLORA. Each is cleared on the basis of internal origin only. This record does NOT clear any third-party material, any real person's likeness, any family story, any music, any footage, or any Earth-business material. Those require their own rights records and their own authority.",
+  "verification_method": [
+    "No runtime dependency: package.json declares no dependencies and no devDependencies.",
+    "No external asset: the only outbound URL in any listed file is THYLORA's own backend host jvsdxhrfhtlgaknhjxlz.supabase.co.",
+    "Authorship traceable: each file's introducing commit is recorded below and is present in this repository's history."
+  ],
+  "verified_on": "2026-09-16 in the conveyor build session",
+  "does_not_cover": [
+    "Family stories and family-memory adaptations (CONV-SHW-0003 Green Milk, CONV-HRB-0001, CONV-NWS-0001) — family consent is a Chairman gate.",
+    "Any real person's likeness, name or voice.",
+    "Any Earth-business material including C&W Auto operating detail.",
+    "Any music, footage, typeface or image not authored in this repository.",
+    "Anything not listed in `covers` below."
+  ],
+  "covers": [
+    {
+      "canonical_id": "CONV-RAE-0001",
+      "files": ["rae-link/index.html", "rae-link/app.js", "rae-link/styles.css", "rae-link/lib/", "db/rae-link/"],
+      "introducing_commit": "61b974a",
+      "basis": "INTERNAL_ORIGIN"
+    },
+    {
+      "canonical_id": "CONV-GAM-0001",
+      "files": ["app/sports-betting.html", "app/sports-betting.js", "app/sports-betting.css"],
+      "introducing_commit": "e4a9a83",
+      "basis": "INTERNAL_ORIGIN",
+      "constraint": "R-currency only. Earth real-money wagering is hard-blocked in continuity and is not authorized by this record."
+    },
+    {
+      "canonical_id": "CONV-GAM-0002",
+      "files": ["app/time-run.html", "app/time-run.js", "app/time-run.css", "time-run.html"],
+      "introducing_commit": "84b5565",
+      "basis": "INTERNAL_ORIGIN"
+    },
+    {
+      "canonical_id": "CONV-MEM-0001",
+      "files": ["public-site/store.html"],
+      "introducing_commit": "df1e141",
+      "basis": "INTERNAL_ORIGIN",
+      "constraint": "Covers the storefront surface only. It does not clear a payment provider, a billing agreement or a tax posture."
+    }
+  ]
+}

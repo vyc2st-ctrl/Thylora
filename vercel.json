@@ -20,6 +20,14 @@
     {
       "source": "/rae-link/",
       "destination": "/rae-link/index.html"
+    },
+    {
+      "source": "/conveyor",
+      "destination": "/conveyor/index.html"
+    },
+    {
+      "source": "/conveyor/",
+      "destination": "/conveyor/index.html"
     }
   ]
 }

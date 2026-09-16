@@ -2,8 +2,12 @@
   "name": "thylora",
   "private": true,
   "type": "module",
-  "description": "THYLORA source: public site, member app, RAE Link media network, backend migrations.",
+  "description": "THYLORA source: public site, member app, RAE Link media network, production conveyor, backend migrations.",
   "scripts": {
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "conveyor": "node conveyor/readback.mjs",
+    "conveyor:json": "node conveyor/readback.mjs --json",
+    "conveyor:produce": "node conveyor/produce.mjs",
+    "conveyor:validate": "db/conveyor/validation/run.sh"
   }
 }
