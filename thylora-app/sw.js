@@ -21,6 +21,8 @@ const ASSETS = [
   '/thylora-app/lib/router.js',
   '/thylora-app/lib/state.js',
   '/thylora-app/lib/analytics.js',
+  '/thylora-app/lib/media-studio.js',
+  '/rae-link/lib/pipeline.js',
   '/lib/thylora-backend.js'
 ];
 

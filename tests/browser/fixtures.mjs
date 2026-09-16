@@ -121,3 +121,125 @@ export const NOT_PROVISIONED = {
 
 /** Tables deliberately withheld, to prove honest degradation on screen. */
 export const WITHHELD = new Set(['thy_follows']);
+
+/* ---------------------------------------------------- Media Studio (Chairman) */
+// The registered asset, its master rendition, provenance, rights and passport —
+// all read from the objects that already exist, plus this lane's job/markup rows.
+FIXTURES.rael_media_assets = [
+  {
+    id: 'asset-1', asset_code: 'RAEL-ASSET-0001', title: 'Ouidah plate 12',
+    description: 'Master plate, 1871 port register.', media_kind: 'IMAGE',
+    pipeline_state: 'METADATA', visibility_state: 'PRIVATE',
+    version_no: 2, replaces_asset_id: 'asset-0',
+    checksum_sha256: 'b'.repeat(64),
+    storage_provider: 'supabase-storage', storage_key: 'media/ouidah-12.jpg',
+    product_ref: 'REP-0001', passport_ref: 'DPP-0001', edf_ref: 'EDF-OUIDAH-001',
+    published_at: null, created_at: '2026-09-10T08:00:00Z'
+  },
+  {
+    // Deliberately unbound: no passport, so the studio must block animation.
+    id: 'asset-2', asset_code: 'RAEL-ASSET-0002', title: 'Unbound sketch',
+    description: null, media_kind: 'IMAGE', pipeline_state: 'INPUT',
+    visibility_state: 'PRIVATE', version_no: 1, replaces_asset_id: null,
+    checksum_sha256: null, storage_provider: null, storage_key: null,
+    product_ref: null, passport_ref: null, edf_ref: null,
+    published_at: null, created_at: '2026-09-11T08:00:00Z'
+  }
+];
+
+FIXTURES.rael_media_renditions = [
+  // A resolvable URL so a real frame appears and can be marked up.
+  { asset_id: 'asset-1', rendition_kind: 'POSTER', rendition_state: 'READY',
+    storage_key: 'https://cdn.example.test/ouidah-12-poster.jpg', width: 1600, height: 900 }
+];
+
+FIXTURES.rael_provenance_events = [
+  { asset_id: 'asset-1', event_type: 'DERIVED', source_description: 'Scanned from the held folio.',
+    derived_from_ref: 'RAEL-ASSET-0000', tool_disclosure: 'flatbed scan',
+    occurred_at: '2026-09-09T08:00:00Z', evidence: {} }
+];
+
+FIXTURES.rael_rights_records = [
+  { asset_id: 'asset-1', gate_state: 'PASSED', ownership_basis: 'OWNED_OUTRIGHT', term_end: null }
+];
+
+FIXTURES.thy_media_release_requirements = [
+  { asset_code: 'RAEL-ASSET-0001', logo_required: true, logo_asset_ref: 'LOGO-THY-001',
+    qr_destination_required: true, serial_binding_required: true, requirements_state: 'DECLARED' }
+];
+
+FIXTURES.thy_media_animation_jobs = [];
+FIXTURES.thy_media_markups = [];
+
+// The passport carries the serial number AND the QR destination.
+FIXTURES.digital_product_passports = [
+  { passport_code: 'DPP-0001', product_code: 'REP-0001',
+    serial_number: 'THY-REP-0001-000137',
+    qr_destination: 'https://thylora.example.test/p/THY-REP-0001-000137',
+    issued_at: '2026-09-05T10:01:00Z', passport_state: 'ISSUED' }
+];
+
+/* ------------------------------------------------- canonical Chairman spine */
+FIXTURES['rpc/thylora_approval_queue_safe_v1'] = {
+  allowed: true,
+  gates: [
+    { canonical_id: 'GATE-MEDIA-001', subject_kind: 'MEDIA', subject_title: 'Ouidah plate 12 animation',
+      gate_state: 'OPEN' }
+  ]
+};
+
+FIXTURES['rpc/thylora_margin_queue_v1'] = {
+  allowed: true,
+  notes: [
+    { anchor_kind: 'SCREEN_COMPONENT', anchor_ref: 'thylora-app#chairman',
+      body: 'Check the folio numbering against the second copy.',
+      created_at: '2026-09-13T13:00:00Z', disposition: null }
+  ]
+};
+
+FIXTURES['rpc/thylora_margin_note_add_v1'] = { added: true, queue_depth: 4 };
+
+FIXTURES['rpc/submit_thylora_review_gate_decision_v1'] = {
+  decision: 'APPROVED', resulting_state: 'CLOSED', gate_reopened: false
+};
+
+FIXTURES['rpc/thylora_edf_release_board_v1'] = { allowed: true, packages: [] };
+FIXTURES['rpc/thylora_edf_publish_v1'] = { state: 'PUBLISHED', frozen: true };
+
+/* --------------------------------------------------- the Media Router itself */
+// Keyed by Edge Function name. The proof swaps this per test to prove the
+// no-claim rule: a success with no asset must NOT read as a generation.
+export const ROUTER_RESPONSES = {
+  // A real, usable result.
+  SUCCESS_WITH_ASSET: {
+    status: 'SUCCEEDED',
+    model: 'thylora-anim-v2',
+    asset_url: 'https://cdn.example.test/out/ouidah-12-animated.mp4',
+    mime_type: 'video/mp4',
+    http_status: 200,
+    latency_ms: 8420,
+    audit_canonical_id: 'THY-AI-ROUTE-20260915-0001',
+    review_gate_canonical_id: 'GATE-MEDIA-001'
+  },
+  // The dangerous case: 200 OK, SUCCEEDED, and nothing to show.
+  SUCCESS_NO_ASSET: {
+    status: 'SUCCEEDED',
+    model: 'thylora-anim-v2',
+    http_status: 200,
+    latency_ms: 300,
+    audit_canonical_id: 'THY-AI-ROUTE-20260915-0002'
+  },
+  // An explicit provider refusal.
+  FAILED: {
+    status: 'FAILED',
+    failure_reason: 'Provider refused the request: animation quota exhausted.',
+    http_status: 429,
+    audit_canonical_id: 'THY-AI-ROUTE-20260915-0003'
+  },
+  // Accepted and still working.
+  RUNNING: {
+    status: 'RUNNING',
+    model: 'thylora-anim-v2',
+    audit_canonical_id: 'THY-AI-ROUTE-20260915-0004'
+  }
+};

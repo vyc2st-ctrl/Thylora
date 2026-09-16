@@ -3,63 +3,52 @@
 --
 -- HELD FOR CHAIRMAN APPLICATION.
 --
--- The Chairman command spine is NOT re-implemented here. Voice command,
--- approval, rejection and department routing all go through the existing
--- `submit_thylora_chairman_command_v1` RPC that the authoritative dashboard
--- already uses, against the existing `thylora_departments` registry. This file
--- adds only the workspace's own artefacts: what the Chairman marks, notes,
--- sketches, decides and is owed.
+-- CONTINUITY CORRECTION (2026-09-15)
+-- ----------------------------------
+-- An earlier pass of this lane defined its own `thy_is_chairman()`, its own
+-- `thy_approvals` table and its own `thy_margin_notes` table. All three already
+-- exist canonically on `thylora-dash` and are used by the authoritative
+-- dashboard (see docs/CHAIRMAN_DASHBOARD_SURFACE.md in
+-- vyc2st-ctrl/thylora-executive-dashboard):
+--
+--   gate       → thylora_is_chairman()
+--   approvals  → thylora_approval_queue_safe_v1()
+--                submit_thylora_review_gate_decision_v1(canonical_id, decision, note)
+--                thylora_chairman_review_gates / thylora_chairman_review_decisions
+--   margin     → thylora_margin_note_add_v1(kind, ref, body, mode, playback_ms, context)
+--                thylora_margin_queue_v1(include_resolved)
+--                thylora_margin_reconcile_v1(note_id, finding, disposition)
+--                thylora_chairman_margin_notes
+--
+-- Those three duplicates have been REMOVED from this file. A second Chairman
+-- gate is the most dangerous kind of drift — two gates can disagree, and the
+-- weaker one wins. A second approval ledger or margin queue would split the
+-- Chairman's own record of what he decided and what he asked for.
+--
+-- What remains here is only what has no canonical equivalent.
 
-/* ------------------------------------------------------ chairman authority */
--- The single server-side test for Chairman authority. It reads the SAME claim
--- the shell reads (app_metadata.thylora_role / thylora_roles), so the UI gate
--- and the data gate cannot disagree. app_metadata is writable only by the
--- backend; user_metadata is writable by the user and is deliberately ignored.
-create or replace function thy_is_chairman()
-returns boolean
-language sql
-stable
-security definer
-set search_path = public
-as $$
-  select coalesce(
-    (auth.jwt() -> 'app_metadata' ->> 'thylora_role') = 'CHAIRMAN'
-    or (auth.jwt() -> 'app_metadata' -> 'thylora_roles') ? 'CHAIRMAN',
-    false
-  );
-$$;
-
-/* --------------------------------------------------------------- approvals */
+/* ------------------------------------------------------ required canonical gate */
+-- Fail loudly rather than quietly creating a parallel gate. If this raises, the
+-- canonical function is missing and that must be resolved before anything in
+-- this lane is applied.
 do $$ begin
-  create type thy_approval_state as enum ('PENDING', 'APPROVED', 'REJECTED', 'WITHDRAWN');
-exception when duplicate_object then null; end $$;
-
-create table if not exists thy_approvals (
-  id uuid primary key default gen_random_uuid(),
-  approval_code text not null unique,
-  subject_kind text not null,
-  subject_code text not null,
-  subject_title text,
-  approval_state thy_approval_state not null default 'PENDING',
-  requested_at timestamptz not null default now(),
-  decided_at timestamptz,
-  decided_by uuid,
-  decision_note text,
-  -- A decided approval must record who decided it and when. This is what makes
-  -- the approval trail evidence rather than a status field.
-  constraint thy_approvals_decision_witnessed check (
-    approval_state in ('PENDING', 'WITHDRAWN')
-    or (decided_at is not null and decided_by is not null)
-  )
-);
-
-create index if not exists thy_approvals_pending_idx
-  on thy_approvals (approval_state, requested_at desc);
+  if to_regprocedure('public.thylora_is_chairman()') is null then
+    raise exception
+      'THY-CONTINUITY: thylora_is_chairman() is absent. This lane requires the canonical Chairman gate and must not define a second one.';
+  end if;
+end $$;
 
 /* --------------------------------------------------- prompt coverage ledger */
 -- Coverage and delivery are separate states on purpose. Work that exists but
 -- never reached the Chairman is the gap this ledger is built to expose, so it
 -- cannot be hidden by marking a prompt "covered".
+--
+-- KNOWN RECONCILIATION (recorded, not resolved): the canonical
+-- `thylora_query_carryforward` already stores captured prompts with
+-- `capture_state` and `supersession_state`. This ledger measures something
+-- narrower — whether the work a prompt asked for exists and reached the
+-- Chairman — and the two should be reconciled into one read before this lane
+-- is applied. It is listed as an outstanding action in WR-THYAPP-001.
 do $$ begin
   create type thy_coverage_state as enum ('UNCOVERED', 'PARTIAL', 'COVERED');
 exception when duplicate_object then null; end $$;
@@ -75,6 +64,8 @@ create table if not exists thy_prompt_ledger (
   coverage_state thy_coverage_state not null default 'UNCOVERED',
   delivered_state thy_delivered_state not null default 'PENDING',
   department_code text,
+  -- Link back to the canonical capture, so the reconciliation above has a join.
+  carryforward_query_id text,
   received_at timestamptz not null default now(),
   covered_at timestamptz,
   delivered_at timestamptz,
@@ -90,25 +81,10 @@ create table if not exists thy_prompt_ledger (
 create index if not exists thy_prompt_ledger_open_idx
   on thy_prompt_ledger (coverage_state, delivered_state, received_at desc);
 
-/* ------------------------------------------------------------ margin notes */
-create table if not exists thy_margin_notes (
-  id uuid primary key default gen_random_uuid(),
-  note_code text not null unique default 'THY-NOTE-' || to_char(now(), 'YYYYMMDD') || '-' || upper(substr(encode(gen_random_bytes(4), 'hex'), 1, 8)),
-  author_user_id uuid not null default auth.uid(),
-  subject_kind text not null,
-  subject_code text not null,
-  note_text text not null check (length(btrim(note_text)) >= 1),
-  note_state text not null default 'ACTIVE' check (note_state in ('ACTIVE', 'RESOLVED', 'ARCHIVED')),
-  created_at timestamptz not null default now()
-);
-
-create index if not exists thy_margin_notes_subject_idx
-  on thy_margin_notes (subject_kind, subject_code, created_at desc);
-
 /* ------------------------------------------------------ sketch and markup */
 -- Strokes are stored as vectors, not a flattened image, so a Chairman markup
 -- stays inspectable and re-renderable at any zoom instead of becoming a
--- screenshot nobody can re-read.
+-- screenshot nobody can re-read. No canonical sketch store exists.
 create table if not exists thy_chairman_sketches (
   id uuid primary key default gen_random_uuid(),
   sketch_code text not null unique default 'THY-SKETCH-' || to_char(now(), 'YYYYMMDD') || '-' || upper(substr(encode(gen_random_bytes(4), 'hex'), 1, 8)),

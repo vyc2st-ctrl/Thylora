@@ -11,11 +11,26 @@
 //
 // Two rules matter and both are load-bearing:
 //
-//  1. AUTHORIZATION IS A SERVER CLAIM. It is read from `app_metadata` in the
-//     verified access token, which only the backend can write. `user_metadata`
-//     is editable by the signed-in user, so a role found there is ignored —
-//     honouring it would let any member promote themselves to Chairman in the
-//     UI. There is no client-side allowlist of emails; an address is not proof.
+//  1. AUTHORIZATION IS A SERVER FACT, FROM ONE OF TWO SERVER-WRITTEN SOURCES.
+//
+//     a. `thylora_user_roles` — the CANONICAL source. The authoritative
+//        dashboard resolves the Chairman exactly this way
+//        (`js/auth.js`: select role from thylora_user_roles where user_id = me;
+//        `js/chairman-bootstrap.js`: role === 'chairman'), and the table is
+//        RLS-protected. This is checked case-insensitively because the
+//        canonical value is lowercase `chairman`.
+//
+//     b. `app_metadata` in the verified access token, which only the backend
+//        can write. Accepted as well, so an identity carrying the claim works
+//        even before the role read completes.
+//
+//     `user_metadata` is editable by the signed-in user, so a role found there
+//     is ignored — honouring it would let any member promote themselves to
+//     Chairman in the UI. There is no client-side allowlist of emails; an
+//     address is not proof.
+//
+//     A resolved role is bound to the user id it was read for, so a role left
+//     over from a previous sign-in can never apply to the next identity.
 //
 //  2. AN EXPIRED TOKEN IS NOT AN IDENTITY. A stale session is treated as signed
 //     out rather than quietly kept on screen.
@@ -73,6 +88,31 @@ export function isExpired(claims, now = Date.now()) {
   return exp * 1000 <= now;
 }
 
+/* --------------------------------------------- canonical role, from the table */
+// Populated by the shell after sign-in from `thylora_user_roles`. Held here so
+// route resolution stays synchronous: making the guard async would mean the
+// Chairman workspace flickers into view before the role is known.
+let resolvedRole = null;   // { userId, role } | null
+
+export const CANONICAL_ROLE_TABLE = 'thylora_user_roles';
+
+/** Record the role read from thylora_user_roles for a specific identity. */
+export function setResolvedRole(userId, role) {
+  resolvedRole = userId
+    ? { userId, role: typeof role === 'string' && role.trim() ? role.trim().toUpperCase() : null }
+    : null;
+}
+
+export function getResolvedRole() { return resolvedRole; }
+export function clearResolvedRole() { resolvedRole = null; }
+
+/** The resolved role, but only for the identity it was actually read for. */
+function tableRoles(session) {
+  const userId = session?.user?.id;
+  if (!resolvedRole || !userId || resolvedRole.userId !== userId) return [];
+  return resolvedRole.role ? [resolvedRole.role] : [];
+}
+
 /* ------------------------------------------------------- role determination */
 /**
  * Pull THYLORA roles from server-controlled metadata only.
@@ -104,7 +144,8 @@ export function chairmanAuthorization(session, now = Date.now()) {
   if (!claims) return refuse(REFUSAL.UNREADABLE_TOKEN);
   if (isExpired(claims, now)) return refuse(REFUSAL.EXPIRED);
 
-  const roles = serverRoles(claims);
+  // Either server-written source is sufficient; neither is user-writable.
+  const roles = [...new Set([...serverRoles(claims), ...tableRoles(session)])];
   if (!roles.includes(CHAIRMAN_ROLE)) return refuse(REFUSAL.NOT_AUTHORIZED);
 
   return {

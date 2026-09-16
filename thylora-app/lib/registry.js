@@ -40,12 +40,52 @@ export const SERVICES = Object.freeze({
   }),
   // The canonical Chairman command spine. Already live and already used by the
   // authoritative dashboard; the shell calls the same RPC rather than a new one.
+  //
+  // The margin, approval and publish names below are taken from the dashboard's
+  // own contract (docs/CHAIRMAN_DASHBOARD_SURFACE.md in
+  // vyc2st-ctrl/thylora-executive-dashboard). They are SECURITY DEFINER behind
+  // thylora_is_chairman() and every one returns a reason rather than raising, so
+  // a refusal is legible in the UI instead of arriving as a stack trace.
   CHAIRMAN_COMMAND: Object.freeze({
     code: 'CHAIRMAN_COMMAND',
     label: 'THYLORA Chairman command spine',
     status: 'EXISTING',
     submit: 'submit_thylora_chairman_command_v1',
-    departments: 'thylora_departments'
+    departments: 'thylora_departments',
+    // Live Margin — the ONE margin queue. The dashboard reconciles this queue;
+    // a Media Studio revision lands in it rather than in a second notes system.
+    marginAdd: 'thylora_margin_note_add_v1',
+    marginQueue: 'thylora_margin_queue_v1',
+    marginStore: 'thylora_chairman_margin_notes',
+    // Approvals — the narrow read, and the append-only decision ledger.
+    // The canonical role table. The dashboard resolves the Chairman from here,
+    // so the shell must read the same source or it would refuse an identity the
+    // backend accepts.
+    roles: 'thylora_user_roles',
+    approvalQueue: 'thylora_approval_queue_safe_v1',
+    reviewDecision: 'submit_thylora_review_gate_decision_v1',
+    decisionLedger: 'thylora_chairman_review_decisions',
+    chairmanGate: 'thylora_is_chairman'
+  }),
+  // The THYLORA Media Router. An Edge Function, NOT a table: it holds the
+  // provider credentials server-side and the browser never sees one. The
+  // dashboard reaches the same deployed function (THYLORA_AI_ROUTER_FUNCTION).
+  MEDIA_ROUTER: Object.freeze({
+    code: 'MEDIA_ROUTER',
+    label: 'THYLORA Media Router (Edge Function)',
+    status: 'EXISTING',
+    fn: 'thylora-ai-router'
+  }),
+  // The existing EDF release path. Publishing freezes release metadata and is
+  // immutable afterwards; the studio hands over to it and never publishes.
+  EDF_RELEASE: Object.freeze({
+    code: 'EDF_RELEASE',
+    label: 'THYLORA EDF release + publishing queue',
+    status: 'EXISTING',
+    packages: 'thylora_edf_packages',
+    releaseBoard: 'thylora_edf_release_board_v1',
+    publish: 'thylora_edf_publish_v1',
+    validate: 'thylora_edf_validate_v1'
   }),
   // The existing owned-media network. The mirror-world companion reads it.
   RAE_LINK: Object.freeze({
@@ -234,19 +274,26 @@ export const SECTIONS = Object.freeze([
     service: 'CHAIRMAN_COMMAND',
     requiresSession: true,
     reads: [
+      { kind: 'table', name: SERVICES.CHAIRMAN_COMMAND.roles, service: 'CHAIRMAN_COMMAND',
+        status: 'EXISTING', provisionedBy: 'CHAIRMAN_SPINE',
+        select: 'role,display_name' },
       { kind: 'table', name: SERVICES.CHAIRMAN_COMMAND.departments, service: 'CHAIRMAN_COMMAND',
         status: 'EXISTING', provisionedBy: 'CHAIRMAN_SPINE',
         select: 'department_code,name,purpose,status,current_assignment,priority',
         order: 'priority.asc,name.asc' },
-      { kind: 'table', name: 'thy_approvals', status: 'HELD',
-        select: 'approval_code,subject_kind,subject_code,subject_title,approval_state,requested_at',
-        order: 'requested_at.desc' },
+      // CONTINUITY CORRECTION: an earlier pass of this lane declared a
+      // `thy_approvals` table. The canonical approval queue already exists as
+      // a narrow SECURITY DEFINER read, so the invented table is gone and the
+      // shell calls the real one.
+      { kind: 'rpc', name: SERVICES.CHAIRMAN_COMMAND.approvalQueue, service: 'CHAIRMAN_COMMAND',
+        status: 'EXISTING', provisionedBy: 'CHAIRMAN_SPINE' },
       { kind: 'table', name: 'thy_prompt_ledger', status: 'HELD',
         select: 'prompt_code,prompt_text,coverage_state,delivered_state,department_code,received_at',
         order: 'received_at.desc' },
-      { kind: 'table', name: 'thy_margin_notes', status: 'HELD',
-        select: 'note_code,subject_kind,subject_code,note_text,note_state,created_at',
-        order: 'created_at.desc' },
+      // CONTINUITY CORRECTION: likewise `thy_margin_notes`. Live Margin is the
+      // one margin queue and the dashboard reconciles it.
+      { kind: 'rpc', name: SERVICES.CHAIRMAN_COMMAND.marginQueue, service: 'CHAIRMAN_COMMAND',
+        status: 'EXISTING', provisionedBy: 'CHAIRMAN_SPINE' },
       { kind: 'table', name: 'thy_chairman_sketches', status: 'HELD',
         select: 'sketch_code,subject_kind,subject_code,sketch_title,stroke_count,sketch_state,created_at',
         order: 'created_at.desc' },
@@ -268,8 +315,82 @@ export const SECTIONS = Object.freeze([
       // The SAME command RPC the authoritative dashboard uses.
       { kind: 'rpc', name: SERVICES.CHAIRMAN_COMMAND.submit, service: 'CHAIRMAN_COMMAND', status: 'EXISTING',
         provisionedBy: 'CHAIRMAN_SPINE' },
-      { kind: 'table', name: 'thy_margin_notes', status: 'HELD' },
+      { kind: 'rpc', name: SERVICES.CHAIRMAN_COMMAND.marginAdd, service: 'CHAIRMAN_COMMAND',
+        status: 'EXISTING', provisionedBy: 'CHAIRMAN_SPINE' },
+      { kind: 'rpc', name: SERVICES.CHAIRMAN_COMMAND.reviewDecision, service: 'CHAIRMAN_COMMAND',
+        status: 'EXISTING', provisionedBy: 'CHAIRMAN_SPINE' },
       { kind: 'table', name: 'thy_chairman_sketches', status: 'HELD' }
+    ]
+  },
+  {
+    id: 'media-studio', label: 'Media Studio', access: CHAIRMAN, icon: '◎',
+    summary: 'Open a registered asset, read its continuity locks, animate it through the THYLORA Media Router, mark up the result with Apple Pencil, then approve, revise or reject and hand it to the publishing queue.',
+    capabilities: [
+      'open-registered-asset', 'view-master-image', 'view-continuity-locks',
+      'animate', 'choose-animate-mode', 'submit-to-media-router', 'see-progress',
+      'preview-result', 'pencil-markup', 'attach-markup-to-revision',
+      'approve-revise-reject', 'send-to-publishing-queue', 'preserve-provenance'
+    ],
+    service: 'MEDIA_ROUTER',
+    requiresSession: true,
+    reads: [
+      // The registered asset and its version chain ALREADY EXIST in the RAE
+      // Link media lane: version_no + replaces_asset_id mean a new version
+      // never overwrites the published record it replaces. This lane reuses
+      // that registry rather than standing up a second asset store.
+      { kind: 'table', name: 'rael_media_assets', service: 'RAE_LINK', status: 'HELD',
+        provisionedBy: 'RAE_LINK',
+        select: 'id,asset_code,title,description,media_kind,pipeline_state,visibility_state,version_no,replaces_asset_id,checksum_sha256,storage_provider,storage_key,product_ref,passport_ref,edf_ref,published_at,created_at',
+        order: 'created_at.desc' },
+      { kind: 'table', name: 'rael_media_renditions', service: 'RAE_LINK', status: 'HELD',
+        provisionedBy: 'RAE_LINK',
+        select: 'asset_id,rendition_kind,rendition_state,storage_key,width,height' },
+      // Parent/derivative provenance, also already existing: DERIVED and
+      // AI_ASSISTED events carry derived_from_ref and tool_disclosure.
+      { kind: 'table', name: 'rael_provenance_events', service: 'RAE_LINK', status: 'HELD',
+        provisionedBy: 'RAE_LINK',
+        select: 'asset_id,event_type,source_description,derived_from_ref,tool_disclosure,occurred_at,evidence' },
+      { kind: 'table', name: 'rael_rights_records', service: 'RAE_LINK', status: 'HELD',
+        provisionedBy: 'RAE_LINK',
+        select: 'asset_id,gate_state,ownership_basis,term_end' },
+      // Serial number + QR destination.
+      { kind: 'table', name: SERVICES.STOREFRONT.passports, service: 'STOREFRONT', status: 'EXISTING',
+        provisionedBy: 'COMMERCE',
+        select: 'passport_code,product_code,serial_number,qr_destination,issued_at,passport_state' },
+      // This lane's own additions: the job record and the markup store.
+      { kind: 'table', name: 'thy_media_animation_jobs', status: 'HELD',
+        select: 'job_code,asset_code,mode,job_state,instruction,provider_result,failure_reason,audit_canonical_id,review_gate_canonical_id,markup_ref,submitted_at,settled_at',
+        order: 'submitted_at.desc' },
+      { kind: 'table', name: 'thy_media_markups', status: 'HELD',
+        select: 'markup_ref,job_code,asset_code,frame_ref,strokes,stroke_count,point_count,pencil_stroke_count,created_at',
+        order: 'created_at.desc' },
+      // Logo requirement, QR destination binding and serial binding per asset.
+      { kind: 'table', name: 'thy_media_release_requirements', status: 'HELD',
+        select: 'asset_code,logo_required,logo_asset_ref,qr_destination_required,serial_binding_required,requirements_state' },
+      // The publishing queue the studio hands to.
+      { kind: 'rpc', name: SERVICES.EDF_RELEASE.releaseBoard, service: 'EDF_RELEASE',
+        status: 'EXISTING', provisionedBy: 'EDF_RELEASE' }
+    ],
+    writes: [
+      // Generation goes through the Edge Function. Provider credentials stay
+      // server-side; no password or provider key is stored anywhere in this lane.
+      { kind: 'function', name: SERVICES.MEDIA_ROUTER.fn, service: 'MEDIA_ROUTER',
+        status: 'EXISTING', provisionedBy: 'AI_ROUTING' },
+      { kind: 'table', name: 'thy_media_animation_jobs', status: 'HELD' },
+      { kind: 'table', name: 'thy_media_markups', status: 'HELD' },
+      // A revision lands in the canonical margin queue, and the decision in the
+      // canonical append-only decision ledger.
+      { kind: 'rpc', name: SERVICES.CHAIRMAN_COMMAND.marginAdd, service: 'CHAIRMAN_COMMAND',
+        status: 'EXISTING', provisionedBy: 'CHAIRMAN_SPINE' },
+      { kind: 'rpc', name: SERVICES.CHAIRMAN_COMMAND.reviewDecision, service: 'CHAIRMAN_COMMAND',
+        status: 'EXISTING', provisionedBy: 'CHAIRMAN_SPINE' },
+      // Provenance for the derivative.
+      { kind: 'table', name: 'rael_provenance_events', service: 'RAE_LINK', status: 'HELD',
+        provisionedBy: 'RAE_LINK' },
+      // Handing over to the publishing queue. This freezes release metadata and
+      // is immutable afterwards.
+      { kind: 'rpc', name: SERVICES.EDF_RELEASE.publish, service: 'EDF_RELEASE',
+        status: 'EXISTING', provisionedBy: 'EDF_RELEASE' }
     ]
   }
 ]);
@@ -296,11 +417,13 @@ export function chairmanSections() {
 // racing to define the same thing.
 export const THIS_LANE = 'THYLORA_APP';
 export const PROVISIONERS = Object.freeze([
-  THIS_LANE,      // db/thylora-app
-  'RAE_LINK',     // db/rae-link
-  'COMMERCE',     // the existing approved storefront / checkout path
-  'CHAIRMAN_SPINE', // the existing Chairman command RPC + department registry
-  'PUBLIC_SITE'   // the existing public metrics RPC
+  THIS_LANE,        // db/thylora-app
+  'RAE_LINK',       // db/rae-link
+  'COMMERCE',       // the existing approved storefront / checkout path
+  'CHAIRMAN_SPINE', // the existing Chairman spine: command, margin, approvals
+  'PUBLIC_SITE',    // the existing public metrics RPC
+  'AI_ROUTING',     // WR-AI-ROUTING-001 — the deployed Media Router function
+  'EDF_RELEASE'     // the existing EDF release + publishing queue
 ]);
 
 /** Every backend object the shell touches, deduplicated. */

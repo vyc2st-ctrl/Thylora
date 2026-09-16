@@ -9,7 +9,8 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
 import { resolveRoute, visibleSections, sectionFromHash, OUTCOME } from '../thylora-app/lib/router.js';
-import { chairmanAuthorization, serverRoles, decodeClaims, isExpired, REFUSAL }
+import { chairmanAuthorization, serverRoles, decodeClaims, isExpired, REFUSAL,
+  setResolvedRole, clearResolvedRole, CANONICAL_ROLE_TABLE }
   from '../thylora-app/lib/identity.js';
 import { SECTIONS, SECTION_IDS, backendContract, section } from '../thylora-app/lib/registry.js';
 import { moneyDistanceView, promptCoverageLedger, arrivalAnalytics, haversineKm, bandFor, BP }
@@ -29,14 +30,31 @@ const MEMBER_SESSION = sessionWith({ exp: FUTURE, app_metadata: { thylora_role: 
   { id: 'user-2', email: 'member@thylora.test' });
 
 /* ------------------------------------------------------------- the nav set */
-test('every requested section exists in the registry, Chairman last and gated', () => {
+test('every requested section exists in the registry, Chairman surfaces last and gated', () => {
   const required = [
     'home', 'transmissions', 'earth-watch', 'edereariah', 'ask-ersatz', 'casefiles',
-    'world-map', 'store', 'my-purchases', 'my-questions', 'people', 'live-link', 'chairman'
+    'world-map', 'store', 'my-purchases', 'my-questions', 'people', 'live-link',
+    'chairman', 'media-studio'
   ];
   assert.deepEqual(SECTION_IDS, required);
-  assert.equal(SECTIONS.filter(s => s.access === 'CHAIRMAN').length, 1);
+  // Both Chairman surfaces are gated, and they are the last two.
+  const gated = SECTIONS.filter(s => s.access === 'CHAIRMAN').map(s => s.id);
+  assert.deepEqual(gated, ['chairman', 'media-studio']);
   assert.equal(section('chairman').access, 'CHAIRMAN');
+  assert.equal(section('media-studio').access, 'CHAIRMAN');
+});
+
+test('the Media Studio declares every step of the required mobile flow', () => {
+  const required = [
+    'open-registered-asset', 'view-master-image', 'view-continuity-locks',
+    'animate', 'choose-animate-mode', 'submit-to-media-router', 'see-progress',
+    'preview-result', 'pencil-markup', 'attach-markup-to-revision',
+    'approve-revise-reject', 'send-to-publishing-queue', 'preserve-provenance'
+  ];
+  const declared = section('media-studio').capabilities;
+  for (const capability of required) {
+    assert.ok(declared.includes(capability), `missing ${capability}`);
+  }
 });
 
 test('the Chairman workspace declares every required Chairman capability', () => {
@@ -138,11 +156,22 @@ test('an unknown route falls back to Home instead of erroring', () => {
   assert.equal(route.outcome, OUTCOME.ALLOW);
 });
 
-test('the Chairman tab is absent from the nav unless authorized', () => {
-  assert.equal(visibleSections(null).some(s => s.id === 'chairman'), false);
-  assert.equal(visibleSections(MEMBER_SESSION).some(s => s.id === 'chairman'), false);
-  assert.equal(visibleSections(CHAIRMAN_SESSION).some(s => s.id === 'chairman'), true);
-  assert.equal(visibleSections(null).length, SECTIONS.length - 1);
+test('neither Chairman surface appears in the nav unless authorized', () => {
+  for (const id of ['chairman', 'media-studio']) {
+    assert.equal(visibleSections(null).some(s => s.id === id), false, id);
+    assert.equal(visibleSections(MEMBER_SESSION).some(s => s.id === id), false, id);
+    assert.equal(visibleSections(CHAIRMAN_SESSION).some(s => s.id === id), true, id);
+  }
+  const gated = SECTIONS.filter(s => s.access === 'CHAIRMAN').length;
+  assert.equal(visibleSections(null).length, SECTIONS.length - gated);
+});
+
+test('the Media Studio route is refused exactly like the Chairman workspace', () => {
+  assert.equal(resolveRoute('media-studio', null).outcome, OUTCOME.BLOCK);
+  assert.equal(resolveRoute('media-studio', null).sectionId, 'home');
+  assert.equal(resolveRoute('media-studio', MEMBER_SESSION).outcome, OUTCOME.BLOCK);
+  assert.equal(resolveRoute('media-studio', CHAIRMAN_SESSION).outcome, OUTCOME.ALLOW);
+  assert.equal(resolveRoute('media-studio', CHAIRMAN_SESSION).sectionId, 'media-studio');
 });
 
 test('hashes are read tolerantly', () => {
@@ -151,6 +180,58 @@ test('hashes are read tolerantly', () => {
   assert.equal(sectionFromHash('#store'), 'store');
   assert.equal(sectionFromHash('#/store'), 'store');
   assert.equal(sectionFromHash('#store?ref=x'), 'store');
+});
+
+/* ------------------------------- the canonical role table (thylora_user_roles) */
+test('the Chairman role is accepted from the canonical role table', () => {
+  // The authoritative dashboard resolves the Chairman from thylora_user_roles,
+  // not from a JWT claim. A session with NO app_metadata role must still open
+  // the workspace once that table says chairman — otherwise the shell refuses
+  // an identity the backend accepts.
+  assert.equal(CANONICAL_ROLE_TABLE, 'thylora_user_roles');
+  const plain = sessionWith({ exp: FUTURE }, { id: 'user-table', email: 'chair@thylora.test' });
+  assert.equal(chairmanAuthorization(plain).authorized, false);
+
+  // The canonical value is lowercase.
+  setResolvedRole('user-table', 'chairman');
+  const allowed = chairmanAuthorization(plain);
+  assert.equal(allowed.authorized, true);
+  assert.ok(allowed.roles.includes('CHAIRMAN'));
+  assert.equal(resolveRoute('media-studio', plain).outcome, OUTCOME.ALLOW);
+  clearResolvedRole();
+});
+
+test('a resolved role never leaks to a different identity', () => {
+  setResolvedRole('user-table', 'chairman');
+  // Same role cached, different user: must not authorize.
+  const other = sessionWith({ exp: FUTURE }, { id: 'someone-else', email: 'x@y.z' });
+  assert.equal(chairmanAuthorization(other).authorized, false);
+  assert.equal(chairmanAuthorization(other).reason, REFUSAL.NOT_AUTHORIZED);
+  clearResolvedRole();
+});
+
+test('a non-chairman row in the role table does not authorize', () => {
+  const plain = sessionWith({ exp: FUTURE }, { id: 'user-ops', email: 'ops@thylora.test' });
+  for (const role of ['ops', 'member', 'viewer', '', null]) {
+    setResolvedRole('user-ops', role);
+    assert.equal(chairmanAuthorization(plain).authorized, false, `role ${role}`);
+  }
+  clearResolvedRole();
+});
+
+test('clearing the resolved role closes the workspace again', () => {
+  const plain = sessionWith({ exp: FUTURE }, { id: 'user-table' });
+  setResolvedRole('user-table', 'CHAIRMAN');
+  assert.equal(chairmanAuthorization(plain).authorized, true);
+  clearResolvedRole();
+  assert.equal(chairmanAuthorization(plain).authorized, false);
+});
+
+test('an expired token is refused even when the role table says chairman', () => {
+  setResolvedRole('user-table', 'chairman');
+  const expired = sessionWith({ exp: PAST }, { id: 'user-table' });
+  assert.equal(chairmanAuthorization(expired).reason, REFUSAL.EXPIRED);
+  clearResolvedRole();
 });
 
 /* ------------------------------------------------------------- money-distance */
@@ -324,10 +405,59 @@ test('the shell declares a backend contract and marks held objects honestly', ()
   assert.ok(contract.length > 0);
   for (const object of contract) {
     assert.ok(['EXISTING', 'HELD'].includes(object.status), `${object.name} has status ${object.status}`);
-    assert.ok(['table', 'view', 'rpc'].includes(object.kind));
+    // 'function' is an Edge Function — the Media Router. It is not a table and
+    // is never reachable through PostgREST.
+    assert.ok(['table', 'view', 'rpc', 'function'].includes(object.kind),
+      `${object.name} has unknown kind ${object.kind}`);
   }
   // The canonical command spine is reused, never re-declared as new.
   const command = contract.find(o => o.name === 'submit_thylora_chairman_command_v1');
   assert.equal(command.status, 'EXISTING');
   assert.equal(contract.find(o => o.name === 'thylora_departments').status, 'EXISTING');
+});
+
+test('the corrected continuity: no invented gate, approval store or margin store', () => {
+  // An earlier pass of this lane declared thy_approvals, thy_margin_notes and
+  // thy_is_chairman(). All three already exist canonically, so the duplicates
+  // must be gone from the contract entirely.
+  const names = backendContract().map(o => o.name);
+  for (const invented of ['thy_approvals', 'thy_margin_notes', 'thy_is_chairman']) {
+    assert.ok(!names.includes(invented), `${invented} is still declared`);
+  }
+  // And the canonical ones are declared as already existing.
+  for (const canonical of [
+    'thylora_approval_queue_safe_v1',
+    'submit_thylora_review_gate_decision_v1',
+    'thylora_margin_note_add_v1',
+    'thylora_margin_queue_v1'
+  ]) {
+    const found = backendContract().find(o => o.name === canonical);
+    assert.ok(found, `${canonical} is not declared`);
+    assert.equal(found.status, 'EXISTING', `${canonical} must be reused, not created`);
+    assert.equal(found.provisionedBy, 'CHAIRMAN_SPINE');
+  }
+});
+
+test('the Media Router is an existing Edge Function, not a table this lane creates', () => {
+  const router = backendContract().find(o => o.name === 'thylora-ai-router');
+  assert.ok(router, 'the Media Router is not declared');
+  assert.equal(router.kind, 'function');
+  assert.equal(router.status, 'EXISTING');
+  assert.equal(router.provisionedBy, 'AI_ROUTING');
+  assert.deepEqual(router.sections, ['media-studio']);
+});
+
+test('the Media Studio reuses the existing asset registry and provenance store', () => {
+  const contract = backendContract();
+  for (const reused of ['rael_media_assets', 'rael_provenance_events', 'rael_rights_records']) {
+    const found = contract.find(o => o.name === reused);
+    assert.ok(found, `${reused} is not declared`);
+    assert.equal(found.provisionedBy, 'RAE_LINK', `${reused} must stay with the RAE Link lane`);
+  }
+  // Serial number and QR destination come from the existing passport table.
+  const passport = contract.find(o => o.name === 'digital_product_passports');
+  assert.equal(passport.status, 'EXISTING');
+  assert.ok(passport.sections.includes('media-studio'));
+  // Publishing hands over to the existing EDF path.
+  assert.equal(contract.find(o => o.name === 'thylora_edf_publish_v1').status, 'EXISTING');
 });

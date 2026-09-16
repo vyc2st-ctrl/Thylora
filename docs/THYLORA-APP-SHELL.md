@@ -158,3 +158,146 @@ the fact that every request goes to the one canonical project.
 `CONNECT` to the backend host, so a live read and a live Chairman command must
 still be witnessed from a networked device. See `WR-THYAPP-001` §5 for the full
 list of what is not claimed.
+
+---
+
+# Media Studio (Chairman only)
+
+Added 2026-09-15. Workroom `WR-THYAPP-001` Delta 2, routing through
+`WR-AI-ROUTING-001`.
+
+## The flow
+
+```
+registered asset  →  master image + continuity locks  →  Animate
+      │                                                     │
+      │                                          mode: AUTOMATIC | BUDGET
+      │                                                | BEST_FIDELITY
+      │                                                     ↓
+      │                                   THYLORA Media Router (Edge Function)
+      │                                    thylora-ai-router · secrets server-side
+      │                                                     ↓
+      │                            progress → provider answer → asset check
+      │                                                     ↓
+      └──────────  Apple Pencil markup over the frame  ←  preview
+                                  │
+                   approve · revise · reject
+                                  │
+              ┌───────────────────┴───────────────────┐
+              ↓                                       ↓
+   thylora_margin_note_add_v1            submit_thylora_review_gate_decision_v1
+   (revision + markup, one queue)        (append-only decision ledger)
+                                                      ↓
+                                        rael_provenance_events (parent + tool)
+                                                      ↓
+                                        thylora_edf_publish_v1 (freezes release)
+```
+
+## The one rule that governs the screen
+
+> No media generation claim unless the provider returned a successful asset.
+
+`generationClaim()` is the only function permitted to say a generation happened.
+A submitted job, a running job, a `200 SUCCEEDED` with an empty body, a
+non-`http` asset reference, and a router error all report **not generated**, with
+the reason shown. A provider success is recorded as `RETURNED`, never `REVIEW`;
+only finding a locatable asset promotes it.
+
+The database carries the same rule as a constraint
+(`thy_job_no_claim_without_provider_asset`), so no other writer can mark a job
+reviewable without provider evidence.
+
+## Provenance that survives the round trip
+
+The animate request carries `parent_asset_code`, `parent_version_no` and
+`parent_checksum_sha256`. On handover, a `rael_provenance_events` row is written
+**before** anything is published, with `event_type: AI_ASSISTED`,
+`derived_from_ref` naming the parent, `tool_disclosure` naming the router,
+model and router audit id, and evidence carrying the serial number, QR
+destination, logo requirement and parent checksum.
+
+A published version is never overwritten. `rael_media_assets` already models this
+(`version_no` + `replaces_asset_id`), and the studio shows
+`PUBLISHED_VERSION_IMMUTABLE` rather than offering an edit.
+
+## Apple Pencil
+
+Strokes are vectors in frame-relative `0..1` coordinates, so a markup drawn on
+an iPad in portrait replays correctly anywhere — not a flattened screenshot.
+Pencil pressure and tilt are recorded; a finger or mouse reports `0` or exactly
+`0.5`, which is not a measurement, so it is stored as `null` and counted
+separately. `pencil_stroke_count` never includes touch input.
+
+## Authority
+
+The Chairman is resolved from the **canonical `thylora_user_roles` table**, the
+same way the authoritative dashboard does it (`role === 'chairman'`, lowercase).
+A JWT `app_metadata` role is also accepted. `user_metadata` is ignored — it is
+user-writable, so honouring it would let any member promote themselves.
+
+Reading continuity first caught that the shell had been checking only the JWT
+claim, which would have **refused the Chairman his own studio** on the live
+backend.
+
+---
+
+# Remaining actions
+
+**From the current code state to live usable operation of the Media Studio:
+12 actions.** None of them is a code change in this repository.
+
+### Blocking generation (nothing can be animated until these are done)
+
+| # | Action | Who |
+|---|---|---|
+| 1 | Extend `thylora-ai-router` to accept the `ANIMATE_MEDIA` task and return `{status, asset_url \| storage_key, model, audit_canonical_id, review_gate_canonical_id}`. v12 routes text providers (GEMINI, GROK); an animate task shape is **unconfirmed**. | backend |
+| 2 | Choose and credential a media/animation provider in backend secrets. The provider map still lists `video_transcode` and `image_processing` as **OPEN** decisions. | Chairman |
+| 3 | Create a review gate per animation result, so a decision has a `review_gate_canonical_id` — either returned by the router or written on job submit. Without it, approve/revise/reject cannot reach the ledger and the studio says so rather than recording locally. | backend |
+
+### Blocking the studio opening at all
+
+| # | Action | Who |
+|---|---|---|
+| 4 | Apply `db/rae-link/0001`–`0010` — the asset registry, renditions, provenance and rights the studio reads. | backend |
+| 5 | Apply `db/thylora-app/0001`–`0005` — the shell's surfaces plus the job, markup and requirements tables. `0003` and `0005` refuse to apply if `thylora_is_chairman()` is absent. | backend |
+| 6 | Register at least one asset in `rael_media_assets` with a READY master rendition at a resolvable URL, and bind a passport so it carries a serial number and QR destination. | production |
+
+### Pre-application confirmations (two assumed column names)
+
+| # | Action | Who |
+|---|---|---|
+| 7 | Confirm the live `orders` column names and adjust the `thy_order_arrivals` view in `0002`. | backend |
+| 8 | Confirm `digital_product_passports` exposes `qr_destination` (this lane assumes that name) and adjust the registry select if it differs. | backend |
+
+### Required before anything publishes
+
+| # | Action | Who |
+|---|---|---|
+| 9 | Declare release requirements per asset: decide `logo_required` and attach `logo_asset_ref`. `logo_required` is deliberately `NULL` until decided, and the studio blocks on `LOGO_REQUIREMENT_UNSET` rather than assuming no logo is needed. | Chairman |
+
+### Outstanding continuity
+
+| # | Action | Who |
+|---|---|---|
+| 10 | Reconcile `thy_prompt_ledger` with the canonical `thylora_query_carryforward` into one read. A `carryforward_query_id` join column exists; the reconciliation does not. | backend |
+
+### Delivery and witness
+
+| # | Action | Who |
+|---|---|---|
+| 11 | Deploy `/thylora-app` to the live runtime — either merge it forward into `vyc2st-ctrl/thylora-executive-dashboard` → `thylora-public-world`, or publish this repository. Deployment authority is **not** this repository. | Chairman |
+| 12 | **Witness on the actual iPad.** Safari on iPadOS with a physical Apple Pencil: open a registered asset, animate, mark up a frame, revise, approve, queue. The proof in this repository is headless Chromium at iPad dimensions with synthesised pen events — it does not cover Safari's `touch-action`/`setPointerCapture` behaviour, palm rejection, Pencil hover, Scribble interference, real pressure curves, or the iPadOS install path. | Chairman |
+
+## What is proven now
+
+`npm test` — 155 unit tests. `npm run test:browser` — 47 browser tests, 18 of
+them driving the Media Studio at iPad Pro 11" portrait with real
+`pointerType: 'pen'` events carrying pressure and tilt.
+
+## What is not claimed
+
+No media has been generated by any provider through this code. No live round
+trip was performed: this environment's network policy refuses `CONNECT` to
+`jvsdxhrfhtlgaknhjxlz.supabase.co`, so the router was intercepted, not called.
+The migrations are held, not applied. **This is not complete, because action 12
+has not happened.**

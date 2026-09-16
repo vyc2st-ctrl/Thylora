@@ -145,7 +145,7 @@ test('there is exactly one question-submission path and one checkout path', () =
 
 test('the migrations add no second storefront', () => {
   const sql = FILES.filter(f => f.path.startsWith('db/thylora-app/') && f.path.endsWith('.sql'));
-  assert.ok(sql.length === 4, `expected 4 migrations, found ${sql.length}`);
+  assert.ok(sql.length === 5, `expected 5 migrations, found ${sql.length}`);
   const created = sql.flatMap(f =>
     [...f.text.matchAll(/create\s+table\s+if\s+not\s+exists\s+([a-z_0-9]+)/gi)].map(m => m[1].toLowerCase()));
   for (const reserved of ['products', 'orders', 'entitlements', 'digital_product_passports', 'thylora_departments']) {
@@ -192,7 +192,12 @@ test('held objects are marked held, and existing ones are not claimed as new', (
   const existing = contract.filter(o => o.status === 'EXISTING').map(o => o.name).sort();
   assert.deepEqual(existing, [
     'digital_product_passports', 'entitlements', 'orders', 'products',
-    'public_get_site_metrics', 'submit_thylora_chairman_command_v1', 'thylora_departments'
+    'public_get_site_metrics', 'submit_thylora_chairman_command_v1',
+    'submit_thylora_review_gate_decision_v1', 'thylora-ai-router',
+    'thylora_approval_queue_safe_v1', 'thylora_departments',
+    'thylora_edf_publish_v1', 'thylora_edf_release_board_v1',
+    'thylora_margin_note_add_v1', 'thylora_margin_queue_v1',
+    'thylora_user_roles'
   ]);
   // Every object names a real provisioning lane.
   for (const object of contract) {
@@ -211,11 +216,100 @@ test('held objects are marked held, and existing ones are not claimed as new', (
   // ...and nothing another lane owns may be created here, or two lanes would
   // race to define the same object.
   for (const object of heldByOtherLanes()) {
-    assert.ok(!new RegExp(`create\\s+(?:table|or\\s+replace\\s+(?:view|function))[^;]*\\b${object.name}\\b`, 'i').test(sql),
+    // Anchor on the object NAME immediately after the create clause. Reading
+    // another lane's table (this lane's continuity view joins
+    // rael_media_assets) is correct reuse; creating one is the drift.
+    const creates = new RegExp(
+      `create\\s+table(?:\\s+if\\s+not\\s+exists)?\\s+${object.name}\\b` +
+      `|create\\s+or\\s+replace\\s+(?:view|function)\\s+${object.name}\\b`, 'i');
+    assert.ok(!creates.test(sql),
       `${object.name} belongs to the ${object.provisionedBy} lane but db/thylora-app creates it`);
   }
-  assert.deepEqual(heldByOtherLanes().map(o => `${o.name}:${o.provisionedBy}`).sort(),
-    ['begin_storefront_checkout_v1:COMMERCE', 'rael_channels:RAE_LINK']);
+  assert.deepEqual(heldByOtherLanes().map(o => `${o.name}:${o.provisionedBy}`).sort(), [
+    'begin_storefront_checkout_v1:COMMERCE',
+    'rael_channels:RAE_LINK',
+    'rael_media_assets:RAE_LINK',
+    'rael_media_renditions:RAE_LINK',
+    'rael_provenance_events:RAE_LINK',
+    'rael_rights_records:RAE_LINK'
+  ]);
+});
+
+test('the shell resolves the Chairman from the canonical role table', () => {
+  // The dashboard resolves the Chairman from thylora_user_roles. If the shell
+  // read only the JWT claim it would refuse an identity the backend accepts,
+  // locking the Chairman out of his own workspace.
+  const identity = FILES.find(f => f.path === 'thylora-app/lib/identity.js');
+  assert.match(identity.text, /thylora_user_roles/);
+  // And user_metadata is still ignored.
+  assert.match(identity.text, /user_metadata`? is (?:editable|ignored)/);
+
+  const app = FILES.find(f => f.path === 'thylora-app/app.js');
+  assert.match(app.text, /resolveChairmanRole/);
+  // Resolved before the first route decision, or a deep link would bounce.
+  assert.match(app.text, /await resolveChairmanRole\(\);\s*\nauthUI\(\);/);
+  // And cleared on sign-out, so a role cannot outlive its session.
+  assert.match(app.text, /signOut\(\);\s*\n\s*clearResolvedRole\(\);/);
+});
+
+test('the corrected migrations define no second Chairman gate', () => {
+  const sql = FILES.filter(f => f.path.startsWith('db/thylora-app/') && f.path.endsWith('.sql'));
+  for (const file of sql) {
+    // A second gate is the most dangerous drift: two gates can disagree and the
+    // weaker one wins.
+    assert.ok(!/create\s+or\s+replace\s+function\s+thy_is_chairman/i.test(file.text),
+      `${file.path} defines its own Chairman gate`);
+    assert.ok(!/create\s+table[^;]*\bthy_approvals\b/i.test(file.text),
+      `${file.path} creates a second approval store`);
+    assert.ok(!/create\s+table[^;]*\bthy_margin_notes\b/i.test(file.text),
+      `${file.path} creates a second margin store`);
+  }
+  // Every policy uses the canonical gate.
+  const rls = FILES.find(f => f.path === 'db/thylora-app/0004_rls_policies.sql');
+  assert.ok(/thylora_is_chairman\(\)/.test(rls.text));
+  assert.ok(!/[^a-z_]thy_is_chairman\(\)/.test(rls.text));
+  // And the lane refuses to apply if the canonical gate is absent.
+  const chairmanSql = FILES.find(f => f.path === 'db/thylora-app/0003_chairman_workspace.sql');
+  assert.match(chairmanSql.text, /THY-CONTINUITY/);
+  assert.match(chairmanSql.text, /to_regprocedure\('public\.thylora_is_chairman\(\)'\)/);
+});
+
+test('no credential is stored anywhere in the media studio lane', () => {
+  // Provider credentials remain server-side in the Edge Function. A column or
+  // a stored value here would be a credential on the client's side of the line.
+  const lane = FILES.filter(f =>
+    f.path.startsWith('db/thylora-app/') || f.path.startsWith('thylora-app/'));
+  for (const file of lane) {
+    // Strip comments before scanning, so the prohibition notes themselves pass.
+    const code = file.text
+      .replace(/^\s*--.*$/gm, '')
+      .replace(/\/\*[\s\S]*?\*\//g, '')
+      .replace(/^\s*\/\/.*$/gm, '');
+    for (const forbidden of [
+      /\bpassword\b\s+text/i,
+      /\bapi_key\b/i,
+      /\bprovider_secret\b/i,
+      /\bsecret_key\b/i,
+      /\bbearer\s+sk-/i
+    ]) {
+      assert.ok(!forbidden.test(code), `${file.path} appears to hold a credential (${forbidden})`);
+    }
+  }
+});
+
+test('the media studio migration enforces the no-claim rule in the database', () => {
+  const sql = FILES.find(f => f.path === 'db/thylora-app/0005_media_studio.sql');
+  assert.ok(sql, 'the media studio migration is missing');
+  // The UI rule must have a floor under it, so no other writer can mark a job
+  // reviewable without provider evidence.
+  assert.match(sql.text, /thy_job_no_claim_without_provider_asset/);
+  assert.match(sql.text, /SUCCEEDED/);
+  // A failure must carry a reason, and a queued job must name its output.
+  assert.match(sql.text, /thy_job_failure_explained/);
+  assert.match(sql.text, /thy_job_queued_names_output/);
+  // Markup is vectors and must not be empty.
+  assert.match(sql.text, /thy_markup_not_empty/);
+  assert.match(sql.text, /thy_markup_pencil_subset/);
 });
 
 test('the shell never renders an absent table as an empty feed', () => {

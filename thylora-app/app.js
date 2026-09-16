@@ -12,16 +12,22 @@
 // Nothing here invents a table, a second storefront or a second Chairman
 // command path.
 
-import { api, rpc, probe, safeRead, getSession, signIn, signOut, isSignedIn, BACKEND_PROJECT }
+import { api, rpc, probe, safeRead, invokeFunction, getSession, signIn, signOut, isSignedIn, BACKEND_PROJECT }
   from '../lib/thylora-backend.js';
 import { SECTIONS, SECTION_IDS, DEFAULT_SECTION, SERVICES, section, heldObjects }
   from './lib/registry.js';
 import { resolveRoute, visibleSections, sectionFromHash, OUTCOME } from './lib/router.js';
-import { chairmanAuthorization, memberAuthorization } from './lib/identity.js';
+import { chairmanAuthorization, memberAuthorization, setResolvedRole, clearResolvedRole,
+  CANONICAL_ROLE_TABLE } from './lib/identity.js';
 import { loadState, saveState, patchDrafts, toggleFollow, isFollowing, storageDurable }
   from './lib/state.js';
 import { moneyDistanceView, arrivalAnalytics, promptCoverageLedger, isCoordinate,
   formatMinor, formatBp, formatKm } from './lib/analytics.js';
+import {
+  MEDIA_ROUTER_FUNCTION, ANIMATE_MODES, DEFAULT_MODE, animateRequest, readRouterResponse,
+  settleReturnedJob, generationClaim, jobProgress, continuityLocks, qrDestination,
+  markupPoint, markupSummary, isPencil, revisionRequest, decisionPayload, publishHandoff
+} from './lib/media-studio.js';
 
 const $ = id => document.getElementById(id);
 const esc = (value = '') => String(value ?? '').replace(/[&<>'"]/g,
@@ -156,7 +162,8 @@ const LOADERS = {
   'my-questions': loadMyQuestions,
   people: loadPeople,
   'live-link': loadLiveLink,
-  chairman: loadChairman
+  chairman: loadChairman,
+  'media-studio': loadMediaStudio
 };
 
 function showView(requested) {
@@ -202,6 +209,26 @@ document.addEventListener('click', event => {
 window.addEventListener('hashchange', () => showView(sectionFromHash(location.hash)));
 
 /* --------------------------------------------------------------------- auth */
+/**
+ * Resolve the Chairman role from the CANONICAL `thylora_user_roles` table, the
+ * same way the authoritative dashboard does. Without this the shell would read
+ * only the JWT claim and refuse a Chairman the backend accepts.
+ *
+ * The read is RLS-protected, so a member cannot read a role they do not have.
+ * A failure clears the role rather than leaving a stale one in place.
+ */
+async function resolveChairmanRole() {
+  const session = getSession();
+  if (!session?.user?.id) { clearResolvedRole(); return null; }
+  const result = await safeRead('role', () => api(
+    `/rest/v1/${CANONICAL_ROLE_TABLE}?select=role,display_name&user_id=eq.${encodeURIComponent(session.user.id)}`
+  ));
+  if (!result.ok) { clearResolvedRole(); return null; }
+  const row = Array.isArray(result.data) ? result.data[0] ?? null : result.data ?? null;
+  setResolvedRole(session.user.id, row?.role ?? null);
+  return row?.role ?? null;
+}
+
 function authUI() {
   const session = getSession();
   const signed = isSignedIn();
@@ -233,6 +260,7 @@ $('signInForm')?.addEventListener('submit', async event => {
     await signIn(email, password);
     $('signInPassword').value = '';
     status.textContent = 'Signed in.';
+    await resolveChairmanRole();
     authUI();
     await checkBackend();
     showView(loadState().section || DEFAULT_SECTION);
@@ -243,6 +271,7 @@ $('signInForm')?.addEventListener('submit', async event => {
 
 $('signOutBtn')?.addEventListener('click', () => {
   signOut();
+  clearResolvedRole();
   authUI();
   $('authStatus').textContent = 'Signed out.';
   showView(DEFAULT_SECTION);
@@ -783,20 +812,39 @@ async function loadDepartments() {
   $('chDeptStatus').textContent = `${rows.length} department${rows.length === 1 ? '' : 's'} on the current registry.`;
 }
 
+/**
+ * Approvals read through the CANONICAL narrow read
+ * `thylora_approval_queue_safe_v1()`. It is SECURITY DEFINER behind
+ * thylora_is_chairman() and returns { allowed, reason, ... } rather than
+ * raising, so a refusal is legible here instead of arriving as a stack trace.
+ */
 async function loadApprovals() {
   const holder = $('chApprovals');
-  const result = await readRef('chairman', 'thy_approvals');
+  const result = await safeRead('approvals', () => rpc(SERVICES.CHAIRMAN_COMMAND.approvalQueue));
   if (!result.ok) return reportFailure($('chApprovalNotice'), holder, 'Approvals', result);
+
+  const data = result.data ?? {};
+  if (data.allowed === false) {
+    notice($('chApprovalNotice'), {
+      title: 'Approval queue refused',
+      detail: data.reason || 'The backend refused this identity.', bad: true
+    });
+    holder.innerHTML = '<p class="muted">Approvals unavailable.</p>';
+    return;
+  }
   clearNotice($('chApprovalNotice'));
-  const rows = result.data ?? [];
-  holder.innerHTML = rows.length ? `<div class="rows">${rows.map(a => `
-    <div class="row"><div>
-      <strong>${esc(a.subject_title ?? a.subject_code)}</strong>
-      <span>${esc(a.subject_kind ?? '')} · ${esc(a.approval_state ?? '')}</span>
+
+  const rows = Array.isArray(data) ? data : (data.gates ?? data.approvals ?? data.rows ?? []);
+  holder.innerHTML = rows.length ? `<div class="rows">${rows.map(a => {
+    const id = a.canonical_id ?? a.gate_canonical_id ?? a.approval_code ?? '';
+    return `<div class="row"><div>
+      <strong>${esc(a.subject_title ?? a.title ?? id)}</strong>
+      <span>${esc(a.subject_kind ?? a.gate_kind ?? '')} · ${esc(a.gate_state ?? a.approval_state ?? '')}</span>
     </div><div class="row-actions">
-      <button type="button" data-approve="${esc(a.approval_code)}">Approve</button>
-      <button type="button" class="ghost" data-reject="${esc(a.approval_code)}">Reject</button>
-    </div></div>`).join('')}</div>`
+      <button type="button" data-approve="${esc(id)}">Approve</button>
+      <button type="button" class="ghost" data-reject="${esc(id)}">Reject</button>
+    </div></div>`;
+  }).join('')}</div>`
     : '<p class="muted">Nothing is waiting for approval.</p>';
 
   holder.querySelectorAll('[data-approve]').forEach(b =>
@@ -805,20 +853,33 @@ async function loadApprovals() {
     b.addEventListener('click', () => decide(b.dataset.reject, 'REJECT', b)));
 }
 
-/** Approve or reject through the SAME canonical command spine. */
-async function decide(approvalCode, decision, button) {
+/**
+ * Record a decision in the CANONICAL append-only ledger through
+ * `submit_thylora_review_gate_decision_v1`. The browser cannot modify a gate
+ * directly — RLS blocks it — and a second decision ledger would split the
+ * Chairman's own record of what he decided.
+ */
+async function decide(canonicalId, decision, button) {
   button.disabled = true;
   const status = $('chStatus');
-  status.textContent = `Routing ${decision.toLowerCase()} for ${approvalCode}…`;
+  const built = decisionPayload({ decision, gateCanonicalId: canonicalId });
+  if (!built.ok) {
+    status.textContent = built.reason;
+    button.disabled = false;
+    return;
+  }
+  status.textContent = `Recording ${decision.toLowerCase()} for ${canonicalId}…`;
   try {
-    const result = await rpc(SERVICES.CHAIRMAN_COMMAND.submit, {
-      p_command_text: `${decision} ${approvalCode}`
-    });
+    const result = await rpc(SERVICES.CHAIRMAN_COMMAND.reviewDecision, built.payload);
     renderCommandResult(result);
-    status.textContent = `${decision === 'APPROVE' ? 'Approval' : 'Rejection'} routed and preserved.`;
+    status.textContent = result?.resulting_state
+      ? `Recorded ${result.decision ?? built.payload.p_decision} · gate is now ${result.resulting_state}.`
+      : 'Decision recorded in the append-only ledger.';
     await loadApprovals();
   } catch (error) {
-    status.textContent = `Decision did not route: ${error.message}`;
+    status.textContent = error.status === 401 || error.code === '42501'
+      ? 'Access denied: Chairman authentication required.'
+      : `Decision was not recorded: ${error.message}`;
   } finally {
     button.disabled = false;
   }
@@ -903,52 +964,72 @@ $('chNote')?.addEventListener('input', event => {
     ? (durable ? 'Draft saved on this device.' : 'Draft kept for this session only.') : '';
 });
 
+/**
+ * Margin notes go to the CANONICAL Live Margin queue via
+ * `thylora_margin_note_add_v1`, which the dashboard reconciles. This lane adds
+ * no second notes system. The function returns { added, reason, queue_depth }
+ * rather than raising, and a refusal keeps the note on the device.
+ */
 $('chNoteSave')?.addEventListener('click', async () => {
   const status = $('chNoteStatus');
   const text = $('chNote').value.trim();
   if (!text) { status.textContent = 'Write the note first.'; return; }
   const state = loadState();
-  status.textContent = 'Saving margin note…';
+  status.textContent = 'Queueing margin note…';
   try {
-    await api('/rest/v1/thy_margin_notes', {
-      method: 'POST',
-      headers: { Prefer: 'return=minimal' },
-      body: {
-        subject_kind: 'TRANSMISSION',
-        subject_code: state.lastTransmission ?? 'UNASSIGNED',
-        note_text: text,
-        note_state: 'ACTIVE'
+    const result = await rpc(SERVICES.CHAIRMAN_COMMAND.marginAdd, {
+      p_anchor_kind: 'SCREEN_COMPONENT',
+      p_anchor_ref: state.lastTransmission ?? 'thylora-app#chairman',
+      p_body: text,
+      p_source_mode: 'TEXT',
+      p_playback_position_ms: null,
+      p_anchor_context: {
+        detected_by: 'THYLORA_APP_SHELL',
+        screen: '/thylora-app#chairman',
+        at: new Date().toISOString()
       }
     });
+    if (result && result.added === false) {
+      status.textContent = `Not stored: ${result.reason || 'refused'}. Your note is kept as a draft on this device.`;
+      return;
+    }
     patchDrafts({ marginNote: '' });
     $('chNote').value = '';
     $('chNoteDraftState').textContent = '';
-    status.textContent = 'Margin note saved.';
+    status.textContent = result?.queue_depth !== undefined
+      ? `Queued · ${result.queue_depth} waiting to be reconciled.`
+      : 'Queued in the Live Margin queue.';
     await loadMarginNotes();
   } catch (error) {
     status.textContent = error.provisionRequired
-      ? 'Not saved: margin notes are not provisioned on the backend yet. Your note is kept as a draft on this device.'
-      : `Not saved: ${error.message}. Your note is kept as a draft on this device.`;
+      ? 'Not stored: the Live Margin function is not reachable. Your note is kept as a draft on this device.'
+      : `Not stored: ${error.message}. Your note is kept as a draft on this device.`;
   }
 });
 
 async function loadMarginNotes() {
   const holder = $('chNotes');
-  const result = await readRef('chairman', 'thy_margin_notes');
+  const result = await safeRead('margin', () =>
+    rpc(SERVICES.CHAIRMAN_COMMAND.marginQueue, { p_include_resolved: true }));
   if (!result.ok) {
     holder.innerHTML = `<p class="muted">${result.provisionRequired
-      ? 'Margin notes are not provisioned on the backend yet.'
-      : esc(`Margin notes did not load: ${result.message}`)}</p>`;
+      ? 'The Live Margin queue is not reachable from this device.'
+      : esc(`The margin queue did not load: ${result.message}`)}</p>`;
     return;
   }
-  const rows = result.data ?? [];
+  const data = result.data ?? {};
+  if (data.allowed === false) {
+    holder.innerHTML = `<p class="muted">${esc(data.reason || 'The backend refused this identity.')}</p>`;
+    return;
+  }
+  const rows = data.notes ?? [];
   holder.innerHTML = rows.length ? `<div class="rows">${rows.map(n => `
     <div class="row"><div>
-      <strong>${esc(n.subject_code ?? '')}</strong>
-      <span>${esc(n.note_text)}</span>
-      <small class="muted">${n.created_at ? new Date(n.created_at).toLocaleString() : ''}</small>
+      <strong>${esc(n.anchor_kind ?? '')} · ${esc(n.anchor_ref ?? '')}</strong>
+      <span>${esc(n.body ?? n.note_text ?? '')}</span>
+      <small class="muted">${n.created_at ? new Date(n.created_at).toLocaleString() : ''}${n.disposition ? ` · ${esc(n.disposition)}` : ''}</small>
     </div></div>`).join('')}</div>`
-    : '<p class="muted">No margin note recorded yet.</p>';
+    : '<p class="muted">No margin note yet. A note never stops the pass.</p>';
 }
 
 /* sketch + markup -------------------------------------------------------- */
@@ -1135,8 +1216,684 @@ async function loadLedger() {
         </div></div>`).join('')}</div>` : '');
 }
 
+/* ===================================================== MEDIA STUDIO (Chairman) */
+// The mobile flow, in order:
+//   open registered asset → master image + continuity locks → Animate →
+//   mode → submit → progress → preview → approve/revise/reject → publishing queue
+//
+// Generation goes through the THYLORA Media Router Edge Function, which holds
+// the provider credentials server-side. Nothing here stores a credential, and
+// nothing here claims a generation the provider did not return.
+
+const studio = {
+  assets: [],
+  renditions: [],
+  provenance: [],
+  rights: [],
+  passports: [],
+  requirements: [],
+  asset: null,
+  locks: null,
+  job: null,
+  mode: DEFAULT_MODE,
+  markup: { strokes: [], current: null, active: false, ref: null },
+  poll: null
+};
+
+async function loadMediaStudio() {
+  $('msRouter').textContent =
+    `Router · ${MEDIA_ROUTER_FUNCTION} · provider credentials remain server-side.`;
+  renderModes();
+
+  const [assets, renditions, provenance, rights, passports, requirements] = await Promise.all([
+    readRef('media-studio', 'rael_media_assets'),
+    readRef('media-studio', 'rael_media_renditions'),
+    readRef('media-studio', 'rael_provenance_events'),
+    readRef('media-studio', 'rael_rights_records'),
+    readRef('media-studio', SERVICES.STOREFRONT.passports),
+    readRef('media-studio', 'thy_media_release_requirements')
+  ]);
+
+  studio.renditions = renditions.ok ? (renditions.data ?? []) : [];
+  studio.provenance = provenance.ok ? (provenance.data ?? []) : [];
+  studio.rights = rights.ok ? (rights.data ?? []) : [];
+  studio.passports = passports.ok ? (passports.data ?? []) : [];
+  studio.requirements = requirements.ok ? (requirements.data ?? []) : [];
+
+  if (!assets.ok) {
+    $('msAssetStatus').textContent = '';
+    $('msAssets').innerHTML = '';
+    return reportFailure($('msNotice'), null, 'The registered asset registry', assets);
+  }
+  clearNotice($('msNotice'));
+  studio.assets = assets.data ?? [];
+
+  $('msAssetStatus').textContent = studio.assets.length
+    ? `${studio.assets.length} registered asset${studio.assets.length === 1 ? '' : 's'}. Open one to read its continuity locks.`
+    : 'No asset is registered yet.';
+
+  $('msAssets').innerHTML = studio.assets.map(a => `
+    <button type="button" class="card" data-asset="${esc(a.asset_code)}">
+      <strong>${esc(a.title)}</strong>
+      <span>${esc(a.media_kind ?? '')} · ${esc(a.pipeline_state ?? '')} · version ${Number(a.version_no ?? 1)}</span>
+      <small>${esc(a.asset_code)}${a.passport_ref ? ` · passport ${esc(a.passport_ref)}` : ' · no passport bound'}</small>
+      ${a.replaces_asset_id ? '<span class="flag">derivative</span>' : ''}
+    </button>`).join('');
+
+  $('msAssets').querySelectorAll('[data-asset]').forEach(card =>
+    card.addEventListener('click', () => openAsset(card.dataset.asset)));
+}
+
+/* -------------------------------------------------------------- open asset */
+function assetContext(asset) {
+  const renditions = studio.renditions.filter(r => r.asset_id === asset.id);
+  const passport = studio.passports.find(p =>
+    p.passport_code === asset.passport_ref || p.product_code === asset.product_ref) ?? null;
+  return {
+    rights: studio.rights.find(r => r.asset_id === asset.id) ?? null,
+    renditions,
+    captions: [],
+    moderation: null,
+    scan: null,
+    passport,
+    requirements: studio.requirements.find(r => r.asset_code === asset.asset_code) ?? null,
+    provenance: studio.provenance.filter(e => e.asset_id === asset.id)
+  };
+}
+
+function openAsset(assetCode) {
+  const asset = studio.assets.find(a => a.asset_code === assetCode);
+  if (!asset) return;
+  studio.asset = asset;
+  studio.job = null;
+  resetMarkup();
+  stopPolling();
+
+  document.querySelectorAll('[data-asset]').forEach(c =>
+    c.classList.toggle('active', c.dataset.asset === assetCode));
+  $('msOpen').hidden = false;
+  $('msProgress').hidden = true;
+  $('msResult').hidden = true;
+
+  const context = assetContext(asset);
+
+  // Master image. A poster or thumbnail rendition is the master frame; the
+  // studio does not fabricate a URL it was not given.
+  const master = context.renditions.find(r =>
+    ['POSTER', 'THUMBNAIL', 'MASTER'].includes(String(r.rendition_kind)) &&
+    String(r.rendition_state) === 'READY');
+  const image = $('msMaster');
+  const empty = $('msMasterEmpty');
+  if (master?.storage_key && /^https?:\/\//i.test(master.storage_key)) {
+    image.src = master.storage_key;
+    image.alt = `Master frame for ${asset.title}`;
+    image.hidden = false;
+    empty.hidden = true;
+  } else {
+    image.removeAttribute('src');
+    image.hidden = true;
+    empty.hidden = false;
+    empty.textContent = master
+      ? 'A master rendition is registered but its storage key is not a resolvable URL, so no frame is displayed.'
+      : 'No master rendition is ready for this asset, so there is no frame to display.';
+  }
+
+  const passport = context.passport;
+  const requirements = context.requirements;
+  $('msAssetFacts').innerHTML = [
+    ['Asset code', asset.asset_code],
+    ['Version', `${asset.version_no ?? 1}${asset.replaces_asset_id ? ' (derivative)' : ''}`],
+    ['Pipeline state', asset.pipeline_state ?? 'unknown'],
+    ['Checksum', asset.checksum_sha256 ? `${asset.checksum_sha256.slice(0, 16)}…` : 'not recorded'],
+    ['Serial number', passport?.serial_number ?? 'no passport bound'],
+    ['QR destination', qrDestination(passport) ?? 'not declared'],
+    ['Logo required', requirements
+      ? (requirements.logo_required === null || requirements.logo_required === undefined
+          ? 'not decided'
+          : requirements.logo_required ? `yes · ${requirements.logo_asset_ref ?? 'no logo attached'}` : 'no')
+      : 'requirements not declared'],
+    ['EDF package', asset.edf_ref ?? 'not bound']
+  ].map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('');
+
+  studio.locks = continuityLocks(asset, context);
+  renderLocks(studio.locks);
+
+  $('msSubmit').disabled = !studio.locks.can_animate;
+  $('msSubmitState').textContent = studio.locks.can_animate
+    ? ''
+    : 'Animation is blocked until the blocking locks above are cleared.';
+  $('msOpen').scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+}
+
+function renderLocks(locks) {
+  const holder = $('msLocks');
+  if (!locks.locks.length) {
+    holder.innerHTML = '<p class="muted">No continuity lock outstanding. This asset is clear to animate and to queue.</p>';
+    return;
+  }
+  holder.innerHTML = locks.locks.map(l => `
+    <div class="row lock" data-severity="${esc(l.severity)}"><div>
+      <strong>${esc(l.code)}</strong>
+      <span>${esc(l.detail)}</span>
+    </div><div class="row-actions">
+      <span class="flag">${l.severity === 'BLOCKING' ? 'blocks animation' : 'blocks publishing'}</span>
+    </div></div>`).join('');
+}
+
+/* ------------------------------------------------------------------- modes */
+function renderModes() {
+  $('msModes').innerHTML = ANIMATE_MODES.map(m => `
+    <button type="button" class="mode" role="radio" data-mode="${esc(m.code)}"
+      aria-checked="${m.code === studio.mode}">
+      <strong>${esc(m.label)}</strong><span>${esc(m.detail)}</span>
+    </button>`).join('');
+  $('msModes').querySelectorAll('[data-mode]').forEach(button =>
+    button.addEventListener('click', () => {
+      studio.mode = button.dataset.mode;
+      $('msModes').querySelectorAll('[data-mode]').forEach(b =>
+        b.setAttribute('aria-checked', String(b.dataset.mode === studio.mode)));
+    }));
+}
+
+/* ------------------------------------------------------------- submit + poll */
+$('msSubmit')?.addEventListener('click', submitAnimation);
+
+async function submitAnimation() {
+  if (!studio.asset) return;
+  const button = $('msSubmit');
+  const state = $('msSubmitState');
+
+  if (!studio.locks?.can_animate) {
+    state.textContent = 'Animation is blocked by a continuity lock.';
+    return;
+  }
+
+  let request;
+  try {
+    request = animateRequest({
+      asset: studio.asset,
+      modeCode: studio.mode,
+      instruction: $('msInstruction').value,
+      markupRef: studio.markup.ref
+    });
+  } catch (error) {
+    state.textContent = error.message;
+    return;
+  }
+
+  button.disabled = true;
+  state.textContent = 'Handing the request to the THYLORA Media Router…';
+  // A local job record so progress is legible even before the backend answers.
+  $('msDecisionOutcome').textContent = '';
+  studio.job = {
+    job_code: `LOCAL-${Date.now()}`,
+    asset_code: studio.asset.asset_code,
+    mode: studio.mode,
+    job_state: 'SUBMITTED',
+    instruction: request.instruction,
+    provider_result: null,
+    failure_reason: null,
+    audit_canonical_id: null,
+    review_gate_canonical_id: null
+  };
+  renderProgress();
+
+  try {
+    const response = await invokeFunction(MEDIA_ROUTER_FUNCTION, request);
+    applyRouterResponse(response);
+    state.textContent = 'The router answered.';
+    // Record the attempt. A failure to record never invents a success.
+    await recordJob();
+    if (studio.job.job_state === 'ROUTING' || studio.job.job_state === 'RUNNING') startPolling();
+  } catch (error) {
+    studio.job.job_state = 'FAILED';
+    studio.job.failure_reason = error.provisionRequired
+      ? `The THYLORA Media Router (${MEDIA_ROUTER_FUNCTION}) did not accept this request: ${error.message}`
+      : error.message;
+    renderProgress();
+    renderResult();
+    notice($('msNotice'), error.provisionRequired
+      ? { title: 'Router did not accept the animate task',
+          detail: `Nothing was generated and nothing is claimed. The router is deployed for provider routing, but it did not accept an ANIMATE_MEDIA task: ${error.message}`,
+          bad: true }
+      : { title: 'Submission did not complete',
+          detail: `Nothing was generated. ${error.message}`, bad: true });
+    state.textContent = 'Not submitted.';
+  } finally {
+    button.disabled = false;
+  }
+}
+
+function applyRouterResponse(response) {
+  const update = readRouterResponse(response);
+  Object.assign(studio.job, update);
+  // A provider "success" is only a result once an asset is actually found.
+  if (studio.job.job_state === 'RETURNED') {
+    Object.assign(studio.job, settleReturnedJob(studio.job));
+  }
+  studio.job.review_gate_canonical_id =
+    response?.review_gate_canonical_id ?? response?.gate_canonical_id ?? studio.job.review_gate_canonical_id;
+  renderProgress();
+  renderResult();
+}
+
+/** Persist the job. The job table is Chairman-only and may not be provisioned. */
+async function recordJob() {
+  const job = studio.job;
+  if (!job) return;
+  try {
+    const created = await api('/rest/v1/thy_media_animation_jobs', {
+      method: 'POST',
+      headers: { Prefer: 'return=representation' },
+      body: {
+        asset_code: job.asset_code,
+        parent_version_no: studio.asset?.version_no ?? 1,
+        parent_checksum_sha256: studio.asset?.checksum_sha256 ?? null,
+        mode: job.mode,
+        instruction: job.instruction,
+        markup_ref: studio.markup.ref,
+        job_state: job.job_state,
+        provider_result: job.provider_result,
+        failure_reason: job.failure_reason,
+        audit_canonical_id: job.audit_canonical_id,
+        submitted_at: new Date().toISOString()
+      }
+    });
+    const row = Array.isArray(created) ? created[0] : created;
+    if (row?.job_code) studio.job.job_code = row.job_code;
+  } catch (error) {
+    // The attempt still happened. Say the record was not written rather than
+    // pretending it was, and never downgrade the router's own answer.
+    $('msSubmitState').textContent = error.provisionRequired
+      ? 'The router answered, but the job table is not provisioned so this attempt was not recorded.'
+      : `The router answered, but the job was not recorded: ${error.message}`;
+  }
+}
+
+function startPolling() {
+  stopPolling();
+  studio.poll = setInterval(async () => {
+    if (!studio.job?.job_code || studio.job.job_code.startsWith('LOCAL-')) return stopPolling();
+    const result = await readRef('media-studio', 'thy_media_animation_jobs',
+      [`job_code=eq.${encodeURIComponent(studio.job.job_code)}`]);
+    if (!result.ok) return stopPolling();
+    const row = (result.data ?? [])[0];
+    if (!row) return;
+    studio.job = { ...studio.job, ...row };
+    renderProgress();
+    renderResult();
+    if (!jobProgress(studio.job).in_flight) stopPolling();
+  }, 4000);
+}
+
+function stopPolling() {
+  if (studio.poll) { clearInterval(studio.poll); studio.poll = null; }
+}
+
+/* ---------------------------------------------------------------- progress */
+function renderProgress() {
+  const job = studio.job;
+  if (!job) { $('msProgress').hidden = true; return; }
+  const progress = jobProgress(job);
+  $('msProgress').hidden = false;
+  $('msProgressLabel').textContent = progress.label;
+  $('msProgressPercent').textContent = `${progress.percent}%`;
+  $('msProgressFill').style.width = `${progress.percent}%`;
+  $('msProgressDetail').textContent = [
+    job.job_code && !job.job_code.startsWith('LOCAL-') ? `Job ${job.job_code}` : null,
+    `Mode ${job.mode}`,
+    job.audit_canonical_id ? `Router audit ${job.audit_canonical_id}` : null,
+    job.provider_result?.model ? `Model ${job.provider_result.model}` : null,
+    job.provider_result?.latency_ms !== undefined ? `${job.provider_result.latency_ms} ms` : null
+  ].filter(Boolean).join(' · ');
+}
+
+/* ------------------------------------------------------------------ result */
+function isInFlightState(state) {
+  return jobProgress({ job_state: state }).in_flight;
+}
+
+function renderResult() {
+  const job = studio.job;
+  if (!job) { $('msResult').hidden = true; return; }
+  const claim = generationClaim(job);
+
+  $('msResult').hidden = false;
+
+  // THE CLAIM. Nothing on this screen says a media was generated unless the
+  // provider handed back an asset we can locate.
+  notice($('msClaim'), claim.generated
+    ? { title: 'Provider returned an asset', detail: claim.claim }
+    : { title: 'No media has been generated', detail: claim.claim, bad: true });
+
+  const wrap = $('msPreviewWrap');
+  const video = $('msPreviewVideo');
+  const image = $('msPreviewImage');
+
+  if (!claim.previewable) {
+    wrap.hidden = true;
+    video.hidden = true; video.removeAttribute('src');
+    image.hidden = true; image.removeAttribute('src');
+  } else {
+    wrap.hidden = false;
+    const asset = claim.asset;
+    const url = asset.kind === 'URL' ? asset.url : null;
+    const isVideo = /video|mp4|webm|mov/i.test(`${asset.mime ?? ''} ${url ?? ''}`);
+    if (url && isVideo) {
+      video.src = url; video.hidden = false;
+      image.hidden = true; image.removeAttribute('src');
+    } else if (url) {
+      image.src = url; image.hidden = false;
+      video.hidden = true; video.removeAttribute('src');
+    } else {
+      // A storage key is a real asset but not directly displayable here.
+      video.hidden = true; image.hidden = true;
+      wrap.hidden = true;
+      notice($('msClaim'), {
+        title: 'Provider returned an asset',
+        detail: `${claim.claim} It is stored at ${asset.storage_key} and needs a signed URL to display, so it is not previewed here.`
+      });
+    }
+  }
+
+  // Decisions are only meaningful once there is something to decide on.
+  const decidable = claim.generated && job.job_state === 'REVIEW';
+  // A brand-new in-flight result clears any previous outcome.
+  if (isInFlightState(job.job_state)) $('msDecisionOutcome').textContent = '';
+  for (const id of ['msApprove', 'msRevise', 'msReject']) $(id).disabled = !decidable;
+  $('msDecisionState').textContent = decidable
+    ? ''
+    : claim.generated
+      ? `This result is ${jobProgress(job).label.toLowerCase()}.`
+      : 'There is nothing to approve: no asset was generated.';
+
+  // Markup needs a frame. Offer it whenever a frame is on screen.
+  const frameAvailable = claim.previewable && !wrap.hidden;
+  $('msMarkupToggle').disabled = !frameAvailable;
+  $('msPencilNote').textContent = frameAvailable
+    ? 'Draw directly over the frame. Apple Pencil pressure and tilt are recorded; a finger or mouse is recorded as touch input, not as Pencil.'
+    : 'Markup becomes available once there is a frame to draw over.';
+
+  renderQueueState();
+}
+
+/* --------------------------------------------------- Apple Pencil markup */
+function resetMarkup() {
+  studio.markup = { strokes: [], current: null, active: false, ref: null };
+  const canvas = $('msPreviewMarkup');
+  if (canvas) { canvas.hidden = true; clearCanvas(canvas); }
+  $('msPreviewFrame')?.classList.remove('marking');
+  if ($('msMarkupState')) $('msMarkupState').textContent = 'No markup';
+  if ($('msMarkupToggle')) $('msMarkupToggle').textContent = 'Mark up frame';
+}
+
+function clearCanvas(canvas) {
+  const context = canvas.getContext('2d');
+  context.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+function sizeMarkupCanvas() {
+  const canvas = $('msPreviewMarkup');
+  const frame = $('msPreviewFrame');
+  if (!canvas || !frame) return;
+  const rect = frame.getBoundingClientRect();
+  const ratio = window.devicePixelRatio || 1;
+  canvas.width = Math.max(1, Math.round(rect.width * ratio));
+  canvas.height = Math.max(1, Math.round(rect.height * ratio));
+  canvas.getContext('2d').setTransform(ratio, 0, 0, ratio, 0, 0);
+  redrawMarkup();
+}
+
+function redrawMarkup() {
+  const canvas = $('msPreviewMarkup');
+  if (!canvas) return;
+  const frame = $('msPreviewFrame').getBoundingClientRect();
+  const context = canvas.getContext('2d');
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  context.lineCap = 'round';
+  context.lineJoin = 'round';
+  context.strokeStyle = '#ef7a72';
+  for (const stroke of studio.markup.strokes) {
+    context.beginPath();
+    stroke.points.forEach((point, index) => {
+      // Stored frame-relative, so a markup drawn on an iPad replays correctly
+      // at any size.
+      const x = point.x * frame.width;
+      const y = point.y * frame.height;
+      context.lineWidth = point.pressure ? Math.max(1.5, point.pressure * 6) : 2.5;
+      if (index === 0) context.moveTo(x, y); else context.lineTo(x, y);
+    });
+    context.stroke();
+  }
+  const summary = markupSummary(studio.markup.strokes);
+  $('msMarkupState').textContent = summary.empty
+    ? 'No markup'
+    : `${summary.strokes} stroke${summary.strokes === 1 ? '' : 's'} · ${summary.pencil_strokes} with Pencil`;
+}
+
+$('msMarkupToggle')?.addEventListener('click', () => {
+  const canvas = $('msPreviewMarkup');
+  studio.markup.active = !studio.markup.active;
+  canvas.hidden = !studio.markup.active;
+  $('msPreviewFrame').classList.toggle('marking', studio.markup.active);
+  $('msMarkupToggle').textContent = studio.markup.active ? 'Done marking' : 'Mark up frame';
+  if (studio.markup.active) sizeMarkupCanvas();
+});
+
+$('msMarkupUndo')?.addEventListener('click', () => { studio.markup.strokes.pop(); redrawMarkup(); });
+$('msMarkupClear')?.addEventListener('click', () => { studio.markup.strokes = []; redrawMarkup(); });
+window.addEventListener('resize', () => { if (studio.markup.active) sizeMarkupCanvas(); });
+
+(() => {
+  const canvas = $('msPreviewMarkup');
+  if (!canvas) return;
+  const frameRect = () => $('msPreviewFrame').getBoundingClientRect();
+
+  canvas.addEventListener('pointerdown', event => {
+    if (!studio.markup.active) return;
+    event.preventDefault();
+    canvas.setPointerCapture(event.pointerId);
+    studio.markup.current = {
+      pointer_type: event.pointerType || 'unknown',
+      points: [markupPoint(event, frameRect())]
+    };
+    studio.markup.strokes.push(studio.markup.current);
+    redrawMarkup();
+  });
+
+  canvas.addEventListener('pointermove', event => {
+    if (!studio.markup.current) return;
+    event.preventDefault();
+    studio.markup.current.points.push(markupPoint(event, frameRect()));
+    redrawMarkup();
+  });
+
+  const finish = () => { studio.markup.current = null; };
+  canvas.addEventListener('pointerup', finish);
+  canvas.addEventListener('pointercancel', finish);
+  canvas.addEventListener('pointerleave', finish);
+})();
+
+/** Store the markup so the revision request can reference it. */
+async function saveMarkup() {
+  const summary = markupSummary(studio.markup.strokes);
+  if (summary.empty) return { ok: true, ref: null, stored: false };
+  try {
+    const created = await api('/rest/v1/thy_media_markups', {
+      method: 'POST',
+      headers: { Prefer: 'return=representation' },
+      body: {
+        job_code: studio.job?.job_code?.startsWith('LOCAL-') ? null : studio.job?.job_code ?? null,
+        asset_code: studio.asset?.asset_code,
+        frame_ref: $('msPreviewVideo')?.currentTime
+          ? String(Math.round($('msPreviewVideo').currentTime * 1000))
+          : null,
+        strokes: studio.markup.strokes,
+        stroke_count: summary.strokes,
+        point_count: summary.points,
+        pencil_stroke_count: summary.pencil_strokes
+      }
+    });
+    const row = Array.isArray(created) ? created[0] : created;
+    studio.markup.ref = row?.markup_ref ?? null;
+    return { ok: true, ref: studio.markup.ref, stored: true };
+  } catch (error) {
+    return { ok: false, ref: null, stored: false, message: error.message, provisionRequired: error.provisionRequired };
+  }
+}
+
+/* ---------------------------------------------------------------- decisions */
+$('msApprove')?.addEventListener('click', () => decideResult('APPROVE'));
+$('msRevise')?.addEventListener('click', () => decideResult('REVISE'));
+$('msReject')?.addEventListener('click', () => decideResult('REJECT'));
+
+async function decideResult(decision) {
+  const job = studio.job;
+  // #msDecisionState is the re-rendered hint; the outcome gets its own element
+  // so a confirmation is never wiped by the next render.
+  const state = $('msDecisionOutcome');
+  if (!job) return;
+
+  const note = $('msDecisionNote').value.trim();
+  const summary = markupSummary(studio.markup.strokes);
+
+  // A revision may be carried by the markup alone.
+  if (decision === 'REVISE' && !note && summary.empty) {
+    state.textContent = 'A revision needs a note or a markup over the frame.';
+    return;
+  }
+
+  for (const id of ['msApprove', 'msRevise', 'msReject']) $(id).disabled = true;
+  state.textContent = 'Recording the decision…';
+
+  try {
+    // 1 · A revision carries the markup into the canonical margin queue.
+    if (decision === 'REVISE') {
+      const stored = await saveMarkup();
+      if (!stored.ok && !summary.empty) {
+        state.textContent = stored.provisionRequired
+          ? 'The markup store is not provisioned, so the markup could not be attached. Nothing was recorded; your strokes are still on screen.'
+          : `The markup could not be stored: ${stored.message}. Nothing was recorded.`;
+        return;
+      }
+      const request = revisionRequest({
+        job, asset: studio.asset, note, markupRef: stored.ref,
+        strokes: studio.markup.strokes,
+        frameRef: job.job_code,
+        playbackMs: $('msPreviewVideo')?.currentTime ? $('msPreviewVideo').currentTime * 1000 : null
+      });
+      if (!request.ok) { state.textContent = request.reason; return; }
+
+      const queued = await rpc(SERVICES.CHAIRMAN_COMMAND.marginAdd, request.payload);
+      if (queued && queued.added === false) {
+        state.textContent = `The revision was not queued: ${queued.reason || 'refused'}.`;
+        return;
+      }
+    }
+
+    // 2 · The decision itself goes to the canonical append-only ledger.
+    const built = decisionPayload({
+      decision,
+      gateCanonicalId: job.review_gate_canonical_id,
+      note: note || (summary.empty ? null : 'Revision requested by markup.'),
+      job
+    });
+
+    if (!built.ok) {
+      // No gate means no ledger entry is possible. Say so rather than
+      // recording the decision only locally and implying it was governed.
+      state.textContent = `${built.reason} The result was not approved or rejected.`;
+      return;
+    }
+
+    await rpc(SERVICES.CHAIRMAN_COMMAND.reviewDecision, built.payload);
+    studio.job.job_state = built.next_state;
+    await patchJobState(built.next_state);
+    $('msDecisionNote').value = '';
+    if (decision === 'REVISE') resetMarkup();
+    state.textContent = {
+      APPROVE: 'Approved and recorded in the append-only ledger.',
+      REVISE: 'Revision requested. The markup is attached and the note is in the Live Margin queue.',
+      REJECT: 'Rejected and recorded. Nothing will be published.'
+    }[decision];
+    renderProgress();
+    renderResult();
+  } catch (error) {
+    state.textContent = error.status === 401 || error.code === '42501'
+      ? 'Access denied: Chairman authentication required. Nothing was recorded.'
+      : `The decision was not recorded: ${error.message}`;
+  } finally {
+    renderResult();
+  }
+}
+
+async function patchJobState(nextState) {
+  const job = studio.job;
+  if (!job?.job_code || job.job_code.startsWith('LOCAL-')) return;
+  try {
+    await api(`/rest/v1/thy_media_animation_jobs?job_code=eq.${encodeURIComponent(job.job_code)}`, {
+      method: 'PATCH',
+      headers: { Prefer: 'return=minimal' },
+      body: { job_state: nextState, settled_at: new Date().toISOString(), markup_ref: studio.markup.ref }
+    });
+  } catch { /* the ledger entry is the record of decision; this is the mirror */ }
+}
+
+/* -------------------------------------------------------- publishing queue */
+function renderQueueState() {
+  const handoff = publishHandoff({
+    job: studio.job,
+    asset: studio.asset,
+    locks: studio.locks,
+    passport: assetContext(studio.asset ?? {}).passport,
+    requirements: assetContext(studio.asset ?? {}).requirements
+  });
+  $('msQueue').disabled = !handoff.ok;
+  $('msQueueProblems').innerHTML = handoff.ok
+    ? '<p class="muted">Clear to hand over to the publishing queue.</p>'
+    : handoff.problems.map(p => `<div class="row"><div><span>${esc(p)}</span></div></div>`).join('');
+  return handoff;
+}
+
+$('msQueue')?.addEventListener('click', async () => {
+  const state = $('msQueueState');
+  const handoff = renderQueueState();
+  if (!handoff.ok) { state.textContent = 'Not handed over.'; return; }
+
+  $('msQueue').disabled = true;
+  state.textContent = 'Writing provenance, then handing to the publishing queue…';
+  try {
+    // 1 · Provenance FIRST. The derivative names its parent and discloses the
+    // tool before anything is queued, so a queued item can never lack its
+    // provenance.
+    await api('/rest/v1/rael_provenance_events', {
+      method: 'POST',
+      headers: { Prefer: 'return=minimal' },
+      body: { asset_id: studio.asset.id, ...handoff.provenance }
+    });
+
+    // 2 · Hand over to the existing EDF publish path. This freezes release
+    // metadata; it is immutable afterwards and there is no edit affordance.
+    const result = await rpc(SERVICES.EDF_RELEASE.publish, handoff.payload);
+    studio.job.job_state = 'QUEUED_FOR_PUBLISH';
+    await patchJobState('QUEUED_FOR_PUBLISH');
+    state.textContent = result?.state
+      ? `In the publishing queue · ${result.state}. Release metadata is now frozen.`
+      : 'Handed to the publishing queue. Release metadata is now frozen.';
+    renderProgress();
+  } catch (error) {
+    state.textContent = error.provisionRequired
+      ? 'Not queued: the publishing path is not reachable from this device. Nothing was published.'
+      : `Not queued: ${error.message}. Nothing was published.`;
+    $('msQueue').disabled = false;
+  }
+});
+
 /* -------------------------------------------------------------------- boot */
 $('footBackend').textContent = BACKEND_PROJECT;
+// Resolve the canonical role BEFORE the first route decision, so a Chairman
+// deep-linking to #media-studio is not bounced to Home on load.
+await resolveChairmanRole();
 authUI();
 // Restore where the reader was; the route guard still decides whether they may
 // be there, so a saved Chairman route does not reopen for a signed-out device.
@@ -1150,4 +1907,4 @@ checkBackend();
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(() => {});
 
 // Exposed for the browser proof only; the shell itself does not read these.
-window.__thylora = { showView, resolveRoute, loadState, saveState, SECTIONS };
+window.__thylora = { showView, resolveRoute, loadState, saveState, SECTIONS, studio, openAsset, renderResult, resolveChairmanRole };

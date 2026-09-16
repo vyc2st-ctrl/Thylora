@@ -251,3 +251,37 @@ footer p { margin: 0; overflow-wrap: anywhere; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
+/* ------------------------------------------------------------ media studio */
+/* The master frame and the markup layer share one stacking context so a
+   Pencil stroke lands exactly where the Chairman drew it. The canvas is sized
+   to the frame's real pixel box, and stroke coordinates are stored
+   frame-relative, so an iPad markup replays correctly on any display. */
+.master-wrap { border: 1px solid var(--line-warm); border-radius: var(--radius); overflow: hidden; background: #05080c; }
+.master { position: relative; width: 100%; min-height: 180px; display: grid; place-items: center; }
+.master img, .master video, .master-media { display: block; width: 100%; max-width: 100%; height: auto; }
+.master-empty { margin: 0; padding: 28px 16px; text-align: center; color: var(--muted); font-size: .9rem; }
+
+.markup-layer {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  /* touch-action:none is what lets a Pencil draw instead of scrolling the page. */
+  touch-action: none; cursor: crosshair; background: transparent;
+}
+.markup-layer[hidden] { display: none; }
+.master.marking { outline: 2px solid var(--gold); outline-offset: -2px; }
+
+.mode-grid { display: grid; grid-template-columns: 1fr; gap: 8px; margin: 10px 0; }
+@media (min-width: 620px) { .mode-grid { grid-template-columns: repeat(3, 1fr); } }
+.mode {
+  display: block; width: 100%; text-align: left; min-height: var(--tap);
+  border: 1px solid var(--line); border-radius: 12px; padding: 12px;
+  background: var(--panel-2); color: var(--text); font: inherit; cursor: pointer;
+}
+.mode[aria-checked="true"] { border-color: var(--gold); background: #1b140d; }
+.mode strong { display: block; margin-bottom: 3px; }
+.mode span { display: block; color: var(--muted); font-size: .84rem; }
+
+.lock { border-left-width: 3px; }
+.lock[data-severity="BLOCKING"] { border-left-color: var(--bad); }
+.lock[data-severity="REQUIRED_BEFORE_PUBLISH"] { border-left-color: var(--warn); }
+.lock code { font-size: .74rem; }

@@ -143,3 +143,164 @@ shell in headless Chromium at a 390 × 844 viewport.
 5. **The `orders` column names are assumed** by the `thy_order_arrivals` view
    and must be confirmed before `0002` is applied. This is flagged in the
    migration itself and in `db/thylora-app/README.md`.
+
+---
+
+# Delta 2 · Media Studio + continuity correction (2026-09-15)
+
+**Lane:** THYLORA app — Chairman Media Studio · routes through `WR-AI-ROUTING-001`
+**Read first:** current Supabase continuity, via the authoritative dashboard
+repository `vyc2st-ctrl/thylora-executive-dashboard` (cloned and read, not
+modified).
+
+## 6 · What reading continuity first changed
+
+The dashboard's own contract (`docs/CHAIRMAN_DASHBOARD_SURFACE.md`) and modules
+named objects that Delta 1 had duplicated. Three corrections were made **before**
+any new work:
+
+| Delta 1 invented | Canonical object now used | Why it matters |
+|---|---|---|
+| `thy_is_chairman()` | `thylora_is_chairman()` | Two gates can disagree, and the weaker one wins |
+| `thy_approvals` | `thylora_approval_queue_safe_v1()` + `submit_thylora_review_gate_decision_v1()` → `thylora_chairman_review_decisions` | A second ledger splits the Chairman's own record of what he decided |
+| `thy_margin_notes` | `thylora_margin_note_add_v1()` / `thylora_margin_queue_v1()` → `thylora_chairman_margin_notes` | The dashboard reconciles the Live Margin queue; a second notes store is invisible to it |
+
+`db/thylora-app/0003` now **refuses to apply** if `thylora_is_chairman()` is
+absent, rather than quietly creating a parallel gate. Every RLS policy in `0004`
+uses the canonical gate. `tests/continuity.test.mjs` fails the build if any of
+the three duplicates reappears.
+
+**One duplication is recorded and NOT yet resolved:** `thy_prompt_ledger`
+overlaps the canonical `thylora_query_carryforward` (which already stores
+captured prompts with `capture_state` and `supersession_state`). A
+`carryforward_query_id` column was added so the two can be joined, but the
+reconciliation into a single read has not been done. It is action 7 below.
+
+## 7 · The THYLORA Media Router
+
+The router is the **`thylora-ai-router` Edge Function** — the same deployed
+function the dashboard declares as `THYLORA_AI_ROUTER_FUNCTION` and exercises
+from its system-health panel, reported ACTIVE at v12 in the dashboard's
+acceptance evidence. It holds the provider credentials server-side.
+
+`lib/thylora-backend.js` gained `invokeFunction()`, so the router is reached
+through the one canonical client with the Chairman's own bearer token. **No
+password, API key or provider secret exists anywhere in this lane** — asserted
+by a test that strips comments and scans both the migrations and the shell.
+
+The studio never names a provider. `mode` carries the Chairman's cost/fidelity
+instruction (`AUTOMATIC` / `BUDGET` / `BEST_FIDELITY` → `BALANCED` /
+`LOWEST_COST` / `HIGHEST_QUALITY`) and the router selects the route, so changing
+a provider on the backend is not a change here.
+
+## 8 · What the Media Studio reuses rather than rebuilds
+
+The registered asset and its provenance **already existed** in the RAE Link
+media lane. The studio reads them; it does not copy them.
+
+| Need | Existing object |
+|---|---|
+| Registered asset, master image, version chain | `rael_media_assets` — `version_no` + `replaces_asset_id`, "a new version never overwrites the published record it replaces" |
+| Parent/derivative provenance | `rael_provenance_events` — `DERIVED` / `AI_ASSISTED` with `derived_from_ref` and `tool_disclosure` |
+| Continuity locks | `rae-link/lib/pipeline.js` `publishGate()` — the studio shows the blockers the pipeline enforces, verbatim |
+| Rights gate | `rael_rights_records` |
+| Serial number + QR destination | `digital_product_passports` |
+| Approve / revise / reject | `submit_thylora_review_gate_decision_v1` (`REVISE` → `CHANGES_REQUESTED`, the canonical decision that reopens a gate) |
+| Revision notes + markup | `thylora_margin_note_add_v1`, markup riding in its existing `p_anchor_context` jsonb |
+| Publishing queue | `thylora_edf_publish_v1` — freezes release metadata, immutable afterwards |
+
+Added by `db/thylora-app/0005` (held): `thy_media_animation_jobs`,
+`thy_media_markups`, `thy_media_release_requirements`, and the
+`thy_media_job_continuity` view.
+
+**Logo requirements did not previously exist anywhere** in either repository.
+`thy_media_release_requirements.logo_required` is deliberately **nullable**:
+`NULL` means "not yet decided" and the studio says so, because defaulting to
+`false` would read as "no logo needed".
+
+## 9 · The no-generation-claim rule
+
+> No media generation claim unless the provider returned a successful asset.
+
+Enforced in two places that cannot disagree:
+
+- **UI** — `generationClaim()` in `thylora-app/lib/media-studio.js` is the only
+  function permitted to say a generation happened. A submitted job, a running
+  job, a `200 SUCCEEDED` with an empty body, a non-http asset reference and a
+  router error all return `generated: false` with the reason stated on screen.
+  A provider "success" is recorded as `RETURNED`, never `REVIEW`; only finding a
+  locatable asset moves it to `REVIEW`.
+- **Database** — the `thy_job_no_claim_without_provider_asset` constraint in
+  `0005` refuses to store a job in `REVIEW`, `APPROVED` or `QUEUED_FOR_PUBLISH`
+  unless `provider_result` is present, reports `SUCCEEDED`, and carries a
+  locatable asset. This is the floor under the UI rule, so no other writer can
+  mark a job reviewable without provider evidence.
+
+## 10 · Apple Pencil markup
+
+The Chairman draws directly over the frame; the canvas overlays the result in a
+shared stacking context, and `touch-action: none` lets a Pencil draw instead of
+scrolling the page. Strokes are stored as **vectors, frame-relative 0..1**, so a
+markup drawn on an iPad in portrait replays correctly at any size — not a
+flattened screenshot.
+
+Pencil pressure and tilt are recorded. A finger or mouse reports `0` or exactly
+`0.5`, which is not a measurement, so it is stored as `null` and counted
+separately: `pencil_stroke_count` never includes touch input.
+
+A revision request carries the markup into the canonical margin queue, and the
+note body always states that a markup is attached and how many strokes were
+drawn with Pencil, so a reader of the margin queue is never left guessing what
+"see markup" refers to.
+
+## 11 · What is proven, and how
+
+`npm test` — **149 unit tests, all passing** (48 pre-existing RAE Link, 101 shell).
+`npm run test:browser` — **45 browser tests, all passing**, including 16 driving
+the Media Studio at **iPad Pro 11" portrait (834 × 1194)** with real
+`pointerType: 'pen'` events carrying pressure and tilt, dispatched over CDP.
+
+| Claim | Evidence |
+|---|---|
+| Chairman-only | Studio refused signed-out, refused for a member, refused for a self-promoted `user_metadata` role; absent from the nav; never rendered |
+| Registered asset → master + locks | Opens `RAEL-ASSET-0001`, shows the registered POSTER rendition, and displays serial `THY-REP-0001-000137`, the QR destination and `LOGO-THY-001` |
+| Locks actually block | An asset with no passport shows `PASSPORT_MISSING` and the submit button is **disabled**, not merely discouraged |
+| Router path | Called at `/functions/v1/thylora-ai-router` with a bearer token; body carries the task, mode, routing preference, parent version and parent checksum, and **no credential** |
+| Progress | Stage label and percentage shown; a running job's label never implies an asset exists |
+| **No false claim** | A `200 SUCCEEDED` **with no asset** reports "No media has been generated … returned no locatable asset", shows no preview, and leaves all three decision buttons disabled |
+| Pencil markup | Two pen strokes recorded with graded pressure, frame-relative coordinates, `2 with Pencil`; undo removes one |
+| Markup → revision | Markup stored as vectors, then the revision reaches `thylora_margin_note_add_v1` with `p_anchor_kind: MEDIA_FRAME`, the markup ref in `p_anchor_context`, and the decision recorded as `CHANGES_REQUESTED` in the canonical ledger |
+| Approve | Recorded as `APPROVED` in the canonical ledger, **not** smuggled through the command spine as free text |
+| Publishing handover | Provenance written first, naming the parent, disclosing `thylora-ai-router` and the router audit id, carrying serial, QR and logo as evidence, then handing `p_edf_code` to `thylora_edf_publish_v1` |
+| iPad layout | No element crosses 834px, no sideways document scroll, every control ≥ 44px |
+
+### Three defects the proof caught and fixed
+
+1. `publishGate()` returns an envelope `{ ready, blockers }`, not an array. The
+   locks panel was reading it as iterable and every lock test failed.
+2. `renderResult()` owned `#msDecisionState` and wiped the decision confirmation
+   the Chairman had just earned. The recorded outcome moved to its own
+   `#msDecisionOutcome` — the same one-element-two-owners bug as the routing
+   notice in Delta 1.
+3. The Chairman workspace's approval buttons still assumed the invented
+   `thy_approvals` shape and would not have matched the canonical
+   `canonical_id`-keyed rows.
+
+## 12 · NOT PROVEN — the iPad witness is outstanding
+
+**This is not complete.** The Chairman asked for proof on his actual iPad, and
+that has not happened:
+
+- The proof above runs headless Chromium at iPad Pro dimensions with synthesised
+  pen events. That is **not** Safari on iPadOS with a physical Apple Pencil.
+  Real-device behaviour that is NOT covered: Safari's `touch-action` and
+  `setPointerCapture` handling, palm rejection, Pencil hover, Scribble
+  interference, real pressure curves, and the iPadOS install/standalone path.
+- **No live round trip was performed.** This environment's network policy
+  refuses `CONNECT` to `jvsdxhrfhtlgaknhjxlz.supabase.co` (403 at the proxy), so
+  the router was intercepted, not called. No media has been generated by any
+  provider through this code.
+- `db/thylora-app/0001`–`0005` are **held, not applied**.
+
+Everything the studio would need is therefore still gated. See the action count
+in `docs/THYLORA-APP-SHELL.md` §Remaining actions.

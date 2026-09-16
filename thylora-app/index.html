@@ -289,6 +289,108 @@
   <div id="chLedger"></div>
 </section>
 
+<!-- MEDIA STUDIO (Chairman only) ------------------------------------------ -->
+<!-- Same gate as the Chairman workspace: lib/router.js refuses the route and
+     thylora_is_chairman() refuses the same identity at the backend. -->
+<section class="view chairman" id="media-studio" aria-labelledby="msHead">
+  <div class="hero compact gold">
+    <p class="eyebrow">MEDIA STUDIO · CHAIRMAN ONLY</p>
+    <h2 id="msHead">Open the asset. Read the locks. Animate it.</h2>
+    <p class="muted" id="msRouter"></p>
+  </div>
+  <div class="notice" id="msNotice" hidden></div>
+
+  <!-- 1 · registered assets -->
+  <h3>Registered assets</h3>
+  <p class="muted" id="msAssetStatus">Loading the registered asset registry…</p>
+  <div class="card-grid" id="msAssets"></div>
+
+  <!-- 2 · the open asset -->
+  <div id="msOpen" hidden>
+    <h3>Master image and continuity locks</h3>
+    <div class="master-wrap">
+      <div class="master" id="msMasterFrame">
+        <img id="msMaster" alt="" hidden>
+        <p class="master-empty" id="msMasterEmpty">No master rendition is available to display.</p>
+        <!-- Pencil markup overlays the frame itself. -->
+        <canvas id="msMarkup" class="markup-layer" aria-label="Markup over the frame" hidden></canvas>
+      </div>
+    </div>
+    <dl class="detail" id="msAssetFacts"></dl>
+    <div id="msLocks" class="rows"></div>
+
+    <!-- 3 · animate -->
+    <h3>Animate</h3>
+    <p class="muted">The THYLORA Media Router selects the provider. Provider credentials stay server-side; nothing is stored on this device.</p>
+    <div class="mode-grid" id="msModes" role="radiogroup" aria-label="Animate mode"></div>
+    <label class="control">
+      <span>Instruction (optional)</span>
+      <textarea id="msInstruction" rows="3" placeholder="What should the animation do?"></textarea>
+    </label>
+    <div class="form-actions">
+      <button type="button" id="msSubmit">Submit to Media Router</button>
+      <span class="muted" id="msSubmitState"></span>
+    </div>
+
+    <!-- 4 · progress -->
+    <div id="msProgress" hidden>
+      <h3>Progress</h3>
+      <div class="bar">
+        <div class="bar-head"><span id="msProgressLabel">—</span><span id="msProgressPercent">—</span></div>
+        <div class="bar-track"><div class="bar-fill" id="msProgressFill" style="width:0%"></div></div>
+      </div>
+      <p class="muted" id="msProgressDetail"></p>
+    </div>
+
+    <!-- 5 · result -->
+    <div id="msResult" hidden>
+      <h3>Result</h3>
+      <div class="notice" id="msClaim" hidden></div>
+      <div class="master-wrap" id="msPreviewWrap" hidden>
+        <div class="master" id="msPreviewFrame">
+          <video id="msPreviewVideo" class="master-media" controls playsinline hidden></video>
+          <img id="msPreviewImage" class="master-media" alt="Animated result" hidden>
+          <canvas id="msPreviewMarkup" class="markup-layer" aria-label="Markup over the result frame" hidden></canvas>
+        </div>
+      </div>
+
+      <!-- Apple Pencil markup -->
+      <div class="form-actions" id="msMarkupTools">
+        <button type="button" id="msMarkupToggle" class="ghost">Mark up frame</button>
+        <button type="button" id="msMarkupUndo" class="ghost">Undo</button>
+        <button type="button" id="msMarkupClear" class="ghost">Clear</button>
+        <span class="muted" id="msMarkupState">No markup</span>
+      </div>
+      <p class="muted" id="msPencilNote"></p>
+
+      <!-- 6 · decision -->
+      <h3>Decision</h3>
+      <label class="control">
+        <span>Note (required for a revision)</span>
+        <textarea id="msDecisionNote" rows="3" placeholder="What should change?"></textarea>
+      </label>
+      <div class="form-actions">
+        <button type="button" id="msApprove">Approve</button>
+        <button type="button" id="msRevise" class="ghost">Request revision</button>
+        <button type="button" id="msReject" class="ghost">Reject</button>
+      </div>
+      <p class="muted" id="msDecisionState"></p>
+      <!-- The recorded outcome. Separate from #msDecisionState because
+           renderResult() rewrites that hint on every re-render and would
+           otherwise wipe the confirmation the Chairman just earned. -->
+      <p class="muted" id="msDecisionOutcome"></p>
+
+      <!-- 7 · publishing queue -->
+      <h3>Publishing queue</h3>
+      <div class="form-actions">
+        <button type="button" id="msQueue">Send to publishing queue</button>
+        <span class="muted" id="msQueueState"></span>
+      </div>
+      <div id="msQueueProblems" class="rows"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ACCOUNT --------------------------------------------------------------- -->
 <section class="view" id="account" aria-labelledby="acHead">
   <div class="hero compact">
