@@ -904,21 +904,25 @@ def cover_plate(key, seed, accent, w=300, h=288):
     Composed cover plate: the world scene, a divider carrying one world fact, and a
     second plate beneath it. Portrait, so it fills the cover instead of floating in it.
     """
+    # lazy: building every product's scenes here would waste work and, worse, would
+    # register other products' art as this product's provenance
     pairs = {
-        "bramble":   (lantern_window(seed, accent),     valley_lights(seed + 40, accent),
+        "bramble":   (lambda: lantern_window(seed, accent), lambda: valley_lights(seed + 40, accent),
                       "ONE LANTERN PER WINDOW AFTER SUNSET"),
-        "lastmatch": (pitch_pass(seed, accent),         legacy_objects(seed + 40, accent),
+        "lastmatch": (lambda: pitch_pass(seed, accent), lambda: legacy_objects(seed + 40, accent),
                       "HARBOR ELEVEN &#183; HIS LAST MATCH AS CAPTAIN"),
-        "city":      (city_map(seed, accent),           demand_curve(seed + 40, accent),
+        "city":      (lambda: city_map(seed, accent), lambda: demand_curve(seed + 40, accent),
                       "MORROW STREET &#183; 4:47 ON THE HOTTEST AFTERNOON"),
-        "handoff":   (north_works_dawn(seed, accent),   three_lists(seed + 40, accent),
+        "handoff":   (lambda: north_works_dawn(seed, accent), lambda: three_lists(seed + 40, accent),
                       "NORTH WORKS &#183; TWENTY-EIGHT YEARS, HANDED OVER"),
-        "world":     (expansion_map(seed, accent),      stage_rail(0, accent=accent),
+        "world":     (lambda: expansion_map(seed, accent), lambda: stage_rail(0, accent=accent),
                       "ONE IDEA &#183; NINE STAGES &#183; ONE RELEASE GATE"),
-        "deck":      (card_anatomy(seed),               None,
+        "deck":      (lambda: card_anatomy(seed), None,
                       "50 CARDS &#183; FIVE CLASSES &#183; ONE SESSION RECORD"),
     }
-    top, bottom, label = pairs[key]
+    top_fn, bottom_fn, label = pairs[key]
+    top = top_fn()
+    bottom = bottom_fn() if bottom_fn is not None else None
     split = int(h * 0.62)
     body = [f'<rect width="{w}" height="{h}" fill="{PAPER}"/>']
     body.append(_place(top, 0, 0, w, split))
