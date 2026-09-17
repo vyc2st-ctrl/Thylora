@@ -1,0 +1,118 @@
+{
+  "allowed": true,
+  "generated_at": "2026-09-17T16:05:24.468315+00:00",
+  "since": null,
+  "authority": {
+    "lock_state": "LOCKED",
+    "floor_code": "THY-DASH-FLOOR-20260823-001",
+    "frontend_name": "THYLORA Current Head — Executive Dashboard",
+    "frontend_url": "https://thylora-public-world.vercel.app",
+    "frontend_project_id": "thylora-public-world",
+    "frontend_provider": "Vercel",
+    "backend_project_ref": "jvsdxhrfhtlgaknhjxlz",
+    "promotion_rule": "CURRENT AUTHORITY CONSOLIDATED 2026-08-28: thylora-public-world is the sole Vercel project/runtime target.",
+    "chairman_change_required": true
+  },
+  "deployment_truth": {
+    "blocked_count": 3,
+    "not_tested_count": 3,
+    "checks": [
+      {"evidence_code":"THY-CDASH-REG-20260911-009","check_name":"Production alias points to newest intended deployment","check_state":"BLOCKED","blocker":"Production promotion on Vercel.","updated_at":"2026-09-11T22:24:27.407696+00:00"},
+      {"evidence_code":"THY-CDASH-REG-20260911-012","check_name":"Authenticated Chairman visual witness on production","check_state":"NOT_TESTED","blocker":"Blocked behind -009.","updated_at":"2026-09-11T22:24:27.407696+00:00"},
+      {"evidence_code":"DASH-B8-NAV-001","check_name":"single primary navigation","check_state":"PASS","blocker":null,"updated_at":"2026-09-02T23:53:06.420633+00:00"}
+    ]
+  },
+  "chairman_home": {
+    "counts": {"active":6,"ready":0,"blocked":18,"total":24},
+    "waiting_external_count": 269,
+    "ready": [],
+    "active": [{"code":"WR-CHAIRMAN-DASH-001","title":"Master Chairman Dashboard + Live Warehouse","lane":"EXECUTIVE_COMMAND_SURFACE","state":"MERGED_TO_AUTHORITATIVE_MASTER_PRODUCTION_ALIAS_STALE","actionable":2,"open_blockers":["SOLE CHAIRMAN-GATED BLOCKER: the thylora-public-world production alias still serves commit 308fb39."],"updated_at":"2026-09-11T22:51:31.38603+00:00"}],
+    "blocked": [{"code":"WR-CNW-GARAGE-001","title":"C&W Auto & Customs Garage","lane":"GARAGE_BUSINESS","state":"ACTIVE_SIMULATION_PRODUCTION","blockers":["Ten episode visual masters not yet rendered"],"updated_at":"2026-09-16T20:28:56.954089+00:00"}],
+    "needs_chairman": [{"source":"autonomy_task","code":"THY-AUTO-CW-DATA-PATCH-PLAN-001","title":"C&W automotive data-quality patch PLAN","department":"AUTOMOTIVE ENGINEERING","state":"WAITING_CHAIRMAN","blocker":"DDL requires Chairman approval.","updated_at":"2026-09-17T14:22:25.375948+00:00"}],
+    "can_proceed": [{"workroom":"WR-EXECUTIVE-OPPORTUNITY-001","task":"EOD-TASK-001","title":"Assistant interruption and call script","state":"COMPLETE","next_action":"Bind the script to an assigned assistant.","updated_at":"2026-09-15T03:00:04.04089+00:00"}],
+    "changed_since_last_visit": {"since": null, "first_visit": true, "items": []}
+  },
+  "today_board": {
+    "Store": [{"code":"WR-STORE-001","title":"Store Completion","state":"ACTIVE","restart_point":"Invite exactly one genuine external Customer #1 to buy Twelve Miles.","blockers":["Customer #1 real checkout pending"],"updated_at":"2026-09-13T02:39:57.936805+00:00"}],
+    "News": [{"code":"WR-NEWS-001","title":"ErsatzReality News + Local World Papers","state":"ACTIVE","restart_point":"Approve or supply exact car-interior reference.","blockers":["No approved master car-interior asset"],"updated_at":"2026-09-16T16:19:03.82716+00:00"}],
+    "Automotive": [{"code":"WR-CNW-GARAGE-001","title":"C&W Auto & Customs Garage","state":"ACTIVE_SIMULATION_PRODUCTION","restart_point":"Begin Season 1 Episode 1.","blockers":[],"updated_at":"2026-09-16T20:28:56.954089+00:00"}],
+    "Global Arrival": [{"code":"WR-GLOBAL-ARRIVAL-001","title":"Earth-facing Global Arrival","state":"BLOCKED_EXTERNAL_AUTHORITY","restart_point":"Tomorrow: identify each OTP-pending platform.","blockers":["OTP pending"],"updated_at":"2026-09-15T00:49:06.392866+00:00"}],
+    "World systems": [{"code":"WR-CASTLE-001","title":"Family Castle + Royal House Completion","state":"ACTIVE","restart_point":"Choose first castle design target.","blockers":["exact world sites/names unresolved"],"updated_at":"2026-09-11T11:59:18.440794+00:00"}]
+  },
+  "store": {
+    "products": [
+      {"external_product_id":"gid://shopify/Product/7957652275277","title":"Twelve Miles for Flour — An Unkle Seezin Trail Story","product_state":"ACTIVE","sell_intent":true,"rights_passed":true,"delivery_connected":true,"checkout_verified":true,"reaccess_verified":true,"active_allowed":true,"shelf":"AVAILABLE NOW","blockers":[],"updated_at":"2026-09-17T00:38:09.595516+00:00"},
+      {"external_product_id":"gid://shopify/Product/7956697481293","title":"Trail Table No. 001 — Unkle Seezin's Rain-Side Beans","product_state":"DRAFT_PRODUCTION_ACTIVE","sell_intent":true,"rights_passed":false,"delivery_connected":false,"checkout_verified":false,"reaccess_verified":false,"active_allowed":false,"shelf":"IN DEVELOPMENT","blockers":["final downloadable artifact not yet independently verified"],"updated_at":"2026-09-17T14:22:39.538858+00:00"},
+      {"external_product_id":"gid://shopify/Product/7957199913037","title":"THYLORA Question Deck — 50 Better Questions","product_state":"DRAFT","sell_intent":true,"rights_passed":true,"delivery_connected":true,"checkout_verified":false,"reaccess_verified":false,"active_allowed":false,"shelf":"COMING SOON","blockers":["NOT BUYABLE: product status on Shopify is DRAFT"],"updated_at":"2026-09-17T15:09:50.468505+00:00"}
+    ],
+    "provider_readback": [{"external_product_id":"gid://shopify/Product/7957652275277","provider":"shopify","title":"Twelve Miles for Flour — An Unkle Seezin Trail Story","listing_status":"ACTIVE","price":"1.99","currency":"USD","sku":null,"has_featured_media":true,"readback_at":"2026-09-17T00:38:09.595516+00:00","readback_method":"admin_api"}],
+    "founding_purchase": {"canonical_id":"THY-FOUNDING-PURCHASE-001","title":"FOUNDING PURCHASE #1 - CHAIRMAN VYC","state":"VERIFICATION_ACTIVE","evidence_status":"PARTIAL","evidence":"Shopify order #1004 completed 2026-09-16T14:58:49Z for $1.99 USD real money.","next_action":"One authenticated download, then seek the first genuine non-Chairman buyer.","updated_at":"2026-09-16T18:03:05.41444+00:00"},
+    "payment_capture_witness_count": 1,
+    "checkout_event_count": 0,
+    "external_customer_1": {"state":"NOT_WITNESSED","basis":"The only witnessed purchase on record is THY-FOUNDING-PURCHASE-001, the Chairman's own founding purchase."},
+    "traffic_drafts": [{"code":"THY-LOGIC-POST-20260916-C","title":"Bramble Box — What Should a Student Ask Next?","channel":"UNASSIGNED","type":"STILL_POST","state":"DRAFT","approval":"PENDING","rights":"UNKNOWN","updated_at":"2026-09-16T23:29:43.809461+00:00"}]
+  },
+  "news": {
+    "program": {
+      "program_code":"ER-NEWS-001","title":"ErsatzReality News","state":"IMPLEMENTATION_ACTIVE",
+      "release_state":"RELEASE_WHEN_GATES_PASS",
+      "claim_gate":"Every Earth claim must be source-linked and classified DOCUMENTED, INFERENCE, or UNKNOWN.",
+      "rights_gate":"Original layout/text/graphics only unless exact image rights are proven.",
+      "world_layer":"EARTH_ACTUAL_REPORTED_FROM_EDEREARIAH_SIMULATION",
+      "presenter_serial":"ER-NEWS-PRESENTER-001",
+      "status_snapshot":{"masthead_spelling":"ErsatzReality News","presenter_name":"Neyra Sol","presenter_lock":"RECURRING","font_reference_state":"CHAIRMAN_VISUAL_REFERENCE_LOCKED_EXACT_FONT_NAME_UNKNOWN"},
+      "blockers":[], "updated_at":"2026-09-17T15:45:45.549849+00:00"
+    },
+    "current_issue": {"episode_serial":"THY-RAVENS-PAPER-20260917-001","title":"The Score Says 41.","state":"DRAFT_DEEPENED","release_state":"PRODUCTION_ACTIVE","factual_cutoff_at":null,"approvals":{"chairman":"APPROVED_FOR_PRODUCTION","publication":"PENDING_FINAL_PREVIEW"},"rights_manifest":null,"updated_at":"2026-09-17T15:17:03.241294+00:00"},
+    "claim_ledger": {"total":20,"pass":17,"inference":2,"unknown":1,"other":0},
+    "other_episodes": [{"episode_serial":"ER-EPAPER-20260916-001","title":"The Water Story Is Not Your Tap Water","state":"CHAIRMAN_REJECTED_NONCANON","release_state":"REJECTED","updated_at":"2026-09-16T21:15:02.895963+00:00"}]
+  },
+  "social": {
+    "queue": {
+      "READY FOR REVIEW": [{"code":"THY-LOGIC-POST-20260916-B","title":"Rain-Side Beans","channel":"UNASSIGNED","type":"STILL_POST","state":"DRAFT","approval":"PENDING","rights":"UNKNOWN","scheduled_for":null,"published_at":null,"updated_at":"2026-09-16T23:29:43.809461+00:00"}],
+      "APPROVED": [{"code":"THY-TRAIL-TABLE-POST-20260917-A","title":"Trail Table No. 001","channel":"FACEBOOK_INSTAGRAM","type":"STILL_POST","state":"PRODUCTION_ACTIVE","approval":"DIRECTED_BY_CHAIRMAN_2026-09-17","rights":"PENDING_PRODUCT_RELEASE","scheduled_for":null,"published_at":null,"updated_at":"2026-09-17T15:00:00+00:00"}],
+      "PUBLISHED": [{"code":"THY-LOGIC-POST-20260916-A","title":"Twelve Miles — Corrected Single-Image Traffic Post","channel":"FACEBOOK_INSTAGRAM","type":"STILL_POST","state":"PUBLISHED","approval":"APPROVED_2026-09-17","rights":"CLEARED_FOR_THIS_PRODUCT_ASSET","scheduled_for":"2026-09-17T12:51:00+00:00","published_at":"2026-09-17T12:51:00+00:00","updated_at":"2026-09-17T12:51:00+00:00"}],
+      "BLOCKED": [{"code":"SOC-FAMILY-LAUNCH-20260827-001","title":"Family + Friends Relaunch Invitation","channel":"SOC-FAMILY-LEGACY","type":"FAMILY_OUTREACH_POST","state":"HELD_PUBLISHING_FREEZE","approval":"REQUIRES_FRESH_REVIEW","rights":"CHAIRMAN_AUTHORIZED","scheduled_for":"2026-08-27T19:30:00+00:00","published_at":null,"updated_at":"2026-08-27T19:30:00+00:00"}]
+    },
+    "channels": [
+      {"channel_code":"SOC-FB-ENTERPRISE-001","channel_name":"ErsatzReality Enterprise","platform":"facebook","approval_required":true,"automation_state":"ACCOUNT_REPORTED_BACKEND_ID_MISSING_PUBLICATION_LOCKED","publication_state":"PRODUCTION_THAW_PUBLISHING_LOCKED_BLOCKED","public_url":null,"posting_access":"CONNECTED — PUBLISHING LOCKED (not verified as posting access)"},
+      {"channel_code":"SOC-IG-ERSATZ-001","channel_name":"ersatz.reality","platform":"instagram","approval_required":true,"automation_state":"CONNECTED_METRICOOL_PRODUCTION_THAW_PUBLICATION_LOCKED","publication_state":"PRODUCTION_THAW_PUBLISHING_LOCKED","public_url":null,"posting_access":"CONNECTED — PUBLISHING LOCKED (not verified as posting access)"},
+      {"channel_code":"SOC-VK-ERSATZ-001","channel_name":"ErsatzReality Enterprise","platform":"vk","approval_required":true,"automation_state":"NOT_CONNECTED","publication_state":"NOT_CONNECTED","public_url":null,"posting_access":"NOT CONNECTED"}
+    ],
+    "facebook_separation": {
+      "enterprise_page": {"channel_code":"SOC-FB-ENTERPRISE-001","channel_name":"ErsatzReality Enterprise","automation_state":"ACCOUNT_REPORTED_BACKEND_ID_MISSING_PUBLICATION_LOCKED","publication_state":"PRODUCTION_THAW_PUBLISHING_LOCKED_BLOCKED"},
+      "personal_facebook": {"state":"UNKNOWN","basis":"No personal Facebook account is registered as a channel in social_channel_registry. It is deliberately NOT merged with the ErsatzReality Enterprise Page."}
+    },
+    "global_arrival": [
+      {"platform_code":"SHARECHAT","platform_name":"ShareChat","tier":1,"login_access":"NOT_WITNESSED","posting_access":"NOT_WITNESSED","connection":"NOT_CONNECTED","account":null,"blocker":"Mobile-app login/OTP required","next_action":"Open official mobile app; sign in; stop at OTP."}
+    ]
+  },
+  "action_cards": [
+    {"action_code":"THY-ACT-20260917-PROMOTE-EA21B42-001","title":"Promote the production alias to master ea21b42","what_to_do":"The thylora-public-world production alias still serves commit 308fb39.","where_to_do_it":"https://vercel.com/thylora/thylora-public-world/deployments","why_not_thylora":"EXTERNAL_AUTHORIZATION","what_to_press":["Open the Vercel deployments list for project thylora-public-world.","Find the deployment built from master commit ea21b42.","Open its menu and choose \"Promote to Production\".","Confirm the promotion."],"how_we_know_done":"chairman-dash.js returns HTTP 200 instead of 404.","source_record":"WR-CHAIRMAN-DASH-001","evidence":{"reverified_at":"2026-09-17"},"status":"OPEN","updated_at":"2026-09-17T16:00:00+00:00"},
+    {"action_code":"THY-ACT-20260904-PROMOTE-DPL-001","title":"Promote merged deployment to production alias","what_to_do":"historical","where_to_do_it":null,"why_not_thylora":"EXTERNAL_AUTHORIZATION","what_to_press":null,"how_we_know_done":"done","source_record":null,"evidence":null,"status":"DONE","updated_at":"2026-09-04T00:00:00+00:00"}
+  ],
+  "workrooms": [
+    {"workroom_code":"WR-CHAIRMAN-DASH-001","title":"Master Chairman Dashboard + Live Warehouse","lane":"EXECUTIVE_COMMAND_SURFACE","state":"MERGED_TO_AUTHORITATIVE_MASTER_PRODUCTION_ALIAS_STALE","authority":"vyc2st-ctrl/thylora-executive-dashboard","restart_point":"ONE CHAIRMAN ACTION: promote thylora-public-world production to master ea21b42.","blockers":["SOLE CHAIRMAN-GATED BLOCKER: production alias still serves 308fb39."],"completion_tests":null,"evidence":{"commit":"ea21b42"},"last_change":"2026-09-11T22:51:31.38603+00:00","next_executable":[{"task":"CDASH-T1","title":"Re-probe alias","state":"OPEN","next_action":"Probe after promotion."}]},
+    {"workroom_code":"WR-WORLD-LOFT-001","title":"Oakfield Post Office Loft Memory Reconstruction","lane":"ARCHITECTURE_MEMORY","state":"ACTIVE","authority":null,"restart_point":"Create measured-assumption-free adjacency plan first.","blockers":["Earth measured plans not available"],"completion_tests":null,"evidence":null,"last_change":"2026-09-11T11:59:18.440794+00:00","next_executable":null}
+  ],
+  "bridge": [
+    {"code":"THY-LOGIC-POST-20260916-A","title":"Twelve Miles — Corrected Single-Image Traffic Post","channel":"FACEBOOK_INSTAGRAM","stages":[
+      {"stage":"STORY","state":"DONE"},{"stage":"REVIEW","state":"DONE"},{"stage":"RIGHTS","state":"DONE"},
+      {"stage":"QR DESTINATION","state":"UNKNOWN","note":"No verified QR destination is registered."},
+      {"stage":"CTA","state":"UNKNOWN"},{"stage":"PLATFORM DRAFT","state":"DONE"},
+      {"stage":"CHAIRMAN APPROVAL","state":"DONE"},
+      {"stage":"PUBLICATION","state":"PUBLISHED","note":"Publication is a separate authority action."}],
+     "updated_at":"2026-09-17T12:51:00+00:00"}
+  ],
+  "brand_assets": [
+    {"slot_code":"BRAND-ERNEWS-MASTHEAD","group":"MASTHEAD","label":"ErsatzReality News masthead","truth_class":"DOCUMENTED","value":"ErsatzReality News","reference":"ER-NEWS-001","approval_state":"CHAIRMAN_APPROVED","source_record":"thylora_news_program_registry","notes":"Exact approved spelling."},
+    {"slot_code":"BRAND-FONT-FAMILY","group":"FONT","label":"Masthead font / style family","truth_class":"UNKNOWN","value":null,"reference":null,"approval_state":"CHAIRMAN_VISUAL_REFERENCE_LOCKED","source_record":"thylora_news_program_registry","notes":"The exact font family name is NOT known and must not be guessed."},
+    {"slot_code":"BRAND-JEWELRY-ACCESSORIES","group":"JEWELRY","label":"Approved jewelry / accessories","truth_class":"ANALYSIS","value":"THYLORA / ERSATZ REALITY necklace and bracelet.","reference":null,"approval_state":"DIRECTION_APPROVED_ASSET_NOT_REGISTERED","source_record":"thylora_news_program_registry","notes":"No specific approved jewelry asset file is registered."}
+  ],
+  "truth": {
+    "documented": 5, "analysis": 1, "unknown": 3,
+    "unknown_items": [{"label":"Masthead font / style family","slot_code":"BRAND-FONT-FAMILY","notes":"The exact font family name is NOT known."}],
+    "operational_unknowns": [{"kind":"REGRESSION_CHECK","label":"Production alias points to newest intended deployment","state":"BLOCKED","blocker":"Production promotion on Vercel."}],
+    "platforms_not_witnessed": 17
+  }
+}

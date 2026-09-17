@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>THYLORA Current Head</title>
+<meta name="theme-color" content="#080b10">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/dashboard.css">
+<style>
+:root{--r5bg:#080b10;--r5panel:#111720;--r5panel2:#0d131b;--r5line:#293342;--r5text:#f4efe6;--r5muted:#9fa8b5;--r5gold:#d6a348;--r5good:#78d49b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#080b10,#0b0f15 48%,#080b10);color:var(--r5text);font:15px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 16px 13px 72px;background:#0a0f16f2;border-bottom:1px solid var(--r5line);backdrop-filter:blur(12px)}.brand{font-weight:900;letter-spacing:.12em}.sub,.meta{font-size:12px;color:var(--r5muted)}.release{font-size:11px;color:var(--r5gold);margin-top:2px}.menu{position:fixed;z-index:75;top:10px;left:12px;width:46px;height:42px;border:1px solid var(--r5line);border-radius:12px;background:#111720;color:var(--r5text);display:flex;flex-direction:column;gap:5px;align-items:center;justify-content:center}.menu i{display:block;width:22px;height:2px;background:currentColor}.drawer{position:fixed;inset:0 auto 0 0;width:min(560px,94vw);height:100dvh;background:#0b1017;z-index:70;border-right:1px solid var(--r5line);transform:translate3d(-103%,0,0);transition:transform .2s ease;display:flex;flex-direction:column}.drawer.open{transform:none}.drawer-head{padding:68px 16px 14px;border-bottom:1px solid var(--r5line)}.drawer-body{overflow:auto;flex:1;padding-bottom:calc(28px + env(safe-area-inset-bottom))}.drawer-section{padding:13px 14px;border-bottom:1px solid #202936}.drawer-section h3{margin:0 0 9px;color:var(--r5gold);font-size:12px;text-transform:uppercase;letter-spacing:.08em}.nav-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.nav-btn{width:100%;border:1px solid #303b49;background:#101823;color:var(--r5text);border-radius:11px;padding:10px;text-align:left}.wrap{padding:16px;max-width:1500px;margin:auto}.hero{display:grid;grid-template-columns:1.3fr .7fr;gap:12px;margin-bottom:16px}.r5-panel{background:linear-gradient(180deg,#121923,#0f151e);border:1px solid var(--r5line);border-radius:16px;padding:14px}.r5-panel h2,.r5-panel h3{margin:0 0 8px}.section-title{margin:24px 0 10px;scroll-margin-top:86px}.quick{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:9px}.quick button{border:1px solid #303b49;background:linear-gradient(180deg,#151e29,#0f161f);color:#fff;border-radius:14px;padding:14px;text-align:left;min-height:82px}.quick b{display:block;font-size:15px;margin-bottom:4px}.room-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}.pill{display:inline-block;border:1px solid #394656;border-radius:999px;padding:2px 7px;font-size:11px;color:var(--r5muted)}.status-line{display:flex;flex-direction:column;gap:3px}.status-line strong[data-tone="success"]{color:var(--r5good)}.auth-r5{display:flex;gap:8px;flex-wrap:wrap;align-items:end}.auth-r5 .field{min-width:210px;flex:1}.auth-r5 input{width:100%;background:#080d13;color:#fff;border:1px solid #34404d;border-radius:10px;padding:10px}.btn{cursor:pointer}.chairman-command__form{display:grid;gap:8px}.chairman-command__form textarea{min-height:110px}.system-details{margin-top:24px;border:1px solid var(--r5line);border-radius:16px;background:#0d131b}.system-details>summary{cursor:pointer;padding:14px 16px;color:var(--r5gold);font-weight:800}.system-details .inner{padding:0 14px 14px}.tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}.r5-hidden-title{font-size:12px;color:var(--r5muted);text-transform:uppercase;letter-spacing:.08em;margin:0 0 8px}.department-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))!important}.department-card__meta>div:nth-child(2){display:none}.app-header,.app-footer{display:none!important}.auth-panel{margin:0!important}.compact-command-records .chairman-command__record{background:#0b121a}.user-chip{display:inline-flex!important}.scrim{position:fixed;inset:0;background:#0009;z-index:65;display:none}.scrim.open{display:block}
+@media(max-width:900px){.drawer{width:100vw;max-width:none}.nav-grid{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}.hero{grid-template-columns:1fr}.room-grid,.tech-grid{grid-template-columns:1fr}.auth-r5 .field{min-width:100%}.wrap{padding:12px}.quick{grid-template-columns:repeat(2,minmax(0,1fr))}.quick button{min-height:74px;padding:11px}}
+</style>
+</head>
+<body>
+<button class="menu" id="r5Menu" aria-label="Open THYLORA navigation"><i></i><i></i><i></i></button><div class="scrim" id="r5Scrim"></div>
+<aside class="drawer" id="r5Drawer">
+ <div class="drawer-head"><h2 style="margin:0">THYLORA</h2><div class="sub">Chairman workspace · direct rooms · live continuity</div><div class="release">R5 WORKSPACE FLOOR · CURRENT BACKEND</div></div>
+ <div class="drawer-body">
+  <div class="drawer-section"><h3>Quick rooms</h3><div class="nav-grid">
+   <button class="nav-btn" data-jump="home">Home</button><button class="nav-btn" data-jump="chairman-room">Talk to THYLORA</button>
+   <button class="nav-btn" data-jump="departments-room">Departments</button><button class="nav-btn" data-jump="production-room">Production</button>
+   <button class="nav-btn" data-jump="money-room">Money & Commerce</button><button class="nav-btn" data-jump="continuity-room">Continuity</button>
+  </div></div>
+  <div class="drawer-section"><h3>Operating surface</h3><div class="nav-grid">
+   <button class="nav-btn" data-jump="operating-home-room">Chairman Home</button><button class="nav-btn" data-jump="operating-today-room">Today / Now</button>
+   <button class="nav-btn" data-jump="operating-store-room">Store Traffic</button><button class="nav-btn" data-jump="operating-news-room">ErsatzReality News</button>
+   <button class="nav-btn" data-jump="operating-social-room">Social Control</button><button class="nav-btn" data-jump="operating-actions-room">Action Cards</button>
+   <button class="nav-btn" data-jump="operating-bridge-room">Traffic Board</button><button class="nav-btn" data-jump="operating-rooms-room">Workroom Continuity</button>
+   <button class="nav-btn" data-jump="operating-brand-room">Brand Assets</button><button class="nav-btn" data-jump="operating-truth-room">System Truth</button>
+  </div></div>
+  <div class="drawer-section"><h3>Workspaces</h3><div class="nav-grid">
+   <button class="nav-btn" data-jump="family-room">Family & Home</button><button class="nav-btn" data-jump="ideas-room">Ideas & Creation</button>
+   <button class="nav-btn" data-jump="studio-room">Studio & Media</button><button class="nav-btn" data-jump="world-room">Our World</button>
+   <button class="nav-btn" data-jump="reviews-room">Chairman Review</button><button class="nav-btn" data-jump="system-room">System & Evidence</button>
+  </div></div>
+  <div class="drawer-section"><h3>Prompts & Continuity</h3><div data-thylora-prompt-drawer-host><div class="sub">Current preserved source history loads here.</div></div></div>
+ </div>
+</aside>
+<header class="top"><div><div class="brand">THYLORA CURRENT HEAD</div><div class="sub">Chairman Executive Dashboard · live thylora-dash backend</div><div class="release">R5 workspace restored · current AI/backend preserved</div></div><div><div class="status-line"><span class="sub">Backend</span><strong data-global-status data-tone="neutral">Connecting…</strong></div><span class="user-chip" data-auth-user hidden></span><button type="button" class="btn btn--ghost" data-refresh-all>Refresh</button></div></header>
+<main class="wrap" id="main-content">
+<section class="r5-panel" data-auth-panel><form data-auth-form class="auth-r5"><div class="field"><label>Email</label><input name="email" type="email" data-auth-email autocomplete="email"></div><div class="field"><label>Password</label><input name="password" type="password" data-auth-password autocomplete="current-password"></div><button class="btn btn--primary" type="submit" data-auth-signin>Sign in</button></form><button class="btn btn--ghost" type="button" data-auth-signout hidden>Sign out</button><p data-auth-message class="sub">Checking authenticated session…</p></section>
+
+<section class="r5-panel" id="chairman-warehouse" style="margin-bottom:16px" data-margin-anchor="SCREEN_COMPONENT:chairman-warehouse">
+ <span class="pill">WHOLE WAREHOUSE</span>
+ <h2 style="margin-top:8px">Chairman view</h2>
+ <p class="sub">Every active workroom, its state, what changed, how ready it is, what blocks it, the next executable action, whether it needs you, and what it touches in money &mdash; read from backend state. Task detail stays closed until you open it.</p>
+ <div data-panel="chairman-dash"><div class="panel-state panel-state--loading"><p class="panel-state__title">Reading the whole warehouse&hellip;</p></div></div>
+</section>
+
+<section class="r5-panel" id="chairman-needs-you" style="margin-bottom:16px" data-margin-anchor="SCREEN_COMPONENT:chairman-needs-you">
+ <span class="pill">ONLY WHAT NEEDS YOU</span>
+ <h2 style="margin-top:8px">Chairman actions</h2>
+ <p class="sub">Safe reversible work continues without asking. This list holds only what no agent can perform.</p>
+ <div data-panel="chairman-touch"><div class="panel-state panel-state--loading"><p class="panel-state__title">Filtering what genuinely needs you&hellip;</p></div></div>
+</section>
+
+<section class="r5-panel" id="qyris-room" style="margin-bottom:16px" data-margin-anchor="SCREEN_COMPONENT:qyris-room">
+ <span class="pill">QYRIS</span>
+ <h2 style="margin-top:8px">Gap detection</h2>
+ <p class="sub">Ten checks run against live rows before any status above is rendered: stale state, contradiction, silent unresolved prompt point, duplicated work, unnecessary approval, abandoned executable work, missing evidence, dependency deadlock, continuity regression, monetizable unresolved problem.</p>
+ <div data-panel="qyris-findings"><div class="panel-state panel-state--loading"><p class="panel-state__title">Running QYRIS&hellip;</p></div></div>
+</section>
+
+<section class="r5-panel" id="margin-room" style="margin-bottom:16px" data-margin-anchor="SCREEN_COMPONENT:margin-room">
+ <span class="pill">LIVE MARGIN</span>
+ <h2 style="margin-top:8px">Notes you took without stopping</h2>
+ <p class="sub">Use the Note button at any time. The pass keeps running, the note keeps its source location, and it is answered rather than deleted.</p>
+ <div data-panel="live-margin"><div class="panel-state panel-state--loading"><p class="panel-state__title">Loading the margin queue&hellip;</p></div></div>
+</section>
+
+
+<!-- ===================== THYLORA OPERATING SURFACE ===================== -->
+<!-- Operational completion layer over the existing Current Head dashboard.
+     Every value below is rendered from thylora_operating_surface_v1. -->
+<section class="r5-panel" id="operating-home-room" style="margin-bottom:16px" data-margin-anchor="SCREEN_COMPONENT:operating-home-room">
+ <span class="pill">CHAIRMAN HOME</span>
+ <h2 style="margin-top:8px">What is active, ready, blocked, and what needs you</h2>
+ <p class="sub">Read from backend evidence. No progress percentages are invented; anything the backend cannot measure prints UNKNOWN.</p>
+ <button type="button" class="btn btn--primary os-refresh" data-operating-refresh>Refresh from backend</button>
+ <div data-panel="operating-home"><div class="panel-state panel-state--loading"><p class="panel-state__title">Reading authoritative backend state&hellip;</p></div></div>
+</section>
+
+<h2 id="operating-today-room" class="section-title">Today / Now</h2>
+<section class="r5-panel" data-margin-anchor="SCREEN_COMPONENT:operating-today-room">
+ <p class="sub">Current work grouped by area, so no chat has to be remembered to find a job.</p>
+ <div data-panel="operating-today"><div class="panel-state panel-state--loading"><p class="panel-state__title">Grouping current work&hellip;</p></div></div>
+</section>
+
+<h2 id="operating-store-room" class="section-title">Store Traffic</h2>
+<section class="r5-panel" data-margin-anchor="SCREEN_COMPONENT:operating-store-room">
+ <p class="sub">Verified price and store state come from the provider readback, not from anything typed into this page.</p>
+ <div data-panel="operating-store"><div class="panel-state panel-state--loading"><p class="panel-state__title">Reading store readiness and provider readback&hellip;</p></div></div>
+</section>
+
+<h2 id="operating-news-room" class="section-title">ErsatzReality News</h2>
+<section class="r5-panel" data-margin-anchor="SCREEN_COMPONENT:operating-news-room">
+ <p class="sub">Production may continue. Publication stays a separate, locked Chairman action.</p>
+ <div data-panel="operating-news"><div class="panel-state panel-state--loading"><p class="panel-state__title">Reading the news program and current issue&hellip;</p></div></div>
+</section>
+
+<h2 id="operating-social-room" class="section-title">Social Control</h2>
+<section class="r5-panel" data-margin-anchor="SCREEN_COMPONENT:operating-social-room">
+ <p class="sub">A connected account is never shown as posting access. Personal Facebook and the ErsatzReality Enterprise Page are kept separate.</p>
+ <div data-panel="operating-social"><div class="panel-state panel-state--loading"><p class="panel-state__title">Reading channels and publication states&hellip;</p></div></div>
+</section>
+
+<h2 id="operating-actions-room" class="section-title">Chairman Action Cards</h2>
+<section class="r5-panel" data-margin-anchor="SCREEN_COMPONENT:operating-actions-room">
+ <p class="sub">What to do, where, why THYLORA cannot do it, exactly what to press, and how we will know it is done.</p>
+ <div data-panel="operating-actions"><div class="panel-state panel-state--loading"><p class="panel-state__title">Reading Chairman action cards&hellip;</p></div></div>
+</section>
+
+<h2 id="operating-bridge-room" class="section-title">Traffic Production Board</h2>
+<section class="r5-panel" data-margin-anchor="SCREEN_COMPONENT:operating-bridge-room">
+ <p class="sub">Story &rarr; Review &rarr; Rights &rarr; QR destination &rarr; CTA &rarr; Platform draft &rarr; Chairman approval &rarr; Publication.</p>
+ <div data-panel="operating-bridge"><div class="panel-state panel-state--loading"><p class="panel-state__title">Building the traffic production board&hellip;</p></div></div>
+</section>
+
+<h2 id="operating-rooms-room" class="section-title">Workroom Continuity</h2>
+<section class="r5-panel" data-margin-anchor="SCREEN_COMPONENT:operating-rooms-room">
+ <p class="sub">Authority, restart point, last change, newest evidence, blockers and next executable work for every major project.</p>
+ <div data-panel="operating-rooms"><div class="panel-state panel-state--loading"><p class="panel-state__title">Reading workroom continuity&hellip;</p></div></div>
+</section>
+
+<h2 id="operating-brand-room" class="section-title">Brand Assets</h2>
+<section class="r5-panel" data-margin-anchor="SCREEN_COMPONENT:operating-brand-room">
+ <p class="sub">Backend-driven slots. Where the exact value is not known, the slot prints UNKNOWN rather than a guess.</p>
+ <div data-panel="operating-brand"><div class="panel-state panel-state--loading"><p class="panel-state__title">Reading brand asset slots&hellip;</p></div></div>
+</section>
+
+<h2 id="operating-truth-room" class="section-title">System Truth</h2>
+<section class="r5-panel" data-margin-anchor="SCREEN_COMPONENT:operating-truth-room">
+ <p class="sub">DOCUMENTED, ANALYSIS and UNKNOWN. Uncertainty is shown first-class, never buried in small text.</p>
+ <div data-panel="operating-truth"><div class="panel-state panel-state--loading"><p class="panel-state__title">Reading system truth state&hellip;</p></div></div>
+</section>
+<!-- =================== END THYLORA OPERATING SURFACE =================== -->
+
+<section class="hero" id="home"><article class="r5-panel"><span class="pill">CURRENT HEAD</span><h2 style="margin-top:8px">Chairman workspace</h2><p class="sub">Where we stopped, what needs you, and what is moving now.</p><div data-panel="restart-record"><div class="panel-state panel-state--loading"><p class="panel-state__title">Loading current restart…</p></div></div></article><article class="r5-panel"><span class="pill">TODAY</span><h3 style="margin-top:8px">Move the work forward</h3><div class="quick"><button data-jump="chairman-room"><b>🎙 Talk</b><span class="sub">Speak to THYLORA</span></button><button data-jump="reviews-room"><b>✓ Review</b><span class="sub">Only decisions needing you</span></button></div></article></section>
+<section class="room-grid" id="continuity-floor-room"><article class="r5-panel" style="grid-column:1/-1"><h3>Continuity Floor <span class="sub" style="font-weight:400">· controlling carryforward, selected by explicit authority — not recency</span></h3><div data-panel="continuity-floor"><div class="panel-state panel-state--loading"><p class="panel-state__title">Loading controlling continuity floor…</p></div></div></article></section>
+<section class="r5-panel"><div class="quick"><button data-jump="family-room"><b>👨‍👩‍👧‍👦 Family & Home</b><span class="sub">People, moments, reports</span></button><button data-jump="ideas-room"><b>💡 Ideas & Creation</b><span class="sub">Ideas, projects, products</span></button><button data-jump="studio-room"><b>🎬 Studio & Media</b><span class="sub">Production and assets</span></button><button data-jump="money-room"><b>💼 Money & Commerce</b><span class="sub">Finance, orders, services</span></button><button data-jump="world-room"><b>🌍 Our World</b><span class="sub">Places, structures, atlas</span></button><button data-jump="departments-room"><b>🏛 Departments</b><span class="sub">Open the department room</span></button></div></section>
+
+<h2 id="chairman-room" class="section-title">Talk to THYLORA</h2><section class="r5-panel chairman-command" data-panel="chairman-command" data-state="signed-out"><form data-chairman-command-form class="chairman-command__form" hidden><label for="chairman-command-input">Say or type what you want done</label><textarea id="chairman-command-input" data-chairman-command-input minlength="2" maxlength="4000" placeholder="Talk naturally. THYLORA routes the work behind the interface."></textarea><button class="btn btn--primary" type="submit" data-chairman-command-submit>Send</button></form><p data-chairman-command-message class="sub">Sign in to use THYLORA.</p><div data-chairman-command-records><div class="panel-state panel-state--signed-out"><p class="panel-state__title">Sign in to view recent conversation.</p></div></div></section>
+
+<h2 id="family-room" class="section-title">Family & Home</h2><section class="room-grid"><article class="r5-panel"><h3>Family Connection</h3><p class="sub">Protected family records and approved living continuity belong here.</p></article><article class="r5-panel"><h3>Family Reports</h3><p class="sub">Current reports, decisions and family-safe notices.</p></article><article class="r5-panel"><h3>Private Media</h3><p class="sub">Rights- and consent-gated family media.</p></article></section>
+
+<h2 id="ideas-room" class="section-title">Ideas & Creation</h2><section class="room-grid"><article class="r5-panel"><h3>Idea Registry</h3><p class="sub">Chairman ideas stay visible and linked to their execution state.</p></article><article class="r5-panel"><h3>Products</h3><p class="sub">Product realization, engineering, design and release gates.</p></article><article class="r5-panel"><h3>Build Queue</h3><div data-panel="production-assignments"><p class="sub">Loading current production assignments…</p></div></article></section>
+
+<h2 id="studio-room" class="section-title">Studio & Media</h2><section class="room-grid"><article class="r5-panel"><h3>Productions</h3><div data-production-gates-output><p class="sub">Loading production gates…</p></div></article><article class="r5-panel"><h3>Rights & Identity</h3><div data-identity-gates-output><p class="sub">Loading identity gates…</p></div></article><article class="r5-panel"><h3>Visual Approval</h3><p class="sub">Approved brief → design resolved → Chairman visual decision → generation/production.</p></article></section>
+
+<h2 id="money-room" class="section-title">Money & Commerce</h2><section class="room-grid"><article class="r5-panel"><h3>Finance</h3><p class="sub">Verified numbers, UNKNOWNs, costs, payments and evidence.</p></article><article class="r5-panel"><h3>Commerce</h3><p class="sub">Products, checkout, entitlements and fulfillment evidence.</p></article><article class="r5-panel"><h3>Provider Health</h3><p class="sub">Provider connections stay technical; THYLORA remains the visible interface.</p></article></section>
+
+<h2 id="world-room" class="section-title">Our World</h2><section class="room-grid"><article class="r5-panel"><h3>Living World</h3><p class="sub">Places, structures, history, infrastructure and current canon.</p></article><article class="r5-panel"><h3>Understanding</h3><p class="sub">Source, mechanism, evidence, limitation, uncertainty and continuity.</p></article><article class="r5-panel"><h3>Archive</h3><p class="sub">Provenance and historical supersession without erasing the source.</p></article></section>
+
+<h2 id="departments-room" class="section-title">Departments</h2><section class="r5-panel"><h3>Current departments</h3><p class="sub">Routing is system infrastructure. It is not displayed as a human accountable person.</p><div data-panel="departments"><p class="sub">Loading departments…</p></div></section>
+
+<h2 id="reviews-room" class="section-title">Chairman Review</h2><section class="room-grid"><article class="r5-panel" style="grid-column:1/-1"><h3>Chairman Review Gates <span class="sub" style="font-weight:400">· approve, request changes, or reject</span></h3><div data-panel="review-gates"><div class="panel-state panel-state--loading"><p class="panel-state__title">Loading Chairman review gates…</p></div></div></article><article class="r5-panel"><h3>Required Chairman Action</h3><div data-chairman-action-queue><p class="sub">Loading decisions…</p></div></article><article class="r5-panel"><h3>Approval Queue <span class="sub" style="font-weight:400">· read-only list</span></h3><div data-panel="approval-queue"><p class="sub">Loading approvals…</p></div></article></section>
+
+<h2 id="store-release-room" class="section-title">Store Release</h2><section class="room-grid"><article class="r5-panel" style="grid-column:1/-1"><h3>EDF Release Metadata <span class="sub" style="font-weight:400">· Chairman-only · immutable after publish</span></h3><div data-panel="edf-release"><div class="panel-state panel-state--loading"><p class="panel-state__title">Loading EDF release board…</p></div></div></article><article class="r5-panel" style="grid-column:1/-1"><h3>Webhook Signature Health <span class="sub" style="font-weight:400">· is Shopify actually reaching us, and does the signature verify</span></h3><div data-panel="webhook-health"><div class="panel-state panel-state--loading"><p class="panel-state__title">Reading webhook delivery evidence…</p></div></div></article><article class="r5-panel" style="grid-column:1/-1"><h3>Complete the Release <span class="sub" style="font-weight:400">· publish the file · approve customer copy</span></h3><div data-panel="store-release-actions"><div class="panel-state panel-state--loading"><p class="panel-state__title">Loading remaining release actions…</p></div></div></article><article class="r5-panel" style="grid-column:1/-1"><h3>Your Library <span class="sub" style="font-weight:400">· your purchases, re-openable any time</span></h3><div data-panel="customer-library"><div class="panel-state panel-state--loading"><p class="panel-state__title">Loading your library…</p></div></div></article></section>
+
+<h2 id="production-room" class="section-title">Production</h2><section class="r5-panel"><div data-panel="production-assignments"><p class="sub">Loading production assignments…</p></div></section>
+<h2 id="continuity-room" class="section-title">Continuity</h2><section class="room-grid"><article class="r5-panel"><h3>Continuity Log</h3><div data-panel="continuity-log"><p class="sub">Loading continuity…</p></div></article><article class="r5-panel"><h3>Audit</h3><div data-panel="audit-log"><p class="sub">Loading audit…</p></div></article></section>
+
+<details class="system-details" id="system-room"><summary>System & Evidence — technical controls</summary><div class="inner tech-grid"><article class="r5-panel" data-panel="system-health" data-state="signed-out"><h3>System Health</h3><p data-system-health-message class="sub">Sign in to check.</p><div><button type="button" class="btn btn--primary" data-run-system-health hidden>Run health</button><button type="button" class="btn btn--ghost" data-test-ai-providers hidden>Test AI</button><button type="button" class="btn btn--ghost" data-run-rls-isolation hidden>RLS test</button></div><div data-system-health-output></div></article><article class="r5-panel" data-panel="chairman-action" data-state="signed-out"><h3>Network</h3><p data-chairman-message class="sub">Sign in to check network controls.</p><button type="button" class="btn btn--primary" data-chairman-bootstrap hidden>Run network bootstrap</button></article><article class="r5-panel" data-panel="executive-patrol" data-state="signed-out"><h3>Executive Patrol</h3><p data-executive-patrol-message class="sub">Sign in to run patrol.</p><button type="button" class="btn btn--primary" data-run-executive-patrol hidden>Run patrol</button><div data-executive-patrol-output></div></article><article class="r5-panel"><h3>Connection Evidence</h3><div data-panel="connection-evidence"></div></article></div></details>
+</main>
+<script src="supabase-config.js"></script><script src="vendor/supabase-2.57.0.umd.js"></script><script src="js/panel-states.js"></script><script src="js/supabase-client.js"></script><script src="js/auth.js"></script><script src="js/restart-record.js"></script><script src="js/continuity-floor.js"></script><script src="js/review-gates.js"></script><script src="js/departments.js"></script><script src="js/secondary-panels.js"></script><script src="js/chairman-bootstrap.js"></script><script src="js/chairman-command.js"></script><script src="js/system-health.js"></script><script src="js/executive-patrol.js"></script><script src="js/edf-release-approval.js"></script><script src="js/webhook-health.js"></script><script src="js/store-release-actions.js"></script><script src="js/customer-library.js"></script><script src="js/chairman-dash.js"></script><script src="js/live-margin.js"></script><script src="js/operating-surface.js"></script><script src="js/app.js"></script>
+<script>
+(function(){const menu=document.getElementById('r5Menu'),drawer=document.getElementById('r5Drawer'),scrim=document.getElementById('r5Scrim');function close(){drawer.classList.remove('open');scrim.classList.remove('open')}menu.onclick=()=>{drawer.classList.toggle('open');scrim.classList.toggle('open')};scrim.onclick=close;document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>{const t=document.getElementById(b.dataset.jump);close();if(t){if(t.tagName==='DETAILS')t.open=true;t.scrollIntoView({behavior:'smooth',block:'start'})}}));})();
+</script>
+</body></html>
