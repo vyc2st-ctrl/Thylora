@@ -1,0 +1,171 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "THYLORA Connection Gateway",
+    "version": "1.0.0",
+    "description": "One governed spine onto the THYLORA backend. Supabase (thylora-dash) remains the single source of truth; this gateway exposes nine named operations over it and nothing else. There is no general query endpoint, no SQL, no table access and no secret material. Six operations read. Three operations write, and each write is confined to custody and workstream records. Product state, release state, prices, rights, entitlements, money, Shopify and deployment authority are not writable through this interface by design.",
+    "x-source-of-truth": "SUPABASE thylora-dash (jvsdxhrfhtlgaknhjxlz)",
+    "x-not-a-source-of-truth": "This gateway stores nothing. It holds no cache and no mirror."
+  },
+  "servers": [
+    { "url": "https://jvsdxhrfhtlgaknhjxlz.supabase.co/functions/v1/thylora-gateway", "description": "Gateway edge function. Not yet deployed - held for Chairman execution." }
+  ],
+  "security": [ { "agentKey": [] } ],
+  "components": {
+    "securitySchemes": {
+      "agentKey": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "A per-agent gateway key issued by the Chairman. It is NOT a Supabase service-role key, NOT a publishable key and NOT a database password. It authorises exactly the nine operations below. Keys are stored only as SHA-256 digests in thylora_autonomy_credentials and are revoked by disabling that row."
+      }
+    },
+    "schemas": {
+      "Denial": {
+        "type": "object",
+        "properties": {
+          "error": { "type": "string", "description": "THY-DENY code and plain-language reason." },
+          "operation": { "type": "string" },
+          "agent": { "type": "string" }
+        }
+      },
+      "WorkstreamName": {
+        "type": "string",
+        "enum": ["STORE_BACKEND", "DASHBOARD", "APP", "STORY", "NEWSROOM", "VISUAL", "OTHER"]
+      },
+      "AgentName": {
+        "type": "string",
+        "enum": ["CHATGPT", "CLAUDE", "GEMINI", "DASHBOARD", "APP", "OTHER"]
+      }
+    },
+    "responses": {
+      "Denied": {
+        "description": "Refused. The caller is not an enabled gateway agent, or asked for authority it does not hold.",
+        "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Denial" } } }
+      }
+    }
+  },
+  "paths": {
+    "/boot_thylora": {
+      "post": {
+        "operationId": "boot_thylora",
+        "summary": "Read the active continuity boot, newest sequence, restart point and controlling locks.",
+        "description": "Call this first in any new thread, before doing work. Returns the ACTIVE boot record, the highest captured sequence number, the current restart point and the locks that govern what may change. Reading this does not make a conversation connected or authorised; it reports state.",
+        "requestBody": { "required": false, "content": { "application/json": { "schema": { "type": "object", "additionalProperties": false } } } },
+        "responses": {
+          "200": { "description": "Current boot state.", "content": { "application/json": { "schema": { "type": "object", "properties": {
+            "operation": { "type": "string" }, "agent": { "type": "string" },
+            "backend_project": { "type": "string" }, "source_of_truth": { "type": "string" },
+            "boot": { "type": ["object", "null"] }, "newest_sequence": { "type": ["object", "null"] },
+            "restart_point": { "type": ["object", "null"] }, "controlling_anchor": { "type": ["object", "null"] },
+            "controlling_locks": { "type": ["object", "null"] }, "read_at": { "type": "string", "format": "date-time" } } } } } },
+          "403": { "$ref": "#/components/responses/Denied" }
+        }
+      }
+    },
+    "/read_latest_continuity": {
+      "post": {
+        "operationId": "read_latest_continuity",
+        "summary": "Read the newest N carryforward records and relevant workstream state.",
+        "requestBody": { "required": false, "content": { "application/json": { "schema": { "type": "object", "additionalProperties": false, "properties": {
+          "limit": { "type": "integer", "minimum": 1, "maximum": 50, "default": 10 },
+          "workstream": { "$ref": "#/components/schemas/WorkstreamName" } } } } } },
+        "responses": { "200": { "description": "Carryforward records, newest first.", "content": { "application/json": { "schema": { "type": "object" } } } }, "403": { "$ref": "#/components/responses/Denied" } }
+      }
+    },
+    "/record_turn": {
+      "post": {
+        "operationId": "record_turn",
+        "summary": "Place a conversation turn into backend custody.",
+        "description": "Records source text and returned work with hashes. The gateway sets the authority state to NO_AUTHORITY_ASSERTED and never promotes the turn to canon. An agent may not file a turn under another agent's name.",
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object", "additionalProperties": false,
+          "required": ["query_id", "source_agent", "destination_thread", "user_message"], "properties": {
+            "query_id": { "type": "string", "description": "Stable identifier for this turn, e.g. THY-Q-20260917-CHATGPT-...-450" },
+            "source_agent": { "$ref": "#/components/schemas/AgentName" },
+            "destination_thread": { "type": "string" },
+            "user_message": { "type": "string", "description": "The source text, verbatim. Source words remain source words." },
+            "assistant_message": { "type": "string" },
+            "truth_class": { "type": "string", "enum": ["UNVERIFIED", "EARTH_ACTUAL", "WORLD_SIMULATED", "INFERENCE", "SOURCE_CLAIM"], "default": "UNVERIFIED" },
+            "restart_point": { "type": "string" },
+            "continuity_refs": { "type": "array", "items": { "type": "string" } },
+            "session_label": { "type": "string" },
+            "custody_context": { "type": "object" } } } } } },
+        "responses": { "200": { "description": "Turn recorded.", "content": { "application/json": { "schema": { "type": "object" } } } }, "403": { "$ref": "#/components/responses/Denied" } }
+      }
+    },
+    "/read_workstream": {
+      "post": {
+        "operationId": "read_workstream",
+        "summary": "Read workrooms and open tasks for one workstream.",
+        "requestBody": { "required": false, "content": { "application/json": { "schema": { "type": "object", "additionalProperties": false, "properties": {
+          "workstream": { "$ref": "#/components/schemas/WorkstreamName" } } } } } },
+        "responses": { "200": { "description": "Workrooms with open tasks.", "content": { "application/json": { "schema": { "type": "object" } } } }, "403": { "$ref": "#/components/responses/Denied" } }
+      }
+    },
+    "/update_workstream": {
+      "post": {
+        "operationId": "update_workstream",
+        "summary": "Update status, blockers and the exact next action for an existing workroom.",
+        "description": "The gateway does not create workrooms and cannot change a workroom's purpose or its declared source of truth.",
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object", "additionalProperties": false,
+          "required": ["workroom_code"], "properties": {
+            "workroom_code": { "type": "string" },
+            "state": { "type": "string" },
+            "current_task": { "type": "string", "description": "task_code within this workroom" },
+            "owner": { "type": "string", "description": "agent or thread that owns the task" },
+            "blockers": { "type": "array", "items": { "type": "string" } },
+            "next_action": { "type": "string", "description": "The exact next executable action, not a theme." },
+            "restart_point": { "type": "string" } } } } } },
+        "responses": { "200": { "description": "Workstream updated.", "content": { "application/json": { "schema": { "type": "object" } } } }, "403": { "$ref": "#/components/responses/Denied" } }
+      }
+    },
+    "/read_store_release_board": {
+      "post": {
+        "operationId": "read_store_release_board",
+        "summary": "Read sell-intent products, their hard gates, release state and required Chairman action.",
+        "description": "active_allowed is the backend's own verdict. A client must never infer release readiness from the individual gate flags.",
+        "requestBody": { "required": false, "content": { "application/json": { "schema": { "type": "object", "additionalProperties": false, "properties": {
+          "sell_intent_only": { "type": "boolean", "default": true } } } } } },
+        "responses": { "200": { "description": "Release board.", "content": { "application/json": { "schema": { "type": "object" } } } }, "403": { "$ref": "#/components/responses/Denied" } }
+      }
+    },
+    "/read_product": {
+      "post": {
+        "operationId": "read_product",
+        "summary": "Read one product: canonical state, Shopify binding, rights, delivery, artifact and readiness.",
+        "description": "Returns artifact evidence (sha256, byte length, release state), never artifact bytes. The gateway is not a delivery channel.",
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object", "additionalProperties": false,
+          "required": ["ref"], "properties": {
+            "ref": { "type": "string", "description": "Shopify product gid or THYLORA product_id." } } } } } },
+        "responses": { "200": { "description": "Product record.", "content": { "application/json": { "schema": { "type": "object" } } } }, "403": { "$ref": "#/components/responses/Denied" } }
+      }
+    },
+    "/record_external_agent_result": {
+      "post": {
+        "operationId": "record_external_agent_result",
+        "summary": "Place another agent's returned work into custody, unverified.",
+        "description": "Nothing recorded here is canon. Setting disposition ACCEPTED is refused for every caller except the Chairman; agents record PENDING and may request a Chairman review gate.",
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object", "additionalProperties": false,
+          "required": ["query_id", "agent", "source_thread", "returned_text"], "properties": {
+            "query_id": { "type": "string" },
+            "agent": { "type": "string", "enum": ["CHATGPT", "CLAUDE", "GEMINI", "OTHER"] },
+            "originating_prompt_id": { "type": "string" },
+            "source_thread": { "type": "string" },
+            "returned_text": { "type": "string" },
+            "verification_state": { "type": "string", "enum": ["UNVERIFIED", "VERIFIED", "CONTRADICTED"], "default": "UNVERIFIED" },
+            "disposition": { "type": "string", "enum": ["PENDING", "REJECTED", "PARTIAL"], "default": "PENDING" },
+            "request_chairman_review": { "type": "boolean", "default": false },
+            "note": { "type": "string" } } } } } },
+        "responses": { "200": { "description": "Result recorded, not promoted.", "content": { "application/json": { "schema": { "type": "object" } } } }, "403": { "$ref": "#/components/responses/Denied" } }
+      }
+    },
+    "/get_open_gates": {
+      "post": {
+        "operationId": "get_open_gates",
+        "summary": "Read open gates by category: technical, visual, rights, commercial, Chairman authority, unknown.",
+        "requestBody": { "required": false, "content": { "application/json": { "schema": { "type": "object", "additionalProperties": false, "properties": {
+          "category": { "type": "string", "enum": ["TECHNICAL", "VISUAL", "RIGHTS", "COMMERCIAL", "CHAIRMAN_AUTHORITY", "UNKNOWN"] } } } } } },
+        "responses": { "200": { "description": "Open gates.", "content": { "application/json": { "schema": { "type": "object" } } } }, "403": { "$ref": "#/components/responses/Denied" } }
+      }
+    }
+  }
+}

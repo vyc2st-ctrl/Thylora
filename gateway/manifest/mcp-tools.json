@@ -1,0 +1,118 @@
+{
+  "$comment": "Provider-neutral tool manifest for the THYLORA Connection Gateway. This file is the single definition; the OpenAPI document beside it is generated from the same nine operations for hosts that want HTTP. Nothing here names a model vendor: CHATGPT, CLAUDE and GEMINI appear only as values of an agent field, never as a coupling. A new client is added by issuing it a gateway key, not by changing the backend.",
+  "name": "thylora-connection-gateway",
+  "version": "1.0.0",
+  "transport": { "http": { "base_url": "https://jvsdxhrfhtlgaknhjxlz.supabase.co/functions/v1/thylora-gateway", "auth": "bearer", "status": "NOT_DEPLOYED_HELD_FOR_CHAIRMAN" } },
+  "source_of_truth": "SUPABASE thylora-dash (jvsdxhrfhtlgaknhjxlz)",
+  "invariants": [
+    "The gateway stores nothing and caches nothing. Supabase remains authoritative.",
+    "No operation accepts SQL, a table name, a column list or a filter expression.",
+    "Six operations read. Three write, and only to custody and workstream records.",
+    "No operation returns a secret, a key, a password or file bytes.",
+    "Acceptance and canon promotion are Chairman acts and are not callable here."
+  ],
+  "tools": [
+    {
+      "name": "boot_thylora",
+      "kind": "read",
+      "description": "Read the active continuity boot, the newest captured sequence, the current restart point and the controlling locks. Call this first in a new thread, before doing work. Reading it reports state; it does not grant authority.",
+      "input_schema": { "type": "object", "properties": {}, "additionalProperties": false },
+      "backend": "rpc thylora_gw_boot()"
+    },
+    {
+      "name": "read_latest_continuity",
+      "kind": "read",
+      "description": "Read the newest N carryforward records, optionally narrowed to one workstream.",
+      "input_schema": { "type": "object", "additionalProperties": false, "properties": {
+        "limit": { "type": "integer", "minimum": 1, "maximum": 50, "default": 10 },
+        "workstream": { "type": "string", "enum": ["STORE_BACKEND","DASHBOARD","APP","STORY","NEWSROOM","VISUAL","OTHER"] } } },
+      "backend": "rpc thylora_gw_latest_continuity(p_limit, p_workstream)"
+    },
+    {
+      "name": "record_turn",
+      "kind": "write",
+      "write_scope": "custody",
+      "description": "Place a conversation turn into backend custody: source agent, destination thread, source text, returned work, hashes, authority state, truth classification and restart point. The turn is recorded with no authority asserted and is never promoted to canon.",
+      "input_schema": { "type": "object", "additionalProperties": false,
+        "required": ["query_id","source_agent","destination_thread","user_message"],
+        "properties": {
+          "query_id": { "type": "string" },
+          "source_agent": { "type": "string", "enum": ["CHATGPT","CLAUDE","GEMINI","DASHBOARD","APP","OTHER"] },
+          "destination_thread": { "type": "string" },
+          "user_message": { "type": "string", "description": "Source text, verbatim." },
+          "assistant_message": { "type": "string" },
+          "truth_class": { "type": "string", "enum": ["UNVERIFIED","EARTH_ACTUAL","WORLD_SIMULATED","INFERENCE","SOURCE_CLAIM"], "default": "UNVERIFIED" },
+          "restart_point": { "type": "string" },
+          "continuity_refs": { "type": "array", "items": { "type": "string" } },
+          "session_label": { "type": "string" },
+          "custody_context": { "type": "object" } } },
+      "backend": "rpc thylora_gw_record_turn(...)"
+    },
+    {
+      "name": "read_workstream",
+      "kind": "read",
+      "description": "Read workrooms and their open tasks for one workstream.",
+      "input_schema": { "type": "object", "additionalProperties": false, "properties": {
+        "workstream": { "type": "string", "enum": ["STORE_BACKEND","DASHBOARD","APP","STORY","NEWSROOM","VISUAL","OTHER"] } } },
+      "backend": "rpc thylora_gw_read_workstream(p_workstream)"
+    },
+    {
+      "name": "update_workstream",
+      "kind": "write",
+      "write_scope": "workstream",
+      "description": "Update status, current task, owner, blockers, exact next action and restart point for an EXISTING workroom. Cannot create a workroom, change its purpose, or change where its truth lives.",
+      "input_schema": { "type": "object", "additionalProperties": false, "required": ["workroom_code"], "properties": {
+        "workroom_code": { "type": "string" },
+        "state": { "type": "string" },
+        "current_task": { "type": "string" },
+        "owner": { "type": "string" },
+        "blockers": { "type": "array", "items": { "type": "string" } },
+        "next_action": { "type": "string" },
+        "restart_point": { "type": "string" } } },
+      "backend": "rpc thylora_gw_update_workstream(...)"
+    },
+    {
+      "name": "read_store_release_board",
+      "kind": "read",
+      "description": "Read sell-intent products with their hard gates, release state and required Chairman action. Use active_allowed as the verdict; never infer readiness from the individual flags.",
+      "input_schema": { "type": "object", "additionalProperties": false, "properties": {
+        "sell_intent_only": { "type": "boolean", "default": true } } },
+      "backend": "rpc thylora_gw_store_release_board(p_sell_intent_only)"
+    },
+    {
+      "name": "read_product",
+      "kind": "read",
+      "description": "Read one product: canonical state, Shopify binding, rights, delivery, artifact evidence and readiness. Returns artifact hashes and byte counts, never artifact bytes.",
+      "input_schema": { "type": "object", "additionalProperties": false, "required": ["ref"], "properties": {
+        "ref": { "type": "string", "description": "Shopify product gid or THYLORA product_id." } } },
+      "backend": "rpc thylora_gw_read_product(p_ref)"
+    },
+    {
+      "name": "record_external_agent_result",
+      "kind": "write",
+      "write_scope": "custody",
+      "description": "Place another agent's returned work into custody as UNVERIFIED. Nothing recorded becomes canon. Agents may record PENDING, REJECTED or PARTIAL and may request a Chairman review gate; ACCEPTED is refused for every caller but the Chairman.",
+      "input_schema": { "type": "object", "additionalProperties": false,
+        "required": ["query_id","agent","source_thread","returned_text"],
+        "properties": {
+          "query_id": { "type": "string" },
+          "agent": { "type": "string", "enum": ["CHATGPT","CLAUDE","GEMINI","OTHER"] },
+          "originating_prompt_id": { "type": "string" },
+          "source_thread": { "type": "string" },
+          "returned_text": { "type": "string" },
+          "verification_state": { "type": "string", "enum": ["UNVERIFIED","VERIFIED","CONTRADICTED"], "default": "UNVERIFIED" },
+          "disposition": { "type": "string", "enum": ["PENDING","REJECTED","PARTIAL"], "default": "PENDING" },
+          "request_chairman_review": { "type": "boolean", "default": false },
+          "note": { "type": "string" } } },
+      "backend": "rpc thylora_gw_record_external_agent_result(...)"
+    },
+    {
+      "name": "get_open_gates",
+      "kind": "read",
+      "description": "Read open gates by category: TECHNICAL, VISUAL, RIGHTS, COMMERCIAL, CHAIRMAN_AUTHORITY, UNKNOWN.",
+      "input_schema": { "type": "object", "additionalProperties": false, "properties": {
+        "category": { "type": "string", "enum": ["TECHNICAL","VISUAL","RIGHTS","COMMERCIAL","CHAIRMAN_AUTHORITY","UNKNOWN"] } } },
+      "backend": "rpc thylora_gw_open_gates(p_category)"
+    }
+  ]
+}
