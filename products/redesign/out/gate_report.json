@@ -1,0 +1,1207 @@
+[
+ {
+  "key": "last_match",
+  "title": "The Last Match \u2014 A THYLORA Family Story About Legacy",
+  "pages": 8,
+  "rows": [
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 1,
+    "path_ops": 2977,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 2,
+    "path_ops": 284,
+    "V": 2.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 3,
+    "path_ops": 2732,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "yes",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 4,
+    "path_ops": 163,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "yes",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 5,
+    "path_ops": 2787,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "yes",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 6,
+    "path_ops": 31,
+    "V": 4.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "yes",
+     "callout": "yes"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 7,
+    "path_ops": 34,
+    "V": 1.0,
+    "declared": {
+     "art": "no",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 8,
+    "path_ops": 165,
+    "V": 4.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "yes",
+     "callout": "yes"
+    }
+   }
+  ],
+  "rebuild_pages": [],
+  "V_mean": 2.88,
+  "V_min": 1.0,
+  "gate": "PASS"
+ },
+ {
+  "key": "question_deck",
+  "title": "THYLORA Question Deck \u2014 50 Better Questions",
+  "pages": 19,
+  "rows": [
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 1,
+    "path_ops": 244,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 2,
+    "path_ops": 389,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "yes",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 3,
+    "path_ops": 115,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "no",
+     "callout": "yes"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 4,
+    "path_ops": 48,
+    "V": 2.0,
+    "declared": {
+     "art": "no",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "yes"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 5,
+    "path_ops": 176,
+    "V": 1.0,
+    "declared": {
+     "art": "no",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 6,
+    "path_ops": 176,
+    "V": 1.0,
+    "declared": {
+     "art": "no",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 7,
+    "path_ops": 178,
+    "V": 1.0,
+    "declared": {
+     "art": "no",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 8,
+    "path_ops": 180,
+    "V": 1.0,
+    "declared": {
+     "art": "no",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 9,
+    "path_ops": 180,
+    "V": 1.0,
+    "declared": {
+     "art": "no",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 10,
+    "path_ops": 184,
+    "V": 1.0,
+    "declared": {
+     "art": "no",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 11,
+    "path_ops": 184,
+    "V": 1.0,
+    "declared": {
+     "art": "no",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 12,
+    "path_ops": 186,
+    "V": 1.0,
+    "declared": {
+     "art": "no",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 13,
+    "path_ops": 188,
+    "V": 1.0,
+    "declared": {
+     "art": "no",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 14,
+    "path_ops": 188,
+    "V": 1.0,
+    "declared": {
+     "art": "no",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 15,
+    "path_ops": 192,
+    "V": 1.0,
+    "declared": {
+     "art": "no",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 16,
+    "path_ops": 192,
+    "V": 1.0,
+    "declared": {
+     "art": "no",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 17,
+    "path_ops": 2413,
+    "V": 1.0,
+    "declared": {
+     "art": "no",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 18,
+    "path_ops": 36,
+    "V": 1.0,
+    "declared": {
+     "art": "no",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 19,
+    "path_ops": 30,
+    "V": 2.0,
+    "declared": {
+     "art": "no",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "yes"
+    }
+   }
+  ],
+  "rebuild_pages": [],
+  "V_mean": 1.42,
+  "V_min": 1.0,
+  "gate": "PASS"
+ },
+ {
+  "key": "city_power",
+  "title": "The City That Needed More Power \u2014 A THYLORA Science Story",
+  "pages": 8,
+  "rows": [
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 1,
+    "path_ops": 1332,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 2,
+    "path_ops": 307,
+    "V": 2.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 3,
+    "path_ops": 364,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "yes",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 4,
+    "path_ops": 158,
+    "V": 4.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "yes",
+     "callout": "yes"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 5,
+    "path_ops": 97,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "yes",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 6,
+    "path_ops": 31,
+    "V": 4.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "yes",
+     "callout": "yes"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 7,
+    "path_ops": 34,
+    "V": 1.0,
+    "declared": {
+     "art": "no",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 8,
+    "path_ops": 366,
+    "V": 4.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "yes",
+     "callout": "yes"
+    }
+   }
+  ],
+  "rebuild_pages": [],
+  "V_mean": 3.0,
+  "V_min": 1.0,
+  "gate": "PASS"
+ },
+ {
+  "key": "build_a_world",
+  "title": "Build a World From One Idea \u2014 THYLORA Starter Kit",
+  "pages": 15,
+  "rows": [
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 1,
+    "path_ops": 1969,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 2,
+    "path_ops": 373,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "yes",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 3,
+    "path_ops": 1282,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 4,
+    "path_ops": 728,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 5,
+    "path_ops": 728,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 6,
+    "path_ops": 728,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 7,
+    "path_ops": 728,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 8,
+    "path_ops": 728,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 9,
+    "path_ops": 728,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 10,
+    "path_ops": 728,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 11,
+    "path_ops": 728,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 12,
+    "path_ops": 728,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 13,
+    "path_ops": 728,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 14,
+    "path_ops": 43,
+    "V": 2.0,
+    "declared": {
+     "art": "no",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "yes"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 15,
+    "path_ops": 32,
+    "V": 2.0,
+    "declared": {
+     "art": "no",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "yes"
+    }
+   }
+  ],
+  "rebuild_pages": [],
+  "V_mean": 2.87,
+  "V_min": 2.0,
+  "gate": "PASS"
+ },
+ {
+  "key": "handoff",
+  "title": "The Handoff \u2014 A THYLORA Story About Leadership and Change",
+  "pages": 8,
+  "rows": [
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 1,
+    "path_ops": 624,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 2,
+    "path_ops": 311,
+    "V": 2.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 3,
+    "path_ops": 538,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "yes",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 4,
+    "path_ops": 105,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "yes",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 5,
+    "path_ops": 43,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "yes",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 6,
+    "path_ops": 145,
+    "V": 4.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "yes",
+     "callout": "yes"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 7,
+    "path_ops": 34,
+    "V": 1.0,
+    "declared": {
+     "art": "no",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 8,
+    "path_ops": 107,
+    "V": 4.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "yes",
+     "callout": "yes"
+    }
+   }
+  ],
+  "rebuild_pages": [],
+  "V_mean": 2.88,
+  "V_min": 1.0,
+  "gate": "PASS"
+ },
+ {
+  "key": "bramble_wick",
+  "title": "Bramble Wick \u2014 The Lantern That Wouldn't Go Out",
+  "pages": 9,
+  "rows": [
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 1,
+    "path_ops": 2197,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 2,
+    "path_ops": 234,
+    "V": 2.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 3,
+    "path_ops": 460,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "yes",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 4,
+    "path_ops": 505,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "yes",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 5,
+    "path_ops": 803,
+    "V": 4.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "yes",
+     "callout": "yes"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 6,
+    "path_ops": 208,
+    "V": 3.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "yes",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 7,
+    "path_ops": 31,
+    "V": 4.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "yes",
+     "callout": "yes"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 8,
+    "path_ops": 28,
+    "V": 1.0,
+    "declared": {
+     "art": "no",
+     "surface": "yes",
+     "strip": "no",
+     "callout": "no"
+    }
+   },
+   {
+    "C": 1,
+    "W": 1,
+    "H": 1,
+    "L": 1,
+    "E": 1,
+    "Pq": 1,
+    "page": 9,
+    "path_ops": 210,
+    "V": 4.0,
+    "declared": {
+     "art": "yes",
+     "surface": "no",
+     "strip": "yes",
+     "callout": "yes"
+    }
+   }
+  ],
+  "rebuild_pages": [],
+  "V_mean": 3.0,
+  "V_min": 1.0,
+  "gate": "PASS"
+ }
+]

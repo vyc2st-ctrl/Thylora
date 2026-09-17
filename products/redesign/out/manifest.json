@@ -1,0 +1,1542 @@
+[
+ {
+  "key": "last_match",
+  "title": "The Last Match \u2014 A THYLORA Family Story About Legacy",
+  "external_product_id": "gid://shopify/Product/7957206630477",
+  "price_usd": "3.00",
+  "pdf": "/tmp/claude-0/-home-user-Thylora/d3272dba-25bd-571e-9555-c5dbbdd95dba/scratchpad/editions/last_match.v2.pdf",
+  "bytes": 4454317,
+  "sha256": "b4fb90a36812a07c41e929e275a3b7f1dee2dc379b4d7fab8c030b4b1c2d95bf",
+  "pages_composed": 8,
+  "pages_in_pdf": 8,
+  "page_size_mm": [
+   152.4,
+   228.6
+  ],
+  "trim": "story",
+  "pages_without_text": [],
+  "page_map": [
+   {
+    "kind": "cover",
+    "title": "Cover",
+    "folio": "",
+    "art": "yes",
+    "surface": "no",
+    "strip": "no",
+    "callout": "no",
+    "page": 1
+   },
+   {
+    "kind": "story",
+    "title": "Edition identity",
+    "folio": "",
+    "art": "yes",
+    "surface": "no",
+    "strip": "no",
+    "callout": "no",
+    "page": 2
+   },
+   {
+    "kind": "story",
+    "title": "The Chalk Line",
+    "folio": "1",
+    "art": "yes",
+    "surface": "no",
+    "strip": "yes",
+    "callout": "no",
+    "page": 3
+   },
+   {
+    "kind": "story",
+    "title": "What Everyone Came to See",
+    "folio": "2",
+    "art": "yes",
+    "surface": "no",
+    "strip": "yes",
+    "callout": "no",
+    "page": 4
+   },
+   {
+    "kind": "story",
+    "title": "The Pass",
+    "folio": "3",
+    "art": "yes",
+    "surface": "no",
+    "strip": "yes",
+    "callout": "no",
+    "page": 5
+   },
+   {
+    "kind": "story",
+    "title": "After the Whistle",
+    "folio": "4",
+    "art": "yes",
+    "surface": "no",
+    "strip": "yes",
+    "callout": "yes",
+    "page": 6
+   },
+   {
+    "kind": "story",
+    "title": "Talk together",
+    "folio": "5",
+    "art": "no",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 7
+   },
+   {
+    "kind": "story",
+    "title": "World note",
+    "folio": "6",
+    "art": "yes",
+    "surface": "no",
+    "strip": "yes",
+    "callout": "yes",
+    "page": 8
+   }
+  ],
+  "components": [
+   {
+    "component": "lantern_window",
+    "sha256": "9ca983539463a87ecc16b4389f1df0b29a68afcde2c9a2e26e83e7f90ea1d061",
+    "bytes": 46265,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "valley_lights",
+    "sha256": "970ccf42118e0e3d6d016da8b70a1182e20e635ad16d43bf6c254488ce6deb06",
+    "bytes": 26501,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "pitch_pass",
+    "sha256": "6b12c588418921250426993e8b60ccef4c298a9af3b22e8ea26fec6fc020a815",
+    "bytes": 37410,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "legacy_objects",
+    "sha256": "fe358bb30c38659981aeba9725f2e84228b3bdb29fa003b57a474e41208f813b",
+    "bytes": 1836,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "city_map",
+    "sha256": "67a5acd67bd887504689ad876afd7b897fd1f38c2517f2c599a5f1f13f543710",
+    "bytes": 34646,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "demand_curve",
+    "sha256": "95fc22a186179c716eeeab456217fc9c0623d8f26685ae96001c5859e02437af",
+    "bytes": 2163,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "north_works_dawn",
+    "sha256": "8a2d2c22a7fcf2091ed046591cf3a7be0cb3ef154b47af7638d368121c24d7d2",
+    "bytes": 30784,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "three_lists",
+    "sha256": "053fe70194b38ebaf6df07236d5148fe6cca1ce35bd15c380d486c3cfae25423",
+    "bytes": 4987,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "expansion_map",
+    "sha256": "9ee7936d2b3b626e6a3769d8ee8f39e5f11691de0d1d287496cdd50391bf74b5",
+    "bytes": 4801,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "stage_rail",
+    "sha256": "1fa77ae98e621640d6d7016420dff7e96e680e69b0fec366d18f64a173aa3529",
+    "bytes": 3113,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "card_anatomy",
+    "sha256": "1d3ec7a18a47f02e19d25135823c766dc040a72986a2328a18741e3ce98539f6",
+    "bytes": 3364,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "cover_plate",
+    "sha256": "633248a3c1a70afe001ca6ea712964f050caf4ef2033df1900de155847ebc5bf",
+    "bytes": 39761,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "edition_stamp",
+    "sha256": "9987d94b92046c61c20732cf93f15731e9192c0e2df2b26c4c02392f0682de35",
+    "bytes": 3376,
+    "viewbox": "0 0 - 40"
+   },
+   {
+    "component": "chalk_detail",
+    "sha256": "d8abc10fe9bfeb97cb37318ba3bee3c60aac26306c2453aa44ad9eb3eecc9808",
+    "bytes": 41094,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "pitch_pass",
+    "sha256": "77c31714c0b60a51bc85e37146a2a8281024408bf7e1a2837b97dcfb6827bb00",
+    "bytes": 37516,
+    "viewbox": "0 0 - -"
+   }
+  ],
+  "component_count": 15,
+  "mobile_preview": {
+   "viewport_px": [
+    1080,
+    1620
+   ],
+   "shots": [
+    {
+     "page": "page 1",
+     "file": "/tmp/claude-0/-home-user-Thylora/d3272dba-25bd-571e-9555-c5dbbdd95dba/scratchpad/editions/last_match.mobile-p1.png",
+     "bytes": 1190070
+    },
+    {
+     "page": "page 2",
+     "file": "/tmp/claude-0/-home-user-Thylora/d3272dba-25bd-571e-9555-c5dbbdd95dba/scratchpad/editions/last_match.mobile-p2.png",
+     "bytes": 1380146
+    },
+    {
+     "page": "page 3",
+     "file": "/tmp/claude-0/-home-user-Thylora/d3272dba-25bd-571e-9555-c5dbbdd95dba/scratchpad/editions/last_match.mobile-p3.png",
+     "bytes": 1448950
+    }
+   ]
+  }
+ },
+ {
+  "key": "question_deck",
+  "title": "THYLORA Question Deck \u2014 50 Better Questions",
+  "external_product_id": "gid://shopify/Product/7957199913037",
+  "price_usd": "12.00",
+  "pdf": "/tmp/claude-0/-home-user-Thylora/d3272dba-25bd-571e-9555-c5dbbdd95dba/scratchpad/editions/question_deck.v2.pdf",
+  "bytes": 3264161,
+  "sha256": "ae3f045955615ed4861b4affb1fcd30f508e73c91015dfd0b797f39752daa122",
+  "pages_composed": 19,
+  "pages_in_pdf": 19,
+  "page_size_mm": [
+   215.9,
+   279.4
+  ],
+  "trim": "letter",
+  "pages_without_text": [],
+  "page_map": [
+   {
+    "kind": "cover",
+    "title": "Cover",
+    "folio": "",
+    "art": "yes",
+    "surface": "no",
+    "strip": "no",
+    "callout": "no",
+    "page": 1
+   },
+   {
+    "kind": "letter",
+    "title": "Edition identity",
+    "folio": "",
+    "art": "yes",
+    "surface": "no",
+    "strip": "yes",
+    "callout": "no",
+    "page": 2
+   },
+   {
+    "kind": "letter",
+    "title": "How to use it",
+    "folio": "1",
+    "art": "yes",
+    "surface": "no",
+    "strip": "no",
+    "callout": "yes",
+    "page": 3
+   },
+   {
+    "kind": "letter",
+    "title": "The five classes",
+    "folio": "2",
+    "art": "no",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "yes",
+    "page": 4
+   },
+   {
+    "kind": "letter",
+    "title": "Cards 01&#8211;04",
+    "folio": "3",
+    "art": "no",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 5
+   },
+   {
+    "kind": "letter",
+    "title": "Cards 05&#8211;08",
+    "folio": "4",
+    "art": "no",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 6
+   },
+   {
+    "kind": "letter",
+    "title": "Cards 09&#8211;12",
+    "folio": "5",
+    "art": "no",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 7
+   },
+   {
+    "kind": "letter",
+    "title": "Cards 13&#8211;16",
+    "folio": "6",
+    "art": "no",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 8
+   },
+   {
+    "kind": "letter",
+    "title": "Cards 17&#8211;20",
+    "folio": "7",
+    "art": "no",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 9
+   },
+   {
+    "kind": "letter",
+    "title": "Cards 21&#8211;24",
+    "folio": "8",
+    "art": "no",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 10
+   },
+   {
+    "kind": "letter",
+    "title": "Cards 25&#8211;28",
+    "folio": "9",
+    "art": "no",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 11
+   },
+   {
+    "kind": "letter",
+    "title": "Cards 29&#8211;32",
+    "folio": "10",
+    "art": "no",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 12
+   },
+   {
+    "kind": "letter",
+    "title": "Cards 33&#8211;36",
+    "folio": "11",
+    "art": "no",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 13
+   },
+   {
+    "kind": "letter",
+    "title": "Cards 37&#8211;40",
+    "folio": "12",
+    "art": "no",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 14
+   },
+   {
+    "kind": "letter",
+    "title": "Cards 41&#8211;44",
+    "folio": "13",
+    "art": "no",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 15
+   },
+   {
+    "kind": "letter",
+    "title": "Cards 45&#8211;48",
+    "folio": "14",
+    "art": "no",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 16
+   },
+   {
+    "kind": "letter",
+    "title": "Cards 49&#8211;50",
+    "folio": "15",
+    "art": "no",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 17
+   },
+   {
+    "kind": "letter",
+    "title": "Session record",
+    "folio": "16",
+    "art": "no",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 18
+   },
+   {
+    "kind": "letter",
+    "title": "Last card",
+    "folio": "17",
+    "art": "no",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "yes",
+    "page": 19
+   }
+  ],
+  "components": [
+   {
+    "component": "lantern_window",
+    "sha256": "4ce6e1899bc19e8844a1fcba2356e89069181ed20b40a767a1608f7684a61e00",
+    "bytes": 45844,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "valley_lights",
+    "sha256": "1d29994a8abdf6c4758202922d410a3f63d02c5fd51f7fa8bbbe100960bf9481",
+    "bytes": 26929,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "pitch_pass",
+    "sha256": "bb8d2aa2dc4ecd019366199c90ee8ab853fe95776eb18348d0468c779b4608e5",
+    "bytes": 36988,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "legacy_objects",
+    "sha256": "d702201b62d9bbe88f315ae2cbd2871c54c51bc57e2129c653221e5e6afcacd6",
+    "bytes": 1836,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "city_map",
+    "sha256": "7437fab2a70fd9c9e26f3e8eeaeb875cd591e21c971a26c39d130da266608bf1",
+    "bytes": 34425,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "demand_curve",
+    "sha256": "779b36523d959239d3af37f3a12343e5fec0f8814f65f9df45d3d4d2d6dd53c8",
+    "bytes": 2163,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "north_works_dawn",
+    "sha256": "5b47250faeabce5967b105fc2f2149a81ba875ebac34aaf41b28093d47c466ca",
+    "bytes": 30358,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "three_lists",
+    "sha256": "2d08f9fd21a267e3be4fbb45a18c3bdfadf561c5d6c286fbb3053c8567dea69d",
+    "bytes": 4987,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "expansion_map",
+    "sha256": "854a8393c7b15afd83e231a6df27485b23517354026db6e030ba055449dc1450",
+    "bytes": 4801,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "stage_rail",
+    "sha256": "9422882ea4e13d4be6ba6577f95617efd5fd59b7d822eecc37924ca0468a9e9b",
+    "bytes": 3113,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "card_anatomy",
+    "sha256": "1d3ec7a18a47f02e19d25135823c766dc040a72986a2328a18741e3ce98539f6",
+    "bytes": 3364,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "cover_plate",
+    "sha256": "5a6c51bdf8f229c62143d63a15134804fbf7bbdcdc86dd490ed06495f48420a2",
+    "bytes": 7455,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "edition_stamp",
+    "sha256": "6d47deb09d68736867c8625b0a32085b52b5b6f2f46550e17547f6cba427f20d",
+    "bytes": 3444,
+    "viewbox": "0 0 - 64"
+   },
+   {
+    "component": "card_anatomy",
+    "sha256": "62ce392fba61ff1bb310ddec63af658d795d63d9c804f477cb359adebbba7dcb",
+    "bytes": 3382,
+    "viewbox": "0 0 - -"
+   }
+  ],
+  "component_count": 14,
+  "mobile_preview": {
+   "viewport_px": [
+    1080,
+    1397
+   ],
+   "shots": [
+    {
+     "page": "page 1",
+     "file": "/tmp/claude-0/-home-user-Thylora/d3272dba-25bd-571e-9555-c5dbbdd95dba/scratchpad/editions/question_deck.mobile-p1.png",
+     "bytes": 418038
+    },
+    {
+     "page": "page 2",
+     "file": "/tmp/claude-0/-home-user-Thylora/d3272dba-25bd-571e-9555-c5dbbdd95dba/scratchpad/editions/question_deck.mobile-p2.png",
+     "bytes": 1073380
+    },
+    {
+     "page": "page 3",
+     "file": "/tmp/claude-0/-home-user-Thylora/d3272dba-25bd-571e-9555-c5dbbdd95dba/scratchpad/editions/question_deck.mobile-p3.png",
+     "bytes": 860164
+    }
+   ]
+  }
+ },
+ {
+  "key": "city_power",
+  "title": "The City That Needed More Power \u2014 A THYLORA Science Story",
+  "external_product_id": "gid://shopify/Product/7957206892621",
+  "price_usd": "5.00",
+  "pdf": "/tmp/claude-0/-home-user-Thylora/d3272dba-25bd-571e-9555-c5dbbdd95dba/scratchpad/editions/city_power.v2.pdf",
+  "bytes": 2577970,
+  "sha256": "60db901a0d75ddb8dc19aac11c2eae98e660c861044739d57703a63a9fdac2c8",
+  "pages_composed": 8,
+  "pages_in_pdf": 8,
+  "page_size_mm": [
+   152.4,
+   228.6
+  ],
+  "trim": "story",
+  "pages_without_text": [],
+  "page_map": [
+   {
+    "kind": "cover",
+    "title": "Cover",
+    "folio": "",
+    "art": "yes",
+    "surface": "no",
+    "strip": "no",
+    "callout": "no",
+    "page": 1
+   },
+   {
+    "kind": "story",
+    "title": "Edition identity",
+    "folio": "",
+    "art": "yes",
+    "surface": "no",
+    "strip": "no",
+    "callout": "no",
+    "page": 2
+   },
+   {
+    "kind": "story",
+    "title": "A Million Tiny Requests",
+    "folio": "1",
+    "art": "yes",
+    "surface": "no",
+    "strip": "yes",
+    "callout": "no",
+    "page": 3
+   },
+   {
+    "kind": "story",
+    "title": "The Loudest Machine",
+    "folio": "2",
+    "art": "yes",
+    "surface": "no",
+    "strip": "yes",
+    "callout": "yes",
+    "page": 4
+   },
+   {
+    "kind": "story",
+    "title": "The Night Test",
+    "folio": "3",
+    "art": "yes",
+    "surface": "no",
+    "strip": "yes",
+    "callout": "no",
+    "page": 5
+   },
+   {
+    "kind": "story",
+    "title": "Room for Tomorrow",
+    "folio": "4",
+    "art": "yes",
+    "surface": "no",
+    "strip": "yes",
+    "callout": "yes",
+    "page": 6
+   },
+   {
+    "kind": "story",
+    "title": "Talk together",
+    "folio": "5",
+    "art": "no",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 7
+   },
+   {
+    "kind": "story",
+    "title": "World note",
+    "folio": "6",
+    "art": "yes",
+    "surface": "no",
+    "strip": "yes",
+    "callout": "yes",
+    "page": 8
+   }
+  ],
+  "components": [
+   {
+    "component": "lantern_window",
+    "sha256": "d434fa81f57bffaec9f0dd674ba2bfa8dc417b182d1d4b0cd924f47faba0decd",
+    "bytes": 46493,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "valley_lights",
+    "sha256": "083372b7ffef80a43413502d6670872ad87446ce4ef12cbdde911b28d3151bdf",
+    "bytes": 26814,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "pitch_pass",
+    "sha256": "7b4338cee079cf8ff4a8779095a30441861ccab1881d89bd3caf19eaffe46f47",
+    "bytes": 37522,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "legacy_objects",
+    "sha256": "c7dfbddce544dd987764b4c09847652e9bc3382e43a77b06f3f3d4a9c8b2d38f",
+    "bytes": 1836,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "city_map",
+    "sha256": "a606bfbd5e8b060d7b66fb8acae10a1c45d4147215a0e19d29565254a4d54da7",
+    "bytes": 34592,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "demand_curve",
+    "sha256": "416810e311a20821b37dc828d1103575216193c42c8e1489e53c0f6a80205fec",
+    "bytes": 2163,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "north_works_dawn",
+    "sha256": "27a55562c0b1d917df28081c95b3c76c85e4a76869d7425b996f4ce0bfa56b38",
+    "bytes": 30786,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "three_lists",
+    "sha256": "4939672b22d24acc1ab395aa845cf86988b4b62ab3d5e7a2bc07fab7682a04c8",
+    "bytes": 4987,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "expansion_map",
+    "sha256": "08139c70806c1cc55f2a9eca64ee8a45ea454c03d546c2f5afd9da1ab7f2e44c",
+    "bytes": 4801,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "stage_rail",
+    "sha256": "b5d9f81041578bede2e4358d64de6cd7934df61ca02454d6aeb834e98e7a6f90",
+    "bytes": 3113,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "card_anatomy",
+    "sha256": "1d3ec7a18a47f02e19d25135823c766dc040a72986a2328a18741e3ce98539f6",
+    "bytes": 3364,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "cover_plate",
+    "sha256": "85cf9d1a4080f66ba4e9facbdd1d824c2f2a3c3e0bcb8fbff79381924feb9522",
+    "bytes": 37250,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "edition_stamp",
+    "sha256": "2cc2879417db326248ecbc0f5154419e476d90126b24b2508db88820369a4e8a",
+    "bytes": 3374,
+    "viewbox": "0 0 - 40"
+   },
+   {
+    "component": "two_drawings",
+    "sha256": "75c78d5eac7d396774c94bb5f43803f5a670c5507b8458fd43e694aa02d09030",
+    "bytes": 4069,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "three_blocks",
+    "sha256": "6164794b55688204860519a709943d0874648803735a907bbdd80d20a93d0deb",
+    "bytes": 3820,
+    "viewbox": "0 0 - -"
+   }
+  ],
+  "component_count": 15,
+  "mobile_preview": {
+   "viewport_px": [
+    1080,
+    1620
+   ],
+   "shots": [
+    {
+     "page": "page 1",
+     "file": "/tmp/claude-0/-home-user-Thylora/d3272dba-25bd-571e-9555-c5dbbdd95dba/scratchpad/editions/city_power.mobile-p1.png",
+     "bytes": 1193564
+    },
+    {
+     "page": "page 2",
+     "file": "/tmp/claude-0/-home-user-Thylora/d3272dba-25bd-571e-9555-c5dbbdd95dba/scratchpad/editions/city_power.mobile-p2.png",
+     "bytes": 1420783
+    },
+    {
+     "page": "page 3",
+     "file": "/tmp/claude-0/-home-user-Thylora/d3272dba-25bd-571e-9555-c5dbbdd95dba/scratchpad/editions/city_power.mobile-p3.png",
+     "bytes": 1198914
+    }
+   ]
+  }
+ },
+ {
+  "key": "build_a_world",
+  "title": "Build a World From One Idea \u2014 THYLORA Starter Kit",
+  "external_product_id": "gid://shopify/Product/7957200109645",
+  "price_usd": "19.00",
+  "pdf": "/tmp/claude-0/-home-user-Thylora/d3272dba-25bd-571e-9555-c5dbbdd95dba/scratchpad/editions/build_a_world.v2.pdf",
+  "bytes": 2559819,
+  "sha256": "b27822f212dc42aa8b893fb629c51a125e115a1e93a727c0e736e77789326d23",
+  "pages_composed": 15,
+  "pages_in_pdf": 15,
+  "page_size_mm": [
+   215.9,
+   279.4
+  ],
+  "trim": "letter",
+  "pages_without_text": [],
+  "page_map": [
+   {
+    "kind": "cover",
+    "title": "Cover",
+    "folio": "",
+    "art": "yes",
+    "surface": "no",
+    "strip": "no",
+    "callout": "no",
+    "page": 1
+   },
+   {
+    "kind": "letter",
+    "title": "Edition identity",
+    "folio": "",
+    "art": "yes",
+    "surface": "no",
+    "strip": "yes",
+    "callout": "no",
+    "page": 2
+   },
+   {
+    "kind": "letter",
+    "title": "The world test",
+    "folio": "1",
+    "art": "yes",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 3
+   },
+   {
+    "kind": "letter",
+    "title": "1. The Spark",
+    "folio": "2",
+    "art": "yes",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 4
+   },
+   {
+    "kind": "letter",
+    "title": "2. The Rule",
+    "folio": "3",
+    "art": "yes",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 5
+   },
+   {
+    "kind": "letter",
+    "title": "3. The Place",
+    "folio": "4",
+    "art": "yes",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 6
+   },
+   {
+    "kind": "letter",
+    "title": "4. The People",
+    "folio": "5",
+    "art": "yes",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 7
+   },
+   {
+    "kind": "letter",
+    "title": "5. The Work",
+    "folio": "6",
+    "art": "yes",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 8
+   },
+   {
+    "kind": "letter",
+    "title": "6. The Friction",
+    "folio": "7",
+    "art": "yes",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 9
+   },
+   {
+    "kind": "letter",
+    "title": "7. The Memory",
+    "folio": "8",
+    "art": "yes",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 10
+   },
+   {
+    "kind": "letter",
+    "title": "8. The System",
+    "folio": "9",
+    "art": "yes",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 11
+   },
+   {
+    "kind": "letter",
+    "title": "9. The First Story",
+    "folio": "10",
+    "art": "yes",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 12
+   },
+   {
+    "kind": "letter",
+    "title": "10. The Living Shelf",
+    "folio": "11",
+    "art": "yes",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 13
+   },
+   {
+    "kind": "letter",
+    "title": "Release gate",
+    "folio": "12",
+    "art": "no",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "yes",
+    "page": 14
+   },
+   {
+    "kind": "letter",
+    "title": "Next action",
+    "folio": "13",
+    "art": "no",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "yes",
+    "page": 15
+   }
+  ],
+  "components": [
+   {
+    "component": "lantern_window",
+    "sha256": "4361072826eb6a312f1acd44b01a5aa9e07f9e851a432b9b23372df83db32c97",
+    "bytes": 46679,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "valley_lights",
+    "sha256": "a5b01698977e1c2c8c949aca561d491b9a27a808f590caa18d114010336cc3b4",
+    "bytes": 26505,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "pitch_pass",
+    "sha256": "35668fc29e32f99a97a152fecc56d400289af24ccccd77f7e7c23d5be37688b3",
+    "bytes": 37619,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "legacy_objects",
+    "sha256": "d702201b62d9bbe88f315ae2cbd2871c54c51bc57e2129c653221e5e6afcacd6",
+    "bytes": 1836,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "city_map",
+    "sha256": "c73498d4d120f6abbc3c724a29d09b117761362403ab6698ac86533b7f5c0755",
+    "bytes": 34451,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "demand_curve",
+    "sha256": "779b36523d959239d3af37f3a12343e5fec0f8814f65f9df45d3d4d2d6dd53c8",
+    "bytes": 2163,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "north_works_dawn",
+    "sha256": "3c87478bee33696ecfc5b5ab7f303c92e7427496c8c246d166e49668ef7b4961",
+    "bytes": 30997,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "three_lists",
+    "sha256": "2d08f9fd21a267e3be4fbb45a18c3bdfadf561c5d6c286fbb3053c8567dea69d",
+    "bytes": 4987,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "expansion_map",
+    "sha256": "854a8393c7b15afd83e231a6df27485b23517354026db6e030ba055449dc1450",
+    "bytes": 4801,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "stage_rail",
+    "sha256": "9422882ea4e13d4be6ba6577f95617efd5fd59b7d822eecc37924ca0468a9e9b",
+    "bytes": 3113,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "card_anatomy",
+    "sha256": "1d3ec7a18a47f02e19d25135823c766dc040a72986a2328a18741e3ce98539f6",
+    "bytes": 3364,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "cover_plate",
+    "sha256": "8a540531fe71392e60846ba56d890735e82654e22fde3214d604b5bf3b7deae9",
+    "bytes": 8565,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "edition_stamp",
+    "sha256": "ce64ec9ee77df503061107f7dacd9e80bd932b3dff218b25c4d7c27b73b1eccc",
+    "bytes": 3443,
+    "viewbox": "0 0 - 64"
+   },
+   {
+    "component": "stage_rail",
+    "sha256": "570a6d483e5881b2a51014b16d40c820cce63bb45e61690967faae5c76cc6e2b",
+    "bytes": 3113,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "stage_rail",
+    "sha256": "1c1a0684295fd7e39665d3088f8b6c0a1d1a87b3ab5dc5f47961fed8d87e95a4",
+    "bytes": 3113,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "stage_rail",
+    "sha256": "c14f383c32eb044b2c6dcaab0fdde73b61f73644431297cc5a1356fc6323cf9d",
+    "bytes": 3113,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "stage_rail",
+    "sha256": "a783df3f89edf49c3b63f10aa3dadd7672bff709764dd7cb1870243a8cd30af0",
+    "bytes": 3113,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "stage_rail",
+    "sha256": "5eff6cbcecc5cfc479014fe223478828d7274a5d43476acbc4e53f233dd217fe",
+    "bytes": 3113,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "stage_rail",
+    "sha256": "dde20def1f2f69fc8ca96cbb36206f08592dc8271c07f0aaa44a1c8db3df0ebd",
+    "bytes": 3113,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "stage_rail",
+    "sha256": "333d42f82cb285fcff8894ef152ad2262247fd539da43fae7d7cb0f8eff46374",
+    "bytes": 3113,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "stage_rail",
+    "sha256": "16aea0e60df1a13e46af498e9b6e2e1b6ef8f7152b4d3ff8072d122a09eb2b63",
+    "bytes": 3113,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "stage_rail",
+    "sha256": "4ff449066e8ac07612f05161b2a9f3b9ec368d5e0450350ea2215bff33d96903",
+    "bytes": 3113,
+    "viewbox": "0 0 - -"
+   }
+  ],
+  "component_count": 22,
+  "mobile_preview": {
+   "viewport_px": [
+    1080,
+    1397
+   ],
+   "shots": [
+    {
+     "page": "page 1",
+     "file": "/tmp/claude-0/-home-user-Thylora/d3272dba-25bd-571e-9555-c5dbbdd95dba/scratchpad/editions/build_a_world.mobile-p1.png",
+     "bytes": 358544
+    },
+    {
+     "page": "page 2",
+     "file": "/tmp/claude-0/-home-user-Thylora/d3272dba-25bd-571e-9555-c5dbbdd95dba/scratchpad/editions/build_a_world.mobile-p2.png",
+     "bytes": 1075008
+    },
+    {
+     "page": "page 3",
+     "file": "/tmp/claude-0/-home-user-Thylora/d3272dba-25bd-571e-9555-c5dbbdd95dba/scratchpad/editions/build_a_world.mobile-p3.png",
+     "bytes": 721529
+    }
+   ]
+  }
+ },
+ {
+  "key": "handoff",
+  "title": "The Handoff \u2014 A THYLORA Story About Leadership and Change",
+  "external_product_id": "gid://shopify/Product/7957206958157",
+  "price_usd": "7.00",
+  "pdf": "/tmp/claude-0/-home-user-Thylora/d3272dba-25bd-571e-9555-c5dbbdd95dba/scratchpad/editions/handoff.v2.pdf",
+  "bytes": 3369099,
+  "sha256": "fac5c8b9d5f6fb7b3727141ff2d59504cfd95faaa020eb596d875675de83b6bc",
+  "pages_composed": 8,
+  "pages_in_pdf": 8,
+  "page_size_mm": [
+   152.4,
+   228.6
+  ],
+  "trim": "story",
+  "pages_without_text": [],
+  "page_map": [
+   {
+    "kind": "cover",
+    "title": "Cover",
+    "folio": "",
+    "art": "yes",
+    "surface": "no",
+    "strip": "no",
+    "callout": "no",
+    "page": 1
+   },
+   {
+    "kind": "story",
+    "title": "Edition identity",
+    "folio": "",
+    "art": "yes",
+    "surface": "no",
+    "strip": "no",
+    "callout": "no",
+    "page": 2
+   },
+   {
+    "kind": "story",
+    "title": "The Bell at North Works",
+    "folio": "1",
+    "art": "yes",
+    "surface": "no",
+    "strip": "yes",
+    "callout": "no",
+    "page": 3
+   },
+   {
+    "kind": "story",
+    "title": "Three Lists",
+    "folio": "2",
+    "art": "yes",
+    "surface": "no",
+    "strip": "yes",
+    "callout": "no",
+    "page": 4
+   },
+   {
+    "kind": "story",
+    "title": "The Broken Press",
+    "folio": "3",
+    "art": "yes",
+    "surface": "no",
+    "strip": "yes",
+    "callout": "no",
+    "page": 5
+   },
+   {
+    "kind": "story",
+    "title": "The Door Opens Differently",
+    "folio": "4",
+    "art": "yes",
+    "surface": "no",
+    "strip": "yes",
+    "callout": "yes",
+    "page": 6
+   },
+   {
+    "kind": "story",
+    "title": "Talk together",
+    "folio": "5",
+    "art": "no",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 7
+   },
+   {
+    "kind": "story",
+    "title": "World note",
+    "folio": "6",
+    "art": "yes",
+    "surface": "no",
+    "strip": "yes",
+    "callout": "yes",
+    "page": 8
+   }
+  ],
+  "components": [
+   {
+    "component": "lantern_window",
+    "sha256": "51bfc8ee575bf8c21f7d34af2965d8f90e88dc80d88c7c3d5caafefd14eba5a3",
+    "bytes": 45952,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "valley_lights",
+    "sha256": "56c9ead18d351aae847f8b994bd9499bd7bba14bb1ae129bf8fadd61b5c9ee0f",
+    "bytes": 26708,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "pitch_pass",
+    "sha256": "3e68bf6ffe62ec9b05347070ab1116003a42da89e7520ed8967054c10aa23772",
+    "bytes": 37085,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "legacy_objects",
+    "sha256": "be9792994d1d2f820851f8dfdcdb4842dbb474af9d42545c86aab462ec5e6d8d",
+    "bytes": 1836,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "city_map",
+    "sha256": "b5aed78135a39ad7ebf0ccb45e7c49dfd853ad8d2c61c1ad4f396e846a9412f4",
+    "bytes": 34172,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "demand_curve",
+    "sha256": "16dba4f919599473a4bfa0031fbb5e3075ff53bf7229e1c6d53fecb354f26dc3",
+    "bytes": 2163,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "north_works_dawn",
+    "sha256": "14d5ec8875fe82cdd0018e1af7637b378d614dfeeba444ef00e6c41779e1b1d9",
+    "bytes": 30464,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "three_lists",
+    "sha256": "527af1bdc08e8e0d96b8d990ad504adf71f788bc9795990fa94b5baba6eaa590",
+    "bytes": 4987,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "expansion_map",
+    "sha256": "9c4936b3c83e8f3928afeaf0781b00b7fe8160b918e89adc34d17ce37ecd05d2",
+    "bytes": 4801,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "stage_rail",
+    "sha256": "44b7272c2d2b16b20c90df6de4b1168b37c629a0fd03305c9356a2751662927c",
+    "bytes": 3113,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "card_anatomy",
+    "sha256": "1d3ec7a18a47f02e19d25135823c766dc040a72986a2328a18741e3ce98539f6",
+    "bytes": 3364,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "cover_plate",
+    "sha256": "c3152635da534f7cef9ceeb21a0a017e5731c3bf885841a706220862350031f4",
+    "bytes": 36056,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "edition_stamp",
+    "sha256": "2ce58ed08048ca0f555e2dfce32ad46b3b06342d415f39c494ed1d4558003451",
+    "bytes": 3372,
+    "viewbox": "0 0 - 40"
+   },
+   {
+    "component": "north_works_dawn",
+    "sha256": "355898f403d99d89a38c710ec68d942c2251c5e714c19068ec37e174c0331c9e",
+    "bytes": 30783,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "press_four",
+    "sha256": "2199faab8f4dc138093eb3393b5394bb354b6f36d3a85ad986f0021c33ef3630",
+    "bytes": 2366,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "key_to_log",
+    "sha256": "f1d31905a871404a08e3c45faa08ca07846b840723890c6e19c5e92d212811c9",
+    "bytes": 2971,
+    "viewbox": "0 0 - -"
+   }
+  ],
+  "component_count": 16,
+  "mobile_preview": {
+   "viewport_px": [
+    1080,
+    1620
+   ],
+   "shots": [
+    {
+     "page": "page 1",
+     "file": "/tmp/claude-0/-home-user-Thylora/d3272dba-25bd-571e-9555-c5dbbdd95dba/scratchpad/editions/handoff.mobile-p1.png",
+     "bytes": 1168724
+    },
+    {
+     "page": "page 2",
+     "file": "/tmp/claude-0/-home-user-Thylora/d3272dba-25bd-571e-9555-c5dbbdd95dba/scratchpad/editions/handoff.mobile-p2.png",
+     "bytes": 1405737
+    },
+    {
+     "page": "page 3",
+     "file": "/tmp/claude-0/-home-user-Thylora/d3272dba-25bd-571e-9555-c5dbbdd95dba/scratchpad/editions/handoff.mobile-p3.png",
+     "bytes": 1469727
+    }
+   ]
+  }
+ },
+ {
+  "key": "bramble_wick",
+  "title": "Bramble Wick \u2014 The Lantern That Wouldn't Go Out",
+  "external_product_id": "gid://shopify/Product/7956697448525",
+  "price_usd": "1.99",
+  "pdf": "/tmp/claude-0/-home-user-Thylora/d3272dba-25bd-571e-9555-c5dbbdd95dba/scratchpad/editions/bramble_wick.v2.pdf",
+  "bytes": 4457406,
+  "sha256": "1d9fd50ba13ffb1e61aba15b6bb32c8c3c2dabfc730b82772a58e72fd48b2b5e",
+  "pages_composed": 9,
+  "pages_in_pdf": 9,
+  "page_size_mm": [
+   152.4,
+   228.6
+  ],
+  "trim": "story",
+  "pages_without_text": [],
+  "page_map": [
+   {
+    "kind": "cover",
+    "title": "Cover",
+    "folio": "",
+    "art": "yes",
+    "surface": "no",
+    "strip": "no",
+    "callout": "no",
+    "page": 1
+   },
+   {
+    "kind": "story",
+    "title": "Edition identity",
+    "folio": "",
+    "art": "yes",
+    "surface": "no",
+    "strip": "no",
+    "callout": "no",
+    "page": 2
+   },
+   {
+    "kind": "story",
+    "title": "The lanterns in the windows",
+    "folio": "1",
+    "art": "yes",
+    "surface": "no",
+    "strip": "yes",
+    "callout": "no",
+    "page": 3
+   },
+   {
+    "kind": "story",
+    "title": "The Wind",
+    "folio": "2",
+    "art": "yes",
+    "surface": "no",
+    "strip": "yes",
+    "callout": "no",
+    "page": 4
+   },
+   {
+    "kind": "story",
+    "title": "The Knock",
+    "folio": "3",
+    "art": "yes",
+    "surface": "no",
+    "strip": "yes",
+    "callout": "yes",
+    "page": 5
+   },
+   {
+    "kind": "story",
+    "title": "What the Lantern Was For",
+    "folio": "4",
+    "art": "yes",
+    "surface": "no",
+    "strip": "yes",
+    "callout": "no",
+    "page": 6
+   },
+   {
+    "kind": "story",
+    "title": "What Mara kept",
+    "folio": "5",
+    "art": "yes",
+    "surface": "no",
+    "strip": "yes",
+    "callout": "yes",
+    "page": 7
+   },
+   {
+    "kind": "story",
+    "title": "A little question before sleep",
+    "folio": "6",
+    "art": "no",
+    "surface": "yes",
+    "strip": "no",
+    "callout": "no",
+    "page": 8
+   },
+   {
+    "kind": "story",
+    "title": "World note",
+    "folio": "7",
+    "art": "yes",
+    "surface": "no",
+    "strip": "yes",
+    "callout": "yes",
+    "page": 9
+   }
+  ],
+  "components": [
+   {
+    "component": "lantern_window",
+    "sha256": "437031a0e6821a4576821330f0cc78473c4572d122d18ba193942ebe018ed21d",
+    "bytes": 46338,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "valley_lights",
+    "sha256": "f45c32a71f41abd0d7fce0cdbc4f3bb436582b350f9aa68466e7eec24ba3a619",
+    "bytes": 26692,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "pitch_pass",
+    "sha256": "f229cacd947f702c6c1ae440896bbeaabb5e92c08ad55eff7e1525da9e366a69",
+    "bytes": 37386,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "legacy_objects",
+    "sha256": "d3be36d577d62f1799a622749337fc7de91adadff33eccd1c11795ef2960986a",
+    "bytes": 1836,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "city_map",
+    "sha256": "1597de4ceba318f4644c0277f098a6fdaa705597de79a16bef1648ee24f0521e",
+    "bytes": 34396,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "demand_curve",
+    "sha256": "8f11d8a318e8dc4b46cd932374fb602074e58541f4e5621fd543df7f4700af24",
+    "bytes": 2163,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "north_works_dawn",
+    "sha256": "1be876ab4edb46eb3667d0474b1e16c9718809fc9b8e01497cc947803f4e9b65",
+    "bytes": 30773,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "three_lists",
+    "sha256": "383e9b6bb258a65dd92879e30c8847a47c6b9d1e8446210108cbd373e1a1b007",
+    "bytes": 4987,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "expansion_map",
+    "sha256": "9e97ae5621a1738e997db23350f21ca073df7d56bf50bbc858ebe0807de95592",
+    "bytes": 4801,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "stage_rail",
+    "sha256": "22da85b36967debaeeb4db20756d6199de0ee12c66927c4f7435af7438e877cb",
+    "bytes": 3113,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "card_anatomy",
+    "sha256": "1d3ec7a18a47f02e19d25135823c766dc040a72986a2328a18741e3ce98539f6",
+    "bytes": 3364,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "cover_plate",
+    "sha256": "e12ac6162af096fd9cebbf9a81c1b7f94e4429a3a797e6ea37a38dd02e40dcc7",
+    "bytes": 73515,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "edition_stamp",
+    "sha256": "a0f6b5a73c354268e2c0fb9c17941c5f71ac14e79fc9594834e3899d470d09f4",
+    "bytes": 3375,
+    "viewbox": "0 0 - 34"
+   },
+   {
+    "component": "valley_lights",
+    "sha256": "9f60ad4be4e02ab3703db5a3aacedc74e21f88316acc472003133f7273e67a50",
+    "bytes": 26822,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "flame_detail",
+    "sha256": "ca7bb6cdfb2ba4b68fd0914f9a960e8dc6b65b5b81afc81054363feef33d14b4",
+    "bytes": 29945,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "door_knock",
+    "sha256": "5edb130062bea2dbc3878a6fb19dda22075cd13c2d4dfbce8cad71ef90d766f4",
+    "bytes": 38678,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "wheel_pin",
+    "sha256": "b01045ac2ade2d5ad50a5e3df08c6309bb235a2e567ff72dc4bbcbcd7363dd4d",
+    "bytes": 1857,
+    "viewbox": "0 0 - -"
+   },
+   {
+    "component": "wheel_pin",
+    "sha256": "37865d72b5d75e451eb81d92aec3e899cc0a0f35fddc2339c6e5b1361f4b0961",
+    "bytes": 1857,
+    "viewbox": "0 0 - -"
+   }
+  ],
+  "component_count": 18,
+  "mobile_preview": {
+   "viewport_px": [
+    1080,
+    1620
+   ],
+   "shots": [
+    {
+     "page": "page 1",
+     "file": "/tmp/claude-0/-home-user-Thylora/d3272dba-25bd-571e-9555-c5dbbdd95dba/scratchpad/editions/bramble_wick.mobile-p1.png",
+     "bytes": 1485784
+    },
+    {
+     "page": "page 2",
+     "file": "/tmp/claude-0/-home-user-Thylora/d3272dba-25bd-571e-9555-c5dbbdd95dba/scratchpad/editions/bramble_wick.mobile-p2.png",
+     "bytes": 1433548
+    },
+    {
+     "page": "page 3",
+     "file": "/tmp/claude-0/-home-user-Thylora/d3272dba-25bd-571e-9555-c5dbbdd95dba/scratchpad/editions/bramble_wick.mobile-p3.png",
+     "bytes": 1380338
+    }
+   ]
+  }
+ }
+]
