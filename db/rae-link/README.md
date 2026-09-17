@@ -29,9 +29,15 @@ Run in numeric order in one transaction per file.
 2. **No second source of truth.** Products, passports, family archives, businesses
    and departments stay where they already live. RAE Link holds a soft reference
    (`*_ref` text column) and resolves it through `rael_resolve_product_ref`.
-3. **Soft references, not blind foreign keys.** The live schema could not be
-   inspected from the build session (egress policy denied the backend host), so
-   nothing hard-links to a table whose shape is unverified.
+3. **Soft references, not blind foreign keys.** Nothing hard-links to a table whose
+   shape is unverified. The live schema was inspected on 2026-09-17 and the two
+   registry assumptions in `0010` were found WRONG and corrected: `public.products`
+   has `product_id`, not `product_code`, and carries `approval_state` /
+   `release_evidence_state`, not `release_state` / `state`. As drafted, every
+   product reference would have failed to resolve silently and nothing would ever
+   have been purchasable. `thylora_departments` was verified correct, including the
+   UNIQUE constraint the `ON CONFLICT` target depends on. The guards stay in place:
+   the shape is verified as of that date, not guaranteed forever.
 4. **Money is integer minor units.** No floating point money anywhere.
 5. **No opaque net proceeds.** Gross, processor fees, refunds, chargebacks, tax
    state, platform share, creator share, beneficiary share, net payable, payment
@@ -66,3 +72,19 @@ Validation ran on PostgreSQL 16 locally, not on the live backend. Before
 applying: confirm the live Postgres version, that `auth.users` is the identity
 table in use, that `pgcrypto` is available, and that no existing object already
 uses the `rael_` prefix.
+
+## Verification status — 2026-09-17
+
+Checked directly against `jvsdxhrfhtlgaknhjxlz`:
+
+| Check | Result |
+|---|---|
+| `rael_*` tables present live | **0 of 40.** Migrations are unapplied and no partial application exists. |
+| Naming | **RAE Link preserved.** No `ray*` / `raylink*` object exists. No rename performed, none authorized. |
+| Name collisions against the 703 live public tables | **None.** Every `rael_` name is free. |
+| `thylora_departments` guard in `0010` | **Correct.** Table exists, has `department_code`, and `department_code` is UNIQUE, so the `ON CONFLICT` target is valid. |
+| `products` guard in `0010` | **Was broken, now corrected.** See rule 3. |
+| Corrected resolver and purchasability logic | **8/8 tests pass** against live `products`, executed inside a rolled-back transaction. Resolution by UUID and by business key both succeed; unknown ref returns `NOT_FOUND`; null returns `NULL_REF`; only `published` + `verified` is purchasable; `published` + `partial`, `planned`, and unknown refs all fail closed. |
+
+Application of these migrations to the live backend remains held for Chairman
+execution. Nothing in this verification pass mutated the live backend.
