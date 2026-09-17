@@ -2,7 +2,7 @@
   "packet_id": "ERN-SPORTS-001-RENDER-PACKET-001",
   "packet_type": "render_packet",
   "packet_status": "READY_FOR_VISUAL_WORKROOM",
-  "lock_id": "ERN-SPORTS-LOCK-002",
+  "lock_id": "ERN-SPORTS-LOCK-003",
   "lock_authority": "This packet executes ERN-SPORTS-LOCK-002, which supersedes ERN-SPORTS-LOCK-001 while preserving it unedited as the historical lock. It adds no design decision. Where packet and lock disagree, the lock governs.",
   "edition_id": "THY-RAVENS-PAPER-20260917-001",
   "edition_label": "Morning Edition 001",
@@ -50,6 +50,15 @@
       "file": "docs/reference/ERN-FOOTER-APPROVED.png",
       "sha256": "ed8305c6bbdf9e6bcf7e73c4322466fadbad7e0dde8effd139061278df9b4e8f",
       "role": "REF-04 registered approved plate"
+    },
+    {
+      "file": "docs/ERN-SPORTS-EDITION-003-LOCK.json",
+      "role": "governing lock revision"
+    },
+    {
+      "file": "docs/reference/ERN-OLDWORLD-STYLE.png",
+      "sha256": "449777fce2927c091072d2107770ed20ac0a0e041cd66f7f434d4088d1a9b829",
+      "role": "REF-05 registered style plate"
     }
   ],
   "prohibited_globally": [
@@ -425,7 +434,7 @@
     },
     "empty_turf_target": "about one third",
     "depth_of_field": "deepest sharpness on QB #8 and the passing window; crowd band soft",
-    "team_colour_read": "purple offense, white opponent",
+    "team_colour_read": "purple offense; defenders in white jerseys with blue accents and blue helmets (AM-06). Palette permission only — no league or club mark, no horseshoe or helmet device, no player likeness (LOCK-11 / CR-12).",
     "excluded": [
       "referees and officials",
       "individually numbered offensive linemen",
@@ -435,6 +444,9 @@
       "duplicate jersey numerals",
       "broadcast score bugs, clocks, UI chrome",
       "extra arrows, cones or annotations"
+    ],
+    "amended_by": [
+      "AM-06"
     ]
   },
   "imagery_style": {
@@ -926,7 +938,9 @@
     "NO roundel ring around the pendant or the tablet mark (AM-04)",
     "NO free mark in the footer left cell in place of the roundel lockup (AM-04)",
     "NO blending of the two approved lockups into a third mark (AM-04)",
-    "NO spelling SEEZEN in the promo subtitle (AM-05)"
+    "NO spelling SEEZEN in the promo subtitle (AM-05)",
+    "NO club device, horseshoe or helmet logo on the blue helmets (AM-06 / LOCK-11)",
+    "NO sepia or brown cast carried from REF-05 — style vocabulary only (LOCK-07 / CR-10)"
   ],
   "mandatory_defect_corrections": [
     {
@@ -1335,6 +1349,19 @@
       "id": "AC-36",
       "lock": "ERN-SPORTS-LOCK-002",
       "test": "render output cites lock_id ERN-SPORTS-LOCK-002"
+    },
+    {
+      "id": "AC-37",
+      "lock": "AM-06",
+      "test": "defenders read as white jerseys with blue accents and blue helmets; sweep every helmet shell, sleeve, chest and pant stripe at 300 percent for any club device or logo-like artefact",
+      "severity": "HARD",
+      "risk": "RISK-01"
+    },
+    {
+      "id": "AC-38",
+      "lock": "REF-05 / LOCK-07",
+      "test": "frame carries REF-05 handling and texture but no sepia or brown dominance",
+      "severity": "HARD"
     }
   ],
   "reference_file_requirements": {
@@ -1386,12 +1413,15 @@
       {
         "ref": "REF-05",
         "path": "docs/reference/ERN-OLDWORLD-STYLE.png",
-        "status": "REQUIRED_MISSING",
+        "status": "PRESENT",
         "role": "the uploaded old-world image",
         "use": "STYLE VOCABULARY ONLY — painterly handling, texture, lamplight warmth",
         "blocking": false,
         "reason": "LOCK-07: never content, never composited, never permitted to set the colour cast",
-        "constraint": "if supplied, it enters the render as handling reference only; if absent, the render proceeds on the LOCK-07 style description and the measured colour tokens"
+        "constraint": "if supplied, it enters the render as handling reference only; if absent, the render proceeds on the LOCK-07 style description and the measured colour tokens",
+        "sha256": "449777fce2927c091072d2107770ed20ac0a0e041cd66f7f434d4088d1a9b829",
+        "registered_under": "ERN-SPORTS-LOCK-003",
+        "authority": "imagery language only; NOT subject matter, NOT brown or sepia cast, NOT composition"
       },
       {
         "ref": "REF-06",
@@ -1418,8 +1448,8 @@
     "superseded": "docs/ERN-SPORTS-EDITION-001-LOCK.md sections 5.1 and 5.2"
   },
   "packet_rule": "ERN-SPORTS-001-RENDER-PACKET-001 is an execution packet for ERN-SPORTS-LOCK-002. It introduces no new design, loosens no lock, and alters neither the correspondent, the necklace, the tablet mark, the cup rule, the field direction, the player set, the routes, the footer, the six data figures nor the format family. Placements, colour tokens and band boundaries are measured from the registered reference plate. Any change to a locked value requires ERN-SPORTS-LOCK-003 and a reissued packet. ERN-SPORTS-LOCK-001 is preserved unedited as the historical lock.",
-  "packet_revision": "002",
-  "governing_lock": "ERN-SPORTS-LOCK-002",
+  "packet_revision": "003",
+  "governing_lock": "ERN-SPORTS-LOCK-003",
   "original_lock": "ERN-SPORTS-LOCK-001",
   "revision_history": [
     {
@@ -1443,6 +1473,14 @@
         "RF-02",
         "RF-03",
         "RF-04"
+      ]
+    },
+    {
+      "revision": "003",
+      "lock": "ERN-SPORTS-LOCK-003",
+      "state": "REF-05 registered; no blocking references outstanding",
+      "amendments_applied": [
+        "AM-06"
       ]
     }
   ]

@@ -1,0 +1,77 @@
+{
+  "lock_id": "ERN-SPORTS-LOCK-003",
+  "supersedes": "ERN-SPORTS-LOCK-002",
+  "supersession_rule": "ERN-SPORTS-LOCK-001 and ERN-SPORTS-LOCK-002 are preserved unedited as the historical locks of record. This revision amends only the rows named in `amendments`. Everything else carries forward unchanged and is incorporated by reference.",
+  "revision_reason": "Chairman render directive of 2026-09-17 registered REF-05 and introduced one new locked value not present in LOCK-001 or LOCK-002: a permitted colour read for defender uniforms. Recorded as a revision rather than an in-place edit.",
+  "issued": "2026-09-17",
+  "edition_id": "THY-RAVENS-PAPER-20260917-001",
+  "spec_file": "docs/ERN-SPORTS-EDITION-003-LOCK.md",
+  "historical_lock_files": [
+    "docs/ERN-SPORTS-EDITION-001-LOCK.json",
+    "docs/ERN-SPORTS-EDITION-001-LOCK.md",
+    "docs/ERN-SPORTS-EDITION-002-LOCK.json",
+    "docs/ERN-SPORTS-EDITION-002-LOCK.md"
+  ],
+  "state": {
+    "lock_sheet": "COMPLETE",
+    "render": "NOT_GENERATED",
+    "publication": "NOT_PUBLISHED",
+    "preview_rail": "CHAIRMAN PREVIEW — NOT FOR PUBLICATION"
+  },
+
+  "amendments": [
+    {
+      "id": "AM-06",
+      "amends": "LOCK-06",
+      "field": "defender treatment",
+      "lock_002_text": "Defenders 4-6, white jerseys, visibly aligned in coverage; plain jersey numbers permitted; no callout boxes; never reuse 3, 4, 7, 8, 22",
+      "chairman_directive": "Defender uniforms may visually read as white jerseys with blue accents and blue helmets, but no NFL logo, no Colts horseshoe, no copied player likeness.",
+      "resolution": "LOCK-003 value: defenders wear white jerseys with blue accents and blue helmets. Count, coverage posture, plain numbering, no callout boxes and the forbidden numerals 3/4/7/8/22 all carry forward unchanged.",
+      "rights_guard": "LOCK-11 and CR-12 are unchanged and remain absolute. The permitted colour read is a palette permission only. No league mark, no club mark, no horseshoe or other club device, no helmet logo of any kind, no player likeness. Colour may evoke a city palette; marks may not be reproduced.",
+      "risk_note": "RISK-01 — a white-and-blue American-football uniform is the single highest rights-hygiene risk surface in this edition. Any render carrying this permission must be swept at 300 percent across every helmet shell, sleeve, chest and pant stripe before acceptance."
+    }
+  ],
+
+  "registered_references_added": [
+    {
+      "ref": "REF-05",
+      "path": "docs/reference/ERN-OLDWORLD-STYLE.png",
+      "sha256": "449777fce2927c091072d2107770ed20ac0a0e041cd66f7f434d4088d1a9b829",
+      "pixels": { "width": 1080, "height": 1080 },
+      "status": "PRESENT",
+      "registered_under": "ERN-SPORTS-LOCK-003",
+      "supplied_as": "the old-world image",
+      "observed": "sepia-toned painterly interior night scene, heavy visible brushwork and grain, lamplit background figures, strong chiaroscuro, warm monochrome cast",
+      "authority": "IMAGERY LANGUAGE ONLY — painterly, textured, cinematic human editorial illustration",
+      "explicitly_not_authority_for": [
+        "subject matter",
+        "brown or sepia colour cast",
+        "composition",
+        "any character, wardrobe or period"
+      ],
+      "chairman_statement": "REF-05 governs imagery language only: painterly, textured, cinematic human editorial illustration. It does not govern subject matter or brown color cast.",
+      "consistency": "matches LOCK-07 and CR-10 as already written; no amendment required. Its registration closes the last outstanding reference slot but adds no new permission."
+    }
+  ],
+
+  "reference_state": {
+    "REF-01": "PRESENT",
+    "REF-02": "PRESENT",
+    "REF-03": "PRESENT",
+    "REF-04": "PRESENT",
+    "REF-05": "PRESENT",
+    "REF-06": "MISSING, non-blocking, recommended only",
+    "blocking_outstanding": []
+  },
+
+  "open_rulings_carried": ["OR-01", "OR-02"],
+
+  "unchanged_from_prior_locks": {
+    "note": "Incorporated by reference, unedited.",
+    "from_lock_001": ["LOCK-01","LOCK-03","LOCK-04","LOCK-05","LOCK-07","LOCK-09","LOCK-10","LOCK-11","LOCK-12","field_blueprint","CR-01","CR-03 … CR-17","D-01 … D-22"],
+    "from_lock_002": ["AM-01","AM-02","AM-03","AM-04","AM-05","RF-01","RF-02","RF-03","RF-04"],
+    "lock_06_unchanged_fields": ["cast and counts","max 11 field figures","5 callout boxes","4 route arrows","1 passing window","defenders 4-6","coverage posture","no callout boxes on defenders","forbidden numerals 3/4/7/8/22","the full field exclusion list"]
+  },
+
+  "rule": "The next render cites lock_id ERN-SPORTS-LOCK-003 and satisfies every lock carried forward from ERN-SPORTS-LOCK-001 and ERN-SPORTS-LOCK-002 plus AM-06. Prior locks are not edited. A change to any value locked here is ERN-SPORTS-LOCK-004. Nothing is published; the preview rail stands."
+}
