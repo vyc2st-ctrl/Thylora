@@ -118,6 +118,41 @@ Leverage table, live:
 | `product_specific_visual_complete` | EXECUTABLE | 56 |
 | `reaccess_verified` | CREDENTIALED | 8 |
 
+## 4b. Gap Hunt verification run — 2026-09-17
+
+Full twelve-step pass against `gid://shopify/Product/7957199749197`. Report:
+`products/store/GAP-HUNT-VERIFICATION-001.md`. **Not ready. Stopped at Chairman approval.**
+
+What the run settled that was previously open:
+
+- **The zero-audit-row contradiction is resolved, and my earlier read of it was incomplete.**
+  `thylora_product_download_audit` is empty because `thylora-protected-download` has never served
+  a file to anyone, for any product. Twelve Miles' `reaccess_verified=true` rests on
+  `thylora_entitlement_access_log` (two REACCESS rows, reader path), a different ledger. Reader
+  re-access is witnessed; protected file download is witnessed nowhere. The two must not be merged.
+- **The library question that was UNKNOWN is now FAIL.** `thylora_customer_library_v1()` returns
+  no `entitlement_id` and no download field, so the library cannot call the download function at
+  all. For a product without an EDF package it returns `openable: null` and a reason string. A
+  Gap Hunt buyer could neither open nor download.
+- **EDF authoring is Chairman-credentialed.** All five `thylora_edf_*` functions gate on
+  `thylora_is_chairman()`; this session is `postgres` with `auth.uid()` null. A create was
+  attempted and denied. Not routed around with a direct table write — the gate is the authority.
+- **The Gap Hunt cover live on the product is not the approved cover.** The release decision names
+  `thylora-gap-hunt-21-cover.png?v=1788370761`; the product carries
+  `thylora-gap-hunt-approved-cover.png?v=1789219255`. `WR-STORE-001` has the original
+  REJECTED_INTERNAL_VISUAL_LAW and the revision PENDING_CHAIRMAN_VISUAL_APPROVAL. The live alt
+  text claims an approval the record does not contain. `product_specific_visual_complete` and
+  `visual_preflight_passed` were true without evidence; both set false.
+- **Publication is a separate gate from status.** Gap Hunt has zero `resourcePublicationsV2`
+  entries. ACTIVE alone would not make it reachable.
+
+Synthetic testing ran inside a transaction and rolled back; row counts identical before and after.
+
+**Correction carried from the previous pass:** I reported Trail Table / Rain-Side Beans as having
+no canonical product record. It has one — `gid://shopify/Product/7956697481293`, DRAFT, $2.00,
+SKU `ER-TRAIL-TABLE-001`, cover bound. I had checked the readiness and realization registries and
+not `thylora_store_shelf_assignments` or Shopify itself.
+
 ## 5. Standing rules for this workroom
 
 1. Read the live backend and the live provider before reporting any state.
