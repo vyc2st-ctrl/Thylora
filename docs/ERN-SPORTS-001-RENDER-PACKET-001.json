@@ -1,0 +1,1269 @@
+{
+  "packet_id": "ERN-SPORTS-001-RENDER-PACKET-001",
+  "packet_type": "render_packet",
+  "packet_status": "READY_FOR_VISUAL_WORKROOM",
+  "lock_id": "ERN-SPORTS-LOCK-001",
+  "lock_authority": "This packet executes ERN-SPORTS-LOCK-001. It adds no design decision. Where packet and lock disagree, the lock governs.",
+  "edition_id": "THY-RAVENS-PAPER-20260917-001",
+  "edition_label": "Morning Edition 001",
+  "edition_date": "2026-09-17",
+  "lane": "ErsatzReality News / Earth Desk / Sports",
+  "lane_action": "continuation_only",
+  "render_target": "separate visual workroom",
+  "publication_state": "NOT_PUBLISHED",
+  "preview_rail": "CHAIRMAN PREVIEW — NOT FOR PUBLICATION",
+  "derived_from": [
+    {
+      "file": "docs/ERN-SPORTS-EDITION-001-LOCK.json",
+      "sha256": "e333de63bbc55d1a58ce5bf2ef8cd43cd50b30f042eb94366565f9f747f983ae",
+      "role": "locked values, copied verbatim"
+    },
+    {
+      "file": "docs/ERN-SPORTS-EDITION-001-LOCK.md",
+      "sha256": "d2aa14e14a29552a6f2466279d4a85d237087143e5e23ee874a5cad094fa6b6e",
+      "role": "lock sheet, blueprint, continuity rules, defects, prompt"
+    },
+    {
+      "file": "docs/reference/ERN-SPORTS-001-preview-plate.png",
+      "sha256": "a63272d086db1b79d5f109272027b329dc178645029804ae975d6f956b6daba8",
+      "role": "measurement source for bands, panel edge and colour tokens; defect source"
+    }
+  ],
+  "prohibited_globally": [
+    "new presenter",
+    "new logo system",
+    "new format family"
+  ],
+  "canvas": {
+    "aspect_ratio": "1112:1415",
+    "aspect_decimal": 0.7859,
+    "orientation": "portrait",
+    "reference_plate_pixels": {
+      "width": 1112,
+      "height": 1415
+    },
+    "render_target_pixels": {
+      "width": 2400,
+      "height": 3054
+    },
+    "minimum_pixels": {
+      "width": 1112,
+      "height": 1415
+    },
+    "coordinate_space": "page-normalized, x 0.0 left to 1.0 right, y 0.0 top to 1.0 bottom; valid at any canvas of this aspect",
+    "bleed": "full bleed, no page margin; hero and footer imagery run to the trim edge"
+  },
+  "band_layout": {
+    "derivation": "row-luminance transition scan of the reference plate at 1112x1415",
+    "order_is_locked_by": "LOCK-10",
+    "inter_band_gaps": "sub-half-percent gaps between consecutive bands are the hairline gold and violet separating rules; no page ground shows between bands",
+    "bands": {
+      "preview_rail": {
+        "y0": 0.0,
+        "y1": 0.024
+      },
+      "masthead": {
+        "y0": 0.024,
+        "y1": 0.1456
+      },
+      "hero": {
+        "y0": 0.1456,
+        "y1": 0.5696
+      },
+      "data_band": {
+        "y0": 0.5703,
+        "y1": 0.6304
+      },
+      "editorial_row_1": {
+        "y0": 0.6304,
+        "y1": 0.7668
+      },
+      "editorial_row_2": {
+        "y0": 0.7668,
+        "y1": 0.8686
+      },
+      "footer_strip": {
+        "y0": 0.8693,
+        "y1": 0.9378
+      },
+      "legal_rail": {
+        "y0": 0.9385,
+        "y1": 1.0
+      }
+    }
+  },
+  "presenter": {
+    "lock": "LOCK-01",
+    "identity": "Neyra Sol, recurring sports correspondent, sole presenter",
+    "appearance_continuity": "long dark-brown wavy hair with warm lighter highlights past the shoulder; warm mid-brown skin; defined brows; direct address to camera; violet structured blazer over a dark navy top; seated at a dark desk",
+    "framing": "foreground left, left 30-34% of hero band, chest-up, seated, direct address",
+    "zone_page_normalized": {
+      "x0": 0.0,
+      "x1": 0.3462,
+      "y0": 0.1456,
+      "y1": 0.5696
+    },
+    "zone_rule": "left 30-34 percent of the hero band is reserved to the presenter; no field element enters it and no presenter element crosses the passing window",
+    "crop": "chest-up",
+    "attribution_lines": [
+      "— NEYRA SOL",
+      "SPORTS DESK"
+    ],
+    "necklace": {
+      "lock": "LOCK-02",
+      "artwork": "masthead hat-and-magnifying-glass mark as pendant, unmodified geometry",
+      "scale": "necklace scale; pendant at collarbone; height about two finger-widths",
+      "count": 1,
+      "chain": "fine silver-tone chain",
+      "metal": "gold/brass mark",
+      "geometry": "circular lens, handle descending to the lower right, brimmed-hat figure read inside the lens; identical geometry to the masthead mark, no rotation, no mirror, no restyle",
+      "seat_page_normalized": {
+        "x": 0.155,
+        "y": 0.372
+      },
+      "redesign_permitted": false,
+      "prohibited": [
+        "key",
+        "keyhole",
+        "monogram",
+        "letterform",
+        "abstract loop",
+        "medallion",
+        "chest emblem",
+        "second charm"
+      ],
+      "zoom_legibility_requirement": "hat figure and lens-and-handle silhouette both legible when the pendant is cropped and upscaled"
+    },
+    "tablet": {
+      "lock": "LOCK-03",
+      "artwork": "approved locked mark only: gold hat-and-magnifier mark plus ErsatzReality wordmark beneath",
+      "integrity": "whole and uncropped by hand, frame or desk",
+      "hold": "near hand, screen away from camera",
+      "treatment": "flat gold on dark slate shell; no glow, no emboss, no gradient invention",
+      "seat_page_normalized": {
+        "x": 0.105,
+        "y": 0.495
+      }
+    },
+    "cup": {
+      "lock": "LOCK-04",
+      "side_a": "hat and magnifying glass mark",
+      "side_b": "approved phrase 'TRUTH IN CONTEXT BUILDS A DEEPER TOMORROW' or approved scene",
+      "rule": "one side per render, declared in the render request; no invented slogan or scene",
+      "placement": "desk zone only, clear of the field panel",
+      "visible_side_this_render": "SIDE_B",
+      "visible_side_text": "TRUTH IN CONTEXT BUILDS A DEEPER TOMORROW",
+      "vessel": "matte black mug, gold artwork",
+      "seat_page_normalized": {
+        "x": 0.295,
+        "y": 0.512
+      },
+      "boundary_constraint": "mug silhouette must terminate left of x=0.3462"
+    }
+  },
+  "field_panel": {
+    "locks": [
+      "LOCK-05",
+      "LOCK-06"
+    ],
+    "bounds_page_normalized": {
+      "x0": 0.3462,
+      "x1": 1.0,
+      "y0": 0.1456,
+      "y1": 0.5696
+    },
+    "panel_edge_derivation": "green-dominance column scan; left edge at x=385/1112=0.3462, coincident with the LOCK-01 presenter zone outer bound",
+    "offense_direction": "left_to_right",
+    "camera": "elevated three-quarter sideline from offense left, 25-30 degrees",
+    "qb_orientation": "readable three-quarter side view facing downfield-right, ball at shoulder",
+    "qb_prohibited": [
+      "back-only",
+      "full rear",
+      "facing against direction of play"
+    ],
+    "yard_numbers": {
+      "sequence": [
+        "30",
+        "40",
+        "50",
+        "40"
+      ],
+      "orientation": "upright for the reader",
+      "integrity": "complete and uncut, fully inside the panel",
+      "baseline_panel_local_y": 96,
+      "baseline_page_normalized_y": 0.5526
+    },
+    "coordinate_mapping": {
+      "space": "panel-local, x 0-100 left-to-right, y 0-100 top-to-bottom, offense moves +x",
+      "page_x": "0.3462 + (panel_x / 100) * 0.6538",
+      "page_y": "0.1456 + (panel_y / 100) * 0.424"
+    },
+    "cast": [
+      "QB #8",
+      "WR #4",
+      "WR #7",
+      "WR #3",
+      "RB #22",
+      "one passing window",
+      "4-6 coverage defenders"
+    ],
+    "elements": [
+      {
+        "id": "QB #8",
+        "panel_local": {
+          "x": 14,
+          "y": 62
+        },
+        "page_normalized": {
+          "x": 0.4377,
+          "y": 0.4085
+        },
+        "motion": "three-quarter side, facing +x, ball at shoulder",
+        "label": null
+      },
+      {
+        "id": "RB #22",
+        "panel_local": {
+          "x": 22,
+          "y": 74
+        },
+        "page_normalized": {
+          "x": 0.49,
+          "y": 0.4594
+        },
+        "motion": "slant to (40,66)",
+        "label": "RB #22 SLANT"
+      },
+      {
+        "id": "WR #4",
+        "panel_local": {
+          "x": 58,
+          "y": 24
+        },
+        "page_normalized": {
+          "x": 0.7254,
+          "y": 0.2474
+        },
+        "motion": "go to (88,20)",
+        "label": "WR #4 GO ROUTE"
+      },
+      {
+        "id": "WR #7",
+        "panel_local": {
+          "x": 70,
+          "y": 46
+        },
+        "page_normalized": {
+          "x": 0.8039,
+          "y": 0.3406
+        },
+        "motion": "curl to (82,46), hook back to (78,40)",
+        "label": "WR #7 CURL / SIT"
+      },
+      {
+        "id": "WR #3",
+        "panel_local": {
+          "x": 74,
+          "y": 86
+        },
+        "page_normalized": {
+          "x": 0.83,
+          "y": 0.5102
+        },
+        "motion": "out to (90,92)",
+        "label": "WR #3 OUT ROUTE"
+      },
+      {
+        "id": "passing window",
+        "panel_local": {
+          "x": 52,
+          "y": 60,
+          "width": 26,
+          "height": 12
+        },
+        "page_normalized": {
+          "x": 0.6862,
+          "y": 0.4,
+          "width": 0.17,
+          "height": 0.0509
+        },
+        "motion": null,
+        "label": "PASSING WINDOW"
+      },
+      {
+        "id": "deep safety",
+        "panel_local": {
+          "x": 90,
+          "y": 34
+        },
+        "page_normalized": {
+          "x": 0.9346,
+          "y": 0.2898
+        },
+        "motion": "backpedal, eyes to QB",
+        "label": null
+      },
+      {
+        "id": "corner on WR #4",
+        "panel_local": {
+          "x": 62,
+          "y": 30
+        },
+        "page_normalized": {
+          "x": 0.7516,
+          "y": 0.2728
+        },
+        "motion": "trailing downfield",
+        "label": null
+      },
+      {
+        "id": "nickel on WR #7",
+        "panel_local": {
+          "x": 70,
+          "y": 54
+        },
+        "page_normalized": {
+          "x": 0.8039,
+          "y": 0.3746
+        },
+        "motion": "hips open, shading the curl",
+        "label": null
+      },
+      {
+        "id": "linebacker",
+        "panel_local": {
+          "x": 44,
+          "y": 66
+        },
+        "page_normalized": {
+          "x": 0.6339,
+          "y": 0.4254
+        },
+        "motion": "under the window, eyes to QB",
+        "label": null
+      },
+      {
+        "id": "corner on WR #3",
+        "panel_local": {
+          "x": 78,
+          "y": 90
+        },
+        "page_normalized": {
+          "x": 0.8562,
+          "y": 0.5272
+        },
+        "motion": "trailing to the sideline",
+        "label": null
+      }
+    ],
+    "counts": {
+      "max_field_human_figures": 11,
+      "callout_boxes": 5,
+      "route_arrows": 4,
+      "passing_windows": 1,
+      "defenders_min": 4,
+      "defenders_max": 6
+    },
+    "defender_numbers_forbidden": [
+      "3",
+      "4",
+      "7",
+      "8",
+      "22"
+    ],
+    "defender_posture": "hips open, eyes to the quarterback or trailing an assigned receiver; plain jersey numbers permitted; no callout boxes",
+    "line_of_scrimmage": "carried by field markings and the coverage front only; no rendered offensive line",
+    "passing_window_placement_rule": "in the gap between the underneath linebacker (44,66) and the nickel (70,54); must read as an opening, never as an overlay on a defender",
+    "arrow_style": "thin gold, one per named receiver, single-headed, never crossing a callout box",
+    "callout_style": "dark fill, hairline gold border, gold and white caps, placed clear of heads, jersey numbers and the passing-window ellipse",
+    "bands": {
+      "crowd": "y0-22 soft focus, no legible signage",
+      "field": "y22-100 sharp"
+    },
+    "empty_turf_target": "about one third",
+    "depth_of_field": "deepest sharpness on QB #8 and the passing window; crowd band soft",
+    "team_colour_read": "purple offense, white opponent",
+    "excluded": [
+      "referees and officials",
+      "individually numbered offensive linemen",
+      "blocking or collision clusters",
+      "sideline figures, coaches, cameras, equipment",
+      "telestration or spotlight rings",
+      "duplicate jersey numerals",
+      "broadcast score bugs, clocks, UI chrome",
+      "extra arrows, cones or annotations"
+    ]
+  },
+  "imagery_style": {
+    "lock": "LOCK-07",
+    "medium": "human editorial illustration in our imagery: painterly, textured, cinematic",
+    "surface": "visible brushwork; aged-newsprint tooth in the paper areas; film-grain warmth in the hero band",
+    "light": "stadium twilight; cool blue dusk sky, warm gold rim light on presenter and field",
+    "palette_names": [
+      "ErsatzReality violet/purple",
+      "gold/brass",
+      "off-white aged newsprint",
+      "deep ink black",
+      "stadium blue-grey green"
+    ],
+    "style_reference_use": "old-world image is style vocabulary only; never content, never colour cast",
+    "prohibited": [
+      "photoreal Earth-person imagery",
+      "photographic portrait",
+      "muddy brown",
+      "sepia",
+      "3D render",
+      "flat vector"
+    ],
+    "colour_tokens": {
+      "derivation": "masked-median sampling of the reference plate; supplied so the renderer matches the established palette rather than re-deriving it",
+      "page_ground": "#F8F7FA",
+      "headline_ink": "#040403",
+      "violet_headline": "#32067D",
+      "violet_rail": "#332A98",
+      "gold_mark": "#AC883C",
+      "gold_accent": "#C4B65C",
+      "gold_highlight": "#FFE350",
+      "band_ink_ground": "#14161D",
+      "turf_green": "#657854",
+      "stadium_dusk_violet": "#4C3F9F",
+      "stadium_sky_deep": "#1C2683"
+    },
+    "dominance_rule": "violet, gold and stadium blue-green dominate; brown is never dominant"
+  },
+  "format_family": {
+    "locks": [
+      "LOCK-09",
+      "LOCK-10"
+    ],
+    "redesign_permitted": false,
+    "band_order": [
+      "masthead",
+      "hero",
+      "data band",
+      "central question row",
+      "paths and classification row",
+      "footer strip",
+      "legal rail"
+    ],
+    "structural_components": [
+      "three-branch conditional",
+      "three-column information classification"
+    ],
+    "typography": {
+      "nameplate": "engraved serif italic, two-tone weight, full measure",
+      "headline_primary": "heavy condensed caps, headline_ink",
+      "headline_secondary": "heavy condensed caps, violet_headline",
+      "deck": "serif, sentence case",
+      "labels_and_rails": "letterspaced sans caps",
+      "data_band_figures": "heavy condensed caps, page_ground on band_ink_ground",
+      "rules": "hairline gold and violet"
+    }
+  },
+  "text_elements": [
+    {
+      "band": "preview_rail",
+      "align": "centre",
+      "text": "CHAIRMAN PREVIEW — NOT FOR PUBLICATION"
+    },
+    {
+      "band": "masthead",
+      "align": "left",
+      "role": "mark_tagline",
+      "text": "REAL GAMES. / REAL QUESTIONS. / A MORE INFORMED WORLD."
+    },
+    {
+      "band": "masthead",
+      "align": "centre",
+      "role": "nameplate",
+      "text": "ErsatzReality News"
+    },
+    {
+      "band": "masthead",
+      "align": "centre",
+      "role": "subline",
+      "text": "Earth Desk • Sports"
+    },
+    {
+      "band": "masthead",
+      "align": "centre",
+      "role": "edition_line",
+      "text": "Morning Edition 001    |    THY-RAVENS-PAPER-20260917-001    |    Sep 17, 2026"
+    },
+    {
+      "band": "masthead",
+      "align": "right",
+      "role": "category_rail",
+      "text": "PEOPLE / SPORTS / CULTURE / ANALYSIS / A DEEPER TOMORROW"
+    },
+    {
+      "band": "hero",
+      "align": "centre",
+      "role": "headline_primary",
+      "text": "BALTIMORE WON BIG."
+    },
+    {
+      "band": "hero",
+      "align": "centre",
+      "role": "headline_secondary",
+      "text": "NOW SHOW US THE DEPTH."
+    },
+    {
+      "band": "hero",
+      "align": "centre",
+      "role": "deck",
+      "text": "Flowers is day-to-day. Lane is on injured reserve. Sunday turns Baltimore's receiver depth into a live test."
+    },
+    {
+      "band": "hero",
+      "align": "left",
+      "role": "pull_quote",
+      "text": "“Same game. Deeper questions.”"
+    },
+    {
+      "band": "hero",
+      "align": "left",
+      "role": "attribution",
+      "text": "— NEYRA SOL / SPORTS DESK"
+    },
+    {
+      "band": "hero",
+      "align": "right",
+      "role": "micro_copy",
+      "text": "A BRIGHTER TOMORROW"
+    },
+    {
+      "band": "hero",
+      "align": "right",
+      "role": "micro_copy",
+      "text": "DIFFERENT PLAYERS. / MORE PATHS. / A STRONGER TOMORROW."
+    },
+    {
+      "band": "hero",
+      "align": "centre",
+      "role": "field_micro_copy",
+      "text": "OPPORTUNITY LIVES EVERYWHERE"
+    },
+    {
+      "band": "hero",
+      "align": "centre",
+      "role": "stadium_board",
+      "text": "BALTIMORE BUILDS DEEPER"
+    },
+    {
+      "band": "hero",
+      "align": "left",
+      "role": "cup_side_b",
+      "text": "TRUTH IN CONTEXT BUILDS A DEEPER TOMORROW"
+    },
+    {
+      "band": "hero",
+      "align": "callout",
+      "role": "field_label",
+      "text": "WR #4 GO ROUTE"
+    },
+    {
+      "band": "hero",
+      "align": "callout",
+      "role": "field_label",
+      "text": "WR #7 CURL / SIT"
+    },
+    {
+      "band": "hero",
+      "align": "callout",
+      "role": "field_label",
+      "text": "WR #3 OUT ROUTE"
+    },
+    {
+      "band": "hero",
+      "align": "callout",
+      "role": "field_label",
+      "text": "RB #22 SLANT"
+    },
+    {
+      "band": "hero",
+      "align": "callout",
+      "role": "field_label",
+      "text": "PASSING WINDOW"
+    }
+  ],
+  "data_band": {
+    "lock": "LOCK-12",
+    "cells": [
+      {
+        "index": 1,
+        "figure": "41–23",
+        "caption": "THE RESULT"
+      },
+      {
+        "index": 2,
+        "figure": "324",
+        "caption": "JACKSON PASSING YARDS"
+      },
+      {
+        "index": 3,
+        "figure": "144 / 3 TD",
+        "caption": "HENRY RUSHING"
+      },
+      {
+        "index": 4,
+        "figure": "150",
+        "caption": "FLOWERS RECEIVING YARDS BEFORE EXIT"
+      },
+      {
+        "index": 5,
+        "figure": "LANE — IR",
+        "caption": "THE DEPTH CHANGE"
+      },
+      {
+        "index": 6,
+        "figure": "SUN · 1PM",
+        "caption": "THE NEXT TEST"
+      }
+    ],
+    "rule": "no statistic invented at render time; source line required per documented figure before publication",
+    "documented_set": [
+      "41-23 result",
+      "324 passing yards",
+      "144 / 3 TD rushing",
+      "150 receiving yards before exit",
+      "LANE — IR",
+      "SUN · 1PM"
+    ],
+    "cell_count": 6,
+    "layout": "six equal cells across the band, gold hairline dividers"
+  },
+  "editorial_row_1": {
+    "cells": [
+      {
+        "role": "central_question",
+        "heading": "THE CENTRAL QUESTION",
+        "body": "Did Baltimore's Week 1 explosion prove the offense is deep, or did it show how much one explosive receiver changes everything?"
+      },
+      {
+        "role": "three_branch_conditional",
+        "heading": "IF FLOWERS CANNOT CARRY THE SAME WORKLOAD, WHERE DO THE OPPORTUNITIES GO?",
+        "branches": [
+          {
+            "state": "FLOWERS AVAILABLE FULL WORKLOAD",
+            "signal": "green",
+            "question": "Does the Week 1 structure repeat?"
+          },
+          {
+            "state": "FLOWERS LIMITED",
+            "signal": "amber",
+            "question": "Which routes and targets are redistributed?"
+          },
+          {
+            "state": "FLOWERS OUT",
+            "signal": "red",
+            "question": "Who inherits the high-value opportunities?"
+          }
+        ]
+      },
+      {
+        "role": "subject_inspect_card",
+        "heading": "BATEMAN",
+        "statement": "WEEK 1 DID NOT ANSWER THE BATEMAN QUESTION. WEEK 2 MIGHT.",
+        "inspect_chain": [
+          "EARLY TARGET",
+          "SEPARATION",
+          "THROW LOCATION",
+          "CATCH RESULT",
+          "NEXT TARGET",
+          "DEFENSIVE RESPONSE"
+        ]
+      }
+    ]
+  },
+  "editorial_row_2": {
+    "cells": [
+      {
+        "role": "path_to_win",
+        "heading": "PATH TO A BALTIMORE WIN",
+        "signal": "green",
+        "glyph": "tick",
+        "items": [
+          "Preserve explosive spacing",
+          "Avoid drive-killing penalties",
+          "Maintain run efficiency",
+          "Redistribute receiver opportunities if Flowers is limited",
+          "Force New Orleans to defend multiple answers"
+        ]
+      },
+      {
+        "role": "path_to_loss",
+        "heading": "PATH TO A BALTIMORE LOSS / FAILURE",
+        "signal": "red",
+        "glyph": "cross",
+        "items": [
+          "Flowers' absence collapses explosive receiver production",
+          "Penalties erase high-value plays",
+          "Receiver depth fails to replace targets",
+          "New Orleans compresses the field",
+          "Baltimore becomes dependent on one offensive answer"
+        ]
+      },
+      {
+        "role": "information_classification",
+        "heading": "INFORMATION CLASSIFICATION",
+        "columns": [
+          {
+            "name": "DOCUMENTED",
+            "items": [
+              "game results",
+              "player statistics",
+              "injury/roster status",
+              "game film evidence"
+            ]
+          },
+          {
+            "name": "INFERENCE / ANALYSIS",
+            "items": [
+              "tactical evaluation",
+              "projected opportunities",
+              "matchup analysis",
+              "reasonable projections"
+            ]
+          },
+          {
+            "name": "UNKNOWN",
+            "items": [
+              "opponent game plan",
+              "Flowers' availability",
+              "actual target distribution",
+              "defensive adjustments",
+              "any numerical estimate not yet supported"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "lock": "LOCK-08",
+    "treatment": "preferred bottom strip / QR treatment",
+    "cells": [
+      "left: mark + EXPLORE ERSATZREALITY + BOOKS • SHOWS • IDEAS • A DEEPER TOMORROW + crisp square QR block",
+      "centre: painterly promo panel TWELVE MILES FOR FLOUR — AN UNCLE SEEZEN TRAIL STORY",
+      "right: HISTORY LIVES IN NEW QUESTIONS. + EDUCATION / TECHNOLOGY / CULTURE / COMMERCE / MEDIA / A HIGHER VIEW"
+    ],
+    "cell_order_is_locked": true,
+    "qr_block": {
+      "shape": "square",
+      "edges": "sharp",
+      "contrast": "high",
+      "frame": "hairline gold rule",
+      "state": "always present, always crisp"
+    },
+    "legal_rail": "edition id + date + ER-NEWS-001 | © 2026 ERSATZREALITY + ORIGINAL ILLUSTRATION. NO TEAM LOGOS, NO PLAYER PHOTOS. | GAMES INFORM TODAY. BETTER QUESTIONS BUILD TOMORROW.",
+    "legal_rail_text": {
+      "left": "THY-RAVENS-PAPER-20260917-001    |    SEP 17, 2026    |    ER-NEWS-001",
+      "centre": "© 2026 ERSATZREALITY. ALL RIGHTS RESERVED. / ORIGINAL ILLUSTRATION. NO TEAM LOGOS, NO PLAYER PHOTOS.",
+      "right": "GAMES INFORM TODAY. / BETTER QUESTIONS BUILD TOMORROW."
+    }
+  },
+  "rights": {
+    "lock": "LOCK-11",
+    "value": "original illustration only",
+    "prohibited": [
+      "real team marks",
+      "league marks",
+      "player photographs",
+      "player likeness"
+    ],
+    "jersey_numbers": "invented editorial numerals"
+  },
+  "mark_system": {
+    "locks": [
+      "LOCK-02",
+      "LOCK-03",
+      "LOCK-04",
+      "LOCK-09"
+    ],
+    "single_mark": "hat and magnifying glass",
+    "scales": [
+      "masthead",
+      "tablet rear",
+      "necklace pendant",
+      "cup side A"
+    ],
+    "geometry_rule": "identical geometry at every scale; never redesigned, simplified, restyled or re-lettered per placement",
+    "new_mark_permitted": false
+  },
+  "exclusions": [
+    "no new presenter",
+    "no new logo system",
+    "no new format family",
+    "pendant must not be a key",
+    "pendant must not be a keyhole",
+    "pendant must not be a monogram",
+    "pendant must not be a letterform",
+    "pendant must not be a abstract loop",
+    "pendant must not be a medallion",
+    "pendant must not be a chest emblem",
+    "pendant must not be a second charm",
+    "no photoreal Earth-person imagery",
+    "no photographic portrait",
+    "no muddy brown",
+    "no sepia",
+    "no 3D render",
+    "no flat vector",
+    "no referees and officials",
+    "no individually numbered offensive linemen",
+    "no blocking or collision clusters",
+    "no sideline figures, coaches, cameras, equipment",
+    "no telestration or spotlight rings",
+    "no duplicate jersey numerals",
+    "no broadcast score bugs, clocks, UI chrome",
+    "no extra arrows, cones or annotations",
+    "no real team marks",
+    "no league marks",
+    "no player photographs",
+    "no player likeness",
+    "quarterback must not be back-only",
+    "quarterback must not be full rear",
+    "quarterback must not be facing against direction of play",
+    "no defender jersey numbered 3, 4, 7, 8, 22",
+    "no cup slogan or scene other than LOCK-04 side A or side B",
+    "no mug, presenter, arm or desk element crossing the field panel boundary",
+    "no cropping or occlusion of the tablet mark",
+    "no clipped yard numerals",
+    "no statistic other than the LOCK-12 documented set",
+    "no removal of the chairman preview rail",
+    "no dropped, blurred or non-square QR block"
+  ],
+  "mandatory_defect_corrections": [
+    {
+      "id": "D-01",
+      "observed_defect": "pendant renders as a monogram/key-like glyph, not the masthead mark",
+      "lock": "LOCK-02",
+      "status": "MUST_BE_CORRECTED"
+    },
+    {
+      "id": "D-02",
+      "observed_defect": "QB #8 rendered from directly behind, number-only, no face or throwing arm",
+      "lock": "LOCK-05",
+      "status": "MUST_BE_CORRECTED"
+    },
+    {
+      "id": "D-03",
+      "observed_defect": "field over-populated: official plus individually numbered offensive linemen",
+      "lock": "LOCK-06",
+      "status": "MUST_BE_CORRECTED"
+    },
+    {
+      "id": "D-04",
+      "observed_defect": "defenders engaged in blocks at the line rather than aligned in coverage",
+      "lock": "LOCK-06",
+      "status": "MUST_BE_CORRECTED"
+    },
+    {
+      "id": "D-05",
+      "observed_defect": "yard numerals clipped by the panel edge (reads 30 4 50 4)",
+      "lock": "LOCK-05",
+      "status": "MUST_BE_CORRECTED"
+    },
+    {
+      "id": "D-06",
+      "observed_defect": "yellow telestration/spotlight rings under players",
+      "lock": "LOCK-06",
+      "status": "MUST_BE_CORRECTED"
+    },
+    {
+      "id": "D-07",
+      "observed_defect": "mug silhouette crosses into the field panel",
+      "lock": "LOCK-04",
+      "status": "MUST_BE_CORRECTED"
+    },
+    {
+      "id": "D-08",
+      "observed_defect": "ambiguous or duplicated jersey numerals in the left cluster",
+      "lock": "LOCK-06",
+      "status": "MUST_BE_CORRECTED"
+    },
+    {
+      "id": "D-09",
+      "observed_defect": "cup side not declared; only Side B established",
+      "lock": "LOCK-04",
+      "status": "MUST_BE_CORRECTED"
+    }
+  ],
+  "pre_empted_risk_defects": [
+    {
+      "id": "D-10",
+      "defect": "photoreal drift on the presenter's face",
+      "guard": "LOCK-07 / CR-09"
+    },
+    {
+      "id": "D-11",
+      "defect": "muddy brown cast from the old-world style reference",
+      "guard": "LOCK-07 / CR-10"
+    },
+    {
+      "id": "D-12",
+      "defect": "pendant enlarged to medallion scale",
+      "guard": "LOCK-02 / CR-03"
+    },
+    {
+      "id": "D-13",
+      "defect": "second presenter, co-anchor or renamed correspondent",
+      "guard": "LOCK-01 / CR-01"
+    },
+    {
+      "id": "D-14",
+      "defect": "new or alternate mark, or new tablet lockup",
+      "guard": "LOCK-03 / CR-02 / CR-04"
+    },
+    {
+      "id": "D-15",
+      "defect": "real team, league or player marks; player likeness",
+      "guard": "LOCK-11 / CR-12"
+    },
+    {
+      "id": "D-16",
+      "defect": "nameplate, subline or rail redesign; new format family",
+      "guard": "LOCK-09 / CR-05"
+    },
+    {
+      "id": "D-17",
+      "defect": "footer QR block dropped or blurred; strip rearranged",
+      "guard": "LOCK-08 / CR-11"
+    },
+    {
+      "id": "D-18",
+      "defect": "offense direction mirrored or arrows inconsistent",
+      "guard": "LOCK-05 / CR-06"
+    },
+    {
+      "id": "D-19",
+      "defect": "statistics changed or invented between renders",
+      "guard": "LOCK-12 / CR-13"
+    },
+    {
+      "id": "D-20",
+      "defect": "extra arrows, cones, or a second passing window",
+      "guard": "LOCK-06"
+    },
+    {
+      "id": "D-21",
+      "defect": "broadcast score bug, clock or UI chrome in the field panel",
+      "guard": "LOCK-06"
+    },
+    {
+      "id": "D-22",
+      "defect": "chairman preview rail removed before release",
+      "guard": "CR-15"
+    }
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "AC-01",
+      "check": "pendant_is_masthead_mark",
+      "assert": true,
+      "method": "crop pendant, upscale, confirm hat figure plus lens-and-handle silhouette",
+      "defect": "D-01",
+      "lock": "LOCK-02"
+    },
+    {
+      "id": "AC-02",
+      "check": "qb_orientation",
+      "assert": "three_quarter_side_facing_right",
+      "method": "face-side, jawline and throwing arm visible; jersey 8 legible; not rear, not reversed",
+      "defect": "D-02",
+      "lock": "LOCK-05"
+    },
+    {
+      "id": "AC-03",
+      "check": "field_human_figure_count",
+      "assert": "<= 11",
+      "method": "count all human figures inside the field panel",
+      "defect": "D-03",
+      "lock": "LOCK-06"
+    },
+    {
+      "id": "AC-04",
+      "check": "officials_present",
+      "assert": false,
+      "method": "no striped official anywhere in the panel",
+      "defect": "D-03",
+      "lock": "LOCK-06"
+    },
+    {
+      "id": "AC-05",
+      "check": "numbered_offensive_line_present",
+      "assert": false,
+      "method": "no individually numbered linemen, no blocking or collision clusters",
+      "defect": "D-03",
+      "lock": "LOCK-06"
+    },
+    {
+      "id": "AC-06",
+      "check": "all_defenders_in_coverage",
+      "assert": true,
+      "method": "every white jersey shows coverage posture, none engaged in a block",
+      "defect": "D-04",
+      "lock": "LOCK-06"
+    },
+    {
+      "id": "AC-07",
+      "check": "yard_number_sequence",
+      "assert": [
+        "30",
+        "40",
+        "50",
+        "40"
+      ],
+      "method": "sequence complete, upright, uncut, inside the panel",
+      "defect": "D-05",
+      "lock": "LOCK-05"
+    },
+    {
+      "id": "AC-08",
+      "check": "telestration_rings_present",
+      "assert": false,
+      "method": "no spotlight or tracking rings beneath any player",
+      "defect": "D-06",
+      "lock": "LOCK-06"
+    },
+    {
+      "id": "AC-09",
+      "check": "mug_intersects_field_panel",
+      "assert": false,
+      "method": "mug silhouette terminates left of x=0.3462",
+      "defect": "D-07",
+      "lock": "LOCK-04"
+    },
+    {
+      "id": "AC-10",
+      "check": "duplicate_or_ambiguous_jersey_numerals",
+      "assert": false,
+      "method": "one #8 only; no offensive numeral repeated; no defender numbered 3, 4, 7, 8 or 22",
+      "defect": "D-08",
+      "lock": "LOCK-06"
+    },
+    {
+      "id": "AC-11",
+      "check": "cup_visible_side",
+      "assert": "SIDE_B",
+      "method": "visible face matches the declared side verbatim",
+      "defect": "D-09",
+      "lock": "LOCK-04"
+    },
+    {
+      "id": "AC-12",
+      "check": "callout_box_count",
+      "assert": 5,
+      "method": "four route labels plus one passing-window label",
+      "lock": "LOCK-06"
+    },
+    {
+      "id": "AC-13",
+      "check": "route_arrow_count",
+      "assert": 4,
+      "method": "one single-headed arrow per named receiver",
+      "lock": "LOCK-06"
+    },
+    {
+      "id": "AC-14",
+      "check": "passing_window_count",
+      "assert": 1,
+      "method": "one ellipse, sitting in the linebacker-nickel gap, reading as an opening",
+      "lock": "LOCK-06"
+    },
+    {
+      "id": "AC-15",
+      "check": "offense_direction",
+      "assert": "left_to_right",
+      "method": "cover the labels; a reader can still state the direction of play",
+      "lock": "LOCK-05"
+    },
+    {
+      "id": "AC-16",
+      "check": "tablet_mark_whole_and_uncropped",
+      "assert": true,
+      "method": "full mark plus wordmark visible, unoccluded by hand, frame or desk",
+      "lock": "LOCK-03"
+    },
+    {
+      "id": "AC-17",
+      "check": "presenter_count",
+      "assert": 1,
+      "method": "Neyra Sol only; no co-anchor, no second figure in the presenter zone",
+      "lock": "LOCK-01"
+    },
+    {
+      "id": "AC-18",
+      "check": "presenter_reads_as_illustration",
+      "assert": true,
+      "method": "no photoreal or photographic face rendering",
+      "defect": "D-10",
+      "lock": "LOCK-07"
+    },
+    {
+      "id": "AC-19",
+      "check": "brown_dominant",
+      "assert": false,
+      "method": "dominant hues are violet, gold and stadium blue-green",
+      "defect": "D-11",
+      "lock": "LOCK-07"
+    },
+    {
+      "id": "AC-20",
+      "check": "footer_cells_in_order",
+      "assert": 3,
+      "method": "QR cell left, promo panel centre, kicker and category list right",
+      "defect": "D-17",
+      "lock": "LOCK-08"
+    },
+    {
+      "id": "AC-21",
+      "check": "qr_block_crisp_and_square",
+      "assert": true,
+      "method": "sharp-edged, high contrast, hairline gold frame",
+      "defect": "D-17",
+      "lock": "LOCK-08"
+    },
+    {
+      "id": "AC-22",
+      "check": "rights_line_present",
+      "assert": true,
+      "method": "ORIGINAL ILLUSTRATION. NO TEAM LOGOS, NO PLAYER PHOTOS. present verbatim in the legal rail",
+      "lock": "LOCK-11"
+    },
+    {
+      "id": "AC-23",
+      "check": "real_team_league_or_player_marks_present",
+      "assert": false,
+      "method": "no reproduced marks, no player photograph or likeness",
+      "lock": "LOCK-11"
+    },
+    {
+      "id": "AC-24",
+      "check": "data_band_figures_match_lock",
+      "assert": [
+        "41-23 result",
+        "324 passing yards",
+        "144 / 3 TD rushing",
+        "150 receiving yards before exit",
+        "LANE — IR",
+        "SUN · 1PM"
+      ],
+      "method": "six cells, figures identical to the locked set, nothing added",
+      "defect": "D-19",
+      "lock": "LOCK-12"
+    },
+    {
+      "id": "AC-25",
+      "check": "band_order_matches_lock",
+      "assert": [
+        "masthead",
+        "hero",
+        "data band",
+        "central question row",
+        "paths and classification row",
+        "footer strip",
+        "legal rail"
+      ],
+      "method": "seven bands in locked order",
+      "lock": "LOCK-10"
+    },
+    {
+      "id": "AC-26",
+      "check": "structural_components_present",
+      "assert": [
+        "three-branch conditional",
+        "three-column information classification"
+      ],
+      "method": "three-branch conditional and three-column classification both present",
+      "lock": "LOCK-10"
+    },
+    {
+      "id": "AC-27",
+      "check": "nameplate_unchanged",
+      "assert": true,
+      "method": "nameplate, subline and rails match LOCK-09; no new format family",
+      "defect": "D-16",
+      "lock": "LOCK-09"
+    },
+    {
+      "id": "AC-28",
+      "check": "preview_rail_present",
+      "assert": true,
+      "method": "CHAIRMAN PREVIEW — NOT FOR PUBLICATION present in the top rail",
+      "defect": "D-22",
+      "lock": "CR-15"
+    }
+  ],
+  "reference_file_requirements": {
+    "gate": "The visual workroom does not render until every REQUIRED file below is present at its stated path and registered in this packet.",
+    "files": [
+      {
+        "ref": "REF-01",
+        "path": "docs/reference/ERN-SPORTS-001-preview-plate.png",
+        "status": "PRESENT",
+        "sha256": "a63272d086db1b79d5f109272027b329dc178645029804ae975d6f956b6daba8",
+        "role": "Edition 001 chairman-preview plate",
+        "use": "composition, band and palette continuity; source of the nine observed defects",
+        "authority": "continuity reference only — it is NOT authority for the necklace, the quarterback orientation, the field cast or the defender posture, all of which it renders defectively"
+      },
+      {
+        "ref": "REF-02",
+        "path": "docs/reference/ERN-MARK-MASTER.png",
+        "status": "REQUIRED_MISSING",
+        "role": "master hat-and-magnifier mark, clean, largest available resolution, transparent ground",
+        "use": "single source for all four mark scales: masthead, tablet rear, necklace pendant, cup side A",
+        "blocking": true,
+        "reason": "LOCK-02 and CR-02 require identical mark geometry at every scale; without the master the pendant will be re-invented, which is defect D-01"
+      },
+      {
+        "ref": "REF-03",
+        "path": "docs/reference/ERN-NECKLACE-APPROVED.png",
+        "status": "REQUIRED_MISSING",
+        "role": "the approved necklace plate — the preferred second image",
+        "use": "pendant size, chain gauge, seat height and metal finish",
+        "blocking": true,
+        "reason": "named by the Chairman as the only approved necklace source; the attached plate carries the wrong pendant"
+      },
+      {
+        "ref": "REF-04",
+        "path": "docs/reference/ERN-FOOTER-APPROVED.png",
+        "status": "REQUIRED_MISSING",
+        "role": "the preferred footer strip and QR treatment — the preferred first image",
+        "use": "footer cell proportions, QR block scale and rule weights",
+        "blocking": true,
+        "reason": "LOCK-08 is presently written from the footer visible in REF-01; if the preferred first image differs, the lock is reissued as ERN-SPORTS-LOCK-002 before render"
+      },
+      {
+        "ref": "REF-05",
+        "path": "docs/reference/ERN-OLDWORLD-STYLE.png",
+        "status": "REQUIRED_MISSING",
+        "role": "the uploaded old-world image",
+        "use": "STYLE VOCABULARY ONLY — painterly handling, texture, lamplight warmth",
+        "blocking": false,
+        "reason": "LOCK-07: never content, never composited, never permitted to set the colour cast",
+        "constraint": "if supplied, it enters the render as handling reference only; if absent, the render proceeds on the LOCK-07 style description and the measured colour tokens"
+      },
+      {
+        "ref": "REF-06",
+        "path": "docs/reference/ERN-NEYRA-SOL-CONTINUITY.png",
+        "status": "RECOMMENDED_MISSING",
+        "role": "correspondent continuity plate for Neyra Sol",
+        "use": "face, hair and wardrobe continuity across editions",
+        "blocking": false,
+        "reason": "CR-01; REF-01 currently carries her likeness and can serve until a dedicated plate exists"
+      }
+    ],
+    "on_missing_blocking_file": "Hold the render. Report the missing ref. Do not substitute, do not approximate, do not redesign the affected element.",
+    "on_reference_conflict": "If an approved plate contradicts a locked value, stop and reissue as ERN-SPORTS-LOCK-002. Never edit a locked rule in place, and never let a reference silently override the lock.",
+    "versioning": "CR-17 — reference plates are versioned, not silently replaced."
+  },
+  "render_instruction_source": {
+    "prompt_text": "docs/ERN-SPORTS-EDITION-001-LOCK.md section 5.1",
+    "exclusion_list": "docs/ERN-SPORTS-EDITION-001-LOCK.md section 5.2",
+    "pre_render_checklist": "docs/ERN-SPORTS-EDITION-001-LOCK.md section 5.3",
+    "post_render_test": "docs/ERN-SPORTS-EDITION-001-LOCK.md section 5.4",
+    "rule": "The visual workroom renders from section 5.1 verbatim, carrying section 5.2, and is accepted only against the acceptance_criteria in this packet."
+  },
+  "packet_rule": "ERN-SPORTS-001-RENDER-PACKET-001 is an execution packet for ERN-SPORTS-LOCK-001. It introduces no new design, loosens no lock, and alters neither the correspondent, the necklace, the tablet mark, the cup rule, the field direction, the player set, the routes, the footer, the six data figures nor the format family. Placements, colour tokens and band boundaries are measured from the registered reference plate. Any change to a locked value requires ERN-SPORTS-LOCK-002 and a reissued packet."
+}
