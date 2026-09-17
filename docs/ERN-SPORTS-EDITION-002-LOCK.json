@@ -1,0 +1,198 @@
+{
+  "lock_id": "ERN-SPORTS-LOCK-002",
+  "supersedes": "ERN-SPORTS-LOCK-001",
+  "supersession_rule": "ERN-SPORTS-LOCK-001 is preserved unedited at docs/ERN-SPORTS-EDITION-001-LOCK.json and docs/ERN-SPORTS-EDITION-001-LOCK.md as the historical lock of record. This revision amends only the rows named in `amendments`. Every other lock, continuity rule, blueprint value, defect and figure in ERN-SPORTS-LOCK-001 carries forward unchanged and is incorporated here by reference.",
+  "revision_reason": "Registration of the three previously blocking references (REF-02, REF-03, REF-04). Reconciliation found five conflicts between the supplied approved plates and the text of ERN-SPORTS-LOCK-001. Per the packet reconciliation rule, no locked rule was edited in place.",
+  "issued": "2026-09-17",
+  "edition_id": "THY-RAVENS-PAPER-20260917-001",
+  "edition_label": "Morning Edition 001",
+  "edition_date": "2026-09-17",
+  "lane": "ErsatzReality News / Earth Desk / Sports",
+  "lane_action": "continuation_only",
+  "backend_of_record": "jvsdxhrfhtlgaknhjxlz",
+  "spec_file": "docs/ERN-SPORTS-EDITION-002-LOCK.md",
+  "historical_lock_files": [
+    "docs/ERN-SPORTS-EDITION-001-LOCK.json",
+    "docs/ERN-SPORTS-EDITION-001-LOCK.md"
+  ],
+  "state": {
+    "lock_sheet": "COMPLETE",
+    "render": "NOT_GENERATED",
+    "publication": "NOT_PUBLISHED",
+    "preview_rail": "CHAIRMAN PREVIEW — NOT FOR PUBLICATION"
+  },
+  "prohibited_globally": ["new presenter", "new logo system", "new format family"],
+
+  "registered_references": [
+    {
+      "ref": "REF-01",
+      "path": "docs/reference/ERN-SPORTS-001-preview-plate.png",
+      "sha256": "a63272d086db1b79d5f109272027b329dc178645029804ae975d6f956b6daba8",
+      "status": "PRESENT",
+      "registered_under": "ERN-SPORTS-LOCK-001",
+      "authority": "continuity reference only; NOT authority for the necklace, quarterback orientation, field cast or defender posture"
+    },
+    {
+      "ref": "REF-02",
+      "path": "docs/reference/ERN-MARK-MASTER.png",
+      "sha256": "aa6903b567ed0cbb2c195b8ab00a450bda5e9d5418025c7b2da9313c57cec0a4",
+      "pixels": { "width": 145, "height": 127 },
+      "status": "PRESENT",
+      "registered_under": "ERN-SPORTS-LOCK-002",
+      "supplied_as": "ERN-MARK-MASTER.png",
+      "authority": "geometry authority for the FREE MARK lockup at pendant and tablet scale",
+      "observed": "filled black-and-gold mark. Circular lens at left; handle descending to the LOWER LEFT; brimmed hat outside the lens at upper right, overlapping the lens rim; legs descending beneath the hat; a small gold glyph inside the lens. No outer containing ring.",
+      "quality_caveat": "supplied at 145x127 px as a raster crop on a light ground, not vector and not transparent. Geometry is legible and sufficient to bind the lock; it is below the resolution requested for a master and is recorded as such. A vector master remains desirable and is NOT render-blocking."
+    },
+    {
+      "ref": "REF-03",
+      "path": "docs/reference/ERN-NECKLACE-APPROVED.png",
+      "sha256": "d6271ec75de9c15d5d91b11241523ef01681c2b05ce1e8d5d1ab7cbcd09fb32d",
+      "pixels": { "width": 165, "height": 250 },
+      "status": "PRESENT",
+      "registered_under": "ERN-SPORTS-LOCK-002",
+      "supplied_as": "ERN-NECKLACE-APPROVED.png",
+      "authority": "the approved necklace: pendant artwork, geometry, metal, chain gauge and seat height",
+      "observed": "one pendant on a fine link chain. Pendant artwork is the mark in the REF-02 free-mark geometry — lens lower left with handle descending to the lower left, brimmed hat outside the lens at upper right, legs beneath. Metal reads as polished SILVER / WHITE METAL, not gold or brass. Pendant seats on the upper sternum, slightly below the collarbone. Presenter wears a violet blazer, consistent with LOCK-01."
+    },
+    {
+      "ref": "REF-04",
+      "path": "docs/reference/ERN-FOOTER-APPROVED.png",
+      "sha256": "ed8305c6bbdf9e6bcf7e73c4322466fadbad7e0dde8effd139061278df9b4e8f",
+      "pixels": { "width": 1087, "height": 164 },
+      "status": "PRESENT",
+      "registered_under": "ERN-SPORTS-LOCK-002",
+      "supplied_as": "ERN-FOOTER-APPROVED.png",
+      "authority": "footer strip: cell proportions, QR scale, rule weights, mark lockup at footer scale, promo panel copy",
+      "observed": "left cell on black — ROUNDEL lockup, EXPLORE ERSATZREALITY in gold caps, BOOKS • SHOWS • IDEAS • A DEEPER TOMORROW beneath, square high-contrast QR at the right of the cell. Centre — painterly dusk trail panel, rider and three walking figures, TWELVE MILES FOR FLOUR over AN UNCLE SEEZIN TRAIL STORY. Right end of the promo panel carries HISTORY LIVES IN NEW QUESTIONS. in gold caps over the artwork. Far right — separate narrow paper-ground column, gold rule above and below, EDUCATION / TECHNOLOGY / CULTURE / COMMERCE / MEDIA / A HIGHER VIEW."
+    },
+    {
+      "ref": "REF-05",
+      "path": "docs/reference/ERN-OLDWORLD-STYLE.png",
+      "status": "MISSING",
+      "blocking": false,
+      "note": "style vocabulary only. Absent. Render proceeds on the LOCK-07 style description and the measured colour tokens. REF-04's promo panel is painterly old-world content but is NOT a substitute for this plate and carries no style authority beyond the footer cell."
+    },
+    {
+      "ref": "REF-06",
+      "path": "docs/reference/ERN-NEYRA-SOL-CONTINUITY.png",
+      "status": "MISSING",
+      "blocking": false,
+      "note": "recommended. REF-01 carries her likeness; REF-03 corroborates hair, skin and blazer at close range."
+    }
+  ],
+
+  "amendments": [
+    {
+      "id": "AM-01",
+      "amends": "LOCK-02",
+      "field": "geometry / handle direction",
+      "lock_001_text": "Circular lens, handle descending to the lower right",
+      "plate_evidence": "REF-02 and REF-03 both show the handle descending to the LOWER LEFT",
+      "conflict": "C-01",
+      "resolution": "LOCK-002 value: handle descends to the LOWER LEFT, per REF-02 and REF-03.",
+      "basis": "supplied approved plates; the lock text was wrong, the artwork was not"
+    },
+    {
+      "id": "AM-02",
+      "amends": "LOCK-02",
+      "field": "geometry / hat placement",
+      "lock_001_text": "hatted figure read inside the lens",
+      "plate_evidence": "REF-02 and REF-03 both show the brimmed hat OUTSIDE the lens at upper right, overlapping the lens rim, with legs descending beneath; the glyph inside the lens is separate",
+      "conflict": "C-02",
+      "resolution": "LOCK-002 value: hat sits outside the lens at upper right, overlapping the rim, legs beneath; a small glyph reads inside the lens.",
+      "basis": "supplied approved plates"
+    },
+    {
+      "id": "AM-03",
+      "amends": "LOCK-02",
+      "field": "metal",
+      "lock_001_text": "Gold/brass mark on a fine silver-tone chain",
+      "plate_evidence": "REF-03 pendant reads as polished silver / white metal on a silver-tone chain",
+      "conflict": "C-03",
+      "resolution": "LOCK-002 value: pendant is SILVER / WHITE METAL on a fine silver-tone chain. The mark remains gold at masthead, tablet and footer scale. Pendant metal is the single exception and is set by the approved necklace plate.",
+      "basis": "REF-03 is the Chairman's named authority for the necklace"
+    },
+    {
+      "id": "AM-04",
+      "amends": "CR-02",
+      "field": "one mark, four scales, identical geometry",
+      "lock_001_text": "The hat-and-magnifier mark appears at masthead scale, tablet scale, pendant scale and cup scale. Same geometry at every scale.",
+      "plate_evidence": "REF-02 and REF-04 carry two geometrically different lockups. REF-02 free mark: no containing ring, hat outside the lens at upper right, handle lower left. REF-04 footer roundel: outer gold ring, hat INSIDE the lens area above the glass, handle descending to the LOWER RIGHT, gold line art on black.",
+      "conflict": "C-04",
+      "resolution": "LOCK-002 records a TWO-LOCKUP mark system, each lockup bound to the placements where the Chairman's own approved plate uses it. FREE MARK (REF-02 geometry): pendant, tablet rear. ROUNDEL LOCKUP (REF-04 geometry): footer left cell. Masthead and cup scale are NOT settled by either plate and carry forward from LOCK-001 pending a plate.",
+      "basis": "placement evidence from the approved plates only; no geometry was invented, merged or redrawn",
+      "open_ruling": "OR-01",
+      "blocking": false
+    },
+    {
+      "id": "AM-05",
+      "amends": "LOCK-08",
+      "field": "promo panel subtitle",
+      "lock_001_text": "AN UNCLE SEEZEN TRAIL STORY",
+      "plate_evidence": "REF-04 reads AN UNCLE SEEZIN TRAIL STORY",
+      "conflict": "C-05",
+      "resolution": "LOCK-002 value: AN UNCLE SEEZIN TRAIL STORY, spelled SEEZIN, per REF-04. Title TWELVE MILES FOR FLOUR is unchanged and matches.",
+      "basis": "REF-04 is the approved footer plate"
+    }
+  ],
+
+  "refinements": [
+    {
+      "id": "RF-01",
+      "refines": "LOCK-08",
+      "note": "HISTORY LIVES IN NEW QUESTIONS. is set in gold caps over the right end of the centre promo panel artwork, not on paper ground in the right cell. The right cell is the category column alone.",
+      "conflict": false
+    },
+    {
+      "id": "RF-02",
+      "refines": "LOCK-08",
+      "note": "The category column sits on paper ground as a separate narrow right column with a gold rule above and below. List order EDUCATION / TECHNOLOGY / CULTURE / COMMERCE / MEDIA / A HIGHER VIEW matches LOCK-001 exactly.",
+      "conflict": false
+    },
+    {
+      "id": "RF-03",
+      "refines": "LOCK-02",
+      "note": "Pendant seats on the upper sternum, slightly below the collarbone, rather than at the collarbone. Scale reads as jewelry and is consistent with the two-finger-width rule.",
+      "conflict": false
+    },
+    {
+      "id": "RF-04",
+      "refines": "LOCK-08",
+      "note": "QR block sits inside the black left cell at its right end, square and high contrast, framed by the cell rather than by a separate hairline rule.",
+      "conflict": false
+    }
+  ],
+
+  "open_rulings": [
+    {
+      "id": "OR-01",
+      "subject": "mark system geometry",
+      "question": "Is the two-lockup system (free mark plus roundel) the intended standard, or is one of the two geometries the single mark, making the other a variant to be withdrawn?",
+      "provisional": "Two-lockup system, bound by placement evidence per AM-04.",
+      "blocking": false,
+      "reason_not_blocking": "every placement required by this render has an approved plate; nothing must be invented to render",
+      "escalation": "A Chairman ruling that collapses the system to one geometry is ERN-SPORTS-LOCK-003, not an edit to this lock."
+    },
+    {
+      "id": "OR-02",
+      "subject": "masthead and cup mark geometry",
+      "question": "Which lockup applies at masthead scale and at cup Side A?",
+      "provisional": "carried forward from LOCK-001 unchanged; no plate supplied for either",
+      "blocking": false
+    }
+  ],
+
+  "unchanged_from_lock_001": {
+    "note": "Incorporated by reference, unedited.",
+    "locks": ["LOCK-01", "LOCK-03", "LOCK-04", "LOCK-05", "LOCK-06", "LOCK-07", "LOCK-09", "LOCK-10", "LOCK-11", "LOCK-12"],
+    "lock_02_unchanged_fields": ["count = 1", "redesign_permitted = false", "scale = necklace scale, two finger-widths", "prohibited list of eight substitute forms"],
+    "lock_08_unchanged_fields": ["three cells plus legal rail", "cell order", "left cell copy", "category list and order", "legal rail text", "TWELVE MILES FOR FLOUR"],
+    "field_blueprint": "unchanged in full",
+    "continuity_rules": "CR-01, CR-03 through CR-17 unchanged; CR-02 amended by AM-04",
+    "defects": "D-01 through D-22 unchanged and still binding",
+    "numbers": "LOCK-12 six documented figures unchanged"
+  },
+
+  "rule": "The next render must cite lock_id ERN-SPORTS-LOCK-002, satisfy every lock carried forward from ERN-SPORTS-LOCK-001, and satisfy amendments AM-01 through AM-05. ERN-SPORTS-LOCK-001 is not edited and remains readable as the historical lock. A change to any value locked here is ERN-SPORTS-LOCK-003, never an in-place edit. Nothing is published until the Chairman releases the edition; the preview rail stands."
+}

@@ -1,0 +1,128 @@
+ERSATZREALITY NEWS — SPORTS EDITION 001 — RENDER UNDER LOCK ERN-SPORTS-LOCK-002 (supersedes ERN-SPORTS-LOCK-001)
+
+Continuation of the existing ErsatzReality News sports lane. Do not create a new presenter,
+a new logo system, or a new format family. This is the same newspaper, same desk, same mark.
+
+FORMAT
+Full-page vertical newspaper front page. Top rail: "CHAIRMAN PREVIEW — NOT FOR PUBLICATION".
+Nameplate "ErsatzReality News" in engraved serif italic, hat-and-magnifying-glass mark at top
+left with "REAL GAMES. REAL QUESTIONS. A MORE INFORMED WORLD." beneath. Subline
+"Earth Desk • Sports". Edition line "Morning Edition 001 | THY-RAVENS-PAPER-20260917-001 |
+Sep 17, 2026". Right rail: PEOPLE / SPORTS / CULTURE / ANALYSIS / A DEEPER TOMORROW.
+Band order: masthead, hero band, six-cell data band, central-question row, paths and
+information-classification row, footer strip, legal rail.
+
+STYLE
+Human editorial illustration in our imagery: painterly, textured, cinematic. Visible brushwork,
+aged-newsprint tooth, film-grain warmth. Stadium twilight light — cool blue dusk sky, warm gold
+rim light. Palette: ErsatzReality violet and purple, gold and brass, off-white aged newsprint,
+deep ink black, stadium blue-grey green. The old-world trail illustration is style vocabulary
+only — its painterly handling and texture, never its colour cast, never composited in.
+NOT photoreal. NOT a photographic portrait. NOT muddy brown. NOT sepia. NOT 3D render.
+
+CORRESPONDENT — NEYRA SOL (recurring, the only presenter)
+Foreground left, occupying the left third of the hero band, chest-up, seated at a dark desk,
+direct address to camera. Long dark-brown wavy hair with warm lighter highlights past the
+shoulder, warm mid-brown skin, defined brows. Violet structured blazer over a dark navy top.
+Short italic pull quote in quotation marks, then "— NEYRA SOL" / "SPORTS DESK" stacked beside her.
+
+NECKLACE — THE MARK AS PENDANT
+She wears ONE pendant on a fine silver-tone chain, seated on the upper sternum just below the
+collarbone. The pendant IS the approved FREE MARK, in SILVER / WHITE METAL: the magnifying glass
+with its handle descending to the LOWER LEFT, the brimmed hat sitting OUTSIDE the lens at the
+upper right and overlapping the lens rim, legs descending beneath the hat, and a small glyph read
+inside the lens — the same geometry as ERN-MARK-MASTER.png, reduced to jewelry size, pendant
+height about the width of two fingers. It reads as a necklace at full view
+and as the mark when zoomed. Do not redesign it. NOT a key, NOT a keyhole, NOT a monogram or
+letterform, NOT an abstract loop, NOT a medallion, NOT a chest emblem. NOT gold or brass. NOT
+ringed in a roundel. NOT hat-inside-the-lens. One pendant only.
+
+TABLET
+She holds a dark slate tablet in the near hand, screen away from camera. The back of the tablet
+shows the approved locked FREE MARK only, in the ERN-MARK-MASTER.png geometry — hat outside the
+lens at upper right, handle to the lower left — with the "ErsatzReality" wordmark beneath it,
+flat gold, whole and uncropped by hand or frame. No roundel ring around it.
+
+CUP
+Matte black mug with gold artwork on the desk at her outer side, entirely within the desk zone
+and clear of the field panel. Visible side: SIDE B — the approved phrase
+"TRUTH IN CONTEXT BUILDS A DEEPER TOMORROW". (Side A, the hat-and-magnifier mark, is the only
+alternative. No other slogan or scene.)
+
+FIELD PANEL — CLEAN TACTICAL SYSTEM
+Right two-thirds of the hero band. Elevated three-quarter sideline view from the offense's left,
+about 25–30 degrees above the field. OFFENSE MOVES LEFT TO RIGHT across the image; every route
+arrow and the throw run left-to-right or downfield-right. Purple offense, white opponent.
+
+Show these and nothing else:
+  QB #8 — lower left of the panel, READABLE THREE-QUARTER SIDE VIEW facing right, near shoulder
+    and jawline visible, throwing arm readable, ball at shoulder, "8" legible on the visible side.
+    NOT from behind. NOT number-only. NOT facing right-to-left.
+  RB #22 — behind and right of the quarterback, slanting up and to the right. Label "RB #22 SLANT".
+  WR #4 — upper field, straight go route to the right. Label "WR #4 GO ROUTE".
+  WR #7 — mid field, curl that hooks back. Label "WR #7 CURL / SIT".
+  WR #3 — lower field, out route breaking to the lower right. Label "WR #3 OUT ROUTE".
+  ONE passing window — a single translucent ellipse in the centre of the panel, in the gap between
+    the underneath linebacker and the nickel, labelled "PASSING WINDOW" once.
+  FOUR TO SIX DEFENDERS in white, VISIBLY ALIGNED IN COVERAGE — hips open, eyes to the quarterback
+    or trailing an assigned receiver: a deep safety, a corner trailing WR #4, a nickel shading
+    WR #7's curl, a linebacker under the window, a corner trailing WR #3. Plain jersey numbers, no
+    callout boxes, and none wearing 3, 4, 7, 8 or 22.
+
+Exactly five callout boxes total: the four route labels and the one passing-window label. Dark
+fill, hairline gold border, gold and white caps, placed clear of heads, numbers and the ellipse.
+Thin gold arrows, one per named receiver.
+
+Yard numbers along the bottom of the panel, upright for the reader, complete and uncut:
+30, 40, 50, 40. Soft-focus crowd band across the top with no legible signage. Roughly a third of
+the turf stays empty. Eleven human figures on the field, maximum.
+
+EXCLUDE FROM THE FIELD: referees or officials; individually numbered offensive linemen; blocking
+or collision clusters at the line of scrimmage; sideline figures, coaches, cameras, equipment;
+yellow or coloured spotlight or telestration rings under players; duplicate jersey numbers;
+broadcast score bugs, clocks or interface chrome; any extra arrow, cone, annotation or second
+passing window.
+
+DATA BAND — six cells, left to right
+41–23 THE RESULT | 324 JACKSON PASSING YARDS | 144 / 3 TD HENRY RUSHING |
+150 FLOWERS RECEIVING YARDS BEFORE EXIT | LANE — IR THE DEPTH CHANGE | SUN · 1PM THE NEXT TEST
+
+EDITORIAL ROWS
+"THE CENTRAL QUESTION" card; a three-branch conditional — FLOWERS AVAILABLE, FULL WORKLOAD /
+FLOWERS LIMITED / FLOWERS OUT, in green, amber and red; a subject inspect card with the chain
+EARLY TARGET → SEPARATION → THROW LOCATION → CATCH RESULT → NEXT TARGET → DEFENSIVE RESPONSE.
+Then "PATH TO A BALTIMORE WIN" (green, ticked) and "PATH TO A BALTIMORE LOSS / FAILURE" (red,
+crossed), beside "INFORMATION CLASSIFICATION" in three columns: DOCUMENTED / INFERENCE-ANALYSIS /
+UNKNOWN.
+
+FOOTER — preferred strip, three cells then the legal rail
+Left: on black — the ROUNDEL LOCKUP mark (outer gold ring, hat above the glass, handle to the
+lower right, gold line art), "EXPLORE ERSATZREALITY", "BOOKS • SHOWS • IDEAS • A DEEPER
+TOMORROW", and a crisp square high-contrast QR block at the right end of the same cell.
+Centre: painterly promo panel "TWELVE MILES FOR FLOUR — AN UNCLE SEEZIN TRAIL STORY", with
+"HISTORY LIVES IN NEW QUESTIONS." set in gold caps over the right end of that artwork.
+Right: a narrow paper-ground column, gold rule above and below, carrying the vertical list
+EDUCATION / TECHNOLOGY / CULTURE / COMMERCE / MEDIA / A HIGHER VIEW.
+Legal rail: "THY-RAVENS-PAPER-20260917-001 | SEP 17, 2026 | ER-NEWS-001" left;
+"© 2026 ERSATZREALITY. ALL RIGHTS RESERVED. / ORIGINAL ILLUSTRATION. NO TEAM LOGOS, NO PLAYER
+PHOTOS." centre; "GAMES INFORM TODAY. / BETTER QUESTIONS BUILD TOMORROW." right.
+
+RIGHTS
+Original illustration only. No real team marks, no league marks, no player photographs, no player
+likeness. Jersey numbers are invented editorial numerals.
+
+
+REQUIRED EXCLUSION LIST (carried with the render request)
+
+NO photoreal or photographic faces · NO muddy brown or sepia cast · NO key, keyhole, monogram,
+letterform or medallion pendant · NO enlarged chest emblem · NO second presenter or co-anchor ·
+NO alternate or redesigned mark · NO new nameplate, subline or rail · NO real team, league or
+player marks · NO player photographs or likeness · NO referees or officials · NO numbered
+offensive linemen or blocking clusters · NO sideline figures or equipment · NO telestration or
+spotlight rings · NO duplicate jersey numbers · NO broadcast score bug, clock or UI chrome ·
+NO second passing window · NO extra arrows or annotations · NO clipped yard numerals ·
+NO back-only quarterback · NO right-to-left offense · NO mug or presenter element crossing the
+field panel · NO dropped or blurred QR block · NO removal of the chairman preview rail
+NO gold or brass pendant · NO pendant handle to the lower right · NO hat inside the lens on the
+pendant or tablet mark · NO roundel ring on the pendant or tablet mark · NO free mark in the
+footer left cell · NO blending of the two approved lockups · NO spelling SEEZEN

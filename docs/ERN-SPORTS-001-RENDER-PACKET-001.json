@@ -2,8 +2,8 @@
   "packet_id": "ERN-SPORTS-001-RENDER-PACKET-001",
   "packet_type": "render_packet",
   "packet_status": "READY_FOR_VISUAL_WORKROOM",
-  "lock_id": "ERN-SPORTS-LOCK-001",
-  "lock_authority": "This packet executes ERN-SPORTS-LOCK-001. It adds no design decision. Where packet and lock disagree, the lock governs.",
+  "lock_id": "ERN-SPORTS-LOCK-002",
+  "lock_authority": "This packet executes ERN-SPORTS-LOCK-002, which supersedes ERN-SPORTS-LOCK-001 while preserving it unedited as the historical lock. It adds no design decision. Where packet and lock disagree, the lock governs.",
   "edition_id": "THY-RAVENS-PAPER-20260917-001",
   "edition_label": "Morning Edition 001",
   "edition_date": "2026-09-17",
@@ -27,6 +27,29 @@
       "file": "docs/reference/ERN-SPORTS-001-preview-plate.png",
       "sha256": "a63272d086db1b79d5f109272027b329dc178645029804ae975d6f956b6daba8",
       "role": "measurement source for bands, panel edge and colour tokens; defect source"
+    },
+    {
+      "file": "docs/ERN-SPORTS-EDITION-002-LOCK.json",
+      "role": "governing lock revision"
+    },
+    {
+      "file": "docs/ERN-SPORTS-EDITION-002-LOCK.md",
+      "role": "lock revision document: conflicts, amendments, refinements, open rulings"
+    },
+    {
+      "file": "docs/reference/ERN-MARK-MASTER.png",
+      "sha256": "aa6903b567ed0cbb2c195b8ab00a450bda5e9d5418025c7b2da9313c57cec0a4",
+      "role": "REF-02 registered approved plate"
+    },
+    {
+      "file": "docs/reference/ERN-NECKLACE-APPROVED.png",
+      "sha256": "d6271ec75de9c15d5d91b11241523ef01681c2b05ce1e8d5d1ab7cbcd09fb32d",
+      "role": "REF-03 registered approved plate"
+    },
+    {
+      "file": "docs/reference/ERN-FOOTER-APPROVED.png",
+      "sha256": "ed8305c6bbdf9e6bcf7e73c4322466fadbad7e0dde8effd139061278df9b4e8f",
+      "role": "REF-04 registered approved plate"
     }
   ],
   "prohibited_globally": [
@@ -112,11 +135,11 @@
     "necklace": {
       "lock": "LOCK-02",
       "artwork": "masthead hat-and-magnifying-glass mark as pendant, unmodified geometry",
-      "scale": "necklace scale; pendant at collarbone; height about two finger-widths",
+      "scale": "necklace scale; pendant seats on the upper sternum slightly below the collarbone (RF-03); height about two finger-widths",
       "count": 1,
       "chain": "fine silver-tone chain",
-      "metal": "gold/brass mark",
-      "geometry": "circular lens, handle descending to the lower right, brimmed-hat figure read inside the lens; identical geometry to the masthead mark, no rotation, no mirror, no restyle",
+      "metal": "silver / white metal pendant (AM-03) on a fine silver-tone chain",
+      "geometry": "circular lens, handle descending to the LOWER LEFT, brimmed hat OUTSIDE the lens at upper right overlapping the lens rim with legs descending beneath, a small glyph read inside the lens; geometry identical to REF-02 ERN-MARK-MASTER; no rotation, no mirror, no restyle",
       "seat_page_normalized": {
         "x": 0.155,
         "y": 0.372
@@ -132,7 +155,27 @@
         "chest emblem",
         "second charm"
       ],
-      "zoom_legibility_requirement": "hat figure and lens-and-handle silhouette both legible when the pendant is cropped and upscaled"
+      "zoom_legibility_requirement": "hat figure and lens-and-handle silhouette both legible when the pendant is cropped and upscaled",
+      "amended_by": [
+        "AM-01",
+        "AM-02",
+        "AM-03",
+        "RF-03"
+      ],
+      "geometry_authority": {
+        "ref": "REF-02",
+        "path": "docs/reference/ERN-MARK-MASTER.png",
+        "sha256": "aa6903b567ed0cbb2c195b8ab00a450bda5e9d5418025c7b2da9313c57cec0a4"
+      },
+      "plate_authority": {
+        "ref": "REF-03",
+        "path": "docs/reference/ERN-NECKLACE-APPROVED.png",
+        "sha256": "d6271ec75de9c15d5d91b11241523ef01681c2b05ce1e8d5d1ab7cbcd09fb32d"
+      },
+      "superseded_values": {
+        "lock_001_geometry": "handle descending to the lower right, hatted figure inside the lens",
+        "lock_001_metal": "gold/brass mark"
+      }
     },
     "tablet": {
       "lock": "LOCK-03",
@@ -744,9 +787,9 @@
     "lock": "LOCK-08",
     "treatment": "preferred bottom strip / QR treatment",
     "cells": [
-      "left: mark + EXPLORE ERSATZREALITY + BOOKS • SHOWS • IDEAS • A DEEPER TOMORROW + crisp square QR block",
-      "centre: painterly promo panel TWELVE MILES FOR FLOUR — AN UNCLE SEEZEN TRAIL STORY",
-      "right: HISTORY LIVES IN NEW QUESTIONS. + EDUCATION / TECHNOLOGY / CULTURE / COMMERCE / MEDIA / A HIGHER VIEW"
+      "left: ROUNDEL_LOCKUP mark + EXPLORE ERSATZREALITY + BOOKS • SHOWS • IDEAS • A DEEPER TOMORROW, on black, with the crisp square QR block at the right end of the same cell (RF-04)",
+      "centre: painterly promo panel TWELVE MILES FOR FLOUR — AN UNCLE SEEZIN TRAIL STORY (AM-05), with HISTORY LIVES IN NEW QUESTIONS. set in gold caps over the right end of the artwork (RF-01)",
+      "right: category column on paper ground, gold rule above and below — EDUCATION / TECHNOLOGY / CULTURE / COMMERCE / MEDIA / A HIGHER VIEW (RF-02)"
     ],
     "cell_order_is_locked": true,
     "qr_block": {
@@ -761,6 +804,20 @@
       "left": "THY-RAVENS-PAPER-20260917-001    |    SEP 17, 2026    |    ER-NEWS-001",
       "centre": "© 2026 ERSATZREALITY. ALL RIGHTS RESERVED. / ORIGINAL ILLUSTRATION. NO TEAM LOGOS, NO PLAYER PHOTOS.",
       "right": "GAMES INFORM TODAY. / BETTER QUESTIONS BUILD TOMORROW."
+    },
+    "amended_by": [
+      "AM-05",
+      "RF-01",
+      "RF-02",
+      "RF-04"
+    ],
+    "plate_authority": {
+      "ref": "REF-04",
+      "path": "docs/reference/ERN-FOOTER-APPROVED.png",
+      "sha256": "ed8305c6bbdf9e6bcf7e73c4322466fadbad7e0dde8effd139061278df9b4e8f"
+    },
+    "superseded_values": {
+      "lock_001_subtitle": "AN UNCLE SEEZEN TRAIL STORY"
     }
   },
   "rights": {
@@ -781,15 +838,46 @@
       "LOCK-04",
       "LOCK-09"
     ],
-    "single_mark": "hat and magnifying glass",
-    "scales": [
-      "masthead",
-      "tablet rear",
-      "necklace pendant",
-      "cup side A"
+    "amended_by": [
+      "AM-04"
     ],
-    "geometry_rule": "identical geometry at every scale; never redesigned, simplified, restyled or re-lettered per placement",
-    "new_mark_permitted": false
+    "system": "two approved lockups, each bound to the placements its approved plate uses",
+    "lockups": [
+      {
+        "id": "FREE_MARK",
+        "geometry_source": "REF-02",
+        "sha256": "aa6903b567ed0cbb2c195b8ab00a450bda5e9d5418025c7b2da9313c57cec0a4",
+        "geometry": "no containing ring; lens at left with handle descending to the lower left; brimmed hat outside the lens at upper right overlapping the rim; legs beneath; small glyph inside the lens; filled black and gold",
+        "placements": [
+          "necklace pendant",
+          "tablet rear"
+        ]
+      },
+      {
+        "id": "ROUNDEL_LOCKUP",
+        "geometry_source": "REF-04",
+        "sha256": "ed8305c6bbdf9e6bcf7e73c4322466fadbad7e0dde8effd139061278df9b4e8f",
+        "geometry": "outer gold ring containing a brimmed hat above the magnifier glass; handle descending to the lower right; gold line art on black",
+        "placements": [
+          "footer left cell"
+        ]
+      }
+    ],
+    "unsettled_placements": [
+      {
+        "placement": "masthead scale",
+        "status": "no plate supplied; carried forward from LOCK-001",
+        "ruling": "OR-02"
+      },
+      {
+        "placement": "cup side A",
+        "status": "no plate supplied; carried forward from LOCK-001",
+        "ruling": "OR-02"
+      }
+    ],
+    "geometry_rule": "each lockup is reproduced from its registered plate without redesign, simplification or re-lettering; the two lockups are never blended",
+    "new_mark_permitted": false,
+    "open_ruling": "OR-01"
   },
   "exclusions": [
     "no new presenter",
@@ -831,7 +919,14 @@
     "no clipped yard numerals",
     "no statistic other than the LOCK-12 documented set",
     "no removal of the chairman preview rail",
-    "no dropped, blurred or non-square QR block"
+    "no dropped, blurred or non-square QR block",
+    "NO gold or brass pendant — the pendant is silver / white metal (AM-03)",
+    "NO pendant handle descending to the lower right (AM-01)",
+    "NO hat rendered inside the lens on the pendant or tablet mark (AM-02)",
+    "NO roundel ring around the pendant or the tablet mark (AM-04)",
+    "NO free mark in the footer left cell in place of the roundel lockup (AM-04)",
+    "NO blending of the two approved lockups into a third mark (AM-04)",
+    "NO spelling SEEZEN in the promo subtitle (AM-05)"
   ],
   "mandatory_defect_corrections": [
     {
@@ -1193,10 +1288,57 @@
       "method": "CHAIRMAN PREVIEW — NOT FOR PUBLICATION present in the top rail",
       "defect": "D-22",
       "lock": "CR-15"
+    },
+    {
+      "id": "AC-29",
+      "lock": "AM-01",
+      "test": "pendant handle descends to the LOWER LEFT; matches REF-02 geometry",
+      "ref": "REF-02 / REF-03"
+    },
+    {
+      "id": "AC-30",
+      "lock": "AM-02",
+      "test": "brimmed hat sits OUTSIDE the lens at upper right overlapping the rim, legs beneath; glyph inside the lens",
+      "ref": "REF-02 / REF-03"
+    },
+    {
+      "id": "AC-31",
+      "lock": "AM-03",
+      "test": "pendant reads as silver / white metal on a silver-tone chain; not gold, not brass",
+      "ref": "REF-03"
+    },
+    {
+      "id": "AC-32",
+      "lock": "AM-04",
+      "test": "footer mark is the ROUNDEL_LOCKUP; pendant and tablet carry the FREE_MARK; the two lockups are never blended",
+      "ref": "REF-02 / REF-04"
+    },
+    {
+      "id": "AC-33",
+      "lock": "AM-05",
+      "test": "promo subtitle reads AN UNCLE SEEZIN TRAIL STORY, spelled SEEZIN",
+      "ref": "REF-04"
+    },
+    {
+      "id": "AC-34",
+      "lock": "RF-01",
+      "test": "HISTORY LIVES IN NEW QUESTIONS. is set over the right end of the promo artwork, not on paper ground",
+      "ref": "REF-04"
+    },
+    {
+      "id": "AC-35",
+      "lock": "RF-03",
+      "test": "pendant seats on the upper sternum slightly below the collarbone, at jewelry scale",
+      "ref": "REF-03"
+    },
+    {
+      "id": "AC-36",
+      "lock": "ERN-SPORTS-LOCK-002",
+      "test": "render output cites lock_id ERN-SPORTS-LOCK-002"
     }
   ],
   "reference_file_requirements": {
-    "gate": "The visual workroom does not render until every REQUIRED file below is present at its stated path and registered in this packet.",
+    "gate": "All REQUIRED files are present and registered. Render may proceed under ERN-SPORTS-LOCK-002. REF-05 and REF-06 remain absent and are non-blocking.",
     "files": [
       {
         "ref": "REF-01",
@@ -1210,29 +1352,36 @@
       {
         "ref": "REF-02",
         "path": "docs/reference/ERN-MARK-MASTER.png",
-        "status": "REQUIRED_MISSING",
+        "status": "PRESENT",
         "role": "master hat-and-magnifier mark, clean, largest available resolution, transparent ground",
         "use": "single source for all four mark scales: masthead, tablet rear, necklace pendant, cup side A",
-        "blocking": true,
-        "reason": "LOCK-02 and CR-02 require identical mark geometry at every scale; without the master the pendant will be re-invented, which is defect D-01"
+        "reason": "RESOLVED — geometry authority supplied; binds AM-01, AM-02, AM-04",
+        "sha256": "aa6903b567ed0cbb2c195b8ab00a450bda5e9d5418025c7b2da9313c57cec0a4",
+        "registered": "2026-09-17, byte-for-byte as supplied; no crop, recolour, resample or redesign",
+        "registered_under": "ERN-SPORTS-LOCK-002",
+        "quality_caveat": "supplied at 145x127 px raster on light ground, not vector, not transparent; geometry legible and sufficient; vector master still desirable, not blocking"
       },
       {
         "ref": "REF-03",
         "path": "docs/reference/ERN-NECKLACE-APPROVED.png",
-        "status": "REQUIRED_MISSING",
+        "status": "PRESENT",
         "role": "the approved necklace plate — the preferred second image",
         "use": "pendant size, chain gauge, seat height and metal finish",
-        "blocking": true,
-        "reason": "named by the Chairman as the only approved necklace source; the attached plate carries the wrong pendant"
+        "reason": "RESOLVED — approved necklace plate supplied; binds AM-01, AM-02, AM-03, RF-03; corrects defect D-01",
+        "sha256": "d6271ec75de9c15d5d91b11241523ef01681c2b05ce1e8d5d1ab7cbcd09fb32d",
+        "registered": "2026-09-17, byte-for-byte as supplied; no crop, recolour, resample or redesign",
+        "registered_under": "ERN-SPORTS-LOCK-002"
       },
       {
         "ref": "REF-04",
         "path": "docs/reference/ERN-FOOTER-APPROVED.png",
-        "status": "REQUIRED_MISSING",
+        "status": "PRESENT",
         "role": "the preferred footer strip and QR treatment — the preferred first image",
         "use": "footer cell proportions, QR block scale and rule weights",
-        "blocking": true,
-        "reason": "LOCK-08 is presently written from the footer visible in REF-01; if the preferred first image differs, the lock is reissued as ERN-SPORTS-LOCK-002 before render"
+        "reason": "RESOLVED — approved footer plate supplied; binds AM-05, RF-01, RF-02, RF-04",
+        "sha256": "ed8305c6bbdf9e6bcf7e73c4322466fadbad7e0dde8effd139061278df9b4e8f",
+        "registered": "2026-09-17, byte-for-byte as supplied; no crop, recolour, resample or redesign",
+        "registered_under": "ERN-SPORTS-LOCK-002"
       },
       {
         "ref": "REF-05",
@@ -1256,14 +1405,45 @@
     ],
     "on_missing_blocking_file": "Hold the render. Report the missing ref. Do not substitute, do not approximate, do not redesign the affected element.",
     "on_reference_conflict": "If an approved plate contradicts a locked value, stop and reissue as ERN-SPORTS-LOCK-002. Never edit a locked rule in place, and never let a reference silently override the lock.",
-    "versioning": "CR-17 — reference plates are versioned, not silently replaced."
+    "versioning": "CR-17 — reference plates are versioned, not silently replaced.",
+    "blockers_cleared": true,
+    "blocking_outstanding": []
   },
   "render_instruction_source": {
-    "prompt_text": "docs/ERN-SPORTS-EDITION-001-LOCK.md section 5.1",
-    "exclusion_list": "docs/ERN-SPORTS-EDITION-001-LOCK.md section 5.2",
+    "prompt_text": "docs/ERN-SPORTS-001-RENDER-INSTRUCTION-002.txt (section 5.1 of the lock document with AM-01 ... AM-05 and RF-01 ... RF-04 applied; all other text verbatim)",
+    "exclusion_list": "docs/ERN-SPORTS-001-RENDER-INSTRUCTION-002.txt, trailing block (section 5.2 verbatim plus the seven LOCK-002 exclusions)",
     "pre_render_checklist": "docs/ERN-SPORTS-EDITION-001-LOCK.md section 5.3",
     "post_render_test": "docs/ERN-SPORTS-EDITION-001-LOCK.md section 5.4",
-    "rule": "The visual workroom renders from section 5.1 verbatim, carrying section 5.2, and is accepted only against the acceptance_criteria in this packet."
+    "rule": "The visual workroom renders from section 5.1 verbatim, carrying section 5.2, and is accepted only against the acceptance_criteria in this packet.",
+    "superseded": "docs/ERN-SPORTS-EDITION-001-LOCK.md sections 5.1 and 5.2"
   },
-  "packet_rule": "ERN-SPORTS-001-RENDER-PACKET-001 is an execution packet for ERN-SPORTS-LOCK-001. It introduces no new design, loosens no lock, and alters neither the correspondent, the necklace, the tablet mark, the cup rule, the field direction, the player set, the routes, the footer, the six data figures nor the format family. Placements, colour tokens and band boundaries are measured from the registered reference plate. Any change to a locked value requires ERN-SPORTS-LOCK-002 and a reissued packet."
+  "packet_rule": "ERN-SPORTS-001-RENDER-PACKET-001 is an execution packet for ERN-SPORTS-LOCK-002. It introduces no new design, loosens no lock, and alters neither the correspondent, the necklace, the tablet mark, the cup rule, the field direction, the player set, the routes, the footer, the six data figures nor the format family. Placements, colour tokens and band boundaries are measured from the registered reference plate. Any change to a locked value requires ERN-SPORTS-LOCK-003 and a reissued packet. ERN-SPORTS-LOCK-001 is preserved unedited as the historical lock.",
+  "packet_revision": "002",
+  "governing_lock": "ERN-SPORTS-LOCK-002",
+  "original_lock": "ERN-SPORTS-LOCK-001",
+  "revision_history": [
+    {
+      "revision": "001",
+      "lock": "ERN-SPORTS-LOCK-001",
+      "state": "REF-02, REF-03, REF-04 blocking and missing"
+    },
+    {
+      "revision": "002",
+      "lock": "ERN-SPORTS-LOCK-002",
+      "state": "REF-02, REF-03, REF-04 registered and present; all render blockers cleared",
+      "amendments_applied": [
+        "AM-01",
+        "AM-02",
+        "AM-03",
+        "AM-04",
+        "AM-05"
+      ],
+      "refinements_applied": [
+        "RF-01",
+        "RF-02",
+        "RF-03",
+        "RF-04"
+      ]
+    }
+  ]
 }
