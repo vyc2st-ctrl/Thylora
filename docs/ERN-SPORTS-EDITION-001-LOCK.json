@@ -1,0 +1,177 @@
+{
+  "lock_id": "ERN-SPORTS-LOCK-001",
+  "edition_id": "THY-RAVENS-PAPER-20260917-001",
+  "edition_label": "Morning Edition 001",
+  "edition_date": "2026-09-17",
+  "lane": "ErsatzReality News / Earth Desk / Sports",
+  "lane_action": "continuation_only",
+  "backend_of_record": "jvsdxhrfhtlgaknhjxlz",
+  "spec_file": "docs/ERN-SPORTS-EDITION-001-LOCK.md",
+  "reference_plate": "docs/reference/ERN-SPORTS-001-preview-plate.png",
+  "state": {
+    "lock_sheet": "COMPLETE",
+    "render": "NOT_GENERATED",
+    "publication": "NOT_PUBLISHED",
+    "preview_rail": "CHAIRMAN PREVIEW — NOT FOR PUBLICATION"
+  },
+  "prohibited_globally": [
+    "new presenter",
+    "new logo system",
+    "new format family"
+  ],
+  "locks": {
+    "LOCK-01": {
+      "subject": "correspondent",
+      "value": "Neyra Sol, recurring sports correspondent, sole presenter",
+      "attribution": ["— NEYRA SOL", "SPORTS DESK"],
+      "framing": "foreground left, left 30-34% of hero band, chest-up, seated, direct address"
+    },
+    "LOCK-02": {
+      "subject": "necklace",
+      "value": "masthead hat-and-magnifying-glass mark as pendant, unmodified geometry",
+      "scale": "necklace scale; pendant at collarbone; height about two finger-widths",
+      "count": 1,
+      "redesign_permitted": false,
+      "prohibited": ["key", "keyhole", "monogram", "letterform", "abstract loop", "medallion", "chest emblem", "second charm"]
+    },
+    "LOCK-03": {
+      "subject": "tablet_rear_logo",
+      "value": "approved locked mark only: gold hat-and-magnifier mark plus ErsatzReality wordmark beneath",
+      "integrity": "whole and uncropped by hand, frame or desk"
+    },
+    "LOCK-04": {
+      "subject": "cup_system",
+      "side_a": "hat and magnifying glass mark",
+      "side_b": "approved phrase 'TRUTH IN CONTEXT BUILDS A DEEPER TOMORROW' or approved scene",
+      "rule": "one side per render, declared in the render request; no invented slogan or scene",
+      "placement": "desk zone only, clear of the field panel"
+    },
+    "LOCK-05": {
+      "subject": "field_logic",
+      "offense_direction": "left_to_right",
+      "camera": "elevated three-quarter sideline from offense left, 25-30 degrees",
+      "qb_orientation": "readable three-quarter side view facing downfield-right, ball at shoulder",
+      "qb_prohibited": ["back-only", "full rear", "facing against direction of play"],
+      "yard_numbers": ["30", "40", "50", "40"]
+    },
+    "LOCK-06": {
+      "subject": "field_composition",
+      "cast": ["QB #8", "WR #4", "WR #7", "WR #3", "RB #22", "one passing window", "4-6 coverage defenders"],
+      "max_field_figures": 11,
+      "callout_boxes": 5,
+      "arrows": 4,
+      "passing_windows": 1,
+      "defender_numbers_forbidden": ["3", "4", "7", "8", "22"],
+      "excluded": [
+        "referees and officials",
+        "individually numbered offensive linemen",
+        "blocking or collision clusters",
+        "sideline figures, coaches, cameras, equipment",
+        "telestration or spotlight rings",
+        "duplicate jersey numerals",
+        "broadcast score bugs, clocks, UI chrome",
+        "extra arrows, cones or annotations"
+      ]
+    },
+    "LOCK-07": {
+      "subject": "imagery_style",
+      "value": "human editorial illustration in our imagery: painterly, textured, cinematic",
+      "palette": ["ErsatzReality violet/purple", "gold/brass", "off-white aged newsprint", "deep ink black", "stadium blue-grey green"],
+      "style_reference_use": "old-world image is style vocabulary only; never content, never colour cast",
+      "prohibited": ["photoreal Earth-person imagery", "photographic portrait", "muddy brown", "sepia", "3D render", "flat vector"]
+    },
+    "LOCK-08": {
+      "subject": "footer",
+      "value": "preferred bottom strip / QR treatment",
+      "cells": [
+        "left: mark + EXPLORE ERSATZREALITY + BOOKS • SHOWS • IDEAS • A DEEPER TOMORROW + crisp square QR block",
+        "centre: painterly promo panel TWELVE MILES FOR FLOUR — AN UNCLE SEEZEN TRAIL STORY",
+        "right: HISTORY LIVES IN NEW QUESTIONS. + EDUCATION / TECHNOLOGY / CULTURE / COMMERCE / MEDIA / A HIGHER VIEW"
+      ],
+      "legal_rail": "edition id + date + ER-NEWS-001 | © 2026 ERSATZREALITY + ORIGINAL ILLUSTRATION. NO TEAM LOGOS, NO PLAYER PHOTOS. | GAMES INFORM TODAY. BETTER QUESTIONS BUILD TOMORROW."
+    },
+    "LOCK-09": { "subject": "masthead_and_format_family", "redesign_permitted": false },
+    "LOCK-10": {
+      "subject": "editorial_architecture",
+      "band_order": ["masthead", "hero", "data band", "central question row", "paths and classification row", "footer strip", "legal rail"],
+      "structural": ["three-branch conditional", "three-column information classification"]
+    },
+    "LOCK-11": {
+      "subject": "rights_hygiene",
+      "value": "original illustration only",
+      "prohibited": ["real team marks", "league marks", "player photographs", "player likeness"]
+    },
+    "LOCK-12": {
+      "subject": "numbers_discipline",
+      "documented": ["41-23 result", "324 passing yards", "144 / 3 TD rushing", "150 receiving yards before exit", "LANE — IR", "SUN · 1PM"],
+      "rule": "no statistic invented at render time; source line required per documented figure before publication"
+    }
+  },
+  "field_blueprint": {
+    "coordinate_space": "panel-local, x 0-100 left-to-right, y 0-100 top-to-bottom, offense moves +x",
+    "elements": [
+      { "id": "QB #8", "x": 14, "y": 62, "motion": "three-quarter side, facing +x, ball at shoulder", "label": null },
+      { "id": "RB #22", "x": 22, "y": 74, "motion": "slant to (40,66)", "label": "RB #22 SLANT" },
+      { "id": "WR #4", "x": 58, "y": 24, "motion": "go to (88,20)", "label": "WR #4 GO ROUTE" },
+      { "id": "WR #7", "x": 70, "y": 46, "motion": "curl to (82,46), hook back to (78,40)", "label": "WR #7 CURL / SIT" },
+      { "id": "WR #3", "x": 74, "y": 86, "motion": "out to (90,92)", "label": "WR #3 OUT ROUTE" },
+      { "id": "passing window", "x": 52, "y": 60, "width": 26, "height": 12, "label": "PASSING WINDOW" },
+      { "id": "deep safety", "x": 90, "y": 34, "motion": "backpedal, eyes to QB", "label": null },
+      { "id": "corner on WR #4", "x": 62, "y": 30, "motion": "trailing downfield", "label": null },
+      { "id": "nickel on WR #7", "x": 70, "y": 54, "motion": "hips open, shading the curl", "label": null },
+      { "id": "linebacker", "x": 44, "y": 66, "motion": "under the window, eyes to QB", "label": null },
+      { "id": "corner on WR #3", "x": 78, "y": 90, "motion": "trailing to the sideline", "label": null }
+    ],
+    "bands": { "crowd": "y0-22 soft focus, no legible signage", "field": "y22-100 sharp" },
+    "presenter_clearance": "left 30-34% of hero band reserved; no field element crosses it, no presenter element crosses the passing window",
+    "empty_turf_target": "about one third"
+  },
+  "continuity_rules": [
+    "CR-01 one correspondent: Neyra Sol",
+    "CR-02 one mark, four scales (masthead, tablet, pendant, cup), identical geometry",
+    "CR-03 the pendant is the mark at jewelry size",
+    "CR-04 no new logo system",
+    "CR-05 no new format family",
+    "CR-06 offense always moves left to right",
+    "CR-07 the quarterback's face-side is always readable",
+    "CR-08 named cast only on the field",
+    "CR-09 illustration, never photoreal",
+    "CR-10 never muddy brown",
+    "CR-11 footer treatment is fixed, QR always present and crisp",
+    "CR-12 rights hygiene is absolute",
+    "CR-13 classification before claim",
+    "CR-14 edition id scheme THY-<SUBJECT>-PAPER-<YYYYMMDD>-<NNN>",
+    "CR-15 chairman preview rail stays until release",
+    "CR-16 lock before render",
+    "CR-17 reference plates are versioned, not silently replaced"
+  ],
+  "defects": {
+    "observed": [
+      { "id": "D-01", "defect": "pendant renders as a monogram/key-like glyph, not the masthead mark", "lock": "LOCK-02" },
+      { "id": "D-02", "defect": "QB #8 rendered from directly behind, number-only, no face or throwing arm", "lock": "LOCK-05" },
+      { "id": "D-03", "defect": "field over-populated: official plus individually numbered offensive linemen", "lock": "LOCK-06" },
+      { "id": "D-04", "defect": "defenders engaged in blocks at the line rather than aligned in coverage", "lock": "LOCK-06" },
+      { "id": "D-05", "defect": "yard numerals clipped by the panel edge (reads 30 4 50 4)", "lock": "LOCK-05" },
+      { "id": "D-06", "defect": "yellow telestration/spotlight rings under players", "lock": "LOCK-06" },
+      { "id": "D-07", "defect": "mug silhouette crosses into the field panel", "lock": "LOCK-04" },
+      { "id": "D-08", "defect": "ambiguous or duplicated jersey numerals in the left cluster", "lock": "LOCK-06" },
+      { "id": "D-09", "defect": "cup side not declared; only Side B established", "lock": "LOCK-04" }
+    ],
+    "risk": [
+      { "id": "D-10", "defect": "photoreal drift on the presenter's face", "guard": "LOCK-07 / CR-09" },
+      { "id": "D-11", "defect": "muddy brown cast from the old-world style reference", "guard": "LOCK-07 / CR-10" },
+      { "id": "D-12", "defect": "pendant enlarged to medallion scale", "guard": "LOCK-02 / CR-03" },
+      { "id": "D-13", "defect": "second presenter, co-anchor or renamed correspondent", "guard": "LOCK-01 / CR-01" },
+      { "id": "D-14", "defect": "new or alternate mark, or new tablet lockup", "guard": "LOCK-03 / CR-02 / CR-04" },
+      { "id": "D-15", "defect": "real team, league or player marks; player likeness", "guard": "LOCK-11 / CR-12" },
+      { "id": "D-16", "defect": "nameplate, subline or rail redesign; new format family", "guard": "LOCK-09 / CR-05" },
+      { "id": "D-17", "defect": "footer QR block dropped or blurred; strip rearranged", "guard": "LOCK-08 / CR-11" },
+      { "id": "D-18", "defect": "offense direction mirrored or arrows inconsistent", "guard": "LOCK-05 / CR-06" },
+      { "id": "D-19", "defect": "statistics changed or invented between renders", "guard": "LOCK-12 / CR-13" },
+      { "id": "D-20", "defect": "extra arrows, cones, or a second passing window", "guard": "LOCK-06" },
+      { "id": "D-21", "defect": "broadcast score bug, clock or UI chrome in the field panel", "guard": "LOCK-06" },
+      { "id": "D-22", "defect": "chairman preview rail removed before release", "guard": "CR-15" }
+    ]
+  },
+  "rule": "The next render must cite lock_id ERN-SPORTS-LOCK-001 and satisfy every lock, the field blueprint, and the exclusion list. A change to any locked value is a new lock revision (ERN-SPORTS-LOCK-002), never an in-place edit. No render is generated and nothing is published until the Chairman accepts this lock sheet."
+}
