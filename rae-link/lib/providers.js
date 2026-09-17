@@ -1,4 +1,4 @@
-// RAE LINK · provider abstraction
+// RaeLynk · provider abstraction
 // Workroom: WR-RAELINK-001
 //
 // THYLORA is not bound permanently to one infrastructure vendor. Every capability

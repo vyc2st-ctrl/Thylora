@@ -1,12 +1,12 @@
-// RAE LINK · backend client
+// RaeLynk · backend client
 // Workroom: WR-RAELINK-001
 //
-// One backend, one session. RAE Link speaks to the same thylora-dash project and
+// One backend, one session. RaeLynk speaks to the same thylora-dash project and
 // reuses the same browser session key as the THYLORA member app, so signing in
 // once works across both surfaces. This file creates no second source of truth
 // and no second identity system.
 //
-// The RAE Link tables are held for Chairman application (see db/rae-link). Until
+// The RaeLynk tables are held for Chairman application (see db/rae-link). Until
 // they exist the client must degrade honestly: a missing table is reported as
 // "not provisioned yet", never as an empty feed that looks like no content.
 
@@ -107,7 +107,7 @@ export async function safeRead(label, run) {
   }
 }
 
-/** Probe which RAE Link surfaces the live backend can currently serve. */
+/** Probe which RaeLynk surfaces the live backend can currently serve. */
 export async function readiness() {
   const checks = [
     ['feed', () => rpc('rael_public_feed', { p_limit: 1 })],

@@ -1,4 +1,4 @@
-// RAE LINK · rights, channel truth and family safeguard tests
+// RaeLynk · rights, channel truth and family safeguard tests
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { evaluateRightsGate, validateChannelTruth, validateConsent, validatePartnership }

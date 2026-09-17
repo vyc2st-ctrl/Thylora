@@ -1,4 +1,4 @@
--- RAE LINK · 0008 · Row level security
+-- RaeLynk · 0008 · Row level security
 -- Workroom: WR-RAELINK-001
 -- ACCESS != AUTHORITY. A signed-in viewer can read published, permitted media
 -- and their own records. Creator staff read their own channel. Ledger and payout

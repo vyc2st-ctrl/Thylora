@@ -1,4 +1,4 @@
-// RAE LINK · surface controller
+// RaeLynk · surface controller
 // Workroom: WR-RAELINK-001
 //
 // The rules live in lib/. This file only moves them onto the screen, so the app
@@ -57,11 +57,11 @@ async function checkBackend() {
   chip.className = `chip ${unreachable ? 'bad' : 'warn'}`;
 
   const detail = unreachable
-    ? 'The RAE Link surface cannot reach the THYLORA backend from this network. Nothing has been lost; reads will resume when the backend is reachable.'
-    : `These RAE Link surfaces are not provisioned yet: ${report.missing.join(', ') || 'unknown'}. The schema is written and reviewable; it has not been applied to the live backend.`;
+    ? 'The RaeLynk surface cannot reach the THYLORA backend from this network. Nothing has been lost; reads will resume when the backend is reachable.'
+    : `These RaeLynk surfaces are not provisioned yet: ${report.missing.join(', ') || 'unknown'}. The schema is written and reviewable; it has not been applied to the live backend.`;
 
   for (const id of ['watchNotice', 'studioNotice', 'earningsNotice']) {
-    notice($(id), { title: unreachable ? 'Backend unreachable' : 'RAE Link tables not provisioned yet',
+    notice($(id), { title: unreachable ? 'Backend unreachable' : 'RaeLynk tables not provisioned yet',
                     detail, hint: unreachable ? null : PROVISION_HINT, bad: unreachable });
   }
   return report;
@@ -140,14 +140,14 @@ async function loadFeed() {
   const result = await safeRead('feed', () => rpc('rael_public_feed', { p_limit: 24 }));
   if (!result.ok) {
     grid.innerHTML = `<p class="muted">${result.provisionRequired
-      ? 'The published feed cannot load until the RAE Link tables are applied to the backend.'
+      ? 'The published feed cannot load until the RaeLynk tables are applied to the backend.'
       : `Feed unavailable: ${esc(result.message)}`}</p>`;
     return;
   }
   const rows = result.data ?? [];
   grid.innerHTML = rows.length
     ? rows.map(tile).join('')
-    : '<p class="muted">No media has been published to RAE Link yet. The feed shows published work only — nothing is invented to fill it.</p>';
+    : '<p class="muted">No media has been published to RaeLynk yet. The feed shows published work only — nothing is invented to fill it.</p>';
 }
 $('refreshFeed')?.addEventListener('click', loadFeed);
 
@@ -170,7 +170,7 @@ $('searchForm')?.addEventListener('submit', async event => {
   const result = await safeRead('search', () => rpc('rael_search', { p_query: query, p_limit: 36 }));
   if (!result.ok) {
     out.innerHTML = `<p class="muted">${result.provisionRequired
-      ? 'Search cannot run until the RAE Link tables are applied to the backend.'
+      ? 'Search cannot run until the RaeLynk tables are applied to the backend.'
       : `Search unavailable: ${esc(result.message)}`}</p>`;
     return;
   }
@@ -191,7 +191,7 @@ async function loadFollowing() {
     '/rest/v1/rael_follows?select=channel_id,rael_channels(name,slug,channel_class,world_status)&follow_state=eq.ACTIVE'));
   if (!result.ok) {
     list.innerHTML = `<p class="muted">${result.provisionRequired
-      ? 'Follows cannot load until the RAE Link tables are applied.' : esc(result.message)}</p>`;
+      ? 'Follows cannot load until the RaeLynk tables are applied.' : esc(result.message)}</p>`;
     return;
   }
   const rows = result.data ?? [];
@@ -230,7 +230,7 @@ async function loadStudio() {
     '/rest/v1/rael_media_assets?select=id,asset_code,title,media_kind,pipeline_state,channel_id&order=created_at.desc&limit=50'));
   if (!result.ok) {
     list.innerHTML = `<p class="muted">${result.provisionRequired
-      ? 'Drafts cannot load until the RAE Link tables are applied.' : esc(result.message)}</p>`;
+      ? 'Drafts cannot load until the RaeLynk tables are applied.' : esc(result.message)}</p>`;
     return;
   }
   studioDrafts = result.data ?? [];
@@ -360,7 +360,7 @@ $('assetForm')?.addEventListener('submit', async event => {
   } catch (error) {
     status.className = 'status bad';
     status.textContent = error instanceof BackendError && error.provisionRequired
-      ? `Rights gate passed, but the RAE Link tables are not applied to the backend yet. Nothing was lost. ${PROVISION_HINT}`
+      ? `Rights gate passed, but the RaeLynk tables are not applied to the backend yet. Nothing was lost. ${PROVISION_HINT}`
       : `Draft did not save: ${error.message}`;
   }
 });
@@ -397,7 +397,7 @@ $('statementForm')?.addEventListener('submit', async event => {
   }));
   if (!result.ok) {
     out.innerHTML = `<p class="muted">${result.provisionRequired
-      ? 'Statements cannot load until the RAE Link ledger tables are applied to the backend.'
+      ? 'Statements cannot load until the RaeLynk ledger tables are applied to the backend.'
       : esc(result.message)}</p>`;
     return;
   }
@@ -482,7 +482,7 @@ async function loadLibrary() {
     '/rest/v1/rael_entitlements?select=id,grant_basis,is_perpetual,granted_at,expires_at,asset_id,product_ref&revoked_at=is.null&order=granted_at.desc'));
   if (!result.ok) {
     list.innerHTML = `<p class="muted">${result.provisionRequired
-      ? 'Your library cannot load until the RAE Link tables are applied.' : esc(result.message)}</p>`;
+      ? 'Your library cannot load until the RaeLynk tables are applied.' : esc(result.message)}</p>`;
     return;
   }
   const rows = result.data ?? [];

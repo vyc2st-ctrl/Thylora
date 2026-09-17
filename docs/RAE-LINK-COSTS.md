@@ -1,4 +1,4 @@
-# RAE Link — cost model
+# RaeLynk — cost model
 
 Workroom: **WR-RAELINK-001**
 
@@ -11,14 +11,14 @@ Workroom: **WR-RAELINK-001**
 
 ## What actually drives the bill
 
-RAE Link's cost is dominated by three things, in this order:
+RaeLynk's cost is dominated by three things, in this order:
 
 1. **Egress / delivery** — bytes sent to viewers. Scales with watch hours.
 2. **Transcoding** — one-time per minute of source media, permanent per re-encode.
 3. **Storage** — originals plus renditions, accumulating forever unless archived.
 
 Everything else (database, auth, search, hosting, email) is near-flat at the
-scale RAE Link will occupy for its first year.
+scale RaeLynk will occupy for its first year.
 
 ## Unit model
 
@@ -66,7 +66,7 @@ support or any creator payout. Direct lanes (creator subscription at 15%, tips a
 10%, paid media at 20%) are deliberately thinner because they carry far less
 delivery cost per dollar: a $10 tip moves no bytes.
 
-This is the honest read: **RAE Link does not pay for itself on advertising at
+This is the honest read: **RaeLynk does not pay for itself on advertising at
 small scale.** The lanes that work early are creator subscription, paid media,
 EDF sales and commissioned production. Advertising becomes sensible only when
 watch hours are large enough for a pooled allocation to be meaningful to a

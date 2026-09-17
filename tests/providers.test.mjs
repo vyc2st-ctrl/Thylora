@@ -1,4 +1,4 @@
-// RAE LINK · provider abstraction tests
+// RaeLynk · provider abstraction tests
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { CAPABILITIES, resolve, openDecisions, lockInRisk } from '../rae-link/lib/providers.js';

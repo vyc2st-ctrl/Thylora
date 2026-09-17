@@ -1,4 +1,4 @@
--- RAE LINK · 0007 · Family Story Partnership / GiveForward Studio
+-- RaeLynk · 0007 · Family Story Partnership / GiveForward Studio
 -- Workroom: WR-RAELINK-001
 --
 -- SAFEGUARDS ENFORCED IN SCHEMA:
@@ -54,7 +54,7 @@ insert into rael_partnership_prohibitions (code, statement) values
   ('NO_ILLNESS_EXPLOITATION', 'Illness, grief or hardship is never used as a promotional hook, thumbnail device or engagement tactic.'),
   ('NO_SENSATIONALISM',       'Story presentation must not dramatize suffering beyond what the family agreed to tell.'),
   ('NO_FORCED_PUBLICITY',     'A family may participate privately, pseudonymously, in limited form, or publicly, and may change mode going forward.'),
-  ('NO_DIAGNOSIS',            'RAE Link does not diagnose, assess, predict or advise on any medical matter.'),
+  ('NO_DIAGNOSIS',            'RaeLynk does not diagnose, assess, predict or advise on any medical matter.'),
   ('NO_PERSUASION',           'No political, religious or ideological persuasion may be attached as a condition of help.'),
   ('NO_HIDDEN_PERCENTAGE',    'The beneficiary percentage is declared before publication and shown with the story and in every statement.'),
   ('NO_GUARDIAN_BYPASS',      'A child participant requires recorded guardian authority. There is no exception path.')
@@ -69,10 +69,10 @@ begin
   if new.published_at is not null then
     select revoked_at into revoked from rael_consents where id = new.consent_id;
     if revoked is not null then
-      raise exception 'RAE LINK: consent % is revoked; partnership cannot be published', new.consent_id;
+      raise exception 'RaeLynk: consent % is revoked; partnership cannot be published', new.consent_id;
     end if;
     if new.beneficiary_share_bp is null or new.beneficiary_share_bp < 1 then
-      raise exception 'RAE LINK: beneficiary share must be declared before publication';
+      raise exception 'RaeLynk: beneficiary share must be declared before publication';
     end if;
   end if;
   return new;

@@ -1,6 +1,6 @@
-# WR-RAELINK-001 · RAE Link
+# WR-RAELINK-001 · RaeLynk
 
-**Lane:** RAE Link owned media platform · creator economy · streaming · social interaction · revenue distribution
+**Lane:** RaeLynk owned media platform · creator economy · streaming · social interaction · revenue distribution
 **Backend of record:** `thylora-dash` (`jvsdxhrfhtlgaknhjxlz`)
 **Source repository:** `vyc2st-ctrl/Thylora`, branch `claude/rae-link-platform-build-u1gr83`
 **Opened:** 2026-09-11
@@ -18,10 +18,10 @@ Read before execution, and held throughout:
   capability was removed, renamed or disconnected.**
 - Existing surfaces `app/` (Build 7 · command rooms · spine forward) and
   `public-site/` were changed **additively only**: one navigation entry each.
-- RAE Link is a **fourth surface**. It is not a dashboard, not a second backend,
+- RaeLynk is a **fourth surface**. It is not a dashboard, not a second backend,
   not a second identity system, and not a second product catalogue.
 
-Dashboard ≠ RAE Link consumer app ≠ backend ≠ creator portal ≠ media player ≠ Shopify.
+Dashboard ≠ RaeLynk consumer app ≠ backend ≠ creator portal ≠ media player ≠ Shopify.
 That separation is held in this delta.
 
 ---
@@ -45,7 +45,7 @@ That separation is held in this delta.
 | `0009_functions.sql` | Publish gate, publish, view capture, settlement, statements, feed, search |
 | `0010_registry_link.sql` | `to_regclass`-guarded links into existing THYLORA registries |
 
-### Added — RAE Link surface
+### Added — RaeLynk surface
 
 `rae-link/` — no framework, no runtime dependency, no external script.
 

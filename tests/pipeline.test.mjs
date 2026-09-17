@@ -1,4 +1,4 @@
-// RAE LINK · pipeline and publication gate tests
+// RaeLynk · pipeline and publication gate tests
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { publishGate, canTransition, nextUploadChunk, progressPercent, STAGES }

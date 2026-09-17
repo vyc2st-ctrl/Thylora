@@ -1,4 +1,4 @@
-# RAE Link — monetization math
+# RaeLynk — monetization math
 
 Workroom: **WR-RAELINK-001**
 
@@ -62,7 +62,7 @@ across 715 awkward bases from 0 to 5000 with a 3333/3333/3334 split.
 | Lane | Default platform share | Pooled | Notes |
 |---|---:|:---:|---|
 | Advertising / sponsorship | 45% | yes | Allocated by eligible watch time; disclosure required |
-| RAE Link subscription | 45% | yes | Allocated by eligible watch time |
+| RaeLynk subscription | 45% | yes | Allocated by eligible watch time |
 | Creator subscription | 15% | no | Direct viewer → one channel |
 | Tips and support | 10% | no | No promised deliverable |
 | Paid media purchase | 20% | no | Perpetual entitlement |

@@ -1,4 +1,4 @@
-// RAE LINK · monetization math tests
+// RaeLynk · monetization math tests
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {

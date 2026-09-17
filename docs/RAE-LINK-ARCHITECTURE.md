@@ -1,10 +1,10 @@
-# RAE Link — architecture
+# RaeLynk — architecture
 
 Workroom: **WR-RAELINK-001** · Backend of record: `thylora-dash` (`jvsdxhrfhtlgaknhjxlz`)
 
-## What RAE Link is, and what it is not
+## What RaeLynk is, and what it is not
 
-RAE Link is THYLORA's owned audience and creator media network. It is a **fourth
+RaeLynk is THYLORA's owned audience and creator media network. It is a **fourth
 surface**, not a replacement for any existing one:
 
 | Surface | Purpose | Lives at |
@@ -12,14 +12,14 @@ surface**, not a replacement for any existing one:
 | Chairman dashboard | Private command and continuity | `vyc2st-ctrl/thylora-executive-dashboard` → `thylora-public-world` |
 | Public site | Discovery, residency, released products | `public-site/` |
 | Member app | Business Factory, family stories, world rooms, departments | `app/` |
-| **RAE Link** | **Channels, media publication, audience, creator earnings** | **`rae-link/`** |
+| **RaeLynk** | **Channels, media publication, audience, creator earnings** | **`rae-link/`** |
 | Store | Product checkout | Shopify / Lemon Squeezy, unchanged |
 
-RAE Link does **not** contain a dashboard, does not duplicate the department
+RaeLynk does **not** contain a dashboard, does not duplicate the department
 registry, does not hold a second product catalogue, and does not create a second
 identity system. It reuses the one THYLORA backend and the one browser session
 key (`thylora_app_auth_session`), so a member who signs in on the app is signed
-in on RAE Link.
+in on RaeLynk.
 
 ## Layers
 
@@ -82,7 +82,7 @@ simulated-media disclosure.
 
 ## Degradation posture
 
-The RAE Link tables are written but **not applied** (see blockers). Until they
+The RaeLynk tables are written but **not applied** (see blockers). Until they
 are, every panel reports "not provisioned yet" with the migration path. It never
 shows an empty feed that could be mistaken for "no content", and the Creator
 Studio still runs the rights gate locally so a creator can do real work before

@@ -1,4 +1,4 @@
-# RAE Link — rights, privacy and the family safeguard
+# RaeLynk — rights, privacy and the family safeguard
 
 Workroom: **WR-RAELINK-001**
 
@@ -28,7 +28,7 @@ one live rights record per asset.
 a source description, a place reference, and a tool disclosure. Generative
 tooling is disclosed as provenance, not hidden in a description field.
 
-## What RAE Link stores about a viewer
+## What RaeLynk stores about a viewer
 
 | Stored | Not stored |
 |---|---|
@@ -74,7 +74,7 @@ Stored as data in `rael_partnership_prohibitions` and mirrored in
    the family agreed to tell.
 4. **No forced publicity.** Private, pseudonymous, limited or public — the family
    chooses, and may change the mode going forward.
-5. **No diagnosis.** RAE Link does not diagnose, assess, predict or advise on any
+5. **No diagnosis.** RaeLynk does not diagnose, assess, predict or advise on any
    medical matter.
 6. **No persuasion.** No political, religious or ideological persuasion may be
    attached as a condition of help.

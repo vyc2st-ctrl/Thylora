@@ -1,4 +1,4 @@
--- RAE LINK · 0009 · Governed functions (publish gate, settlement, statements)
+-- RaeLynk · 0009 · Governed functions (publish gate, settlement, statements)
 -- Workroom: WR-RAELINK-001
 --
 -- These are the custody points. Publication, view capture and money settlement
@@ -134,9 +134,9 @@ returns jsonb language plpgsql security definer set search_path = public as $$
 declare gate jsonb; a rael_media_assets%rowtype;
 begin
   select * into a from rael_media_assets where id = p_asset_id;
-  if not found then raise exception 'RAE LINK: asset not found'; end if;
+  if not found then raise exception 'RaeLynk: asset not found'; end if;
   if not rael_is_channel_member(a.channel_id, array['OWNER','MANAGER','EDITOR']::rael_channel_role[]) then
-    raise exception 'RAE LINK: caller is not authorized to publish on this channel';
+    raise exception 'RaeLynk: caller is not authorized to publish on this channel';
   end if;
 
   gate := rael_publish_gate(p_asset_id);
@@ -219,7 +219,7 @@ declare
   ref       text;
 begin
   select * into ev from rael_revenue_events where id = p_event_id;
-  if not found then raise exception 'RAE LINK: revenue event not found'; end if;
+  if not found then raise exception 'RaeLynk: revenue event not found'; end if;
 
   select * into pol from rael_split_policies
    where policy_state = 'ACTIVE'
@@ -328,7 +328,7 @@ returns jsonb language plpgsql stable security definer set search_path = public 
 declare out jsonb;
 begin
   if not rael_is_channel_member(p_channel_id, array['OWNER','MANAGER','ANALYST']::rael_channel_role[]) then
-    raise exception 'RAE LINK: caller is not authorized to read this channel statement';
+    raise exception 'RaeLynk: caller is not authorized to read this channel statement';
   end if;
 
   select jsonb_build_object(

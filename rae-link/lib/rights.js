@@ -1,4 +1,4 @@
-// RAE LINK · rights, authority, channel truth and family safeguards
+// RaeLynk · rights, authority, channel truth and family safeguards
 // Workroom: WR-RAELINK-001
 //
 // ACCESS != AUTHORITY. Being able to upload a file is not authority to publish
@@ -27,7 +27,7 @@ export const CHANNEL_CLASSES = Object.freeze({
 
 export const STORYTELLING_MODES = Object.freeze(['PRIVATE', 'PSEUDONYMOUS', 'LIMITED', 'PUBLIC']);
 
-// Fields RAE Link will not accept on a family or consent record. Minimum
+// Fields RaeLynk will not accept on a family or consent record. Minimum
 // necessary information only.
 const FORBIDDEN_CONSENT_FIELDS = [
   'diagnosis', 'condition', 'prognosis', 'treatment', 'medication', 'medical_record',
@@ -124,11 +124,11 @@ export function validateConsent(consent) {
     problems.push({ code: 'MODE_MISSING', detail: 'The family chooses private, pseudonymous, limited or public.' });
   }
   if (consent?.medical_details_collected === true) {
-    problems.push({ code: 'MEDICAL_DETAIL_REFUSED', detail: 'RAE Link does not collect medical detail.' });
+    problems.push({ code: 'MEDICAL_DETAIL_REFUSED', detail: 'RaeLynk does not collect medical detail.' });
   }
   for (const field of FORBIDDEN_CONSENT_FIELDS) {
     if (consent && Object.prototype.hasOwnProperty.call(consent, field)) {
-      problems.push({ code: 'FORBIDDEN_FIELD', detail: `The field "${field}" is not collected by RAE Link.` });
+      problems.push({ code: 'FORBIDDEN_FIELD', detail: `The field "${field}" is not collected by RaeLynk.` });
     }
   }
   if (consent?.revoked_at) {
@@ -167,7 +167,7 @@ export const PARTNERSHIP_PROHIBITIONS = Object.freeze([
   ['NO_ILLNESS_EXPLOITATION', 'Illness, grief or hardship is never used as a promotional hook, thumbnail device or engagement tactic.'],
   ['NO_SENSATIONALISM', 'Story presentation must not dramatize suffering beyond what the family agreed to tell.'],
   ['NO_FORCED_PUBLICITY', 'A family may participate privately, pseudonymously, in limited form, or publicly, and may change mode going forward.'],
-  ['NO_DIAGNOSIS', 'RAE Link does not diagnose, assess, predict or advise on any medical matter.'],
+  ['NO_DIAGNOSIS', 'RaeLynk does not diagnose, assess, predict or advise on any medical matter.'],
   ['NO_PERSUASION', 'No political, religious or ideological persuasion may be attached as a condition of help.'],
   ['NO_HIDDEN_PERCENTAGE', 'The beneficiary percentage is declared before publication and shown with the story and in every statement.'],
   ['NO_GUARDIAN_BYPASS', 'A child participant requires recorded guardian authority. There is no exception path.']

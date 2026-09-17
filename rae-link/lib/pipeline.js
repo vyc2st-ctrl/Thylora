@@ -1,4 +1,4 @@
-// RAE LINK · media pipeline state machine
+// RaeLynk · media pipeline state machine
 // Workroom: WR-RAELINK-001
 //
 // Creator/Input -> Rights/Authority Gate -> Upload -> Virus/File Validation ->

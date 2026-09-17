@@ -1,7 +1,7 @@
-# RAE Link database migrations
+# RaeLynk database migrations
 
 Backend of record: `thylora-dash` (`jvsdxhrfhtlgaknhjxlz`). These files are the
-reviewable schema for the RAE Link media network. **They are not applied by this
+reviewable schema for the RaeLynk media network. **They are not applied by this
 repository.** Applying DDL to the live backend is a production mutation and is
 held for Chairman execution.
 
@@ -27,7 +27,7 @@ Run in numeric order in one transaction per file.
 1. **Additive only.** Every object is new and prefixed `rael_`. No existing table
    is dropped, renamed or rewritten.
 2. **No second source of truth.** Products, passports, family archives, businesses
-   and departments stay where they already live. RAE Link holds a soft reference
+   and departments stay where they already live. RaeLynk holds a soft reference
    (`*_ref` text column) and resolves it through `rael_resolve_product_ref`.
 3. **Soft references, not blind foreign keys.** Nothing hard-links to a table whose
    shape is unverified. The live schema was inspected on 2026-09-17 and the two
@@ -80,7 +80,7 @@ Checked directly against `jvsdxhrfhtlgaknhjxlz`:
 | Check | Result |
 |---|---|
 | `rael_*` tables present live | **0 of 40.** Migrations are unapplied and no partial application exists. |
-| Naming | **RAE Link preserved.** No `ray*` / `raylink*` object exists. No rename performed, none authorized. |
+| Naming | **RaeLynk preserved.** No `ray*` / `raylink*` object exists. No rename performed, none authorized. |
 | Name collisions against the 703 live public tables | **None.** Every `rael_` name is free. |
 | `thylora_departments` guard in `0010` | **Correct.** Table exists, has `department_code`, and `department_code` is UNIQUE, so the `ON CONFLICT` target is valid. |
 | `products` guard in `0010` | **Was broken, now corrected.** See rule 3. |

@@ -1,4 +1,4 @@
-// RAE LINK · monetization math
+// RaeLynk · monetization math
 // Workroom: WR-RAELINK-001
 //
 // This module is the client-side twin of rael_settle_revenue_event in
@@ -13,7 +13,7 @@ export const BP = 10000;
 
 export const REVENUE_LANES = Object.freeze({
   ADVERTISING:           { pooled: true,  disclosure: true,  label: 'Advertising and sponsorship' },
-  PLATFORM_SUBSCRIPTION: { pooled: true,  disclosure: false, label: 'RAE Link subscription' },
+  PLATFORM_SUBSCRIPTION: { pooled: true,  disclosure: false, label: 'RaeLynk subscription' },
   CREATOR_SUBSCRIPTION:  { pooled: false, disclosure: false, label: 'Creator subscription' },
   TIP:                   { pooled: false, disclosure: false, label: 'Tips and support' },
   ONE_TIME_MEDIA:        { pooled: false, disclosure: false, label: 'Paid media purchase' },

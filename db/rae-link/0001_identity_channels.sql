@@ -1,4 +1,4 @@
--- RAE LINK · 0001 · Identity, profiles and channel classes
+-- RaeLynk · 0001 · Identity, profiles and channel classes
 -- Workroom: WR-RAELINK-001
 -- Backend: thylora-dash (jvsdxhrfhtlgaknhjxlz)
 --

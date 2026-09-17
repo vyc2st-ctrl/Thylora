@@ -1,4 +1,4 @@
--- RAE LINK · 0004 · Views, reactions, comments, reports, notifications
+-- RaeLynk · 0004 · Views, reactions, comments, reports, notifications
 -- Workroom: WR-RAELINK-001
 --
 -- PRIVACY: view events store coarse geography (country) and a rotating session

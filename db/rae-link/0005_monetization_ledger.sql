@@ -1,4 +1,4 @@
--- RAE LINK · 0005 · Revenue lanes, split policy, ledger, payouts
+-- RaeLynk · 0005 · Revenue lanes, split policy, ledger, payouts
 -- Workroom: WR-RAELINK-001
 --
 -- RULE: no opaque "net proceeds". Every revenue event carries, and every
@@ -40,7 +40,7 @@ insert into rael_revenue_lanes
 values
   ('ADVERTISING',          'Advertising and sponsorship', 4500, true,  false, true,
    'Pooled advertising and sponsorship revenue allocated by eligible watch time.'),
-  ('PLATFORM_SUBSCRIPTION','RAE Link subscription',       4500, true,  false, false,
+  ('PLATFORM_SUBSCRIPTION','RaeLynk subscription',       4500, true,  false, false,
    'Pooled subscription revenue allocated by eligible watch time across subscribed viewers.'),
   ('CREATOR_SUBSCRIPTION', 'Creator subscription',        1500, false, false, false,
    'Direct viewer subscription to one channel.'),

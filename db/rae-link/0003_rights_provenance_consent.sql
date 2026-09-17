@@ -1,4 +1,4 @@
--- RAE LINK · 0003 · Rights, provenance, consent, takedown and appeal
+-- RaeLynk · 0003 · Rights, provenance, consent, takedown and appeal
 -- Workroom: WR-RAELINK-001
 --
 -- SAFEGUARD: this schema deliberately contains no field for a medical diagnosis,

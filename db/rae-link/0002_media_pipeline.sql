@@ -1,4 +1,4 @@
--- RAE LINK · 0002 · Media assets, resumable upload, pipeline custody
+-- RaeLynk · 0002 · Media assets, resumable upload, pipeline custody
 -- Workroom: WR-RAELINK-001
 -- Pipeline order (directive):
 --   Creator/Input -> Rights/Authority Gate -> Upload -> Virus/File Validation ->

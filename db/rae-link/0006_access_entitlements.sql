@@ -1,4 +1,4 @@
--- RAE LINK · 0006 · Subscriptions, purchases, entitlements, store linking
+-- RaeLynk · 0006 · Subscriptions, purchases, entitlements, store linking
 -- Workroom: WR-RAELINK-001
 --
 -- RULE: a viewer keeps re-access to what they paid for, and a creator keeps

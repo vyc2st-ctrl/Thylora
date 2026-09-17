@@ -1,4 +1,4 @@
-# RAE Link — provider map
+# RaeLynk — provider map
 
 Workroom: **WR-RAELINK-001** · Source of truth: `rae-link/lib/providers.js`
 

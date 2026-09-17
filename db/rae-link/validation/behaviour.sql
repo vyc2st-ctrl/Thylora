@@ -1,4 +1,4 @@
--- RAE LINK · behavioural checks against an applied schema.
+-- RaeLynk · behavioural checks against an applied schema.
 -- Each check asserts that a rule REJECTS what it should reject. Run after the
 -- migrations; expect the ERROR lines — they are the passing result.
 \set ON_ERROR_STOP 0
