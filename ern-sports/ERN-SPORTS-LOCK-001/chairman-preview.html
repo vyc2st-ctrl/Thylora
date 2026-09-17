@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Chairman Preview</title>
+<style>
+  @page { size: 1130px 1520px; margin: 0; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root{
+    --ink:#12101c;
+    --deep:#1c1140;
+    --pur:#3a2179;
+    --pur2:#5b34b8;
+    --pur3:#7c53d8;
+    --gold:#c8a12f;
+    --gold2:#eccb63;
+    --paper:#f7f5ef;
+    --rule:#cec8ba;
+    --muted:#5d5747;
+    --green:#1f7a4d;
+    --red:#a32222;
+  }
+  html,body{ width:1130px; height:1520px; background:var(--paper); }
+  body{
+    font-family:'Archivo','Liberation Sans',sans-serif;
+    color:var(--ink);
+    padding:13px 18px 10px;
+    overflow:hidden;
+  }
+  .cond{ font-family:'Oswald','Liberation Sans Narrow',sans-serif; }
+  .ser{ font-family:'Playfair Display','Liberation Serif',serif; }
+
+  /* ---------- 1. PREVIEW RULE ---------- */
+  .prevbar{
+    height:26px; background:var(--deep); color:var(--gold2);
+    display:flex; align-items:center; justify-content:center;
+    letter-spacing:.34em; font-size:11px; font-weight:600;
+    text-transform:uppercase;
+  }
+
+  /* ---------- 2. MASTHEAD ---------- */
+  .masthead{
+    display:grid; grid-template-columns:222px 1fr 222px; align-items:center;
+    padding:10px 2px 6px; gap:8px;
+  }
+  .mh-side{ font-size:9px; letter-spacing:.17em; line-height:1.8;
+            font-weight:600; color:var(--muted); text-transform:uppercase; }
+  .mh-left{ display:flex; align-items:center; gap:10px; }
+  .mh-right{ text-align:right; }
+  .mh-center{ text-align:center; }
+  .wordmark{ font-size:57px; line-height:.92; letter-spacing:-.015em; }
+  .wordmark .er{ font-style:italic; font-weight:800; }
+  .wordmark .news{ font-weight:900; }
+  .deskline{ font-family:'Playfair Display',serif; font-weight:700; font-style:italic;
+             color:var(--pur); font-size:18px; margin-top:2px; letter-spacing:.02em; }
+
+  .slug{
+    border-top:3px solid var(--ink); border-bottom:1px solid var(--ink);
+    display:flex; align-items:center; justify-content:center; gap:16px;
+    height:28px; font-size:11px; letter-spacing:.16em; font-weight:600;
+    text-transform:uppercase;
+  }
+  .slug span{ color:var(--muted); }
+  .slug b{ color:var(--ink); font-weight:700; }
+
+  /* ---------- 3. HEADLINE ---------- */
+  .head{ padding:13px 2px 8px; }
+  .h1{ font-family:'Playfair Display',serif; font-weight:900;
+       font-size:73px; line-height:.90; letter-spacing:-.02em; }
+  .h1 .b{ color:var(--ink); }
+  .h1 .p{ color:var(--pur); display:block; }
+  .deck{ margin-top:10px; font-family:'Playfair Display',serif; font-weight:700;
+         font-size:18px; line-height:1.32; color:#2a2536; max-width:1000px; }
+
+  .cq{
+    border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);
+    padding:8px 0 9px; text-align:center;
+  }
+  .cq .lbl{ font-family:'Oswald',sans-serif; font-size:11px; letter-spacing:.42em;
+            color:var(--pur); font-weight:600; }
+  .cq .q{ font-family:'Playfair Display',serif; font-weight:700; font-size:19px;
+          line-height:1.26; margin-top:4px; }
+
+  /* ---------- 4. HERO ---------- */
+  .hero{ margin-top:10px; height:398px; position:relative; overflow:hidden;
+         border:1px solid var(--ink); }
+  .hero svg{ display:block; }
+
+  /* ---------- 5. STAT BAR ---------- */
+  .stats{ display:grid; grid-template-columns:repeat(6,1fr); height:76px;
+          background:var(--deep); margin-top:0; border:1px solid var(--ink); border-top:none; }
+  .stat{ display:flex; flex-direction:column; align-items:center; justify-content:center;
+         gap:5px; border-right:1px solid rgba(200,161,47,.42); }
+  .stat:last-child{ border-right:none; }
+  .stat .v{ font-family:'Playfair Display',serif; font-weight:900; font-size:30px;
+            color:#fff; line-height:1; }
+  .stat .k{ font-family:'Oswald',sans-serif; font-size:9px; letter-spacing:.17em;
+            color:var(--gold2); text-align:center; line-height:1.3; padding:0 6px; }
+
+  /* ---------- 6. CARD ROWS ---------- */
+  .rowA{ display:grid; grid-template-columns:1fr 268px 336px; gap:10px; margin-top:10px; }
+  .rowB{ display:grid; grid-template-columns:1fr 372px; gap:10px; margin-top:9px; }
+
+  .card{ border:1px solid var(--ink); background:#fff; display:flex; flex-direction:column; }
+  .ch{ background:var(--pur); color:#fff; font-family:'Oswald',sans-serif;
+       font-size:12px; letter-spacing:.14em; padding:7px 10px; text-transform:uppercase;
+       display:flex; align-items:center; gap:7px; line-height:1.25; }
+  .ch.dark{ background:var(--deep); }
+  .cb{ padding:9px 10px 10px; flex:1; display:flex; flex-direction:column; }
+
+  .branches{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; flex:1; }
+  .br{ border:1px solid var(--rule); padding:8px 8px 9px; display:flex;
+       flex-direction:column; gap:6px; }
+  .br .t{ font-family:'Oswald',sans-serif; font-size:11px; letter-spacing:.08em;
+          line-height:1.25; text-transform:uppercase; }
+  .br .arw{ font-size:15px; line-height:1; }
+  .br .q{ font-size:12.5px; line-height:1.36; color:#2a2536; }
+  .br.a{ background:#f2f9f4; } .br.a .t,.br.a .arw{ color:var(--green); }
+  .br.b{ background:#fdf8ec; } .br.b .t,.br.b .arw{ color:#8a6a10; }
+  .br.c{ background:#fdf1f1; } .br.c .t,.br.c .arw{ color:var(--red); }
+
+  .bate .big{ font-family:'Oswald',sans-serif; font-size:19px; line-height:1.18;
+              letter-spacing:.01em; text-transform:uppercase; color:var(--deep); }
+  .bate .seq{ margin-top:auto; border-top:1px solid var(--rule); padding-top:8px;
+              font-family:'Oswald',sans-serif; font-size:10px; letter-spacing:.09em;
+              line-height:1.75; color:var(--pur); text-transform:uppercase; }
+  .bate .seq b{ color:var(--muted); font-weight:400; }
+
+  .path{ padding:8px 10px 9px; }
+  .path + .path{ border-top:1px solid var(--rule); }
+  .path .ph{ font-family:'Oswald',sans-serif; font-size:11px; letter-spacing:.12em;
+             display:flex; align-items:center; gap:6px; text-transform:uppercase; }
+  .path.win .ph{ color:var(--green); } .path.lose .ph{ color:var(--red); }
+  .path ul{ list-style:none; margin-top:5px; }
+  .path li{ font-size:12px; line-height:1.4; padding-left:11px; position:relative; color:#2a2536; }
+  .path li::before{ content:''; position:absolute; left:0; top:6px; width:4px; height:4px;
+                    border-radius:50%; background:var(--pur3); }
+  .badge{ width:15px; height:15px; border-radius:50%; display:inline-flex;
+          align-items:center; justify-content:center; color:#fff; font-size:10px;
+          font-family:'Archivo',sans-serif; font-weight:700; flex:none; }
+  .badge.g{ background:var(--green); } .badge.r{ background:var(--red); }
+
+  .classes{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; flex:1; }
+  .cl{ border:1px solid var(--rule); padding:8px; }
+  .cl .t{ font-family:'Oswald',sans-serif; font-size:10.5px; letter-spacing:.1em;
+          display:flex; align-items:center; gap:6px; text-transform:uppercase; }
+  .cl ul{ list-style:none; margin-top:6px; }
+  .cl li{ font-size:11.5px; line-height:1.42; color:#3a3546; padding-left:9px; position:relative; }
+  .cl li::before{ content:''; position:absolute; left:0; top:6px; width:3px; height:3px;
+                  background:var(--muted); border-radius:50%; }
+  .cl.d .t{ color:var(--pur); } .cl.i .t{ color:#8a6a10; } .cl.u .t{ color:var(--red); }
+  .sq{ width:13px; height:13px; flex:none; border-radius:2px; }
+  .sq.d{ background:var(--pur); } .sq.i{ background:#c9992a; } .sq.u{ background:var(--red); }
+
+  .rights{ font-size:11.5px; line-height:1.55; color:#3a3546; }
+  .rights .id{ font-family:'Oswald',sans-serif; font-size:10.5px; letter-spacing:.08em;
+               color:var(--muted); margin-top:6px; line-height:1.6; }
+
+  /* ---------- 7. FOOTER STRIP ---------- */
+  .strip{ display:grid; grid-template-columns:262px 1fr 250px; gap:10px;
+          margin-top:9px; height:96px; }
+  .sbox{ border:1px solid var(--ink); display:flex; align-items:center; overflow:hidden; }
+  .explore{ background:var(--deep); color:#fff; padding:0 12px; gap:12px; }
+  .explore .mk{ flex:none; }
+  .explore .tx .t{ font-family:'Oswald',sans-serif; font-size:13px; letter-spacing:.1em;
+                   color:var(--gold2); text-transform:uppercase; line-height:1.2; }
+  .explore .tx .s{ font-size:8.5px; letter-spacing:.14em; margin-top:5px;
+                   color:#cfc6e8; text-transform:uppercase; line-height:1.5; }
+  .explore img{ width:62px; height:62px; flex:none; background:#fff; padding:3px; }
+
+  .ad{ position:relative; }
+  .ad .txt{ position:absolute; inset:0; display:flex; flex-direction:column;
+            align-items:center; justify-content:flex-end; padding-bottom:9px; gap:3px; }
+  .ad .ti{ font-family:'Playfair Display',serif; font-weight:900; font-size:23px;
+           color:#f6efdd; letter-spacing:.02em; text-shadow:0 2px 10px rgba(0,0,0,.85); }
+  .ad .sub{ font-family:'Oswald',sans-serif; font-size:9.5px; letter-spacing:.2em;
+            color:var(--gold2); text-transform:uppercase; }
+  .ad .lives{ position:absolute; right:10px; top:10px; text-align:right;
+              font-family:'Oswald',sans-serif; font-size:9px; letter-spacing:.16em;
+              color:#efe6cf; line-height:1.6; text-transform:uppercase;
+              text-shadow:0 1px 6px rgba(0,0,0,.9); }
+
+  .higher{ background:#fff; flex-direction:column; align-items:flex-start;
+           justify-content:center; padding:0 12px; gap:5px; }
+  .higher .wm{ font-family:'Playfair Display',serif; font-style:italic;
+               font-weight:800; font-size:21px; }
+  .higher .tag{ font-family:'Oswald',sans-serif; font-size:9px; letter-spacing:.26em;
+                color:var(--pur); text-transform:uppercase; }
+  .higher .grid{ display:grid; grid-template-columns:repeat(3,auto); gap:1px 10px;
+                 font-family:'Oswald',sans-serif; font-size:8.5px; letter-spacing:.11em;
+                 color:var(--muted); text-transform:uppercase; }
+  .higher .code{ font-family:'Oswald',sans-serif; font-size:9px; letter-spacing:.14em;
+                 color:var(--ink); }
+
+  /* ---------- 8. BOTTOM ---------- */
+  .bottom{ margin-top:6px; border-top:1px solid var(--ink); padding-top:7px;
+           display:flex; align-items:center; justify-content:space-between;
+           font-family:'Oswald',sans-serif; font-size:9.5px; letter-spacing:.2em;
+           color:var(--muted); text-transform:uppercase; }
+  .bottom .mid{ color:var(--pur); letter-spacing:.24em; }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <!-- IDENTITY-LOCKED OBJECT: magnifier + fedora emblem -->
+    <symbol id="erMark" viewBox="0 0 100 100">
+      <circle cx="46" cy="56" r="25" fill="#0f0a24" opacity=".55"/>
+      <circle cx="46" cy="56" r="25" fill="none" stroke="#c8a12f" stroke-width="7"/>
+      <circle cx="46" cy="56" r="19" fill="none" stroke="#eccb63" stroke-width="1.6" opacity=".75"/>
+      <line x1="64" y1="74" x2="86" y2="95" stroke="#c8a12f" stroke-width="9" stroke-linecap="round"/>
+      <g transform="translate(46,26)">
+        <path d="M-17,3 C-17,-9 -9,-16 0,-16 C9,-16 17,-9 17,3 Z" fill="#171033"/>
+        <path d="M-17,1 L17,1 L17,4 L-17,4 Z" fill="#c8a12f"/>
+        <ellipse cx="0" cy="5" rx="27" ry="6.5" fill="#171033"/>
+        <ellipse cx="0" cy="3.6" rx="27" ry="5.6" fill="#241a4d"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- 1 -->
+<div class="prevbar cond">Chairman Preview &mdash; Not for Publication</div>
+
+<!-- 2 -->
+<div class="masthead">
+  <div class="mh-side mh-left">
+    <svg width="44" height="44"><use href="#erMark" width="44" height="44"/></svg>
+    <div>Real Games<br>Real Questions<br>A More Informed World</div>
+  </div>
+  <div class="mh-center">
+    <div class="wordmark ser"><span class="er">ErsatzReality</span> <span class="news">News</span></div>
+    <div class="deskline">Earth Desk &bull; Sports</div>
+  </div>
+  <div class="mh-side mh-right">Truth Drives<br>Perspective<br>A Deeper Tomorrow</div>
+</div>
+
+<div class="slug cond">
+  <b>Morning Edition 001</b><span>|</span><b>THY-RAVENS-PAPER-20260917-001</b><span>|</span><b>Sep 17, 2026</b>
+</div>
+
+<!-- 3 -->
+<div class="head">
+  <div class="h1">
+    <span class="b">BALTIMORE WON BIG.</span>
+    <span class="p">NOW SHOW US THE DEPTH.</span>
+  </div>
+  <div class="deck">Flowers is day-to-day. Lane is on injured reserve. Sunday turns Baltimore&rsquo;s receiver depth into a live test.</div>
+</div>
+
+<div class="cq">
+  <div class="lbl">CENTRAL QUESTION</div>
+  <div class="q">Did Baltimore&rsquo;s Week 1 explosion prove the offense is deep,<br>or did it show how much one explosive receiver changes everything?</div>
+</div>
+
+<!-- 4 HERO -->
+<div class="hero">
+<svg width="1090" height="396" viewBox="0 0 1090 396" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#150d33"/><stop offset=".55" stop-color="#2d1a63"/>
+      <stop offset="1" stop-color="#4b2c92"/>
+    </linearGradient>
+    <linearGradient id="turf" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#20153f"/><stop offset=".35" stop-color="#2c1d55"/>
+      <stop offset="1" stop-color="#160f33"/>
+    </linearGradient>
+    <linearGradient id="studio" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2a1a5f"/><stop offset="1" stop-color="#140c31"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#ffe9a8" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#eccb63" stop-opacity="0"/>
+      <stop offset="1" stop-color="#eccb63" stop-opacity=".55"/>
+    </linearGradient>
+    <clipPath id="heroClip"><rect x="0" y="0" width="1090" height="396"/></clipPath>
+  </defs>
+
+<g clip-path="url(#heroClip)">
+  <!-- ===== STADIUM ===== -->
+  <rect x="0" y="0" width="1090" height="396" fill="url(#sky)"/>
+  <!-- upper deck bands -->
+  <path d="M300,0 L1090,0 L1090,58 L300,74 Z" fill="#0f0926" opacity=".9"/>
+  <path d="M300,74 L1090,58 L1090,104 L300,116 Z" fill="#241650"/>
+  <path d="M300,116 L1090,104 L1090,146 L300,156 Z" fill="#1a1140"/>
+  <g opacity=".5">
+    <circle cx="470" cy="42" r="46" fill="url(#glow)"/>
+    <circle cx="700" cy="30" r="52" fill="url(#glow)"/>
+    <circle cx="930" cy="36" r="48" fill="url(#glow)"/>
+  </g>
+  <!-- crowd speckle -->
+  <g fill="#8f79d6" opacity=".38">
+    <rect x="322" y="82" width="5" height="5"/><rect x="356" y="90" width="5" height="5"/>
+    <rect x="392" y="84" width="5" height="5"/><rect x="428" y="94" width="5" height="5"/>
+    <rect x="466" y="86" width="5" height="5"/><rect x="504" y="96" width="5" height="5"/>
+    <rect x="542" y="84" width="5" height="5"/><rect x="580" y="92" width="5" height="5"/>
+    <rect x="618" y="82" width="5" height="5"/><rect x="656" y="94" width="5" height="5"/>
+    <rect x="694" y="84" width="5" height="5"/><rect x="732" y="90" width="5" height="5"/>
+    <rect x="770" y="80" width="5" height="5"/><rect x="808" y="92" width="5" height="5"/>
+    <rect x="846" y="80" width="5" height="5"/><rect x="884" y="88" width="5" height="5"/>
+    <rect x="922" y="78" width="5" height="5"/><rect x="960" y="88" width="5" height="5"/>
+    <rect x="998" y="76" width="5" height="5"/><rect x="1036" y="86" width="5" height="5"/>
+    <rect x="340" y="124" width="5" height="5"/><rect x="386" y="130" width="5" height="5"/>
+    <rect x="432" y="122" width="5" height="5"/><rect x="478" y="132" width="5" height="5"/>
+    <rect x="524" y="122" width="5" height="5"/><rect x="570" y="130" width="5" height="5"/>
+    <rect x="616" y="120" width="5" height="5"/><rect x="662" y="128" width="5" height="5"/>
+    <rect x="708" y="118" width="5" height="5"/><rect x="754" y="126" width="5" height="5"/>
+    <rect x="800" y="116" width="5" height="5"/><rect x="846" y="124" width="5" height="5"/>
+    <rect x="892" y="114" width="5" height="5"/><rect x="938" y="122" width="5" height="5"/>
+    <rect x="984" y="112" width="5" height="5"/><rect x="1030" y="120" width="5" height="5"/>
+  </g>
+  <g fill="#e0c97a" opacity=".3">
+    <rect x="368" y="108" width="4" height="4"/><rect x="452" y="112" width="4" height="4"/>
+    <rect x="556" y="106" width="4" height="4"/><rect x="648" y="110" width="4" height="4"/>
+    <rect x="744" y="104" width="4" height="4"/><rect x="852" y="108" width="4" height="4"/>
+    <rect x="948" y="102" width="4" height="4"/><rect x="1042" y="106" width="4" height="4"/>
+  </g>
+
+  <!-- ===== FIELD (offense travels LEFT -> RIGHT) ===== -->
+  <path d="M300,396 L1090,396 L1090,150 L300,162 Z" fill="url(#turf)"/>
+  <path d="M300,162 L1090,150 L1090,162 L300,175 Z" fill="#4a2f95" opacity=".55"/>
+  <!-- yard lines, converging with the perspective -->
+  <g stroke="#b9a9e8" stroke-width="1.5" opacity=".34">
+    <line x1="352" y1="396" x2="390" y2="168"/>
+    <line x1="452" y1="396" x2="475" y2="166"/>
+    <line x1="552" y1="396" x2="560" y2="164"/>
+    <line x1="652" y1="396" x2="645" y2="162"/>
+    <line x1="752" y1="396" x2="730" y2="160"/>
+    <line x1="852" y1="396" x2="815" y2="158"/>
+    <line x1="952" y1="396" x2="900" y2="156"/>
+    <line x1="1052" y1="396" x2="985" y2="154"/>
+  </g>
+  <g fill="#cbbdf0" opacity=".15" font-family="Oswald,sans-serif" font-size="26" font-weight="600">
+    <text x="392" y="378">40</text><text x="596" y="378">50</text><text x="800" y="378">40</text>
+  </g>
+
+  <!-- ===== EXACTLY ONE PASSING WINDOW ===== -->
+  <ellipse cx="820" cy="288" rx="92" ry="42" fill="#7c53d8" opacity=".17"/>
+  <ellipse cx="820" cy="288" rx="92" ry="42" fill="none" stroke="#e3d6ff"
+           stroke-width="2" stroke-dasharray="9 7" opacity=".8"/>
+  <text x="820" y="293" text-anchor="middle" font-family="Oswald,sans-serif"
+        font-size="12" letter-spacing="2.2" fill="#f1e9ff">PASSING WINDOW</text>
+
+  <!-- ===== EXACTLY THREE ROUTE ARROWS ===== -->
+  <g fill="none" stroke="#f0c948" stroke-width="4" stroke-linecap="round">
+    <path d="M612,214 C700,196 790,184 906,172"/>
+    <path d="M620,300 C672,300 706,298 748,294"/>
+    <path d="M612,362 C700,368 790,362 900,336"/>
+  </g>
+  <g fill="#f0c948">
+    <path d="M906,172 L884,164 L886,180 Z"/>
+    <path d="M752,293 L732,285 L733,301 Z"/>
+    <path d="M900,336 L878,332 L884,347 Z"/>
+  </g>
+
+  <!-- ===== EXACTLY FOUR PLAYERS ===== -->
+  <!-- QB #8 : three-quarter SIDE VIEW facing +x (right) -->
+  <g transform="translate(452,278) scale(1.5)">
+    <ellipse cx="4" cy="60" rx="30" ry="6" fill="#09061a" opacity=".5"/>
+    <!-- back (left) leg -->
+    <path d="M-8,16 L-24,40 L-32,58 L-18,58 L-7,40 Z" fill="#1d1246"/>
+    <!-- front (right) leg, striding toward +x -->
+    <path d="M9,16 L24,38 L36,56 L22,59 L5,38 Z" fill="#2e1d6c"/>
+    <!-- torso, chest opened toward +x -->
+    <path d="M-13,-17 C-4,-24 14,-23 21,-12 L24,13 C13,21 -6,21 -15,15 Z" fill="#37207e"/>
+    <path d="M7,-21 C16,-22 22,-16 23,-9 L25,12 C19,16 12,17 7,17 Z" fill="#4e2fae"/>
+    <text x="5" y="7" text-anchor="middle" font-family="Oswald,sans-serif" font-size="17"
+          font-weight="700" fill="#f4ecff">8</text>
+    <!-- lead (left) arm extended downfield toward +x -->
+    <path d="M17,-10 L38,-6 L52,0 L50,9 L36,7 L15,4 Z" fill="#4e2fae"/>
+    <ellipse cx="54" cy="5" rx="7" ry="6" fill="#8a6a3e"/>
+    <!-- throwing (right) arm cocked back and up, ball in hand -->
+    <path d="M-8,-16 L-24,-30 L-18,-38 L-2,-22 Z" fill="#2a1a63"/>
+    <path d="M-24,-30 L-34,-46 L-25,-51 L-15,-36 Z" fill="#37207e"/>
+    <ellipse cx="-35" cy="-54" rx="10" ry="7" fill="#b3803f" transform="rotate(-28 -35 -54)"/>
+    <path d="M-42,-57 L-28,-51" stroke="#f4ecff" stroke-width="1.6"/>
+    <!-- helmeted head in profile, facing +x -->
+    <path d="M-3,-34 L11,-34 L12,-20 L-4,-20 Z" fill="#6e5230"/>
+    <ellipse cx="2" cy="-46" rx="14" ry="14" fill="#331d75"/>
+    <ellipse cx="13" cy="-52" rx="19" ry="18" fill="#3a2186"/>
+    <path d="M26,-61 C33,-57 35,-49 33,-42 C31,-36 26,-34 21,-35
+             C24,-44 25,-53 26,-61 Z" fill="#8a6a3e"/>
+    <ellipse cx="23" cy="-37" rx="7" ry="5" fill="#8a6a3e"/>
+    <path d="M1,-66 C10,-71 21,-69 28,-62" stroke="#7c53d8" stroke-width="3" fill="none"/>
+    <path d="M31,-59 C39,-52 41,-44 37,-35" stroke="#e8dcff" stroke-width="2.4" fill="none"/>
+    <path d="M27,-51 L38,-49" stroke="#e8dcff" stroke-width="2"/>
+    <path d="M26,-43 L37,-41" stroke="#e8dcff" stroke-width="2"/>
+  </g>
+
+  <!-- WR 1 -->
+  <g transform="translate(600,208)">
+    <circle cx="0" cy="0" r="17" fill="none" stroke="#f0c948" stroke-width="2" opacity=".85"/>
+    <ellipse cx="0" cy="15" rx="13" ry="4" fill="#09061a" opacity=".45"/>
+    <path d="M-4,-2 L-8,10 L-2,10 L0,2 L3,10 L9,10 L5,-3 Z" fill="#2a1a63"/>
+    <path d="M-5,-12 C-1,-15 5,-14 6,-9 L7,-1 C2,2 -4,1 -6,-2 Z" fill="#4a2c9e"/>
+    <circle cx="1" cy="-17" r="5.5" fill="#8a6a3e"/>
+  </g>
+  <!-- WR 2 -->
+  <g transform="translate(608,294)">
+    <circle cx="0" cy="0" r="17" fill="none" stroke="#f0c948" stroke-width="2" opacity=".85"/>
+    <ellipse cx="0" cy="15" rx="13" ry="4" fill="#09061a" opacity=".45"/>
+    <path d="M-4,-2 L-9,10 L-3,11 L0,2 L4,11 L10,9 L5,-3 Z" fill="#2a1a63"/>
+    <path d="M-6,-12 C-2,-15 4,-14 6,-9 L7,-1 C2,2 -4,1 -7,-2 Z" fill="#4a2c9e"/>
+    <circle cx="0" cy="-17" r="5.5" fill="#8a6a3e"/>
+  </g>
+  <!-- WR 3 -->
+  <g transform="translate(600,356)">
+    <circle cx="0" cy="0" r="17" fill="none" stroke="#f0c948" stroke-width="2" opacity=".85"/>
+    <ellipse cx="0" cy="15" rx="13" ry="4" fill="#09061a" opacity=".45"/>
+    <path d="M-5,-2 L-10,9 L-4,11 L0,2 L5,11 L10,8 L5,-3 Z" fill="#2a1a63"/>
+    <path d="M-6,-12 C-2,-15 4,-14 6,-9 L7,-1 C2,2 -4,1 -7,-2 Z" fill="#4a2c9e"/>
+    <circle cx="-1" cy="-17" r="5.5" fill="#8a6a3e"/>
+  </g>
+
+  <!-- route tags -->
+  <g font-family="Oswald,sans-serif">
+    <g transform="translate(924,124)">
+      <rect width="146" height="40" fill="#120b2c" stroke="#c8a12f" stroke-width="1.4"/>
+      <text x="9" y="17" font-size="12" letter-spacing="1.8" fill="#f0c948">WR 1</text>
+      <text x="9" y="31" font-size="10.5" letter-spacing="1.4" fill="#ece6ff">STRETCH THE FIELD</text>
+    </g>
+    <g transform="translate(924,236)">
+      <rect width="146" height="40" fill="#120b2c" stroke="#c8a12f" stroke-width="1.4"/>
+      <text x="9" y="17" font-size="12" letter-spacing="1.8" fill="#f0c948">WR 2</text>
+      <text x="9" y="31" font-size="10.5" letter-spacing="1.4" fill="#ece6ff">FIND THE WINDOW</text>
+    </g>
+    <g transform="translate(924,344)">
+      <rect width="146" height="40" fill="#120b2c" stroke="#c8a12f" stroke-width="1.4"/>
+      <text x="9" y="17" font-size="12" letter-spacing="1.8" fill="#f0c948">WR 3</text>
+      <text x="9" y="31" font-size="10.5" letter-spacing="1.4" fill="#ece6ff">CREATE OPTIONS</text>
+    </g>
+  </g>
+
+  <!-- ===== ANCHOR PLATE ===== -->
+  <path d="M0,0 L300,0 L300,396 L0,396 Z" fill="url(#studio)"/>
+  <path d="M296,0 L316,0 L302,396 L282,396 Z" fill="#0d0722" opacity=".55"/>
+  <g transform="translate(150,0)">
+    <!-- blazer -->
+    <path d="M-92,396 L-84,300 C-77,254 -44,226 -20,216 L0,238 L20,216
+             C44,226 77,254 84,300 L92,396 Z" fill="#3a2186"/>
+    <path d="M-92,396 L-84,300 C-79,268 -62,244 -44,230 L-34,396 Z" fill="#2b1866"/>
+    <path d="M92,396 L84,300 C79,268 62,244 44,230 L34,396 Z" fill="#472a9e"/>
+    <!-- inner top -->
+    <path d="M-20,216 L0,254 L20,216 L36,232 L24,396 L-24,396 L-36,232 Z" fill="#0e0922"/>
+    <!-- lapels -->
+    <path d="M-20,216 L0,254 L-14,268 L-38,234 Z" fill="#4e2fae"/>
+    <path d="M20,216 L0,254 L14,268 L38,234 Z" fill="#5c39c4"/>
+    <!-- necklace chain -->
+    <path d="M-17,232 C-10,260 10,260 17,232" fill="none" stroke="#c8a12f" stroke-width="2.2"/>
+    <!-- IDENTITY-LOCKED NECKLACE PENDANT -->
+    <use href="#erMark" x="-21" y="248" width="42" height="42"/>
+    <!-- neck -->
+    <path d="M-15,176 L15,176 L17,222 C8,230 -8,230 -17,222 Z" fill="#6e5230"/>
+    <path d="M-15,176 L15,176 L16,196 C6,204 -6,204 -16,196 Z" fill="#5c4326"/>
+    <!-- head, three-quarter toward the right -->
+    <path d="M-38,132 C-38,168 -22,190 2,190 C26,190 41,167 41,131
+             C41,98 26,78 2,78 C-22,78 -38,99 -38,132 Z" fill="#8a6a3e"/>
+    <path d="M2,78 C26,78 41,98 41,131 C41,167 26,190 2,190 Z" fill="#9a7845" opacity=".65"/>
+    <path d="M-38,132 C-38,104 -26,84 -8,79 C-20,92 -26,110 -26,132
+             C-26,158 -18,177 -4,187 C-24,184 -38,164 -38,132 Z" fill="#6b5030"/>
+    <!-- features -->
+    <g fill="#33251a">
+      <path d="M-22,124 C-16,119 -6,119 -1,123 L-1,126 C-7,123 -16,123 -22,127 Z"/>
+      <path d="M12,122 C18,118 27,119 32,124 L32,127 C27,123 18,122 12,125 Z"/>
+      <ellipse cx="-12" cy="137" rx="6.2" ry="3.4"/>
+      <ellipse cx="22" cy="136" rx="6.2" ry="3.4"/>
+    </g>
+    <path d="M2,134 C6,144 9,152 6,158 C3,161 -1,161 -4,159" fill="none"
+          stroke="#6b5030" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M-10,170 C-3,166 8,166 15,169 C9,177 -3,177 -10,170 Z" fill="#6b3f3a"/>
+    <path d="M-10,170 C-3,168 8,168 15,169 C9,172 -3,172 -10,170 Z" fill="#8a544c"/>
+    <!-- rim light, behind the hair mass -->
+    <path d="M62,96 C72,126 70,168 56,202" fill="none" stroke="url(#rim)" stroke-width="9"
+          opacity=".75" stroke-linecap="round"/>
+    <!-- hair -->
+    <path d="M2,34 C46,34 68,68 68,112 C68,156 62,190 50,210 L36,210
+             C48,184 52,152 50,124 C46,96 30,80 2,80 C-26,80 -42,96 -46,124
+             C-48,152 -44,184 -32,210 L-46,210 C-58,190 -64,156 -64,112
+             C-64,68 -42,34 2,34 Z" fill="#1d1330"/>
+    <g fill="#1d1330">
+      <circle cx="2" cy="52" r="15"/><circle cx="-32" cy="64" r="14"/>
+      <circle cx="36" cy="64" r="14"/><circle cx="-54" cy="92" r="14"/>
+      <circle cx="58" cy="92" r="14"/><circle cx="-60" cy="126" r="13"/>
+      <circle cx="64" cy="126" r="13"/><circle cx="-56" cy="160" r="13"/>
+      <circle cx="60" cy="160" r="13"/><circle cx="-46" cy="190" r="12"/>
+      <circle cx="50" cy="190" r="12"/>
+    </g>
+    <g fill="#32224e" opacity=".85">
+      <circle cx="-2" cy="46" r="5.5"/><circle cx="-36" cy="60" r="5"/>
+      <circle cx="-56" cy="120" r="5"/><circle cx="60" cy="88" r="5"/>
+      <circle cx="62" cy="152" r="4.5"/>
+    </g>
+    <!-- gold hoop -->
+    <circle cx="-34" cy="158" r="9" fill="none" stroke="#c8a12f" stroke-width="3"/>
+    <!-- desk -->
+    <rect x="-150" y="338" width="300" height="58" fill="#0b0720"/>
+    <rect x="-150" y="338" width="300" height="3" fill="#c8a12f" opacity=".8"/>
+  </g>
+  <!-- name tag -->
+  <g transform="translate(18,348)" font-family="Oswald,sans-serif">
+    <rect width="212" height="34" fill="#120b2c" stroke="#c8a12f" stroke-width="1.4"/>
+    <rect width="6" height="34" fill="#c8a12f"/>
+    <text x="18" y="22" font-size="15" letter-spacing="3" fill="#ffffff">NEYRA SOL</text>
+    <text x="126" y="22" font-size="10" letter-spacing="1.8" fill="#c8a12f">SPORTS DESK</text>
+  </g>
+</g>
+</svg>
+</div>
+
+<!-- 5 STAT BAR -->
+<div class="stats">
+  <div class="stat"><div class="v ser">41&ndash;23</div><div class="k">THE RESULT</div></div>
+  <div class="stat"><div class="v ser">324</div><div class="k">JACKSON PASSING YARDS</div></div>
+  <div class="stat"><div class="v ser">144 / 3 TD</div><div class="k">HENRY RUSHING</div></div>
+  <div class="stat"><div class="v ser">150</div><div class="k">FLOWERS RECEIVING YARDS BEFORE EXIT</div></div>
+  <div class="stat"><div class="v ser">LANE &mdash; IR</div><div class="k">THE DEPTH CHANGE</div></div>
+  <div class="stat"><div class="v ser">SUN &bull; 1 PM</div><div class="k">THE NEXT TEST</div></div>
+</div>
+
+<!-- 6 ROW A -->
+<div class="rowA">
+  <div class="card">
+    <div class="ch">If Flowers cannot carry the same workload, where do the opportunities go?</div>
+    <div class="cb">
+      <div class="branches">
+        <div class="br a">
+          <div class="t">Flowers available<br>full workload</div>
+          <div class="arw">&darr;</div>
+          <div class="q">Does the Week 1 structure repeat?</div>
+        </div>
+        <div class="br b">
+          <div class="t">Flowers limited</div>
+          <div class="arw">&darr;</div>
+          <div class="q">Which routes and targets are redistributed?</div>
+        </div>
+        <div class="br c">
+          <div class="t">Flowers out</div>
+          <div class="arw">&darr;</div>
+          <div class="q">Who inherits the high-value opportunities?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card bate">
+    <div class="ch dark">Bateman</div>
+    <div class="cb">
+      <div class="big">Week 1 did not answer the Bateman question. Week 2 might.</div>
+      <div class="seq">
+        <b>Inspect:</b> Early target &rarr; Separation &rarr; Throw location &rarr; Catch result &rarr; Next target &rarr; Defensive response
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="path win">
+      <div class="ph"><span class="badge g">&#10003;</span>Path to a Baltimore win</div>
+      <ul>
+        <li>Preserve explosive spacing</li>
+        <li>Avoid drive-killing penalties</li>
+        <li>Maintain run efficiency</li>
+        <li>Redistribute receiver opportunities if Flowers is limited</li>
+        <li>Force New Orleans to defend multiple answers</li>
+      </ul>
+    </div>
+    <div class="path lose">
+      <div class="ph"><span class="badge r">&#10007;</span>Path to a Baltimore failure</div>
+      <ul>
+        <li>Flowers&rsquo; absence collapses explosive receiver production</li>
+        <li>Penalties erase high-value plays</li>
+        <li>Receiver depth fails to replace targets</li>
+        <li>New Orleans compresses the field</li>
+        <li>Baltimore becomes dependent on one offensive answer</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- 6 ROW B -->
+<div class="rowB">
+  <div class="card">
+    <div class="ch">Information Classification</div>
+    <div class="cb">
+      <div class="classes">
+        <div class="cl d">
+          <div class="t"><span class="sq d"></span>Documented</div>
+          <ul><li>Score</li><li>Player statistics</li><li>Injury / roster status</li><li>Game schedule</li></ul>
+        </div>
+        <div class="cl i">
+          <div class="t"><span class="sq i"></span>Inference / Analysis</div>
+          <ul><li>How Baltimore may redistribute receiver opportunities</li><li>Path-to-win and path-to-failure conditions</li></ul>
+        </div>
+        <div class="cl u">
+          <div class="t"><span class="sq u"></span>Unknown</div>
+          <ul><li>Flowers&rsquo; Sunday availability</li><li>Actual target distribution against New Orleans</li><li>Any numerical win probability if not sourced</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch">Source &amp; Rights</div>
+    <div class="cb rights">
+      Original illustration and layout. No copied sports photography.
+      No unlicensed team logos. Editorial analysis. Fair use.
+      <div class="id">ErsatzReality News<br>THY-RAVENS-PAPER-20260917-001 &bull; Sep 17, 2026<br>Chairman preview &mdash; not for publication.</div>
+    </div>
+  </div>
+</div>
+
+<!-- 7 FOOTER STRIP -->
+<div class="strip">
+  <div class="sbox explore">
+    <svg class="mk" width="52" height="52"><use href="#erMark" width="52" height="52"/></svg>
+    <div class="tx">
+      <div class="t">Explore<br>ErsatzReality</div>
+      <div class="s">Books &bull; Shows &bull; Ideas<br>A Deeper Tomorrow</div>
+    </div>
+    <img src="qr.svg" alt="">
+  </div>
+
+  <div class="sbox ad">
+    <svg width="100%" height="100%" viewBox="0 0 560 102" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="dusk" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#3a2470"/><stop offset=".55" stop-color="#6a4a9c"/>
+          <stop offset="1" stop-color="#241542"/>
+        </linearGradient>
+      </defs>
+      <rect width="560" height="102" fill="url(#dusk)"/>
+      <circle cx="452" cy="26" r="38" fill="#f3d98a" opacity=".22"/>
+      <path d="M0,70 L70,52 L140,66 L215,44 L290,62 L360,46 L430,64 L500,50 L560,62 L560,102 L0,102 Z" fill="#1b1036"/>
+      <path d="M0,84 L560,74 L560,102 L0,102 Z" fill="#120a26"/>
+      <g fill="#0b0618">
+        <path d="M118,84 C122,76 126,74 128,68 C131,74 135,76 138,84 Z"/>
+        <path d="M96,84 C100,77 103,75 105,70 C108,75 111,77 114,84 Z"/>
+        <path d="M444,82 C448,74 451,72 453,66 C456,72 460,74 463,82 Z"/>
+      </g>
+      <g fill="#0d0720">
+        <path d="M232,86 C236,78 238,72 242,72 C246,72 248,78 251,86 Z"/>
+        <path d="M252,84 L258,72 L262,74 L263,84 Z"/>
+        <path d="M296,86 C300,78 302,72 306,72 C310,72 312,78 315,86 Z"/>
+        <path d="M316,84 L322,72 L326,74 L327,84 Z"/>
+      </g>
+    </svg>
+    <div class="lives">History lives<br>in new questions.</div>
+    <div class="txt">
+      <div class="ti ser">TWELVE MILES FOR FLOUR</div>
+      <div class="sub">An Uncle Seezin Trail Story</div>
+    </div>
+  </div>
+
+  <div class="sbox higher">
+    <div class="wm ser">ErsatzReality</div>
+    <div class="tag">A Higher View</div>
+    <div class="grid">
+      <span>Education</span><span>Commerce</span><span>Media</span>
+      <span>Technology</span><span>Culture</span><span>Legacy</span>
+    </div>
+    <div class="code">ER-NEWS-001</div>
+  </div>
+</div>
+
+<!-- 8 -->
+<div class="bottom">
+  <div>THY-RAVENS-PAPER-20260917-001 &bull; Sep 17, 2026</div>
+  <div class="mid">Games inform today. Better questions build tomorrow.</div>
+  <div>&copy; 2026 ErsatzReality. All rights reserved.</div>
+</div>
+
+</body>
+</html>
