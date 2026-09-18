@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ErsatzReality News — ER-EDU-LMS-001 wireframe</title>
+<meta name="description" content="Non-public wireframe. No image generated. Not published.">
+<style>
+  :root{
+    --paper:#f2ede2; --ink:#16151a; --ink2:#3a3730; --rule:#c8c0ae;
+    --amber:#b07a24; --unknown:#8a3b2a; --doc:#2f5b3f; --infer:#5a4a86;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    --sans:ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;min-width:0}
+  html,body{margin:0;overflow-x:hidden;max-width:100%}
+  body{background:#1b1a17;color:var(--ink);font-family:var(--serif);
+       padding:24px 16px 72px;-webkit-text-size-adjust:100%}
+
+  /* ---- non-public banner ------------------------------------------- */
+  .flag{max-width:1080px;margin:0 auto 18px;border:1px solid #6b3b2c;background:#2a1b16;
+        color:#e8d6c6;font-family:var(--sans);font-size:12px;line-height:1.55;
+        letter-spacing:.04em;padding:12px 14px;border-radius:3px}
+  .flag b{color:#f0b48a;letter-spacing:.14em}
+
+  /* ---- the page ---------------------------------------------------- */
+  .sheet{position:relative;max-width:1080px;margin:0 auto;background:var(--paper);
+         padding:30px 26px 22px;box-shadow:0 18px 60px rgba(0,0,0,.55)}
+
+  /* VISUAL_LAYER_0 — viewer membrane. Wireframe indication only:
+     a fixed, non-moving plane at ~0.22 relative weight. dB/dt = 0. */
+  .sheet::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.22;
+    background:
+      repeating-linear-gradient(94deg, rgba(0,0,0,.035) 0 1px, rgba(0,0,0,0) 1px 7px),
+      radial-gradient(130% 90% at 22% 8%, rgba(255,255,255,.28), rgba(0,0,0,.05) 70%);
+    mix-blend-mode:multiply}
+  body.nomembrane .sheet::after{display:none}
+
+  .lyr{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;color:var(--amber);
+       border:1px solid var(--rule);border-radius:2px;padding:1px 5px;display:inline-block;
+       margin-bottom:7px;text-transform:none;background:rgba(176,122,36,.07)}
+  body.nolayers .lyr{display:none}
+
+  /* 1 masthead */
+  .mast{border-bottom:3px double var(--ink);padding-bottom:10px}
+  .mast h1{font-size:clamp(26px,6.4vw,54px);margin:0;letter-spacing:-.01em;font-weight:500;
+           line-height:1}
+  .mastrow{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between;
+           font-family:var(--sans);font-size:10.5px;letter-spacing:.18em;
+           text-transform:uppercase;color:var(--ink2);margin-top:9px}
+
+  /* 2-3 headline + deck */
+  .kick{font-family:var(--sans);font-size:11px;letter-spacing:.26em;text-transform:uppercase;
+        color:var(--amber);margin:22px 0 8px}
+  h2.head{font-size:clamp(28px,7vw,60px);line-height:1.02;margin:0 0 14px;font-weight:500;
+          letter-spacing:-.015em}
+  .deck{font-size:clamp(16px,2.6vw,21px);line-height:1.5;color:var(--ink2);margin:0 0 6px;
+        max-width:34em}
+  .byline{font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+          color:var(--ink2);margin:10px 0 0;border-top:1px solid var(--rule);padding-top:8px}
+
+  /* 4 lead plate — RESERVED, nothing generated */
+  .plate{margin:20px 0 6px;border:1px dashed var(--ink2);background:
+         repeating-linear-gradient(45deg,rgba(0,0,0,.028) 0 10px,rgba(0,0,0,0) 10px 20px);
+         min-height:230px;display:flex;align-items:center;justify-content:center;
+         padding:26px 20px;text-align:center}
+  .plate .inner{max-width:46em}
+  .plate .t{font-family:var(--sans);font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+            color:var(--unknown);margin:0 0 10px;font-weight:700}
+  .plate .s{font-family:var(--mono);font-size:11.5px;color:var(--ink2);margin:0 0 10px}
+  .plate .d{font-size:14.5px;line-height:1.55;color:var(--ink2);margin:0}
+
+  /* columns */
+  .cols{display:grid;grid-template-columns:1.55fr 1fr;gap:30px;margin-top:26px;
+        border-top:1px solid var(--rule);padding-top:20px}
+  .cols p{font-size:16px;line-height:1.62;margin:0 0 14px}
+  .drop::first-letter{float:left;font-size:3.05em;line-height:.82;padding:4px 8px 0 0;
+                      color:var(--amber)}
+  h3{font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+     margin:26px 0 9px;color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:5px}
+  .cols section:first-child h3:first-of-type{margin-top:0}
+
+  /* 6 equation block */
+  .eq{border:2px solid var(--ink);padding:16px 16px 6px;margin:4px 0 16px;background:#eee7d8}
+  .eq .f{font-family:var(--mono);font-size:clamp(17px,3.4vw,25px);text-align:center;
+         letter-spacing:.06em;margin:2px 0 14px}
+  .eq table{width:100%;border-collapse:collapse}
+  .eq th,.eq td{text-align:left;vertical-align:top;padding:7px 8px;font-size:13.5px;
+                line-height:1.5;border-top:1px solid var(--rule)}
+  .eq th{font-family:var(--mono);white-space:nowrap;color:var(--amber);width:1%}
+  .eq td.n{font-family:var(--sans);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
+           white-space:nowrap;width:1%;color:var(--ink)}
+  .eq .note{font-size:12.5px;line-height:1.55;color:var(--ink2);margin:12px 0 10px;
+            border-top:1px solid var(--rule);padding-top:10px}
+
+  .test{margin:0 0 6px;padding:0;list-style:none}
+  .test li{border-left:3px solid var(--rule);padding:2px 0 2px 12px;margin:0 0 12px;
+           font-size:14.5px;line-height:1.55}
+  .test b{font-family:var(--mono);color:var(--amber)}
+
+  .warn{border:1px solid var(--unknown);background:rgba(138,59,42,.06);padding:14px;
+        font-size:14px;line-height:1.58;margin:4px 0 16px}
+  .warn b{color:var(--unknown)}
+
+  /* 9 evidence table */
+  table.ev{width:100%;border-collapse:collapse;font-size:12.5px}
+  table.ev th,table.ev td{border-top:1px solid var(--rule);padding:8px 6px;text-align:left;
+                          vertical-align:top;line-height:1.5}
+  table.ev th{font-family:var(--sans);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase}
+  .tag{font-family:var(--sans);font-size:9.5px;letter-spacing:.1em;padding:2px 6px;
+       border-radius:2px;white-space:nowrap;border:1px solid currentColor;display:inline-block}
+  .tag.doc{color:var(--doc)} .tag.inf{color:var(--infer)} .tag.unk{color:var(--unknown);font-weight:700}
+  .tag::before{margin-right:5px;font-weight:700}
+  .tag.doc::before{content:"\25A0"} .tag.inf::before{content:"\25B2"} .tag.unk::before{content:"\25CF"}
+
+  .side{border:1px solid var(--rule);padding:14px;background:#ece5d6;font-size:14px;
+        line-height:1.55}
+  .side p{margin:0 0 11px} .side p:last-child{margin:0}
+  .side em{font-family:var(--sans);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+           font-style:normal;color:var(--amber);display:block;margin-bottom:3px}
+
+  /* 13-14 footnote tier */
+  .foot{margin-top:26px;border-top:3px double var(--ink);padding-top:12px;
+        font-family:var(--sans);font-size:10.5px;line-height:1.7;color:var(--ink2);
+        letter-spacing:.03em}
+  .foot .prov{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;
+              border-top:1px solid var(--rule);padding-top:10px;font-family:var(--mono);
+              font-size:10px;letter-spacing:.02em}
+  .mark{font-family:var(--serif);font-size:13px;letter-spacing:.04em;color:var(--ink);
+        border:1px solid var(--ink);padding:1px 7px;border-radius:2px}
+
+  /* controls */
+  .ctl{max-width:1080px;margin:16px auto 0;font-family:var(--sans);font-size:11.5px;
+       color:#b9b2a4;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+  .ctl button{font:inherit;background:#2a2823;color:#e4ddcd;border:1px solid #514c42;
+              border-radius:3px;padding:6px 11px;cursor:pointer}
+  .ctl button:hover{background:#38352e}
+
+  @media (max-width:760px){
+    .cols{grid-template-columns:1fr;gap:6px}
+    .sheet{padding:22px 16px 18px}
+  }
+  /* Measured 2026-09-18: at a 320px viewport the two-column evidence table
+     overflowed its container by 34px and was CLIPPED (html has overflow-x:hidden,
+     so it did not even scroll). Stack the rows instead of shrinking them. */
+  @media (max-width:430px){
+    table.ev{table-layout:fixed}
+    table.ev tr{display:block;border-top:1px solid var(--rule);padding:8px 0}
+    table.ev th,table.ev td{display:block;border:0;padding:0 0 5px;width:auto}
+    table.ev tr:first-child{display:none}
+    .tag{white-space:normal}
+    .eq th,.eq td,.eq td.n{white-space:normal;width:auto}
+  }
+  @media print{
+    body{background:#fff;padding:0}
+    .flag,.ctl{display:none}
+    .sheet{box-shadow:none;max-width:none;padding:0}
+    .sheet::after{display:none}   /* membrane is not printed as ink */
+    .lyr{display:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="flag">
+  <b>NON-PUBLIC WIREFRAME</b> &nbsp;·&nbsp; <code>VPR-WIRE-20260918-001</code><br>
+  Edition <code>ER-EDU-LMS-001</code> · program <code>ER-NEWS-001</code> · state <b>DRAFT</b> · release <b>BLOCKED</b>.<br>
+  <b>NO IMAGE HAS BEEN GENERATED.</b> The lead plate is a reserved slot carrying its brief.
+  Nothing here is published, scheduled, or customer-facing. VPR score: <b>R = 0</b> — see
+  <code>docs/VPR-VISUAL-SYSTEM-001.md</code> §1.3.
+</div>
+
+<div class="sheet">
+
+  <!-- 1 -->
+  <div class="mast">
+    <span class="lyr">VISUAL_LAYER_2 · NAVIGATION</span>
+    <h1>ErsatzReality News</h1>
+    <div class="mastrow">
+      <span>Earth, reported from the EdereAriah desk</span>
+      <span>No. 5 · 18 September 2026</span>
+      <span>ER-EDU-LMS-001</span>
+    </div>
+  </div>
+
+  <!-- 2, 3 -->
+  <p class="kick">Education · Measurement</p>
+  <span class="lyr">VISUAL_LAYER_3 · EDITORIAL</span>
+  <h2 class="head">The math test that started before the numbers</h2>
+  <p class="deck">A child who cannot read the question has not yet been asked one. We built a
+    three-part gauge to say what a wrong answer actually proves — and, more often, what it does not.</p>
+  <p class="byline">Neyra Sol · ErsatzReality News desk</p>
+
+  <!-- 4 -->
+  <span class="lyr" style="margin-top:18px">VISUAL_LAYER_5 + VISUAL_LAYER_6 · SUBJECT + WORLD DEPTH</span>
+  <div class="plate"><div class="inner">
+    <p class="t">Lead plate — reserved, not generated</p>
+    <p class="s">VPR-PLATE-20260918-001 · unbound · no file, no hash</p>
+    <p class="d">An examination paper on a worn wooden desk, low oblique, lit from one high side
+      window. The question's wording is dense and mostly unreadable; three words stay sharp —
+      <em>approximately</em>, <em>remaining</em>, <em>at this rate</em>. A child's hand rests at the
+      frame's edge, pencil down. <strong>No face. No numbers legible anywhere.</strong> The
+      mathematics is present and unreachable — that is the plate's whole job.</p>
+    <p class="s" style="margin-top:12px">Generation requires explicit current-turn Chairman
+      direction (<code>THY-IMAGE-GENERATION-CHAIRMAN-EXPLICIT-001</code>). This brief is
+      <strong>not</strong> authority.</p>
+  </div></div>
+
+  <div class="cols">
+    <section>
+      <!-- 5 -->
+      <h3>The scene</h3>
+      <p class="drop">The paper said <em>twelve</em>. The paper said <em>miles</em>. The paper said
+        <em>flour</em>. It also said <em>approximately</em>, <em>remaining</em>, and
+        <em>at this rate</em>, and by the third of those the boy had stopped reading and started
+        guessing.</p>
+      <p>He got it wrong. The mark went in the book as a mark about arithmetic.</p>
+      <p>It was not a mark about arithmetic. Nobody in the room had established that he could not
+        divide. What had been established was that he could not get to the division.</p>
+
+      <!-- 6 -->
+      <h3>The gauge</h3>
+      <span class="lyr">VISUAL_LAYER_4 · EVIDENCE</span>
+      <div class="eq">
+        <div class="f">P_solve = L &times; M &times; S</div>
+        <table>
+          <tr><th>L</th><td class="n">Language access</td>
+              <td>Can the learner read and parse the words the problem is written in — including the
+                  connective words that carry the logic?</td></tr>
+          <tr><th>M</th><td class="n">Mathematical operation</td>
+              <td>Can the learner carry out the arithmetic or procedure the problem requires, once
+                  it is known?</td></tr>
+          <tr><th>S</th><td class="n">Situation model</td>
+              <td>Can the learner map the words onto a structure — who has what, what is changing,
+                  what is being asked for?</td></tr>
+        </table>
+        <p class="note">Each term is scored <strong>0 or 1</strong> for a single problem.
+          <code>P_solve</code> is therefore <strong>1 only when all three hold</strong>. Any one at
+          zero makes the product zero.</p>
+      </div>
+
+      <!-- 7 -->
+      <h3>Three failures that look identical</h3>
+      <ul class="test">
+        <li><b>L = 0 — the question did not arrive.</b> The words blocked access. The learner may or
+          may not be able to do the mathematics; <em>this problem cannot tell you</em>.</li>
+        <li><b>S = 0 — the question arrived and did not resolve.</b> Every word was read and could
+          not be assembled into a situation. A modelling failure — not reading, not arithmetic.</li>
+        <li><b>M = 0 — the question arrived, resolved, and the procedure failed.</b> The only one of
+          the three that is evidence about mathematics.</li>
+      </ul>
+
+      <!-- 8 -->
+      <h3>What a zero does not prove</h3>
+      <div class="warn">
+        <p style="margin:0 0 10px"><b>P_solve = 0 names a blocked path. It does not name the cause.</b></p>
+        <p style="margin:0 0 10px">When <b>L = 0</b>, <code>M</code> and <code>S</code> are
+          <b>UNASSESSED</b> — not zero, not low, not proven. The problem never reached them.
+          Recording them as failures manufactures a deficiency out of a measurement gap.</p>
+        <p style="margin:0 0 10px">The symmetric error is as bad: when <b>L = 0</b>, competence is
+          not proven either. A learner who cannot read the question has not demonstrated that they
+          <em>could</em> have answered it.</p>
+        <p style="margin:0"><b>Do not infer either competence or deficiency without testing the
+          relevant layer.</b> Test <code>M</code> with the same operation stated in numbers alone.
+          Test <code>S</code> with the same situation stated in the learner's strongest language.
+          Only then is there evidence.</p>
+      </div>
+
+      <!-- 10 -->
+      <h3>What would change the conclusion</h3>
+      <p>If the same learner, given the same operation stripped of prose, completes it — the
+        original mark was never about mathematics, and every record derived from it is wrong.</p>
+      <p>If the learner fails the stripped version too, <code>M = 0</code> is established, and the
+        language question remains separately open rather than answered.</p>
+    </section>
+
+    <aside>
+      <!-- 9 -->
+      <h3>Evidence</h3>
+      <span class="lyr">VISUAL_LAYER_4 · EVIDENCE</span>
+      <table class="ev">
+        <tr><th>Claim</th><th>Class</th></tr>
+        <tr><td><code>P_solve = L × M × S</code> is a THYLORA-defined gauge, not an established
+          external instrument.</td><td><span class="tag doc">DOCUMENTED</span></td></tr>
+        <tr><td>A zero product does not identify which factor caused it.</td>
+            <td><span class="tag doc">DOCUMENTED</span></td></tr>
+        <tr><td>Word-problem performance is affected by reading comprehension independently of
+          arithmetic ability.</td><td><span class="tag unk">UNKNOWN</span></td></tr>
+        <tr><td>Assessments commonly record word-problem errors as mathematics errors without
+          separating language access.</td><td><span class="tag unk">UNKNOWN</span></td></tr>
+        <tr><td>The opening scene is illustrative, not a reported incident.</td>
+            <td><span class="tag doc">DOCUMENTED</span></td></tr>
+        <tr><td>"Twelve miles for flour" is an EdereAriah trail story, not an Earth event.</td>
+            <td><span class="tag doc">DOCUMENTED</span></td></tr>
+      </table>
+      <p style="font-size:12.5px;line-height:1.55;margin:12px 0 0;color:var(--ink2)">
+        <strong>The two UNKNOWN rows are the release blocker.</strong> They are the two sentences a
+        reader would most expect a newspaper to have checked, and they are exactly the two this
+        session did not check. They are recorded <code>UNCHECKED</code> in the claim ledger.</p>
+
+      <!-- 11 -->
+      <h3>One action each</h3>
+      <div class="side">
+        <p><em>For the teacher</em>Before recording a wrong answer on a word problem, re-ask the
+          operation with no prose. One minute. It changes what the mark means.</p>
+        <p><em>For the parent</em>Ask your child to tell you what the question <em>wanted</em>, not
+          what the answer was. If they cannot say what it wanted, the arithmetic was never the
+          obstacle.</p>
+      </div>
+
+      <!-- 12 -->
+      <h3>Where this sits</h3>
+      <p style="font-size:14px;line-height:1.55;margin:0">ErsatzReality News reports Earth from the
+        EdereAriah desk. The trail story that gives this edition its opening line — twelve miles,
+        flour, a rate — is an EdereAriah story. The measurement problem it illustrates is an Earth
+        one. <strong>The two are kept visibly separate on this page and in every record behind
+        it.</strong></p>
+    </aside>
+  </div>
+
+  <!-- 13, 14 -->
+  <div class="foot">
+    <span class="lyr">VISUAL_LAYER_4 · SOURCES &nbsp; + &nbsp; VISUAL_LAYER_1 · PROVENANCE</span>
+    <div><strong>SOURCES &amp; OPEN QUESTIONS.</strong> Two claims on this front are unsourced and
+      are printed tagged UNKNOWN rather than asserted. Open: does stripping prose from a failed word
+      problem change the outcome at a rate large enough to matter? No study is cited here because
+      none was verified here. <strong>CORRECTIONS.</strong> None. This edition has not been
+      published.</div>
+    <div class="prov">
+      <span class="mark">Vyc2st</span>
+      <span>SERIAL ER-EDU-LMS-001</span>
+      <span>WIREFRAME VPR-WIRE-20260918-001</span>
+      <span>VERSION 1</span>
+      <span>SHA-256 &mdash; NOT YET COMPUTED (no final plate)</span>
+      <span>RIGHTS ORIGINAL LAYOUT AND TEXT ONLY</span>
+      <span>CORRECTION STATE NONE</span>
+      <span>RELEASE BLOCKED</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="ctl">
+  <button id="b1">Toggle VISUAL_LAYER_0 membrane</button>
+  <button id="b2">Toggle stratum labels</button>
+  <span id="st">membrane on · labels on</span>
+</div>
+
+<script>
+  var b=document.body,st=document.getElementById('st');
+  function sync(){st.textContent=(b.classList.contains('nomembrane')?'membrane off':'membrane on')
+    +' · '+(b.classList.contains('nolayers')?'labels off':'labels on');}
+  document.getElementById('b1').onclick=function(){b.classList.toggle('nomembrane');sync();};
+  document.getElementById('b2').onclick=function(){b.classList.toggle('nolayers');sync();};
+</script>
+</body>
+</html>
