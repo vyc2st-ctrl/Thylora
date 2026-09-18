@@ -22,7 +22,7 @@
 | Factor | State | Basis |
 |---|---|---|
 | **C** | **1** | `content_integrity_state = CONTENT_STABLE`. Full copy, evidence table, equations and record entry all authored. |
-| **A** | **1 (as specified)** | `audio_state = VOICE_SUPPORTED`. Mara's script is written and timed at roughly 55 seconds. **No audio file exists**, so this is 1 for the plan, not for a delivered asset. |
+| **A** | **1 (as specified)** | `audio_state = VOICE_SUPPORTED`. Denise's script is written and timed at roughly 55 seconds. **No audio file exists**, so this is 1 for the plan, not for a delivered asset. |
 | **P** | **1** | Transmission id, article code, place entity, correspondent id, household id, blocker term code and Vyc2st mark all bound. |
 | **S** | **1** | `STILL_PLUS_VOICE` is the highest stable mode. `MOVING_IMAGE_NOT_STABLE_ENOUGH_FOR_RELEASE`. |
 
@@ -41,7 +41,7 @@ not invent an in-world storm, interference or equipment failure.** That restrain
 ```
 TRANSMISSION RECEIVED                        ER-TX-EDU-LMS-001 · ErsatzReality News
 SOURCE      Bell Crossing, EdereAriah        DESK        Family & Learning
-CORRESPONDENT  Mara Quill                    CHANNEL     Still + voice
+CORRESPONDENT  Denise Carter                    CHANNEL     Still + voice
 TIME-REGION    Modern                        RECORD      ER-EDU-LMS-001
 
 [ text ▮ ] [ still ▮ ] [ voice ▮ ] [ motion ▯ ]
@@ -67,7 +67,7 @@ empty. The one design gesture is that *motion* is the only empty bar, and it sit
 | 1 | 1 | 1 | 1 | 1 | 1 | **1 — COMPLETE** |
 
 **O** resolved: EdereAriah · Bell Crossing · Rowan household · Modern.
-**W** resolved: Mara Quill, named, with her sourcing separated.
+**W** resolved: Denise Carter, named, with her sourcing separated.
 Last edition scored **0** on exactly these two. **They were the whole gap, and they are closed.**
 
 ---
@@ -96,12 +96,12 @@ the conclusion without touching a single operation.
 | Class | Meaning | Count |
 |---|---|---|
 | **DOCUMENTED** | On the record, checkable. | 3 |
-| **MARA_OBSERVED** | Mara saw it herself. | 1 |
+| **DENISE_OBSERVED** | Denise saw it herself. | 1 |
 | **REPORTED_BY_HOUSEHOLD** | Talia or Maren told her; she did not see it. | 2 |
 | **INFERENCE** | Her reading, labelled as hers. | 0 — none needed |
 | **UNKNOWN** | Not established. | 2 |
 
-**Mara was not at the table.** She came the following day, read the sheet herself, and was told the
+**Denise was not at the table.** She came the following day, read the sheet herself, and was told the
 rest. That distinction is the reason the classes exist, and it is marked on the surface rather than
 smoothed over.
 
@@ -148,7 +148,7 @@ sheet failed to notice she was using.
 | A tutor separates the language check from the maths check in one session | PROPOSED |
 | Ask Bell Crossing schools whether their marks distinguish the two | PROPOSED |
 | Community discussion at settlement level | PROPOSED |
-| Follow-up: does stripping the words change the outcome, and how often? | PROPOSED — assigned to Mara |
+| Follow-up: does stripping the words change the outcome, and how often? | PROPOSED — assigned to Denise |
 
 **One row is IMPLEMENTED and it is the registry write, made today.** No school, tutor or institution
 has adopted anything, and none is claimed to have.
@@ -192,16 +192,16 @@ Written and **held**. `date_entered = HELD — pending approved transmission`.
 | Article | `ER-EDU-LMS-001` |
 | Source place | Bell Crossing · `ER-PLACE-BELL-CROSSING-001` |
 | Time-region | Modern |
-| Reporter | Mara Quill · `PRE_DEBUT_DESIGN` |
+| Reporter | Denise Carter · `PRE_DEBUT_DESIGN` |
 | Household | Rowan · `ER-HH-HOMEWORK-001` |
 | People | Talia Rowan · Maren Rowan · both `PRE_DEBUT_DESIGN` |
 | Question | Language access versus mathematics |
 | Blocker phrase | "every other day" · `LB-T-EVERY-OTHER` |
 | System file | UE registry: 1 term, 3 senses, 1 sentence case — **WRITTEN** |
-| Follow-up | OPEN, assigned to Mara Quill |
+| Follow-up | OPEN, assigned to Denise Carter |
 | Public debut — Talia | **NOT ACTIVATED** |
 | Public debut — Maren | **NOT ACTIVATED** |
-| Public debut — Mara | **NOT ACTIVATED** |
+| Public debut — Denise | **NOT ACTIVATED** |
 
 **Activation occurs only after the Chairman approves the actual public transmission**, and it is
 atomic: debut timestamp, debut asset id and hash, appearance lock, home state, work state,
@@ -225,3 +225,31 @@ match them.
 plate is now complete: `N_job = 1`, `Q_tx = 1`, the cast is bound, the room is unblocked, and the
 registry write is done. The plate is the only thing between this transmission and a Chairman
 approval decision — and it is the one step no amount of further work here can take.
+
+
+---
+
+## R. Correction — the reporter changed while this was being built
+
+**Sequence 484 (14:26) and 485 (15:35) replaced Mara Quill with Denise Carter**, and both landed
+after my handshake read at head 483. The post-work watchdog caught it when my custody write returned
+sequence **486** instead of 484 — the gap was the signal.
+
+| | Was | Now |
+|---|---|---|
+| Reporter | Mara Quill, 37 | **Denise Carter, 41** |
+| Appearance | — | medium-brown complexion, dark brown shoulder-length curls, right-handed |
+| Relationships | none registered | **longtime friend of Maren Rowan** · professional contact of Nora Bell |
+| Mara Quill | selected | returned to `WORKING_UNASSIGNED`, history preserved |
+
+**The change improves the story, and not cosmetically.** §7 asked me to define how the reporter
+learned of the incident. With Mara I had to *propose* an answer — "a neighbour first, a correspondent
+second." With Denise the answer is **already canon**: she is Maren's longtime friend, so she heard it
+over tea rather than chasing a tip, and that is exactly why she was let near the sheet. The voice
+script now opens on that relationship instead of on an assertion I invented.
+
+`THY-NAMING-SOCIAL-GRAPH-001` (LOCKED) states the rule this enforces: *"No new person enters a public
+scene as an isolated node."* Mara was an isolated node. Denise is not.
+
+**What I did not do:** I did not rewrite Mara out of history. She returns to `WORKING_UNASSIGNED`
+with her record intact, per 484.
