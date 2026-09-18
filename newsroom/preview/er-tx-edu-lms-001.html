@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ER-TX-EDU-LMS-001 — Bell Crossing transmission</title>
+<meta name="description" content="EdereAriah-to-Earth transmission. Still plus voice. Wireframe, nothing generated, nothing published.">
+<style>
+  :root{
+    --ground:#100e0c; --plate:#e9e2d3; --ink:#181612; --ink2:#463f38; --faint:#7b7367;
+    --rule:#c2b8a4; --amber:#a06c16; --alert:#8c3320; --doc:#2b5439; --unk:#8c3320;
+    --obs:#3c5a86; --rep:#6a4a86;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    --sans:ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;min-width:0}
+  html,body{margin:0;overflow-x:hidden;max-width:100%}
+  body{background:var(--ground);color:var(--ink);font-family:var(--serif);padding:20px 14px 70px}
+  .flag{max-width:1000px;margin:0 auto 15px;border:1px solid #6a3a2a;background:#271812;color:#ead9c9;
+        font-family:var(--sans);font-size:12px;line-height:1.55;padding:11px 13px;border-radius:2px}
+  .flag b{color:#f0b184;letter-spacing:.1em}
+
+  .sheet{position:relative;max-width:1000px;margin:0 auto;background:var(--plate);
+         box-shadow:0 16px 54px rgba(0,0,0,.6)}
+  .sheet::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.22;mix-blend-mode:multiply;
+    background:repeating-linear-gradient(93deg,rgba(0,0,0,.03) 0 1px,rgba(0,0,0,0) 1px 8px),
+               radial-gradient(120% 80% at 16% 5%,rgba(255,255,255,.3),rgba(0,0,0,.05) 72%)}
+  body.nomem .sheet::after{display:none}
+  .z{font-family:var(--mono);font-size:9px;letter-spacing:.09em;color:var(--amber);
+     border:1px solid var(--rule);padding:1px 5px;display:inline-block;margin:0 0 8px;border-radius:2px}
+  body.nozone .z{display:none}
+
+  /* ZONE 0 — TRANSMISSION OPEN. Ledger plate, not a sci-fi HUD. */
+  .tx{background:#17140f;color:#e9e2d3;padding:17px 20px 15px;border-bottom:3px solid var(--amber)}
+  .txhead{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;justify-content:space-between;
+          border-bottom:1px solid rgba(233,226,211,.22);padding-bottom:10px;margin-bottom:12px}
+  .txhead .t{font-family:var(--sans);font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--amber)}
+  .txhead .s{font-family:var(--mono);font-size:10.5px;color:#9b9284;letter-spacing:.04em}
+  .txgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:11px 22px;margin:0}
+  .txgrid div{border-top:1px solid rgba(233,226,211,.16);padding-top:6px}
+  .txgrid dt{font-family:var(--sans);font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:#918879;margin:0 0 3px}
+  .txgrid dd{margin:0;font-size:14.5px;line-height:1.3}
+  .warnline{margin:13px 0 0;border-top:1px solid rgba(233,226,211,.22);padding-top:11px;
+            display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
+  .bar{width:74px}
+  .bar div{height:6px;margin-bottom:3px;font-size:0}
+  .bar .on{background:var(--amber)} .bar .off{background:#3a342b}
+  .warnline p{margin:0;font-family:var(--sans);font-size:12.5px;line-height:1.6;color:#e5c1a4}
+  .warnline b{color:#f0b184}
+
+  .wrap{padding:0 20px}
+  .body{display:grid;grid-template-columns:1.6fr .95fr;gap:0 32px;align-items:start;margin-top:22px}
+  .aside{position:relative;top:30px}
+
+  .orient{display:flex;flex-wrap:wrap;gap:4px 14px;font-family:var(--sans);font-size:10px;
+          letter-spacing:.17em;text-transform:uppercase;color:var(--ink2);
+          border-bottom:1px solid var(--rule);padding:0 0 9px;margin:20px 0 0}
+  .orient b{color:var(--amber);font-weight:700}
+
+  .core{font-size:clamp(21px,3.5vw,33px);line-height:1.16;margin:16px 0 0;font-weight:500;max-width:18em}
+  h3{font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+     margin:28px 0 9px;border-bottom:1px solid var(--rule);padding-bottom:5px}
+  p{font-size:15.5px;line-height:1.63;margin:0 0 13px}
+
+  /* voice */
+  .voice{border-left:3px solid var(--amber);padding:2px 0 2px 16px;margin:6px 0 0}
+  .voice p{font-size:16px;line-height:1.62;margin:0 0 13px}
+  .voice .cue{font-family:var(--mono);font-size:10px;color:var(--faint);letter-spacing:.05em;
+              display:block;margin:0 0 9px}
+
+  .beats{list-style:none;margin:0;padding:0}
+  .beats li{display:grid;grid-template-columns:8em 1fr;gap:14px;padding:9px 0;border-top:1px solid var(--rule);
+            font-size:14.5px;line-height:1.55}
+  .beats b{font-family:var(--sans);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--amber);padding-top:3px}
+
+  .und{border:2px solid var(--ink);background:#dfd6c3;padding:15px 15px 5px;margin:6px 0 0}
+  .und .f{font-family:var(--mono);font-size:clamp(16px,3vw,22px);text-align:center;margin:2px 0 13px;letter-spacing:.05em}
+  .und table{width:100%;border-collapse:collapse}
+  .und th,.und td{text-align:left;vertical-align:top;padding:7px;font-size:13.5px;line-height:1.5;border-top:1px solid var(--rule)}
+  .und th{font-family:var(--mono);color:var(--amber);white-space:nowrap;width:1%}
+  .und .rule{font-size:12.5px;color:var(--ink2);border-top:1px solid var(--rule);padding:10px 0 11px;margin-top:11px;line-height:1.55}
+
+  .win{border:1px solid var(--ink);background:#ded5c1;padding:14px;box-shadow:inset 0 0 0 4px var(--plate)}
+  .win h3{margin-top:0}
+  .ev{width:100%;border-collapse:collapse;font-size:12.5px}
+  .ev td{border-top:1px solid var(--rule);padding:8px 4px;vertical-align:top;line-height:1.5}
+  .tag{font-family:var(--sans);font-size:8.5px;letter-spacing:.07em;border:1px solid currentColor;
+       padding:1px 5px;border-radius:2px;display:inline-block;white-space:nowrap}
+  .tag.d{color:var(--doc)} .tag.u{color:var(--unk);font-weight:700}
+  .tag.o{color:var(--obs)} .tag.r{color:var(--rep)}
+  .tag.d::before{content:"\25A0 "} .tag.u::before{content:"\25CF "}
+  .tag.o::before{content:"\25C6 "} .tag.r::before{content:"\25B2 "}
+
+  .chg{list-style:none;margin:0;padding:0}
+  .chg li{display:grid;grid-template-columns:1fr 7.4em;gap:10px;border-top:1px solid var(--rule);
+          padding:9px 0;font-size:14px;line-height:1.5;align-items:start}
+  .cls{font-family:var(--sans);font-size:8.5px;letter-spacing:.09em;text-align:right;color:var(--faint)}
+  .cls.p{color:var(--amber)} .cls.i{color:var(--doc);font-weight:700}
+
+  .q{border-left:3px solid var(--amber);padding:3px 0 3px 15px;font-size:17px;line-height:1.5;margin:22px 0 0;max-width:30em}
+
+  .njob{margin:22px 20px 0;border:1px solid var(--doc);padding:13px 15px;background:rgba(43,84,57,.05)}
+  .njob .f{font-family:var(--mono);font-size:15px;margin:0 0 9px}
+  .njob table{width:100%;border-collapse:collapse;font-size:12.5px}
+  .njob td{border-top:1px solid var(--rule);padding:6px 4px;line-height:1.5}
+  .njob .v{font-family:var(--mono);width:1%;white-space:nowrap;padding-right:12px;color:var(--doc);font-weight:700}
+
+  .mem{margin:24px 20px 0;border:1px solid var(--ink);background:#17140f;color:#ded5c2;padding:15px 17px}
+  .mem h3{color:#cfc4ae;border-color:rgba(222,213,194,.28);margin-top:0}
+  .memgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(198px,1fr));gap:9px 22px;
+           font-family:var(--mono);font-size:11px;line-height:1.55}
+  .memgrid div{border-top:1px solid rgba(222,213,194,.16);padding-top:6px}
+  .memgrid span{display:block;color:#8d8577;font-size:8.5px;letter-spacing:.16em;font-family:var(--sans);
+                text-transform:uppercase;margin-bottom:3px}
+  .gate{margin:13px 0 0;border-top:1px solid rgba(222,213,194,.28);padding-top:11px;
+        font-family:var(--sans);font-size:12px;line-height:1.6;color:#e5a682}
+
+  .plate-slot{margin:18px 0 0;border:1px dashed var(--ink2);padding:22px 18px;text-align:center;
+     background:repeating-linear-gradient(45deg,rgba(0,0,0,.026) 0 10px,rgba(0,0,0,0) 10px 20px)}
+  .plate-slot .t{font-family:var(--sans);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+                 color:var(--alert);font-weight:700;margin:0 0 9px}
+  .plate-slot .s{font-family:var(--mono);font-size:11px;color:var(--ink2);margin:0 0 9px}
+  .plate-slot .d{font-size:14px;line-height:1.55;color:var(--ink2);margin:0;max-width:44em;
+                 margin-left:auto;margin-right:auto}
+
+  .ctl{max-width:1000px;margin:15px auto 0;font-family:var(--sans);font-size:11.5px;color:#a79f91;
+       display:flex;flex-wrap:wrap;gap:9px 16px;align-items:center}
+  .ctl button{font:inherit;background:#26221c;color:#e0d8c7;border:1px solid #4a443a;border-radius:3px;padding:6px 11px;cursor:pointer}
+
+  @media (max-width:820px){ .body{grid-template-columns:1fr} .aside{top:0;margin-top:26px} }
+  @media (max-width:440px){
+    .beats li,.chg li{grid-template-columns:1fr;gap:3px}
+    .cls{text-align:left}
+    .und tr{display:block;border-top:1px solid var(--rule);padding:8px 0}
+    .und th,.und td{display:block;width:auto;white-space:normal;border:0;padding:0 0 5px}
+    .wrap{padding:0 14px} .mem,.njob{margin-left:14px;margin-right:14px}
+  }
+  @media print{ body{background:#fff;padding:0} .flag,.ctl{display:none} .sheet{box-shadow:none} .sheet::after{display:none} .z{display:none} }
+</style>
+</head>
+<body>
+
+<div class="flag">
+  <b>WIREFRAME — NOT PUBLISHED, NOT ACTIVATED</b> · <code>VPR-WIRE-20260918-003</code> ·
+  transmission <code>ER-TX-EDU-LMS-001</code> · edition <code>ER-EDU-LMS-001</code><br>
+  Talia Rowan, Maren Rowan and Mara Quill all remain <b>PRE_DEBUT_DESIGN</b>. The plate is a reserved
+  slot; <b>no image generated</b>. <b>N_job = 1</b> — Orientation and Witness are now resolved.
+</div>
+
+<div class="sheet">
+
+  <!-- ZONE 0 -->
+  <div class="tx">
+    <span class="z">ZONE 0 · TRANSMISSION OPEN</span>
+    <div class="txhead">
+      <span class="t">Transmission received</span>
+      <span class="s">ER-TX-EDU-LMS-001 · ErsatzReality News</span>
+    </div>
+    <dl class="txgrid">
+      <div><dt>Source</dt><dd>Bell Crossing, EdereAriah</dd></div>
+      <div><dt>Desk</dt><dd>Family &amp; Learning</dd></div>
+      <div><dt>Correspondent</dt><dd>Mara Quill</dd></div>
+      <div><dt>Channel</dt><dd>Still + voice</dd></div>
+      <div><dt>Time-region</dt><dd>Modern</dd></div>
+      <div><dt>Record</dt><dd>ER-EDU-LMS-001</dd></div>
+    </dl>
+    <div class="warnline">
+      <div class="bar">
+        <div class="on">text</div><div class="on">still</div><div class="on">voice</div><div class="off">motion</div>
+      </div>
+      <p><b>Moving image: below release stability.</b> Moving-image transmission is not stable enough
+        yet. This edition is carrying a fixed plate and voice so the story arrives intact.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="orient">
+      <span><b>EdereAriah</b></span><span>Bell Crossing</span><span>Rowan household</span>
+      <span>Mara Quill</span><span>Local family &amp; learning desk</span><span>Modern</span>
+    </div>
+
+    <div class="body">
+      <section>
+        <!-- CORE -->
+        <span class="z" style="margin-top:16px">ZONE 1 · LOCAL STORY CORE</span>
+        <p class="core">A Bell Crossing girl was marked wrong on a sum she could do.</p>
+
+        <!-- VOICE -->
+        <h3>Mara Quill reports</h3>
+        <span class="z">ZONE 2 · CORRESPONDENT VOICE · STILL + VOICE</span>
+        <div class="voice">
+          <span class="cue">[VOICE — measured, unhurried. Room tone: a kitchen, evening.]</span>
+          <p>This looked like a maths problem. It wasn’t that simple.</p>
+          <p>Talia Rowan is ten. She lives four streets from the mill road with her grandmother, Maren,
+            who clerks the municipal records here. Last week Talia brought home a sheet of six
+            questions and got five of them right.</p>
+          <p>The sixth was about flour — how much a store room holds when some comes in and some goes
+            out. She got it wrong. It went in the book as a maths mark.</p>
+          <p>I’ve read the sheet. The arithmetic on it is correct. What she missed was three words:
+            <em>every other day</em>.</p>
+          <p>In Bell Crossing we say <em>every other</em> to mean the rest of them — every other child
+            in the row, every other house on the street. On that sheet it meant every second day.
+            Nothing on the page said which.</p>
+          <p>Read the way Talia read it, the flour goes up. Read the way the question meant it, the
+            flour goes down. Same sums. Opposite answers. And the thing that decided it had no numbers
+            in it at all.</p>
+          <p>Maren told me she nearly marked it wrong herself. Then she stopped and asked what the
+            sentence meant instead of what the answer was.</p>
+          <p class="cue" style="margin-top:14px">[END VOICE — approx. 55 seconds at reporting pace.]</p>
+        </div>
+
+        <!-- HUMAN THREAD -->
+        <h3>What happened at the table</h3>
+        <span class="z">ZONE 3 · HUMAN THREAD</span>
+        <ul class="beats">
+          <li><b>The sheet</b><span>Six questions on rates and stores. Five completed correctly.</span></li>
+          <li><b>The phrase</b><span>“every other day.”</span></li>
+          <li><b>Talia read</b><span>Every day. The way it is said here.</span></li>
+          <li><b>She stopped</b><span>She did not ask for help. The pencil went down and stayed down.</span></li>
+          <li><b>Maren believed</b><span>That Talia had not tried the last one.</span></li>
+          <li><b>What changed</b><span>Maren asked what the sentence meant, not what the answer was. Talia said “every day” — and they both heard it.</span></li>
+        </ul>
+
+        <!-- UNDERSTANDING -->
+        <h3>What the sheet could not measure</h3>
+        <span class="z">ZONE 4 · UNDERSTANDING BLOCK</span>
+        <div class="und">
+          <div class="f">P_solve = L &times; M &times; S</div>
+          <table>
+            <tr><th>L</th><td>Do I understand the sentence?</td></tr>
+            <tr><th>M</th><td>Do I understand the mathematical relationship?</td></tr>
+            <tr><th>S</th><td>Can I carry out the solution?</td></tr>
+          </table>
+          <p class="rule"><strong>If L = 0, this item cannot yet tell us whether Talia understands the
+            mathematics.</strong> Clarify the language. Then test the mathematical understanding
+            separately.</p>
+        </div>
+        <p style="margin-top:14px"><strong>Three loads or six.</strong> Read correctly — three loads,
+          8 sacks each, 24 in; six days at 5 sacks, 30 out; the store room is <strong>down by
+          six</strong>. Read as every day — 48 in against 30 out, and it appears to be
+          <strong>up by eighteen</strong>. The multiplication and the subtraction are performed
+          correctly either way.</p>
+
+        <!-- WHAT CHANGES -->
+        <h3>What changes here</h3>
+        <span class="z">ZONE 5 · LOCAL CONSEQUENCE</span>
+        <ul class="chg">
+          <li><span>“every other” entered in the Understanding Engine language-blocker registry, with three senses and the discriminator that separates them.</span><span class="cls i">IMPLEMENTED</span></li>
+          <li><span>Re-ask the operation with the words stripped out before recording a wrong answer.</span><span class="cls p">PROPOSED</span></li>
+          <li><span>A tutor separates the language check from the maths check in one session.</span><span class="cls p">PROPOSED</span></li>
+          <li><span>Ask Bell Crossing schools whether their marks distinguish the two.</span><span class="cls p">PROPOSED</span></li>
+          <li><span>Community discussion at the settlement level.</span><span class="cls p">PROPOSED</span></li>
+          <li><span>Follow-up: does stripping the words change the outcome, and how often?</span><span class="cls p">PROPOSED</span></li>
+        </ul>
+        <p style="font-size:12.5px;color:var(--ink2);margin-top:11px">One row reads IMPLEMENTED and it
+          is the registry entry, which was written into the Understanding Engine today. <strong>No
+          school, tutor or institution has adopted anything.</strong></p>
+
+        <span class="z" style="margin-top:22px">ZONE 6 · NEXT QUESTION</span>
+        <p class="q">How much of what Bell Crossing records about its children’s mathematics is
+          actually a record of their reading?</p>
+      </section>
+
+      <aside class="aside">
+        <div class="win">
+          <span class="z">ZONE 7 · EVIDENCE WINDOW</span>
+          <h3>How Mara knows</h3>
+          <table class="ev">
+            <tr><td>The sheet exists and five of six answers are correct.</td><td><span class="tag o">MARA OBSERVED</span></td></tr>
+            <tr><td>The misreading reverses the result: 24 against 30 versus 48 against 30.</td><td><span class="tag d">DOCUMENTED</span></td></tr>
+            <tr><td>Talia read the phrase as “every day”.</td><td><span class="tag r">REPORTED BY HOUSEHOLD</span></td></tr>
+            <tr><td>Maren nearly marked it wrong before stopping.</td><td><span class="tag r">REPORTED BY HOUSEHOLD</span></td></tr>
+            <tr><td>“every other” carries a schedule sense and an everyday sense.</td><td><span class="tag d">DOCUMENTED</span></td></tr>
+            <tr><td>Talia’s arithmetic is sound; the stripped version was not yet given to her.</td><td><span class="tag u">UNKNOWN</span></td></tr>
+            <tr><td>Whether other children in Bell Crossing read it the same way.</td><td><span class="tag u">UNKNOWN</span></td></tr>
+          </table>
+          <p style="font-size:12px;line-height:1.55;color:var(--ink2);margin:12px 0 0">
+            Mara was not at the table. She came the following day, read the sheet herself, and was told
+            the rest. The two are marked differently above on purpose.</p>
+        </div>
+
+        <div class="plate-slot">
+          <p class="t">Fixed plate — reserved, not generated</p>
+          <p class="s">VPR-PLATE-20260918-003 · no file, no hash</p>
+          <p class="d">Talia’s sheet on the Rowan kitchen table, low oblique, one window’s light from
+            the left. Three words sharp: <em>every</em>, <em>other</em>, <em>day</em>. A right hand at
+            the frame’s edge, pencil down. No face. No legible numbers.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="njob">
+    <p class="f">N_job = O &times; W &times; H &times; E &times; A &times; M</p>
+    <table>
+      <tr><td class="v">O = 1</td><td><strong>Orientation.</strong> EdereAriah · Bell Crossing · Rowan household · Modern time-region.</td></tr>
+      <tr><td class="v">W = 1</td><td><strong>Witness.</strong> Mara Quill, named, with her sourcing separated above.</td></tr>
+      <tr><td class="v">H = 1</td><td>Human consequence — Talia, Maren, the sheet, the mark.</td></tr>
+      <tr><td class="v">E = 1</td><td>Evidence — five classes kept apart, two rows honestly unknown.</td></tr>
+      <tr><td class="v">A = 1</td><td>Action — one implemented, five proposed, none faked.</td></tr>
+      <tr><td class="v">M = 1</td><td>Memory — the record entry is written below.</td></tr>
+    </table>
+    <p style="margin:12px 0 0;font-size:13px;line-height:1.55"><strong>N_job = 1 — the edition is complete
+      as an information object.</strong> What remains is the plate and the Chairman’s approval, not a
+      missing field.</p>
+  </div>
+
+  <div class="mem">
+    <span class="z">ZONE 8 · WORLD MEMORY</span>
+    <h3>Entry for the world record</h3>
+    <div class="memgrid">
+      <div><span>Transmission</span>ER-TX-EDU-LMS-001 · STILL + VOICE</div>
+      <div><span>Article</span>ER-EDU-LMS-001</div>
+      <div><span>Source place</span>Bell Crossing · ER-PLACE-BELL-CROSSING-001</div>
+      <div><span>Time-region</span>Modern</div>
+      <div><span>Reporter</span>Mara Quill · PRE_DEBUT_DESIGN</div>
+      <div><span>Household</span>Rowan · ER-HH-HOMEWORK-001</div>
+      <div><span>People</span>Talia Rowan · Maren Rowan · both PRE_DEBUT_DESIGN</div>
+      <div><span>Question</span>Language access versus mathematics</div>
+      <div><span>Blocker phrase</span>“every other day” · LB-T-EVERY-OTHER</div>
+      <div><span>System file</span>UE registry: term, 3 senses, 1 sentence case — WRITTEN</div>
+      <div><span>Follow-up</span>OPEN — assigned to Mara Quill</div>
+      <div><span>Mark</span>Vyc2st</div>
+      <div><span>Date entered</span>HELD — pending approved transmission</div>
+    </div>
+    <p class="gate"><strong>The record is written and held.</strong> It enters world memory, and the
+      three public lives activate, only when the Chairman approves the actual transmission. Nothing
+      here has been activated.</p>
+  </div>
+
+</div>
+
+<div class="ctl">
+  <button id="b1">Toggle membrane</button><button id="b2">Toggle zone labels</button>
+  <span id="st">membrane on · zones on</span>
+</div>
+<script>
+ var b=document.body,s=document.getElementById('st');
+ function sy(){s.textContent=(b.classList.contains('nomem')?'membrane off':'membrane on')+' · '+(b.classList.contains('nozone')?'zones off':'zones on');}
+ document.getElementById('b1').onclick=function(){b.classList.toggle('nomem');sy();};
+ document.getElementById('b2').onclick=function(){b.classList.toggle('nozone');sy();};
+</script>
+</body>
+</html>
