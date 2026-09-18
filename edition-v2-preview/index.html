@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THYLORA — Edition Preview for Approval</title>
+<meta name="description" content="Chairman-only reading surface for EDF editions awaiting a release decision.">
+<link rel="stylesheet" href="./preview.css">
+</head>
+<body>
+<header class="hdr">
+  <p class="eyebrow">THYLORA · STORE BACKEND</p>
+  <h1>Edition Preview for Approval</h1>
+  <p class="lede">Policy <b>THY-APPROVAL-MUST-BE-VIEWABLE-001</b>. Nothing on this page asks for a
+    decision without first showing the thing being decided on.</p>
+  <div id="auth" class="auth"></div>
+</header>
+
+<main>
+  <section class="rules">
+    <h2>What this surface does, and what it refuses to do</h2>
+    <ul>
+      <li><b>It shows the artifact.</b> Cover and every text block, in order, exactly as stored.</li>
+      <li><b>It binds what you see.</b> Each edition carries its package version, its stored source
+        hash, and a SHA-256 digest computed server-side over the exact content rendered.</li>
+      <li><b>It refuses a stale decision.</b> If the content changes between your reading it and your
+        deciding, the database rejects the write rather than attaching your name to something else.</li>
+      <li><b>It does not publish.</b> There is no publish call on this page. APPROVE records a finding;
+        it does not release, activate or schedule anything. Publishing remains the separate,
+        validator-gated act on the Store Release panel.</li>
+      <li><b>It does not overwrite history.</b> Decisions are appended to an immutable table.
+        UPDATE and DELETE are revoked and trigger-blocked.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Editions in the backend</h2>
+    <p class="note">This list is exactly what <span class="mono">thylora_edf_preview_board_v1</span>
+      returns — no page-side list, no placeholder rows. A package with no readable content is shown
+      as unviewable rather than quietly omitted.</p>
+    <div id="board"></div>
+  </section>
+</main>
+
+<footer>
+  THYLORA · Edition preview · read-only + append-only · no publication path on this surface
+</footer>
+
+<script src="./preview.js"></script>
+</body>
+</html>
