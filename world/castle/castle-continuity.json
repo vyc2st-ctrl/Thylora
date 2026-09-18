@@ -1,0 +1,94 @@
+{
+  "record": "THY-CASTLE-CONTINUITY-001",
+  "opened": "2026-09-18",
+  "status": "open",
+  "base_authority": {
+    "id": null,
+    "bound": false,
+    "note": "Original uploaded castle image. Not present in this session and not present anywhere in repository history. All observation fields remain unknown until bound."
+  },
+  "castle_name": { "value": null, "state": "unknown" },
+  "confidence_tiers": ["verified", "derived-logic", "unknown"],
+  "exterior": [
+    { "id": "EXT-GATE-01",    "feature": "main gate",      "state": "unknown" },
+    { "id": "EXT-STAIR-01",   "feature": "stairs",         "state": "unknown" },
+    { "id": "EXT-ROAD-01",    "feature": "road/approach",  "state": "unknown" },
+    { "id": "EXT-WALK-01",    "feature": "wall walk/ledge","state": "unknown" },
+    { "id": "EXT-WAGON-01",   "feature": "wagon",          "state": "unknown" },
+    { "id": "EXT-PATH-01",    "feature": "cart path",      "state": "unknown", "derives_from": ["EXT-WAGON-01", "EXT-GATE-01", "EXT-STAIR-01"] },
+    { "id": "EXT-ENTRY-*",    "feature": "entrances",      "state": "unknown", "count": null },
+    { "id": "EXT-SERVICE-*",  "feature": "service areas",  "state": "unknown" }
+  ],
+  "rooms": [
+    { "id": "RM-UL-01",      "anchor": "upper-left visible window", "level": null, "function": null,             "state": "unknown" },
+    { "id": "RM-GATE-01",    "anchor": "gate-adjacent",             "level": "ground", "function": "gate ward",  "state": "derived-logic" },
+    { "id": "RM-WALK-01",    "anchor": "wall walk access",          "level": null, "function": "ledge access",   "state": "unknown" },
+    { "id": "RM-SCHOOL-01",  "anchor": null,                        "level": null, "function": "learning",       "state": "unknown", "requires": "verified daylight window" },
+    { "id": "RM-STORE-01",   "anchor": null,                        "level": null, "function": "storage",        "state": "unknown", "requires": "cart-reachable" },
+    { "id": "RM-STAFF-01",   "anchor": null,                        "level": null, "function": "staff",          "state": "unknown" },
+    { "id": "RM-GUARD-01",   "anchor": null,                        "level": null, "function": "guard",          "state": "unknown", "requires": "sight of gate or wall walk" },
+    { "id": "RM-SERVICE-01", "anchor": null,                        "level": null, "function": "service",        "state": "unknown", "requires": "cart-reachable" }
+  ],
+  "continuity_rules": {
+    "R1": "A visible window requires a room in the plan.",
+    "R2": "Floor level is fixed by sill height relative to gate threshold and may not drift.",
+    "R3": "Interiors may not introduce windows absent from the exterior authority.",
+    "R4": "Goods-receiving rooms must be reachable without crossing stairs.",
+    "R5": "A learning room requires a verified window; without one the function moves."
+  },
+  "movement": {
+    "modes": ["foot", "cart", "horse", "load"],
+    "rules": {
+      "M1": "A cart cannot climb stairs; the cart edge terminates at the stair foot.",
+      "M2": "The wagon's position proves a cart route reaches it.",
+      "M3": "Stairs force exactly one of: ramp, alternate gate, service lane, split access.",
+      "M4": "Foot and cart traffic separate at the grade break, not at the gate.",
+      "M5": "Every route must terminate in a room."
+    },
+    "m3_resolution": { "value": null, "state": "unknown", "options": ["ramp", "alternate_gate", "service_lane", "split_access"], "note": "split_access is the only option requiring no change to the base image" },
+    "edges": [
+      { "id": "MV-01", "from": "EXT-ROAD-01",   "to": "EXT-GATE-01",  "modes": ["cart","foot","horse"], "state": "unknown" },
+      { "id": "MV-02", "from": "EXT-ROAD-01",   "to": "EXT-WAGON-01", "modes": ["cart"],                "state": "derived-logic" },
+      { "id": "MV-03", "from": "cart-terminus", "to": "RM-STORE-01",  "modes": ["load","foot"],         "state": "unknown" },
+      { "id": "MV-04", "from": "EXT-STAIR-01",  "to": "EXT-WALK-01",  "modes": ["foot"],                "state": "unknown" },
+      { "id": "MV-05", "from": "EXT-GATE-01",   "to": "RM-GATE-01",   "modes": ["foot"],                "state": "derived-logic" }
+    ]
+  },
+  "roles": [
+    { "group": "guards",         "anchors": ["EXT-GATE-01","EXT-WALK-01","RM-GUARD-01"], "state": "unknown" },
+    { "group": "staff",          "anchors": ["RM-STAFF-01"],                             "state": "unknown" },
+    { "group": "maintenance",    "anchors": ["EXT-WALK-01","RM-WALK-01"],                "state": "unknown" },
+    { "group": "cart_handlers",  "anchors": ["EXT-WAGON-01","EXT-SERVICE-*"],            "state": "unknown" },
+    { "group": "teachers",       "anchors": ["RM-SCHOOL-01"],                            "state": "unknown" },
+    { "group": "learners_internal", "anchors": ["RM-SCHOOL-01"],                         "state": "unknown" },
+    { "group": "learners_public",   "anchors": ["EXT-GATE-01","RM-SCHOOL-01"],           "state": "unknown", "rule": "W1" }
+  ],
+  "badging": {
+    "grid": { "columns": 12, "gutter": "4% of short edge" },
+    "elements": {
+      "mark":       { "placement": "bottom-left gutter",  "max_height": "2% of image height" },
+      "title":      { "placement": "bottom-left gutter, right of mark", "content": "view, not mood" },
+      "serial":     { "placement": "bottom-right gutter", "format": "THY-CST-<seq>-<view>-<rev>" },
+      "provenance": { "placement": "bottom edge, full-width gutter", "content": "holder · year · derivation ref" },
+      "in_world_brand": { "placement": "inside scene only", "rule": "must be a physical object obeying scene light and perspective, else omitted" }
+    },
+    "rules": {
+      "B1": "Identity lives in the gutter, never over the scene.",
+      "B2": "Mark, title and serial share one baseline; provenance sits below.",
+      "B3": "Every image names the authority it derives from.",
+      "B4": "In-world brand obeys world physics or is not used.",
+      "B5": "No borders, seals, banners, flourishes or gradients."
+    },
+    "serial_seed": { "value": null, "state": "unknown" },
+    "rights_holder": { "value": null, "state": "unknown" }
+  },
+  "blocking_decisions": [
+    { "n": 1, "decision": "bind base authority image", "blocks": "all observation fields", "state": "open" },
+    { "n": 2, "decision": "castle name", "state": "open" },
+    { "n": 3, "decision": "window census", "depends_on": 1, "state": "open" },
+    { "n": 4, "decision": "stair/cart resolution (M3)", "depends_on": 1, "state": "open" },
+    { "n": 5, "decision": "school room placement and learner access (W1)", "depends_on": 3, "state": "open" },
+    { "n": 6, "decision": "service side of castle", "depends_on": 4, "state": "open" },
+    { "n": 7, "decision": "serial seed and rights holder", "state": "open" }
+  ]
+}
