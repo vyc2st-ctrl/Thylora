@@ -1,0 +1,49 @@
+{
+  "recovery": {
+    "backend_state": "UNKNOWN",
+    "searched": [
+      "vyc2st-ctrl/thylora — full working tree and all 51 commits across every branch",
+      "vyc2st-ctrl/thylora-executive-dashboard — working tree and 200 commits of history",
+      "live backend jvsdxhrfhtlgaknhjxlz — NOT SEARCHED, egress denied by network policy (403 on CONNECT)"
+    ],
+    "finding": "No canonical castle name exists in any readable source. The only attested proper token attached to the scene is THEHANDLUH, which the surfaces use as the name of the living-world environment and gallery, not as the name of the castle building.",
+    "open_blocker": "WR-CASTLE-001 carries the open blocker \"exact world sites/names unresolved\", which is the backend saying the same thing.",
+    "naming_language": "UNKNOWN. The architectural tradition is unresolved, so the language the castle would be named in is unresolved with it.",
+    "canonized": false
+  },
+  "candidates": [
+    {
+      "candidate": "Handluh",
+      "derivation": "The attested environment token used bare, as the place it names."
+    },
+    {
+      "candidate": "Thehandluh",
+      "derivation": "The attested token kept whole, treating the leading element as part of the name rather than an article."
+    },
+    {
+      "candidate": "Handluh Keep",
+      "derivation": "Attested token plus a structure word; presupposes a keep-and-bailey form, which is NOT attested."
+    },
+    {
+      "candidate": "Hand-Luh",
+      "derivation": "The token read as two elements, should the naming language prove compound-forming."
+    },
+    {
+      "candidate": "Luhandu",
+      "derivation": "Metathesis of the attested token, offered in case the surface spelling is a transcription rather than the native order."
+    },
+    {
+      "candidate": "Handluhan",
+      "derivation": "Attested token with a locative-style suffix, a common place-name pattern across many naming languages."
+    },
+    {
+      "candidate": "Ehandluh",
+      "derivation": "Attested token with a prothetic vowel, as several naming traditions take for place names."
+    },
+    {
+      "candidate": "Handluh Ward",
+      "derivation": "Attested token plus an enclosure word, should the complex prove to be walled ground rather than a single building."
+    }
+  ],
+  "rule": "Candidates are stored. Canonization is a separate act and belongs to the Chairman alone."
+}

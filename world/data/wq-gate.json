@@ -1,0 +1,94 @@
+{
+  "world_version_id": "THYW-WORLD-V1",
+  "recorded_at": "2026-09-18",
+  "equation": "Wq = G x A x O x P x T x C x H x I x B x R x V",
+  "rule": "Any factor = 0 => HOLD.",
+  "wq": 0,
+  "decision": "HOLD",
+  "zero_factors": [
+    {
+      "letter": "G",
+      "basis": "No readable survey source yields any measured dimension. The reference image is a truncated JPEG; the backend is unreachable."
+    },
+    {
+      "letter": "O",
+      "basis": "The origin RULE is defined (THYW-ORIGIN-CASTLE-001) but the main gate threshold is not located, so the origin does not resolve to a point."
+    },
+    {
+      "letter": "P",
+      "basis": "The historical period is UNRESOLVED. PERIOD_TECH_PROFILE_CASTLE_001 exists as a gate with an empty allow-list."
+    },
+    {
+      "letter": "C",
+      "basis": "No route solves to PASS for any traveller class; every dimensional constraint is UNKNOWN and the wheeled route to the upper room FAILS on steps."
+    },
+    {
+      "letter": "H",
+      "basis": "Storey elevations and the datum offset to any planetary reference are UNKNOWN."
+    },
+    {
+      "letter": "I",
+      "basis": "BACKEND STATE: UNKNOWN. No canonical castle name exists in any readable source."
+    }
+  ],
+  "factors": [
+    {
+      "letter": "G",
+      "value": 0,
+      "basis": "No readable survey source yields any measured dimension. The reference image is a truncated JPEG; the backend is unreachable."
+    },
+    {
+      "letter": "A",
+      "value": 1,
+      "basis": "Every registered element resolves to a registered parent and every opening to a registered space."
+    },
+    {
+      "letter": "O",
+      "value": 0,
+      "basis": "The origin RULE is defined (THYW-ORIGIN-CASTLE-001) but the main gate threshold is not located, so the origin does not resolve to a point."
+    },
+    {
+      "letter": "P",
+      "value": 0,
+      "basis": "The historical period is UNRESOLVED. PERIOD_TECH_PROFILE_CASTLE_001 exists as a gate with an empty allow-list."
+    },
+    {
+      "letter": "T",
+      "value": 1,
+      "basis": "Topology closes over what is registered: no opening lacks a space."
+    },
+    {
+      "letter": "C",
+      "value": 0,
+      "basis": "No route solves to PASS for any traveller class; every dimensional constraint is UNKNOWN and the wheeled route to the upper room FAILS on steps."
+    },
+    {
+      "letter": "H",
+      "value": 0,
+      "basis": "Storey elevations and the datum offset to any planetary reference are UNKNOWN."
+    },
+    {
+      "letter": "I",
+      "value": 0,
+      "basis": "BACKEND STATE: UNKNOWN. No canonical castle name exists in any readable source."
+    },
+    {
+      "letter": "B",
+      "value": 1,
+      "basis": "Every registered frame resolves to THYW-FRAME-PLANET-EDEREARIAH. No element reaches Earth or any frame outside this world lineage, holding the same Earth/EdereAriah line the backend already holds through EARTH_REAL vs WORLD_SIMULATED."
+    },
+    {
+      "letter": "R",
+      "value": 1,
+      "basis": "The one attested opening has a registered room behind it. The window/room rule holds over the current registry."
+    },
+    {
+      "letter": "V",
+      "value": 1,
+      "basis": "State is written to the repository and read back; see the readback section of WR-WORLD-CASTLE-001."
+    }
+  ],
+  "binding_state": "PROPOSED_NOT_CANON",
+  "binding_caution": "The factor letters are evaluated as supplied. Their meanings are NOT established in backend canon; see PROPOSED_FACTOR_BINDINGS.",
+  "statement": "HOLD. 6 factor(s) evaluate to zero: G, O, P, C, H, I."
+}

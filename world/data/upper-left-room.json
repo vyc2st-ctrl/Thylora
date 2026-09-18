@@ -1,0 +1,27 @@
+{
+  "room_id": "THYW-ROOM-UL-001",
+  "backend_state": "NO CANONICAL USE EXISTS",
+  "basis": "No readable source assigns a use to this room. WR-CASTLE-001 carries the open blocker \"castle floor plans not complete\".",
+  "assigned_purpose": null,
+  "proposals": [
+    {
+      "key": "TUTORIAL_CHAMBER",
+      "label": "Private tutorial chamber of the royal household",
+      "why": "WR-CASTLE-001 is lane CASTLE_ROYAL, titled \"Family Castle + Royal House Completion\", and the directive asks for learning/tutor rooms while forbidding modern school architecture. An upper, well-lit, single-window room off the family range is the household form of that use.",
+      "implies": "Daylight-led lighting, a writing surface, storage for the period's own recordkeeping materials, a child-safe route from the family rooms, and no classroom fittings."
+    },
+    {
+      "key": "MUNIMENT_ROOM",
+      "label": "Record and archive chamber",
+      "why": "The directive asks for an archive/record room. Records are kept high and dry, behind one controlled door, with a small opening.",
+      "implies": "A small window rather than a large one, a lockable door, a guard or staff route rather than a public one, and restricted lighting because open flame near records is a hazard in every candidate period."
+    },
+    {
+      "key": "PRIVATE_WITHDRAWING_ROOM",
+      "label": "Private withdrawing room / bedchamber of the royal family",
+      "why": "Upper-storey corner rooms with an outward window are the private end of the royal range in most of the candidate traditions.",
+      "implies": "A royal route and a child-safe route, no service traffic through the room, a private rather than a receiving door, and furnishing recorded as household goods of the resolved period."
+    }
+  ],
+  "rule": "Proposals are stored separately from the room's purpose, so a proposal can never be mistaken for an assignment."
+}

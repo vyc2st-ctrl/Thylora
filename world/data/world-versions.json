@@ -1,0 +1,30 @@
+{
+  "rule": "Append-only. F_(n+1) >= F_n. A loss is permitted only by a Chairman supersession naming the object and the facet.",
+  "versions": [
+    {
+      "world_version_id": "THYW-WORLD-V1",
+      "sequence_no": 1,
+      "parent_version_id": null,
+      "recorded_at": "2026-09-18",
+      "recorded_by": "WR-WORLD-CASTLE-001",
+      "element_count": 4,
+      "room_count": 1,
+      "opening_count": 1,
+      "route_count": 16,
+      "verified_element_count": 2,
+      "verified_room_count": 1,
+      "verified_opening_count": 1,
+      "wq_decision": "HOLD",
+      "wq_zero_factors": [
+        "G",
+        "O",
+        "P",
+        "C",
+        "H",
+        "I"
+      ],
+      "note": "First recorded world version for the castle. This is the floor F_1 that no later version may fall below."
+    }
+  ],
+  "supersessions": []
+}

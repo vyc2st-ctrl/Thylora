@@ -1,0 +1,320 @@
+{
+  "profile_id": "PERIOD_TECH_PROFILE_CASTLE_001",
+  "period": {
+    "period_id": "THYW-PERIOD-CASTLE-001",
+    "resolved": false,
+    "era_label": null,
+    "calendar_basis": null,
+    "earliest_bound": null,
+    "latest_bound": null,
+    "region_tradition": null,
+    "basis": "No readable source establishes the period. WR-CASTLE-001 carries the open blocker \"exact world sites/names unresolved\"."
+  },
+  "categories": [
+    "TRANSPORT",
+    "LIGHTING",
+    "TOOLS",
+    "MASONRY",
+    "WOODWORKING",
+    "METALWORK",
+    "COMMUNICATIONS",
+    "HOUSEHOLD_SYSTEMS",
+    "EDUCATION_MATERIALS",
+    "WEAPONS_SECURITY",
+    "AGRICULTURE",
+    "MEDICINE",
+    "RECORDKEEPING"
+  ],
+  "allowed": {
+    "TRANSPORT": {
+      "state": "UNRESOLVED",
+      "items": [],
+      "basis": "The period is not resolved, so nothing can be admitted to this category."
+    },
+    "LIGHTING": {
+      "state": "UNRESOLVED",
+      "items": [],
+      "basis": "The period is not resolved, so nothing can be admitted to this category."
+    },
+    "TOOLS": {
+      "state": "UNRESOLVED",
+      "items": [],
+      "basis": "The period is not resolved, so nothing can be admitted to this category."
+    },
+    "MASONRY": {
+      "state": "UNRESOLVED",
+      "items": [],
+      "basis": "The period is not resolved, so nothing can be admitted to this category."
+    },
+    "WOODWORKING": {
+      "state": "UNRESOLVED",
+      "items": [],
+      "basis": "The period is not resolved, so nothing can be admitted to this category."
+    },
+    "METALWORK": {
+      "state": "UNRESOLVED",
+      "items": [],
+      "basis": "The period is not resolved, so nothing can be admitted to this category."
+    },
+    "COMMUNICATIONS": {
+      "state": "UNRESOLVED",
+      "items": [],
+      "basis": "The period is not resolved, so nothing can be admitted to this category."
+    },
+    "HOUSEHOLD_SYSTEMS": {
+      "state": "UNRESOLVED",
+      "items": [],
+      "basis": "The period is not resolved, so nothing can be admitted to this category."
+    },
+    "EDUCATION_MATERIALS": {
+      "state": "UNRESOLVED",
+      "items": [],
+      "basis": "The period is not resolved, so nothing can be admitted to this category."
+    },
+    "WEAPONS_SECURITY": {
+      "state": "UNRESOLVED",
+      "items": [],
+      "basis": "The period is not resolved, so nothing can be admitted to this category."
+    },
+    "AGRICULTURE": {
+      "state": "UNRESOLVED",
+      "items": [],
+      "basis": "The period is not resolved, so nothing can be admitted to this category."
+    },
+    "MEDICINE": {
+      "state": "UNRESOLVED",
+      "items": [],
+      "basis": "The period is not resolved, so nothing can be admitted to this category."
+    },
+    "RECORDKEEPING": {
+      "state": "UNRESOLVED",
+      "items": [],
+      "basis": "The period is not resolved, so nothing can be admitted to this category."
+    }
+  },
+  "prohibited": {
+    "TRANSPORT": [
+      {
+        "category": "TRANSPORT",
+        "item": "INTERNAL_COMBUSTION_VEHICLE",
+        "basis": "Post-dates every candidate tradition.",
+        "evidence_state": "INFERRED"
+      },
+      {
+        "category": "TRANSPORT",
+        "item": "RAILWAY",
+        "basis": "Post-dates every candidate tradition.",
+        "evidence_state": "INFERRED"
+      },
+      {
+        "category": "TRANSPORT",
+        "item": "PNEUMATIC_TYRE",
+        "basis": "Post-dates every candidate tradition.",
+        "evidence_state": "INFERRED"
+      }
+    ],
+    "LIGHTING": [
+      {
+        "category": "LIGHTING",
+        "item": "ELECTRIC_LIGHTING",
+        "basis": "Post-dates every candidate tradition.",
+        "evidence_state": "INFERRED"
+      },
+      {
+        "category": "LIGHTING",
+        "item": "GAS_MANTLE_LIGHTING",
+        "basis": "Industrial-era; post-dates every candidate tradition.",
+        "evidence_state": "INFERRED"
+      }
+    ],
+    "TOOLS": [
+      {
+        "category": "TOOLS",
+        "item": "POWER_TOOL",
+        "basis": "Requires electrification or internal combustion.",
+        "evidence_state": "INFERRED"
+      }
+    ],
+    "MASONRY": [
+      {
+        "category": "MASONRY",
+        "item": "PORTLAND_CEMENT",
+        "basis": "Nineteenth-century industrial binder; post-dates every candidate tradition.",
+        "evidence_state": "INFERRED"
+      },
+      {
+        "category": "MASONRY",
+        "item": "REINFORCED_CONCRETE",
+        "basis": "Post-dates every candidate tradition.",
+        "evidence_state": "INFERRED"
+      },
+      {
+        "category": "MASONRY",
+        "item": "STEEL_FRAME",
+        "basis": "Post-dates every candidate tradition.",
+        "evidence_state": "INFERRED"
+      }
+    ],
+    "WOODWORKING": [],
+    "METALWORK": [
+      {
+        "category": "METALWORK",
+        "item": "BESSEMER_BULK_STEEL",
+        "basis": "Industrial process; post-dates every candidate tradition.",
+        "evidence_state": "INFERRED"
+      }
+    ],
+    "COMMUNICATIONS": [
+      {
+        "category": "COMMUNICATIONS",
+        "item": "ELECTRICAL_TELEGRAPH",
+        "basis": "Post-dates every candidate tradition.",
+        "evidence_state": "INFERRED"
+      },
+      {
+        "category": "COMMUNICATIONS",
+        "item": "RADIO",
+        "basis": "Post-dates every candidate tradition.",
+        "evidence_state": "INFERRED"
+      },
+      {
+        "category": "COMMUNICATIONS",
+        "item": "TELEPHONE",
+        "basis": "Post-dates every candidate tradition.",
+        "evidence_state": "INFERRED"
+      }
+    ],
+    "HOUSEHOLD_SYSTEMS": [
+      {
+        "category": "HOUSEHOLD_SYSTEMS",
+        "item": "PRESSURISED_MAINS_PLUMBING",
+        "basis": "Requires industrial pipe and pumping; post-dates every candidate tradition.",
+        "evidence_state": "INFERRED"
+      },
+      {
+        "category": "HOUSEHOLD_SYSTEMS",
+        "item": "MECHANICAL_REFRIGERATION",
+        "basis": "Post-dates every candidate tradition.",
+        "evidence_state": "INFERRED"
+      }
+    ],
+    "EDUCATION_MATERIALS": [
+      {
+        "category": "EDUCATION_MATERIALS",
+        "item": "INDUSTRIAL_WOOD_PULP_PAPER",
+        "basis": "Nineteenth-century process; post-dates every candidate tradition.",
+        "evidence_state": "INFERRED"
+      },
+      {
+        "category": "EDUCATION_MATERIALS",
+        "item": "MASS_SCHOOL_DESK_FURNITURE",
+        "basis": "Modern school architecture; the directive explicitly forbids importing it.",
+        "evidence_state": "INFERRED"
+      }
+    ],
+    "WEAPONS_SECURITY": [
+      {
+        "category": "WEAPONS_SECURITY",
+        "item": "BREECH_LOADING_RIFLE",
+        "basis": "Industrial small arms; post-dates every candidate tradition.",
+        "evidence_state": "INFERRED"
+      },
+      {
+        "category": "WEAPONS_SECURITY",
+        "item": "SMOKELESS_POWDER",
+        "basis": "Post-dates every candidate tradition.",
+        "evidence_state": "INFERRED"
+      }
+    ],
+    "AGRICULTURE": [
+      {
+        "category": "AGRICULTURE",
+        "item": "MECHANISED_TRACTOR",
+        "basis": "Post-dates every candidate tradition.",
+        "evidence_state": "INFERRED"
+      }
+    ],
+    "MEDICINE": [
+      {
+        "category": "MEDICINE",
+        "item": "GERM_THEORY_ANTISEPSIS",
+        "basis": "Nineteenth-century; post-dates every candidate tradition.",
+        "evidence_state": "INFERRED"
+      },
+      {
+        "category": "MEDICINE",
+        "item": "ANTIBIOTICS",
+        "basis": "Twentieth-century; post-dates every candidate tradition.",
+        "evidence_state": "INFERRED"
+      }
+    ],
+    "RECORDKEEPING": [
+      {
+        "category": "RECORDKEEPING",
+        "item": "PHOTOGRAPHY",
+        "basis": "Post-dates every candidate tradition.",
+        "evidence_state": "INFERRED"
+      },
+      {
+        "category": "RECORDKEEPING",
+        "item": "TYPEWRITER",
+        "basis": "Post-dates every candidate tradition.",
+        "evidence_state": "INFERRED"
+      },
+      {
+        "category": "RECORDKEEPING",
+        "item": "DIGITAL_RECORD",
+        "basis": "Post-dates every candidate tradition.",
+        "evidence_state": "INFERRED"
+      }
+    ]
+  },
+  "candidate_traditions": [
+    {
+      "key": "BENIN_CITY_WALLS_AND_PALACE",
+      "note": "Edo earthwork walls and royal palace complex, Benin City. Directly connected to material already preserved in this project's own research pack (British Museum 1897 provenance records)."
+    },
+    {
+      "key": "GONDARINE_FASIL_GHEBBI",
+      "note": "Ethiopian Gondarine stone castle complex — battlemented towers, cut-stone walls, royal compound."
+    },
+    {
+      "key": "GREAT_ZIMBABWE_DRY_STONE",
+      "note": "Coursed dry-stone enclosure walling; no mortar, so the mortar fields of a masonry spec resolve to zero rather than UNKNOWN."
+    },
+    {
+      "key": "HAUSA_CITY_WALLS_KANO_ZARIA",
+      "note": "Massive earthen city walls and gates with royal compounds inside."
+    },
+    {
+      "key": "SWAHILI_COAST_CORAL_STONE",
+      "note": "Coral-rag and lime-mortar coastal stone towns and forts."
+    },
+    {
+      "key": "NUBIAN_MEROITIC_FORTIFIED",
+      "note": "Nile-corridor fired-brick and stone fortified royal architecture."
+    },
+    {
+      "key": "MAGHREBI_KSAR_KASBAH",
+      "note": "Rammed-earth and mudbrick fortified compounds with corner towers."
+    },
+    {
+      "key": "WEST_EUROPEAN_STONE_CASTLE",
+      "note": "Curtain wall, gatehouse, keep. Listed as one candidate among several, not as the default."
+    },
+    {
+      "key": "LEVANTINE_ANATOLIAN_FORTRESS",
+      "note": "Ashlar curtain and tower fortress traditions."
+    },
+    {
+      "key": "SOUTH_ASIAN_FORT_PALACE",
+      "note": "Fort-palace complexes with layered gates and ramped elephant/cart approaches."
+    },
+    {
+      "key": "EAST_ASIAN_CASTLE",
+      "note": "Dry-stone battered plinth carrying a timber-framed superstructure."
+    }
+  ],
+  "bleed_rule": "Other time periods may exist elsewhere on the planet. No object may enter this scene from a frame outside THYW-FRAME-CASTLE-001's lineage, and no technology may enter this scene that is not on this profile's allow-list.",
+  "school_architecture_rule": "Learning and tutorial spaces are recorded as rooms of this period's household, not as classrooms. Modern school architecture is prohibited."
+}

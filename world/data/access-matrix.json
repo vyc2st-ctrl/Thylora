@@ -1,0 +1,1140 @@
+{
+  "world_version_id": "THYW-WORLD-V1",
+  "solver_ref": "world/lib/routes.js",
+  "legend": {
+    "PASS": "Every constraint checked against a known value and satisfied.",
+    "FAIL": "At least one constraint violated by a known value. The route does not exist physically.",
+    "INDETERMINATE": "No constraint violated, but at least one required value is UNKNOWN. The route is NOT established."
+  },
+  "routes": [
+    {
+      "route_id": "THYW-ROUTE-COURTYARD",
+      "class_code": "PEDESTRIAN",
+      "verdict": "INDETERMINATE",
+      "from_node": "THYW-NODE-LAND-OUTER",
+      "to_node": "THYW-NODE-COURTYARD",
+      "blocking_constraints": [],
+      "unknown_constraints": [
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_HEIGHT"
+        }
+      ],
+      "statement": "No constraint is violated, but at least one required value is UNKNOWN. This route is NOT established."
+    },
+    {
+      "route_id": "THYW-ROUTE-COURTYARD",
+      "class_code": "CHILD",
+      "verdict": "INDETERMINATE",
+      "from_node": "THYW-NODE-LAND-OUTER",
+      "to_node": "THYW-NODE-COURTYARD",
+      "blocking_constraints": [],
+      "unknown_constraints": [
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_HEIGHT"
+        }
+      ],
+      "statement": "No constraint is violated, but at least one required value is UNKNOWN. This route is NOT established."
+    },
+    {
+      "route_id": "THYW-ROUTE-COURTYARD",
+      "class_code": "HORSE",
+      "verdict": "INDETERMINATE",
+      "from_node": "THYW-NODE-LAND-OUTER",
+      "to_node": "THYW-NODE-COURTYARD",
+      "blocking_constraints": [],
+      "unknown_constraints": [
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_HEIGHT"
+        }
+      ],
+      "statement": "No constraint is violated, but at least one required value is UNKNOWN. This route is NOT established."
+    },
+    {
+      "route_id": "THYW-ROUTE-COURTYARD",
+      "class_code": "HORSE_AND_RIDER",
+      "verdict": "INDETERMINATE",
+      "from_node": "THYW-NODE-LAND-OUTER",
+      "to_node": "THYW-NODE-COURTYARD",
+      "blocking_constraints": [],
+      "unknown_constraints": [
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_HEIGHT"
+        }
+      ],
+      "statement": "No constraint is violated, but at least one required value is UNKNOWN. This route is NOT established."
+    },
+    {
+      "route_id": "THYW-ROUTE-COURTYARD",
+      "class_code": "CART",
+      "verdict": "INDETERMINATE",
+      "from_node": "THYW-NODE-LAND-OUTER",
+      "to_node": "THYW-NODE-COURTYARD",
+      "blocking_constraints": [],
+      "unknown_constraints": [
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_THRESHOLD_RISE"
+        }
+      ],
+      "statement": "No constraint is violated, but at least one required value is UNKNOWN. This route is NOT established."
+    },
+    {
+      "route_id": "THYW-ROUTE-COURTYARD",
+      "class_code": "GUARD_PATROL",
+      "verdict": "INDETERMINATE",
+      "from_node": "THYW-NODE-LAND-OUTER",
+      "to_node": "THYW-NODE-COURTYARD",
+      "blocking_constraints": [],
+      "unknown_constraints": [
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_HEIGHT"
+        }
+      ],
+      "statement": "No constraint is violated, but at least one required value is UNKNOWN. This route is NOT established."
+    },
+    {
+      "route_id": "THYW-ROUTE-COURTYARD",
+      "class_code": "STAFF_SERVICE",
+      "verdict": "INDETERMINATE",
+      "from_node": "THYW-NODE-LAND-OUTER",
+      "to_node": "THYW-NODE-COURTYARD",
+      "blocking_constraints": [],
+      "unknown_constraints": [
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_HEIGHT"
+        }
+      ],
+      "statement": "No constraint is violated, but at least one required value is UNKNOWN. This route is NOT established."
+    },
+    {
+      "route_id": "THYW-ROUTE-COURTYARD",
+      "class_code": "ROYAL_PROCESSION",
+      "verdict": "INDETERMINATE",
+      "from_node": "THYW-NODE-LAND-OUTER",
+      "to_node": "THYW-NODE-COURTYARD",
+      "blocking_constraints": [],
+      "unknown_constraints": [
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_HEIGHT"
+        }
+      ],
+      "statement": "No constraint is violated, but at least one required value is UNKNOWN. This route is NOT established."
+    },
+    {
+      "route_id": "THYW-ROUTE-UPPER-ROOM",
+      "class_code": "PEDESTRIAN",
+      "verdict": "INDETERMINATE",
+      "from_node": "THYW-NODE-LAND-OUTER",
+      "to_node": "THYW-NODE-ROOM-UL",
+      "blocking_constraints": [],
+      "unknown_constraints": [
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "STEP_RISE"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "SURFACE_LOAD"
+        }
+      ],
+      "statement": "No constraint is violated, but at least one required value is UNKNOWN. This route is NOT established."
+    },
+    {
+      "route_id": "THYW-ROUTE-UPPER-ROOM",
+      "class_code": "CHILD",
+      "verdict": "INDETERMINATE",
+      "from_node": "THYW-NODE-LAND-OUTER",
+      "to_node": "THYW-NODE-ROOM-UL",
+      "blocking_constraints": [],
+      "unknown_constraints": [
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "STEP_RISE"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "SURFACE_LOAD"
+        }
+      ],
+      "statement": "No constraint is violated, but at least one required value is UNKNOWN. This route is NOT established."
+    },
+    {
+      "route_id": "THYW-ROUTE-UPPER-ROOM",
+      "class_code": "HORSE",
+      "verdict": "INDETERMINATE",
+      "from_node": "THYW-NODE-LAND-OUTER",
+      "to_node": "THYW-NODE-ROOM-UL",
+      "blocking_constraints": [],
+      "unknown_constraints": [
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "STEP_RISE"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "SURFACE_LOAD"
+        }
+      ],
+      "statement": "No constraint is violated, but at least one required value is UNKNOWN. This route is NOT established."
+    },
+    {
+      "route_id": "THYW-ROUTE-UPPER-ROOM",
+      "class_code": "HORSE_AND_RIDER",
+      "verdict": "INDETERMINATE",
+      "from_node": "THYW-NODE-LAND-OUTER",
+      "to_node": "THYW-NODE-ROOM-UL",
+      "blocking_constraints": [],
+      "unknown_constraints": [
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "STEP_RISE"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "SURFACE_LOAD"
+        }
+      ],
+      "statement": "No constraint is violated, but at least one required value is UNKNOWN. This route is NOT established."
+    },
+    {
+      "route_id": "THYW-ROUTE-UPPER-ROOM",
+      "class_code": "CART",
+      "verdict": "FAIL",
+      "from_node": "THYW-NODE-LAND-OUTER",
+      "to_node": "THYW-NODE-ROOM-UL",
+      "blocking_constraints": [
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "STAIR_ON_WHEELED_ROUTE",
+          "verdict": "FAIL",
+          "required": "no steps",
+          "measured": "1 step segment",
+          "note": "A wheeled traveller cannot climb a flight of stairs. This holds without any dimension being known."
+        }
+      ],
+      "unknown_constraints": [
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_THRESHOLD_RISE"
+        }
+      ],
+      "statement": "At least one constraint is violated by a known value. This route does not exist physically."
+    },
+    {
+      "route_id": "THYW-ROUTE-UPPER-ROOM",
+      "class_code": "GUARD_PATROL",
+      "verdict": "INDETERMINATE",
+      "from_node": "THYW-NODE-LAND-OUTER",
+      "to_node": "THYW-NODE-ROOM-UL",
+      "blocking_constraints": [],
+      "unknown_constraints": [
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "STEP_RISE"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "SURFACE_LOAD"
+        }
+      ],
+      "statement": "No constraint is violated, but at least one required value is UNKNOWN. This route is NOT established."
+    },
+    {
+      "route_id": "THYW-ROUTE-UPPER-ROOM",
+      "class_code": "STAFF_SERVICE",
+      "verdict": "INDETERMINATE",
+      "from_node": "THYW-NODE-LAND-OUTER",
+      "to_node": "THYW-NODE-ROOM-UL",
+      "blocking_constraints": [],
+      "unknown_constraints": [
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "STEP_RISE"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "SURFACE_LOAD"
+        }
+      ],
+      "statement": "No constraint is violated, but at least one required value is UNKNOWN. This route is NOT established."
+    },
+    {
+      "route_id": "THYW-ROUTE-UPPER-ROOM",
+      "class_code": "ROYAL_PROCESSION",
+      "verdict": "INDETERMINATE",
+      "from_node": "THYW-NODE-LAND-OUTER",
+      "to_node": "THYW-NODE-ROOM-UL",
+      "blocking_constraints": [],
+      "unknown_constraints": [
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-APPROACH-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "SURFACE_LOAD"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-GATE-001",
+          "constraint": "GATE_CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "STEP_RISE"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "CLEAR_WIDTH"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "CLEAR_HEIGHT"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "TURNING_RADIUS"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "GRADE"
+        },
+        {
+          "segment_id": "THYW-SEG-UPPER-STAIR-001",
+          "constraint": "SURFACE_LOAD"
+        }
+      ],
+      "statement": "No constraint is violated, but at least one required value is UNKNOWN. This route is NOT established."
+    }
+  ]
+}

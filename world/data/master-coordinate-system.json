@@ -1,0 +1,75 @@
+{
+  "frame_tree": [
+    {
+      "frame_id": "THYW-FRAME-PLANET-EDEREARIAH",
+      "kind": "PLANET",
+      "parent_frame_id": null,
+      "handedness": "RIGHT_Z_UP",
+      "linear_unit": "mm_int",
+      "angular_unit": "mdeg_int",
+      "datum_id": null,
+      "north_basis": "PLANETARY_ROTATIONAL_NORTH",
+      "transform": null,
+      "evidence_state": "VERIFIED",
+      "provenance": "World name VERIFIED from multiple independent files in vyc2st-ctrl/thylora and vyc2st-ctrl/thylora-executive-dashboard. The planet's geodetic figure, radius and sea-level datum remain UNKNOWN; only the name is established."
+    },
+    {
+      "frame_id": "THYW-FRAME-REGION-UNKNOWN",
+      "kind": "REGION",
+      "parent_frame_id": "THYW-FRAME-PLANET-EDEREARIAH",
+      "handedness": "RIGHT_Z_UP",
+      "linear_unit": "mm_int",
+      "angular_unit": "mdeg_int",
+      "datum_id": null,
+      "north_basis": null,
+      "transform": null,
+      "evidence_state": "UNKNOWN",
+      "provenance": "Backend blocker on WR-CASTLE-001 reads \"exact world sites/names unresolved\". Region is therefore UNKNOWN, not assumed. The castle's placement on EdereAriah is INFERRED from the scene being a THYLORA world scene, not stated by any source."
+    },
+    {
+      "frame_id": "THYW-FRAME-SITE-001",
+      "kind": "SITE",
+      "parent_frame_id": "THYW-FRAME-REGION-UNKNOWN",
+      "handedness": "RIGHT_Z_UP",
+      "linear_unit": "mm_int",
+      "angular_unit": "mdeg_int",
+      "datum_id": "THYW-DATUM-CASTLE-001",
+      "north_basis": null,
+      "transform": null,
+      "evidence_state": "UNKNOWN",
+      "provenance": "Site of the THEHANDLUH castle/cart/workers scene. Placement within the region UNKNOWN."
+    },
+    {
+      "frame_id": "THYW-FRAME-CASTLE-001",
+      "kind": "COMPLEX",
+      "parent_frame_id": "THYW-FRAME-SITE-001",
+      "handedness": "RIGHT_Z_UP",
+      "linear_unit": "mm_int",
+      "angular_unit": "mdeg_int",
+      "datum_id": "THYW-DATUM-CASTLE-001",
+      "north_basis": "GRID_NORTH_PLUS_Y",
+      "transform": null,
+      "evidence_state": "RULE_DEFINED_VALUE_UNKNOWN",
+      "provenance": "Master survey frame for the castle complex. Axis and origin RULES are canon here; all measured values UNKNOWN."
+    }
+  ],
+  "origin_rule": {
+    "origin_id": "THYW-ORIGIN-CASTLE-001",
+    "frame_id": "THYW-FRAME-CASTLE-001",
+    "horizontal_rule": "Midpoint of the outer face of the main gate threshold.",
+    "vertical_rule": "THYW-DATUM-CASTLE-001 — finished ground level of the principal courtyard immediately inside the main gate.",
+    "axis_x": "+X = grid east, 90 mdeg-degrees clockwise from +Y in plan.",
+    "axis_y": "+Y = grid north = inward horizontal normal of the main gate opening.",
+    "axis_z": "+Z = up, opposite local gravity.",
+    "handedness": "RIGHT_Z_UP",
+    "declination_to_true_north_mdeg": null,
+    "datum_offset_to_planetary_sea_level_mm": null,
+    "resolved": false,
+    "resolves_when": "A readable survey source locates the main gate threshold."
+  },
+  "units": {
+    "linear": "mm_int",
+    "angular": "mdeg_int",
+    "basis": "Integer storage only. A float that is written, read and re-written drifts, and drift in a survey frame is silent loss of established geometry."
+  }
+}

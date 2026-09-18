@@ -1,0 +1,249 @@
+{
+  "world_version_id": "THYW-WORLD-V1",
+  "rule": "An unknown is closed by evidence, never by a decision to stop asking.",
+  "entries": [
+    {
+      "unknown_id": "THYW-UNK-ELEMENT-THYW-EL-CASTLE-001-LOCAL_TRANSFORM",
+      "object_kind": "ELEMENT",
+      "object_id": "THYW-EL-CASTLE-001",
+      "unknown_field": "local_transform",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-ELEMENT-THYW-EL-CASTLE-001-DIMENSIONS",
+      "object_kind": "ELEMENT",
+      "object_id": "THYW-EL-CASTLE-001",
+      "unknown_field": "dimensions",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-ELEMENT-THYW-EL-CASTLE-001-ORIENTATION_MDEG",
+      "object_kind": "ELEMENT",
+      "object_id": "THYW-EL-CASTLE-001",
+      "unknown_field": "orientation_mdeg",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-ELEMENT-THYW-EL-CASTLE-001-MATERIAL_ID",
+      "object_kind": "ELEMENT",
+      "object_id": "THYW-EL-CASTLE-001",
+      "unknown_field": "material_id",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-ELEMENT-THYW-EL-CART-001-LOCAL_TRANSFORM",
+      "object_kind": "ELEMENT",
+      "object_id": "THYW-EL-CART-001",
+      "unknown_field": "local_transform",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-ELEMENT-THYW-EL-CART-001-DIMENSIONS",
+      "object_kind": "ELEMENT",
+      "object_id": "THYW-EL-CART-001",
+      "unknown_field": "dimensions",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-ELEMENT-THYW-EL-CART-001-ORIENTATION_MDEG",
+      "object_kind": "ELEMENT",
+      "object_id": "THYW-EL-CART-001",
+      "unknown_field": "orientation_mdeg",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-ELEMENT-THYW-EL-CART-001-MATERIAL_ID",
+      "object_kind": "ELEMENT",
+      "object_id": "THYW-EL-CART-001",
+      "unknown_field": "material_id",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-ELEMENT-THYW-EL-GATE-001-LOCAL_TRANSFORM",
+      "object_kind": "ELEMENT",
+      "object_id": "THYW-EL-GATE-001",
+      "unknown_field": "local_transform",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-ELEMENT-THYW-EL-GATE-001-DIMENSIONS",
+      "object_kind": "ELEMENT",
+      "object_id": "THYW-EL-GATE-001",
+      "unknown_field": "dimensions",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-ELEMENT-THYW-EL-GATE-001-ORIENTATION_MDEG",
+      "object_kind": "ELEMENT",
+      "object_id": "THYW-EL-GATE-001",
+      "unknown_field": "orientation_mdeg",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-ELEMENT-THYW-EL-GATE-001-MATERIAL_ID",
+      "object_kind": "ELEMENT",
+      "object_id": "THYW-EL-GATE-001",
+      "unknown_field": "material_id",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-ELEMENT-THYW-EL-WALL-UL-001-LOCAL_TRANSFORM",
+      "object_kind": "ELEMENT",
+      "object_id": "THYW-EL-WALL-UL-001",
+      "unknown_field": "local_transform",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-ELEMENT-THYW-EL-WALL-UL-001-DIMENSIONS",
+      "object_kind": "ELEMENT",
+      "object_id": "THYW-EL-WALL-UL-001",
+      "unknown_field": "dimensions",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-ELEMENT-THYW-EL-WALL-UL-001-ORIENTATION_MDEG",
+      "object_kind": "ELEMENT",
+      "object_id": "THYW-EL-WALL-UL-001",
+      "unknown_field": "orientation_mdeg",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-ELEMENT-THYW-EL-WALL-UL-001-MATERIAL_ID",
+      "object_kind": "ELEMENT",
+      "object_id": "THYW-EL-WALL-UL-001",
+      "unknown_field": "material_id",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-ROOM-THYW-ROOM-UL-001-DIMENSIONS",
+      "object_kind": "ROOM",
+      "object_id": "THYW-ROOM-UL-001",
+      "unknown_field": "dimensions",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-ROOM-THYW-ROOM-UL-001-CEILING_HEIGHT_MM",
+      "object_kind": "ROOM",
+      "object_id": "THYW-ROOM-UL-001",
+      "unknown_field": "ceiling_height_mm",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-ROOM-THYW-ROOM-UL-001-PURPOSE",
+      "object_kind": "ROOM",
+      "object_id": "THYW-ROOM-UL-001",
+      "unknown_field": "purpose",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-ROOM-THYW-ROOM-UL-001-PERIOD_STATE",
+      "object_kind": "ROOM",
+      "object_id": "THYW-ROOM-UL-001",
+      "unknown_field": "period_state",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-ROOM-THYW-ROOM-UL-001-OCCUPANTS",
+      "object_kind": "ROOM",
+      "object_id": "THYW-ROOM-UL-001",
+      "unknown_field": "occupants",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-ROOM-THYW-ROOM-UL-001-FURNISHING_STATE",
+      "object_kind": "ROOM",
+      "object_id": "THYW-ROOM-UL-001",
+      "unknown_field": "furnishing_state",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-ROOM-THYW-ROOM-UL-001-LIGHTING_SOURCES",
+      "object_kind": "ROOM",
+      "object_id": "THYW-ROOM-UL-001",
+      "unknown_field": "lighting_sources",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-OPENING-THYW-OPEN-UL-001-DIMENSIONS",
+      "object_kind": "OPENING",
+      "object_id": "THYW-OPEN-UL-001",
+      "unknown_field": "dimensions",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-OPENING-THYW-OPEN-UL-001-CLEAR_WIDTH_MM",
+      "object_kind": "OPENING",
+      "object_id": "THYW-OPEN-UL-001",
+      "unknown_field": "clear_width_mm",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-OPENING-THYW-OPEN-UL-001-CLEAR_HEIGHT_MM",
+      "object_kind": "OPENING",
+      "object_id": "THYW-OPEN-UL-001",
+      "unknown_field": "clear_height_mm",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    },
+    {
+      "unknown_id": "THYW-UNK-OPENING-THYW-OPEN-UL-001-SILL_HEIGHT_MM",
+      "object_kind": "OPENING",
+      "object_id": "THYW-OPEN-UL-001",
+      "unknown_field": "sill_height_mm",
+      "why_unknown": "No readable survey source carries a value. The Chairman castle reference is a truncated JPEG and the live backend is unreachable from the authoring environment.",
+      "closes_when": "A readable reference or a Chairman statement supplies the value.",
+      "closed": false
+    }
+  ]
+}
