@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HERB FILE 001 — WHITE WILLOW</title>
+<!--
+  THYLORA / ErsatzReality · HERB FILE SERIES · FILE 001 · WHITE WILLOW
+  Deterministic source for the Chairman preview still. Render at 1080x1350 CSS px.
+
+  Gates applied:
+    THY-INTERWORLD-BARRIER-GLOBAL-001   (LOCKED) — fixed viewer-plane barrier, B = g1F + g2S + g3E + g4D, dB/dt = 0
+    THY-APPROVAL-MUST-BE-VIEWABLE-001   (LOCKED) — this file IS the view surface bound to the approval
+    THY-VISUAL-PREFLIGHT-LOCK-001       (LOCKED) — backend canon read before authoring
+    THY-VISUAL-OUTPUT-IDENTITY-001      (LOCKED) — no stock default, truth boundary marked, evidence dominates
+-->
+<style>
+  :root{
+    --ground:#0b1012;
+    --ground-2:#0e1517;
+    --ink:#070b0c;
+    --bone:#e4ddcc;
+    --bone-dim:#b9b2a1;
+    --bone-faint:#6f6d63;
+    --sage:#9fae9d;
+    --teal:#6f9a97;
+    --teal-dim:#47716f;
+    --gold:#c2a15c;
+    --gold-dim:#8a7440;
+    --serif:"Bitstream Charter","Liberation Serif","DejaVu Serif",Georgia,serif;
+    --mono:"DejaVu Sans Mono","Liberation Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1350px;background:var(--ink);}
+  #still{
+    position:relative;width:1080px;height:1350px;overflow:hidden;
+    background:
+      linear-gradient(180deg,#0d1315 0%,#0a0f11 46%,#0c1214 100%);
+    color:var(--bone);
+    font-family:var(--serif);
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- WORLD / CONTENT PLANE (T * W) ---------- */
+  #world{position:absolute;inset:0;}
+
+  .rule{position:absolute;background:var(--gold-dim);opacity:.55;height:1px}
+  .rule.thin{background:var(--bone-faint);opacity:.38}
+
+  /* header */
+  .hdr{position:absolute;left:78px;right:78px;top:60px;display:flex;justify-content:space-between;align-items:baseline}
+  .hdr .mark{font-family:var(--mono);font-size:13px;letter-spacing:.34em;color:var(--teal)}
+  .hdr .ser{font-family:var(--mono);font-size:13px;letter-spacing:.34em;color:var(--gold)}
+
+  /* title block */
+  .fileno{position:absolute;left:78px;top:118px;font-family:var(--mono);font-size:15px;letter-spacing:.42em;color:var(--teal)}
+  .title{position:absolute;left:76px;top:146px;font-size:70px;line-height:.98;letter-spacing:.055em;color:var(--bone);font-weight:400}
+  .binom{position:absolute;left:80px;top:228px;font-size:23px;font-style:italic;letter-spacing:.06em;color:var(--bone-dim)}
+  .truth{position:absolute;right:78px;top:152px;text-align:right;font-family:var(--mono);font-size:11px;line-height:1.85;letter-spacing:.2em;color:var(--bone-faint)}
+  .truth b{color:var(--sage);font-weight:400}
+
+  /* plate */
+  #plate{position:absolute;left:78px;top:292px;width:924px;height:508px}
+  #plate .edge{position:absolute;inset:0;border:1px solid rgba(228,221,204,.17)}
+  #plate .corner{position:absolute;width:13px;height:13px;border:1px solid rgba(194,161,92,.6)}
+  .c-tl{left:-1px;top:-1px;border-right:0;border-bottom:0}
+  .c-tr{right:-1px;top:-1px;border-left:0;border-bottom:0}
+  .c-bl{left:-1px;bottom:-1px;border-right:0;border-top:0}
+  .c-br{right:-1px;bottom:-1px;border-left:0;border-top:0}
+  .plate-tag{position:absolute;font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;color:var(--bone-faint)}
+
+  /* question */
+  .question{position:absolute;left:78px;right:78px;top:836px;font-size:31px;line-height:1.28;font-style:italic;color:var(--gold);letter-spacing:.005em}
+
+  /* evidence bands */
+  #bands{position:absolute;left:78px;right:78px;top:918px}
+  .band{position:relative;padding:0 0 0 128px;margin-bottom:21px;min-height:52px}
+  .band .lab{position:absolute;left:0;top:3px;width:112px;font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;color:var(--teal);line-height:1.5}
+  .band .tick{position:absolute;left:0;top:-10px;width:112px;height:1px;background:var(--teal-dim);opacity:.5}
+  .band .txt{font-size:21.5px;line-height:1.42;color:var(--bone);letter-spacing:.004em}
+  .band.unknown .lab{color:var(--gold)}
+  .band.unknown .tick{background:var(--gold-dim);opacity:.65}
+  .band.unknown .txt{color:var(--bone-dim)}
+
+  /* footer */
+  .foot-rule{position:absolute;left:78px;right:78px;top:1224px}
+  .foot{position:absolute;left:78px;top:1244px;width:640px;font-size:16.5px;line-height:1.4;color:var(--bone-dim);font-style:italic}
+  .serial{position:absolute;right:78px;top:1240px;text-align:right;font-family:var(--mono);font-size:10.5px;line-height:1.95;letter-spacing:.2em;color:var(--bone-faint)}
+  .serial b{color:var(--gold);font-weight:400}
+  .sindex{position:absolute;right:78px;top:1186px}
+  .sindex-lab{position:absolute;right:78px;top:1162px;font-family:var(--mono);font-size:9.5px;letter-spacing:.24em;color:var(--bone-faint)}
+
+  /* ---------- BARRIER PLANE (B) — viewer side, fixed ---------- */
+  #barrier{position:absolute;inset:0;pointer-events:none}
+  #barrier > *{position:absolute;inset:0}
+  /* g4 D — slight density variation (lowest weight, linear, non-cloud, non-swirl) */
+  .b-density{
+    opacity:.035;
+    background:
+      linear-gradient(97deg, rgba(255,255,255,.55) 0%, rgba(255,255,255,0) 38%, rgba(0,0,0,.5) 100%),
+      linear-gradient(183deg, rgba(255,255,255,.30) 0%, rgba(255,255,255,0) 44%, rgba(0,0,0,.42) 100%);
+    mix-blend-mode:overlay;
+  }
+  /* g3 E — fixed edge / frame behaviour */
+  .b-edge{
+    opacity:.05;
+    background:
+      linear-gradient(90deg, rgba(0,0,0,1) 0px, rgba(0,0,0,0) 46px),
+      linear-gradient(270deg, rgba(0,0,0,1) 0px, rgba(0,0,0,0) 46px),
+      linear-gradient(180deg, rgba(0,0,0,1) 0px, rgba(0,0,0,0) 46px),
+      linear-gradient(0deg, rgba(0,0,0,1) 0px, rgba(0,0,0,0) 46px);
+  }
+  /* g1 F — faint material/film texture (highest weight) */
+  .b-film{opacity:.12;mix-blend-mode:overlay}
+</style>
+</head>
+<body>
+<div id="still">
+
+  <div id="world">
+    <div class="hdr">
+      <div class="mark">THYLORA &nbsp;·&nbsp; ERSATZREALITY</div>
+      <div class="ser">HERB FILE SERIES</div>
+    </div>
+    <div class="rule" style="left:78px;right:78px;top:92px"></div>
+
+    <div class="fileno">HERB FILE 001</div>
+    <div class="title">WHITE WILLOW</div>
+    <div class="binom">Salix alba &nbsp;·&nbsp; Salicaceae &nbsp;·&nbsp; waterside tree</div>
+    <div class="truth">
+      RECORD CLASS &nbsp; <b>EARTH · DOCUMENTARY</b><br>
+      FILE STATE &nbsp; <b>OPEN — EVIDENCE</b><br>
+      NOT A TREATMENT CLAIM
+    </div>
+
+    <div id="plate">
+      <svg id="art" width="924" height="508" viewBox="0 0 924 508"></svg>
+      <div class="edge"></div>
+      <div class="corner c-tl"></div><div class="corner c-tr"></div>
+      <div class="corner c-bl"></div><div class="corner c-br"></div>
+      <div class="plate-tag" style="left:14px;top:-19px">PLATE I &nbsp;— &nbsp;BRANCH, LEAF, CATKIN &nbsp;— &nbsp;RIVERBANK</div>
+      <div class="plate-tag" style="right:14px;top:-19px">FIELD OBSERVATION</div>
+    </div>
+
+    <div class="question">What did people know about this tree before pharmacies existed?</div>
+
+    <div id="bands">
+      <div class="band">
+        <div class="tick"></div><div class="lab">DOCUMENTED</div>
+        <div class="txt">Willow bark has a long recorded history of human use.</div>
+      </div>
+      <div class="band">
+        <div class="tick"></div><div class="lab">TRADITION</div>
+        <div class="txt">Different peoples used willow in practical and traditional ways.</div>
+      </div>
+      <div class="band">
+        <div class="tick"></div><div class="lab">MODERN<br>SCIENCE</div>
+        <div class="txt">Willow bark contains compounds connected to salicylates.</div>
+      </div>
+      <div class="band unknown">
+        <div class="tick"></div><div class="lab">UNKNOWN</div>
+        <div class="txt">Not every traditional use equals a proven modern medical outcome.</div>
+      </div>
+    </div>
+
+    <div class="rule thin foot-rule"></div>
+    <div class="foot">This is a history / evidence file — not a treatment claim.</div>
+    <div class="sindex-lab">SERIES INDEX</div>
+    <svg class="sindex" width="266" height="16" viewBox="0 0 266 16"></svg>
+    <div class="serial">
+      SERIES &nbsp; <b>HERB FILE</b> &nbsp;/&nbsp; NO. <b>001</b><br>
+      SPECIMEN &nbsp; SALIX ALBA<br>
+      FILE &nbsp; <b>THY-HERB-001-WHITE-WILLOW</b>
+    </div>
+  </div>
+
+  <!-- B = g1F + g2S + g3E + g4D · dB/dt = 0 · swirl = 0 · smoke = 0 -->
+  <div id="barrier">
+    <div class="b-density"></div>
+    <div class="b-edge"></div>
+    <svg class="b-wear" width="1080" height="1350" viewBox="0 0 1080 1350"></svg>
+    <svg class="b-film" width="1080" height="1350">
+      <filter id="grain" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" seed="1837" stitchTiles="stitch"/>
+        <feColorMatrix type="saturate" values="0"/>
+      </filter>
+      <rect width="1080" height="1350" filter="url(#grain)"/>
+    </svg>
+  </div>
+</div>
+
+<script>
+/* ------------------------------------------------------------------
+   Deterministic generator. Fixed seed => byte-identical render => the
+   SHA-256 in the version binding is reproducible.
+------------------------------------------------------------------- */
+const SEED = 20260918001;
+let _s = SEED;
+function rnd(){ _s = (_s * 1664525 + 1013904223) % 4294967296; return _s / 4294967296; }
+function rr(a,b){ return a + (b-a)*rnd(); }
+
+const NS = "http://www.w3.org/2000/svg";
+function el(p,n,a){ const e=document.createElementNS(NS,n); for(const k in a) e.setAttribute(k,a[k]); p.appendChild(e); return e; }
+
+const art = document.getElementById("art");
+const W = 924, H = 508;
+const SPLIT = 590;               // left scene | right detail column
+
+/* defs ---------------------------------------------------------- */
+const defs = el(art,"defs",{});
+let g = el(defs,"linearGradient",{id:"water",x1:"0",y1:"0",x2:"0",y2:"1"});
+el(g,"stop",{offset:"0",  "stop-color":"#16211f"});
+el(g,"stop",{offset:"1",  "stop-color":"#0a1113"});
+g = el(defs,"linearGradient",{id:"leafg",x1:"0",y1:"0",x2:"1",y2:"1"});
+el(g,"stop",{offset:"0","stop-color":"#b8c4ad"});
+el(g,"stop",{offset:"1","stop-color":"#75857a"});
+g = el(defs,"linearGradient",{id:"leafpale",x1:"0",y1:"0",x2:"1",y2:"1"});
+el(g,"stop",{offset:"0","stop-color":"#dcd8c6"});
+el(g,"stop",{offset:"1","stop-color":"#a9b0a2"});
+g = el(defs,"linearGradient",{id:"sky",x1:"0",y1:"0",x2:"0",y2:"1"});
+el(g,"stop",{offset:"0","stop-color":"#101819"});
+el(g,"stop",{offset:"0.62","stop-color":"#0c1315"});
+el(g,"stop",{offset:"1","stop-color":"#0e1416"});
+const clipL = el(defs,"clipPath",{id:"clipL"});
+el(clipL,"rect",{x:0,y:0,width:SPLIT,height:H});
+
+/* ============ LEFT CELL — riverbank scene ====================== */
+const L = el(art,"g",{"clip-path":"url(#clipL)"});
+el(L,"rect",{x:0,y:0,width:SPLIT,height:H,fill:"url(#sky)"});
+
+/* distant bank — quiet horizontal, no drama */
+const BANK = 366;
+let d = `M0 ${BANK+6}`;
+for(let x=0;x<=SPLIT;x+=28) d += ` L${x} ${BANK + Math.sin(x/86)*3 + rr(-1.6,1.6)}`;
+el(L,"path",{d:d+` L${SPLIT} ${H} L0 ${H} Z`, fill:"url(#water)"});
+el(L,"path",{d:d, fill:"none", stroke:"#5d6b63", "stroke-width":.9, opacity:.45});
+
+/* far tree-line suggestion behind the bank — very low contrast */
+for(let i=0;i<26;i++){
+  const x = rr(0,SPLIT), h = rr(10,30);
+  el(L,"path",{d:`M${x} ${BANK+2} L${x+rr(-3,3)} ${BANK+2-h}`,stroke:"#2b3634","stroke-width":rr(.6,1.5),opacity:.32,fill:"none"});
+}
+
+/* water — horizontal hatching only (fixed, calm) */
+for(let y=BANK+14;y<H;y+=6){
+  const t = (y-BANK)/(H-BANK);
+  const segs = Math.floor(rr(2,5));
+  for(let s=0;s<segs;s++){
+    const x0 = rr(-20,SPLIT-40), len = rr(40,210);
+    el(L,"line",{x1:x0,y1:y,x2:x0+len,y2:y,stroke:"#8fa5a0","stroke-width":.7,opacity:(.07+.19*t)*rr(.6,1.2)});
+  }
+}
+/* reflection of the trunk — broken vertical, restrained */
+for(let y=BANK+16;y<H-6;y+=7){
+  if(rnd()<.45) continue;
+  el(L,"line",{x1:rr(92,106),y1:y,x2:rr(108,126),y2:y,stroke:"#9fb0a8","stroke-width":.9,opacity:.15});
+}
+
+/* bank grasses */
+for(let i=0;i<54;i++){
+  const x = rr(0,SPLIT), hh = rr(6,20), lean = rr(-6,6);
+  el(L,"path",{d:`M${x} ${BANK+4} Q${x+lean/2} ${BANK+4-hh*.6} ${x+lean} ${BANK+4-hh}`,
+    stroke:"#6d7a6a","stroke-width":.85,fill:"none",opacity:rr(.25,.5)});
+}
+
+/* ---- trunk ---- */
+const trunkTop = 14, trunkBase = BANK+8;
+const trunkPath = `M104 ${trunkBase} C98 300, 112 200, 126 118 C134 74, 140 44, 146 ${trunkTop}`;
+/* tapered body: wide at the root flare, narrow at the crown */
+el(L,"path",{d:`M78 ${trunkBase+6} C88 ${trunkBase-34}, 90 306, 100 240
+  C110 176, 120 110, 136 ${trunkTop}
+  L156 ${trunkTop} C146 106, 136 176, 126 242
+  C118 306, 124 ${trunkBase-30}, 140 ${trunkBase+6} Z`,
+  fill:"#3f3c33",opacity:.72});
+el(L,"path",{d:`M84 ${trunkBase+6} C92 ${trunkBase-30}, 96 300, 108 236
+  C118 172, 126 108, 140 ${trunkTop} L150 ${trunkTop}
+  C138 110, 130 174, 120 238 C110 302, 116 ${trunkBase-28}, 130 ${trunkBase+6} Z`,
+  fill:"#7b7462",opacity:.30});
+/* shaded flank — light falls from the left, so the right side goes dark */
+el(L,"path",{d:`M126 ${trunkBase+6} C120 ${trunkBase-30}, 124 300, 132 238
+  C140 174, 146 108, 150 ${trunkTop} L156 ${trunkTop}
+  C146 106, 136 176, 126 242 C118 306, 124 ${trunkBase-30}, 140 ${trunkBase+6} Z`,
+  fill:"#14181a",opacity:.5});
+/* root flare into the bank */
+el(L,"path",{d:`M70 ${trunkBase+8} q22 -16 38 -16 q18 0 38 16 Z`,fill:"#6f6a5c",opacity:.4});
+/* fissured bark on the trunk — the ID trait, drawn not implied */
+for(let i=0;i<168;i++){
+  const t0 = rnd();
+  const y0 = trunkBase - t0*(trunkBase-trunkTop);
+  const half = 26 - 17*t0;                       /* trunk narrows upward */
+  const xc = 109 + (trunkBase-y0)*0.088 - (trunkBase-y0)*0.088;
+  const off = rr(-half,half) + (1-t0)*0 + (trunkBase-y0)*0.10*0;
+  const len = rr(14,52);
+  const drift = (trunkBase-y0)*0.115;
+  el(L,"path",{
+    d:`M${xc+off+drift-38*0} ${y0} q${rr(-2.5,2.5)} ${-len/2} ${rr(-3,3)} ${-len}`,
+    stroke: rnd()<.38 ? "#d8d0b8" : "#14120e",
+    "stroke-width":rr(.7,2.4),fill:"none",opacity:rr(.34,.78),"stroke-linecap":"round"});
+}
+
+/* ---- boughs & drooping shoots (willow habit) ---- */
+const shoots = [];
+function bough(x0,y0,x1,y1,cx1,cy1,cx2,cy2,w){
+  const p = `M${x0} ${y0} C${cx1} ${cy1}, ${cx2} ${cy2}, ${x1} ${y1}`;
+  el(L,"path",{d:p,stroke:"#9a927d","stroke-width":w,fill:"none",opacity:.5,"stroke-linecap":"round"});
+  el(L,"path",{d:p,stroke:"#d6cdb6","stroke-width":Math.max(.6,w*.32),fill:"none",opacity:.28,"stroke-linecap":"round"});
+  return p;
+}
+bough(140,40, 470,86,  250,6,  380,30, 7);
+bough(134,86, 520,182, 270,60, 410,120, 6);
+bough(126,132, 430,252, 240,118, 350,196, 5);
+bough(120,190, 330,320, 200,190, 268,272, 4);
+
+/* drooping shoots hang from the boughs */
+const anchors = [
+  [196,22],[262,26],[330,40],[398,56],[452,74],[500,96],
+  [212,74],[286,96],[352,124],[420,152],[478,180],
+  [206,146],[268,176],[330,210],[386,244],
+  [190,214],[240,248],[292,286]
+];
+anchors.forEach(([ax,ay],i)=>{
+  const len = rr(70,168);
+  const sway = rr(-26,16);
+  const p = `M${ax} ${ay} C${ax+sway*.35} ${ay+len*.38}, ${ax+sway*.8} ${ay+len*.7}, ${ax+sway} ${ay+len}`;
+  el(L,"path",{d:p,stroke:"#8d9583","stroke-width":1.15,fill:"none",opacity:.55});
+  shoots.push({ax,ay,len,sway,p});
+});
+
+/* ---- leaves: lanceolate, alternate, silvery beneath ---- */
+function leaf(px,py,ang,ln,pale){
+  const w = ln*0.21;
+  const rad = ang*Math.PI/180;
+  const tx = px + Math.cos(rad)*ln, ty = py + Math.sin(rad)*ln;
+  const nx = -Math.sin(rad)*w, ny = Math.cos(rad)*w;
+  const mx = px + Math.cos(rad)*ln*0.42, my = py + Math.sin(rad)*ln*0.42;
+  const dd = `M${px} ${py} Q${mx+nx} ${my+ny} ${tx} ${ty} Q${mx-nx} ${my-ny} ${px} ${py} Z`;
+  el(L,"path",{d:dd,fill: pale ? "url(#leafpale)" : "url(#leafg)",
+    opacity: pale ? rr(.5,.72) : rr(.42,.66),
+    stroke:"#3e463f","stroke-width":.45});
+  el(L,"path",{d:`M${px} ${py} L${tx} ${ty}`,stroke:"#2f3833","stroke-width":.4,opacity:.4});
+}
+shoots.forEach(s=>{
+  const n = Math.floor(s.len/13);
+  for(let i=1;i<=n;i++){
+    const t = i/(n+1);
+    const bx = s.ax + s.sway*(t*t*0.9+t*0.1);
+    const by = s.ay + s.len*t;
+    const side = (i%2===0)?1:-1;
+    const ang = 90 + side*rr(34,62) + rr(-8,8);
+    leaf(bx,by,ang,rr(20,34), rnd()<.34);
+  }
+});
+/* a few leaves on the upper boughs for density */
+for(let i=0;i<70;i++){
+  const t = rnd();
+  const bx = 150 + t*350 + rr(-16,16);
+  const by = 30 + t*130 + rr(-20,26);
+  leaf(bx,by,90+ (rnd()<.5?1:-1)*rr(30,68), rr(17,29), rnd()<.32);
+}
+
+/* ---- catkins ---- */
+[[318,62],[372,96],[268,112]].forEach(([cx,cy])=>{
+  const len = rr(26,38);
+  el(L,"path",{d:`M${cx} ${cy} q${rr(-4,4)} ${len*.5} ${rr(-5,5)} ${len}`,
+    stroke:"#cfc6a6","stroke-width":5.2,fill:"none",opacity:.42,"stroke-linecap":"round"});
+  for(let k=0;k<14;k++){
+    const t = k/14;
+    el(L,"line",{x1:cx+rr(-3,3), y1:cy+len*t, x2:cx+rr(-7,7), y2:cy+len*t+rr(-2,2),
+      stroke:"#e0d7b6","stroke-width":.6,opacity:.34});
+  }
+});
+
+/* field annotation inside the scene — restrained, field-notebook */
+el(L,"line",{x1:470,y1:132,x2:526,y2:74,stroke:"#c2a15c","stroke-width":.7,opacity:.55});
+el(L,"circle",{cx:470,cy:132,r:2.4,fill:"none",stroke:"#c2a15c","stroke-width":.7,opacity:.7});
+const an1 = el(L,"text",{x:574,y:66,fill:"#c2a15c","font-family":"DejaVu Sans Mono, monospace","font-size":10,"letter-spacing":2.2,opacity:.9,"text-anchor":"end"});
+an1.textContent = "LEAF — SILVERY BENEATH";
+el(L,"line",{x1:112,y1:300,x2:168,y2:404,stroke:"#6f9a97","stroke-width":.7,opacity:.5});
+el(L,"circle",{cx:112,cy:300,r:2.4,fill:"none",stroke:"#6f9a97","stroke-width":.7,opacity:.65});
+const an2 = el(L,"text",{x:174,y:408,fill:"#6f9a97","font-family":"DejaVu Sans Mono, monospace","font-size":10,"letter-spacing":2.2,opacity:.8});
+an2.textContent = "BARK — RIDGED, FISSURED";
+const an3 = el(L,"text",{x:18,y:H-62,fill:"#6f6d63","font-family":"DejaVu Sans Mono, monospace","font-size":10,"letter-spacing":2.4,opacity:.85});
+an3.textContent = "WATERSIDE — RIVERBANK / WET GROUND";
+
+/* ============ DIVIDER ========================================== */
+el(art,"line",{x1:SPLIT,y1:18,x2:SPLIT,y2:H-18,stroke:"#e4ddcc","stroke-width":1,opacity:.15});
+
+/* ============ RIGHT CELL — bark detail + leaf key ============== */
+const RX = SPLIT+1, RW = W-SPLIT-1;
+const R = el(art,"g",{});
+el(R,"rect",{x:RX,y:0,width:RW,height:H,fill:"#0a1011"});
+
+/* --- bark detail window --- */
+const bx0 = RX+34, by0 = 44, bw = RW-68, bh = 232;
+el(R,"rect",{x:bx0,y:by0,width:bw,height:bh,fill:"#12100d"});
+const clipB = el(defs,"clipPath",{id:"clipB"});
+el(clipB,"rect",{x:bx0,y:by0,width:bw,height:bh});
+const B = el(R,"g",{"clip-path":"url(#clipB)"});
+/* magnified fissured bark: interlacing vertical ridges */
+for(let i=0;i<190;i++){
+  const x = bx0 + rr(-10,bw+10);
+  const y = by0 + rr(-20,bh);
+  const len = rr(24,150);
+  const bend = rr(-9,9);
+  const dark = rnd()<.55;
+  el(B,"path",{
+    d:`M${x} ${y} C${x+bend} ${y+len*.34}, ${x-bend} ${y+len*.68}, ${x+bend*.6} ${y+len}`,
+    stroke: dark ? "#241f18" : "#8e8064",
+    "stroke-width": rr(1.1,5.4),
+    fill:"none", opacity: dark ? rr(.35,.8) : rr(.16,.42), "stroke-linecap":"round"});
+}
+/* cross-cracks */
+for(let i=0;i<44;i++){
+  const x = bx0 + rr(0,bw), y = by0 + rr(0,bh);
+  el(B,"path",{d:`M${x} ${y} l${rr(-22,22)} ${rr(-5,5)}`,stroke:"#1c1813","stroke-width":rr(.6,1.9),opacity:rr(.3,.65),fill:"none"});
+}
+/* lichen flecks — small, few */
+for(let i=0;i<26;i++){
+  el(B,"circle",{cx:bx0+rr(0,bw),cy:by0+rr(0,bh),r:rr(.8,3.2),fill:"#7d8d78",opacity:rr(.08,.22)});
+}
+el(R,"rect",{x:bx0,y:by0,width:bw,height:bh,fill:"none",stroke:"#e4ddcc","stroke-width":1,opacity:.22});
+let t1 = el(R,"text",{x:bx0,y:by0-13,fill:"#6f9a97","font-family":"DejaVu Sans Mono, monospace","font-size":11,"letter-spacing":2.8});
+t1.textContent = "DETAIL A — BARK";
+let t2 = el(R,"text",{x:bx0+bw,y:by0-13,fill:"#6f6d63","font-family":"DejaVu Sans Mono, monospace","font-size":10,"letter-spacing":2.2,"text-anchor":"end"});
+t2.textContent = "×4";
+/* scale bar */
+el(R,"line",{x1:bx0,y1:by0+bh+16,x2:bx0+70,y2:by0+bh+16,stroke:"#c2a15c","stroke-width":1.2,opacity:.75});
+el(R,"line",{x1:bx0,y1:by0+bh+12,x2:bx0,y2:by0+bh+20,stroke:"#c2a15c","stroke-width":1.2,opacity:.75});
+el(R,"line",{x1:bx0+70,y1:by0+bh+12,x2:bx0+70,y2:by0+bh+20,stroke:"#c2a15c","stroke-width":1.2,opacity:.75});
+let t3 = el(R,"text",{x:bx0+78,y:by0+bh+20,fill:"#b9b2a1","font-family":"DejaVu Sans Mono, monospace","font-size":10,"letter-spacing":2});
+t3.textContent = "20 mm";
+
+/* --- leaf key --- */
+const ky = by0+bh+52;
+let t4 = el(R,"text",{x:bx0,y:ky,fill:"#6f9a97","font-family":"DejaVu Sans Mono, monospace","font-size":11,"letter-spacing":2.8});
+t4.textContent = "DETAIL B — LEAF";
+/* upper face + under face, side by side */
+function keyLeaf(cx,cy,ln,pale,label){
+  const w = ln*0.19;
+  const dd = `M${cx} ${cy-ln/2} Q${cx+w} ${cy} ${cx} ${cy+ln/2} Q${cx-w} ${cy} ${cx} ${cy-ln/2} Z`;
+  el(R,"path",{d:dd,fill: pale ? "#cfcbb8" : "#8a9a86",opacity: pale? .8 : .72,stroke:"#3e463f","stroke-width":.5});
+  el(R,"path",{d:`M${cx} ${cy-ln/2} L${cx} ${cy+ln/2}`,stroke:"#2f3833","stroke-width":.5,opacity:.5});
+  for(let i=1;i<9;i++){
+    const yy = cy-ln/2 + ln*i/9;
+    const ww = w*Math.sin(Math.PI*i/9)*0.86;
+    el(R,"path",{d:`M${cx} ${yy} l${ww} ${ln*0.055}`,stroke:"#2f3833","stroke-width":.35,opacity:.35,fill:"none"});
+    el(R,"path",{d:`M${cx} ${yy} l${-ww} ${ln*0.055}`,stroke:"#2f3833","stroke-width":.35,opacity:.35,fill:"none"});
+  }
+  const tl = el(R,"text",{x:cx,y:cy+ln/2+20,fill:"#6f6d63","font-family":"DejaVu Sans Mono, monospace","font-size":9.5,"letter-spacing":1.8,"text-anchor":"middle"});
+  tl.textContent = label;
+}
+keyLeaf(bx0+46, ky+66, 96, false, "UPPER");
+keyLeaf(bx0+126, ky+66, 96, true,  "UNDER");
+/* catkin key */
+(function(){
+  const cx = bx0+bw-52, cy = ky+22, ln=72;
+  el(R,"path",{d:`M${cx} ${cy} q4 ${ln*.5} 0 ${ln}`,stroke:"#cfc6a6","stroke-width":6,fill:"none",opacity:.4,"stroke-linecap":"round"});
+  for(let k=0;k<20;k++){
+    el(R,"line",{x1:cx+rr(-3,3),y1:cy+ln*k/20,x2:cx+rr(-8,8),y2:cy+ln*k/20+rr(-2,2),stroke:"#e0d7b6","stroke-width":.6,opacity:.32});
+  }
+  const tl = el(R,"text",{x:cx,y:cy+ln+30,fill:"#6f6d63","font-family":"DejaVu Sans Mono, monospace","font-size":9.5,"letter-spacing":1.8,"text-anchor":"middle"});
+  tl.textContent = "CATKIN";
+})();
+
+
+/* ============ BARRIER: g2 S — restrained scratches / gate wear === */
+const wear = document.querySelector(".b-wear");
+_s = 991733; // separate fixed stream, still deterministic
+for(let i=0;i<7;i++){
+  const x = rr(40,1040);
+  el(wear,"line",{x1:x,y1:rr(0,140),x2:x+rr(-2,2),y2:rr(1210,1350),
+    stroke:"#e4ddcc","stroke-width":rr(.5,1.0),opacity:rr(.035,.085)});
+}
+for(let i=0;i<14;i++){
+  const x = rr(24,1056), y = rr(24,1326);
+  el(wear,"line",{x1:x,y1:y,x2:x+rr(-14,14),y2:y+rr(-3,3),
+    stroke:"#e4ddcc","stroke-width":rr(.5,.9),opacity:rr(.03,.07)});
+}
+/* fixed registration ticks — viewer plane, not scene */
+[[28,28],[1052,28],[28,1322],[1052,1322]].forEach(([x,y])=>{
+  el(wear,"line",{x1:x-9,y1:y,x2:x+9,y2:y,stroke:"#e4ddcc","stroke-width":.8,opacity:.16});
+  el(wear,"line",{x1:x,y1:y-9,x2:x,y2:y+9,stroke:"#e4ddcc","stroke-width":.8,opacity:.16});
+});
+el(wear,"rect",{x:27.5,y:27.5,width:1025,height:1295,fill:"none",stroke:"#e4ddcc","stroke-width":1,opacity:.08});
+
+/* collectible series index — file 001 filled, the run ahead left open */
+const si = document.querySelector(".sindex");
+for(let i=0;i<12;i++){
+  const x = i*22;
+  if(i===0){
+    el(si,"rect",{x:x,y:0,width:14,height:16,fill:"#c2a15c",opacity:.85});
+  }else{
+    el(si,"rect",{x:x+.5,y:.5,width:13,height:15,fill:"none",stroke:"#6f6d63","stroke-width":1,opacity:.45});
+  }
+}
+
+document.documentElement.setAttribute("data-render","ready");
+</script>
+</body>
+</html>
