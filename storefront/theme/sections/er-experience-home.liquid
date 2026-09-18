@@ -1,0 +1,270 @@
+{%- comment -%}
+  ErsatzReality Experience — homepage section.
+  PREVIEW THEME ONLY. Never installed on the live theme.
+
+  Truth rule enforced structurally, not by discipline:
+  the "Available now" rail reads real storefront products. Shopify does not expose
+  DRAFT products to Liquid at all, so a DRAFT product physically cannot render as
+  buyable here. The "In preparation" rail is explicitly labelled and carries no
+  price and no buy control.
+
+  S_store = I x C x D x T  — Identity, Clarity, Depth, Trust. Multiplicative:
+  any factor at zero makes the storefront zero. Stated on the surface itself
+  (see the "how this is measured" block) so the formula never travels without
+  its meaning.
+{%- endcomment -%}
+
+<style>
+  .er{--ink:#0d0e10;--ink2:#16181c;--ink3:#1e2127;--paper:#f4f1ea;--dim:#cfc9bc;--mute:#9a948a;
+      --amber:#d9a441;--ember:#c25a34;--leaf:#7d9463;--line:rgba(244,241,234,.14);
+      --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+      background:var(--ink);color:var(--paper);display:block}
+  .er *{box-sizing:border-box;min-width:0}
+  .er-w{max-width:1120px;margin:0 auto;padding:0 16px}
+  .er a{color:inherit;text-decoration:none}
+
+  .er-nav{border-bottom:1px solid var(--line);padding:14px 0}
+  .er-nav ul{display:flex;flex-wrap:wrap;gap:2px;list-style:none;margin:0;padding:0}
+  .er-nav a{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--dim);padding:7px 10px;border-radius:2px;display:block}
+  .er-nav a:hover{color:var(--paper);background:var(--ink3)}
+
+  .er-hero{padding:64px 0 52px;border-bottom:1px solid var(--line)}
+  .er-kick{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--amber);margin:0 0 18px}
+  .er-hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(28px,5.4vw,52px);line-height:1.13;margin:0 0 18px;max-width:19ch}
+  .er-hero p{font-size:clamp(15.5px,2vw,18px);color:var(--dim);max-width:56ch;margin:0 0 26px}
+  .er-cta{display:flex;gap:10px;flex-wrap:wrap}
+  .er-btn{display:inline-block;padding:13px 21px;border-radius:2px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+  .er-btn-a{background:var(--amber);color:#17140d}
+  .er-btn-b{border:1px solid var(--line);color:var(--paper)}
+
+  .er-sec{padding:52px 0;border-bottom:1px solid var(--line)}
+  .er-sec h2{font-family:var(--serif);font-weight:500;font-size:clamp(20px,3.1vw,28px);margin:0 0 8px}
+  .er-sub{color:var(--mute);margin:0 0 26px;max-width:62ch;font-size:15px}
+
+  .er-lanes{display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));gap:12px}
+  .er-lane{border:1px solid var(--line);border-radius:3px;padding:20px 17px;background:linear-gradient(180deg,var(--ink2),var(--ink));display:block}
+  .er-lane:hover{border-color:var(--amber)}
+  .er-lane .n{font-size:10px;letter-spacing:.24em;color:var(--amber);display:block;margin-bottom:11px}
+  .er-lane h3{font-family:var(--serif);font-weight:500;font-size:17.5px;margin:0 0 6px;line-height:1.25}
+  .er-lane p{margin:0;font-size:13.5px;color:var(--mute);line-height:1.5}
+  .er-lane .c{margin-top:12px;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+
+  .er-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(244px,1fr));gap:16px}
+  .er-card{border:1px solid var(--line);border-radius:3px;overflow:hidden;background:var(--ink2);display:flex;flex-direction:column}
+  .er-cover{aspect-ratio:1/1;position:relative;overflow:hidden;background:radial-gradient(120% 90% at 50% 0%,#262a31,#14161a 70%)}
+  .er-cover::before{content:"ERSATZREALITY";position:absolute;inset:14px;border:1px solid rgba(217,164,65,.28);
+    display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:11px;letter-spacing:.3em;color:rgba(217,164,65,.55)}
+  .er-cover img{width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:1}
+  .er-world{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:8px 10px;
+    background:linear-gradient(0deg,rgba(13,14,16,.92),transparent);
+    font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
+  .er-body{padding:14px 14px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .er-body h4{font-family:var(--serif);font-weight:500;font-size:16px;margin:0;line-height:1.28}
+  .er-q{font-size:12.5px;color:var(--dim);font-style:italic;line-height:1.45;margin:0}
+  .er-get{font-size:12px;color:var(--mute);margin:0;line-height:1.45}
+  .er-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:4px}
+  .er-price{font-size:16.5px;font-weight:600}
+  .er-tag{font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border-radius:2px;border:1px solid var(--line);color:var(--mute)}
+  .er-tag.live{border-color:var(--leaf);color:var(--leaf)}
+  .er-tag.soon{border-color:var(--amber);color:var(--amber)}
+
+  .er-note{border-left:2px solid var(--amber);padding:2px 0 2px 15px;color:var(--dim);font-size:14px;margin:24px 0 0;max-width:66ch}
+  .er-eq{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;background:var(--ink2);
+    border:1px solid var(--line);border-radius:3px;padding:14px 16px;margin:0 0 14px;overflow-x:auto}
+  .er-eq b{color:var(--amber)}
+  .er-defs{margin:0;font-size:13.5px}
+  .er-defs dt{color:var(--amber);font-weight:700;float:left;clear:left;width:20px}
+  .er-defs dd{margin:0 0 6px 30px;color:var(--dim)}
+
+  @media (max-width:560px){
+    .er-lanes{grid-template-columns:1fr}
+    .er-cards{grid-template-columns:1fr}
+    .er-hero{padding:40px 0 34px}
+  }
+</style>
+
+<div class="er">
+
+  {%- comment -%} 2. WHAT ARE YOU LOOKING FOR — lane navigation {%- endcomment -%}
+  <nav class="er-nav" aria-label="Ways in">
+    <div class="er-w"><ul>
+      <li><a href="#er-story">Enter a Story</a></li>
+      <li><a href="#er-question">Follow a Question</a></li>
+      <li><a href="#er-how">Learn How It Works</a></li>
+      <li><a href="#er-world">Explore the World</a></li>
+      <li><a href="#er-take">Take Something With You</a></li>
+    </ul></div>
+  </nav>
+
+  {%- comment -%} 1. IDENTITY / OPENING STATEMENT {%- endcomment -%}
+  <section class="er-hero"><div class="er-w">
+    <p class="er-kick">{{ section.settings.kicker | escape }}</p>
+    <h1>{{ section.settings.headline | escape }}</h1>
+    <p>{{ section.settings.standfirst | escape }}</p>
+    <div class="er-cta">
+      <a class="er-btn er-btn-a" href="{{ section.settings.primary_url }}">{{ section.settings.primary_label | escape }}</a>
+      <a class="er-btn er-btn-b" href="#er-world">{{ section.settings.secondary_label | escape }}</a>
+    </div>
+  </div></section>
+
+  {%- comment -%} 3-6. THE FIVE LANES {%- endcomment -%}
+  <section class="er-sec" id="er-story"><div class="er-w">
+    <h2>Five ways in</h2>
+    <p class="er-sub">A visitor does not arrive wanting a catalog. They arrive wanting to do something.
+      The top level is five intents, and the same item may sit in more than one.</p>
+    <div class="er-lanes">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'lane' -%}
+          <a class="er-lane" href="{{ block.settings.url | default: '#er-take' }}" {{ block.shopify_attributes }}>
+            <span class="n">{{ block.settings.number | escape }}</span>
+            <h3>{{ block.settings.title | escape }}</h3>
+            <p>{{ block.settings.blurb | escape }}</p>
+            <div class="c">{{ block.settings.meta | escape }}</div>
+          </a>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+    <p class="er-note">{{ section.settings.lane_note | escape }}</p>
+  </div></section>
+
+  {%- comment -%}
+    7. AVAILABLE NOW — real storefront products only.
+    Shopify never exposes DRAFT products to Liquid, so nothing unavailable
+    can appear in this rail. The truth rule is enforced by the platform.
+  {%- endcomment -%}
+  <section class="er-sec" id="er-take"><div class="er-w">
+    <h2>Available now</h2>
+    <p class="er-sub">Finished, buyable today, delivered to your library. Nothing ships.</p>
+    {%- assign shown = 0 -%}
+    <div class="er-cards">
+      {%- for product in collections.all.products limit: 12 -%}
+        {%- assign shown = shown | plus: 1 -%}
+        <article class="er-card">
+          <a class="er-cover" href="{{ product.url }}">
+            {%- if product.featured_image -%}
+              <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.featured_image.alt | escape }}" loading="lazy" width="600" height="600">
+            {%- endif -%}
+            {%- if product.metafields.custom.world_entities.value != blank -%}
+              <span class="er-world">
+                {%- for w in product.metafields.custom.world_entities.value -%}
+                  {{ w.name.value | escape }}{%- unless forloop.last %} · {% endunless -%}
+                {%- endfor -%}
+              </span>
+            {%- endif -%}
+          </a>
+          <div class="er-body">
+            <h4><a href="{{ product.url }}">{{ product.title | escape }}</a></h4>
+            {%- if product.metafields.custom.open_question.value.question != blank -%}
+              <p class="er-q">{{ product.metafields.custom.open_question.value.question.value | escape }}</p>
+            {%- endif -%}
+            {%- if product.metafields.custom.what_you_receive != blank -%}
+              <p class="er-get">{{ product.metafields.custom.what_you_receive | escape }}</p>
+            {%- endif -%}
+            <div class="er-foot">
+              <span class="er-price">{{ product.price | money }}</span>
+              <span class="er-tag live">Available now</span>
+            </div>
+          </div>
+        </article>
+      {%- endfor -%}
+    </div>
+    {%- if shown == 0 -%}
+      <p class="er-note">No product is currently published to the storefront. This rail is empty
+        because it is honest, not because it is broken.</p>
+    {%- endif -%}
+  </div></section>
+
+  {%- comment -%} IN PREPARATION — explicitly not buyable, no price, no buy control {%- endcomment -%}
+  <section class="er-sec" id="er-question"><div class="er-w">
+    <h2>In preparation</h2>
+    <p class="er-sub">Finished work that has not been released. These are not preorders and cannot be
+      bought. They are here so you can see what the world is building.</p>
+    <div class="er-cards">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'in_preparation' -%}
+          <article class="er-card" {{ block.shopify_attributes }}>
+            <div class="er-cover">
+              {%- if block.settings.image != blank -%}
+                <img src="{{ block.settings.image | image_url: width: 600 }}" alt="{{ block.settings.title | escape }}" loading="lazy" width="600" height="600">
+              {%- endif -%}
+              {%- if block.settings.world != blank -%}<span class="er-world">{{ block.settings.world | escape }}</span>{%- endif -%}
+            </div>
+            <div class="er-body">
+              <h4>{{ block.settings.title | escape }}</h4>
+              {%- if block.settings.question != blank -%}<p class="er-q">{{ block.settings.question | escape }}</p>{%- endif -%}
+              {%- if block.settings.gets != blank -%}<p class="er-get">{{ block.settings.gets | escape }}</p>{%- endif -%}
+              <div class="er-foot">
+                <span class="er-tag soon">Not yet released</span>
+              </div>
+            </div>
+          </article>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div></section>
+
+  {%- comment -%} HOW THIS IS MEASURED — formula and meaning together, never apart {%- endcomment -%}
+  <section class="er-sec" id="er-how"><div class="er-w">
+    <h2>How this storefront is measured</h2>
+    <div class="er-eq"><b>S_store</b> = <b>I</b> &times; <b>C</b> &times; <b>D</b> &times; <b>T</b></div>
+    <dl class="er-defs">
+      <dt>S</dt><dd><strong>S_store</strong> — storefront strength. Multiplicative, so any factor at zero makes the whole store zero.</dd>
+      <dt>I</dt><dd><strong>Identity</strong> — unmistakably ErsatzReality. Could this page belong to anyone else?</dd>
+      <dt>C</dt><dd><strong>Clarity</strong> — you understand what you can do here within one screen.</dd>
+      <dt>D</dt><dd><strong>Depth</strong> — every item connects outward to a world, a story or an open question.</dd>
+      <dt>T</dt><dd><strong>Trust</strong> — polished, accurate, usable. Nothing claims to be finished when it is not.</dd>
+    </dl>
+  </div></section>
+
+  {%- comment -%} 6. EXPLORE THE WORLD — free, sells nothing {%- endcomment -%}
+  <section class="er-sec" id="er-world"><div class="er-w">
+    <h2>{{ section.settings.world_title | escape }}</h2>
+    <p class="er-sub">{{ section.settings.world_blurb | escape }}</p>
+    <a class="er-btn er-btn-b" href="{{ section.settings.world_url | default: '/pages/what-is-ersatzreality' }}">Read what ErsatzReality is</a>
+  </div></section>
+
+</div>
+
+{% schema %}
+{
+  "name": "ER experience home",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "EdereAriah · a world kept on the record" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Every object here is the end of an investigation." },
+    { "type": "textarea", "id": "standfirst", "label": "Standfirst", "default": "ErsatzReality builds a world and shows its working. A story, a question, a plant, a vehicle that does not exist yet — each one arrives with what is documented, what is believed, and what is still unknown, kept apart on purpose." },
+    { "type": "text", "id": "primary_label", "label": "Primary button label", "default": "See what is available now" },
+    { "type": "url", "id": "primary_url", "label": "Primary button link" },
+    { "type": "text", "id": "secondary_label", "label": "Secondary button label", "default": "See how the world is built" },
+    { "type": "textarea", "id": "lane_note", "label": "Lane note", "default": "Explore the World carries no products on purpose. A store that only sells reads as a shelf. One free, genuinely interesting room is what makes the other four lanes mean something." },
+    { "type": "text", "id": "world_title", "label": "World section title", "default": "Explore the world" },
+    { "type": "textarea", "id": "world_blurb", "label": "World section blurb", "default": "EdereAriah is a place with trades, weather, people and unfinished arguments. You do not need to buy anything to walk around in it." },
+    { "type": "url", "id": "world_url", "label": "World section link" }
+  ],
+  "blocks": [
+    {
+      "type": "lane",
+      "name": "Lane",
+      "settings": [
+        { "type": "text", "id": "number", "label": "Number", "default": "01" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Enter a Story" },
+        { "type": "textarea", "id": "blurb", "label": "Blurb" },
+        { "type": "text", "id": "meta", "label": "Meta line" },
+        { "type": "url", "id": "url", "label": "Link" }
+      ]
+    },
+    {
+      "type": "in_preparation",
+      "name": "In preparation",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Cover" },
+        { "type": "text", "id": "world", "label": "World tag (W)" },
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "question", "label": "Question it asks (Q)" },
+        { "type": "text", "id": "gets", "label": "What the buyer gets (G)" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "ER experience home" }]
+}
+{% endschema %}

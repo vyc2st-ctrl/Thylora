@@ -1,0 +1,102 @@
+{%- comment -%}
+  What Is ErsatzReality — preview theme only.
+  Answers the four things a first-time visitor has no way to learn today:
+  what this is, how the pieces connect, why evidence is the point, and what
+  they can actually do here.
+{%- endcomment -%}
+
+<style>
+  .ea{--ink:#0d0e10;--ink2:#16181c;--paper:#f4f1ea;--dim:#cfc9bc;--mute:#9a948a;
+      --amber:#d9a441;--line:rgba(244,241,234,.14);
+      --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+      background:var(--ink);color:var(--paper);display:block}
+  .ea *{box-sizing:border-box;min-width:0}
+  .ea-w{max-width:780px;margin:0 auto;padding:0 16px}
+  .ea-hero{padding:60px 0 42px;border-bottom:1px solid var(--line)}
+  .ea-kick{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--amber);margin:0 0 16px}
+  .ea h1{font-family:var(--serif);font-weight:500;font-size:clamp(28px,5.2vw,46px);line-height:1.14;margin:0 0 16px}
+  .ea h2{font-family:var(--serif);font-weight:500;font-size:clamp(19px,3vw,26px);margin:44px 0 12px}
+  .ea p{font-size:16.5px;line-height:1.62;color:var(--dim);margin:0 0 16px}
+  .ea .lead{font-size:clamp(17px,2.2vw,19.5px);color:var(--paper)}
+  .ea-sec{padding:4px 0 48px}
+  .ea-steps{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px}
+  .ea-steps li{border:1px solid var(--line);border-radius:3px;padding:15px 16px;background:var(--ink2)}
+  .ea-steps b{color:var(--amber);font-size:11px;letter-spacing:.16em;text-transform:uppercase;display:block;margin-bottom:5px}
+  .ea-steps span{font-size:14.5px;color:var(--dim);line-height:1.5}
+  .ea-reg{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0 0}
+  .ea-reg div{border:1px solid var(--line);border-radius:3px;padding:14px;background:var(--ink2)}
+  .ea-reg h3{margin:0 0 6px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);font-weight:700}
+  .ea-reg p{margin:0;font-size:13.5px;color:var(--mute);line-height:1.5}
+  .ea-note{border-left:2px solid var(--amber);padding:2px 0 2px 15px;color:var(--dim);font-size:15px;margin:26px 0 0}
+</style>
+
+<div class="ea">
+  <section class="ea-hero"><div class="ea-w">
+    <p class="ea-kick">What is ErsatzReality</p>
+    <h1>{{ section.settings.headline | escape }}</h1>
+    <p class="lead">{{ section.settings.lead | escape }}</p>
+  </div></section>
+
+  <section class="ea-sec"><div class="ea-w">
+    <h2>The rule everything here follows</h2>
+    <p>Most writing mixes what is known, what is believed and what is hoped, then prints the mixture
+      in one typeface. ErsatzReality refuses to. Every product keeps four registers apart, and says
+      which one it is speaking in.</p>
+    <div class="ea-reg">
+      <div><h3>Documented</h3><p>There is a source, and we name it.</p></div>
+      <div><h3>Tradition</h3><p>People have long said so. That is a fact about people, not about the thing.</p></div>
+      <div><h3>Science</h3><p>What testing currently supports, including where it disagrees.</p></div>
+      <div><h3>Unknown</h3><p>Nobody has established this. It stays marked unknown rather than quietly filled in.</p></div>
+    </div>
+    <p class="ea-note">This is why a story here ends on a question instead of a moral, and why a
+      notebook about a vehicle can honestly say there is no car at the end of it.</p>
+  </div></section>
+
+  <section class="ea-sec"><div class="ea-w">
+    <h2>How the pieces connect</h2>
+    <p>A world, a story, a question, a tool and a product are not five separate businesses here.
+      They are five points on one chain, and each one is made from the one before it.</p>
+    <ol class="ea-steps">
+      <li><b>The world</b><span>EdereAriah has trades, weather, people and arguments that are not settled. Nothing in it is decoration.</span></li>
+      <li><b>A story</b><span>Something happens to someone in that world. It is written down as an edition you can read tonight.</span></li>
+      <li><b>A question</b><span>The story leaves a question standing. It goes on the record with what is documented, believed and unknown about it.</span></li>
+      <li><b>A tool</b><span>The question turns into something you can use — a deck, a workbook, a hunt — that works on your own life, not only ours.</span></li>
+      <li><b>A product</b><span>The tool becomes a file you keep. Downloading it again next year costs nothing and does not expire.</span></li>
+    </ol>
+  </div></section>
+
+  <section class="ea-sec"><div class="ea-w">
+    <h2>Why evidence is the point, not the decoration</h2>
+    <p>It would be faster to write a confident answer. It would also be worth less. A confident answer
+      you cannot check is indistinguishable from a made-up one, and a world built out of confident
+      answers collapses the moment somebody looks closely.</p>
+    <p>So the working is shown. When the record is contested, the file reports the contest rather than
+      picking the pleasing version. When something is genuinely unknown, it is written down precisely
+      enough that somebody could go and find out.</p>
+  </div></section>
+
+  <section class="ea-sec"><div class="ea-w">
+    <h2>What you can do here</h2>
+    <ol class="ea-steps">
+      <li><b>Read something tonight</b><span>Short finished editions. They arrive in your library and stay yours.</span></li>
+      <li><b>Follow a question</b><span>Take a question with no settled answer and see the evidence on either side of it.</span></li>
+      <li><b>Learn how it works</b><span>The working methods, not the theory. You come out with something built.</span></li>
+      <li><b>Walk around the world</b><span>Free. No purchase. The world is the point; the shop is downstream of it.</span></li>
+      <li><b>Keep it</b><span>Everything is a file. Nothing ships, nothing expires, and re-downloading costs nothing.</span></li>
+    </ol>
+    <p class="ea-note">{{ section.settings.closing | escape }}</p>
+  </div></section>
+</div>
+
+{% schema %}
+{
+  "name": "ER about",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "headline", "label": "Headline", "default": "A world that shows its working." },
+    { "type": "textarea", "id": "lead", "label": "Lead", "default": "ErsatzReality is a made world, built in public, where every object we sell is the end of an investigation rather than the start of a pitch." },
+    { "type": "textarea", "id": "closing", "label": "Closing note", "default": "If you only do one thing: read the cheapest story on the shelf. It is short, it is finished, and it will tell you more about what this place is than any page about us can." }
+  ],
+  "presets": [{ "name": "ER about" }]
+}
+{% endschema %}
