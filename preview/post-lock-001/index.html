@@ -1,0 +1,732 @@
+<title>Three-Post Image Lock</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,400&family=Archivo+Narrow:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --ground:#F2ECE0; --surface:#FBF7EF; --sunk:#E6DDCB;
+    --ink:#211C16; --ink-2:#4A4038; --ink-3:#7A6E60;
+    --rule:#CFC2AA; --rule-soft:#DFD5C2;
+    --umber:#8A6A47;
+    --leaf:#6E7A38; --ember:#A8541F; --amber:#A8762B;
+    --stop:#8C2F22; --stop-bg:#F6E4DF; --go:#4A6B3A;
+    --frame-ground:#2A241D; --frame-ink:#E8DFCE;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#14110E; --surface:#1D1914; --sunk:#100E0B;
+      --ink:#E8DFCE; --ink-2:#BCAF9A; --ink-3:#8A7D6C;
+      --rule:#3A332A; --rule-soft:#2A251E;
+      --umber:#B08B5F;
+      --leaf:#9AA55E; --ember:#C97340; --amber:#C99247;
+      --stop:#D9755F; --stop-bg:#2E1A15; --go:#8FA877;
+      --frame-ground:#221D17; --frame-ink:#E8DFCE;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#14110E; --surface:#1D1914; --sunk:#100E0B;
+    --ink:#E8DFCE; --ink-2:#BCAF9A; --ink-3:#8A7D6C;
+    --rule:#3A332A; --rule-soft:#2A251E;
+    --umber:#B08B5F;
+    --leaf:#9AA55E; --ember:#C97340; --amber:#C99247;
+    --stop:#D9755F; --stop-bg:#2E1A15; --go:#8FA877;
+    --frame-ground:#221D17; --frame-ink:#E8DFCE;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--ground); color:var(--ink);
+    font-family:"Newsreader",Georgia,serif; font-size:17px; line-height:1.6;
+    margin:0; padding-block:0 64px; padding-inline:20px;
+  }
+  .wrap{max-width:940px;margin:0 auto}
+
+  .lab{
+    font-family:"Archivo Narrow",Arial Narrow,sans-serif;
+    text-transform:uppercase; letter-spacing:.14em; font-weight:600;
+    font-size:12px; color:var(--ink-3);
+  }
+  code,.mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.86em}
+
+  /* ---- masthead ---- */
+  header.top{padding-block:44px 30px;border-bottom:2px solid var(--ink)}
+  header.top h1{
+    font-size:clamp(34px,7vw,58px); line-height:1.02; font-weight:600;
+    margin:10px 0 14px; text-wrap:balance; letter-spacing:-.015em;
+  }
+  .sub{color:var(--ink-2);max-width:62ch;margin:0}
+  .meta{
+    display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:22px;
+    padding-top:18px;border-top:1px solid var(--rule-soft);
+  }
+  .meta div{display:flex;flex-direction:column;gap:3px}
+  .meta b{font-family:"JetBrains Mono",monospace;font-size:13px;font-weight:500;color:var(--ink)}
+
+  .status{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:"Archivo Narrow",sans-serif;text-transform:uppercase;
+    letter-spacing:.12em;font-size:11.5px;font-weight:700;
+    padding:5px 11px;border:1px solid currentColor;border-radius:2px;
+  }
+  .status.go{color:var(--go)} .status.stop{color:var(--stop)}
+  .status .dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex:none}
+
+  section{padding-block:46px;border-bottom:1px solid var(--rule-soft)}
+  h2{font-size:26px;font-weight:600;margin:0 0 6px;letter-spacing:-.01em}
+  h3{font-size:19px;font-weight:600;margin:28px 0 8px}
+  p{margin:0 0 14px;max-width:68ch}
+
+  .callout{
+    background:var(--sunk);border-left:3px solid var(--umber);
+    padding:18px 20px;margin:20px 0;
+  }
+  .callout p:last-child{margin-bottom:0}
+
+  /* ---- barrier spec ---- */
+  pre.spec{
+    background:var(--sunk);border:1px solid var(--rule);
+    padding:18px;overflow-x:auto;margin:18px 0;
+    font-family:"JetBrains Mono",monospace;font-size:12.5px;line-height:1.72;
+    color:var(--ink-2);white-space:pre;
+  }
+  .yn{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin:20px 0}
+  .yn>div{background:var(--surface);padding:16px 18px}
+  .yn h4{margin:0 0 10px;font-family:"Archivo Narrow",sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:11.5px}
+  .yn .req h4{color:var(--go)} .yn .pro h4{color:var(--stop)}
+  .yn ul{margin:0;padding-left:16px;font-size:14.5px;line-height:1.72;color:var(--ink-2)}
+  @media(max-width:620px){.yn{grid-template-columns:1fr}}
+
+  /* ---- post block ---- */
+  .post{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:34px;align-items:start;margin-top:26px}
+  @media(max-width:760px){.post{grid-template-columns:1fr}}
+
+  .postnum{
+    font-family:"Archivo Narrow",sans-serif;font-weight:700;font-size:12px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--umber);margin-bottom:8px;
+  }
+
+  /* ---- 4:5 frame proof ---- */
+  .proofwrap{position:sticky;top:env(safe-area-inset-top,0px)}
+  .frame{
+    container-type:inline-size;
+    position:relative;aspect-ratio:4/5;width:100%;max-width:100%;
+    background:var(--frame-ground);color:var(--frame-ink);
+    overflow:hidden;border:1px solid var(--rule);
+  }
+  /* composition bands = honest schematic of where picture content sits */
+  .band{position:absolute;left:0;right:0;display:flex;align-items:center;justify-content:flex-end;padding-right:10px}
+  .band span{
+    font-family:"Archivo Narrow",sans-serif;font-size:9px;letter-spacing:.14em;
+    text-transform:uppercase;color:rgba(232,223,206,.26);
+  }
+  .safe{position:absolute;left:0;right:0;background:
+    repeating-linear-gradient(135deg,rgba(232,223,206,.05) 0 6px,transparent 6px 12px);
+    border-block:1px dashed rgba(232,223,206,.18);}
+  .plateline{position:absolute;top:3.15%;right:3.15%;bottom:3.15%;left:3.15%;border:1px solid rgba(232,223,206,.38)}
+
+  .tab{
+    position:absolute;left:7.6%;top:5.8%;height:3.5%;
+    display:inline-flex;align-items:center;padding:0 2.2cqw;
+    background:rgba(28,24,19,.68);
+    font-family:"Archivo Narrow",sans-serif;font-weight:600;
+    font-size:2.05cqw;letter-spacing:.2em;text-transform:uppercase;
+  }
+  .q{
+    position:absolute;left:7.6%;right:7%;top:11.1%;
+    font-size:5.3cqw;line-height:1.1;font-weight:600;letter-spacing:-.01em;
+    text-shadow:0 1px 6px rgba(0,0,0,.55);
+  }
+  .q.story{font-size:5.8cqw;font-weight:400;line-height:1.14}
+  .q.story em{display:block;font-style:normal;font-size:.6em;margin-top:.22em;line-height:1.2}
+  .support{
+    position:absolute;left:7.6%;right:7%;top:82.5%;
+    font-size:2.62cqw;line-height:1.42;color:rgba(232,223,206,.86);
+  }
+  .support.grid2{top:80.7%;display:grid;grid-template-columns:1fr 1fr;gap:.35em 0}
+  .rule{position:absolute;left:7.6%;right:7.6%;top:92.3%;height:1px;background:rgba(232,223,206,.4)}
+  .foot{
+    position:absolute;left:7.6%;right:7.6%;top:93.8%;
+    display:flex;justify-content:space-between;
+    font-family:"Archivo Narrow",sans-serif;font-size:1.72cqw;
+    letter-spacing:.2em;text-transform:uppercase;color:rgba(232,223,206,.4);
+  }
+  .accentchip{position:absolute;right:7.6%;top:5.8%;width:2.4cqw;height:2.4cqw;border-radius:50%}
+
+  .proofnote{
+    margin-top:10px;font-family:"Archivo Narrow",sans-serif;font-size:11px;
+    text-transform:uppercase;letter-spacing:.11em;color:var(--ink-3);line-height:1.6;
+  }
+
+  /* ---- detail side ---- */
+  dl.kv{display:grid;grid-template-columns:auto 1fr;gap:7px 18px;margin:16px 0 0;font-size:14.5px}
+  dl.kv dt{font-family:"Archivo Narrow",sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:11px;color:var(--ink-3);padding-top:3px}
+  dl.kv dd{margin:0;color:var(--ink-2)}
+
+  details.prompt{margin-top:18px;border:1px solid var(--rule);background:var(--surface)}
+  details.prompt summary{
+    cursor:pointer;padding:12px 16px;list-style:none;
+    font-family:"Archivo Narrow",sans-serif;text-transform:uppercase;
+    letter-spacing:.12em;font-size:11.5px;font-weight:600;color:var(--umber);
+  }
+  details.prompt summary::-webkit-details-marker{display:none}
+  details.prompt summary::after{content:" ▸";}
+  details.prompt[open] summary::after{content:" ▾";}
+  details.prompt pre{
+    margin:0;padding:0 16px 16px;overflow-x:auto;white-space:pre-wrap;
+    font-family:"JetBrains Mono",monospace;font-size:12px;line-height:1.7;color:var(--ink-2);
+  }
+
+  .caption{background:var(--surface);border:1px solid var(--rule);padding:16px 18px;margin-top:18px;font-size:15.5px}
+  .caption p{margin:0 0 10px} .caption p:last-child{margin-bottom:0}
+  .caption .tags{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--ink-3)}
+
+  table.script{width:100%;border-collapse:collapse;margin-top:16px;font-size:14.5px}
+  table.script td{padding:7px 10px;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+  table.script td:first-child{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--ink-3);white-space:nowrap;width:1%}
+
+  /* ---- approval surface ---- */
+  .approval{border:2px solid var(--ink);background:var(--surface);padding:20px;margin-top:26px}
+  .approval.held{border-color:var(--stop);background:var(--stop-bg)}
+  .approval ol{margin:0 0 16px;padding-left:20px;font-size:15px}
+  .approval ol li{margin-bottom:7px}
+  .acts{display:flex;flex-wrap:wrap;gap:10px;padding-top:14px;border-top:1px solid var(--rule)}
+  .act{
+    font-family:"Archivo Narrow",sans-serif;text-transform:uppercase;letter-spacing:.13em;
+    font-size:12px;font-weight:700;padding:10px 18px;border:1.5px solid var(--ink-3);
+    color:var(--ink-3);border-radius:2px;
+  }
+  .act.rec{border-color:var(--go);color:var(--go);background:color-mix(in srgb,var(--go) 12%,transparent)}
+  .act.now{border-color:var(--stop);color:var(--stop);background:color-mix(in srgb,var(--stop) 14%,transparent)}
+
+  /* ---- gate banner ---- */
+  .gate{border:2px solid var(--stop);background:var(--stop-bg);padding:22px;margin-top:26px}
+  .gate h3{margin-top:0;color:var(--stop);font-size:20px}
+  .gate table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+  .gate table td{padding:6px 10px;border-bottom:1px solid color-mix(in srgb,var(--stop) 22%,transparent)}
+  .gate table td:first-child{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--ink-2);width:42%}
+  .gate table td:last-child{font-weight:600}
+  .paths{display:grid;gap:1px;background:color-mix(in srgb,var(--stop) 25%,transparent);border:1px solid color-mix(in srgb,var(--stop) 25%,transparent);margin-top:16px}
+  .paths>div{background:var(--surface);padding:14px 16px}
+  .paths>div.pick{background:color-mix(in srgb,var(--go) 10%,var(--surface))}
+  .paths b{font-family:"Archivo Narrow",sans-serif;text-transform:uppercase;letter-spacing:.11em;font-size:12px;display:block;margin-bottom:5px}
+  .paths.pickmark>div.pick b::after{content:" — recommended";color:var(--go)}
+
+  /* ---- summary ---- */
+  table.sum{width:100%;border-collapse:collapse;margin-top:20px;font-size:14.5px}
+  table.sum th{
+    text-align:left;padding:9px 10px;border-bottom:2px solid var(--ink);
+    font-family:"Archivo Narrow",sans-serif;text-transform:uppercase;
+    letter-spacing:.1em;font-size:11px;font-weight:700;
+  }
+  table.sum td{padding:11px 10px;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+  table.sum td.c{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--ink-2)}
+  .notdone{columns:2;column-gap:32px;font-size:14.5px;color:var(--ink-2);margin-top:16px}
+  .notdone li{break-inside:avoid;margin-bottom:5px}
+  @media(max-width:620px){.notdone{columns:1}}
+  .scrollx{overflow-x:auto}
+</style>
+
+<div class="wrap">
+
+<header class="top">
+  <div class="lab">THYLORA · Workroom WR-POSTLOCK-001 · 2026-09-18</div>
+  <h1>Tomorrow's Three Posts</h1>
+  <p class="sub">Imagery direction lock for FIELD FILE 001, TRAIL TABLE 001 and BEDTIME MINI 001. The fixed viewer-plane barrier is applied automatically to all three. Nothing here has been generated, published or scheduled.</p>
+  <div class="meta">
+    <div><span class="lab">Backend</span><b>thylora-dash · ACTIVE_HEALTHY</b></div>
+    <div><span class="lab">Continuity read</span><b>seq 460</b></div>
+    <div><span class="lab">Continuity write</span><b>seq 461</b></div>
+    <div><span class="lab">Barrier</span><b>THY-INTERWORLD-BARRIER-GLOBAL-001</b></div>
+  </div>
+  <p style="margin-top:20px">
+    <span class="status go"><span class="dot"></span>2 ready to approve</span>
+    &nbsp;
+    <span class="status stop"><span class="dot"></span>1 held at a child-protection gate</span>
+  </p>
+</header>
+
+<section>
+  <div class="lab">Section 1</div>
+  <h2>The fixed barrier</h2>
+  <p>This block is appended verbatim to every image prompt below, and to every THYLORA image from here forward. It does not need to be requested again.</p>
+
+  <div class="callout">
+    <p><strong>One correction to the brief.</strong> The instruction named the rule as “no swirls, no smoke-like haze, no rainbow interference.” That is the prohibition half only. The locked backend rule also carries a <em>required-form</em> half and a numeric intensity band — an image that merely avoids swirls still fails the gate if the barrier is absent, drifting, or outside 0.18–0.28. Both halves are applied below.</p>
+  </div>
+
+  <pre class="spec">Model:      I_seen(x,y,t) = T(x,y) * W(x,y,t) + B(x,y)
+Barrier:    B = g1*F + g2*S + g3*E + g4*D      ordering  g1 &gt; g2 &gt; g3 &gt; g4
+Stationary: dB(x,y)/dt = 0        World:  dW(x,y,t)/dt may be nonzero
+Nulled:     swirl_term = 0        smoke_like_term = 0
+Intensity:  0.18 – 0.28 relative visual weight — subtle but unmistakable
+Priority:   SUBJECT &gt; WORLD &gt; DEPTH &gt; BARRIER
+Geometry:   EARTH VIEWER → STATIONARY VIEWING FILM → THYLORA/EDEREARIAH WORLD</pre>
+
+  <div class="yn">
+    <div class="req">
+      <h4>Required — the barrier must be present</h4>
+      <ul>
+        <li><strong>F</strong> — faint material texture of a fixed pane</li>
+        <li><strong>S</strong> — restrained scratches / projector gate wear</li>
+        <li><strong>E</strong> — fixed edge and frame behaviour at the border</li>
+        <li><strong>D</strong> — slight density variation across the pane</li>
+      </ul>
+    </div>
+    <div class="pro">
+      <h4>Prohibited</h4>
+      <ul>
+        <li>swirls · rainbow rings · rainbow interference</li>
+        <li>smoke-like haze · atmospheric drift · uniform blur</li>
+        <li>portal · bubble · force field · glowing edge · touch ripple</li>
+        <li>lens-flare dominance · sparkle · decorative interference</li>
+        <li>barrier that tracks the subject or moves with the camera</li>
+        <li>barrier treated as an object inside the scene</li>
+      </ul>
+    </div>
+  </div>
+  <p style="font-size:15px;color:var(--ink-2)">People and objects inside the scene do not see, touch, investigate or react to the viewing film. It is viewer-side only. Palette across all three: restrained sepia, charcoal, umber and cream, with <strong>one</strong> selective low-saturation accent per image and no other saturated colour in frame. <code>ErsatzReality</code> is embedded in-world in every image.</p>
+</section>
+
+<!-- ============ POST 1 ============ -->
+<section>
+  <div class="postnum">Post 1 of 3</div>
+  <h2>FIELD FILE 001</h2>
+  <p class="sub">The beauty of the land, and the work happening on it.</p>
+
+  <div class="post">
+    <div>
+      <div class="proofwrap">
+        <div class="frame">
+          <div class="band" style="top:0;height:52%"><span>background · rows, shed, treeline, hills</span></div>
+          <div class="band" style="top:52%;height:26%"><span>middle · three workers, drying rack</span></div>
+          <div class="band" style="top:78%;height:22%"><span>foreground · baskets, bundle, knife</span></div>
+          <div class="safe" style="top:0;height:18%"></div>
+          <div class="safe" style="top:74%;height:26%"></div>
+          <div class="plateline"></div>
+          <div class="accentchip" style="background:#7E8A42"></div>
+          <div class="tab">Field File 001</div>
+          <div class="q">What grew here —<br>and why did it matter?</div>
+          <div class="support">Some plants fed people. Some flavored food.<br>Some served daily work. Some carried history.</div>
+          <div class="rule"></div>
+          <div class="foot"><span>ErsatzReality</span><span>001</span></div>
+        </div>
+        <p class="proofnote">Text-layout proof at 1080 × 1350. Type position, size and wrap are exact. Hatched bands are the text-safe zones — no face, hand or tool enters them. <strong>No image has been generated.</strong></p>
+      </div>
+    </div>
+
+    <div>
+      <h3>Visual concept</h3>
+      <p>A working herb and plant farm at mid-morning, harvest in progress. The subject is the land and the labour, not a specimen. Camera at standing height looking down a planting bed so the rows carry the depth.</p>
+      <p><strong>Foreground:</strong> two woven baskets on worked soil, one heaped with cut green stems; a tied bundle across a rim; a curved harvest knife. <strong>Middle:</strong> three workers of different ages — an older woman kneeling and cutting, a man mid-straighten with a full basket on his hip, a younger worker laying bundles on a drying rack. Dirt on hands and hems, faces legible, caught working. <strong>Background:</strong> staked rows, a timber-and-stone shed with bundles hanging in its shade, a water channel, tilled ground rising to hills.</p>
+      <p>The collectible feel comes from the plate frame and file number — <em>not</em> from a worksheet layout. It should read like plate 001 of a series you'd want the rest of.</p>
+
+      <dl class="kv">
+        <dt>Accent</dt><dd>Muted green-gold of live cut leaf — baskets and drying rack only</dd>
+        <dt>Light</dt><dd>Morning sun, camera left, low and warm; one consistent shadow direction</dd>
+        <dt>Not this</dt><dd>Isolated plant on plain ground · botanical diagram · supplement ad · classroom worksheet</dd>
+        <dt>Embed</dt><dd><code>ErsatzReality</code> burned into the shed lintel or drying-rack end plank</dd>
+      </dl>
+
+      <details class="prompt"><summary>Exact image prompt</summary><pre>A working herb and plant farm in the THYLORA/EdereAriah world, mid-morning,
+harvest underway. Authored painterly-etched medium with old-film charcoal
+character — visibly made, never a photograph, never generic AI concept art.
+
+COMPOSITION: standing-height camera, slightly elevated, looking down a planting
+bed so staked rows run away into depth to a treeline and soft hills.
+
+FOREGROUND, lower third, weighted right: two woven harvest baskets on worked
+soil, one heaped with freshly cut green stems, one half full; a tied bundle of
+long-stemmed herb laid across a basket rim; a short curved harvest knife resting
+on the edge; loose cut leaves and crumbled earth.
+
+MIDDLE GROUND: three workers of different ages and builds. An older woman
+kneeling, cutting at the base of a plant, one hand gathering the stems. A man
+mid-straighten with a full basket braced on his hip, weight visibly in his back.
+A younger worker laying bundles flat on a drying rack. Real anatomy, real
+fatigue, dirt on hands and hems, worked cloth with genuine wear and fall. Faces
+legible and individual, caught working, not posed.
+
+BACKGROUND: staked planting rows, a low timber-and-stone work shed with herb
+bundles hanging in its shade, a narrow water channel catching light, tilled
+ground rising to treeline and hills. High open sky.
+
+LIGHT: single motivated source — morning sun from camera left, low and warm.
+Recorded shadow direction consistent across every figure, basket and post.
+Readable shadow detail, deep blacks that keep information.
+
+PALETTE: restrained sepia, charcoal, umber and cream. ONE selective
+low-saturation accent only — the muted green-gold of live cut leaf in the
+baskets and on the drying rack. No other saturated colour anywhere in frame.
+
+TEXT SAFETY: keep the top 18% and bottom 26% compositionally quiet — sky and
+open soil — for overlaid plate text. No important face, hand or tool in those
+bands.
+
+ErsatzReality embedded legibly and intentionally — burned into the work-shed
+lintel board or the drying-rack end plank, in-world and weathered, never
+floating, never obscuring.
+
+NEGATIVE: isolated plant on plain background · botanical diagram · labelled
+specimen chart · mortar and pestle wellness still life · supplement or pharmacy
+advertising · classroom worksheet · stock photography · white studio background ·
+modern packaging · modern tools · plastic · text signage other than the embed.
+
+[APPEND THE FIXED VIEWER-PLANE BARRIER BLOCK — SECTION 1, VERBATIM]</pre></details>
+
+      <div class="caption">
+        <div class="lab" style="margin-bottom:10px">Caption</div>
+        <p><strong>FIELD FILE 001 — What grew here, and why did it matter?</strong></p>
+        <p>Before a plant was a product, it was a job.</p>
+        <p>Somebody decided what went in the ground. Somebody decided when to cut it, how to dry it, what to trade it for, and what to keep back for the house. Those decisions are the reason some plants travelled the world and others stayed in one valley.</p>
+        <p>We are opening a field file on them. Not a remedy list — a record of use.</p>
+        <p>Some fed people. Some flavored food. Some served daily work. Some carried history.</p>
+        <p>First file lands soon. What grew where you are from?</p>
+        <p class="tags">#FieldFile #ErsatzReality #THYLORA</p>
+      </div>
+
+      <h3>Short script · 20s</h3>
+      <table class="script">
+        <tr><td>0:00–0:05</td><td><em>Rows, no narration — one beat of the field working.</em></td></tr>
+        <tr><td>0:05–0:11</td><td>“Before a plant was a product, it was a job.”</td></tr>
+        <tr><td>0:11–0:16</td><td>“Somebody chose it. Somebody cut it. Somebody decided it was worth carrying.”</td></tr>
+        <tr><td>0:16–0:20</td><td>“Field File 001. What grew here — and why did it matter?”</td></tr>
+      </table>
+
+      <div class="callout">
+        <p><strong>Ruling requested — series relationship.</strong> FIELD FILE is the world-entry layer for the HERB FILE shelf seeded at seq 460 (willow bark). It is deliberately <em>not</em> a willow image: willow is bark off a tree, and forcing it into a row-crop frame breaks the scene. Recommend binding them as a two-track series — FIELD FILE carries the world, HERB FILE carries the evidence. Not decided unilaterally.</p>
+      </div>
+
+      <div class="approval">
+        <div class="lab" style="margin-bottom:12px">Approval surface · THY-APPROVAL-MUST-BE-VIEWABLE-001</div>
+        <ol>
+          <li><strong>What it is</strong> — imagery direction lock for FIELD FILE 001 still post, 4:5.</li>
+          <li><strong>View it</strong> — the frame proof at left is the exact bound item.</li>
+          <li><strong>What approval does</strong> — unlocks image generation under the preflight lock. Does <em>not</em> publish or schedule.</li>
+        </ol>
+        <dl class="kv" style="margin-bottom:16px">
+          <dt>Binding</dt><dd class="mono">THY-FIELD-FILE-POST-20260918-001 · v1</dd>
+          <dt>State</dt><dd class="mono">DIRECTION_LOCKED_AWAITING_CHAIRMAN</dd>
+        </dl>
+        <div class="acts"><span class="act rec">Approve ✓ recommended</span><span class="act">Revise</span><span class="act">Hold</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POST 2 ============ -->
+<section>
+  <div class="postnum">Post 2 of 3</div>
+  <h2>TRAIL TABLE 001</h2>
+  <p class="sub">Supper as the last job of the working day — not a food photograph.</p>
+
+  <div class="post">
+    <div>
+      <div class="proofwrap">
+        <div class="frame">
+          <div class="band" style="top:0;height:46%"><span>background · wagon, picketed horses, dark country</span></div>
+          <div class="band" style="top:46%;height:26%"><span>middle · rider at fire, second figure with bridle</span></div>
+          <div class="band" style="top:72%;height:28%"><span>foreground · skillet on banked coals, coffee pot</span></div>
+          <div class="safe" style="top:0;height:18%"></div>
+          <div class="safe" style="top:74%;height:26%"></div>
+          <div class="plateline"></div>
+          <div class="accentchip" style="background:#A8541F"></div>
+          <div class="tab">Trail Table 001</div>
+          <div class="q">What did supper have to do —<br>not just taste like?</div>
+          <div class="support grid2">
+            <span>Feed the crew.</span><span>Stretch the food.</span>
+            <span>Use what lasts.</span><span>Keep tomorrow moving.</span>
+          </div>
+          <div class="rule"></div>
+          <div class="foot"><span>ErsatzReality</span><span>001</span></div>
+        </div>
+        <p class="proofnote">Four support lines set 2 × 2, not stacked — they read as four <em>jobs</em>, which is the point of the post, and the grid keeps the block clear of the fire. <strong>No image has been generated.</strong></p>
+      </div>
+    </div>
+
+    <div>
+      <h3>Visual concept</h3>
+      <p>Camera low — skillet height, just above the fire ring — so the pan dominates the near frame and the camp reads behind it in depth. Dusk, sky already gone. The coal bed is the motivated light and it does all the work.</p>
+      <p><strong>Foreground:</strong> heavy cast iron on banked coals, not flames — seared salt-pork and thick-cut potatoes crowded to the edges, beans held to one side in their liquid, a blackened coffee pot at the coal edge, flat bread being turned on a knife blade. Pans scratched and seasoned. <strong>Middle:</strong> a rider crouched working the pan, sleeves shoved up; a second figure at the edge of the light still holding a bridle, not yet sat down; tin plates stacked, not laid out. <strong>Background:</strong> wagon tailgate and bows in silhouette, two picketed horses, flat country falling away dark.</p>
+      <p>The logic has to be readable in the frame: food that keeps, food that stretches, food that cooks in one pan — cooked by people who are still working. Nothing plated. No garnish.</p>
+
+      <dl class="kv">
+        <dt>Accent</dt><dd>Low banked ember orange — coal bed, and where it strikes skin and iron</dd>
+        <dt>Light</dt><dd>Coals only; lit from below, shadow thrown upward and back</dd>
+        <dt>Not this</dt><dd>Restaurant plating · food styling · clean pans · cosy glamour camping</dd>
+        <dt>Embed</dt><dd><code>ErsatzReality</code> stamped into the wagon tailgate plank or skillet handle</dd>
+      </dl>
+
+      <details class="prompt"><summary>Exact image prompt</summary><pre>A frontier trail camp at dusk, supper cooking — the last job of the working day.
+Authored painterly-etched medium with old-film charcoal character, visibly made,
+never a photograph, never a food-styling shot.
+
+COMPOSITION: camera low, at skillet height just above the fire ring, so the pan
+dominates the near frame and the camp recedes behind it in depth.
+
+FOREGROUND: a heavy cast-iron skillet on a banked bed of glowing coals, not open
+flame. Seared salt-pork and thick-cut potatoes crowded to the pan edges; beans
+held to one side still in their liquid. A blackened coffee pot at the coal edge.
+A second smaller pan with dense uneven flat bread being turned on a knife blade.
+Pans scratched, seasoned, heavily used. Grease catching light. No garnish, no
+plating, no styling.
+
+MIDDLE GROUND: a rider crouched at the fire working the pan, sleeves shoved up,
+hat pushed back, forearms lit. A second figure standing at the edge of the light
+still holding a bridle, not yet sat down. Tin plates stacked, not laid out. A
+bedroll and saddle set down where the man will sleep.
+
+BACKGROUND: wagon tailgate and rear bows in silhouette, canvas catching the last
+firelight; two picketed horses beyond, one head-down, one watching the camp.
+Flat open country falling away dark.
+
+LIGHT: the coal bed is the single motivated source — low, warm, directional,
+from below. Faces and forearms lit from underneath. Shadow thrown upward and
+back, consistent for every figure, pan and wagon bow. Deep blacks that keep
+shadow information.
+
+PALETTE: restrained sepia, charcoal, umber and cream. ONE selective
+low-saturation accent only — low banked ember orange in the coal bed and where
+it strikes skin and iron. No other saturated colour in the frame.
+
+TEXT SAFETY: keep the top 18% and bottom 26% compositionally quiet — dusk sky
+and dark foreground ground — for overlaid plate text. No important face, hand or
+pan edge in those bands.
+
+ErsatzReality embedded legibly and intentionally — stamped into the wagon
+tailgate plank or the skillet handle, in-world and worn, never floating, never
+obscuring.
+
+NEGATIVE: restaurant plating · food styling · garnish · modern cookware ·
+non-stick · clean pans · studio light · overhead flat-lay · cosy glamour camping ·
+costume-clean wardrobe · stock photography · modern packaging · text signage
+other than the specified embed.
+
+[APPEND THE FIXED VIEWER-PLANE BARRIER BLOCK — SECTION 1, VERBATIM]</pre></details>
+
+      <div class="caption">
+        <div class="lab" style="margin-bottom:10px">Caption</div>
+        <p><strong>TRAIL TABLE 001 — What did supper have to do, not just taste like?</strong></p>
+        <p>A trail cook was not trying to impress anybody. He had four jobs.</p>
+        <p><strong>Feed the crew.</strong> Enough calories to work tomorrow, not enough to sit down after.<br>
+           <strong>Stretch the food.</strong> Beans and bread carry the pork further than pork alone.<br>
+           <strong>Use what lasts.</strong> Salt, fat, flour, dried beans — things that survive heat, damp and days.<br>
+           <strong>Keep tomorrow moving.</strong> One pan, one fire, coals not flames, everything packed by dawn.</p>
+        <p>Taste came fifth. When it came, it was earned.</p>
+        <p class="tags">#TrailTable #ErsatzReality #THYLORA</p>
+      </div>
+
+      <h3>Short script · 22s</h3>
+      <table class="script">
+        <tr><td>0:00–0:05</td><td><em>Pan on the coals, no narration — one beat of it cooking.</em></td></tr>
+        <tr><td>0:05–0:10</td><td>“Supper on the trail had four jobs. Taste was not one of them.”</td></tr>
+        <tr><td>0:10–0:15</td><td>“Feed the crew. Stretch the food.”</td></tr>
+        <tr><td>0:15–0:19</td><td>“Use what lasts. Keep tomorrow moving.”</td></tr>
+        <tr><td>0:19–0:22</td><td>“Trail Table 001.”</td></tr>
+      </table>
+
+      <div class="callout">
+        <p><strong>Ruling requested — supersession.</strong> A row already exists: <code>THY-TRAIL-TABLE-POST-20260917-A</code> (“Trail Table No. 001 — Rain-Side Beans”, PRODUCTION_ACTIVE, directed 2026-09-17). Same series, same number. Recommend marking it <code>SUPERSEDED_BY_POSTLOCK_001</code> rather than deleting, so the Rain-Side Beans framing stays in history. The existing row has not been touched.</p>
+      </div>
+
+      <div class="approval">
+        <div class="lab" style="margin-bottom:12px">Approval surface · THY-APPROVAL-MUST-BE-VIEWABLE-001</div>
+        <ol>
+          <li><strong>What it is</strong> — imagery direction lock for TRAIL TABLE 001 still post, 4:5.</li>
+          <li><strong>View it</strong> — the frame proof at left is the exact bound item.</li>
+          <li><strong>What approval does</strong> — unlocks generation, and carries the supersession ruling above. Does <em>not</em> publish or schedule.</li>
+        </ol>
+        <dl class="kv" style="margin-bottom:16px">
+          <dt>Binding</dt><dd class="mono">THY-TRAIL-TABLE-POST-20260918-001 · v1</dd>
+          <dt>State</dt><dd class="mono">DIRECTION_LOCKED_AWAITING_CHAIRMAN</dd>
+        </dl>
+        <div class="acts"><span class="act rec">Approve ✓ recommended</span><span class="act">Revise</span><span class="act">Hold</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POST 3 ============ -->
+<section>
+  <div class="postnum">Post 3 of 3 · held</div>
+  <h2>BEDTIME MINI 001</h2>
+  <p class="sub">Princess Kylee and the Door Nobody Checked.</p>
+
+  <div class="gate">
+    <h3>Blocked at a child-protection gate — Chairman ruling required</h3>
+    <p>The direction is complete and ready. It cannot go to generation in its current form, and the reason is not aesthetic. Backend record <code>FIP-SIX-KYLEE-001</code> (registered 2026-08-25, audit <code>THY-FAMILY-PROTECTION-20260825-001</code>) holds:</p>
+    <div class="scrollx">
+    <table>
+      <tr><td>display_name</td><td>Kylee Jane Curry</td></tr>
+      <tr><td>relationship</td><td>protected grandchild</td></tr>
+      <tr><td>privacy_classification</td><td>PRIVATE_FAMILY</td></tr>
+      <tr><td>likeness_protection</td><td>BLOCKED_WITHOUT_PERMISSION</td></tr>
+      <tr><td>public_release_status</td><td>BLOCKED</td></tr>
+      <tr><td>consent_status</td><td>NOT_VERIFIED</td></tr>
+      <tr><td>prohibited_viewers</td><td>PUBLIC · UNAUTHORIZED</td></tr>
+    </table>
+    </div>
+    <p>And <code>THY-NAME-AUTHORIZATION-GATE-002</code> lists <strong>KYLEE</strong> as a protected canonical name. A public post that puts a protected child's canonical first name on a depicted child character trips all of it at once. Precedent stands in <code>THY-KENNEDY-VISUAL-PRIVACY-001</code>, where a real child's face must stay non-recoverable even at 2× crop.</p>
+    <p><strong>This is not a refusal.</strong> It is the backend's own registered protection on the Chairman's grandchild, and the Chairman is the only authority who can clear it. Three clean paths, all of which keep the post:</p>
+    <div class="paths pickmark">
+      <div><b>Path A — Authorize</b>Record explicit public-use authorization for the name against <code>FIP-SIX-KYLEE-001</code>, likeness still constrained. Post ships as written.</div>
+      <div class="pick"><b>Path B — Separate the character</b>Keep the name; bind <em>Princess Kylee</em> as an authored fictional character with no likeness relationship to Kylee Jane Curry, recorded as such. Post ships, child stays protected. The world already has this pattern — <code>CHAR-BRAMBLE-001</code> carries <code>target_inspiration: Kylee Jane</code> while being its own character.</div>
+      <div><b>Path C — Rename</b>Public series uses a different princess name; <em>Princess Kylee</em> stays a private family edition.</div>
+    </div>
+  </div>
+
+  <div class="post">
+    <div>
+      <div class="proofwrap">
+        <div class="frame">
+          <div class="band" style="top:0;height:40%"><span>hallway depth · papered wall, picture hung high</span></div>
+          <div class="band" style="top:40%;height:34%"><span>subject · Kylee at the key hook board · door ajar right</span></div>
+          <div class="band" style="top:74%;height:26%"><span>board floor · her long shadow reaching the door</span></div>
+          <div class="safe" style="top:0;height:18%"></div>
+          <div class="safe" style="top:74%;height:26%"></div>
+          <div class="plateline"></div>
+          <div class="accentchip" style="background:#A8762B"></div>
+          <div class="tab">Bedtime Mini 001</div>
+          <div class="q story">Princess Kylee<em>and the Door Nobody Checked</em></div>
+          <div class="rule"></div>
+          <div class="foot"><span>ErsatzReality</span><span>001</span></div>
+        </div>
+        <p class="proofnote">Title case, not caps — this is a storybook, not a file. <strong>No support line:</strong> the open lower frame is the lamp-lit floor and her long shadow reaching the door. The space is the copy. <strong>No image has been generated.</strong></p>
+      </div>
+    </div>
+
+    <div>
+      <h3>Visual concept</h3>
+      <p>A child-scale mystery caught at the <em>thinking</em> moment, not the scared moment. A warm upper hallway of an old house, late, everyone else asleep. She is small in a tall space and entirely unbothered by it.</p>
+      <p><strong>Subject:</strong> a girl in a plain nightgown and light robe at a key hook board — six iron hooks, five keys hanging, one hook empty. She holds a key up at eye level, turned slightly, comparing it to the empty hook. Calm, absorbed, lightly frowning the way a child frowns at arithmetic. A small crown worn plainly and a little crooked, like a real possession rather than a costume. <strong>The door:</strong> further down the hall on the right, panelled, standing slightly ajar — not sinister, just not shut and nobody checked it. <strong>The light:</strong> a low oil lamp on the hall table, warm, throwing her shadow long down the hall toward the door.</p>
+      <p><strong>The detail that carries the whole story:</strong> the five hanging keys are visibly different — sizes, wards, one with a worn ribbon. The one in her hand plainly doesn't belong to the empty hook. That mismatch is the picture.</p>
+
+      <dl class="kv">
+        <dt>Accent</dt><dd>Warm lamp amber — her face, hands, the held key, the near wall</dd>
+        <dt>Tone</dt><dd>Smart and calm. A child who is going to work it out</dd>
+        <dt>Not this</dt><dd>Glossy 3D · big-eyed cartoon · Disney gown and castle · fairy sparkle · a frightened child · a threatening door · babyish nursery</dd>
+        <dt>Embed</dt><dd><code>ErsatzReality</code> small and in-world on the hall table edge or picture-frame rail</dd>
+      </dl>
+
+      <div class="callout" style="border-left-color:var(--stop)">
+        <p><strong>Binding likeness constraint</strong>, regardless of which path clears the gate: Princess Kylee is an <em>authored character</em> and must not resemble Kylee Jane Curry or any identifiable real child. No reference photograph of any real child as substrate, seed or guide. Facial structure authored from the character sheet only. Character sheet <code>CHAR-PKYLEE-001</code> must be registered with its own reference set <em>before</em> generation. Verify at full frame, 2× crop and thumbnail that no identifiable real-child likeness is recoverable.</p>
+      </div>
+
+      <details class="prompt"><summary>Exact image prompt</summary><pre>A warm upper hallway of an old house, late at night, everyone else asleep. A
+child-scale mystery caught at the thinking moment. Authored painterly-etched
+illustration with old-film character — visibly made, warm and hand-worked. NOT
+glossy 3D animation, NOT cartoon styling, NOT a studio fairy-tale look.
+
+SUBJECT: a young girl in a plain nightgown and light robe, standing
+three-quarters to camera at a key hook board on the hallway wall — six iron
+hooks, five keys hanging, one hook empty. She holds a single key up at eye level,
+turned slightly, comparing it to the empty hook. Her expression is calm,
+absorbed and lightly frowning — a child doing arithmetic, not a child afraid. A
+small plain crown sits slightly crooked on her head, worn like a real possession,
+not a costume piece. Bare feet on board floor.
+
+KEY LOGIC, must be legible: the five hanging keys are visibly different from one
+another — different sizes, different wards, one tied with a worn ribbon. The key
+in her hand plainly does not match the empty hook. This mismatch is the subject
+of the picture.
+
+THE DOOR: further down the hall on the right, a panelled door standing slightly
+ajar, the dark of the room beyond showing as a narrow vertical band, with a thin
+line of light beneath it. Not sinister, not threatening — simply not shut, and
+not checked.
+
+SETTING: worn board floor, a runner rug, papered wall with age at the seams, a
+low hall table holding the lamp, a coat peg, a framed picture hung a little
+high. Tall hallway, small child — the scale gap is the point.
+
+LIGHT: a low oil lamp on the hall table is the single motivated source, warm and
+close, throwing her shadow long down the hallway toward the door. Secondary thin
+light under the far door. Consistent shadow direction on every object. Deep warm
+blacks that keep detail.
+
+PALETTE: restrained sepia, charcoal, umber and cream. ONE selective
+low-saturation accent only — warm lamp amber on her face, hands, the held key
+and the near wall. No other saturated colour in the frame.
+
+TEXT SAFETY: keep the top 18% and bottom 26% compositionally quiet — upper wall
+and floor — for overlaid plate text. No face, hand, key or crown in those bands.
+
+ErsatzReality embedded legibly and intentionally — small and in-world on the
+hall table edge or the picture frame's lower rail, never floating, never
+obscuring.
+
+NEGATIVE: glossy 3D render · big-eyed cartoon · Disney princess gown or castle ·
+tiara jewels · fairy sparkle · magic glow · glitter · frightened or crying child ·
+horror or threat · monster · babyish nursery decor · modern interior · plastic
+toys · stock illustration · text signage other than the specified embed.
+
+[APPEND THE CHILD LIKENESS CONSTRAINT — VERBATIM]
+[APPEND THE FIXED VIEWER-PLANE BARRIER BLOCK — SECTION 1, VERBATIM]</pre></details>
+
+      <div class="caption">
+        <div class="lab" style="margin-bottom:10px">Caption</div>
+        <p><strong>BEDTIME MINI 001 — Princess Kylee and the Door Nobody Checked</strong></p>
+        <p>There were six hooks by the stairs and only five keys.</p>
+        <p>Everybody in the house had walked past that empty hook all day. Princess Kylee was the one who stopped, and counted, and noticed that the key in her hand did not fit the space it was supposed to go back into.</p>
+        <p>That is usually how it starts. Not with something frightening. With something that does not add up, and one person willing to stand there until it does.</p>
+        <p>A short one, for the end of the day.</p>
+        <p class="tags">#BedtimeMini #ErsatzReality #THYLORA</p>
+      </div>
+
+      <h3>Short script · 25s</h3>
+      <table class="script">
+        <tr><td>0:00–0:05</td><td>“There were six hooks by the stairs. And only five keys.”</td></tr>
+        <tr><td>0:05–0:11</td><td>“Everybody walked past that empty hook all day. Nobody stopped.”</td></tr>
+        <tr><td>0:11–0:17</td><td>“Princess Kylee stopped. She counted. And the key in her hand didn't fit.”</td></tr>
+        <tr><td>0:17–0:22</td><td>“Down the hall, one door was open just enough to notice.”</td></tr>
+        <tr><td>0:22–0:25</td><td>“Bedtime Mini 001. Goodnight.”</td></tr>
+      </table>
+
+      <div class="approval held">
+        <div class="lab" style="margin-bottom:12px">Approval surface · THY-APPROVAL-MUST-BE-VIEWABLE-001</div>
+        <ol>
+          <li><strong>What it is</strong> — imagery direction lock for BEDTIME MINI 001, <em>plus</em> a child-protection ruling only the Chairman can make.</li>
+          <li><strong>View it</strong> — the frame proof at left is the exact bound item.</li>
+          <li><strong>What approval does</strong> — nothing on its own. Generation stays blocked until path A, B or C is chosen and recorded against <code>FIP-SIX-KYLEE-001</code>.</li>
+        </ol>
+        <dl class="kv" style="margin-bottom:16px">
+          <dt>Binding</dt><dd class="mono">THY-BEDTIME-MINI-POST-20260918-001 · v1</dd>
+          <dt>State</dt><dd class="mono">HOLD_CHILD_PROTECTION_GATE</dd>
+          <dt>Unblock</dt><dd class="mono">Chairman ruling A / B / C recorded against FIP-SIX-KYLEE-001</dd>
+        </dl>
+        <div class="acts"><span class="act now">Hold — current state</span><span class="act rec">Rule Path B ✓ recommended</span><span class="act">Path A</span><span class="act">Path C</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUMMARY ============ -->
+<section style="border-bottom:none">
+  <div class="lab">Section 5</div>
+  <h2>Lock summary</h2>
+  <div class="scrollx">
+  <table class="sum">
+    <thead><tr><th>#</th><th>Post</th><th>Content code</th><th>State</th><th>Recommended</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>FIELD FILE 001</td><td class="c">THY-FIELD-FILE-POST-20260918-001</td><td>DIRECTION_LOCKED</td><td><strong style="color:var(--go)">Approve</strong></td></tr>
+      <tr><td>2</td><td>TRAIL TABLE 001</td><td class="c">THY-TRAIL-TABLE-POST-20260918-001</td><td>DIRECTION_LOCKED</td><td><strong style="color:var(--go)">Approve</strong></td></tr>
+      <tr><td>3</td><td>BEDTIME MINI 001</td><td class="c">THY-BEDTIME-MINI-POST-20260918-001</td><td><strong style="color:var(--stop)">HOLD — child gate</strong></td><td><strong style="color:var(--stop)">Rule Path B</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Not done — by instruction or by gate</h3>
+  <ul class="notdone">
+    <li>No image generated</li>
+    <li>Nothing published</li>
+    <li>Nothing scheduled</li>
+    <li>Nothing activated</li>
+    <li>No existing row deleted or overwritten</li>
+    <li>Dashboard authority untouched</li>
+    <li><code>dashboard-current-head.html</code> untouched</li>
+    <li>Baseline <code>THY-DASH-FLOOR-20260823-001</code> unaffected</li>
+  </ul>
+
+  <h3>Decisions waiting on the Chairman</h3>
+  <p><strong>Required before Post 3 moves:</strong> path A, B or C on <code>FIP-SIX-KYLEE-001</code>.<br>
+  <strong>Requested, not blocking:</strong> FIELD FILE / HERB FILE series relationship · supersession of <code>THY-TRAIL-TABLE-POST-20260917-A</code>.</p>
+</section>
+
+</div>
