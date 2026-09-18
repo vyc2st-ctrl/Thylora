@@ -232,3 +232,30 @@ that let it would be the thing this whole document exists to prevent.
    remains `POSTPUBLICATION_REJECTED_REPLACEMENT_REQUIRED`.
 4. **Chairman explicit, current-turn generation direction** for `VPR-PLATE-20260918-001`.
 5. Only then: generate, compare against this brief, hash, score, and re-run the gate.
+
+---
+
+## I. Addendum — a dependency that arrived during this work
+
+**Sequence 478 was written at 13:32, after the handshake at head 477 and before this edition was
+committed.** The post-work watchdog pass caught it. It is folded in here rather than left for the
+next agent to discover.
+
+478 registers **`ER-CHAR-LEARNER-001`** and **`ER-CHAR-GUARDIAN-001`** as `PRE_DEBUT_DESIGN`, with
+household **`ER-HH-HOMEWORK-001`**, under **no-random-face and no-random-biography** rules — and its
+stated next action is: *author the exact pre-debut dossier for learner, adult, home and relationship
+**before newspaper visual generation***.
+
+**Effect on this edition.** The lead-image brief in §E is already compatible: no face, no
+identifying detail, a hand only at the frame's edge. Nothing in the brief needs to change.
+
+**But the gate moved.** The dossier for `ER-CHAR-LEARNER-001` is now **upstream of**
+`VPR-PLATE-20260918-001`. §H item 4 (Chairman generation direction) cannot be the next step until
+the dossier exists. §H is therefore read with this inserted as the new item 3½:
+
+> **3½.** Author or authorise the `ER-CHAR-LEARNER-001` / `ER-CHAR-GUARDIAN-001` /
+> `ER-HH-HOMEWORK-001` pre-debut dossier, per sequence 478.
+
+**Names, ages, home, occupation and biography remain UNKNOWN** in 478 and are not invented here.
+The boy in §C's opening column is deliberately unnamed and undescribed, which keeps the copy
+compatible with whatever the dossier later establishes.
