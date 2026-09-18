@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ErsatzReality Storefront — Experience Preview</title>
+<meta name="description" content="Non-published concept preview of the ErsatzReality storefront experience. Real product data, real prices, real covers. Nothing here is live." />
+<style>
+  :root{
+    --ink:#0d0e10; --ink-2:#16181c; --ink-3:#1e2127;
+    --paper:#f4f1ea; --paper-dim:#cfc9bc; --paper-mute:#9a948a;
+    --amber:#d9a441; --ember:#c25a34; --leaf:#7d9463;
+    --line:rgba(244,241,234,.14);
+    --w:1120px;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  *{box-sizing:border-box; min-width:0}
+  html,body{margin:0;padding:0; overflow-x:hidden; max-width:100%}
+  body{
+    background:var(--ink); color:var(--paper);
+    font-family:var(--sans); font-size:16px; line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--w); margin:0 auto; padding:0 16px}
+  a{color:inherit}
+
+  /* ---- preview banner: this is not a live store ---- */
+  .banner{
+    background:var(--ember); color:#fff; font-size:13px; letter-spacing:.02em;
+    padding:10px 16px; text-align:center; font-weight:600;
+  }
+  .banner span{opacity:.85; font-weight:400}
+
+  /* ---- masthead ---- */
+  header.mast{border-bottom:1px solid var(--line); position:sticky; top:0; background:rgba(13,14,16,.92); backdrop-filter:blur(8px); z-index:20}
+  .mast-in{display:flex; align-items:center; gap:24px; height:64px; max-width:100%}
+  .mark{
+    font-family:var(--serif); font-size:19px; letter-spacing:.14em; text-transform:uppercase;
+    white-space:nowrap; font-weight:500; flex:0 0 auto;
+  }
+  .mark em{font-style:normal; color:var(--amber)}
+  .mark small{display:block; font-size:9.5px; letter-spacing:.3em; color:var(--paper-mute); margin-top:1px}
+  nav.lanes{display:flex; gap:2px; margin-left:auto; flex-wrap:wrap; min-width:0; max-width:100%}
+  nav.lanes a{
+    font-size:12.5px; letter-spacing:.08em; text-transform:uppercase; text-decoration:none;
+    color:var(--paper-dim); padding:8px 11px; border-radius:2px; white-space:nowrap;
+  }
+  nav.lanes a:hover{color:var(--paper); background:var(--ink-3)}
+
+  /* ---- hero: a question, not a banner ---- */
+  .hero{padding:72px 0 56px; border-bottom:1px solid var(--line)}
+  .kicker{font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--amber); margin:0 0 20px}
+  .hero h1{
+    font-family:var(--serif); font-weight:500; font-size:clamp(30px,5.6vw,54px);
+    line-height:1.12; margin:0 0 20px; max-width:19ch;
+  }
+  .hero p{font-size:clamp(16px,2.1vw,18.5px); color:var(--paper-dim); max-width:56ch; margin:0 0 28px}
+  .hero-cta{display:flex; gap:12px; flex-wrap:wrap}
+  .btn{
+    display:inline-block; padding:13px 22px; border-radius:2px; text-decoration:none;
+    font-size:13.5px; letter-spacing:.08em; text-transform:uppercase; font-weight:600;
+  }
+  .btn-a{background:var(--amber); color:#17140d}
+  .btn-b{border:1px solid var(--line); color:var(--paper)}
+
+  /* ---- five lanes ---- */
+  .sec{padding:56px 0; border-bottom:1px solid var(--line)}
+  .sec h2{
+    font-family:var(--serif); font-weight:500; font-size:clamp(21px,3.2vw,29px);
+    margin:0 0 8px;
+  }
+  .sec .sub{color:var(--paper-mute); margin:0 0 30px; max-width:62ch; font-size:15px}
+  .lanes-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(196px,1fr)); gap:12px}
+  .lane{
+    border:1px solid var(--line); border-radius:3px; padding:22px 18px 20px;
+    background:linear-gradient(180deg,var(--ink-2),var(--ink)); text-decoration:none; display:block;
+    transition:border-color .15s, transform .15s;
+  }
+  .lane:hover{border-color:var(--amber); transform:translateY(-2px)}
+  .lane .n{font-size:10.5px; letter-spacing:.24em; color:var(--amber); display:block; margin-bottom:12px}
+  .lane h3{font-family:var(--serif); font-weight:500; font-size:18px; margin:0 0 7px; line-height:1.25}
+  .lane p{margin:0; font-size:13.5px; color:var(--paper-mute); line-height:1.5}
+  .lane .cnt{margin-top:14px; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--paper-dim)}
+
+  /* ---- product card redesign ---- */
+  .cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(248px,1fr)); gap:18px}
+  .card{border:1px solid var(--line); border-radius:3px; overflow:hidden; background:var(--ink-2); display:flex; flex-direction:column}
+  /* Cover falls back to a typographic plate if the image cannot load,
+     so a failed asset never renders as a broken-image icon. */
+  .card .cover{
+    aspect-ratio:1/1; position:relative; overflow:hidden;
+    background:
+      radial-gradient(120% 90% at 50% 0%, #262a31 0%, #14161a 70%);
+  }
+  .card .cover::before{
+    content:"ERSATZREALITY"; position:absolute; inset:14px;
+    border:1px solid rgba(217,164,65,.28); border-radius:2px;
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--serif); font-size:12px; letter-spacing:.3em;
+    color:rgba(217,164,65,.55); text-align:center;
+  }
+  .card .cover img{
+    width:100%; height:100%; object-fit:cover; display:block;
+    position:relative; z-index:1;
+  }
+  .card .world{
+    position:absolute; z-index:2; left:0; bottom:0; right:0; padding:8px 10px;
+    background:linear-gradient(0deg,rgba(13,14,16,.92),transparent);
+    font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--amber);
+  }
+  .card .body{padding:15px 15px 17px; display:flex; flex-direction:column; gap:9px; flex:1}
+  .card h4{font-family:var(--serif); font-weight:500; font-size:16.5px; margin:0; line-height:1.28}
+  .card .q{font-size:13px; color:var(--paper-dim); font-style:italic; line-height:1.45; margin:0}
+  .card .get{font-size:12.5px; color:var(--paper-mute); margin:0; line-height:1.45}
+  .card .foot{margin-top:auto; display:flex; align-items:center; justify-content:space-between; gap:10px; padding-top:4px}
+  .price{font-size:17px; font-weight:600}
+  .buy{font-size:12px; letter-spacing:.09em; text-transform:uppercase; padding:9px 13px; border-radius:2px; background:var(--amber); color:#17140d; font-weight:700; text-decoration:none}
+  .tag{font-size:10px; letter-spacing:.12em; text-transform:uppercase; padding:3px 7px; border-radius:2px; border:1px solid var(--line); color:var(--paper-mute)}
+  .tag.live{border-color:var(--leaf); color:var(--leaf)}
+  .tag.soon{border-color:var(--amber); color:var(--amber)}
+
+  /* ---- comparison strip ---- */
+  .vs{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+  .vs > div{border:1px solid var(--line); border-radius:3px; padding:18px}
+  .vs h4{margin:0 0 12px; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--paper-mute)}
+  .vs.bad h4{color:var(--ember)}
+  .genericcard{border:1px solid var(--line); border-radius:2px; padding:12px; background:var(--ink-3)}
+  .genericcard .ph{aspect-ratio:1/1; background:#2a2d34; border-radius:2px; margin-bottom:10px}
+  .genericcard .t{height:11px; width:74%; background:#3a3e46; border-radius:2px; margin-bottom:7px}
+  .genericcard .p{height:11px; width:32%; background:#3a3e46; border-radius:2px}
+
+  .note{border-left:2px solid var(--amber); padding:2px 0 2px 16px; color:var(--paper-dim); font-size:14.5px; margin:26px 0 0; max-width:66ch}
+  .eq{
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:14px;
+    background:var(--ink-2); border:1px solid var(--line); border-radius:3px;
+    padding:16px 18px; margin:0 0 14px; overflow-x:auto;
+  }
+  .eq b{color:var(--amber); font-weight:600}
+  dl.defs{margin:0; font-size:14px}
+  dl.defs dt{color:var(--amber); font-weight:600; float:left; clear:left; width:22px}
+  dl.defs dd{margin:0 0 7px 34px; color:var(--paper-dim)}
+
+  footer{padding:40px 0 64px; color:var(--paper-mute); font-size:13px}
+  @media (max-width:720px){
+    .mast-in{height:auto; padding:12px 0; flex-direction:column; align-items:flex-start; gap:8px}
+    /* Nav WRAPS on narrow screens. An earlier version used flex-wrap:nowrap with
+       overflow-x:auto here; as a flex item that forced the whole page wider than the
+       viewport at 320px and 390px. Caught by rendering at the 320px floor. */
+    nav.lanes{margin-left:0; width:100%; flex-wrap:wrap; gap:1px}
+    nav.lanes a{font-size:11.5px; padding:6px 8px}
+    .hero{padding:44px 0 36px}
+    .vs{grid-template-columns:1fr}
+  }
+  @media (max-width:560px){
+    .lanes-grid{grid-template-columns:1fr}
+    .cards{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<div class="banner">CONCEPT PREVIEW — NOT LIVE, NOT PUBLISHED, NOT ACTIVATED.
+  <span>Real product data, real prices, real covers, read from the backend and Shopify on 2026-09-18. No theme was modified.</span>
+</div>
+
+<header class="mast">
+  <div class="wrap mast-in">
+    <div class="mark">Ersatz<em>Reality</em><small>THYLORA</small></div>
+    <nav class="lanes">
+      <a href="#story">Enter a Story</a>
+      <a href="#question">Follow a Question</a>
+      <a href="#how">Learn How It Works</a>
+      <a href="#world">Explore the World</a>
+      <a href="#take">Take Something With You</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="kicker">EdereAriah · a world kept on the record</p>
+    <h1>Every object here is the end of an investigation.</h1>
+    <p>ErsatzReality builds a world and shows its working. A story, a question, a plant, a
+      vehicle that does not exist yet — each one arrives with what is documented, what is
+      believed, and what is still unknown, kept apart on purpose.</p>
+    <div class="hero-cta">
+      <a class="btn btn-a" href="#take">Start with $1.99</a>
+      <a class="btn btn-b" href="#world">See how the world is built</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="story">
+  <div class="wrap">
+    <h2>Five ways in</h2>
+    <p class="sub">A visitor does not arrive wanting “a catalog”. They arrive wanting to do
+      something. The store's top level is five intents, not a product grid — and the same
+      product may sit in more than one lane.</p>
+    <div class="lanes-grid">
+      <a class="lane" href="#take"><span class="n">01</span><h3>Enter a Story</h3>
+        <p>Read something tonight. Short, finished, yours to re-open forever.</p>
+        <div class="cnt">5 editions · from $1.99</div></a>
+      <a class="lane" href="#question"><span class="n">02</span><h3>Follow a Question</h3>
+        <p>A question with no settled answer, and the evidence laid out either side of it.</p>
+        <div class="cnt">2 decks · from $7.00</div></a>
+      <a class="lane" href="#how"><span class="n">03</span><h3>Learn How It Works</h3>
+        <p>The working methods, not the theory. You come out with something built.</p>
+        <div class="cnt">3 workbooks · from $12.00</div></a>
+      <a class="lane" href="#world"><span class="n">04</span><h3>Explore the World</h3>
+        <p>EdereAriah itself: people, trades, places, and what is still unresolved.</p>
+        <div class="cnt">Free · no purchase</div></a>
+      <a class="lane" href="#take"><span class="n">05</span><h3>Take Something With You</h3>
+        <p>Everything is a file you keep. Download again next year at no cost.</p>
+        <div class="cnt">Instant · nothing ships</div></a>
+    </div>
+    <p class="note"><strong>Lane 04 carries no products on purpose.</strong> A store that only
+      sells reads as a shelf. A store with one free, genuinely interesting room reads as a place —
+      and that room is what makes the other four lanes mean something.</p>
+  </div>
+</section>
+
+<section class="sec" id="take">
+  <div class="wrap">
+    <h2>The product card, rebuilt</h2>
+    <p class="sub">A generic card says title and price, so every item looks interchangeable.
+      This card answers three questions before the click: what world is this from, what question
+      does it ask, and what exactly do I receive.</p>
+    <div class="cards">
+
+      <article class="card">
+        <div class="cover"><img onerror="this.remove()" alt="Twelve Miles for Flour cover"
+          src="https://cdn.shopify.com/s/files/1/0697/7254/2029/files/uncle-seezin-twelve-miles-for-flour-cover.png?v=1788370703" />
+          <div class="world">EdereAriah · Unkle Seezin · Trail Stories</div></div>
+        <div class="body">
+          <h4>Twelve Miles for Flour</h4>
+          <p class="q">What is a day's walk worth, when the thing at the end of it is flour?</p>
+          <p class="get">Digital story edition · PDF to your library · re-download forever</p>
+          <div class="foot"><span class="price">$1.99</span><span class="tag live">Available now</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cover"><img onerror="this.remove()" alt="Bramble Wick cover"
+          src="https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-bramble-wick-approved-cover.png?v=1789219245" />
+          <div class="world">EdereAriah · Mara Vale · Nightfall</div></div>
+        <div class="body">
+          <h4>Bramble Wick — The Lantern That Wouldn't Go Out</h4>
+          <p class="q">What is a light actually for, if nobody is looking for it?</p>
+          <p class="get">9-page edition · bedtime read-aloud · ends on one question</p>
+          <div class="foot"><span class="price">$1.99</span><span class="tag soon">Available soon</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cover"><img onerror="this.remove()" alt="The Last Match cover"
+          src="https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-last-match-cover.png?v=1788371198" />
+          <div class="world">THYLORA · Family · Legacy</div></div>
+        <div class="body">
+          <h4>The Last Match</h4>
+          <p class="q">You inherit a thing nobody explained. Do you keep it?</p>
+          <p class="get">8-page edition · discussion questions · read together</p>
+          <div class="foot"><span class="price">$3.00</span><span class="tag soon">Available soon</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cover"><img onerror="this.remove()" alt="The City That Needed More Power cover"
+          src="https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-city-power-approved-cover.png?v=1789219260" />
+          <div class="world">THYLORA · Science · Systems</div></div>
+        <div class="body">
+          <h4>The City That Needed More Power</h4>
+          <p class="q">Everyone says build more. Where is it all actually going?</p>
+          <p class="get">8-page edition · child and adult together · neither talked down to</p>
+          <div class="foot"><span class="price">$5.00</span><span class="tag soon">Available soon</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cover"><img onerror="this.remove()" alt="The Handoff cover"
+          src="https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-story-the-handoff-cover.png?v=1788371176" />
+          <div class="world">THYLORA · Leadership · Succession</div></div>
+        <div class="body">
+          <h4>The Handoff</h4>
+          <p class="q">The decision was the easy part. Who runs it now?</p>
+          <p class="get">8-page edition · team read · discussion questions</p>
+          <div class="foot"><span class="price">$7.00</span><span class="tag soon">Available soon</span></div>
+        </div>
+      </article>
+
+      <article class="card" id="question">
+        <div class="cover"><img onerror="this.remove()" alt="THYLORA Question Deck cover"
+          src="https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-question-deck-approved-cover.png?v=1789219265" />
+          <div class="world">THYLORA · Method · Reasoning</div></div>
+        <div class="body">
+          <h4>THYLORA Question Deck — 50 Better Questions</h4>
+          <p class="q">Most people ask the question they already half know the answer to.</p>
+          <p class="get">19-page printable deck · print and cut · take it to the table</p>
+          <div class="foot"><span class="price">$12.00</span><span class="tag soon">Available soon</span></div>
+        </div>
+      </article>
+
+      <article class="card" id="how">
+        <div class="cover"><img onerror="this.remove()" alt="Build a World From One Idea cover"
+          src="https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-build-a-world-approved-cover.png?v=1789219249" />
+          <div class="world">THYLORA · Method · World-building</div></div>
+        <div class="body">
+          <h4>Build a World From One Idea — Starter Kit</h4>
+          <p class="q">One thought. How does it become a place with rules, work and history?</p>
+          <p class="get">15-page workbook · worksheet pages · the method used to build EdereAriah</p>
+          <div class="foot"><span class="price">$19.00</span><span class="tag soon">Available soon</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cover"><img onerror="this.remove()" alt="THYLORA Gap Hunt cover"
+          src="https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-gap-hunt-approved-cover.png?v=1789219255" />
+          <div class="world">ErsatzReality · Evidence · Noticing</div></div>
+        <div class="body">
+          <h4>THYLORA Gap Hunt — 21 Things You're Not Seeing</h4>
+          <p class="q">A gap is not a defect. It is a trade nobody revisited.</p>
+          <p class="get">Printable hunt · 21 gaps · five questions to take outside</p>
+          <div class="foot"><span class="price">$7.00</span><span class="tag">Gate unresolved</span></div>
+        </div>
+      </article>
+
+    </div>
+    <p class="note"><strong>Every price, cover and page count above is real</strong> — read from
+      Shopify and the backend on 2026-09-18. Seven of the eight are DRAFT and invisible to the
+      public today. That is the actual problem, and no amount of theme work fixes it.</p>
+  </div>
+</section>
+
+<section class="sec" id="world">
+  <div class="wrap">
+    <h2>Generic grid vs. ErsatzReality card</h2>
+    <p class="sub">The same product, presented two ways. The left is what the store does now.</p>
+    <div class="vs">
+      <div class="bad">
+        <h4>Now — interchangeable</h4>
+        <div class="genericcard">
+          <div class="ph"></div><div class="t"></div><div class="p"></div>
+        </div>
+        <p class="get" style="margin-top:12px; color:var(--paper-mute); font-size:13px">
+          Title. Price. Nothing about world, question, or what arrives. Indistinguishable from
+          any dropshipped PDF on any Shopify store.</p>
+      </div>
+      <div>
+        <h4>Proposed — situated</h4>
+        <article class="card" style="max-width:250px">
+          <div class="cover"><img onerror="this.remove()" alt="Bramble Wick cover"
+            src="https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-bramble-wick-approved-cover.png?v=1789219245" />
+            <div class="world">EdereAriah · Mara Vale</div></div>
+          <div class="body">
+            <h4>Bramble Wick</h4>
+            <p class="q">What is a light actually for?</p>
+            <p class="get">9-page edition · read-aloud</p>
+            <div class="foot"><span class="price">$1.99</span><span class="tag soon">Soon</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <h2>The equation this is built against</h2>
+    <div class="eq"><b>S_store</b> = <b>I</b> × <b>C</b> × <b>D</b> × <b>T</b></div>
+    <dl class="defs">
+      <dt>S</dt><dd><strong>S_store</strong> — storefront experience strength. Multiplicative, so any factor at zero makes the whole store zero. That is the point: a beautiful store nobody understands is worth nothing, and a clear store with nothing in it is worth nothing.</dd>
+      <dt>I</dt><dd><strong>Identity</strong> — unmistakably ErsatzReality. Could this page belong to any other store? Today: the nav is Home / Catalog / Contact, Shopify's factory default.</dd>
+      <dt>C</dt><dd><strong>Clarity</strong> — the visitor understands what they can do here within one screen. Today there is no page anywhere on the store that says what ErsatzReality is.</dd>
+      <dt>D</dt><dd><strong>Depth</strong> — every item connects outward to a world, a story or an open question. Today: zero metafields and zero metaobjects exist, so nothing can connect to anything.</dd>
+      <dt>T</dt><dd><strong>Trust</strong> — polished, coherent, usable, professional. Today: four of eight collections render completely empty, and “New This Week” promises work that is done while showing one item.</dd>
+    </dl>
+    <p class="note">Measured honestly against the live store on 2026-09-18, <strong>D is at or near
+      zero and C is at or near zero.</strong> Under a multiplicative rule that forces a HOLD on the
+      experience as a whole — which is the correct reading, and the reason this preview exists
+      instead of a theme edit.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Concept preview only.</strong> Nothing published, nothing activated, no theme
+      modified, no Shopify record written. Typographic wordmark only — BRAND-THYLORA-MARK is
+      UNKNOWN / NOT_APPROVED, so no graphic logo was invented. Fonts are system stacks and are
+      PROPOSED, not canon. No generated imagery: every cover shown is an existing approved asset
+      already bound to its product.</p>
+    <p>Custody: THY-Q-20260918-CLAUDE-STOREFRONT-EXPERIENCE-471 · Backend: thylora-dash</p>
+  </div>
+</footer>
+
+</body>
+</html>
