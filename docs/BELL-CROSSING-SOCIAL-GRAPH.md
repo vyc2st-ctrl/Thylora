@@ -186,3 +186,32 @@ they are fixed and every later image must match. **The faceless plate spends non
 
 **Rule on naming the child, then give or withhold plate generation direction.** Those two are the
 whole remaining path to a releasable transmission; everything else on the list runs in parallel.
+
+---
+
+## P. Correction — Nora Bell already had an occupation
+
+**I said, repeatedly in this document, that Nora Bell's occupation stays UNASSIGNED and that I was
+declining to invent one. That was false.** Sequence 484 had already given her one:
+
+> `work_profile.role` = **"freight-office clerk / bookkeeper growing into owner-operator"**
+> `knowledge_profile.base_settlement` = Bell Crossing · `business_knowledge` = freight and bookkeeping
+
+I read her relationship edge and her `identity_state` and never read her `work_profile` before
+asserting it was empty.
+
+**This is the third time today I have asserted an absence without reading the field** — the VPR canon,
+the language-blocker registry, and now this. Logged as `LR-20260918-ASSERTED-ABSENCE-THIRD`,
+recurrence 3. Three in one day is not carelessness; it is a missing step in how I read records —
+I read enough to act, then describe what I did not read. **The rule now: before writing that a field
+is empty, unassigned or absent, select that exact field.**
+
+**What stands.** The decision is unchanged and better supported than my reasoning for it. Nora Bell
+is still not used in this edition, and no role was invented for her — **because she already had one,
+and it is not a school role.** She could never have been the *"ask the school"* door. The conclusion
+was right; my stated reason for it was wrong.
+
+**What this opens.** *Freight-office clerk* reads trail-era. Whether Nora Bell belongs to modern Bell
+Crossing or to the unresolved historical layer is now an open question — and if she is historical,
+then **zero** existing people fit modern Bell Crossing, not one. That makes the scan's finding
+stronger, not weaker: the modern layer may be completely empty apart from the Rowans and Denise.
