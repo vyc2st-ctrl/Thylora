@@ -1,0 +1,769 @@
+{
+  "queue": "HSF candidate queue · round one",
+  "opened": "2026-09-18",
+  "rule": "A candidate is cheap to add and expensive to promote. Nothing here is a built seed. Each entry has been checked far enough to be worth the build, and every entry names what is still unverified. Evidence status is indicative, not audited: promotion to a built seed requires the full ladder in show-factory/lib/evidence.js.",
+  "candidates": [
+    {
+      "id": "HSF-C01",
+      "seed_title": "THE SCAR ON HIS ARM",
+      "moment": "Boston, 1716 and 1721. Cotton Mather asks an enslaved African man he has named Onesimus whether he has had smallpox. Onesimus answers 'both, Yes, and, No', describes an operation practised 'among the Guramantese', and shows Mather the scar. Five years later, in the epidemic of 1721, Zabdiel Boylston inoculates on that basis and produces the first statistical comparison of inoculated and natural smallpox mortality in the English-speaking world.",
+      "date_context": "Mather's letter to Dr John Woodward of the Royal Society is dated 12 July 1716. The Boston epidemic runs summer 1721 into spring 1722.",
+      "lane": "MEDICINE",
+      "hidden_mechanism": "Variolation works because route and dose matter more than the pathogen. Smallpox inhaled into the lung kills far more often than smallpox introduced through a scratch in the skin. Nobody in 1721 knew why; West and North African practitioners knew that it did. The other hidden mechanism is statistical: Boston 1721 is one of the first places where a medical argument is settled by counting two populations rather than by authority.",
+      "opening_question": "The most important medical knowledge in Boston in 1721 arrived in the body of a man who was owned. Whose discovery was it?",
+      "why_it_carries": "Mather's letter is verbatim, dated, and sits in the Royal Society record. It is one of the cleanest documented cases of African scientific knowledge entering European medicine through a person with no power to claim it — and Mather, unusually, wrote down where it came from. The show writes itself from primary text.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "Mather's letter of 12 July 1716 to John Woodward, with the verbatim Onesimus passage including 'both, Yes, and, No' and 'Guramantese'.",
+          "Mather corroborated the account by questioning other enslaved Africans in Boston who bore the same scar; he recorded their reported speech.",
+          "Boylston's inoculation campaign of 1721–22 and his published account, An Historical Account of the Small-Pox Inoculated in New England (London, 1726).",
+          "Boylston was elected a Fellow of the Royal Society in 1726."
+        ],
+        "CONTESTED": [
+          "The year Onesimus was given to Mather: sources give 1706 and 13 December 1707.",
+          "The 1721 mortality figures. Different sources give 242, 276 and 280 inoculated, with six deaths; and roughly 5,759–5,980 natural cases with 844–900 deaths. The ratio is robust across all versions; the exact numbers are not.",
+          "What 'Guramantese' denotes — the Garamantes of the central Sahara, a Kanuri-speaking people of the central Sudan, or a loose colonial term for West Africans generally."
+        ],
+        "INFERENCE": [
+          "That Onesimus understood the practice as preventive medicine in the sense we mean. We have Mather's paraphrase of Onesimus's words, filtered twice."
+        ],
+        "UNKNOWN": [
+          "Onesimus's birth name, his people, and what became of him after he purchased his partial freedom.",
+          "Whether any of the Africans Mather questioned were ever credited by name in the medical literature."
+        ]
+      },
+      "rights_flags": ["All primary text is public domain. The framing is the risk, not the rights: Mather's own words about Africans are contemptuous even as he credits them, and the episode must reproduce that without laundering it or weaponising it."]
+    },
+    {
+      "id": "HSF-C02",
+      "seed_title": "IT WAS OKAY TO SAY THE YELLOW PEOPLE BUILT IT",
+      "moment": "Rhodesia, 1905 to 1980. Archaeology establishes repeatedly that Great Zimbabwe was built by Africans; the settler state repeatedly suppresses the finding. In 1970 the Rhodesian Front government instructs its employees that no official publication may state unequivocally that Great Zimbabwe was an African creation. Museum guides, school textbooks, guidebooks, radio and film are censored. Archaeologists leave the country.",
+      "date_context": "Randall-MacIver excavates 1905–06; Gertrude Caton-Thompson concludes African construction in 1929 and publishes The Zimbabwe Culture in 1931; the state instruction is issued in 1970; Peter Garlake, Senior Inspector of Monuments, and Roger Summers of the National Museum both leave.",
+      "lane": "CHALLENGED_ASSUMPTIONS",
+      "hidden_mechanism": "The censorship had a specific target: radiocarbon dates. Paul Sinclair, the archaeologist stationed at Great Zimbabwe, was told he could say yellow people built it but was not allowed to mention the radiocarbon dates. Dates are the mechanism because a date cannot be argued with rhetorically. The state was not suppressing an opinion; it was suppressing a measurement.",
+      "opening_question": "A government told its own archaeologists which answer they were allowed to find. What does it take to make a measurement illegal?",
+      "why_it_carries": "It is the clearest documented case in twentieth-century archaeology of a state directly censoring a scientific finding for racial-political reasons, and the censored archaeologist said so on the record, in his own words, on camera. This is not an inference about bias. It is a testimony about an instruction.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "Randall-MacIver (1906) and Caton-Thompson (1929, published 1931) independently attribute construction to African societies.",
+          "New York Times, 20 October 1929, reports Caton-Thompson's conclusion: 'Every detail in the plan of the buildings and the contents seems to be African Bantu.'",
+          "The 1970 Rhodesian Front instruction that no official publication may state unequivocally that Great Zimbabwe was an African creation (Garlake 1973, 204; Garlake 1982, 64).",
+          "Paul Sinclair's on-record testimony for the documentary None But Ourselves, including 'I wasn't allowed to mention radio carbon dates' and 'It was the first time since Germany in the thirties that archaeology has been so directly censored.'",
+          "Departure of Garlake and Summers; the Rhodesian Front hired non-archaeologists to popularise the antiquarian version.",
+          "Destruction of stratigraphy by the Ancient Ruins Company Ltd, 1895–1900, operating under concession."
+        ],
+        "CONTESTED": [
+          "The precise chronology and the relationship to Mapungubwe; current consensus attributes construction to Shona ancestors with debate over phasing.",
+          "Caton-Thompson's own framing: she established African authorship and simultaneously described the site as the 'product of an infantile mind'. Historians differ on how to weigh her contribution against her prejudice."
+        ],
+        "INFERENCE": [
+          "That the suppression measurably changed what a generation of Rhodesian schoolchildren believed. Plausible and widely asserted; not quantified in the sources reached here."
+        ],
+        "UNKNOWN": [
+          "How much archaeological evidence was permanently destroyed by the Ancient Ruins Company and by Richard Hall's clearing to a depth of three to five feet."
+        ]
+      },
+      "rights_flags": ["Filming at Great Zimbabwe requires Zimbabwean National Museums and Monuments permission. The site is a national monument and the country's namesake; treat the Zimbabwean custodians as authors, not as a location."]
+    },
+    {
+      "id": "HSF-C03",
+      "seed_title": "TOO EARLY",
+      "moment": "Igbo-Ukwu, eastern Nigeria. A man digging a water cistern in 1939 strikes a cache of bronzes. Thurstan Shaw excavates 1959–60; five radiocarbon dates come back clustering in the ninth century. A serious scholarly fight follows, in which the principal objection is that the dates are too early for West African metalwork of that sophistication. In 2022 an AMS date on a textile from the same shrine returns the eleventh–twelfth century, and the whole chronology is reopened — properly this time.",
+      "date_context": "Find 1939; Shaw's excavations 1959–60 and 1964; publication 1970; Lawal's objection 1973; Shaw's reply 1975; the Igbo-Ukwu at 50 symposium and the AMS redating 2022.",
+      "lane": "SCIENCE",
+      "hidden_mechanism": "How a date is actually made, and why an early radiocarbon date is not a fact but a probability distribution. Shaw's four clustered dates carried standard errors of ±110 to ±145 years, in an era when radiocarbon and calendar years were assumed equivalent. Calibration curves later widened the range to the seventh–thirteenth century at two sigma. The 'ninth century' everyone repeats was always the centre of a wide distribution, quoted as though it were a year.",
+      "opening_question": "When a measurement disagrees with what everyone knows, which one gets re-examined first?",
+      "why_it_carries": "It is two stories in one, and both are honest. There is a real, documented case of scholars rejecting an African date partly because it disturbed settled assumptions about 'stateless' Igbo society. And there is a real, legitimate scientific objection about sample quality that has now been answered with better technique — by researchers who took the site seriously. It teaches the difference between bias and rigour without pretending one is the other.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "Five original radiocarbon dates; four clustering 1075–1110 BP with standard errors ±110 to ±145, one outlier at 505 ± 70 BP (Shaw 1970, 260).",
+          "Babatunde Lawal, 'Dating Problems at Igbo-Ukwu', Journal of African History (1973), arguing for a fifteenth-century date on the evidence of manillas, beads and textile preservation.",
+          "Thurstan Shaw, 'Those Igbo-Ukwu radiocarbon dates: facts, fictions and probabilities', Journal of African History 16:4 (1975), 503–517.",
+          "Shaw's own acknowledgement (1975, 515–517) that the absence of evidence for ninth-century long-distance trade was the most serious objection, to be settled by more archaeology.",
+          "McIntosh and Cartwright (2022): AMS date on British Museum textile Af1979,18.105 returns 940 ± 30 BP, calibrated 1027–1180 CE, dating the final wrapping at Igbo Isaiah.",
+          "A. E. Afigbo (1996) on the effect of the ninth-century date on Nigerian historiography after the civil war."
+        ],
+        "CONTESTED": [
+          "The date of the Igbo Richard burial and its relationship to Igbo Isaiah and Igbo Jonah — explicitly unresolved in the 2022 literature.",
+          "Whether the objections to the early dates were substantively motivated, racially motivated, or both. The literature records that the dates 'disrupted what had been settled views'; motive is argued."
+        ],
+        "INFERENCE": [
+          "That the bronzes themselves are older than the textile that wrapped them. Reasonable and stated by the excavators as a possibility; not demonstrated."
+        ],
+        "UNKNOWN": [
+          "Where the copper came from. No local source was known to Shaw.",
+          "Where the objects were made. No production area or domestic activity has been found at or near the site."
+        ]
+      },
+      "rights_flags": ["Objects are split between Nigerian institutions and the British Museum. Any sequence showing British Museum holdings must carry the acquisition history on screen; this is a restitution-adjacent collection."]
+    },
+    {
+      "id": "HSF-C04",
+      "seed_title": "TRUE IN GENERAL, FALSE IN PARTICULAR",
+      "moment": "Two moments, and the space between them. 1942: Charles R. Drew, who built the Blood for Britain programme and the American Red Cross blood bank, protests the policy of segregating donated blood by the donor's race and leaves his Red Cross position. 1 April 1950: Drew dies after a car crash in North Carolina. Within hours a story spreads that a whites-only hospital refused him a transfusion. It is not what happened. It is what was happening to other people, constantly.",
+      "date_context": "Red Cross blood-segregation policy adopted 1941–42, maintained until 1950. Drew dies 1 April 1950 at Alamance General Hospital, Burlington, North Carolina, about half an hour after receiving medical attention.",
+      "lane": "MEDICINE",
+      "hidden_mechanism": "Two mechanisms. The medical one: Drew had a superior vena cava syndrome — blood blocked returning to the heart — so a transfusion would have killed him faster, which is the precise, terrible irony the legend gets backwards. The historical one: how a false story becomes durable. It persisted because it was structurally true. Black patients were routinely turned away, and a young Black veteran did die after being refused at Duke in the same county in the same year.",
+      "opening_question": "A story about this man's death is false. Why did so many people who knew better keep telling it?",
+      "why_it_carries": "It refuses both available cheap endings. It will not let the legend stand, and it will not let the debunking become a comfortable conclusion that segregation was overstated. Spencie Love's One Blood did the work; the show can follow her method rather than invent one.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "Drew was treated in the emergency room at Alamance General Hospital; two white surgeons worked to save him and he died after about an hour.",
+          "John R. Ford, a physician passenger in the car, on the record: Drew's injuries were unsurvivable and 'to give him a transfusion would have killed him sooner'.",
+          "Charles Kernodle of Burlington, one of the treating doctors, on the record in 1989: 'We did all we could for him.'",
+          "Spencie Love, One Blood: The Death and Resurrection of Charles R. Drew (University of North Carolina Press), establishing both the falsity of the legend and the documented case of a young Black veteran who did die after being turned away from Duke, same county, same year.",
+          "The legend printed as fact in Katz, Eyewitness: The Negro in American History (1967), Drotning, Black Heroes in our Nation's History (1969), and the Encyclopedia of Black Americans (1981); dramatised on M*A*S*H.",
+          "Drew could not donate to the blood bank he helped establish, because he was Black."
+        ],
+        "CONTESTED": [
+          "The exact terms and timing of Drew's departure from the Red Cross, and how far it was a resignation in protest as against the end of a fixed appointment. Accounts differ; the protest itself is not in doubt."
+        ],
+        "INFERENCE": [
+          "That the legend arose by inference from the donation ban — someone reasoning that a man who could not give blood in 1940 could not receive it in 1950. Offered as a possible explanation, not established."
+        ],
+        "UNKNOWN": [
+          "Who first told the story, and when. Nobody has traced patient zero."
+        ]
+      },
+      "rights_flags": ["Living descendants of Drew are identifiable and have spoken publicly about the legend. Contact before production. The Duke case involves a named private individual and his family; handle with the same care."]
+    },
+    {
+      "id": "HSF-C05",
+      "seed_title": "THE CELLS THAT WOULD NOT DIE",
+      "moment": "Johns Hopkins, Baltimore, early 1951. A tissue sample is taken from Henrietta Lacks during treatment for cervical cancer, without her knowledge or consent, and becomes HeLa — the first immortal human cell line, and the substrate of the polio vaccine, chromosomal genetics, and tens of thousands of papers. She dies on 4 October 1951. Her family learns of the cells in the 1970s. In August 2023 they reach a settlement with Thermo Fisher Scientific.",
+      "date_context": "Sample taken early 1951; Lacks dies 4 October 1951; family informed in the 1970s; HeLa genome published and withdrawn in 2013, followed by an NIH agreement; Thermo Fisher settlement announced 1 August 2023.",
+      "lane": "MEDICINE",
+      "hidden_mechanism": "Why HeLa is immortal — telomerase kept active by HPV-18 integration — and, more usefully for a show, why HeLa is also a contaminant. HeLa cells are so vigorous that they invaded and overtook other cell lines in laboratories worldwide, meaning an unknown share of twentieth-century cell-biology results were actually run on Henrietta Lacks's cells while claiming to be something else.",
+      "opening_question": "If a piece of you outlives you and makes money for sixty years, what were you owed, and when?",
+      "why_it_carries": "It is the rights-and-provenance seed for the whole factory. It is also the case where the family's own authority is documented, current, and exercised — they are not a historical subject, they are participants with lawyers.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "The sample was taken without consent, which was lawful and standard practice in 1951.",
+          "HeLa's role in the polio vaccine development and subsequent biomedical research.",
+          "The 2013 HeLa genome publication, its withdrawal after family objection, and the resulting NIH data-access agreement giving family members a role.",
+          "The August 2023 settlement between the Lacks family and Thermo Fisher Scientific; terms confidential.",
+          "HeLa cross-contamination of other cell lines, documented from the 1960s onward."
+        ],
+        "CONTESTED": [
+          "How much revenue HeLa has generated, and for whom. No audited figure exists and estimates vary wildly.",
+          "Whether Johns Hopkins profited directly. Hopkins states it never sold or profited from HeLa; this is disputed in framing though not much in fact."
+        ],
+        "INFERENCE": [
+          "The proportion of historic cell-line results invalidated by HeLa contamination. Estimates exist; the true figure is not knowable."
+        ],
+        "UNKNOWN": [
+          "What Henrietta Lacks would have wanted. Nobody asked her, and that absence is the subject, not a gap to be filled."
+        ]
+      },
+      "rights_flags": ["HARD GATE. Living descendants are identified, organised and represented. The Lacks family has publicly objected to uncompensated commercial use of the story. No production without direct family contact and agreement, and no store product on this seed at all unless the family is a revenue participant. This is the seed that tests whether the factory means what its rights module says."]
+    },
+    {
+      "id": "HSF-C06",
+      "seed_title": "THE MAN WHO WOULD NOT STOP WRITING LETTERS",
+      "moment": "1966 and 1968: Peter Buxtun, a US Public Health Service venereal-disease investigator, files formal complaints about the Tuskegee Study of Untreated Syphilis in the Negro Male. He is twice told the study will continue. In 1972 he gives the documents to the press; Jean Heller's Associated Press story runs on 25 July 1972 and the study ends within months, forty years after it began, twenty-five years after penicillin became the standard cure.",
+      "date_context": "Study runs 1932–1972 in Macon County, Alabama — the same county as Tuskegee Institute. Penicillin becomes standard syphilis treatment c.1947. Buxtun complains 1966 and 1968. AP story 25 July 1972. Study terminated November 1972. Settlement 1974. Presidential apology 16 May 1997.",
+      "lane": "MEDICINE",
+      "hidden_mechanism": "The study did not require anyone to be evil in a single decisive moment. It required a review structure in which continuing was the default and stopping required someone to act. Buxtun's complaints were reviewed by panels that concluded the study should continue — that is the mechanism. The men were told they were being treated for 'bad blood' and were actively prevented from receiving treatment elsewhere.",
+      "opening_question": "Two committees looked at this and said carry on. What does it take to be the person who will not let it go?",
+      "why_it_carries": "It is the origin of modern research consent rules — the National Research Act, institutional review boards, the Belmont Report — which means it is the reason the Lacks seed can even be argued. Pair it with HSF-C05 as a two-parter on consent.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "The study's design, duration, location, and the withholding of penicillin after it became standard.",
+          "Buxtun's 1966 and 1968 complaints and the review outcomes.",
+          "Jean Heller's AP story, 25 July 1972.",
+          "The 1974 settlement and the 1997 presidential apology.",
+          "The National Research Act (1974) and the Belmont Report (1979) as direct consequences."
+        ],
+        "CONTESTED": [
+          "Exact numbers of men enrolled, infected, and of wives and children infected; the standard figures (399 infected, 201 controls) come from the study's own records, which were not kept for the benefit of the men."
+        ],
+        "INFERENCE": [
+          "The share of later Black American distrust of medical institutions attributable to Tuskegee specifically. Frequently asserted with a precision the research does not support."
+        ],
+        "UNKNOWN": [
+          "How many of the men understood what was actually being done to them, and when."
+        ]
+      },
+      "rights_flags": ["HARD GATE. Descendants are organised through the Voices for Our Fathers Legacy Foundation. Named men appear in photographs taken under false pretences. No production use of those photographs without descendant and foundation agreement. No store product on this seed."]
+    },
+    {
+      "id": "HSF-C07",
+      "seed_title": "THE KING ON THE EDGE OF THE MAP",
+      "moment": "1324: Mansa Musa of Mali travels to Mecca with a caravan whose spending in Cairo is remembered by Egyptian chroniclers decades later. 1375: the Catalan Atlas, made in Majorca, draws him seated in the western Sahara holding a gold nugget — a European map putting an African king at the centre of the world's gold supply.",
+      "date_context": "The hajj is 1324–25. Al-Umari records Cairo testimony about it in the 1330s–40s. The Catalan Atlas is dated 1375 and attributed to Abraham Cresques.",
+      "lane": "MAPS",
+      "hidden_mechanism": "Bullion. The reason a Majorcan mapmaker draws a Malian king is that European coinage depended on West African gold crossing the Sahara, and Europeans did not know where it came from. The map is not a portrait; it is a commercial intelligence document about a supply chain, drawn by people who could not see its source.",
+      "opening_question": "Why did a European mapmaker in 1375 draw an African king he had never met, holding gold he could not trace?",
+      "why_it_carries": "It inverts the default direction of the medieval story and does it with a single image that reads instantly on screen. And it sets up the modern half honestly: the 'richest man in history' claim now attached to Mansa Musa is a modern invention with no defensible basis, which is its own lesson.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "The Catalan Atlas (1375), Bibliothèque nationale de France, and its depiction of a crowned king with a gold nugget in the western Sahara.",
+          "Al-Umari's account, recorded in Cairo about twelve years after the visit, of the caravan's spending.",
+          "Ibn Battuta's account of Mali, from his visit c.1352."
+        ],
+        "CONTESTED": [
+          "The scale of the gold and the claim that Musa's spending depressed the Cairo gold price for years. The chroniclers say so; the economic evidence is thin and the claim is repeated far beyond what the sources support.",
+          "The identification of the figure in the Catalan Atlas specifically as Mansa Musa rather than a generic 'lord of the blacks'; the inscription names him, but the portrait is conventional."
+        ],
+        "INFERENCE": [
+          "Caravan sizes. The famous figures — sixty thousand people, twelve thousand attendants, camels carrying gold — are later accretions on Arabic sources that are less specific."
+        ],
+        "UNKNOWN": [
+          "Where the gold was actually mined. The Wangara sources were a deliberately kept secret and the European mapmakers never found out.",
+          "The modern 'richest person who ever lived' figure has no methodology behind it and should be stated on screen as an invention."
+        ]
+      },
+      "rights_flags": ["Catalan Atlas imagery requires BnF permission for reproduction. Good faith requires Malian and West African historians on camera, not only European medievalists."]
+    },
+    {
+      "id": "HSF-C08",
+      "seed_title": "WHAT THE FAMILIES KEPT",
+      "moment": "Timbuktu. A city whose scholarly libraries — tens of thousands of manuscripts in Arabic and in African languages written in Arabic script, covering law, astronomy, medicine, mathematics, poetry and correspondence — were held for centuries in private family collections. In 2012–13, with the city under occupation by armed groups destroying shrines, librarians and families moved a large part of the collection out by road and river to Bamako, in trunks, on foot, in boats.",
+      "date_context": "Manuscript tradition from roughly the fourteenth century onward; Ahmed Baba (1556–1627) as the emblematic scholar; the Ahmed Baba Institute founded 1973; occupation and evacuation 2012–13.",
+      "lane": "EDUCATION",
+      "hidden_mechanism": "Why the manuscripts survived at all: they were never centralised. Family custodianship, which looks like disorganisation to an archivist, is the distributed-redundancy design that defeated five centuries of raids, colonial confiscation and finally an occupation. The 2012 evacuation worked because the thing being evacuated had never been in one place.",
+      "opening_question": "A written African intellectual tradition sat in people's houses for five hundred years. What does it mean that Europe decided Africa had no written history?",
+      "why_it_carries": "It answers a specific and still-current claim with physical objects, and the modern half is an adventure story with living participants who can speak for themselves.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "The existence, scale and subject range of the Timbuktu manuscript corpus, catalogued by the Ahmed Baba Institute and by family libraries including the Mamma Haidara collection.",
+          "The 2012–13 evacuation, extensively documented by participants and by contemporaneous reporting.",
+          "The destruction of mausolea in Timbuktu in 2012, later prosecuted at the International Criminal Court (the Al Mahdi case, 2016)."
+        ],
+        "CONTESTED": [
+          "The total number of manuscripts. Figures from 300,000 to over a million circulate. No complete census exists.",
+          "How many manuscripts were actually destroyed in 2013. Early reports of catastrophic loss were substantially revised downward."
+        ],
+        "INFERENCE": [
+          "Literacy rates in historic Timbuktu. Inferred from the scale of the manuscript trade, not measured."
+        ],
+        "UNKNOWN": [
+          "The contents of the manuscripts. A large majority remain uncatalogued, unread by any modern scholar, and undigitised."
+        ]
+      },
+      "rights_flags": ["HARD GATE on custodianship. The manuscripts belong to Malian families and institutions, not to the story. Any filming requires the families' agreement and should be structured so that cataloguing and conservation, not the production, is the primary beneficiary."]
+    },
+    {
+      "id": "HSF-C09",
+      "seed_title": "THE PUNITIVE EXPEDITION",
+      "moment": "February 1897: a British force takes Benin City, burns it, and removes several thousand objects in brass, ivory and wood. Many are auctioned in London to defray the cost of the expedition. The objects are then used in Europe as evidence that African metalwork must have had a foreign origin, because Africans could not have made them. From 2021 onward, institutions across Europe and North America begin returning them.",
+      "date_context": "Expedition February 1897; London sales the same year; the Luschan and British Museum acquisitions follow; substantive restitution begins 2021–22 with Germany, Nigeria's Legacy Restoration Trust, and a still-unresolved question of custody within Nigeria.",
+      "lane": "ART",
+      "hidden_mechanism": "The lost-wax casting sequence, shown properly, is the argument. The Benin casters were working to tolerances and in alloys that European foundries of the same period would have respected, which is exactly why the objects triggered a wave of theorising to explain them away. The other mechanism is financial: the auction was explicitly to recoup expedition costs, which converts a military action into an acquisitions budget.",
+      "opening_question": "Thousands of objects were taken in a week and then used as proof that the people they were taken from could not have made them. How does that argument work?",
+      "why_it_carries": "It is the provenance seed. It has a live, dated, ongoing resolution, which means the episode ends in the present tense rather than in regret.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "The 1897 expedition, the burning of Benin City, and the removal of the objects.",
+          "The London sales and their stated purpose of defraying expedition costs.",
+          "The nineteenth- and twentieth-century European theories attributing the bronzes to Portuguese, Egyptian or other non-African origin.",
+          "Restitution agreements and transfers from 2021 onward, including German federal transfers of title."
+        ],
+        "CONTESTED": [
+          "The number of objects taken; figures from 3,000 to over 10,000 are cited.",
+          "Where restituted objects should be held within Nigeria, and who holds title — a live dispute between the federal government, Edo State and the Oba of Benin."
+        ],
+        "INFERENCE": [
+          "The proportion of the corpus now held outside Nigeria. Estimates only; no complete register exists."
+        ],
+        "UNKNOWN": [
+          "The individual casters. The corpus is anonymous in European catalogues, though the guild structure is known."
+        ]
+      },
+      "rights_flags": ["HARD GATE. Every holding institution's acquisition history must appear on screen beside its objects. Restitution is contested and current; the Oba's court, Edo State and the Nigerian federal authorities are all parties. Do not film the objects without naming the dispute. No store product derived from the objects' imagery under any circumstances."]
+    },
+    {
+      "id": "HSF-C10",
+      "seed_title": "THE FILAMENT AND THE DRAFTSMAN",
+      "moment": "1881–82: Lewis Howard Latimer, working for the Edison rival US Electric Lighting Company, patents a process for manufacturing carbon filaments that makes the incandescent lamp economically viable. He later joins Edison, becomes the company's expert patent witness, and writes one of the first practical books on electric lighting. The story that reaches classrooms is Edison, alone, with a bulb.",
+      "date_context": "Latimer's filament-manufacturing patent 1882; Incandescent Electric Lighting: A Practical Description of the Edison System published 1890; he was one of the Edison Pioneers.",
+      "lane": "SCIENCE",
+      "hidden_mechanism": "The bulb was never the invention. The bottleneck was a filament that could be made repeatably and cheaply enough to sell, and a system — generation, distribution, metering — to sell it into. Latimer's work sits at the manufacturing bottleneck, which is the least visible and most decisive part of any technology.",
+      "opening_question": "Everyone can name who invented the light bulb. Why can nobody name who made it affordable?",
+      "why_it_carries": "It replaces the weak, contested 'Latimer invented the light bulb' claim — which is false and which schools sometimes teach — with a stronger documented one: he solved the manufacturing problem, and the patent proves it. That is a better story and a defensible one.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "Latimer's patents, including the 1882 process for manufacturing carbon filaments.",
+          "His earlier work as the draftsman who prepared Alexander Graham Bell's telephone patent drawings.",
+          "His role as expert witness in Edison's patent litigation and his 1890 book.",
+          "His membership of the Edison Pioneers."
+        ],
+        "CONTESTED": [
+          "How much of the commercial success of the Edison lamp is attributable to Latimer's process specifically as against parallel work. Patent-era attribution is genuinely hard."
+        ],
+        "INFERENCE": [
+          "That racial attitudes explain his erasure from the popular account rather than the general invisibility of process engineers. Probably both; state it as both."
+        ],
+        "UNKNOWN": [
+          "What Latimer was paid relative to his contribution."
+        ]
+      },
+      "rights_flags": ["Patents and government records are public domain. Latimer family papers are held by institutions including the Queens Borough Public Library; permissions needed. Do not repeat the 'invented the light bulb' claim even to debunk it without the correction in the same breath."]
+    },
+    {
+      "id": "HSF-C11",
+      "seed_title": "THE HANDLE",
+      "moment": "Soho, London, late summer 1854. A cholera outbreak kills hundreds in days. John Snow maps the deaths as bars against street addresses, argues the cause is the Broad Street pump rather than bad air, and persuades the parish to remove the pump handle on 8 September. The outbreak was already declining. The map, not the handle, is what changed the world — and not immediately.",
+      "date_context": "Outbreak begins 31 August 1854; handle removed 8 September; Snow's enlarged On the Mode of Communication of Cholera published 1855; Whitehead identifies the index case; the General Board of Health rejects Snow's conclusion.",
+      "lane": "MAPS",
+      "hidden_mechanism": "The map's real argument is not the cluster — clusters prove little. It is the exceptions: the workhouse with its own well and almost no deaths, the brewery whose workers drank beer, and the widow in Hampstead who had Broad Street water delivered because she liked the taste, and died. Snow's case is built on the anomalies, not the pattern. That is the whole method.",
+      "opening_question": "He drew a map that was right, removed the pump handle, and the authorities rejected his conclusion anyway. What does it take to change an official mind?",
+      "why_it_carries": "The mechanism is genuinely surprising to anyone who thinks they know this story, and the anomaly-driven reasoning is directly teachable.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "Snow's map and the 1855 monograph.",
+          "Removal of the pump handle on 8 September 1854.",
+          "The workhouse and brewery anomalies and the Hampstead widow case, all in Snow's own text.",
+          "Henry Whitehead's investigation identifying the infant index case and the cesspool leaking into the well.",
+          "The General Board of Health's 1855 report rejecting the waterborne explanation."
+        ],
+        "CONTESTED": [
+          "Whether removing the handle materially shortened the outbreak. The epidemic curve was already falling; Snow himself was cautious about the claim."
+        ],
+        "INFERENCE": [
+          "The often-repeated framing of Snow as the lone genius against a hostile establishment. He had allies, notably Whitehead, and the establishment's resistance was partly reasonable given the evidence available."
+        ],
+        "UNKNOWN": [
+          "The true death toll; counts vary and many victims fled the parish before dying."
+        ]
+      },
+      "rights_flags": ["All primary material public domain. The 'Snow map' images in circulation are often later redrawings — use the 1855 original and say which edition."]
+    },
+    {
+      "id": "HSF-C12",
+      "seed_title": "WASH YOUR HANDS",
+      "moment": "Vienna General Hospital, 1847. Ignaz Semmelweis notices that the maternity clinic staffed by doctors and medical students kills mothers at several times the rate of the clinic staffed by midwives. After a colleague dies of an infection from a scalpel cut with the same symptoms as puerperal fever, he orders chlorinated-lime handwashing between the autopsy room and the delivery room. Mortality collapses. He is dismissed, discredited, and dies in an asylum in 1865.",
+      "date_context": "Observations and intervention 1847; Die Ätiologie, der Begriff und die Prophylaxis des Kindbettfiebers published 1861; Semmelweis dies 13 August 1865. Lister's antisepsis paper appears 1867; Pasteur's germ theory follows.",
+      "lane": "CHALLENGED_ASSUMPTIONS",
+      "hidden_mechanism": "The natural experiment is the mechanism. Two clinics, alternating admission by day of the week, differing in one variable — who delivered the babies — with the women assigned effectively at random. Semmelweis had a randomised comparison twenty years before anyone had the concept, and the reason he could not persuade anyone is that he had a correlation and no causal story, because the causal story did not exist yet.",
+      "opening_question": "He had the right answer and the numbers to prove it, and it took twenty years and thousands of deaths for anyone to act. What was missing?",
+      "why_it_carries": "It is the cleanest case of being right without being persuasive, and it does not let the audience feel superior: his contemporaries' resistance was partly the rational response to a claim with no mechanism. It also names the cost honestly — Semmelweis's own conduct made him easier to dismiss.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "The differential mortality between the two Vienna clinics and Semmelweis's own tabulations.",
+          "The death of Jakob Kolletschka from a scalpel wound with puerperal-fever pathology.",
+          "The chlorinated-lime intervention and the subsequent fall in mortality.",
+          "His 1861 book and its hostile reception; his dismissal and committal."
+        ],
+        "CONTESTED": [
+          "The cause of his death. Beating by asylum attendants, sepsis from an untreated wound, and neurological disease have all been argued from the autopsy record.",
+          "How much of his failure to persuade is attributable to the content of his claim as against his increasingly abusive public conduct."
+        ],
+        "INFERENCE": [
+          "Estimates of lives that would have been saved by earlier adoption. Arithmetic on assumptions, not a count."
+        ],
+        "UNKNOWN": [
+          "Whether he ever understood that his mechanism-free argument was the obstacle."
+        ]
+      },
+      "rights_flags": ["Primary sources public domain. Do not use 'Semmelweis reflex' as the thesis — it is a coinage that flatters the audience and obscures the actual epistemics."]
+    },
+    {
+      "id": "HSF-C13",
+      "seed_title": "NOT RESONANCE",
+      "moment": "7 November 1940: the Tacoma Narrows suspension bridge twists itself apart in a forty-mile-an-hour wind, on film. For fifty years, physics textbooks explain it as resonance — the wind matching the bridge's natural frequency. It is not resonance. It is aeroelastic flutter, a different phenomenon with a different cause, and the textbook error outlived the bridge by half a century.",
+      "date_context": "Bridge opens 1 July 1940; collapses 7 November 1940; Billah and Scanlan publish the correction in the American Journal of Physics in 1991 and note that textbooks were still getting it wrong.",
+      "lane": "ENGINEERING_FAILURE",
+      "hidden_mechanism": "Flutter is a feedback loop, not a matching frequency. The deck's own twisting changes the airflow, which changes the force on the deck, which increases the twisting. Energy is fed in by the motion itself. Resonance needs a periodic driving force at the right frequency; a steady wind has none. The distinction is the episode.",
+      "opening_question": "The most famous physics demonstration in the world is in every textbook, on film, and it is the wrong explanation. How does an error survive fifty years of teaching?",
+      "why_it_carries": "The failure is spectacular and free to show; the correction is precise, published, citable, and about how teaching materials propagate error. It is the factory's own thesis demonstrated on a bridge.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "The collapse, the film footage, and the federal investigation.",
+          "K. Y. Billah and R. H. Scanlan, 'Resonance, Tacoma Narrows bridge failure, and undergraduate physics textbooks', American Journal of Physics 59 (1991), 118–124.",
+          "The persistence of the resonance explanation in physics textbooks after 1991."
+        ],
+        "CONTESTED": [
+          "How much of the design fault lies with the plate-girder deck specifically as against the general trend toward slender, shallow decks in the period."
+        ],
+        "INFERENCE": [
+          "Why the wrong explanation was so sticky. Plausibly because resonance was already in the syllabus and flutter was not."
+        ],
+        "UNKNOWN": [
+          "How many students were taught the wrong mechanism. Unknowable and worth saying so."
+        ]
+      },
+      "rights_flags": ["The Barney Elliott / Castle Film footage is not automatically public domain; it is held and licensed. Clear before use — the one thing everyone assumes is free here is not."]
+    },
+    {
+      "id": "HSF-C14",
+      "seed_title": "THE NIGHT BEFORE",
+      "moment": "27 January 1986: engineers at Morton Thiokol, Roger Boisjoly among them, argue on a teleconference that the Challenger launch should be delayed because the O-ring seals have never been tested at the forecast temperature and the data show erosion worsening as temperature drops. Management reverses the no-launch recommendation. The next morning, the shuttle breaks up 73 seconds after launch.",
+      "date_context": "Teleconference evening of 27 January 1986; launch 28 January 1986; Rogers Commission reports June 1986, with Richard Feynman's Appendix F.",
+      "lane": "ENGINEERING_FAILURE",
+      "hidden_mechanism": "Feynman's glass of ice water and the O-ring is the visible half. The invisible half is the reversal of the burden of proof: the engineers were asked to prove it was unsafe to fly, rather than being required to show it was safe. That single inversion — documented in the teleconference record — is the mechanism, and it is portable to every organisation the audience works in.",
+      "opening_question": "The engineers said don't. They were asked to prove it. Who has to prove what, and why does the direction of that question decide everything?",
+      "why_it_carries": "The primary record is exceptional: sworn testimony, the commission report, Feynman's dissenting appendix, and Boisjoly's own notes. Almost nothing needs inferring.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "The 27 January teleconference and the reversal of the no-launch recommendation, in Rogers Commission testimony.",
+          "Boisjoly's contemporaneous memoranda warning of seal failure months earlier.",
+          "Feynman's Appendix F, including the estimate that management's failure-probability assumptions differed from engineers' by orders of magnitude.",
+          "The physical cause: O-ring seal failure in the right solid rocket booster."
+        ],
+        "CONTESTED": [
+          "Whether the crew survived the breakup and were conscious during the fall. Evidence of activated emergency air packs exists; the conclusion is not certain and should be handled with restraint or omitted."
+        ],
+        "INFERENCE": [
+          "The role of schedule and political pressure, including the State of the Union address. Widely argued; the direct documentary link is weaker than the retelling suggests."
+        ],
+        "UNKNOWN": [
+          "What would have happened had the engineers held the line. Unknowable; do not dramatise it."
+        ]
+      },
+      "rights_flags": ["NASA footage public domain; network broadcast footage is not. Crew families are living and have repeatedly asked that the deaths not be dramatised. No re-enactment of the crew cabin. This is a hard editorial line, not a preference."]
+    },
+    {
+      "id": "HSF-C15",
+      "seed_title": "SHE HEELED, AND THEN SHE WENT",
+      "moment": "10 August 1628: the warship Vasa sails about 1,300 metres on her maiden voyage in Stockholm harbour, heels in a gust, takes water through open gunports and sinks. The inquiry finds nobody guilty. Before sailing, a stability test had been conducted — thirty men running side to side across the deck — and was stopped after three runs because the ship was already rolling dangerously. She sailed anyway.",
+      "date_context": "Launched and sunk 10 August 1628; inquiry September 1628; salvaged 1961; measurements published showing asymmetric hull construction.",
+      "lane": "ENGINEERING_FAILURE",
+      "hidden_mechanism": "Two mechanisms, and the second is the better one. The physical: too much weight too high, too little ballast, and a hull measurably asymmetric — the port side thicker than the starboard, because the shipwrights were working to two different measurement systems, Swedish feet and Amsterdam feet, with different numbers of inches to the foot. The organisational: the test was run, it failed, and it was stopped rather than acted on because the king was waiting.",
+      "opening_question": "The test failed. They stopped the test. Why is stopping a test the most dangerous thing anyone did that day?",
+      "why_it_carries": "The ship is physically present, intact, in a museum, and can be filmed. The two rulers are an object you can hold up. The inquiry transcript survives.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "The sinking, the date, and the distance sailed.",
+          "The inquiry of September 1628 and its finding of no individual guilt.",
+          "The lurch test of thirty men and its abandonment after three runs, in the inquiry testimony.",
+          "Post-salvage measurement showing asymmetric hull scantlings, and the recovery of rulers calibrated in different foot standards."
+        ],
+        "CONTESTED": [
+          "How far the asymmetry contributed to the capsize as against insufficient ballast and excessive topweight. Naval architects differ on the weighting.",
+          "How far King Gustav II Adolf personally forced design changes. The correspondence shows pressure; the specific causal chain is argued."
+        ],
+        "INFERENCE": [
+          "That the two-rulers finding explains the asymmetry. It is a strong and widely accepted reading of the artefacts, not a documented statement by anyone at the time."
+        ],
+        "UNKNOWN": [
+          "The exact death toll. Around thirty is the usual figure; no reliable count exists."
+        ]
+      },
+      "rights_flags": ["Filming at the Vasa Museum requires permission. The wreck contains human remains recovered during salvage — any sequence touching the remains requires museum clearance and should probably be avoided."]
+    },
+    {
+      "id": "HSF-C16",
+      "seed_title": "THE MOULD WAS THE EASY PART",
+      "moment": "September 1928: Alexander Fleming returns from holiday, notices a contaminated plate, and publishes on penicillin in 1929. Almost nothing happens for a decade. Between 1939 and 1945 Howard Florey, Ernst Chain and Norman Heatley at Oxford turn an unstable laboratory curiosity into a drug, using bedpans as culture vessels and a purification process Heatley built out of improvised parts. Fleming's name is the one everyone knows.",
+      "date_context": "Fleming's observation 1928, publication 1929; Oxford work from 1939; first human treatment of Albert Alexander 1941; mass production by 1944; Nobel Prize to Fleming, Florey and Chain 1945 — Heatley not included.",
+      "lane": "MISTAKES_TO_DISCOVERY",
+      "hidden_mechanism": "Penicillin is fragile, dilute and hard to extract. Heatley's counter-current extraction system, and the decision to culture in ceramic bedpans because nothing else was the right shape, are the actual invention. The scientific discovery was a decade old and going nowhere; what was missing was chemical engineering.",
+      "opening_question": "The discovery sat unused for ten years. What is the difference between finding something and making it real?",
+      "why_it_carries": "It corrects the accident myth without diminishing Fleming, and it gives the audience the industrial half that almost every discovery story omits. Heatley's exclusion from the Nobel is a documented fact about how credit works.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "Fleming's 1929 paper in the British Journal of Experimental Pathology.",
+          "The Oxford group's work, Heatley's laboratory notebooks, and the improvised culture and extraction apparatus.",
+          "The Albert Alexander case of 1941, including the recovery of penicillin from the patient's urine for re-use.",
+          "The 1945 Nobel award to Fleming, Florey and Chain; Heatley received an honorary doctorate of medicine from Oxford in 1990, the first in the university's history awarded to a non-physician."
+        ],
+        "CONTESTED": [
+          "The details of the original contamination — the source of the spore, the temperature sequence, and whether the plate was in a stack or on a bench. Fleming's own accounts varied over time."
+        ],
+        "INFERENCE": [
+          "That Fleming's fame relative to Florey's reflects press management rather than contribution. Widely argued and plausible; motive is inferred."
+        ],
+        "UNKNOWN": [
+          "How many people died in the ten-year gap who would have lived. Unknowable, and worth saying rather than estimating."
+        ]
+      },
+      "rights_flags": ["Heatley's notebooks and the Oxford material are institutionally held and require permission. Fleming's descendants and the Fleming museum have interests in likeness and reproduction."]
+    },
+    {
+      "id": "HSF-C17",
+      "seed_title": "THE TABLES WERE WRONG",
+      "moment": "Autumn 1901: the Wright brothers come home from Kitty Hawk discouraged, because their gliders produce far less lift than the published aerodynamic tables predict. Rather than assume they have built badly, they build a wind tunnel in the back of the bicycle shop and test around two hundred aerofoil shapes. The published tables — including Lilienthal's, which everyone used — are wrong. They rewrite them, and fly two years later.",
+      "date_context": "Failed 1901 season; wind tunnel built and tested October–December 1901; 1902 glider built on the new data; powered flight 17 December 1903.",
+      "lane": "MISTAKES_TO_DISCOVERY",
+      "hidden_mechanism": "The Smeaton coefficient. Every lift calculation of the period used a constant measured in the eighteenth century and copied forward for over a century without recheck. It was about forty per cent too high. The Wrights' real achievement is not an aircraft; it is noticing that a number everyone had been copying was wrong, and having the apparatus to prove it.",
+      "opening_question": "Their machine did not match the numbers. They decided the numbers were wrong. When is that arrogance, and when is it the only way forward?",
+      "why_it_carries": "It is the cleanest documented instance of trusting your own measurement over the literature and being right, and the wind tunnel is buildable on camera. It also shows a copied constant propagating for a century — the same failure mode as the Tacoma textbooks.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "The 1901 season's disappointing results, in the brothers' own letters and notebooks.",
+          "Construction of the wind tunnel and the balance apparatus, and the surviving test data.",
+          "Their correction of the Smeaton coefficient and the redesign of the 1902 glider on their own data.",
+          "Their correspondence with Octave Chanute throughout."
+        ],
+        "CONTESTED": [
+          "How wrong Lilienthal's own data actually were as against how the Wrights applied them; some later analysis argues Lilienthal's figures were better than the Wrights concluded and the error lay mainly in Smeaton."
+        ],
+        "INFERENCE": [
+          "The exact number of aerofoils tested; counts between 38 systematically and around 200 in total circulate depending on what is being counted."
+        ],
+        "UNKNOWN": [
+          "Who first introduced the erroneous Smeaton value into the chain of copying."
+        ]
+      },
+      "rights_flags": ["Wright papers are at the Library of Congress and largely public domain. Some later photographic reproductions carry institutional restrictions."]
+    },
+    {
+      "id": "HSF-C18",
+      "seed_title": "THE SAME TEXT, THREE TIMES",
+      "moment": "1799: a broken slab is found during French fortification work near Rosetta, carrying one decree in three scripts. 1802: it is in London as a spoil of war. 1822: Jean-François Champollion announces the phonetic reading of the hieroglyphs, working from the stone, from Coptic, and from Thomas Young's partial results — and the argument about who deserves the credit begins immediately and has never fully ended.",
+      "date_context": "Found July 1799; ceded to Britain under the Capitulation of Alexandria 1801 and in the British Museum from 1802; Young's work 1814–19; Champollion's Lettre à M. Dacier, September 1822.",
+      "lane": "LANGUAGE",
+      "hidden_mechanism": "The breakthrough is that hieroglyphs are not picture-writing and not purely alphabetic — they are mixed, using signs for sounds and signs for meanings in the same word. Everyone before Champollion assumed you had to choose. Champollion's advantage was Coptic: he knew the descendant language, so when he sounded out a cartouche he could recognise a real word rather than a plausible noise.",
+      "opening_question": "Two men worked on the same stone. One is a national hero and one is a footnote. What actually separates them?",
+      "why_it_carries": "The decipherment is genuinely explicable on screen in three minutes, the credit dispute is documented in the participants' own correspondence, and the object's provenance is contested in the present tense — Egypt has repeatedly requested its return.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "The 1799 discovery, the 1801 Capitulation of Alexandria, and the stone's arrival at the British Museum in 1802.",
+          "Young's identification of the Ptolemy cartouche and his partial phonetic values, published 1819.",
+          "Champollion's Lettre à M. Dacier (1822) and the Précis (1824).",
+          "The mixed phonetic-and-ideographic nature of the script as Champollion established it.",
+          "Egyptian requests for repatriation, made repeatedly and most recently in the 2020s."
+        ],
+        "CONTESTED": [
+          "How much Champollion owed to Young, and whether he acknowledged it adequately. Argued since 1822, with a persistent national dimension to the argument.",
+          "Whether the stone was decisive or merely convenient; Champollion also used the Philae obelisk and the Abu Simbel material."
+        ],
+        "INFERENCE": [
+          "That Champollion's Coptic fluency was the decisive advantage. Strongly supported by his method but it is a historian's reconstruction."
+        ],
+        "UNKNOWN": [
+          "The name of anyone Egyptian involved in the find or the early handling. The record is entirely European."
+        ]
+      },
+      "rights_flags": ["The stone's provenance is contested and the episode must say so on screen. British Museum filming permission required; do not let a permission agreement soften the provenance statement."]
+    },
+    {
+      "id": "HSF-C19",
+      "seed_title": "THE MAN WHO BURNED THE BOOKS AND WROTE THE KEY",
+      "moment": "July 1562, Maní, Yucatán: Diego de Landa, a Franciscan, holds an auto-da-fé and burns a quantity of Maya codices, destroying most of a written literature. Later, defending himself, he compiles an account of Maya life that includes an attempt at a Maya 'alphabet' — a document that turns out to be wrong in its premise and indispensable in its content, and that four centuries later becomes a key to the decipherment he had tried to erase.",
+      "date_context": "The Maní auto-da-fé, July 1562; Relación de las cosas de Yucatán compiled c.1566; Yuri Knorozov's phonetic breakthrough using Landa's alphabet published from 1952; substantial decipherment achieved from the 1970s–80s.",
+      "lane": "LANGUAGE",
+      "hidden_mechanism": "Landa asked an informant for 'the letters' of Maya writing and wrote down the answers. The informant, working in a script that is syllabic rather than alphabetic, gave him the sounds of the Spanish letter-names — so 'be' gave the sign for the syllable be. Landa recorded it as a failed alphabet. Knorozov recognised it as a working syllabary. The error in the question is what preserved the answer.",
+      "opening_question": "The man who destroyed the library also wrote the only key to reading what was left. What do you do with that?",
+      "why_it_carries": "The moral structure is irreducible — you cannot resolve it into a hero or a villain — and the linguistic mechanism is a genuine intellectual pleasure. It also carries a Cold War second act: Knorozov worked in the Soviet Union and was dismissed for years partly for that reason.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "The Maní auto-da-fé of 1562 and the destruction of codices, including Landa's own account.",
+          "Four Maya codices survive: Dresden, Madrid, Paris, and the Grolier/Maya Codex of Mexico.",
+          "Landa's Relación and the 'alphabet' it contains.",
+          "Yuri Knorozov's phonetic-syllabic interpretation, published from 1952, and its initial rejection in the West."
+        ],
+        "CONTESTED": [
+          "How many codices were burned. Landa's own figures and other accounts differ and none is reliable.",
+          "The authenticity of the Grolier Codex, long disputed and now generally accepted after further analysis.",
+          "How far Cold War politics as against Eric Thompson's personal authority delayed acceptance of Knorozov's work."
+        ],
+        "INFERENCE": [
+          "What the lost codices contained. Inferred from the survivors and from inscriptions; fundamentally unknown."
+        ],
+        "UNKNOWN": [
+          "The identity of Landa's informant, the person who actually supplied the syllabic values."
+        ]
+      },
+      "rights_flags": ["Codex imagery is held by European libraries and by Mexico; permissions required. Living Maya communities are the descendants of the people whose literature was burned — consult, credit, and do not present Maya writing as a dead puzzle."]
+    },
+    {
+      "id": "HSF-C20",
+      "seed_title": "THE MAP THAT WAS NEVER MEANT TO BE A PICTURE",
+      "moment": "1569: Gerardus Mercator publishes a world map on a projection that distorts area severely toward the poles — and does so deliberately, because it is the only projection on which a line of constant compass bearing is a straight line. It is a navigation instrument. Four centuries later it is on classroom walls as a picture of the world, and in 1973 Arno Peters launches a public campaign against it, with arguments that are politically potent and cartographically weak.",
+      "date_context": "Mercator's Nova et Aucta Orbis Terrae Descriptio, 1569; Peters's press conference, 1973; the Gall-Peters projection controversy through the 1980s–90s; cartographic bodies' joint statement against both in 1989.",
+      "lane": "MAPS",
+      "hidden_mechanism": "Every flat map of a sphere must lie; the only question is which property you choose to preserve. Mercator preserved angles because a sailor needs a straight rhumb line more than a true area. Peters's equal-area map preserves area and destroys shape. Neither is the truth. The mechanism is that 'which distortion did you choose, and for whom' is the only honest question about any map.",
+      "opening_question": "Every world map is wrong. The useful question is: wrong in whose favour, and on purpose for what?",
+      "why_it_carries": "It refuses both available takes — that Mercator is colonialist propaganda, and that the Peters critique was mere ignorance — and gives the audience a transferable tool. Cartographers' own 1989 statement rejecting rectangular world maps is a good, citable ending.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "Mercator's 1569 map and his stated navigational purpose.",
+          "The mathematical property: rhumb lines as straight lines; area distortion increasing with latitude.",
+          "Peters's 1973 launch and the ensuing controversy, including adoption by development agencies.",
+          "The 1989 resolution by seven North American geographic organisations against rectangular world maps in general use.",
+          "James Gall's prior publication of the same projection in 1855, which Peters did not credit."
+        ],
+        "CONTESTED": [
+          "Whether Mercator's projection functioned, in later centuries, to reinforce European self-importance regardless of its author's intent. A real argument with serious people on both sides."
+        ],
+        "INFERENCE": [
+          "Claims about how classroom map projections shape geopolitical intuition. Some experimental work exists; the strong version is asserted more often than it is measured."
+        ],
+        "UNKNOWN": [
+          "How Mercator derived the spacing of his parallels. He did not publish a derivation and the mathematics to do it rigorously did not yet exist."
+        ]
+      },
+      "rights_flags": ["Original 1569 sheets are institutionally held. The Gall-Peters projection is not encumbered but Peters's specific published maps may be."]
+    },
+    {
+      "id": "HSF-C21",
+      "seed_title": "THE DIAGRAM THAT WAS AN ARGUMENT",
+      "moment": "1858: Florence Nightingale publishes her analysis of mortality in the Crimean army, including the polar-area diagram showing that far more soldiers died of preventable disease than of wounds. She designs the image specifically so that a government minister who will not read a table cannot avoid the conclusion.",
+      "date_context": "Crimean War 1853–56; Scutari 1854–55; Notes on Matters Affecting the Health, Efficiency and Hospital Administration of the British Army published 1858; elected first female Fellow of the Royal Statistical Society 1859.",
+      "lane": "MAPS",
+      "hidden_mechanism": "Two, and the second is uncomfortable. The design mechanism: the diagram is built for a specific reader who will not do arithmetic, which makes it one of the first pieces of data visualisation explicitly designed as persuasion rather than record. The historical mechanism: mortality at Scutari actually rose after Nightingale's arrival and fell only after the Sanitary Commission fixed the sewers and water supply in March 1855 — and Nightingale herself came to understand and say this.",
+      "opening_question": "She is remembered for the lamp. She should be remembered for the pie chart. Why did she build a picture instead of writing a report?",
+      "why_it_carries": "It replaces a sentimental story with a statistical one, and the honest complication — that her own hospital's mortality was terrible and that she said so afterwards — is a model of a person updating in public.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "The 1858 report and the polar-area diagrams.",
+          "The predominance of disease over wounds as a cause of death.",
+          "The Sanitary Commission's March 1855 intervention and the subsequent fall in mortality.",
+          "Her election as the first woman Fellow of the Royal Statistical Society, 1859.",
+          "Her later writing acknowledging the sanitary cause."
+        ],
+        "CONTESTED": [
+          "How much of the mortality fall is attributable to the Sanitary Commission as against reduced overcrowding and the season. Modern epidemiological reanalyses differ.",
+          "How much of the diagram's design is Nightingale's own as against William Farr's statistical guidance."
+        ],
+        "INFERENCE": [
+          "That the diagrams changed specific government decisions. Their influence is widely asserted; the causal chain to particular reforms is reconstructed, not documented."
+        ],
+        "UNKNOWN": [
+          "Accurate denominators for the Scutari mortality rates; the army's own record-keeping was poor."
+        ]
+      },
+      "rights_flags": ["Primary sources public domain. Avoid the lamp entirely in the visual grammar — it is the thing the episode is displacing."]
+    },
+    {
+      "id": "HSF-C22",
+      "seed_title": "A CLOCK IS A MAP",
+      "moment": "1714–1773: Parliament offers £20,000 for a practical method of finding longitude at sea. John Harrison, a Lincolnshire carpenter, spends four decades building sea clocks. H4 performs, the Board of Longitude repeatedly declines to pay in full, and Harrison receives money only after direct appeal to the king and a separate act of Parliament, at the age of eighty.",
+      "date_context": "Longitude Act 1714; H1 1735; H4 trialled 1761–62 and 1764; partial payments 1765; parliamentary award 1773; Harrison dies 1776.",
+      "lane": "TRADE",
+      "hidden_mechanism": "Longitude is a time problem, not a space problem. The Earth turns fifteen degrees an hour, so if you know the time at a reference place and the local time by the sun, the difference is your longitude. The whole difficulty is carrying a reference time across an ocean in a damp, rolling, temperature-swinging ship — which is a materials and mechanism problem, not an astronomical one. Harrison's bimetallic and caged-roller solutions are the invention.",
+      "opening_question": "The prize was for a way to find your position. The answer was a clock. Why did it take sixty years for anyone to accept that?",
+      "why_it_carries": "The commercial stakes are concrete — ships and cargoes lost — and the institutional-resistance story is documented rather than inferred, in the Board's own minutes. It also resists the simple villain reading: the lunar-distance method its astronomers favoured genuinely worked.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "The Longitude Act 1714 and its terms.",
+          "Harrison's timekeepers H1–H5, all extant.",
+          "The 1761–64 trials and their results.",
+          "The Board's decisions, in its own minutes, and the 1773 parliamentary award.",
+          "The 1707 Scilly naval disaster as part of the political impetus."
+        ],
+        "CONTESTED": [
+          "Whether Nevil Maskelyne acted improperly or simply advocated for a rival method he had good reason to believe in. The Sobel popularisation leans hard on the former; recent scholarship using the Board's papers is much more sympathetic to Maskelyne.",
+          "Whether Harrison was ever formally awarded 'the prize'. He was not; he received payments and a separate parliamentary grant."
+        ],
+        "INFERENCE": [
+          "Class prejudice against a self-taught provincial carpenter as a factor. Plausible and often asserted; the minutes record methodological objections, not snobbery."
+        ],
+        "UNKNOWN": [
+          "How many ships and lives were lost to longitude error before the chronometer. No figure is defensible."
+        ]
+      },
+      "rights_flags": ["The timekeepers are at the Royal Observatory Greenwich; filming permission required. Do not build the episode on Sobel's Longitude without reading the Board's own papers — the popular account is the thing to check, not the source."]
+    },
+    {
+      "id": "HSF-C23",
+      "seed_title": "HE DRANK IT",
+      "moment": "1984: Barry Marshall, unable to give ulcers to laboratory animals and unable to get his bacterial theory of peptic ulcer past a profession certain that ulcers were caused by stress and acid, drinks a broth of Helicobacter pylori, gives himself gastritis, and documents it by endoscopy. He and Robin Warren receive the Nobel Prize in 2005.",
+      "date_context": "Warren observes the bacteria in biopsies from 1979; the pair publish in The Lancet in 1984; Marshall's self-experiment 1984; Nobel Prize 2005.",
+      "lane": "CHALLENGED_ASSUMPTIONS",
+      "hidden_mechanism": "H. pylori survives in stomach acid by producing urease, which splits urea into ammonia and buffers a microenvironment around itself. The reason the profession was so certain bacteria could not cause ulcers is that the stomach was believed sterile — and it is, almost, which made the exception invisible. The commercial mechanism matters too: there was an enormously profitable class of acid-suppressing drugs that managed ulcers without curing them.",
+      "opening_question": "He could not persuade anyone, so he infected himself. Was that science or was that theatre — and does the answer change what we should think of it?",
+      "why_it_carries": "It is recent enough that participants are alive and filmable, the mechanism is clean, and the self-experiment raises a real ethical question the episode should leave open rather than resolve.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "Warren's 1979 observations and the joint 1984 Lancet paper.",
+          "Marshall's self-experiment and the endoscopic documentation of the resulting gastritis.",
+          "The 2005 Nobel Prize in Physiology or Medicine.",
+          "The prior dominance of the stress-and-acid model and the commercial scale of H2-blocker sales."
+        ],
+        "CONTESTED": [
+          "How much of the resistance was intellectual conservatism as against reasonable demand for evidence; and how much the pharmaceutical interest actually influenced the profession's slowness."
+        ],
+        "INFERENCE": [
+          "That the self-experiment was decisive in changing minds. It was vivid and it helped; the consensus shifted on trial data."
+        ],
+        "UNKNOWN": [
+          "Whether Marshall's self-infection would have satisfied any modern ethics committee. He did not seek approval."
+        ]
+      },
+      "rights_flags": ["Participants are living; seek interview rather than dramatise. Medical imagery of a named living person requires his consent even though he published it."]
+    },
+    {
+      "id": "HSF-C24",
+      "seed_title": "THE GROUND REMEMBERS",
+      "moment": "31 May–1 June 1921: a white mob destroys the Greenwood district of Tulsa, Oklahoma, killing an unknown number of Black residents and burning thirty-five blocks. For most of a century, the event is largely absent from Oklahoma schoolbooks and the death toll is officially thirty-six. From 2020, the city excavates at Oaklawn Cemetery, and mass graves are found.",
+      "date_context": "Massacre 31 May–1 June 1921; Oklahoma Commission report 2001; excavations at Oaklawn from October 2020, with further exhumations and DNA work from 2021 onward; a named individual, C. L. Daniel, identified by DNA in 2024.",
+      "lane": "ORDINARY_LIFE",
+      "hidden_mechanism": "Insurance and the record. Greenwood property owners' claims were almost universally denied under riot exclusion clauses, which meant the destruction transferred wealth permanently and left a documentary trail of denials that survives. And the absence from the record was not passive: newspaper pages were removed from archives, and the event was omitted from state curricula. The forensic excavation is the mechanism by which a deliberately created gap is being closed with physical evidence.",
+      "opening_question": "For eighty years the official death toll was thirty-six. Who decided that, and what does it take to find out otherwise?",
+      "why_it_carries": "It is the clearest American case of documented erasure being reversed by physical evidence in the present tense, with named descendants participating, and it directly demonstrates what the evidence ladder is for: the toll is genuinely UNKNOWN, and the show's job is to say so and show the work.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "The destruction of the Greenwood district, 31 May–1 June 1921, and the scale of property loss.",
+          "The near-universal denial of insurance claims under riot exclusions.",
+          "The 2001 Oklahoma Commission report and its findings.",
+          "The 2020–present excavations at Oaklawn Cemetery and the recovery of burials in mass graves.",
+          "The 2024 DNA identification of C. L. Daniel, a Black World War I veteran, as a massacre victim.",
+          "Removal of contemporaneous newspaper material from archives."
+        ],
+        "CONTESTED": [
+          "The death toll. The official figure of thirty-six stood for decades; the Oklahoma Commission estimated between 75 and 300. No figure is settled and none should be stated as settled.",
+          "Whether aircraft were used to attack Greenwood from the air. Survivor testimony is consistent; documentary corroboration is limited and historians differ."
+        ],
+        "INFERENCE": [
+          "Estimates of cumulative lost Black wealth. Modelled, and worth showing as a model with its assumptions visible."
+        ],
+        "UNKNOWN": [
+          "How many people were killed, how many are buried at Oaklawn and elsewhere, and who most of them were. The excavation is ongoing."
+        ]
+      },
+      "rights_flags": ["HARD GATE. Human remains, active forensic excavation, and identified living descendants. Requires agreement from descendant organisations and the city's public oversight committee. No remains on screen. No store product. Coordinate with the ongoing identification work so the episode does not outrun the science."]
+    },
+    {
+      "id": "HSF-C25",
+      "seed_title": "TONGUE STONES",
+      "moment": "October 1666: a huge shark is landed near Livorno and its head sent to Nicolas Steno in Florence. Looking at the teeth, he asks why the glossopetrae — 'tongue stones' found inside solid rock, then explained as moon-fallen objects or as stones that grew in the earth — are identical to them. Answering that question forces him to invent the principles of stratigraphy: that rock forms in layers, and that a solid object inside a solid rock got there first.",
+      "date_context": "The shark, October 1666; Canis carchariae dissectum caput, 1667; De solido intra solidum naturaliter contento dissertationis prodromus, 1669.",
+      "lane": "QUESTIONS",
+      "hidden_mechanism": "The principle of inclusion, which is almost embarrassingly simple and completely decisive: if body A is enclosed in body B, A was solid first. From that one observation you get superposition, original horizontality, and the entire idea that rock records a sequence of time. Deep time begins with someone asking why two things look the same.",
+      "opening_question": "Why does a stone in a hill look exactly like a tooth in a shark? He refused to let that go, and time itself got longer.",
+      "why_it_carries": "It is the purest instance of the QUESTIONS lane: no apparatus, no institution, no funding — one refusal to accept a resemblance as a coincidence. And the reasoning can be reproduced by a ten-year-old with a jar.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "The shark dissection of 1666 and Steno's 1667 publication.",
+          "The 1669 Prodromus and its statement of the principles of superposition, original horizontality and inclusion.",
+          "The prior glossopetrae explanations he was displacing."
+        ],
+        "CONTESTED": [
+          "How far Steno was anticipated. Fracastoro, Leonardo and others had made related observations; the question is what counts as a system rather than an insight."
+        ],
+        "INFERENCE": [
+          "That his conversion to Catholicism and subsequent career as a bishop ended his scientific work. Frequently asserted; his own reasons are not fully documented."
+        ],
+        "UNKNOWN": [
+          "Whether Steno grasped the timescales his own principles implied. His text does not say."
+        ]
+      },
+      "rights_flags": ["All primary material public domain. Specimen filming needs a natural-history partner."]
+    },
+    {
+      "id": "HSF-C26",
+      "seed_title": "THE THING IN THE CRATE",
+      "moment": "1901: sponge divers recover a corroded lump from a shipwreck off Antikythera. It sits in the National Archaeological Museum in Athens largely ignored for half a century, because what it appears to be — a geared analogue computer for predicting astronomical positions and eclipses — is not supposed to exist in the ancient Mediterranean. X-ray and later CT imaging from the 1970s onward establish that it is exactly that.",
+      "date_context": "Recovered 1901; Derek de Solla Price's work from the 1950s, with 'Gears from the Greeks' published 1974; microfocus CT imaging 2005–06; Antikythera Mechanism Research Project publications from 2006; ongoing reconstruction disputes to the present.",
+      "lane": "SCIENCE",
+      "hidden_mechanism": "Differential gearing used to model a non-uniform motion — the Moon's varying speed across the sky — with a pin-and-slot mechanism that makes one gear run fast and slow within a revolution. That is not a clock. That is an analogue simulation of an astronomical theory, in bronze, and the mechanism embodies a specific model of the cosmos.",
+      "opening_question": "It was in a museum for fifty years and nobody looked properly, because the answer was impossible. What is sitting in a drawer right now?",
+      "why_it_carries": "It is the object lesson for the whole factory: the evidence was present, accessible and catalogued, and the obstacle was the expectation. It pairs naturally with Igbo-Ukwu as the same failure in two different directions.",
+      "evidence_status": {
+        "DOCUMENTED": [
+          "The 1901 recovery and the object's presence in the National Archaeological Museum, Athens.",
+          "Price's gear-tooth counts and 1974 publication.",
+          "The 2005–06 microfocus CT imaging and the inscriptions it revealed.",
+          "The pin-and-slot lunar anomaly mechanism.",
+          "Eclipse prediction functions on the back dials."
+        ],
+        "CONTESTED": [
+          "The date of manufacture; proposals range across roughly 205–60 BCE.",
+          "Whether the front display showed the planets, and in what arrangement. Several reconstructions compete and the 2021 UCL model is not universally accepted.",
+          "Who made it and where — Rhodes, Corinth and Syracuse have all been argued."
+        ],
+        "INFERENCE": [
+          "That a tradition of such devices existed and others are lost. Strongly implied by the sophistication; no second device has been found."
+        ],
+        "UNKNOWN": [
+          "What it was for, socially. Teaching instrument, astrological tool, prestige object or navigational aid — nobody knows.",
+          "How much of the mechanism is missing."
+        ]
+      },
+      "rights_flags": ["Greek state permissions required for the object; the National Archaeological Museum and the Greek Ministry of Culture control imagery. Reconstructions are the intellectual property of the teams that made them — credit and license, do not re-render."]
+    }
+  ]
+}

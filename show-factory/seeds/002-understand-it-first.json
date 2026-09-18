@@ -1,0 +1,259 @@
+{
+  "id": "HSF-002",
+  "seed_title": "UNDERSTAND IT FIRST",
+  "subject": "Marie Skłodowska-Curie (1867–1934)",
+  "lane": "MEDICINE",
+  "state": "GATED",
+  "source": [
+    "Marie Curie, 'La Radiologie et la Guerre' (Félix Alcan, Paris, 1921) — her own account of the 1914–18 radiological service. PRIMARY.",
+    "Marie Curie, 'Autobiographical Notes', published with 'Pierre Curie' (Macmillan, 1923), trans. Charlotte and Vernon Kellogg. PRIMARY.",
+    "Curie, Curie and Bémont, 'Sur une nouvelle substance fortement radio-active, contenue dans la pechblende', Comptes Rendus 127 (1898), 1215–1217. PRIMARY.",
+    "Bibliothèque nationale de France — custody of Curie's notebooks, held in lead-lined boxes. ARCHIVAL.",
+    "Glenn T. Seaborg, 'Need We Fear Our Nuclear Future?', Bulletin of the Atomic Scientists 24, no. 1 (Jan 1968), 36–42. PRIMARY, and the key document for the quotation problem.",
+    "Université Laval, Faculté de médecine, Laval médical 16 (1951), 569 — earliest traced appearance of the French first sentence. ARCHIVAL.",
+    "Eve Curie, 'Madame Curie' (1937) — the family biography; reported speech throughout, not a documentary record."
+  ],
+  "date_context": "Two hinges. December 1898: the announcement of radium in Comptes Rendus. 1914–1918: the mobile radiological service Curie built and ran across the Western Front. The quotation this seed was handed enters the record no earlier than 1951 — seventeen years after her death — and the version everyone knows enters it in 1968.",
+  "documented_wording": {
+    "as_handed_to_the_factory": "\"Nothing in life is to be feared, it is only to be understood.\"",
+    "verdict": "Not documented. No primary source in Curie's writings, letters, lectures or notebooks has been produced for it. The earliest traced form is French — «On ne doit rien craindre dans la vie — il suffit de comprendre» — in Laval médical (1951), 16, 569, seventeen years after her death, given there in the context of her learning she had cancer.",
+    "the_second_sentence": "The familiar continuation — 'Now is the time to understand more, so that we may fear less' — is almost certainly not hers at all. It appears as the closing line of Glenn T. Seaborg's article 'Need We Fear Our Nuclear Future?' (Bulletin of the Atomic Scientists, Jan 1968), where only the FIRST sentence is set in quotation marks and credited to Skłodowska-Curie; the second sits outside the quotation marks, in Seaborg's own voice. Seaborg's article condensed a speech he gave at the Skłodowska-Curie centenary symposium in Warsaw on 19 October 1967. Somewhere after 1968 the quotation marks migrated.",
+    "what_she_actually_wrote": "\"We must not forget that when radium was discovered no one knew that it would prove useful in hospitals. The work was one of pure science. And this is a proof that scientific work must not be considered from the point of view of the direct usefulness of it.\" — Lecture at Vassar College, 14 May 1921. Documented, sourced, and a better spine than the line she probably never said."
+  },
+  "what_happened": "In August 1914 the German army advanced on Paris and the French medical service had almost no X-ray capacity at the front. Wounded men were being operated on by surgeons cutting for shrapnel they could not see. Curie — then the only person to have won two Nobel Prizes — stopped laboratory work, learned to drive, took anatomy and radiology, and built a mobile radiological service: vehicles carrying an X-ray apparatus, a darkroom and a dynamo driven off the car's own engine so the unit did not depend on mains power that did not exist. She equipped roughly twenty mobile units and some two hundred fixed radiological posts, trained about a hundred and fifty women as operators, and worked at the front with her teenage daughter Irène. She also offered her Nobel medals to be melted for the war effort; the Banque de France declined. She died on 4 July 1934 of aplastic anaemia. Her notebooks are still radioactive and are kept at the Bibliothèque nationale de France in lead-lined boxes; readers sign a waiver.",
+  "popular_retelling_error": "The retelling leads with the quotation, and the quotation is the least documented thing in the file. It also files Curie under discovery — radium, the shed, the glowing tubes — and files out the part where she spent four years doing logistics: procurement, vehicle conversion, power supply, personnel training and front-line deployment. The glowing shed is the image; the dynamo bolted to a car engine is the achievement. And the dying-for-science framing flattens a real dispute about what actually killed her.",
+  "what_is_contested": "What killed her. Aplastic anaemia is documented as the cause of death; whether the dose came chiefly from decades of radium handling or from the poorly shielded X-ray work of 1914–18 is genuinely disputed, and her own remains, exhumed in 1995 for transfer to the Panthéon, were found to carry less radium contamination than expected — which strengthens the wartime-X-ray argument without settling it. Also contested: the number of wounded examined by the service. The figure above a million comes from Curie's own postwar estimate, not from a count.",
+  "formula": {
+    "DOCUMENTED_MOMENT": "1914–1918: Curie designs, equips and deploys a mobile radiological service — roughly twenty vehicles, some two hundred fixed posts, about a hundred and fifty women trained — and writes it up herself in La Radiologie et la Guerre (1921).",
+    "HIDDEN_MECHANISM": "An X-ray at the front was not a diagnosis. It was a map made for a surgeon who was about to cut, telling him where the metal was before he went looking. The hard problem was never the physics — it was electricity. There was no mains power near a field hospital, so the unit carried its own: a dynamo driven off the car's engine. The whole service turns on that one decision to bring the machine to the wounded instead of the wounded to the machine.",
+    "HUMAN_DECISION": "Curie chose four years of procurement, driving and training over four years of laboratory work, at the height of her authority, when nobody would have questioned her staying in the lab. She also chose to put her daughter, then seventeen, into the same radiation field she was standing in.",
+    "EVIDENCE_GAP": "How many wounded the service actually examined. The figure everyone repeats is her own estimate. No count was kept. And the dose she received across thirty years was never measured, because nobody was measuring.",
+    "QUESTION_FOR_TODAY": "When something genuinely useful is also genuinely dangerous, and the danger is invisible and slow — who decides how fast it reaches people, and who carries the cost of being wrong?"
+  },
+  "episode_premise": "Start with a sentence millions of people have on a poster, and show that nobody can find where it came from. Then use the hunt for the sentence as the way into what she actually did in the four years the posters skip — which turns out to be a logistics problem solved under fire, with a cost she could not measure and did not survive.",
+  "opening_question": "One of the most quoted sentences in science is attributed to Marie Curie. Nobody has ever found her saying it. So where did it come from — and what was she doing instead?",
+  "three_act": {
+    "act_1": "THE SENTENCE. The quotation on posters, mugs, classroom walls. Then the search: not in her autobiographical notes, not in the letters, not in the Vassar lecture, not in Eve Curie's biography. Earliest trace, 1951, in French, in a Quebec medical journal, seventeen years after she died. The familiar second half, 1968, in a Bulletin of the Atomic Scientists article by Glenn Seaborg — outside the quotation marks. Show the page. End on the real question: if this is what we remember her for, what are we not remembering?",
+    "act_2": "THE DYNAMO. August 1914. Surgeons cutting for shrapnel they cannot see. The conversion of a car into a radiological unit, and the electricity problem that is the actual invention. Twenty units, two hundred posts, a hundred and fifty women trained, one seventeen-year-old daughter in the same room as the tube. Her own book, on screen, as the source.",
+    "act_3": "THE DOSE. What nobody was measuring. 1934, aplastic anaemia. The dispute: radium or the war X-rays. The 1995 exhumation and what it found. Close in the reading room of the Bibliothèque nationale de France: the lead-lined box, the waiver, the notebook that is still hot. The last image is a document you have to sign a form to read — and the sentence she probably never wrote, back on the poster."
+  },
+  "visual_evidence": [
+    {
+      "ref": "V1",
+      "description": "Bulletin of the Atomic Scientists 24:1 (Jan 1968), pp. 36 and 42 — Seaborg article opening and closing lines",
+      "copyright_state": "FAIR_USE_ASSERTED",
+      "fair_use_basis": "Brief reproduction of two short passages for the purpose of documenting and correcting a misattribution; the passages are the subject of the commentary, not decoration.",
+      "provenance_state": "INSTITUTIONAL_HELD",
+      "people_flags": [],
+      "note": "This is the single most important image in the episode. Get the page, not a retype."
+    },
+    {
+      "ref": "V2",
+      "description": "Marie Curie, La Radiologie et la Guerre (1921), title page and interior",
+      "copyright_state": "PUBLIC_DOMAIN",
+      "provenance_state": "CLEAR",
+      "people_flags": [],
+      "note": "Published 1921, author died 1934; public domain in life+70 jurisdictions."
+    },
+    {
+      "ref": "V3",
+      "description": "Photographs of the 'petites Curies' radiological vehicles and front-line radiological posts, 1914–18",
+      "copyright_state": "PUBLIC_DOMAIN",
+      "provenance_state": "INSTITUTIONAL_HELD",
+      "people_flags": ["NAMED_PRIVATE_INDIVIDUAL"],
+      "note": "Musée Curie and French military archives. Some frames show identifiable wounded soldiers under treatment — treat as named private individuals even a century on; prefer frames showing equipment and operators."
+    },
+    {
+      "ref": "V4",
+      "description": "Curie's laboratory notebooks in their lead-lined boxes, Bibliothèque nationale de France, with the reader's waiver",
+      "copyright_state": "RIGHTS_HOLDER_PERMISSION",
+      "provenance_state": "INSTITUTIONAL_HELD",
+      "people_flags": [],
+      "note": "Access and filming both require BnF permission. This is the closing image; secure it before the edit depends on it."
+    },
+    {
+      "ref": "V5",
+      "description": "Comptes Rendus 127 (1898), 1215–1217 — the radium announcement",
+      "copyright_state": "PUBLIC_DOMAIN",
+      "provenance_state": "CLEAR",
+      "people_flags": [],
+      "note": "Three authors: Curie, Curie and Bémont. Bémont is routinely dropped from the retelling; show the byline."
+    }
+  ],
+  "claims": [
+    {
+      "ref": "C1",
+      "statement": "No primary source has been produced for 'Nothing in life is to be feared, it is only to be understood'; the earliest traced appearance is French, in Laval médical 16 (1951), 569, seventeen years after Curie's death.",
+      "tier": "DOCUMENTED",
+      "corrects_retelling": true,
+      "sources": [
+        { "source_class": "ARCHIVAL", "citation": "Université Laval, Faculté de médecine, Société médicale des hôpitaux universitaires de Québec, Laval médical 16 (1951), 569." },
+        { "source_class": "SCHOLARLY", "citation": "Today in Science History quotations apparatus, Marie Curie entry, which documents the failure to locate a primary source and traces the 1951 and 1968 appearances." }
+      ]
+    },
+    {
+      "ref": "C2",
+      "statement": "The second sentence, 'Now is the time to understand more, so that we may fear less', appears as Glenn T. Seaborg's own closing line in Bulletin of the Atomic Scientists 24:1 (Jan 1968), 42, outside the quotation marks, following only the first sentence attributed to Skłodowska-Curie.",
+      "tier": "DOCUMENTED",
+      "corrects_retelling": true,
+      "sources": [
+        { "source_class": "PRIMARY", "citation": "Glenn T. Seaborg, 'Need We Fear Our Nuclear Future?', Bulletin of the Atomic Scientists 24, no. 1 (Jan 1968), article at 36, closing line at 42." }
+      ]
+    },
+    {
+      "ref": "C3",
+      "statement": "Seaborg's article condensed a speech given at the Maria Skłodowska-Curie centenary symposium, Warsaw, 19 October 1967.",
+      "tier": "DOCUMENTED",
+      "sources": [{ "source_class": "PRIMARY", "citation": "Seaborg, Bulletin of the Atomic Scientists 24:1 (Jan 1968), editorial note." }]
+    },
+    {
+      "ref": "C4",
+      "statement": "During 1914–18 Curie organised a mobile and fixed radiological service for the French army and described it herself in La Radiologie et la Guerre (1921).",
+      "tier": "DOCUMENTED",
+      "sources": [{ "source_class": "PRIMARY", "citation": "Marie Curie, La Radiologie et la Guerre (Félix Alcan, 1921)." }]
+    },
+    {
+      "ref": "C5",
+      "statement": "The service comprised roughly twenty mobile units and about two hundred fixed radiological posts, with about a hundred and fifty women trained as operators.",
+      "tier": "CONTESTED",
+      "dispute": "Figures vary between accounts and between the French and English literature; Curie's own book gives orders of magnitude rather than an audited inventory. Use 'roughly' on screen or cite the specific figure to the specific source.",
+      "sources": [
+        { "source_class": "PRIMARY", "citation": "Curie, La Radiologie et la Guerre (1921)." },
+        { "source_class": "SCHOLARLY", "citation": "Standard Curie biographies, which differ from one another on the counts." }
+      ]
+    },
+    {
+      "ref": "C6",
+      "statement": "The number of wounded examined by the radiological service.",
+      "tier": "UNKNOWN",
+      "sources": [],
+      "note": "The widely repeated figure above one million derives from Curie's own postwar estimate. No count was kept."
+    },
+    {
+      "ref": "C7",
+      "statement": "Curie died on 4 July 1934 of aplastic anaemia.",
+      "tier": "DOCUMENTED",
+      "sources": [{ "source_class": "SCHOLARLY", "citation": "Contemporary medical record and standard biographies; cause of death is not in dispute." }]
+    },
+    {
+      "ref": "C8",
+      "statement": "Whether her fatal illness was caused chiefly by radium exposure or by unshielded X-ray work during 1914–18.",
+      "tier": "CONTESTED",
+      "dispute": "Both exposures are documented; the relative contribution is not determinable from the record. The 1995 exhumation for transfer to the Panthéon reported lower radium body burden than anticipated, which some read as strengthening the X-ray explanation. No measurement of her lifetime dose exists.",
+      "sources": [
+        { "source_class": "SCHOLARLY", "citation": "Published analyses of the 1995 exhumation measurements and subsequent discussion in the radiological-protection literature." }
+      ]
+    },
+    {
+      "ref": "C9",
+      "statement": "Curie's laboratory notebooks remain radioactive and are held at the Bibliothèque nationale de France in lead-lined boxes; consultation requires a signed waiver.",
+      "tier": "DOCUMENTED",
+      "sources": [
+        { "source_class": "ARCHIVAL", "citation": "Bibliothèque nationale de France, conditions of consultation for the Curie papers." }
+      ]
+    },
+    {
+      "ref": "C10",
+      "statement": "The 1898 radium announcement in Comptes Rendus carries three authors: Marie Curie, Pierre Curie and Gustave Bémont.",
+      "tier": "DOCUMENTED",
+      "corrects_retelling": true,
+      "sources": [{ "source_class": "PRIMARY", "citation": "Comptes Rendus de l'Académie des Sciences 127 (1898), 1215–1217." }]
+    },
+    {
+      "ref": "C11",
+      "statement": "Curie wrote: 'We must not forget that when radium was discovered no one knew that it would prove useful in hospitals. The work was one of pure science.'",
+      "tier": "DOCUMENTED",
+      "sources": [{ "source_class": "PRIMARY", "citation": "Lecture at Vassar College, Poughkeepsie, New York, 14 May 1921." }]
+    }
+  ],
+  "quotes": [
+    {
+      "ref": "Q1",
+      "text": "Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less.",
+      "state": "ALTERED_IN_CIRCULATION",
+      "used_as_title": false,
+      "as_documented": "First sentence: no primary source; earliest trace 1951, in French, seventeen years posthumous. Second sentence: Glenn T. Seaborg's own words, Bulletin of the Atomic Scientists, January 1968, printed outside the quotation marks.",
+      "actual_author": "Second sentence: Glenn T. Seaborg.",
+      "sources": [
+        { "source_class": "PRIMARY", "citation": "Seaborg, Bulletin of the Atomic Scientists 24:1 (Jan 1968), 42." },
+        { "source_class": "ARCHIVAL", "citation": "Laval médical 16 (1951), 569." }
+      ]
+    },
+    {
+      "ref": "Q2",
+      "text": "We must not forget that when radium was discovered no one knew that it would prove useful in hospitals. The work was one of pure science.",
+      "state": "DOCUMENTED_WORDING",
+      "used_as_title": false,
+      "sources": [{ "source_class": "PRIMARY", "citation": "Vassar College lecture, 14 May 1921." }]
+    }
+  ],
+  "formats": {
+    "SHORT_60": {
+      "hook": "This Marie Curie quote is on ten million posters. Half of it was written by a man in 1968.",
+      "claim_refs": ["C1", "C2"],
+      "states_the_gap": false,
+      "sources_on_screen": true,
+      "beat_sheet": "0–10s the poster. 10–30s the search failing: not in the notes, the letters, the lectures. 30–50s the 1968 page on screen, quotation marks ending where they end. 50–60s: 'she did write this instead' — the Vassar line."
+    },
+    "VERSION_3": {
+      "claim_refs": ["C1", "C2", "C3", "C4", "C10", "C11"],
+      "states_the_gap": true,
+      "sources_on_screen": true,
+      "beat_sheet": "The sentence and its failure to appear (0:00–1:00). Seaborg, 1968, the page (1:00–1:35). What she was doing instead: the dynamo and the front (1:35–2:35). The gap: nobody counted, nobody measured (2:35–3:00)."
+    },
+    "EPISODE_20": {
+      "claim_refs": ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11"],
+      "states_the_gap": true,
+      "sources_on_screen": true,
+      "beat_sheet": "Three acts as specified. C5 and C8 named on screen as contested. C6 closes act two; C9 closes the episode."
+    },
+    "CHILDREN": {
+      "claim_refs": ["C4", "C10", "C9"],
+      "states_the_gap": true,
+      "sources_on_screen": false,
+      "reading_age": "8–12",
+      "spine": "Doctors had to cut into people to find pieces of metal they could not see. She built a car that could take a picture through skin, and drove it to where the hurt people were. The hard part was not the picture. The hard part was electricity, because there were no plugs in a field.",
+      "gap_sentence": "Her notebooks are still dangerous to touch, ninety years later. They are kept in boxes lined with lead. Nobody knew that would happen when she was writing in them — that is the part of the story that is not a happy ending, and we are not going to skip it."
+    },
+    "QUESTION_CARDS": {
+      "cards": [
+        "A famous person is supposed to have said something. How would you find out whether they really did?",
+        "Half this quotation was written by someone else. How do you think the quotation marks moved — and does it matter?",
+        "She had to solve electricity before she could solve medicine. What is the boring problem underneath something you use every day?",
+        "She could not measure how much harm she was taking. What do we use today that we cannot measure the harm of yet?",
+        "Nobody counted how many wounded people her machines helped. Why might nobody have been counting, and what do we lose when nobody does?",
+        "The radium paper has three names on it and we usually say one. Who gets dropped from stories, and why is it usually the same kinds of people?"
+      ],
+      "states_the_gap": false,
+      "sources_on_screen": false
+    },
+    "DISCUSSION_PAGE": {
+      "for": "teacher or family, one page",
+      "claim_refs": ["C1", "C2", "C5", "C6", "C8", "C9"],
+      "states_the_gap": true,
+      "sources_on_screen": true,
+      "sections": [
+        "A quotation you can check yourself: how to trace an attribution in three steps",
+        "What she actually did in 1914–18",
+        "What is genuinely disputed (what killed her; how many units; how many wounded)",
+        "Six questions, no answer key",
+        "Where to look next: La Radiologie et la Guerre (1921); the Vassar lecture; the Bulletin of the Atomic Scientists, January 1968"
+      ]
+    },
+    "STORE_PRODUCT": {
+      "product": "WHO SAID IT? — a set of ten cards. Each card carries a quotation everybody knows, and on the reverse the trace: where it first appears, who actually wrote it, and what the person did say. Curie's is card one, with the 1968 page reproduced.",
+      "rights_cleared": false,
+      "states_the_gap": false,
+      "sources_on_screen": false,
+      "note": "BLOCKED until the Bulletin of the Atomic Scientists page reproduction is licensed for commercial use. Fair use covers the documentary; it does not cover the merchandise."
+    }
+  },
+  "rights_notes": [
+    "Curie's own publications from 1898–1923 are public domain in life+70 jurisdictions. Translations may carry their own copyright — the Kellogg translation of the Autobiographical Notes is a separate work.",
+    "The Seaborg article is in copyright. Documentary reproduction of two short passages is a fair-use assertion tied to the commentary; commercial reproduction on a store product is NOT covered and is blocked until licensed.",
+    "Eve Curie's Madame Curie (1937) is in copyright and is reported speech, not a documentary record. It may be cited as a source of family recollection and must not be cited as primary evidence of what Marie Curie said.",
+    "Musée Curie and BnF material require permission for filming and reproduction.",
+    "Wartime photographs may show identifiable wounded individuals. Prefer equipment and operator frames."
+  ],
+  "corrections": []
+}

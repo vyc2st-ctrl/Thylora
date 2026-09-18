@@ -1,0 +1,236 @@
+{
+  "id": "HSF-001",
+  "seed_title": "WHY NOT?",
+  "subject": "Katherine Coleman Goble Johnson (1918–2020)",
+  "lane": "QUESTIONS",
+  "state": "GATED",
+  "source": [
+    "NASA Technical Note D-233, T. H. Skopinski and Katherine G. Johnson, 'Determination of Azimuth Angle at Burnout for Placing a Satellite Over a Selected Earth Position' (NASA Langley Research Center, 1960) — the primary document.",
+    "NASA Langley biography of Katherine Johnson, written by Margot Lee Shetterly for NASA (institutional).",
+    "Margot Lee Shetterly, 'Hidden Figures' (William Morrow, 2016) — scholarly-popular, sourced to NACA/NASA records and interviews.",
+    "Katherine Johnson with Joylette Hylick and Katherine Moore, 'My Remarkable Journey: A Memoir' (Amistad, 2021) — primary, late-life.",
+    "Reproduced interview wording in obituary coverage, Feb 2020 (journalistic)."
+  ],
+  "date_context": "Langley Research Center, Hampton, Virginia. Johnson joined the segregated West Area Computing unit of NACA in 1953, was loaned to the Flight Research Division, and stayed. The two dated hinges are 1960, when NASA TN D-233 was published carrying her name, and February 1962, the days before John Glenn's Friendship 7 orbital flight.",
+  "documented_wording": {
+    "primary": "NASA Technical Note D-233 (1960), authors listed as T. H. Skopinski and Katherine G. Johnson.",
+    "reported": "\"The women did what they were told to do. They didn't ask questions or take the task any further. I asked questions; I wanted to know why. They got used to me asking questions and being the only woman there.\"",
+    "reported_second": "\"When the space program came along I just happened to be working with guys and when they had briefings I asked permission to go, and they said the girls don't usually go. And I said, well, is there a law? They said no and then my boss said 'let her go.'\""
+  },
+  "what_happened": "Johnson was hired as a 'computer' — in 1953 that was a job title for a person, and at Langley the Black women who held it worked in a segregated unit with segregated dining and a segregated bathroom. Loaned to the Flight Research Division, she began asking the engineers why, not just what. The division's editorial meetings — where the research reports that carried authorship were argued over — were closed to the women computers by custom. Johnson asked to attend. Told 'the girls don't usually go', she asked whether there was a law against it. There was not, and she went. In 1960 her name appeared on NASA Technical Note D-233, which solved the problem of the azimuth angle at burnout needed to put a satellite over a chosen point on the ground. In February 1962, before Friendship 7, the orbital numbers came from an IBM 7090 electronic computer that nobody had yet learned to trust. As part of the preflight checks John Glenn asked the engineers to have Johnson run the same equations by hand and confirm the machine. She did. He flew.",
+  "popular_retelling_error": "Three things. (1) The film stages the 'get the girl' request as a dramatic interruption of the countdown; the documented account places it in the preflight period, days before launch, as part of a checklist. (2) The retelling makes Johnson's contribution a single heroic verification, when the durable evidence is authorship — a published technical note with her name on it, which is what credit in that building actually consisted of. (3) The segregated bathroom sprint that anchors the film is a compression of the West Computing experience broadly; Johnson herself said in interviews that she used the nearest bathroom and was not challenged, and that she 'didn't feel the segregation' in the Flight Research Division the way the film shows. Compressing other women's documented experience onto her makes a better scene and a worse record.",
+  "what_is_contested": "Whether TN D-233 makes Johnson the first woman in the Flight Research Division credited as an author of a report: NASA's own material says so, and it is repeated everywhere, but 'first' claims in a large organisation with incomplete report indexes are exactly the claims that fall over. The exact wording of Glenn's request survives as recollection, not as a written work order. The 'I asked questions; I wanted to know why' line is reproduced identically across many outlets and matches NASA's own paraphrase of her working style, but this build could not reach the originating interview transcript.",
+  "formula": {
+    "DOCUMENTED_MOMENT": "1960: NASA Technical Note D-233 is published with Katherine G. Johnson named as an author, after she asked to be admitted to the division's editorial meetings.",
+    "HIDDEN_MECHANISM": "Credit at Langley was manufactured in the editorial meetings, not at the desk. The work was done by computers; the authorship was decided by whoever was in the room when the report was argued. Johnson did not ask for recognition — she asked for admission to the room where recognition was assigned. Separately: the orbital problem itself runs backwards. You name the point on Earth you want the capsule to come down on, and solve for the azimuth angle at burnout that gets you there.",
+    "HUMAN_DECISION": "Told 'the girls don't usually go', Johnson did not accept it and did not escalate it. She asked whether there was a law. That reframes a custom as a rule, and forces whoever is enforcing it to say out loud that there is nothing behind it. Her supervisor then said let her go.",
+    "EVIDENCE_GAP": "No minutes survive in the public record naming the date Johnson was first admitted to an editorial meeting. We have her account of it and its result, not the room's own record of it.",
+    "QUESTION_FOR_TODAY": "When a machine hands you an answer, who is allowed to ask how it got there — and what happens to the answer when nobody is?"
+  },
+  "episode_premise": "A woman is handed a job title that is also a description of a machine, in a building that is about to replace her with one. Instead of defending the work, she goes after the room where the work gets its name attached. The episode is about custom mistaken for law, and about the one question — is there a law against it? — that distinguishes the two.",
+  "opening_question": "In 1962, the most advanced computer in the United States produced the numbers for the first American orbital flight. Why did the astronaut ask a human being to do it again by hand?",
+  "three_act": {
+    "act_1": "THE TITLE. 1953. 'Computer' is a person. Show the desk, the mechanical calculating machine, the segregated unit, and the division of labour: the women compute, the engineers write. Establish that a report is the unit of credit and that nobody in West Computing gets on one. End on Johnson being loaned out for two weeks and never sent back.",
+    "act_2": "THE ROOM. The editorial meeting. Establish what happens in it: the argument that decides whose name goes on the front. 'The girls don't usually go.' 'Is there a law?' Then the technical spine — the boundary-value problem, solved backwards from the landing point — and TN D-233 on screen with both names on it. End on the machine arriving: the IBM 7090, and a room that does not yet know how the thing fails.",
+    "act_3": "THE CHECK. February 1962. The preflight checklist. Glenn's request. Johnson running the same equations by hand on a desktop calculator, not to beat the machine but to give a human reason to believe it. Friendship 7 flies. Close on the gap: we do not have the minutes from the day she first walked into that room. We have what came out of it."
+  },
+  "visual_evidence": [
+    {
+      "ref": "V1",
+      "description": "NASA Technical Note D-233 (1960), title page showing both authors' names",
+      "copyright_state": "PUBLIC_DOMAIN",
+      "provenance_state": "CLEAR",
+      "people_flags": [],
+      "note": "US Government work. NASA Technical Reports Server."
+    },
+    {
+      "ref": "V2",
+      "description": "Photographs of Katherine Johnson at her Langley desk, NASA archive",
+      "copyright_state": "PUBLIC_DOMAIN",
+      "provenance_state": "INSTITUTIONAL_HELD",
+      "people_flags": ["LIVING_DESCENDANTS_IDENTIFIED"],
+      "descendant_contact_state": "NOT_YET_APPROACHED",
+      "note": "NASA imagery is generally public domain, but Johnson's daughters are named public co-authors of her memoir and are approachable for participation."
+    },
+    {
+      "ref": "V3",
+      "description": "IBM 7090 installation photographs, early 1960s",
+      "copyright_state": "UNRESOLVED",
+      "provenance_state": "INSTITUTIONAL_HELD",
+      "people_flags": [],
+      "note": "IBM corporate archive imagery is not automatically free. Clear before use or substitute NASA-held equivalents."
+    },
+    {
+      "ref": "V4",
+      "description": "Friendship 7 mission documentation and preflight checklists, NASA archive",
+      "copyright_state": "PUBLIC_DOMAIN",
+      "provenance_state": "CLEAR",
+      "people_flags": [],
+      "note": "Use to show what a preflight checklist physically is — this is the visual that corrects the countdown-drama version."
+    },
+    {
+      "ref": "V5",
+      "description": "Marchant / Friden desktop mechanical calculator of the type used at Langley",
+      "copyright_state": "ORIGINAL_TO_THYLORA",
+      "provenance_state": "CLEAR",
+      "people_flags": [],
+      "note": "Shoot our own. The sound of it is the sound of the act-three verification."
+    }
+  ],
+  "claims": [
+    {
+      "ref": "C1",
+      "statement": "NASA Technical Note D-233 (1960) lists T. H. Skopinski and Katherine G. Johnson as authors.",
+      "tier": "DOCUMENTED",
+      "sources": [{ "source_class": "PRIMARY", "citation": "NASA TN D-233, NASA Langley Research Center, 1960; NASA Technical Reports Server." }]
+    },
+    {
+      "ref": "C2",
+      "statement": "Johnson was hired in 1953 into the segregated West Area Computing unit at NACA Langley, where 'computer' was a human job title.",
+      "tier": "DOCUMENTED",
+      "sources": [
+        { "source_class": "INSTITUTIONAL", "citation": "NASA Langley biography of Katherine Johnson (Shetterly, for NASA)." },
+        { "source_class": "SCHOLARLY", "citation": "Shetterly, Hidden Figures (2016), ch. on West Computing." }
+      ]
+    },
+    {
+      "ref": "C3",
+      "statement": "As part of the Friendship 7 preflight checks, John Glenn asked engineers to have Johnson recompute by hand the orbital numbers the IBM 7090 had produced.",
+      "tier": "DOCUMENTED",
+      "corrects_retelling": true,
+      "sources": [
+        { "source_class": "INSTITUTIONAL", "citation": "NASA Langley biography of Katherine Johnson: the request is described as part of the preflight checklist." },
+        { "source_class": "SCHOLARLY", "citation": "Shetterly, Hidden Figures (2016)." }
+      ],
+      "note": "The correction this claim carries: preflight checklist, days before launch — not an interruption of the countdown."
+    },
+    {
+      "ref": "C4",
+      "statement": "Johnson asked to attend the Flight Research Division's editorial meetings, was told women did not attend, asked whether there was a law against it, and was admitted.",
+      "tier": "DOCUMENTED",
+      "sources": [
+        { "source_class": "PRIMARY", "citation": "Johnson's own repeated account in interviews and in My Remarkable Journey (2021)." },
+        { "source_class": "JOURNALISTIC", "citation": "Reproduced verbatim across obituary coverage, February 2020." }
+      ]
+    },
+    {
+      "ref": "C5",
+      "statement": "TN D-233 made Johnson the first woman in the Flight Research Division credited as an author of a research report.",
+      "tier": "CONTESTED",
+      "dispute": "NASA's own biography states it and it is universally repeated, but no independent audit of the division's report index has been published. 'First' claims of this shape frequently fail on a complete index. Treat as NASA's stated position, not as an audited fact.",
+      "sources": [{ "source_class": "INSTITUTIONAL", "citation": "NASA Langley biography of Katherine Johnson." }]
+    },
+    {
+      "ref": "C6",
+      "statement": "The bathroom-sprint sequence central to the 2016 film compresses the documented experience of West Computing onto Johnson personally; Johnson said she used the nearest bathroom and was not challenged.",
+      "tier": "CONTESTED",
+      "corrects_retelling": true,
+      "dispute": "Johnson's own interview statements and the film's dramatisation conflict. Both the segregation of Langley facilities and Johnson's account of her own experience are documented; the film merges them. Historians of the centre treat the segregation as real and the personal sequence as invented.",
+      "sources": [
+        { "source_class": "JOURNALISTIC", "citation": "Johnson interview statements reported in coverage around the film's release, 2016–2017." },
+        { "source_class": "SCHOLARLY", "citation": "Shetterly, Hidden Figures (2016), which distinguishes the two." }
+      ]
+    },
+    {
+      "ref": "C7",
+      "statement": "The exact date Johnson was first admitted to an editorial meeting.",
+      "tier": "UNKNOWN",
+      "sources": []
+    },
+    {
+      "ref": "C8",
+      "statement": "The orbital problem in TN D-233 is a boundary-value problem: the desired landing point is specified and the azimuth angle at burnout is solved for.",
+      "tier": "DOCUMENTED",
+      "sources": [{ "source_class": "PRIMARY", "citation": "NASA TN D-233 (1960), statement of the problem." }]
+    }
+  ],
+  "quotes": [
+    {
+      "ref": "Q1",
+      "text": "I asked questions; I wanted to know why.",
+      "state": "REPORTED_WORDING",
+      "used_as_title": false,
+      "sources": [
+        { "source_class": "JOURNALISTIC", "citation": "Reproduced identically across NASA-derived profiles and 2020 obituary coverage, within the longer passage beginning 'The women did what they were told to do.'" }
+      ],
+      "note": "Consistent with NASA's own paraphrase of her working style (asking the hows, the whys and then the why-nots). This build could not reach the originating interview transcript: nasa.gov was unreachable from the session. Verify against the source interview before broadcast."
+    },
+    {
+      "ref": "Q2",
+      "text": "Well, is there a law?",
+      "state": "REPORTED_WORDING",
+      "used_as_title": true,
+      "sources": [
+        { "source_class": "PRIMARY", "citation": "Johnson's own account, repeated in interviews and My Remarkable Journey (2021)." }
+      ]
+    }
+  ],
+  "formats": {
+    "SHORT_60": {
+      "hook": "The most advanced computer in America produced the numbers. The astronaut asked for a human to check them.",
+      "claim_refs": ["C3", "C1"],
+      "states_the_gap": false,
+      "sources_on_screen": true,
+      "beat_sheet": "0–8s the 7090 spinning. 8–25s Glenn's preflight request, on screen as checklist, not countdown. 25–45s Johnson at the desk calculator, same equations, by hand. 45–60s cut to TN D-233 title page, her name, and the question: who is allowed to ask the machine how it got there?"
+    },
+    "VERSION_3": {
+      "claim_refs": ["C2", "C4", "C1", "C8", "C3", "C6"],
+      "states_the_gap": true,
+      "sources_on_screen": true,
+      "beat_sheet": "Title as job description (0:00–0:35). The closed room and the question about the law (0:35–1:20). The backwards problem and the published note (1:20–2:10). The preflight check, with the countdown myth corrected on screen (2:10–2:45). The gap: no minutes survive (2:45–3:00)."
+    },
+    "EPISODE_20": {
+      "claim_refs": ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8"],
+      "states_the_gap": true,
+      "sources_on_screen": true,
+      "beat_sheet": "Three acts as specified in three_act. Contested claims C5 and C6 are named on screen as contested, with the dispute stated, not resolved. C7 closes the episode."
+    },
+    "CHILDREN": {
+      "claim_refs": ["C2", "C4", "C1", "C3"],
+      "states_the_gap": true,
+      "sources_on_screen": false,
+      "reading_age": "7–11",
+      "spine": "There was a room she was not allowed into. Nobody could tell her why. So she asked: is there a rule? There wasn't one. There was just a habit. Habits are not rules, and this is what happened when somebody found out.",
+      "gap_sentence": "We do not know what day she first walked into that room. Nobody wrote it down. That happens a lot in history, and it is all right to say so."
+    },
+    "QUESTION_CARDS": {
+      "cards": [
+        "Someone tells you 'we don't usually do that.' What is the difference between a rule and a habit, and how would you find out which one you are looking at?",
+        "The astronaut trusted a person over a machine. Was he right to? What would you have needed to know to decide?",
+        "Her job title was 'computer.' What does it change to find out that word used to mean a person?",
+        "The report has two names on it. Who decides whose name goes on work? Who decides that where you are?",
+        "We do not know the date she first went into that meeting. What else might be missing from a story, and how would you notice?",
+        "If the machine and the human had disagreed, who should have been believed, and how would anyone have found out which was right?"
+      ],
+      "states_the_gap": false,
+      "sources_on_screen": false
+    },
+    "DISCUSSION_PAGE": {
+      "for": "teacher or family, one page",
+      "claim_refs": ["C1", "C4", "C5", "C6", "C7"],
+      "states_the_gap": true,
+      "sources_on_screen": true,
+      "sections": [
+        "What is documented (the note, the request, the question about the law)",
+        "What the film changed and why that matters",
+        "What nobody knows",
+        "Six questions, with no answer key — the questions do not have answers in the back",
+        "Where to look next: NASA Technical Reports Server, the memoir, the Shetterly book"
+      ]
+    },
+    "STORE_PRODUCT": {
+      "product": "IS THERE A LAW? — a small hardback question journal. Left page: a documented custom that turned out not to be a rule, one per spread, each with its source line. Right page: blank, headed 'the thing I was told I could not do, and what I found out when I asked.'",
+      "rights_cleared": true,
+      "states_the_gap": false,
+      "sources_on_screen": false,
+      "note": "No portrait, no likeness, no signature. The product carries the method, not the face — which is also why it needs no estate clearance."
+    }
+  },
+  "rights_notes": [
+    "NASA-authored text and imagery are US Government works and generally free of copyright. That is a copyright answer, not a people answer.",
+    "Katherine Johnson died in 2020. Her daughters are named public figures and co-authors of her memoir; publicity and likeness rights in her image are a live question in several jurisdictions. Any use of her face or name on a product requires estate contact. The store product above is deliberately built to avoid needing it.",
+    "The memoir and the Shetterly book are in copyright. Quote within fair dealing or license.",
+    "IBM archival imagery is not public domain. V3 is blocked until cleared."
+  ],
+  "corrections": []
+}

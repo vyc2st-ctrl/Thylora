@@ -1,0 +1,281 @@
+{
+  "id": "HSF-003",
+  "seed_title": "THE GOLDEN DOOR",
+  "subject": "George Washington Carver (c. 1864–1943)",
+  "lane": "AGRICULTURE",
+  "state": "GATED",
+  "source": [
+    "George Washington Carver to Booker T. Washington, 12 April 1896 — the letter accepting the Tuskegee position. PRIMARY.",
+    "Gary R. Kremer (ed.), 'George Washington Carver: In His Own Words' (University of Missouri Press) — the standard edition of Carver's writings. ARCHIVAL.",
+    "The Booker T. Washington Papers (University of Illinois Press, ed. Louis R. Harlan) — the Washington side of the correspondence. ARCHIVAL.",
+    "National Park Service, George Washington Carver National Monument, lesson and background material quoting the 1896 letter. INSTITUTIONAL.",
+    "Carver's Tuskegee Experiment Station bulletins, 1898–1943 — including the peanut and sweet-potato bulletins. PRIMARY.",
+    "US Patents 1,522,176 (1925), 1,541,478 (1925), 1,632,365 (1927) — the three patents Carver held. PRIMARY.",
+    "Hearings before the House Committee on Ways and Means on the tariff, January 1921 — Carver's testimony for the United Peanut Associations of America. PRIMARY."
+  ],
+  "date_context": "12 April 1896: Carver, finishing his master's work at Iowa State, writes to Booker T. Washington accepting the agricultural department at Tuskegee Institute, in Alabama, thirty-one years after emancipation, in the decade Jim Crow was being locked into law. 1906: the Jesup Wagon rolls. January 1921: he testifies before the House Ways and Means Committee.",
+  "documented_wording": {
+    "as_handed_to_the_factory": "\"Education is the key to unlock the golden door of freedom.\"",
+    "verdict": "Real source, altered wording. The line is a truncation of a clause in the 12 April 1896 letter to Booker T. Washington, and the truncation removes both of the things that made it a specific commitment rather than a slogan.",
+    "as_documented": "\"...it has always been the one ideal of my life to be the greatest good to the greatest number of 'my people' possible and to this end I have been preparing myself for these many years; feeling as I do that this line of education is the key to unlock the golden door of freedom to our people.\" (National Park Service rendering of the 12 April 1896 letter.)",
+    "what_the_truncation_removes": "Two things. 'THIS LINE of education' — not education in general, but specifically scientific and agricultural training, the thing he had just spent years acquiring and was about to go and deliver. And 'to OUR PEOPLE' — a named constituency, Black farmers in the American South, not a universal audience. The poster version converts a Black scientist's targeted professional commitment into a content-free inspirational abstraction. That is the whole show.",
+    "textual_variance": "Renderings differ in small but real ways: NPS gives 'the one ideal of my life to be the greatest good'; other reputable renderings give 'the one great ideal of my life to be of the greatest good' and 'preparing myself these many years' without 'for'. The manuscript itself, in the Booker T. Washington Papers, is the tiebreaker and has not been collated in this build."
+  },
+  "what_happened": "Carver was born into slavery in Missouri near the end of the Civil War, was refused admission by at least one college after being accepted by post, and took a bachelor's and then a master's at Iowa State, where he was a respected botanist and a working painter. In 1896 he chose Tuskegee. The problem he found in Macon County was soil: generations of cotton monoculture had stripped the land, and the sharecropping and crop-lien systems made it economically irrational for a tenant farmer to plant anything but cotton. Carver's answer was a rotation onto nitrogen-fixing legumes — cowpeas, peanuts, soybeans — plus sweet potatoes. That created a second problem: a farmer who plants peanuts has peanuts and no market. So Carver went after the market, developing and publishing uses for the crops he was asking people to grow, and he built a delivery mechanism for the knowledge: the Jesup Wagon of 1906, a mule-drawn demonstration laboratory that took the experiment station to farmers who could not come to it. In January 1921 he testified before the House Ways and Means Committee for a peanut tariff, was allotted ten minutes, and was told to keep going.",
+  "popular_retelling_error": "Four things, and they compound. (1) He did not invent peanut butter — it was patented by others, Marcellus Gilmore Edson in Canada in 1884 and John Harvey Kellogg in 1895, before Carver arrived at Tuskegee. (2) The famous 'three hundred uses for the peanut' is repeated as if it were the achievement, when it was a marketing instrument built to solve a problem the actual achievement had created. (3) The actual achievement — soil restoration through legume rotation, delivered by a mobile extension school to people the land-grant system was not serving — is almost never told, because it is agronomy and logistics rather than genius-in-a-lab. (4) The quotation is cut so that both 'this line of education' and 'our people' disappear. The cumulative effect of all four is a Black agricultural scientist remembered as a charming eccentric with a sandwich spread.",
+  "what_is_contested": "How many of the peanut and sweet-potato products were commercially viable as against laboratory demonstrations. Carver's own bulletins are extant and countable; the widely quoted totals are not traceable to a single audited list, and historians differ on how to score a 'use'. Also contested: Carver's political position. He worked within Booker T. Washington's accommodationist programme and was afterwards promoted by white institutions and politicians as living proof that that programme worked — a use of him that he did not fully control and that later scholarship treats as a distortion of a more complicated man. Whether and how far Carver himself accepted that role is genuinely argued over.",
+  "formula": {
+    "DOCUMENTED_MOMENT": "12 April 1896: Carver writes to Booker T. Washington accepting Tuskegee, and in the same sentence states the theory of change he is acting on — that THIS line of education is the key to unlock the golden door of freedom to OUR people.",
+    "HIDDEN_MECHANISM": "Nitrogen. Cotton takes it out of the soil; legumes put it back, because bacteria in nodules on their roots fix nitrogen from the air. Every famous thing about Carver is downstream of that one fact. The peanut recipes exist because a farmer asked to plant a soil-restoring crop needs somewhere to sell it. The Jesup Wagon exists because the knowledge was useless to a tenant farmer who could not leave the farm to learn it. He was not inventing products. He was closing a loop.",
+    "HUMAN_DECISION": "He gave up being an artist. He had the talent and the training and said plainly that painting 'would not do his people as much good' as agricultural science he could teach them. He then chose Alabama over Iowa — a worse laboratory, a worse salary and a far more dangerous state — because that is where the farmers were.",
+    "EVIDENCE_GAP": "No audited list of Carver's products exists, so the number everyone quotes cannot be checked. And there is no record of how many farmers actually changed their planting because of the Jesup Wagon — the thing the whole programme was for was never measured.",
+    "QUESTION_FOR_TODAY": "When somebody gives knowledge away instead of patenting it, who ends up owning it — and who ends up being remembered for it?"
+  },
+  "episode_premise": "Take the most-printed sentence in Black American education, put the original letter next to it, and show exactly which two phrases were cut. Then follow what those two phrases actually meant: a specific science, delivered to a specific people, on a wagon, because the existing system would not carry it to them.",
+  "opening_question": "The quote on the classroom wall says 'Education is the key to unlock the golden door of freedom.' The letter says something longer. What got cut, and who benefits from the cut?",
+  "three_act": {
+    "act_1": "THE CUT. The poster version. Then the letter, 12 April 1896, on screen, with the full clause. Highlight 'this line of' and 'to our people'. Establish the stakes of those two phrases: a named method and a named constituency, in the decade Plessy v. Ferguson is decided. End on the choice — the paintings he stopped making, and why he said he stopped.",
+    "act_2": "THE LOOP. Macon County soil. Cotton, the crop lien and why a tenant farmer cannot afford to rotate. The nitrogen mechanism, shown physically: pull a cowpea, show the nodules. Then the second problem — a market for a crop nobody buys — and the bulletins as the answer. Then the delivery problem, and the Jesup Wagon rolling out in 1906. End in the Ways and Means Committee room, January 1921, ten minutes that ran long.",
+    "act_3": "THE OWNERSHIP. Three patents in a lifetime of published work — everything else given away in bulletins, free. What that meant then, and what happened to it: the peanut butter that was not his, the number nobody can audit, and the way his name got used after 1943 as evidence that patience worked. Close on the gap: nobody counted the farmers. Then put the full sentence back up, uncut."
+  },
+  "visual_evidence": [
+    {
+      "ref": "V1",
+      "description": "Carver to Booker T. Washington, 12 April 1896 — manuscript letter",
+      "copyright_state": "PUBLIC_DOMAIN",
+      "provenance_state": "INSTITUTIONAL_HELD",
+      "people_flags": [],
+      "note": "Held within the Booker T. Washington Papers. The manuscript is the tiebreaker on the textual variance; collate before the episode asserts a single wording."
+    },
+    {
+      "ref": "V2",
+      "description": "Tuskegee Experiment Station bulletins by Carver, 1898–1943",
+      "copyright_state": "PUBLIC_DOMAIN",
+      "provenance_state": "INSTITUTIONAL_HELD",
+      "people_flags": ["COMMUNITY_CUSTODIAN"],
+      "custodian_name": "Tuskegee University Archives",
+      "note": "Free of copyright as government-adjacent station publications of their era, but held and curated by a historically Black institution whose custodianship is part of the story. Approach as partner, not as a source of assets."
+    },
+    {
+      "ref": "V3",
+      "description": "Photographs of the Jesup Wagon and the movable school in the field, c.1906–1920s",
+      "copyright_state": "PUBLIC_DOMAIN",
+      "provenance_state": "INSTITUTIONAL_HELD",
+      "people_flags": ["NAMED_PRIVATE_INDIVIDUAL", "COMMUNITY_CUSTODIAN"],
+      "custodian_name": "Tuskegee University Archives",
+      "note": "Photographs show identifiable Black farmers and families photographed by an institution, in an era in which they had no say in the image. Treat the depicted as private individuals; caption them as participants, not as illustration."
+    },
+    {
+      "ref": "V4",
+      "description": "US Patents 1,522,176; 1,541,478; 1,632,365",
+      "copyright_state": "PUBLIC_DOMAIN",
+      "provenance_state": "CLEAR",
+      "people_flags": [],
+      "note": "Three documents. The act-three image is how few there are."
+    },
+    {
+      "ref": "V5",
+      "description": "Live-shot cowpea or peanut root ball showing rhizobial nodules",
+      "copyright_state": "ORIGINAL_TO_THYLORA",
+      "provenance_state": "CLEAR",
+      "people_flags": [],
+      "note": "Shoot our own. This is the one image that makes the whole episode legible in four seconds."
+    },
+    {
+      "ref": "V6",
+      "description": "Hearings before the House Committee on Ways and Means, January 1921 — printed transcript of Carver's testimony",
+      "copyright_state": "PUBLIC_DOMAIN",
+      "provenance_state": "CLEAR",
+      "people_flags": [],
+      "note": "US Government publication."
+    }
+  ],
+  "claims": [
+    {
+      "ref": "C1",
+      "statement": "The 'golden door of freedom' line comes from Carver's letter of 12 April 1896 to Booker T. Washington, where it reads '...this line of education is the key to unlock the golden door of freedom to our people.'",
+      "tier": "DOCUMENTED",
+      "corrects_retelling": true,
+      "sources": [
+        { "source_class": "PRIMARY", "citation": "Carver to Booker T. Washington, 12 April 1896; Booker T. Washington Papers." },
+        { "source_class": "ARCHIVAL", "citation": "Gary R. Kremer (ed.), George Washington Carver: In His Own Words (University of Missouri Press)." },
+        { "source_class": "INSTITUTIONAL", "citation": "National Park Service, George Washington Carver National Monument background material quoting the letter." }
+      ]
+    },
+    {
+      "ref": "C2",
+      "statement": "The popular form of the quotation removes the qualifier 'this line of' and the constituency 'to our people'.",
+      "tier": "DOCUMENTED",
+      "corrects_retelling": true,
+      "sources": [
+        { "source_class": "PRIMARY", "citation": "Comparison of the 1896 letter text with the circulating short form." },
+        { "source_class": "SCHOLARLY", "citation": "Kremer's edition, which prints the full clause." }
+      ]
+    },
+    {
+      "ref": "C3",
+      "statement": "Carver did not invent peanut butter; it was patented by Marcellus Gilmore Edson (Canada, 1884) and by John Harvey Kellogg (1895), before Carver began work at Tuskegee.",
+      "tier": "DOCUMENTED",
+      "corrects_retelling": true,
+      "sources": [
+        { "source_class": "PRIMARY", "citation": "Edson's Canadian patent, 1884; Kellogg's US patent, 1895." },
+        { "source_class": "SCHOLARLY", "citation": "Standard histories of the peanut industry and Carver scholarship, which are unanimous on this point." }
+      ]
+    },
+    {
+      "ref": "C4",
+      "statement": "Legumes such as cowpeas, peanuts and soybeans restore soil nitrogen through rhizobial nodules on their roots; Carver's rotation programme was built on this.",
+      "tier": "DOCUMENTED",
+      "sources": [
+        { "source_class": "PRIMARY", "citation": "Carver's Tuskegee Experiment Station bulletins on cowpeas, peanuts and soil improvement." },
+        { "source_class": "SCHOLARLY", "citation": "Agronomic literature on biological nitrogen fixation; uncontested." }
+      ]
+    },
+    {
+      "ref": "C5",
+      "statement": "The Jesup Wagon, a mule-drawn mobile demonstration laboratory, began operating from Tuskegee in 1906, funded by Morris Ketchum Jesup.",
+      "tier": "DOCUMENTED",
+      "sources": [
+        { "source_class": "ARCHIVAL", "citation": "Tuskegee Institute records and Carver correspondence." },
+        { "source_class": "SCHOLARLY", "citation": "Histories of agricultural extension, which treat the Jesup Wagon as a precursor of the federal extension service established by the Smith-Lever Act of 1914." }
+      ]
+    },
+    {
+      "ref": "C6",
+      "statement": "Carver held three US patents: 1,522,176 (1925), 1,541,478 (1925) and 1,632,365 (1927) — one cosmetic and two on paints and stains.",
+      "tier": "DOCUMENTED",
+      "sources": [{ "source_class": "PRIMARY", "citation": "United States Patent Office records." }]
+    },
+    {
+      "ref": "C7",
+      "statement": "Carver testified before the House Committee on Ways and Means in January 1921 on behalf of the United Peanut Associations of America during tariff hearings.",
+      "tier": "DOCUMENTED",
+      "sources": [{ "source_class": "PRIMARY", "citation": "Hearings before the Committee on Ways and Means, House of Representatives, tariff hearings, January 1921." }]
+    },
+    {
+      "ref": "C8",
+      "statement": "Carver abandoned a serious practice as a painter for agricultural science, saying art 'would not do his people as much good as a thorough knowledge of the sciences of agriculture, which he might impart to them'.",
+      "tier": "DOCUMENTED",
+      "sources": [
+        { "source_class": "INSTITUTIONAL", "citation": "National Park Service, George Washington Carver National Monument, citing Carver's statements around the completion of his master's work in 1896." },
+        { "source_class": "ARCHIVAL", "citation": "Kremer (ed.), In His Own Words." }
+      ]
+    },
+    {
+      "ref": "C9",
+      "statement": "The number of commercially viable products Carver developed from peanuts and sweet potatoes.",
+      "tier": "UNKNOWN",
+      "sources": [],
+      "note": "Figures in the range of three hundred circulate universally. No audited list has been produced, and scholars differ on what counts as a 'use'. The bulletins survive and could be collated; nobody has published that collation."
+    },
+    {
+      "ref": "C10",
+      "statement": "Carver's public reputation was promoted after his lifetime as evidence that accommodation rather than confrontation delivered Black advancement, a use of him that later scholarship treats as a distortion.",
+      "tier": "CONTESTED",
+      "dispute": "That the promotion happened is well evidenced. How far Carver himself endorsed the role, and how to weigh his private views against his public posture, is actively argued among historians of Tuskegee. Do not resolve this on screen; state that it is argued and show both readings.",
+      "sources": [
+        { "source_class": "SCHOLARLY", "citation": "Carver historiography, including Kremer's editorial commentary and subsequent reassessments of the Tuskegee programme." }
+      ]
+    },
+    {
+      "ref": "C11",
+      "statement": "How many farmers changed their planting practice as a result of the Jesup Wagon and the movable school.",
+      "tier": "UNKNOWN",
+      "sources": []
+    },
+    {
+      "ref": "C12",
+      "statement": "Renderings of the 1896 letter differ in minor wording ('the one ideal' vs 'the one great ideal'; 'to be the greatest good' vs 'to be of the greatest good').",
+      "tier": "CONTESTED",
+      "dispute": "Reputable sources, including NPS and the Kremer edition as quoted secondhand, differ. The manuscript in the Booker T. Washington Papers settles it; this build did not collate it.",
+      "sources": [
+        { "source_class": "INSTITUTIONAL", "citation": "National Park Service rendering." },
+        { "source_class": "SCHOLARLY", "citation": "Renderings derived from Kremer (ed.), In His Own Words." }
+      ]
+    }
+  ],
+  "quotes": [
+    {
+      "ref": "Q1",
+      "text": "Education is the key to unlock the golden door of freedom.",
+      "state": "ALTERED_IN_CIRCULATION",
+      "used_as_title": true,
+      "as_documented": "...feeling as I do that this line of education is the key to unlock the golden door of freedom to our people. — Carver to Booker T. Washington, 12 April 1896.",
+      "sources": [
+        { "source_class": "PRIMARY", "citation": "Carver to Booker T. Washington, 12 April 1896; Booker T. Washington Papers." },
+        { "source_class": "INSTITUTIONAL", "citation": "National Park Service, George Washington Carver National Monument." }
+      ],
+      "note": "Usable as a title precisely because the episode is about the alteration. The full clause must appear on screen before the short form is used again."
+    }
+  ],
+  "formats": {
+    "SHORT_60": {
+      "hook": "Four words were cut out of this quote. Both of them changed who it was for.",
+      "claim_refs": ["C1", "C2"],
+      "states_the_gap": false,
+      "sources_on_screen": true,
+      "beat_sheet": "0–8s the poster. 8–25s the 1896 letter, full clause typed out. 25–45s the two phrases highlighted and removed, live: 'this line of' and 'to our people'. 45–60s what he meant by 'this line' — the cowpea root ball, nodules in close-up."
+    },
+    "VERSION_3": {
+      "claim_refs": ["C1", "C2", "C8", "C4", "C5", "C3"],
+      "states_the_gap": true,
+      "sources_on_screen": true,
+      "beat_sheet": "The cut (0:00–0:50). The choice to leave art (0:50–1:15). Nitrogen, and why a tenant farmer cannot afford to rotate (1:15–2:05). The wagon (2:05–2:35). Not peanut butter, and the number nobody can check (2:35–3:00)."
+    },
+    "EPISODE_20": {
+      "claim_refs": ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C12"],
+      "states_the_gap": true,
+      "sources_on_screen": true,
+      "beat_sheet": "Three acts as specified. C10 and C12 are named on screen as contested and left unresolved. C9 and C11 close act three. The uncut sentence is the last frame."
+    },
+    "CHILDREN": {
+      "claim_refs": ["C4", "C5", "C8", "C3"],
+      "states_the_gap": true,
+      "sources_on_screen": false,
+      "reading_age": "7–11",
+      "spine": "Cotton eats something out of the ground that plants need. Peanuts put it back — you can see it, there are little bumps on their roots where it happens. So he told farmers to plant peanuts. They said: nobody buys peanuts. So he spent years finding things to make out of peanuts, and then he built a wagon to drive the lesson to people who couldn't come to school.",
+      "gap_sentence": "People say he found three hundred uses for the peanut. Nobody has ever actually counted. And nobody counted how many farmers listened to him, either — which is a shame, because that was the whole point."
+    },
+    "QUESTION_CARDS": {
+      "cards": [
+        "Two phrases were cut from his sentence. Read it both ways out loud. What changes?",
+        "He gave nearly all his work away for free instead of patenting it. What did that cost him, and what did it buy?",
+        "Why would a farmer keep planting a crop that is ruining his own soil? What would have to be true for that to be the sensible choice?",
+        "He built a school that moved. What is something you know that can't reach the people who need it, and what would the wagon be?",
+        "He didn't invent peanut butter. Why do you think that story stuck to him anyway?",
+        "People used his fame to argue for something he might not have agreed with. Can you be used by a story about yourself? How would anyone know?"
+      ],
+      "states_the_gap": false,
+      "sources_on_screen": false
+    },
+    "DISCUSSION_PAGE": {
+      "for": "teacher or family, one page",
+      "claim_refs": ["C1", "C2", "C4", "C9", "C10", "C11", "C12"],
+      "states_the_gap": true,
+      "sources_on_screen": true,
+      "sections": [
+        "The sentence, cut and uncut, side by side",
+        "The science in one paragraph: why legumes fix nitrogen and cotton does not",
+        "What is disputed: the count, and the politics of his reputation",
+        "What nobody knows: how many farmers changed",
+        "Six questions, no answer key",
+        "Where to look next: Kremer, In His Own Words; the Tuskegee bulletins; the 1921 Ways and Means hearings"
+      ]
+    },
+    "STORE_PRODUCT": {
+      "product": "THIS LINE OF — a growing kit and a card. Cowpea or peanut seed, a small pot, and a card printed with the uncut 1896 sentence, the two restored phrases in a second colour, and instructions to pull the plant at six weeks and look at the roots. The product is the mechanism: you grow the thing and then you see the nodules.",
+      "rights_cleared": true,
+      "states_the_gap": false,
+      "sources_on_screen": false,
+      "note": "No likeness, no portrait. Seed sourcing must be regionally lawful; check agricultural import rules per shipping destination before listing."
+    }
+  },
+  "rights_notes": [
+    "The 1896 letter and the Tuskegee bulletins are out of copyright; the Kremer edition's editorial apparatus is not. Quote the letter, not Kremer's notes.",
+    "Tuskegee University Archives is the custodian of the central material and of the community's own account of it. Custodianship here is not a formality: the collection is held by the institution the story is about. Approach as a partner with credit and, if the material carries the episode, a revenue share — not as a stock library.",
+    "Photographs of identifiable Black farmers and their families made by the institution in the Jim Crow era were made without meaningful consent by modern standards. Caption people as participants where names are recorded; never use these frames as generic period texture.",
+    "Carver died in 1943. Publicity and likeness rights in his name and image are asserted by several institutions; any product bearing his face or signature requires clearance. The product above is built to avoid that.",
+    "Seed products are regulated agricultural goods and cross borders badly. Rights clearance here includes phytosanitary rules, not just IP."
+  ],
+  "corrections": []
+}
