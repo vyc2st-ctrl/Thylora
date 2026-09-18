@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0f15">
+<title>Understanding Mathematics — THYLORA</title>
+<meta name="description" content="THYLORA's three-layer mathematics surface. P_solve = L × M × S: the sentence, the relationship and the working are measured separately, so a reading problem is never recorded as a mathematics problem.">
+<link rel="stylesheet" href="./styles.css">
+<link rel="manifest" href="./manifest.webmanifest">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="mark" aria-hidden="true">◈</span>
+    <div><p class="eyebrow">THYLORA</p><h1>Understanding Mathematics</h1></div>
+  </div>
+  <div class="top-actions">
+    <span class="chip gold">P_solve = L × M × S</span>
+    <span class="chip" id="backendChip">STORAGE · CHECKING</span>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Sections">
+  <button class="active" data-view="flow">Word Problem</button>
+  <button data-view="model">The Equation</button>
+  <button data-view="words">The Ten Words</button>
+  <button data-view="cards">My Understanding Cards</button>
+  <a href="./teacher.html">Teacher</a>
+  <a href="./family.html">Family</a>
+</nav>
+
+<main id="main">
+
+<!-- WORD PROBLEM FLOW ------------------------------------------------------->
+<section id="flow" class="view active-view">
+  <div class="hero">
+    <p class="eyebrow">ONE PROBLEM · FOUR SEPARATE LOOKS</p>
+    <h2>A wrong answer has at least three different causes.</h2>
+    <p class="lead">So we look at them one at a time: the sentence, the relationship, the working, and then you saying back what the answer means. Nothing here mixes them together.</p>
+  </div>
+
+  <div class="card">
+    <label for="examplePicker"><span>Choose a problem</span>
+      <select id="examplePicker"></select>
+    </label>
+    <div class="load-meter">
+      <span class="band">Sentence load</span>
+      <span class="load-bar"><i id="loadFill" style="width:0%"></i></span>
+      <span class="band" id="loadBand">—</span>
+      <span class="small muted" id="loadFormula"></span>
+    </div>
+  </div>
+
+  <!-- live equation ------------------------------------------------------->
+  <div class="equation" aria-live="polite">
+    <span class="factor L unknown" id="facL">L = ?</span>
+    <span class="op">×</span>
+    <span class="factor M unknown" id="facM">M = ?</span>
+    <span class="op">×</span>
+    <span class="factor S unknown" id="facS">S = ?</span>
+    <span class="result" id="facP">P_solve = ?</span>
+  </div>
+  <p class="small muted" id="equationNote">Each box fills in only when that layer has been looked at on its own. A box that has not been looked at stays a question mark — it never turns into a zero.</p>
+
+  <!-- 1 · language -------------------------------------------------------->
+  <article class="step layer-L" id="stepL">
+    <header><b>1 · The sentence</b><span class="small muted">Language, on its own</span></header>
+    <div class="body">
+      <p class="voice" data-voice="VX-L-ASK">First, just the sentence. What is this telling us, and what is it asking for? Do not work anything out yet.</p>
+      <p class="story" id="storyText"></p>
+      <p id="langAsk"></p>
+      <div class="options" id="langOptions"></div>
+      <div id="langResult"></div>
+    </div>
+  </article>
+
+  <!-- 2 · relationship ---------------------------------------------------->
+  <article class="step layer-M" id="stepM" hidden>
+    <header><b>2 · The relationship</b><span class="small muted">Numbers supplied · nothing is worked out</span></header>
+    <div class="body">
+      <p class="voice" data-voice="VX-M-ASK">Now the relationship. Here are the numbers, already found for you. Which one of these is happening to them?</p>
+      <div class="quantities" id="quantities"></div>
+      <p id="relAsk"></p>
+      <div class="options" id="relOptions"></div>
+      <div id="relResult"></div>
+    </div>
+  </article>
+
+  <!-- 3 · solve ----------------------------------------------------------->
+  <article class="step layer-S" id="stepS" hidden>
+    <header><b>3 · The working</b><span class="small muted">No story · no words</span></header>
+    <div class="body">
+      <p class="voice" data-voice="VX-S-ASK">Now just the working. No story, no words. Only the numbers.</p>
+      <p class="bare-working" id="bareWorking"></p>
+      <label for="solveInput"><span>Your answer</span><input id="solveInput" type="text" inputmode="numeric" autocomplete="off"></label>
+      <button class="primary" id="solveCheck" type="button">Check the working</button>
+      <div id="solveResult"></div>
+    </div>
+  </article>
+
+  <!-- 4 · explain back ---------------------------------------------------->
+  <article class="step layer-X" id="stepX" hidden>
+    <header><b>4 · Say it back</b><span class="small muted">In your own words</span></header>
+    <div class="body">
+      <p class="voice" data-voice="VX-EXPLAIN-ASK">Last part. Tell me what your answer means in the story, in your own words. Not how you got it — what it means.</p>
+      <p id="explainPrompt" class="muted"></p>
+      <label for="explainInput"><span>What does the answer mean?</span><textarea id="explainInput" placeholder="Write it the way you would tell somebody at home."></textarea></label>
+      <button class="primary" id="finishBtn" type="button">Finish and make the card</button>
+      <p class="small muted">Your words are kept exactly as you write them. Nobody rewrites them and nobody marks them.</p>
+    </div>
+  </article>
+
+  <div id="outcome"></div>
+</section>
+
+<!-- THE EQUATION ------------------------------------------------------------>
+<section id="model" class="view">
+  <div class="hero">
+    <p class="eyebrow">THE MATHEMATICS OF UNDERSTANDING A PROBLEM</p>
+    <h2>P_solve = L × M × S</h2>
+    <p class="lead">Three separate things have to be true before a word problem can be solved. Multiplying them is not a metaphor — it is what makes the model useful.</p>
+  </div>
+
+  <div class="layer-key">
+    <div><b>L · Language</b><span>Do I understand the sentence?</span></div>
+    <div><b>M · Mathematical relationship</b><span>Do I understand what is happening to the numbers?</span></div>
+    <div><b>S · Solve</b><span>Can I do the working?</span></div>
+  </div>
+
+  <div class="card">
+    <h3>Why multiply and not add</h3>
+    <p>If the three were added, being strong at two of them would carry you. They are multiplied because any one of them at zero takes the whole thing to zero. You cannot answer a sentence you cannot read, however good your arithmetic is.</p>
+    <p class="muted small">L = 1, M = 1, S = 0 → P_solve = 0. &nbsp; L = 0, M = 1, S = 1 → P_solve = 0. &nbsp; The two zeros look identical on a marked page, and they need opposite help.</p>
+  </div>
+
+  <div class="refusal">
+    <b>The rule that matters most</b>
+    <p>If L = 0, we do <strong>not</strong> conclude that the learner lacks the mathematics.</p>
+    <p class="small">Zero times an unknown number is zero. That is true whatever the unknown number is — which is exactly why the zero tells you nothing about it. A learner who could not read the sentence produces the same zero whether their mathematics is perfect or absent. So when the sentence blocks, the mathematics has to be measured again with the words taken off, before anybody says a word about it.</p>
+    <p class="voice stop" data-voice="VX-L-ZERO">That sentence was doing the blocking, not you. We have not found out anything about your mathematics yet, so we are going to look at that next, with the words taken off.</p>
+  </div>
+
+  <div class="card">
+    <h3>Measured, or not measured — never assumed</h3>
+    <p>A layer only counts as measured when it was looked at <em>on its own</em>. A score from the mixed word problem is not evidence about any single layer, because all three were in the way at once.</p>
+    <p class="voice" data-voice="VX-UNMEASURED">We have not checked that part yet, so we are not going to say anything about it.</p>
+  </div>
+
+  <div class="card">
+    <h3>What the product is for</h3>
+    <table>
+      <thead><tr><th>Question</th><th>What the model answers</th></tr></thead>
+      <tbody>
+        <tr><td>How likely is this problem to come out right?</td><td class="num">P_solve = L × M × S</td></tr>
+        <tr><td>What is holding it down?</td><td>The smallest factor. P_solve can never be larger than it.</td></tr>
+        <tr><td>Where should the next hour go?</td><td>Into the layer whose lift returns the most. Lifting a layer that is already at 1 returns nothing at all.</td></tr>
+        <tr><td>What may we say about this learner?</td><td>Only what an isolated look measured. Everything else is refused in writing.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="permit">
+    <b>When the sentence was the whole problem</b>
+    <p class="voice hold" data-voice="VX-M-HELD">You had the relationship right. The sentence was in the way. Those are two different things and we keep them apart here.</p>
+  </div>
+</section>
+
+<!-- THE TEN WORDS ----------------------------------------------------------->
+<section id="words" class="view">
+  <div class="hero">
+    <p class="eyebrow">CONCEPT CARDS</p>
+    <h2>Ten words that decide whether a problem can be read.</h2>
+    <p class="lead">Each card keeps the three layers apart: what the word means, what relationship it signals, and where the two come apart. The misread on each card is the reasonable one — that is why it is so common.</p>
+  </div>
+  <div class="grid" id="conceptGrid"></div>
+</section>
+
+<!-- UNDERSTANDING CARDS ----------------------------------------------------->
+<section id="cards" class="view">
+  <div class="hero">
+    <p class="eyebrow">UNDERSTANDING CARDS</p>
+    <h2>A record of what was actually watched.</h2>
+    <p class="lead">Every card says what was measured, what was not measured, and what therefore may not be said about you. Cards are never edited. A later card can be added; an earlier one stays as it was.</p>
+    <p class="voice" data-voice="VX-CARD-EARNED">Understanding Card. It records what we actually watched you do, and it says plainly what we did not check.</p>
+  </div>
+  <div class="card">
+    <label for="learnerRef"><span>Who is this for? (a name you choose — not a legal record)</span><input id="learnerRef" type="text" autocomplete="off" placeholder="A first name or a nickname"></label>
+    <button class="ghost" id="refreshCards" type="button">Refresh</button>
+    <span class="small muted" id="storageNote"></span>
+  </div>
+  <div id="cardList"></div>
+</section>
+
+</main>
+
+<footer>
+  THYLORA · WR-MATH-SURFACE-001 · the equation is on the surface, not only in the backend ·
+  nothing here is published, priced or listed
+</footer>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>

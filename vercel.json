@@ -20,6 +20,14 @@
     {
       "source": "/rae-link/",
       "destination": "/rae-link/index.html"
+    },
+    {
+      "source": "/math-surface",
+      "destination": "/math-surface/index.html"
+    },
+    {
+      "source": "/math-surface/",
+      "destination": "/math-surface/index.html"
     }
   ]
 }

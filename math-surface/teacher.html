@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0f15">
+<title>Teacher — Understanding Mathematics · THYLORA</title>
+<meta name="description" content="The teacher-facing read of P_solve = L × M × S: isolation probes, admissible evidence, the binding constraint, what lifting each layer actually returns, and the claims the evidence refuses.">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="mark" aria-hidden="true">◈</span>
+    <div><p class="eyebrow">THYLORA · TEACHER</p><h1>Three layers, measured separately</h1></div>
+  </div>
+  <div class="top-actions">
+    <span class="chip gold">P_solve = L × M × S</span>
+    <a class="chip" href="./index.html">Learner surface</a>
+    <a class="chip" href="./family.html">Family</a>
+  </div>
+</header>
+
+<main id="main">
+
+<div class="hero">
+  <p class="eyebrow">WHAT THIS CHANGES ON MONDAY</p>
+  <h2>A mark on a word problem is one number covering three questions.</h2>
+  <p class="lead">This page turns that one number back into three, refuses the claims the evidence does not support, and tells you which layer is worth your next hour.</p>
+</div>
+
+<!-- the admissibility rule -------------------------------------------------->
+<section class="card">
+  <h3>Admissible evidence</h3>
+  <p>A layer counts as measured only when it was probed <strong>in isolation</strong> — when the other two layers could not have caused the failure.</p>
+  <table>
+    <thead><tr><th>Layer</th><th>An isolated probe looks like</th><th>It is not isolated if</th></tr></thead>
+    <tbody>
+      <tr><td><b class="key-L">L</b> Language</td><td>The learner says what the sentence is telling us and what it is asking for. No numbers, no operators.</td><td>the probe contains a calculation the learner could get wrong</td></tr>
+      <tr><td><b>M</b> Relationship</td><td>The quantities are handed over already extracted. The learner names, points at or draws the relationship. Nothing is computed.</td><td>the learner still has to find the numbers in a sentence</td></tr>
+      <tr><td><b>S</b> Solve</td><td>Bare computation. No story, no words.</td><td>there is a context to interpret</td></tr>
+    </tbody>
+  </table>
+  <p class="small muted">A score from the mixed word problem is recorded, but it is not evidence about any single layer. The model carries that distinction as a field, not as a footnote.</p>
+</section>
+
+<!-- the refusal ------------------------------------------------------------->
+<section class="refusal">
+  <b>The claim the model will refuse</b>
+  <p class="voice stop" data-voice="VX-TEACHER-REFUSAL">This learner has no isolated measurement of the relationship layer. No statement about their mathematics is available from this sitting.</p>
+  <p class="small">If L = 0, P_solve = 0 — and that zero is equally consistent with perfect mathematics and with none. Reading it as a mathematics result is the single most expensive mistake available here, because it buys a year of the wrong intervention.</p>
+</section>
+
+<!-- live read --------------------------------------------------------------->
+<section class="card">
+  <h3>Read a sitting</h3>
+  <p class="small muted">Enter what you actually watched. Leave a layer blank if you did not probe it in isolation — blank is not zero, and the model will not treat it as zero.</p>
+  <div class="grid">
+    <div>
+      <label for="lCorrect"><span>L · language probes correct</span><input id="lCorrect" type="number" min="0" step="1" placeholder="—"></label>
+      <label for="lAttempted"><span>L · probes given</span><input id="lAttempted" type="number" min="0" step="1" placeholder="—"></label>
+    </div>
+    <div>
+      <label for="mCorrect"><span>M · relationship probes correct</span><input id="mCorrect" type="number" min="0" step="1" placeholder="—"></label>
+      <label for="mAttempted"><span>M · probes given</span><input id="mAttempted" type="number" min="0" step="1" placeholder="—"></label>
+    </div>
+    <div>
+      <label for="sCorrect"><span>S · bare computations correct</span><input id="sCorrect" type="number" min="0" step="1" placeholder="—"></label>
+      <label for="sAttempted"><span>S · computations given</span><input id="sAttempted" type="number" min="0" step="1" placeholder="—"></label>
+    </div>
+  </div>
+  <label><input type="checkbox" id="mixedOnly"> The relationship and the working were only seen inside the word problem</label>
+  <button class="primary" id="readBtn" type="button">Read it</button>
+</section>
+
+<div id="readout"></div>
+
+<!-- probe bank -------------------------------------------------------------->
+<section class="card">
+  <h3>Language probes — arithmetic-free by construction</h3>
+  <p class="small muted">Every probe below can be failed only for reading reasons. None of them contains a number or an operator; the test suite refuses one that does.</p>
+  <div id="probeBank"></div>
+</section>
+
+<section class="card">
+  <h3>Worked examples, four isolations each</h3>
+  <p class="small muted">Each row shows the sentence load, the word doing the work, and the failure this problem is built to expose.</p>
+  <div id="exampleTable"></div>
+</section>
+
+</main>
+
+<footer>THYLORA · WR-MATH-SURFACE-001 · teacher surface · nothing here is a diagnostic instrument</footer>
+
+<script type="module" src="./teacher.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "THYLORA Understanding Mathematics",
+  "short_name": "Understanding",
+  "description": "P_solve = L × M × S. The sentence, the relationship and the working are measured separately, so a reading problem is never recorded as a mathematics problem.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b0f15",
+  "theme_color": "#0b0f15",
+  "orientation": "any"
+}
