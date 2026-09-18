@@ -88,9 +88,9 @@
   .tag{font-family:var(--sans);font-size:8.5px;letter-spacing:.07em;border:1px solid currentColor;
        padding:1px 5px;border-radius:2px;display:inline-block;white-space:nowrap}
   .tag.d{color:var(--doc)} .tag.u{color:var(--unk);font-weight:700}
-  .tag.o{color:var(--obs)} .tag.r{color:var(--rep)}
+  .tag.o{color:var(--obs)} .tag.r{color:var(--rep)} .tag.pv{color:var(--ink2);font-style:italic}
   .tag.d::before{content:"\25A0 "} .tag.u::before{content:"\25CF "}
-  .tag.o::before{content:"\25C6 "} .tag.r::before{content:"\25B2 "}
+  .tag.o::before{content:"\25C6 "} .tag.r::before{content:"\25B2 "} .tag.pv::before{content:"\2014 "}
 
   .chg{list-style:none;margin:0;padding:0}
   .chg li{display:grid;grid-template-columns:1fr 7.4em;gap:10px;border-top:1px solid var(--rule);
@@ -192,9 +192,13 @@
         <div class="voice">
           <span class="cue">[VOICE — measured, unhurried. Room tone: a kitchen, evening.]</span>
           <p>This looked like a maths problem. It wasn’t that simple.</p>
-          <p>I have known Maren Rowan a long time. So when she told me — over a cup of tea, not as an
-            answer to a reporter’s question — that her granddaughter had been marked wrong on a sum
-            she could do, I asked if I could see the sheet.</p>
+          <p>I should say first how I know this. Maren Rowan keeps the municipal records here, and
+            I have been covering this town long enough that we have sat across a counter from each
+            other more times than either of us could count. That is how the friendship started.</p>
+          <p>So when she told me — over a cup of tea, not as an answer to a reporter’s question —
+            that her granddaughter had been marked wrong on a sum she could do, she was not giving
+            me a story. I asked the next day whether I could see the sheet. That time I asked as a
+            reporter, and I said so.</p>
           <p>Talia Rowan is ten. She lives four streets from the mill road with Maren, who clerks the
             municipal records here. Last week Talia brought home six questions and got five right.</p>
           <p>The sixth was about flour — how much a store room holds when some comes in and some goes
@@ -267,22 +271,48 @@
       </section>
 
       <aside class="aside">
+        <div class="win" style="margin-bottom:18px">
+          <span class="z">ZONE 7a · SOURCE CHAIN</span>
+          <h3>How this reached the desk</h3>
+          <ol style="margin:0;padding-left:18px;font-size:13.5px;line-height:1.6">
+            <li style="margin-bottom:8px"><strong>They know each other through the work.</strong>
+              Maren has clerked Bell Crossing’s municipal records for years; Denise has covered the
+              town for years. A local correspondent and the records clerk deal with each other
+              constantly. The friendship came out of that, not the other way round.</li>
+            <li style="margin-bottom:8px"><strong>Maren did not call a reporter.</strong> She
+              mentioned it to a friend, in her own kitchen, without intending a story.</li>
+            <li style="margin-bottom:8px"><strong>Denise asked, as a reporter.</strong> The next day,
+              and plainly in that capacity — not as the friend who had been sitting there.</li>
+            <li style="margin-bottom:8px"><strong>Maren consented; Talia assented.</strong> Maren is
+              her guardian and gave permission. Talia was asked separately, in words she could refuse,
+              and did not refuse. <em>A ten-year-old cannot consent to publication. She can veto it,
+              and that veto stands at any point before release.</em></li>
+            <li><strong>Nora Bell had nothing to do with it.</strong> That professional edge is a
+              different circle in the same town and played no part here.</li>
+          </ol>
+          <p style="font-size:12px;line-height:1.55;color:var(--ink2);margin:12px 0 0;
+                    border-top:1px solid var(--rule);padding-top:10px">
+            <strong>Declared conflict.</strong> The source is the correspondent’s longtime friend and
+            the keeper of the town’s official record. Both facts are stated here rather than left for
+            a reader to discover.</p>
+        </div>
+
         <div class="win">
-          <span class="z">ZONE 7 · EVIDENCE WINDOW</span>
+          <span class="z">ZONE 7b · EVIDENCE WINDOW</span>
           <h3>How Denise knows</h3>
           <table class="ev">
             <tr><td>The sheet exists and five of six answers are correct.</td><td><span class="tag o">DENISE OBSERVED</span></td></tr>
             <tr><td>The misreading reverses the result: 24 against 30 versus 48 against 30.</td><td><span class="tag d">DOCUMENTED</span></td></tr>
-            <tr><td>Talia read the phrase as “every day”.</td><td><span class="tag r">REPORTED BY HOUSEHOLD</span></td></tr>
-            <tr><td>Maren nearly marked it wrong before stopping.</td><td><span class="tag r">REPORTED BY HOUSEHOLD</span></td></tr>
+            <tr><td>Talia read the phrase as “every day”.</td><td><span class="tag r">HOUSEHOLD REPORTED</span></td></tr>
+            <tr><td>Maren nearly marked it wrong before stopping.</td><td><span class="tag r">HOUSEHOLD REPORTED</span></td></tr>
             <tr><td>“every other” carries a schedule sense and an everyday sense.</td><td><span class="tag d">DOCUMENTED</span></td></tr>
             <tr><td>Talia’s arithmetic is sound; the stripped version was not yet given to her.</td><td><span class="tag u">UNKNOWN</span></td></tr>
             <tr><td>Whether other children in Bell Crossing read it the same way.</td><td><span class="tag u">UNKNOWN</span></td></tr>
+                    <tr><td>Talia’s school record, marks and reports.</td><td><span class="tag pv">PRIVATE</span></td></tr>
           </table>
           <p style="font-size:12px;line-height:1.55;color:var(--ink2);margin:12px 0 0">
-            Denise was not at the table. She heard of it from Maren, a longtime friend, then came and
-            read the sheet herself. What she saw and what she was told are marked differently above
-            on purpose.</p>
+            Denise was not at the table. What she saw herself and what she was told are marked
+            differently on purpose, and what stays private is named rather than omitted.</p>
         </div>
 
         <div class="plate-slot">
