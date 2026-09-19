@@ -31,7 +31,7 @@ record rather than by an edit.
 
 **Backend.** `public.thylora_name_guard_policy` holds the canonical spelling and
 the enforcement rule. `public.thylora_name_guard_block()` is installed as a
-`BEFORE INSERT OR UPDATE` trigger on **153 authoritative tables**; it scans every
+`BEFORE INSERT OR UPDATE` trigger on **158 authoritative tables**; it scans every
 text and json column of the incoming row and raises `check_violation` on a
 non-canonical spelling. It blocks loudly — it never silently rewrites. A self-test
 attempted a stale write against `thylora_world_entities`, was rejected, and left
@@ -45,6 +45,11 @@ them. Nothing else is exempt.
 
 **Repository.** `tests/nameguard.test.mjs` fails the build if any tracked file
 reintroduces a non-canonical spelling.
+
+**Parallel-run catch.** A second session was writing to this backend during the
+run. A final rescan found six columns it had written carrying the old spelling
+after the worklist was built. Those were corrected and the guard was extended to
+the tables that run is writing, so its next drift is blocked rather than absorbed.
 
 ### Audit tables
 
