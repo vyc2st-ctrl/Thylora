@@ -40,14 +40,14 @@ test('an Earth channel cannot claim world production rights', () => {
 
 test('a world channel must be simulated and must disclose it', () => {
   const undisclosed = validateChannelTruth({
-    channel_class: 'EDEREARIAH_INHABITANT', world_status: 'WORLD_SIMULATED', simulated_disclosure: ''
+    channel_class: 'EDEREAIRAH_INHABITANT', world_status: 'WORLD_SIMULATED', simulated_disclosure: ''
   });
   assert.equal(undisclosed.valid, false);
   assert.ok(undisclosed.problems.some(p => p.code === 'DISCLOSURE_MISSING'));
 
   const mislabelled = validateChannelTruth({
-    channel_class: 'EDEREARIAH_INHABITANT', world_status: 'EARTH_REAL',
-    simulated_disclosure: 'Simulated world media from EdereAriah.'
+    channel_class: 'EDEREAIRAH_INHABITANT', world_status: 'EARTH_REAL',
+    simulated_disclosure: 'Simulated world media from EdereAirah.'
   });
   assert.ok(mislabelled.problems.some(p => p.code === 'WORLD_STATUS_MISMATCH'));
 

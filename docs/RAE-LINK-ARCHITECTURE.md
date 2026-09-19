@@ -68,7 +68,7 @@ STAGES.indexOf('UPLOAD')` is asserted in the test suite so the order cannot drif
 
 ## Channel classes
 
-Earth people and EdereAriah inhabitants publish through the same pipeline but can
+Earth people and EdereAirah inhabitants publish through the same pipeline but can
 never be confused for one another. The class determines `world_status`, and a
 `WORLD_SIMULATED` channel is rejected by both the database constraint
 (`rael_channels_world_truth`) and the publish gate unless it carries a visible
@@ -78,7 +78,7 @@ simulated-media disclosure.
 |---|---|---|
 | `EARTH_PERSON`, `EARTH_BUSINESS`, `EARTH_ORGANIZATION` | `EARTH_REAL` | must be absent |
 | `FAMILY_STORY`, `THYLORA_HOUSE` | `EARTH_REAL` | must be absent |
-| `EDEREARIAH_INHABITANT`, `WORLD_CHANNEL` | `WORLD_SIMULATED` | required, ≥ 12 characters |
+| `EDEREAIRAH_INHABITANT`, `WORLD_CHANNEL` | `WORLD_SIMULATED` | required, ≥ 12 characters |
 
 ## Degradation posture
 

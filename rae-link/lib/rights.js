@@ -19,7 +19,7 @@ export const CHANNEL_CLASSES = Object.freeze({
   EARTH_PERSON:          { world_status: 'EARTH_REAL',      label: 'Earth creator' },
   EARTH_BUSINESS:        { world_status: 'EARTH_REAL',      label: 'Earth business' },
   EARTH_ORGANIZATION:    { world_status: 'EARTH_REAL',      label: 'Earth organization' },
-  EDEREARIAH_INHABITANT: { world_status: 'WORLD_SIMULATED', label: 'EdereAriah inhabitant' },
+  EDEREAIRAH_INHABITANT: { world_status: 'WORLD_SIMULATED', label: 'EdereAirah inhabitant' },
   WORLD_CHANNEL:         { world_status: 'WORLD_SIMULATED', label: 'World channel' },
   FAMILY_STORY:          { world_status: 'EARTH_REAL',      label: 'Family story archive' },
   THYLORA_HOUSE:         { world_status: 'EARTH_REAL',      label: 'THYLORA house channel' }

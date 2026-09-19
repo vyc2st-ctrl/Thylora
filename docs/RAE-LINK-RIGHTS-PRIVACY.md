@@ -101,7 +101,7 @@ payout state rather than as a blocked story.
 
 ## Earth and world
 
-Earth creators and users are real people. EdereAriah inhabitants and world
+Earth creators and users are real people. EdereAirah inhabitants and world
 channels are simulated world media and are labelled at every appearance: in the
 database (`world_status`), in the feed tile, in search results, and in the
 publish gate, which refuses to publish an undisclosed world channel.

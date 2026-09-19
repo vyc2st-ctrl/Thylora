@@ -14,14 +14,14 @@ begin;
 
 create extension if not exists "pgcrypto";
 
--- Channel classes keep Earth people and EdereAriah world inhabitants separable
+-- Channel classes keep Earth people and EdereAirah world inhabitants separable
 -- at the data layer. A world channel can never be presented as an Earth person.
 do $$ begin
   create type rael_channel_class as enum (
     'EARTH_PERSON',
     'EARTH_BUSINESS',
     'EARTH_ORGANIZATION',
-    'EDEREARIAH_INHABITANT',
+    'EDEREAIRAH_INHABITANT',
     'WORLD_CHANNEL',
     'FAMILY_STORY',
     'THYLORA_HOUSE'
@@ -79,7 +79,7 @@ create table if not exists rael_channels (
   -- World/simulated channels must carry a visible disclosure and must never be
   -- marked EARTH_REAL. Earth channels must never carry a simulated disclosure.
   constraint rael_channels_world_truth check (
-    (channel_class in ('EDEREARIAH_INHABITANT','WORLD_CHANNEL')
+    (channel_class in ('EDEREAIRAH_INHABITANT','WORLD_CHANNEL')
        and world_status = 'WORLD_SIMULATED'
        and simulated_disclosure is not null
        and length(btrim(simulated_disclosure)) >= 12)
