@@ -1,0 +1,321 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Release Packet 004</title>
+<style>
+:root{--bg:#faf8f5;--ink:#1c1a17;--mut:#6b645c;--line:#ddd6cc;--card:#fff;--bad:#b3261e;--badbg:#fdeceb;--ok:#1f6f43;--okbg:#eaf5ee;--accent:#7a5c2e}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16150f;--ink:#f0ece4;--mut:#a29a8e;--line:#332f28;--card:#1f1d17;--badbg:#3a1c19;--okbg:#14301f}}
+:root[data-theme="dark"]{--bg:#16150f;--ink:#f0ece4;--mut:#a29a8e;--line:#332f28;--card:#1f1d17;--badbg:#3a1c19;--okbg:#14301f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 ui-serif,Georgia,serif;padding:0 16px 64px}
+.wrap{max-width:900px;margin:0 auto}
+h1{font-size:clamp(1.4rem,4vw,2rem);margin:32px 0 4px;letter-spacing:-.01em}
+h2{font-size:clamp(1.15rem,3vw,1.5rem);margin:0 0 4px}
+.sub{color:var(--mut);margin:0 0 24px}
+.prod{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;margin:24px 0}
+.idline{font-size:.8rem;color:var(--mut);margin-bottom:16px}
+code{font:.85em ui-monospace,Menlo,monospace;background:rgba(127,127,127,.12);padding:1px 5px;border-radius:4px}
+.grid{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:720px){.grid{grid-template-columns:300px 1fr}}
+.coverbox img{width:100%;height:auto;border:1px solid var(--line);border-radius:8px;display:block;background:#fff}
+.lbl{font:600 .7rem/1.4 ui-sans-serif,system-ui;letter-spacing:.08em;color:var(--mut);margin-bottom:8px}
+.openc{display:block;text-align:center;margin-top:10px;padding:11px 12px;border:1px solid var(--accent);
+ border-radius:8px;font:600 14px ui-sans-serif,system-ui;color:var(--accent);text-decoration:none;background:rgba(122,92,46,.06)}
+  .openc:active{background:rgba(122,92,46,.16)}
+  .cu{font:.62rem ui-monospace,monospace;color:var(--mut);word-break:break-all;margin-top:6px}
+table{width:100%;border-collapse:collapse;font:14px/1.5 ui-sans-serif,system-ui}
+th,td{text-align:left;vertical-align:top;padding:7px 8px;border-bottom:1px solid var(--line)}
+th{width:34%;color:var(--mut);font-weight:600}
+.mono{font:.78em ui-monospace,monospace;word-break:break-all}
+.blk{margin-top:14px;padding:12px;border-radius:8px;font:14px/1.55 ui-sans-serif,system-ui;border:1px solid var(--line)}
+.blk.bad{background:var(--badbg);border-color:var(--bad)}
+.blk.okay{background:var(--okbg);border-color:var(--ok)}
+.po{margin:20px 0 10px;font:13px ui-sans-serif,system-ui;color:var(--mut)}
+.pages{display:grid;gap:14px}
+.page{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--bg)}
+.ph{display:flex;justify-content:space-between;gap:8px;padding:7px 12px;background:rgba(127,127,127,.08);
+ font:600 .68rem/1.4 ui-sans-serif,system-ui;letter-spacing:.07em;color:var(--mut)}
+.pbody{padding:14px 16px}
+.pbody p{margin:0 0 9px}
+.rule{border-bottom:1px solid var(--line);margin:10px 0 16px;height:1px}
+mark.bad{background:var(--bad);color:#fff;padding:0 4px;border-radius:3px;font-family:ui-monospace,monospace}
+.decide{margin-top:20px;padding:14px;border:2px dashed var(--accent);border-radius:8px;text-align:center;
+ font:600 15px ui-sans-serif,system-ui}
+.note{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--bad);
+ border-radius:8px;padding:16px;margin:20px 0;font:14px/1.6 ui-sans-serif,system-ui}
+.note h3{margin:0 0 8px;font-size:1rem}
+ul{margin:8px 0 0;padding-left:20px}
+</style></head><body><div class="wrap">
+<h1>Chairman Release Packet 004</h1>
+<p class="sub">Three products, every interior page rendered from the actual delivery bytes. Nothing here is metadata —
+every page below was decompressed out of the PDF that a buyer would receive. Generated 2026-09-19.</p>
+
+<div class="note"><h3>Two findings to read before approving anything</h3>
+<ul>
+<li><b>Bramble Wick is 3 pages, not 9.</b> Prose records (sequence 502 and the readiness row) say
+“v2 byte-verified at 9 pages”, sha prefix <code>abbeafb32570abc3</code>. That hash appears in <em>no</em> table that stores bytes.
+The only delivery asset bound to this product is <code>..._v1.pdf</code>, sha <code>6c7891cf…</code>, <b>3 pages</b>, state ACTIVE.
+A buyer today would receive the 3-page v1. Either the 9-page v2 lives outside the backend, or the claim is stale.</li>
+<li><b>The encoding defect is not two products &mdash; it is a whole generation batch.</b> Byte <code>0x7F</code> sits twice in the
+running header of <em>every page</em> of <em>every</em> product built in batch <code>D:20260901232029</code>:
+Question Deck (54 hits / 27 pages), Build a World (26 / 13), Gap Hunt (18 / 9), City Power (12 / 6), The Last Match (12 / 6),
+The Handoff (12 / 6) &mdash; <b>134 occurrences across 67 pages in six products.</b> <code>0x7F</code> is undefined in
+WinAnsiEncoding, so it renders as a blank or a .notdef box on the buyer&rsquo;s screen. It is marked
+<mark class="bad">&#9633;</mark> below wherever it occurs. Bramble Wick, from the earlier batch
+<code>D:20260831185638</code>, is completely clean &mdash; which is what proves the cause is the batch, not the design.
+<b>One regeneration clears all six products, and it needs no Chairman authority.</b></li>
+</ul>
+<p style="margin:12px 0 0;font-size:13px"><b>If a cover image below appears blank:</b> the covers are hosted on Shopify&rsquo;s CDN, which this
+viewer blocks. Tap <b>Open the full cover &#8599;</b> under any cover to see it full size in a new tab. Every interior page on this
+page is rendered inline and needs no external request.</p></div>
+
+<article class="prod" id="PKT-BRAMBLE-001">
+ <h2>Bramble Wick — The Lantern That Wouldn&#x27;t Go Out</h2>
+ <div class="idline"><code>PKT-BRAMBLE-001</code> · product <code>7956697448525</code> · sku <code>ER-BRAMBLE-WICK-001</code></div>
+ <div class="grid">
+   <div class="coverbox">
+     <div class="lbl">COVER — exactly what is bound on the product today</div><img src="https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-bramble-wick-approved-cover.png?v=1789219245" alt="Cover for Bramble Wick — The Lantern That Wouldn&#x27;t Go Out" referrerpolicy="no-referrer"><a class="openc" href="https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-bramble-wick-approved-cover.png?v=1789219245" target="_blank" rel="noopener">Open the full cover &#8599;</a><div class="cu">https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-bramble-wick-approved-cover.png?v=1789219245</div>
+   </div>
+   <div class="facts">
+     <table>
+       <tr><th>Price</th><td>$1.99</td></tr>
+       <tr><th>Shopify state</th><td>DRAFT — not buyable today</td></tr>
+       <tr><th>Delivery file</th><td>Bramble_Wick_Nighttime_Story_Digital_Edition_v1.pdf</td></tr>
+       <tr><th>Artifact SHA-256</th><td class="mono">6c7891cf5fcff94865706418f41cb1a9fedc8382564c89777b33376e7a5ad9c9</td></tr>
+       <tr><th>Page count</th><td><b>3 pages</b> — counted from /Count and /Type /Page objects in the bytes</td></tr>
+       <tr><th>Generation batch</th><td class="mono">D:20260831185638+00'00'</td></tr>
+       <tr><th>Images inside PDF</th><td>0 — the interior is text only, no title page</td></tr>
+       <tr><th>What the buyer receives</th><td>One PDF, 3 pages, delivered through <code>thylora-protected-download</code> against their entitlement. No shipping. Re-downloadable from the customer library.</td></tr>
+       <tr><th>Mobile readability</th><td>US Letter 612×792pt, single column, Helvetica 
+         — reflows poorly on a phone; readable but requires pinch-zoom. Not yet tested on a real handset.</td></tr>
+       <tr><th>Delivery method</th><td>Digital entitlement → protected download. Verified connected.</td></tr>
+     </table>
+     <div class="blk okay"><b>Remaining blocker</b><br>NONE from the artifact side. The ONLY open item is the stale &quot;v2 / 9 pages&quot; claim carried in prose records — see the defect banner.</div>
+   </div>
+ </div>
+ <div class="po"><b>Page order</b> — p1 → p2 → p3</div>
+ <div class="pages"><section class="page"><header class="ph"><span class="pn">PAGE 1 of 3</span>
+        <span class="pc">10 text runs</span></header><div class="pbody"><p>BRAMBLE WICK - DIGITAL STORY EDITION</p>
+<p>Page 1</p>
+<p>BRAMBLE WICK</p>
+<p>The Lantern That Wouldn&#x27;t Go Out</p>
+<p>A nighttime story from EdereAriah</p>
+<p>In the hill-town of Bramble Wick, every house kept one small lantern in the window after sunset.</p>
+<p>Nobody was required to. It was simply what people did.</p>
+<p>The lanterns told travelers: </p>
+<p>Someone lives here. Someone is awake. If you need help, knock.</p>
+<p>THYLORA / ErsatzReality Studios - Digital Story Edition 001</p></div></section><section class="page"><header class="ph"><span class="pn">PAGE 2 of 3</span>
+        <span class="pc">20 text runs</span></header><div class="pbody"><p>BRAMBLE WICK - DIGITAL STORY EDITION</p>
+<p>Page 2</p>
+<p>1. The Wind</p>
+<p>Mara Vale was nine and had been trusted with the east-window lantern for exactly six nights.</p>
+<p>On the seventh night, a storm rolled down from the black hills. Wind pushed at the shutters, rain</p>
+<p>scratched the glass, and every few minutes the whole house gave a little wooden groan.</p>
+<p>Mara&#x27;s father checked the roof. Her mother checked the pantry door. Mara checked the lantern.</p>
+<p>The flame bent almost flat.</p>
+<p>&quot;You can put it out,&quot; her older brother said. &quot;Nobody is traveling in this.&quot;</p>
+<p>Mara looked through the wet glass. &quot;That is exactly when somebody might need it.&quot;</p>
+<p>She moved the lantern farther from the draft and lowered the wick. The flame became smaller, but</p>
+<p>steadier.</p>
+<p>Across the valley, one light after another disappeared behind the rain.</p>
+<p>Mara&#x27;s stayed.</p>
+<p>2. The Knock</p>
+<p>Near midnight came three knocks.</p>
+<p>Not loud. Not desperate. Just three careful knocks that almost disappeared under the storm.</p>
+<p>At the door stood an old courier with mud to his knees and a broken wheel-pin in his hand. His cart</p>
+<p>had failed on the north road. He had seen one light through the rain.</p>
+<p>&quot;I did not know whose house it was,&quot; he said. &quot;I only knew somebody had left a way to be found.&quot;</p></div></section><section class="page"><header class="ph"><span class="pn">PAGE 3 of 3</span>
+        <span class="pc">20 text runs</span></header><div class="pbody"><p>BRAMBLE WICK - DIGITAL STORY EDITION</p>
+<p>Page 3</p>
+<p>3. What the Lantern Was For</p>
+<p>The family gave the courier dry socks, hot broth, and a place near the stove. At dawn, Mara&#x27;s father</p>
+<p>helped repair the cart.</p>
+<p>Before leaving, the courier placed the broken wheel-pin on the table.</p>
+<p>&quot;Keep it,&quot; he told Mara. &quot;People remember lamps. But sometimes they forget what the lamp actually</p>
+<p>did.&quot;</p>
+<p>Years later, Bramble Wick changed. Streets became brighter. Roads became safer. Houses used</p>
+<p>different lights.</p>
+<p>Mara still kept the old wheel-pin.</p>
+<p>Not because she believed every lantern had to burn forever.</p>
+<p>Because she understood the question underneath it:</p>
+<p>When somebody cannot see a way forward, what can we leave visible enough for them</p>
+<p>to find us?</p>
+<p>A little question before sleep</p>
+<p>What is one small thing a person can do that may matter much more to somebody else than it</p>
+<p>seems?</p>
+<p>World note: Bramble Wick is an EdereAriah story location. This story is original THYLORA / ErsatzReality material. No Earth</p>
+<p>historical event is being represented as fact.</p></div></section></div>
+ <div class="decide">Chairman decision for this product: <b>APPROVE</b> / <b>REVISE</b> / <b>HOLD</b></div>
+</article>
+<article class="prod" id="PKT-CITYPOWER-001">
+ <h2>The City That Needed More Power — A THYLORA Science Story</h2>
+ <div class="idline"><code>PKT-CITYPOWER-001</code> · product <code>7957206892621</code> · sku <code>THY-STORY-POWER-001</code></div>
+ <div class="grid">
+   <div class="coverbox">
+     <div class="lbl">COVER — exactly what is bound on the product today</div><img src="https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-city-power-approved-cover.png?v=1789219260" alt="Cover for The City That Needed More Power — A THYLORA Science Story" referrerpolicy="no-referrer"><a class="openc" href="https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-city-power-approved-cover.png?v=1789219260" target="_blank" rel="noopener">Open the full cover &#8599;</a><div class="cu">https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-city-power-approved-cover.png?v=1789219260</div>
+   </div>
+   <div class="facts">
+     <table>
+       <tr><th>Price</th><td>$5.00</td></tr>
+       <tr><th>Shopify state</th><td>DRAFT — not buyable today</td></tr>
+       <tr><th>Delivery file</th><td>THYLORA-Story-The-City-That-Needed-More-Power.pdf</td></tr>
+       <tr><th>Artifact SHA-256</th><td class="mono">c2c9c1723056fd7fef53686909af54f1d9b6750e96c9474fd16cc28265a3c5a4</td></tr>
+       <tr><th>Page count</th><td><b>6 pages</b> — counted from /Count and /Type /Page objects in the bytes</td></tr>
+       <tr><th>Generation batch</th><td class="mono">D:20260901232029+03'00'</td></tr>
+       <tr><th>Images inside PDF</th><td>0 — the interior is text only, no title page</td></tr>
+       <tr><th>What the buyer receives</th><td>One PDF, 6 pages, delivered through <code>thylora-protected-download</code> against their entitlement. No shipping. Re-downloadable from the customer library.</td></tr>
+       <tr><th>Mobile readability</th><td>US Letter 612×792pt, single column, Helvetica 
+         — reflows poorly on a phone; readable but requires pinch-zoom. Not yet tested on a real handset.</td></tr>
+       <tr><th>Delivery method</th><td>Digital entitlement → protected download. Verified connected.</td></tr>
+     </table>
+     <div class="blk bad"><b>Remaining blocker</b><br>ENCODING DEFECT: 12 occurrences of byte 0x7F, 2 on every page, in the running header. Undefined in WinAnsiEncoding — renders as a blank or a .notdef box for the buyer.</div>
+   </div>
+ </div>
+ <div class="po"><b>Page order</b> — p1 → p2 → p3 → p4 → p5 → p6</div>
+ <div class="pages"><section class="page"><header class="ph"><span class="pn">PAGE 1 of 6</span>
+        <span class="pc">7 text runs</span></header><div class="pbody"><p>ERSATZREALITY × THYLORA <mark class="bad" title="byte 0x7F — undefined in WinAnsiEncoding">&#9633;</mark> CUSTOMER EDITION <mark class="bad" title="byte 0x7F — undefined in WinAnsiEncoding">&#9633;</mark> 2026</p>
+<p>1</p>
+<p>ERSATZREALITY × THYLORA</p>
+<p>ORIGINAL STORY</p>
+<p>The City That Needed More Power</p>
+<p>A family science story about electricity, choices, and making room for tomorrow.</p>
+<p>A finished digital edition. Print it, mark it up, or use it on screen.</p></div></section><section class="page"><header class="ph"><span class="pn">PAGE 2 of 6</span>
+        <span class="pc">9 text runs</span></header><div class="pbody"><p>ERSATZREALITY × THYLORA <mark class="bad" title="byte 0x7F — undefined in WinAnsiEncoding">&#9633;</mark> CUSTOMER EDITION <mark class="bad" title="byte 0x7F — undefined in WinAnsiEncoding">&#9633;</mark> 2026</p>
+<p>2</p>
+<p>A Million Tiny Requests</p>
+<p>At 4:47 on the hottest afternoon of the year, every light on Morrow Street blinked.</p>
+<p>Imani froze with the freezer open. Her brother Des looked up from his secondhand computer. Grandmother</p>
+<p>called from the porch, “If the house is trying to wink at us, tell it I am not impressed.”</p>
+<p>Across the city, air conditioners, trains, kitchens, hospitals, chargers, workshops, and computing halls were</p>
+<p>asking for power at the same time. Supply and demand had to stay balanced. The blink warned that the city</p>
+<p>needed a better plan.</p></div></section><section class="page"><header class="ph"><span class="pn">PAGE 3 of 6</span>
+        <span class="pc">11 text runs</span></header><div class="pbody"><p>ERSATZREALITY × THYLORA <mark class="bad" title="byte 0x7F — undefined in WinAnsiEncoding">&#9633;</mark> CUSTOMER EDITION <mark class="bad" title="byte 0x7F — undefined in WinAnsiEncoding">&#9633;</mark> 2026</p>
+<p>3</p>
+<p>The Loudest Machine</p>
+<p>At school, the mayor asked students to design one. Des drew a giant power station. Imani drew solar roofs,</p>
+<p>batteries, shaded buildings, repaired wires, and schedules that moved flexible work away from the busiest</p>
+<p>hours.</p>
+<p>“Your drawing has too many answers,” Des said. “Yours has one answer pretending to be all of them,”</p>
+<p>Imani replied.</p>
+<p>Their teacher put both drawings up. “Good. Now tell us what each answer cannot do.” Every choice used</p>
+<p>land, materials, money, time, or trust. Reliability came from designing the system, not worshipping one</p>
+<p>machine.</p></div></section><section class="page"><header class="ph"><span class="pn">PAGE 4 of 6</span>
+        <span class="pc">9 text runs</span></header><div class="pbody"><p>ERSATZREALITY × THYLORA <mark class="bad" title="byte 0x7F — undefined in WinAnsiEncoding">&#9633;</mark> CUSTOMER EDITION <mark class="bad" title="byte 0x7F — undefined in WinAnsiEncoding">&#9633;</mark> 2026</p>
+<p>4</p>
+<p>The Night Test</p>
+<p>The students tested three blocks. Shops cooled storage early. The library battery supported the block</p>
+<p>during the evening peak. A laundromat discounted later cycles. Crews replaced a failing transformer.</p>
+<p>Participation was voluntary.</p>
+<p>At 4:47 the next hot afternoon, Morrow Street did not blink. Des checked the meter. “Which thing fixed it?”</p>
+<p>“Wrong question,” Imani said. “Which things worked together?” Grandmother nodded. “Now that sounds like</p>
+<p>somebody who plans to keep the ice cream frozen.”</p></div></section><section class="page"><header class="ph"><span class="pn">PAGE 5 of 6</span>
+        <span class="pc">10 text runs</span></header><div class="pbody"><p>ERSATZREALITY × THYLORA <mark class="bad" title="byte 0x7F — undefined in WinAnsiEncoding">&#9633;</mark> CUSTOMER EDITION <mark class="bad" title="byte 0x7F — undefined in WinAnsiEncoding">&#9633;</mark> 2026</p>
+<p>5</p>
+<p>Room for Tomorrow</p>
+<p>The city built new generation, but also wasted less, stored more, repaired equipment, protected hospitals</p>
+<p>and vulnerable residents, and measured what helped.</p>
+<p>On the control-room wall, the students’ map carried one sentence: </p>
+<p>Power is not only what we make. It is</p>
+<p>how carefully we connect need, supply, timing, protection, and choice.</p>
+<p>Des added a smaller note: </p>
+<p>And never argue with a freezer in August.</p></div></section><section class="page"><header class="ph"><span class="pn">PAGE 6 of 6</span>
+        <span class="pc">12 text runs</span></header><div class="pbody"><p>ERSATZREALITY × THYLORA <mark class="bad" title="byte 0x7F — undefined in WinAnsiEncoding">&#9633;</mark> CUSTOMER EDITION <mark class="bad" title="byte 0x7F — undefined in WinAnsiEncoding">&#9633;</mark> 2026</p>
+<p>6</p>
+<p>Talk together</p>
+<p>Why did one big answer fail the class test?</p>
+<div class="rule"></div>
+<div class="rule"></div>
+<p>What parts of an electric system must work together?</p>
+<div class="rule"></div>
+<div class="rule"></div>
+<p>How can a city protect choice while asking people to help?</p>
+<div class="rule"></div>
+<div class="rule"></div></div></section></div>
+ <div class="decide">Chairman decision for this product: <b>APPROVE</b> / <b>REVISE</b> / <b>HOLD</b></div>
+</article>
+<article class="prod" id="PKT-LASTMATCH-001">
+ <h2>The Last Match — A THYLORA Family Story About Legacy</h2>
+ <div class="idline"><code>PKT-LASTMATCH-001</code> · product <code>7957206630477</code> · sku <code>THY-STORY-LASTMATCH-001</code></div>
+ <div class="grid">
+   <div class="coverbox">
+     <div class="lbl">COVER — exactly what is bound on the product today</div><img src="https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-last-match-cover.png?v=1788371198" alt="Cover for The Last Match — A THYLORA Family Story About Legacy" referrerpolicy="no-referrer"><a class="openc" href="https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-last-match-cover.png?v=1788371198" target="_blank" rel="noopener">Open the full cover &#8599;</a><div class="cu">https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-last-match-cover.png?v=1788371198</div>
+   </div>
+   <div class="facts">
+     <table>
+       <tr><th>Price</th><td>$3.00</td></tr>
+       <tr><th>Shopify state</th><td>DRAFT — not buyable today</td></tr>
+       <tr><th>Delivery file</th><td>THYLORA-Story-The-Last-Match.pdf</td></tr>
+       <tr><th>Artifact SHA-256</th><td class="mono">c01c1e9077ff10010fc6ba555a87430b0ab38193b9b38d46388a35e9fe053aa1</td></tr>
+       <tr><th>Page count</th><td><b>6 pages</b> — counted from /Count and /Type /Page objects in the bytes</td></tr>
+       <tr><th>Generation batch</th><td class="mono">D:20260901232029+03'00'</td></tr>
+       <tr><th>Images inside PDF</th><td>0 — the interior is text only, no title page</td></tr>
+       <tr><th>What the buyer receives</th><td>One PDF, 6 pages, delivered through <code>thylora-protected-download</code> against their entitlement. No shipping. Re-downloadable from the customer library.</td></tr>
+       <tr><th>Mobile readability</th><td>US Letter 612×792pt, single column, Helvetica 
+         — reflows poorly on a phone; readable but requires pinch-zoom. Not yet tested on a real handset.</td></tr>
+       <tr><th>Delivery method</th><td>Digital entitlement → protected download. Verified connected.</td></tr>
+     </table>
+     <div class="blk bad"><b>Remaining blocker</b><br>ENCODING DEFECT: 12 occurrences of byte 0x7F, 2 on every page, in the running header. Undefined in WinAnsiEncoding — renders as a blank or a .notdef box for the buyer.</div>
+   </div>
+ </div>
+ <div class="po"><b>Page order</b> — p1 → p2 → p3 → p4 → p5 → p6</div>
+ <div class="pages"><section class="page"><header class="ph"><span class="pn">PAGE 1 of 6</span>
+        <span class="pc">7 text runs</span></header><div class="pbody"><p>ERSATZREALITY × THYLORA <mark class="bad" title="byte 0x7F — undefined in WinAnsiEncoding">&#9633;</mark> CUSTOMER EDITION <mark class="bad" title="byte 0x7F — undefined in WinAnsiEncoding">&#9633;</mark> 2026</p>
+<p>1</p>
+<p>ERSATZREALITY × THYLORA</p>
+<p>ORIGINAL STORY</p>
+<p>The Last Match</p>
+<p>A family story about legacy, leaving, and what remains on the field.</p>
+<p>A finished digital edition. Print it, mark it up, or use it on screen.</p></div></section><section class="page"><header class="ph"><span class="pn">PAGE 2 of 6</span>
+        <span class="pc">10 text runs</span></header><div class="pbody"><p>ERSATZREALITY × THYLORA <mark class="bad" title="byte 0x7F — undefined in WinAnsiEncoding">&#9633;</mark> CUSTOMER EDITION <mark class="bad" title="byte 0x7F — undefined in WinAnsiEncoding">&#9633;</mark> 2026</p>
+<p>2</p>
+<p>The Chalk Line</p>
+<p>By seven in the morning, Tomas Vale had already drawn the sideline twice. The first line curved toward the</p>
+<p>garden fence. The second was straight enough to satisfy everybody except Tomas.</p>
+<p>His granddaughter Nia carried the corner flags. “It is a community match, Granddad. The grass is half</p>
+<p>clover. Nobody is bringing a ruler.”</p>
+<p>“That,” Tomas said, setting down the chalk machine, “is how crooked things become tradition.”</p>
+<p>Today was his last match as captain of Harbor Eleven, the neighborhood team he had joined before Nia</p>
+<p>was born.</p></div></section><section class="page"><header class="ph"><span class="pn">PAGE 3 of 6</span>
+        <span class="pc">9 text runs</span></header><div class="pbody"><p>ERSATZREALITY × THYLORA <mark class="bad" title="byte 0x7F — undefined in WinAnsiEncoding">&#9633;</mark> CUSTOMER EDITION <mark class="bad" title="byte 0x7F — undefined in WinAnsiEncoding">&#9633;</mark> 2026</p>
+<p>3</p>
+<p>What Everyone Came to See</p>
+<p>By noon the field was crowded. Some came to watch Tomas score once more. Some came to see whether</p>
+<p>he would cry. Children chased a loose ball behind the benches while former teammates argued about</p>
+<p>matches no two people remembered the same way.</p>
+<p>Tomas tied his boots slowly. Nia sat beside him. “Are you scared?”</p>
+<p>“Of the match? No. Of everybody deciding what it means before we play it? A little.”</p>
+<p>He handed her the captain’s band. “Hold this until I ask.”</p></div></section><section class="page"><header class="ph"><span class="pn">PAGE 4 of 6</span>
+        <span class="pc">10 text runs</span></header><div class="pbody"><p>ERSATZREALITY × THYLORA <mark class="bad" title="byte 0x7F — undefined in WinAnsiEncoding">&#9633;</mark> CUSTOMER EDITION <mark class="bad" title="byte 0x7F — undefined in WinAnsiEncoding">&#9633;</mark> 2026</p>
+<p>4</p>
+<p>The Pass</p>
+<p>The other team scored first. Harbor Eleven answered. With five minutes left, Tomas received the ball near</p>
+<p>the box. The crowd rose. He could shoot. The opening was narrow, but it was his kind of narrow.</p>
+<p>Then he saw Malik, sixteen, running unmarked on the right. Malik had spent the season apologizing every</p>
+<p>time he called for the ball. Tomas passed.</p>
+<p>Malik’s first touch bounced too far. His second sent the ball between the goalkeeper’s hands. After one</p>
+<p>surprised breath, the whole field erupted.</p>
+<p>Malik ran first to Tomas. “You had the shot.” “I had a choice,” Tomas said.</p></div></section><section class="page"><header class="ph"><span class="pn">PAGE 5 of 6</span>
+        <span class="pc">9 text runs</span></header><div class="pbody"><p>ERSATZREALITY × THYLORA <mark class="bad" title="byte 0x7F — undefined in WinAnsiEncoding">&#9633;</mark> CUSTOMER EDITION <mark class="bad" title="byte 0x7F — undefined in WinAnsiEncoding">&#9633;</mark> 2026</p>
+<p>5</p>
+<p>After the Whistle</p>
+<p>When the match ended, Tomas refused to be carried because his knee hurt and because he wanted to walk</p>
+<p>off under his own power. At midfield he called Nia over.</p>
+<p>He did not give the captain’s band to Malik. He gave it to the team and made them choose together.</p>
+<p>“Legacy is not making people repeat you,” he told them. “It is leaving them able to choose without you.”</p>
+<p>Later Nia found him pushing the chalk machine toward the shed. “The line is still crooked,” she said. Tomas</p>
+<p>looked back. “Good. Gives them something to fix tomorrow.”</p></div></section><section class="page"><header class="ph"><span class="pn">PAGE 6 of 6</span>
+        <span class="pc">12 text runs</span></header><div class="pbody"><p>ERSATZREALITY × THYLORA <mark class="bad" title="byte 0x7F — undefined in WinAnsiEncoding">&#9633;</mark> CUSTOMER EDITION <mark class="bad" title="byte 0x7F — undefined in WinAnsiEncoding">&#9633;</mark> 2026</p>
+<p>6</p>
+<p>Talk together</p>
+<p>When is passing the better act of leadership?</p>
+<div class="rule"></div>
+<div class="rule"></div>
+<p>What should continue after Tomas leaves—and what should change?</p>
+<div class="rule"></div>
+<div class="rule"></div>
+<p>What did Nia learn from what Tomas did rather than what he said?</p>
+<div class="rule"></div>
+<div class="rule"></div></div></section></div>
+ <div class="decide">Chairman decision for this product: <b>APPROVE</b> / <b>REVISE</b> / <b>HOLD</b></div>
+</article>
+<p class="sub" style="margin-top:32px">No product was activated, published or modified to produce this packet. The PDFs were read, not rewritten.</p>
+</div></body></html>

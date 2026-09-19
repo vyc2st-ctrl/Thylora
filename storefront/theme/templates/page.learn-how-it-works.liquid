@@ -1,0 +1,67 @@
+{%- comment -%}
+  LANE ROUTE — LEARN HOW IT WORKS
+  Route: /pages/learn-how-it-works
+  Built 2026-09-19, STORE_MOVEMENT_SPRINT_004.
+
+  WHY THIS FILE EXISTS: the five lanes previously existed only as on-page anchors
+  (#er-how) inside er-experience-home.liquid. An anchor scrolls; it does not route.
+  A visitor clicking a lane went nowhere.
+
+  WHY THE LIST IS HARD-CODED: Shopify does not expose DRAFT products to Liquid.
+  A collection loop over these lanes renders EMPTY, because 224 of 225 products are
+  DRAFT. Hard-coding the names with an honest state badge is the only way a lane can
+  be truthful before activation. No product is activated to make this lane work.
+
+  Replace each hard-coded row with a real product link at the moment that product
+  goes ACTIVE — not before.
+{%- endcomment -%}
+
+<section class="er-lane" id="er-how">
+  <div class="er-lane-wrap">
+    <p class="eyebrow">LEARN HOW IT WORKS</p>
+    <h1>The method, shown working, not described.</h1>
+    <ul class="lane-list">
+      <li class="row soon">
+        <span class="t">Build a World From One Idea — THYLORA Starter Kit</span>
+        <span class="meta"><span class="price">$19.00</span><span class="badge">COMING SOON</span></span>
+      </li>
+      <li class="row dev">
+        <span class="t">C&W Vehicle Civilization — Engineering Notebook Vol. 1</span>
+        <span class="meta"><span class="price">$29.00</span><span class="badge">IN DEVELOPMENT</span></span>
+      </li>
+    </ul>
+    <p class="honest">Items marked COMING SOON are finished or nearly finished and are not yet
+      open for purchase. Items marked IN DEVELOPMENT are still being built. Only items marked
+      AVAILABLE NOW can be bought today.</p>
+    <a class="back" href="/">&larr; All five lanes</a>
+  </div>
+</section>
+
+<style>
+  .er-lane{padding:48px 16px;background:#faf8f5;color:#1c1a17}
+  .er-lane-wrap{max-width:760px;margin:0 auto}
+  .er-lane .eyebrow{font:600 .72rem/1.4 ui-sans-serif,system-ui;letter-spacing:.14em;color:#7a5c2e;margin:0 0 8px}
+  .er-lane h1{font:400 clamp(1.3rem,3.6vw,1.9rem)/1.3 ui-serif,Georgia,serif;margin:0 0 28px}
+  .lane-list{list-style:none;margin:0;padding:0;border-top:1px solid #ddd6cc}
+  .row{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:baseline;
+    padding:14px 0;border-bottom:1px solid #ddd6cc}
+  .row .t{font:400 1rem/1.4 ui-serif,Georgia,serif;color:#1c1a17;text-decoration:none;flex:1 1 60%}
+  .row a.t{text-decoration:underline;text-underline-offset:3px}
+  .meta{display:flex;gap:10px;align-items:center;white-space:nowrap}
+  .price{font:600 .85rem ui-sans-serif,system-ui;color:#6b645c}
+  .badge{font:600 .62rem/1 ui-sans-serif,system-ui;letter-spacing:.09em;padding:5px 8px;border-radius:99px;border:1px solid}
+  .avail .badge{background:#eaf5ee;border-color:#1f6f43;color:#1f6f43}
+  .soon .badge{background:#fdf4e6;border-color:#a8762a;color:#8a5f1e}
+  .dev .badge{background:#f1eeea;border-color:#9a938a;color:#6b645c}
+  .honest{font:14px/1.6 ui-sans-serif,system-ui;color:#6b645c;margin:24px 0 0}
+  .back{display:inline-block;margin-top:24px;font:600 14px ui-sans-serif,system-ui;color:#7a5c2e}
+  @media(prefers-color-scheme:dark){
+    .er-lane{background:#16150f;color:#f0ece4}
+    .lane-list,.row{border-color:#332f28}
+    .row .t{color:#f0ece4}
+  }
+</style>
+
+{% schema %}
+{"name":"Lane — LEARN HOW IT W","settings":[],"presets":[{"name":"Lane LEARN HOW IT W"}]}
+{% endschema %}
