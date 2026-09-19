@@ -108,4 +108,81 @@ const quick=[['Chairman','home'],['Family','family-section'],['Ideas','ideas-sec
 })();
 </script>
 
+
+<!-- THY-WINDSOR-LIVING-MAP-001 -->
+<style id="thy-living-map-style">
+.thy-lmap{margin:14px 0 0}
+.thy-lmap .thy-lmap-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:space-between}
+.thy-lmap .thy-lmap-src{font-size:12px;opacity:.72}
+.thy-lmap-lane{border:1px solid #6d5a2e;border-radius:14px;padding:11px 13px;margin-top:9px;background:#120f08}
+.thy-lmap-lane .thy-lane-name{font-weight:800;letter-spacing:.4px}
+.thy-lmap-lane .thy-lane-state{margin-top:3px;font-weight:700;color:#e2c079}
+.thy-lmap-lane .thy-lane-detail{margin-top:6px;font-size:13px;line-height:1.45;opacity:.9}
+.thy-lmap-lane .thy-lane-next{margin-top:7px;font-size:13px}
+.thy-lmap-lane .thy-lane-next b{color:#9fd39f}
+.thy-lmap-lane .thy-lane-block{margin-top:4px;font-size:13px}
+.thy-lmap-lane .thy-lane-block b{color:#e59b8a}
+</style>
+<script id="thy-living-map-script">
+/* THY-WINDSOR-LIVING-MAP-001 · additive only.
+   Adds a Living Map panel to the existing Our World section of the existing
+   control surface. Creates no second dashboard, no second backend, no second
+   identity. Reads thylora_living_map when the backend is reachable and the
+   session is signed in; otherwise renders the lane states carried in this
+   delta. Every failure path is silent and leaves the page exactly as it was. */
+(function(){
+  var MARK='THY-WINDSOR-LIVING-MAP-001';
+  var SEED=[{"lane_key": "CASTLE", "lane_label": "Castle", "lane_state": "MIRROR CORRECTED · STRUCTURE CUT · IDENTITY OPEN", "detail": "Malbork superseded. Windsor Castle is the Earth mirror. 10 build phases, 3 wards, full room/building map and materials verified at snippet grade. Every EdereAriah-side value OPEN.", "evidence_grade": "S1", "blocker": "Castle has no name. C_w = 0 until Identity is authored.", "next_action": "Chairman authors castle Identity: native name, city, territory, founder."}, {"lane_key": "ROYAL_KITCHEN", "lane_label": "Royal Kitchen", "lane_state": "INÉS MORALES BOUND · RANKS OPEN", "detail": "Inés Morales bound to room S01, kitchen wing, chain of command and the rosemary route. Kitchen wing, prep rooms, stores, receiving, waste, service path and royal dining route all mapped. Head Cook / Deputy / Provisioner held OPEN pending sequence 528.", "evidence_grade": "S1 mirror · backend unread", "blocker": "Sequence 528 household findings unread — ranks may already be settled.", "next_action": "Backend read of sequence 528, then fill hierarchy without authoring over it."}, {"lane_key": "ROSEMARY", "lane_label": "Rosemary", "lane_state": "ROUTE DRAWN END TO END · NAME OPEN", "detail": "Salvia rosmarinus (reclassified 2017 from Rosmarinus officinalis). Full route: source, supplier, transport, receiving, storage, Inés' preparation, culinary use, historical medicinal claims, and modern evidence separated from claim. EMA traditional-use qualifier carried verbatim.", "evidence_grade": "S1", "blocker": "Native EdereAriah name OPEN until Chairman authors or selects. Grow-or-buy fork unresolved.", "next_action": "Chairman sets the native name and the grow-or-buy fork."}, {"lane_key": "MATH", "lane_label": "Math", "lane_state": "MODEL ATTACHED · WORLD SCORED", "detail": "C_w = I × P × T × O × M × R × E attached to the castle dossier. Whole equation, left side, equal sign, right side, variables, child/adult/scholar meanings, and a real castle worked twice. C_w(Windsor) = 0.0564. C_w(EdereAriah) = 0.0000.", "evidence_grade": "derived", "blocker": "Identity at zero holds the whole product at zero.", "next_action": "Author Identity, then re-score. Highest marginal return in the model."}, {"lane_key": "PEOPLE_IN_TIME", "lane_label": "People In Time", "lane_state": "FOREGROUND · PILOT HELD · UNREAD", "detail": "Pilot not rewritten, not opened, not reconstructed. Current state, first seeded figure and verification gaps cannot be returned from the record because the backend was unreachable. Four verification gaps identified structurally; gap 4 (quotation provenance standard) flagged as the structural one.", "evidence_grade": "unread", "blocker": "Backend blocked.", "next_action": "Read the pilot record from thylora_query_carryforward; return first seeded figure and quotation-sourcing standard verbatim."}, {"lane_key": "HISTORY_EVIDENCE", "lane_label": "History / Evidence", "lane_state": "TWO CASES OPENED", "detail": "Case 1 — the unnamed hands: Waterloo Chamber carpet, world's largest seamless rug, woven by prisoners in Agra; object catalogued to the item, makers catalogued as a category. Case 2 — Queen Charlotte and the Madragana descent: claim, counter-claim and bias in both directions carried at equal strength; position recorded as OPEN on statable grounds.", "evidence_grade": "S1, one primary source unretrieved", "blocker": "de Valdes y Cocom PBS Frontline original (Q5) not retrieved. Every held source is a summariser.", "next_action": "Retrieve Q5 at primary, then split the Charlotte case into three independently gradable questions."}, {"lane_key": "SPORTS_ENGINEERING", "lane_label": "Sports / Engineering", "lane_state": "CARRIED · UNTOUCHED THIS RUN", "detail": "GAME-BET-001 workroom surfaces present in app/ (sports-betting.html/.css/.js). No change made this run.", "evidence_grade": "repository-confirmed", "blocker": "None declared.", "next_action": "Awaiting Chairman direction. Not in this work code."}, {"lane_key": "STORE", "lane_label": "Store", "lane_state": "CARRIED · UNTOUCHED THIS RUN", "detail": "THYLORA membership storefront present at public-site/store.html. Instruction held: NO NEW STORE PRODUCT was created.", "evidence_grade": "repository-confirmed", "blocker": "None declared.", "next_action": "None. Explicitly out of scope this run."}, {"lane_key": "VLEGH", "lane_label": "Vlegh", "lane_state": "CARRIED · NO REPOSITORY TRACE", "detail": "Repository-wide search found no VLEGH record in vyc2st-ctrl/Thylora. Lane is carried on the living map as instructed but its state is backend-side and was unreadable this run. Not declared empty — declared unread.", "evidence_grade": "unread", "blocker": "Backend blocked; no repository-side artefact to report against.", "next_action": "Backend read to establish VLEGH lane state, or Chairman states it directly."}, {"lane_key": "TIME", "lane_label": "Time", "lane_state": "CARRIED · UNTOUCHED THIS RUN", "detail": "Time Run surface present at time-run.html and app/time-run.html, wired into app navigation. No change made this run.", "evidence_grade": "repository-confirmed", "blocker": "None declared.", "next_action": "Awaiting Chairman direction. Not in this work code."}];
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(m){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];});}
+  function laneHtml(l){
+    return '<div class="thy-lmap-lane">'
+      +'<div class="thy-lane-name">'+esc(l.lane_label||l.lane_key)+'</div>'
+      +'<div class="thy-lane-state">'+esc(l.lane_state)+'</div>'
+      +(l.detail?'<div class="thy-lane-detail">'+esc(l.detail)+'</div>':'')
+      +(l.blocker?'<div class="thy-lane-block"><b>Blocked by:</b> '+esc(l.blocker)+'</div>':'')
+      +(l.next_action?'<div class="thy-lane-next"><b>Next:</b> '+esc(l.next_action)+'</div>':'')
+      +'</div>';
+  }
+  function render(rows,src){
+    var body=document.getElementById('thyLivingMapBody');
+    var tag=document.getElementById('thyLivingMapSrc');
+    if(!body)return;
+    body.innerHTML=(rows||[]).map(laneHtml).join('')||'<div class="empty">No lanes.</div>';
+    if(tag)tag.textContent=src;
+  }
+  function mount(){
+    try{
+      if(document.getElementById('thyLivingMap'))return;
+      var atlas=document.getElementById('world');
+      var host=atlas&&atlas.closest?atlas.closest('article'):null;
+      if(!host)return;
+      var art=document.createElement('article');
+      art.className='panel';
+      art.id='thyLivingMap';
+      art.innerHTML='<div class="thy-lmap-head"><h3 style="margin:0">Living Map</h3>'
+        +'<span class="thy-lmap-src" id="thyLivingMapSrc">carried in source</span></div>'
+        +'<div class="thy-lmap" id="thyLivingMapBody"></div>';
+      if(host.parentNode)host.parentNode.insertBefore(art,host.nextSibling);
+      render(SEED,'carried in source');
+      hydrate();
+    }catch(e){/* never break the page */}
+  }
+  function hydrate(){
+    try{
+      var t=localStorage.getItem('thy_access_token');
+      if(!t||typeof URL!=='string'||typeof KEY!=='string')return;
+      fetch(URL+'/rest/v1/thylora_living_map?select=lane_key,lane_label,lane_state,detail,evidence_grade,blocker,next_action&status=eq.ACTIVE&order=sort_order.asc&limit=40',
+        {headers:{apikey:KEY,Authorization:'Bearer '+t}})
+        .then(function(r){return r.ok?r.json():null;})
+        .then(function(d){if(d&&d.length)render(d,'live from thylora-dash');})
+        .catch(function(){/* keep carried states */});
+    }catch(e){/* keep carried states */}
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);
+  else mount();
+  console.info(MARK);
+})();
+</script>
+
 </body></html>

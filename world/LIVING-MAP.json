@@ -1,0 +1,113 @@
+{
+  "living_map_id": "THY-LIVING-MAP-20260919-001",
+  "work_code": "THY-WORK-WINDSOR-MIRROR-CASTLE",
+  "generated": "2026-09-19",
+  "source_repository": "vyc2st-ctrl/Thylora",
+  "source_branch": "claude/windsor-castle-structure-rdjaum",
+  "backend_of_record": "thylora-dash (jvsdxhrfhtlgaknhjxlz)",
+  "control_surface": "thylora-public-world",
+  "duplicate_dashboard_created": false,
+  "backend_read_this_run": false,
+  "backend_block_reason": "Environment network policy refused CONNECT to jvsdxhrfhtlgaknhjxlz.supabase.co with HTTP 403 (agent proxy failure log, 2 entries).",
+  "lanes": [
+    {
+      "lane": "CASTLE",
+      "state": "MIRROR CORRECTED · STRUCTURE CUT · IDENTITY OPEN",
+      "detail": "Malbork superseded. Windsor Castle is the Earth mirror. 10 build phases, 3 wards, full room/building map and materials verified at snippet grade. Every EdereAriah-side value OPEN.",
+      "evidence_grade": "S1",
+      "blocker": "Castle has no name. C_w = 0 until Identity is authored.",
+      "next_action": "Chairman authors castle Identity: native name, city, territory, founder.",
+      "files": ["world/castle/EDEREARIAH-CASTLE-DOSSIER.md", "world/castle/ROOM-BUILDING-MAP.md", "world/castle/WINDSOR-MIRROR-SOURCES.md"]
+    },
+    {
+      "lane": "ROYAL KITCHEN",
+      "state": "INÉS MORALES BOUND · RANKS OPEN",
+      "detail": "Inés Morales bound to room S01, kitchen wing, chain of command and the rosemary route. Kitchen wing, prep rooms, stores, receiving, waste, service path and royal dining route all mapped. Head Cook / Deputy / Provisioner held OPEN pending sequence 528.",
+      "evidence_grade": "S1 mirror · backend unread",
+      "blocker": "Sequence 528 household findings unread — ranks may already be settled.",
+      "next_action": "Backend read of sequence 528, then fill hierarchy without authoring over it.",
+      "files": ["world/castle/ROYAL-KITCHEN.md"]
+    },
+    {
+      "lane": "ROSEMARY",
+      "state": "ROUTE DRAWN END TO END · NAME OPEN",
+      "detail": "Salvia rosmarinus (reclassified 2017 from Rosmarinus officinalis). Full route: source, supplier, transport, receiving, storage, Inés' preparation, culinary use, historical medicinal claims, and modern evidence separated from claim. EMA traditional-use qualifier carried verbatim.",
+      "evidence_grade": "S1",
+      "blocker": "Native EdereAriah name OPEN until Chairman authors or selects. Grow-or-buy fork unresolved.",
+      "next_action": "Chairman sets the native name and the grow-or-buy fork.",
+      "files": ["world/castle/ROSEMARY-ROUTE.md"]
+    },
+    {
+      "lane": "MATH",
+      "state": "MODEL ATTACHED · WORLD SCORED",
+      "detail": "C_w = I × P × T × O × M × R × E attached to the castle dossier. Whole equation, left side, equal sign, right side, variables, child/adult/scholar meanings, and a real castle worked twice. C_w(Windsor) = 0.0564. C_w(EdereAriah) = 0.0000.",
+      "evidence_grade": "derived",
+      "blocker": "Identity at zero holds the whole product at zero.",
+      "next_action": "Author Identity, then re-score. Highest marginal return in the model.",
+      "files": ["world/castle/WORLD-COMPLETENESS-MATH.md"]
+    },
+    {
+      "lane": "PEOPLE IN TIME",
+      "state": "FOREGROUND · PILOT HELD · UNREAD",
+      "detail": "Pilot not rewritten, not opened, not reconstructed. Current state, first seeded figure and verification gaps cannot be returned from the record because the backend was unreachable. Four verification gaps identified structurally; gap 4 (quotation provenance standard) flagged as the structural one.",
+      "evidence_grade": "unread",
+      "blocker": "Backend blocked.",
+      "next_action": "Read the pilot record from thylora_query_carryforward; return first seeded figure and quotation-sourcing standard verbatim.",
+      "files": ["world/lanes/PEOPLE-IN-TIME.md"]
+    },
+    {
+      "lane": "HISTORY / EVIDENCE",
+      "state": "TWO CASES OPENED",
+      "detail": "Case 1 — the unnamed hands: Waterloo Chamber carpet, world's largest seamless rug, woven by prisoners in Agra; object catalogued to the item, makers catalogued as a category. Case 2 — Queen Charlotte and the Madragana descent: claim, counter-claim and bias in both directions carried at equal strength; position recorded as OPEN on statable grounds.",
+      "evidence_grade": "S1, one primary source unretrieved",
+      "blocker": "de Valdes y Cocom PBS Frontline original (Q5) not retrieved. Every held source is a summariser.",
+      "next_action": "Retrieve Q5 at primary, then split the Charlotte case into three independently gradable questions.",
+      "files": ["world/lanes/THINKING-LANES.md"]
+    },
+    {
+      "lane": "SPORTS / ENGINEERING",
+      "state": "CARRIED · UNTOUCHED THIS RUN",
+      "detail": "GAME-BET-001 workroom surfaces present in app/ (sports-betting.html/.css/.js). No change made this run.",
+      "evidence_grade": "repository-confirmed",
+      "blocker": "None declared.",
+      "next_action": "Awaiting Chairman direction. Not in this work code.",
+      "files": ["app/sports-betting.html"]
+    },
+    {
+      "lane": "STORE",
+      "state": "CARRIED · UNTOUCHED THIS RUN",
+      "detail": "THYLORA membership storefront present at public-site/store.html. Instruction held: NO NEW STORE PRODUCT was created.",
+      "evidence_grade": "repository-confirmed",
+      "blocker": "None declared.",
+      "next_action": "None. Explicitly out of scope this run.",
+      "files": ["public-site/store.html"]
+    },
+    {
+      "lane": "VLEGH",
+      "state": "CARRIED · NO REPOSITORY TRACE",
+      "detail": "Repository-wide search found no VLEGH record in vyc2st-ctrl/Thylora. Lane is carried on the living map as instructed but its state is backend-side and was unreadable this run. Not declared empty — declared unread.",
+      "evidence_grade": "unread",
+      "blocker": "Backend blocked; no repository-side artefact to report against.",
+      "next_action": "Backend read to establish VLEGH lane state, or Chairman states it directly.",
+      "files": []
+    },
+    {
+      "lane": "TIME",
+      "state": "CARRIED · UNTOUCHED THIS RUN",
+      "detail": "Time Run surface present at time-run.html and app/time-run.html, wired into app navigation. No change made this run.",
+      "evidence_grade": "repository-confirmed",
+      "blocker": "None declared.",
+      "next_action": "Awaiting Chairman direction. Not in this work code.",
+      "files": ["time-run.html", "app/time-run.html"]
+    }
+  ],
+  "open_field_count": {
+    "castle_identity": 9,
+    "castle_structure_slots": 71,
+    "maker_classes_open": 24,
+    "kitchen_posts_open": 11,
+    "rosemary_slots_open": 26,
+    "lanes_blocked_on_backend": 3
+  },
+  "restart_point": "THY-WORK-WINDSOR-MIRROR-CASTLE · Windsor mirror locked, structure cut, Inés bound, rosemary routed, math attached. Blocked on two things only: Chairman authors castle Identity, and a backend-reachable session reads sequences 520-529."
+}
