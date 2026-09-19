@@ -3,7 +3,7 @@
 **Record:** THY-CONTROL-CENTER-ARCH-001
 **Authority:** CHAIRMAN_DIRECTIVE, carryforward sequence 515 (`THY-Q-20260919-CONTROL-CENTER-DISCUSSION-515`)
 **Backend head read:** `thylora-dash` / `jvsdxhrfhtlgaknhjxlz`, 2026-09-19
-**Newer deltas read:** sequence 516 (`FOREGROUND-EQUATION`) and 517 (`DASHBOARD-CORRECTION-ROSEMARY`), both of which arrived during this run and are applied in sections J, J-bis and M.9
+**Newer deltas read:** sequences 516 (`FOREGROUND-EQUATION`), 517 (`DASHBOARD-CORRECTION-ROSEMARY`) and 519 (`CONTROL-PLANE-GO`), all of which arrived during this run and are applied in sections J, J-bis, M.9 and M-bis
 **This run recorded as:** carryforward sequence 518, `THY-Q-20260919-CONTROL-CENTER-ARCH-516`
 **Class:** EARTH_PROPOSED — DESIGN_ACTIVE
 **Scope limit:** audit and plan only. No products created, no imagery generated, nothing published, nothing activated.
@@ -909,13 +909,32 @@ What remains for the Chairman to confirm is narrower: the current exact producti
 
 ---
 
+## M-bis. DECISIONS ANSWERED AT SEQUENCE 519
+
+Sequence 519 (`THY-Q-20260919-CONTROL-PLANE-GO-519`) arrived while this record was being written. It **accepts this audit as the operating diagnosis** and answers four of the nine decisions:
+
+| Decision | Ruling at 519 |
+|---|---|
+| **1. Single control plane** | **APPROVED** — proceed |
+| **2. Permission reduction** | **APPROVED in substance** — a narrow allowlisted action API replaces routine raw SQL |
+| **3. `PKT-BRAMBLE-001` canon** | **RULED, option (a)** — the 3-page artifact (sha `6c7891cf…`) is current factual asset truth; the unsupported 9-page claim (sha `abbeafb3…`) is not used unless bytes are later found |
+| **9. Deployment target** | **SETTLED** — no new dashboard, no Lovable restart; implementation moves into the existing `thylora-public-world` dashboard |
+
+Still open: **4** (preview bucket + regenerating the two `0x7F` packets), **5** (VLEGH subject types), **6** (Time v1 on knowns only), **7** (mirror canon as enforced display order), **8** (surface build order).
+
+**Scope boundary.** Sequence 519 authorises implementation in a *subsequent* run. The run that produced this record was directed to perform audit and plan only and performed no implementation — no products, no imagery, no publication, no activation. Sequence 519 independently bars new product and image generation in its own turn.
+
+Next run's scope, as named at 519: one control plane inside the existing dashboard; the narrow allowlisted action API in place of routine raw SQL; preview storage and a pane that actually renders on iPad; live QYRIS, agent-jobs, approvals and living-map panels; store closeout continuing in parallel.
+
+---
+
 ## APPENDIX — AUDIT EVIDENCE INDEX
 
 Every claim above traces to a direct read of `jvsdxhrfhtlgaknhjxlz` on 2026-09-19.
 
 | Claim | Evidence |
 |---|---|
-| Deltas 516 and 517 arrived mid-run | `thylora_query_carryforward` where `sequence_no in (516,517)` |
+| Deltas 516, 517 and 519 arrived mid-run | `thylora_query_carryforward` where `sequence_no in (516,517,519)` |
 | Head = 515, payload pending | `thylora_query_carryforward` where `sequence_no = 515` |
 | 778 tables, 559 populated | `list_tables`, public schema |
 | 802 work rows across 5 queues | row counts: `idea_registry`, `autonomy_tasks`, `router_jobs`, `workroom_task_registry`, `approval_queue`, `execution_work_registry` |
