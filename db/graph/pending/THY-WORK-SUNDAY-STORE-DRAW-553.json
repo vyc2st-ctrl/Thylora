@@ -1,0 +1,101 @@
+{
+  "work_code": "THY-WORK-SUNDAY-STORE-DRAW-553",
+  "gate": "THY-GATE-STORE-DRAW-VALUE-001",
+  "state": "PENDING_PREFLIGHT",
+  "authored_at": "2026-09-20",
+  "authored_against_repo_head": "3a01e827f72c4c16b0478abdd4cab9ab115676af",
+  "preflight": {
+    "performed": false,
+    "reason": "network policy denied CONNECT to jvsdxhrfhtlgaknhjxlz.supabase.co:443 (gateway 403); all reads returned HTTP 000",
+    "tables_probed": [
+      "thylora_graph_nodes",
+      "thylora_graph_edges",
+      "thylora_graph_versions",
+      "thylora_rdf_triples_v1",
+      "thylora_query_carryforward"
+    ],
+    "tables_confirmed_to_exist": "UNKNOWN",
+    "sequence_553_readback": "UNKNOWN"
+  },
+  "writeback": {
+    "nodes_read": 0,
+    "nodes_created": 0,
+    "nodes_updated": 0,
+    "edges_read": 0,
+    "edges_created": 0,
+    "versions": 0,
+    "duplicates_prevented": 0,
+    "duplicates_guarded_staged": 4,
+    "conflicts_detected": 0,
+    "conflicts_detectable": false
+  },
+  "layer_policy": {
+    "layer": "Earth",
+    "edereairah_nodes_proposed": 0,
+    "cross_layer_merges": 0,
+    "separate_from_properties_touched": 0
+  },
+  "staged_nodes": [
+    {
+      "stable_id": "LAW-STORE-DRAW-VALUE-001",
+      "layer": "Earth",
+      "node_type": "LAW",
+      "label": "Store Draw Value Gate",
+      "reason_for_stable_identity": "referenced by name across campaigns and must outlive this session"
+    },
+    {
+      "stable_id": "METHOD-THYLORA-OBSERVE-TO-NEXT-STEP-001",
+      "layer": "Earth",
+      "node_type": "METHOD",
+      "label": "THYLORA Method",
+      "readiness": "DEMONSTRABLE",
+      "service_status": "NOT A SERVICE"
+    },
+    {
+      "stable_id": "LANE-FAMOUS-THOUGHT-001",
+      "layer": "Earth",
+      "node_type": "FORMAT",
+      "label": "Famous Thought Lane"
+    },
+    {
+      "stable_id": "WORK-SUNDAY-STORE-DRAW-553",
+      "layer": "Earth",
+      "node_type": "WORK",
+      "label": "Sunday Store Draw 553"
+    }
+  ],
+  "staged_edges": [
+    { "source": "WORK-SUNDAY-STORE-DRAW-553", "target": "LAW-STORE-DRAW-VALUE-001", "type": "GOVERNED_BY" },
+    { "source": "WORK-SUNDAY-STORE-DRAW-553", "target": "METHOD-THYLORA-OBSERVE-TO-NEXT-STEP-001", "type": "APPLIES" },
+    { "source": "WORK-SUNDAY-STORE-DRAW-553", "target": "LANE-FAMOUS-THOUGHT-001", "type": "APPLIES" }
+  ],
+  "not_graphed": [
+    "individual post copy",
+    "individual gate scores",
+    "the worked photograph example",
+    "provisional X and T readings for U"
+  ],
+  "gate_results": {
+    "post_a_capability": { "A": 4, "H": 5, "W": 3, "T": 5, "M": 5, "P": 2, "D": 3000, "result": "FAIL", "blocking_factor": "P" },
+    "post_b_famous_thought": { "A": 5, "H": 4, "W": 3, "T": 4, "M": 5, "P": 2, "D": 2400, "result": "FAIL", "blocking_factor": "P" },
+    "post_c_store_bridge": { "A": 3, "H": 3, "W": 2, "T": 5, "M": 4, "P": 2, "D": 720, "result": "FAIL", "blocking_factor": "W" }
+  },
+  "unknown": [
+    "sequence 553 content and all newer deltas",
+    "existence of the graph overlay tables",
+    "live public route status",
+    "live purchasable product count",
+    "recurring checkout connection status",
+    "authoritative definitions of X and T in U = K x E x C x X x T"
+  ],
+  "no_go_compliance": {
+    "image_generation": false,
+    "publishing": false,
+    "scheduling": false,
+    "new_shopify_product": false,
+    "weak_product_activation": false,
+    "fake_capability_claims": false,
+    "invented_testimonials": false,
+    "invented_metrics": false
+  }
+}
