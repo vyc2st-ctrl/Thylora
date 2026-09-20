@@ -1,0 +1,30 @@
+/* THY-WORK-MATH-FAMOUS-THOUGHT-559 · math + famous thought surface
+   Styled to sit inside the existing dashboard panels. No new top-level app,
+   no new navigation entry, no poster layout. */
+.thy-math-wrap{display:grid;gap:12px}
+.thy-math-card{background:#0b1118;border:1px solid #223041;border-radius:12px;padding:14px}
+.thy-math-card h4{margin:0 0 8px;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#9fb0c4}
+.thy-eq-line{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;font-size:22px;font-weight:700;color:#eaf1f8}
+.thy-eq-line .side{background:#111a24;border:1px solid #2b3a4d;border-radius:8px;padding:2px 10px}
+.thy-eq-line .eq{color:#7fd1a5;font-size:24px}
+.thy-eq-whole{font-size:12px;color:#8fa0b4;margin-top:6px;letter-spacing:.04em}
+.thy-var-table{width:100%;border-collapse:collapse;margin-top:10px;font-size:13px}
+.thy-var-table th,.thy-var-table td{text-align:left;padding:6px 8px;border-bottom:1px solid #1d2835;vertical-align:top}
+.thy-var-table th{color:#8fa0b4;font-weight:600;letter-spacing:.05em;font-size:11px;text-transform:uppercase}
+.thy-var-key{font-weight:700;color:#eaf1f8;width:44px}
+.thy-read{display:grid;gap:8px;margin-top:10px}
+.thy-read div{background:#0e1620;border-left:3px solid #2b3a4d;border-radius:0 8px 8px 0;padding:8px 10px;font-size:13px;line-height:1.5;color:#cfdae6}
+.thy-read b{display:block;font-size:10px;letter-spacing:.09em;color:#7f93a9;margin-bottom:3px}
+.thy-unknown{color:#e5b769;font-weight:600;letter-spacing:.04em}
+.thy-verdict{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;letter-spacing:.07em}
+.thy-verdict.pass{background:#10331f;color:#7fd1a5;border:1px solid #2c6a45}
+.thy-verdict.fail{background:#33161a;color:#e08b96;border:1px solid #6a2c37}
+.thy-gate-list{margin:8px 0 0;padding-left:18px;font-size:12px;color:#c1a06a;line-height:1.6}
+.thy-thought-row{display:grid;grid-template-columns:150px 1fr;gap:10px;padding:7px 0;border-bottom:1px solid #1d2835;font-size:13px}
+.thy-thought-row b{font-size:10px;letter-spacing:.09em;color:#7f93a9;text-transform:uppercase;padding-top:3px}
+.thy-thought-row span{color:#cfdae6;line-height:1.5}
+.thy-math-note{font-size:12px;color:#8fa0b4;line-height:1.55;margin-top:8px}
+.thy-math-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.thy-math-tabs button{background:#111a24;border:1px solid #2b3a4d;color:#cfdae6;border-radius:999px;padding:5px 12px;font-size:12px;cursor:pointer}
+.thy-math-tabs button[aria-selected="true"]{background:#1b2a3a;border-color:#4b6a8f;color:#fff}
+@media(max-width:640px){.thy-thought-row{grid-template-columns:1fr}.thy-eq-line{font-size:18px}}
