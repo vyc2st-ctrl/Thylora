@@ -1,0 +1,86 @@
+{
+ "THOUGHT-DOUGLASS-001": {
+  "themes": [
+   "STRUGGLE_PROGRESS",
+   "FREEDOM",
+   "JUSTICE",
+   "COURAGE"
+  ],
+  "equations": [
+   "MATH-Q-001",
+   "MATH-U-001"
+  ],
+  "binding_note": "Douglass supplies the test that separates struggle that raises knowledge and evidence from struggle that only consumes time.",
+  "pit": {
+   "problem": "Abolitionist audiences were being told that emancipation would arrive through moral persuasion alone, on a timetable set by the people who benefited from delay.",
+   "knew": "Enslavement in Maryland and escape in 1838; the West India emancipation record of 1834-38, which was his worked example; how Northern audiences actually behaved.",
+   "could_not_know": "That war would come within four years, or that the Reconstruction settlement he fought for would be dismantled within his lifetime.",
+   "context": "August 1857, Canandaigua, New York. Speaking on the anniversary of West Indian emancipation, four months after the Dred Scott decision.",
+   "rule": "Progress requires demand, and demand has to be made by the people who need it - power concedes nothing without it.",
+   "fails": "It fails when struggle is treated as sufficient rather than necessary. Effort with no strategy, no evidence and no coalition consumes the people who supply it; Douglass's own argument is about organised demand, not endurance.",
+   "transfer": "Separate the THYLORA work that is producing measurable change from the work that is repeating friction, and stop funding the second."
+  }
+ },
+ "THOUGHT-CARVER-001": {
+  "themes": [
+   "EDUCATION_LEARNING",
+   "FREEDOM",
+   "WORK_CRAFT"
+  ],
+  "equations": [
+   "MATH-U-001"
+  ],
+  "binding_note": "Carver's claim is that stored knowledge is not the asset; usable knowledge is. That is U=K x E x C x X x T with the multiplication doing the work.",
+  "pit": {
+   "problem": "Black farmers in Alabama were locked into cotton on exhausted soil and into debt that followed the crop, and agricultural science was not reaching them.",
+   "knew": "Soil chemistry, crop rotation, plant pathology; and how little of it survived contact with a tenant farmer who could not read a bulletin.",
+   "could_not_know": "That he would be remembered mainly for peanuts rather than for soil restoration and the mobile school, or that the debt structure would outlast his methods.",
+   "context": "1896. Arriving at Tuskegee Institute at Booker T. Washington's invitation, into a region where the sharecropping system determined what any farmer could choose to plant.",
+   "rule": "Knowledge counts as education only at the point where the person can use it to change their own situation.",
+   "fails": "It fails when the constraint is not knowledge. A farmer who knows exactly what to plant and cannot get credit, land or a market is not undereducated; Carver's own Jesup wagon existed because the knowledge had to be carried to where the constraint was.",
+   "transfer": "Any THYLORA learning output that the recipient cannot act on has not transferred, whatever its quality."
+  }
+ },
+ "THOUGHT-WASHINGTON-001": {
+  "themes": [
+   "FAILURE_RECOVERY",
+   "STRUGGLE_PROGRESS",
+   "WORK_CRAFT",
+   "EDUCATION_LEARNING"
+  ],
+  "equations": [
+   "MATH-U-001",
+   "MATH-D-001"
+  ],
+  "binding_note": "Position is a snapshot; distance travelled is the derivative. Washington's measure is the one that predicts what a person or system can do next.",
+  "pit": {
+   "problem": "He was raising money from white Northern donors for a Black college in Alabama while Southern states were writing disfranchisement into their constitutions.",
+   "knew": "Hampton Institute's model; fundraising; exactly how much could be said in public in the South without the school being destroyed.",
+   "could_not_know": "How the Atlanta Compromise would be judged - Du Bois's public break came two years after this book, and this library holds both positions rather than choosing between them.",
+   "context": "1901. Tuskegee, Alabama. An autobiography written for a white readership whose donations kept the institution open, which shapes what is in it and what is not.",
+   "rule": "Measure a person or system by the distance travelled and the obstacles cleared, not by the position reached.",
+   "fails": "It fails when obstacle-clearing is treated as valuable in itself. A system can be praised for surviving a barrier that should have been removed, and the measure can excuse the barrier - which is close to the objection Du Bois made.",
+   "transfer": "THYLORA's readback records what changed and what was overcome, not the current position, because position alone does not predict the next cycle."
+  }
+ },
+ "THOUGHT-FORD-001": {
+  "themes": [
+   "INVENTION_DESIGN",
+   "DECISION_MAKING",
+   "RESPONSIBILITY"
+  ],
+  "equations": [
+   "MATH-Q-001"
+  ],
+  "binding_note": "Fault-finding raises K; remedy design requires E and C as well. Only the remedy changes the system's state.",
+  "pit": {
+   "problem": "He was trying to make a complex assembled product at a price ordinary buyers could pay, in an industry that treated cars as bespoke luxuries.",
+   "knew": "Machining, interchangeable parts, and the flow of work through a shop floor.",
+   "could_not_know": "What the same method would do to the people performing it - the five-dollar day existed because turnover on the line was ruinous.",
+   "context": "Early twentieth century, Michigan. The record of the man is not clean: Ford published antisemitic material through the Dearborn Independent in the 1920s, and this library records that alongside the method rather than deleting either.",
+   "rule": "A fault report is not a work item; only a proposed remedy with an acceptance test is.",
+   "fails": "It fails when remedy-first suppresses diagnosis. Fixing symptoms quickly can hide a root cause, and 'don't find fault' has been used to silence people reporting real defects - including, in Ford's own plants, about working conditions.",
+   "transfer": "Every THYLORA finding must arrive with a proposed remedy and an acceptance test, and the remedy must name the gate or workflow it changes."
+  }
+ }
+}

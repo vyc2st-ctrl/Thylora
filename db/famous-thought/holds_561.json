@@ -1,0 +1,119 @@
+[
+ {
+  "id": "HOLD-WELLS-LIGHT-OF-TRUTH",
+  "person": "Ida B. Wells",
+  "quote": "The way to right wrongs is to turn the light of truth upon them.",
+  "state": "HELD",
+  "verification_state": "UNKNOWN",
+  "claimed_source": "Usually cited to Southern Horrors (1892) or to Wells generally; also circulates as 'cast the light of truth upon them'.",
+  "finding": "Not located in any primary Wells text checked. Full text of Southern Horrors: Lynch Law in All Its Phases (Project Gutenberg ebook 14975, 76,637 characters, complete through the Self-Help chapter and the licence block) contains no occurrence of 'light of truth'. The first 200,000 characters of The Red Record (ebook 14977) likewise contain no occurrence. Every attribution found in search results is an aggregator, a blog, a news column or a memorial description - no institutional or primary citation. Two wordings circulate ('turn' and 'cast'), which is itself a marker of oral transmission rather than a printed source.",
+  "evidence_urls": [
+   "https://www.gutenberg.org/ebooks/14975",
+   "https://www.gutenberg.org/ebooks/14977"
+  ],
+  "gate": {
+   "S": 1,
+   "A": 2,
+   "C": 1,
+   "T": 4
+  },
+  "next_step": "Search Crusade for Justice (posthumous autobiography, 1970), the 1893 Boston address 'Lynch Law in All Its Phases' as printed in Our Day, and the Ida B. Wells Papers at the University of Chicago. If no printed source exists, the line stays HELD permanently and may never be published as a Wells quotation. THOUGHT-WELLS-001 carries a verified Wells line instead."
+ },
+ {
+  "id": "HOLD-TRUTH-AINT-I-A-WOMAN",
+  "person": "Sojourner Truth",
+  "quote": "Ain't I a woman?",
+  "state": "HELD",
+  "verification_state": "UNKNOWN",
+  "claimed_source": "Attributed to the Akron, Ohio Women's Rights Convention, 29 May 1851.",
+  "finding": "The phrase does not appear in the contemporaneous report of the speech. Marius Robinson's account, published in the Anti-Slavery Bugle on 21 June 1851 (Library of Congress, Chronicling America; image from Ohio History Connection), carries no refrain and no dialect. The familiar wording comes from Frances Dana Gage's reconstruction published in the New York Independent on 23 April 1863, twelve years later, which adds a Southern slave dialect - Truth was born into Dutch-speaking slavery in New York State - a repeated refrain, and the claim of thirteen children. The Catt Center at Iowa State University publishes both versions side by side.",
+  "evidence_urls": [
+   "https://chroniclingamerica.loc.gov/lccn/sn83035487/1851-06-21/ed-1/seq-4/",
+   "https://awpc.cattcenter.iastate.edu/communication/aint-i-woman-may-291851"
+  ],
+  "gate": {
+   "S": 4,
+   "A": 1,
+   "C": 5,
+   "T": 5
+  },
+  "next_step": "Never publish the 1863 wording as Sojourner Truth's words. The 1851 report is available as THOUGHT-TRUTH-001. If the Gage version is ever discussed publicly it must be labelled as Gage's 1863 reconstruction, with the 1851 text alongside it."
+ },
+ {
+  "id": "HOLD-GANDHI-BE-THE-CHANGE",
+  "person": "Mohandas K. Gandhi",
+  "quote": "Be the change you wish to see in the world.",
+  "state": "HELD",
+  "verification_state": "UNKNOWN",
+  "claimed_source": "Attributed to Gandhi with no work, date, speech or volume of the Collected Works given in any attribution located.",
+  "finding": "No primary citation was located in this pass. Every attribution found gives the line without a source. The nearest documented Gandhi passage is a different and longer statement about a man changing his own nature changing the attitude of the world towards him, which is not this sentence. Held rather than rejected because the Collected Works of Mahatma Gandhi (Publications Division, Government of India, 100 volumes) was not searched in this pass - absence of a located source is not proof of absence.",
+  "evidence_urls": [
+   "https://www.gandhiheritageportal.org/"
+  ],
+  "gate": {
+   "S": 0,
+   "A": 1,
+   "C": 1,
+   "T": 4
+  },
+  "next_step": "Search the Collected Works of Mahatma Gandhi on the Gandhi Heritage Portal (Government of India supported) for the phrase. Until a volume and page exist, this line may not be used on any THYLORA surface."
+ },
+ {
+  "id": "HOLD-TUBMAN-THOUSAND-SLAVES",
+  "person": "Harriet Tubman",
+  "quote": "I freed a thousand slaves. I could have freed a thousand more, if only they knew they were slaves.",
+  "state": "HELD",
+  "verification_state": "REJECTED",
+  "claimed_source": "Circulated widely as a Tubman quotation on social media and in motivational material.",
+  "finding": "Rejected on internal evidence as well as missing sourcing. The numbers contradict the documented record: Tubman is credited with roughly seventy people over about thirteen missions, a figure her own biographers and the National Park Service state. The sentiment - that the enslaved did not know they were enslaved - also inverts her own account. No printed nineteenth-century source is offered by any attribution located.",
+  "evidence_urls": [
+   "https://www.nps.gov/hatu/learn/historyculture/index.htm"
+  ],
+  "gate": {
+   "S": 0,
+   "A": 0,
+   "C": 0,
+   "T": 2
+  },
+  "next_step": "Do not use. If a Tubman record is wanted, work from the Bradford narratives (1869, 1886) with their mediation stated explicitly, or from the Combahee River Raid documentary record."
+ },
+ {
+  "id": "HOLD-GARVEY-TREE-WITHOUT-ROOTS",
+  "person": "Marcus Garvey",
+  "quote": "A people without the knowledge of their past history, origin and culture is like a tree without roots.",
+  "state": "HELD",
+  "verification_state": "UNKNOWN",
+  "claimed_source": "Widely attributed to Garvey; sometimes to The Black Man magazine (1930s), sometimes to Philosophy and Opinions of Marcus Garvey.",
+  "finding": "Not verified in this pass. Philosophy and Opinions (ed. Amy Jacques Garvey, 1923-25) and the run of The Black Man were not searched; competing citations give different works and no page. The line is thematically consistent with Garvey's documented positions on history and race pride, which is exactly why it needs a page reference rather than a resemblance test.",
+  "evidence_urls": [
+   "https://www.international.ucla.edu/africa/mgpp"
+  ],
+  "gate": {
+   "S": 1,
+   "A": 2,
+   "C": 1,
+   "T": 5
+  },
+  "next_step": "Search the Marcus Garvey and UNIA Papers Project (UCLA) and the text of The Black Man for the sentence. High transfer value if a source is found; until then it is not publishable."
+ },
+ {
+  "id": "HOLD-MANDELA-EDUCATION-WEAPON",
+  "person": "Nelson Mandela",
+  "quote": "Education is the most powerful weapon which you can use to change the world.",
+  "state": "HELD",
+  "verification_state": "UNKNOWN",
+  "claimed_source": "Attributed to Mandela, variously to a 1990 speech in Boston and to the 2003 launch of the Mindset Network.",
+  "finding": "Attribution is plausible and the Nelson Mandela Foundation archive is the body that can settle it, but no specific speech text was retrieved in this pass. Two different occasions are cited by different sources, which means at least one attribution is wrong. THOUGHT-MANDELA-001 uses the Rivonia statement instead, which is documented to the day.",
+  "evidence_urls": [
+   "https://www.nelsonmandela.org/",
+   "http://www.mandela.gov.za/mandela_speeches/"
+  ],
+  "gate": {
+   "S": 2,
+   "A": 3,
+   "C": 2,
+   "T": 5
+  },
+  "next_step": "Query the Nelson Mandela Foundation's speech archive for the exact wording and date. Do not publish until one occasion is confirmed."
+ }
+]
