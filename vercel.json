@@ -6,6 +6,14 @@
       "destination": "/public-site/index.html"
     },
     {
+      "source": "/what-thylora-can-do/",
+      "destination": "/public-site/what-thylora-can-do.html"
+    },
+    {
+      "source": "/what-thylora-can-do",
+      "destination": "/public-site/what-thylora-can-do.html"
+    },
+    {
       "source": "/app",
       "destination": "/app/index.html"
     },

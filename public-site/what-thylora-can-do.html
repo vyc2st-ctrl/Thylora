@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>THYLORA — What Can THYLORA Actually Help Me Do?</title>
+<meta name="description" content="A truthful public entry to THYLORA: understand something, preserve something, or build something. Every capability on this page is shown with the state of its evidence.">
+<meta name="theme-color" content="#080b10">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="THYLORA — What can THYLORA actually help me do?">
+<meta property="og:description" content="Understand it. Preserve it. Build it. Every capability shown with the state of its evidence — nothing claimed that is not built.">
+<meta property="og:type" content="website">
+<style>
+/* THY-WORK-PUBLIC-CAPABILITY-ENTRY-568
+   Public capability entry. No login. No tracking. No purchase action on this page.
+   Every capability state on this page is read from thylora-dash and dated. */
+:root{
+  --bg:#080b10; --panel:#111720; --panel2:#0d131b; --line:#293342;
+  --ink:#f4efe6; --muted:#a3acb9; --gold:#d6a348; --good:#78d49b;
+  --blue:#67b8ff; --warn:#e3bc72; --hold:#8d97a5;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0; overflow-x:hidden;
+  background:linear-gradient(180deg,#080b10,#0b0f15 46%,#080b10);
+  color:var(--ink);
+  font:17px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+img,svg,table{max-width:100%}
+a{color:var(--ink)}
+.wrap{width:100%;max-width:1060px;margin:0 auto;padding:0 18px}
+.eyebrow{font-size:12.5px;letter-spacing:.16em;font-weight:800;color:var(--gold);text-transform:uppercase;margin:0 0 8px}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.1;overflow-wrap:break-word}
+h1{font-size:clamp(30px,6.4vw,62px);margin:.08em 0 .3em}
+h2{font-size:clamp(24px,4.6vw,40px);margin:0 0 .35em}
+h3{font-size:clamp(19px,3vw,24px);margin:0 0 .35em}
+p{overflow-wrap:break-word}
+.lead{font-size:clamp(17px,2.2vw,21px);color:#dfe3e9;max-width:66ch}
+.muted{color:var(--muted)}
+.small{font-size:14px;line-height:1.55}
+
+header.top{
+  position:sticky;top:0;z-index:20;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  padding:12px 18px;background:#080b10f2;border-bottom:1px solid var(--line);backdrop-filter:blur(12px);
+}
+.brand{font-weight:900;letter-spacing:.14em;font-size:14px}
+.top .sub{font-size:12.5px;color:var(--muted);letter-spacing:.06em}
+
+section{padding:52px 0;border-bottom:1px solid #1b232f}
+section:last-of-type{border-bottom:0}
+.hero{padding:56px 0 46px;border-bottom:1px solid #1b232f}
+
+.doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:14px;margin-top:26px}
+.door{
+  background:linear-gradient(180deg,#121926,#0d131b);
+  border:1px solid var(--line);border-radius:18px;padding:20px;
+  display:flex;flex-direction:column;gap:10px;
+}
+.door h3{margin:0}
+.door ul{margin:0;padding-left:18px;color:#cfd6df}
+.door li{margin:6px 0}
+.door .tag{font-size:12.5px;letter-spacing:.14em;font-weight:800;color:var(--blue)}
+
+.chain{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:20px 0 0;padding:0;list-style:none}
+.chain li{
+  border:1px solid var(--line);background:var(--panel2);border-radius:999px;
+  padding:8px 13px;font-size:13px;font-weight:700;letter-spacing:.04em;white-space:nowrap;
+}
+.chain li.arrow{border:0;background:none;padding:0 2px;color:var(--gold);font-weight:900}
+
+.eq{
+  border:1px solid #3a4557;border-radius:18px;background:var(--panel);
+  padding:20px;margin-top:22px;
+}
+.eq .expr{font-family:Georgia,serif;font-size:clamp(26px,7vw,46px);margin:2px 0 10px;color:var(--gold)}
+.eq dl{margin:12px 0 0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:15px}
+.eq dt{font-weight:800;color:var(--gold)}
+.eq dd{margin:0;color:#cfd6df}
+
+.rule{
+  border-left:3px solid var(--gold);padding:4px 0 4px 16px;margin:22px 0 0;
+  font-family:Georgia,serif;font-size:clamp(20px,3.4vw,30px);
+}
+.rule small{display:block;font-family:system-ui,sans-serif;font-size:14px;color:var(--muted);margin-top:8px;letter-spacing:0}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:14px;margin-top:24px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}
+.card h3{margin:8px 0 6px}
+.card p{margin:0 0 10px;color:#cfd6df}
+.card .ev{font-size:13.5px;color:var(--muted);border-top:1px solid #1e2732;padding-top:10px;margin:10px 0 0}
+
+.state{
+  display:inline-block;border-radius:999px;padding:3px 10px;
+  font-size:12.5px;font-weight:800;letter-spacing:.08em;border:1px solid;
+}
+.state.proven{color:var(--good);border-color:#2f5c44;background:#10231a}
+.state.demo{color:var(--blue);border-color:#2d4a63;background:#101a24}
+.state.dev{color:var(--warn);border-color:#5c4a24;background:#1d1811}
+.state.proposed{color:var(--hold);border-color:#3a4450;background:#121720}
+
+.examples{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin-top:24px}
+.ex{background:var(--panel2);border:1px solid var(--line);border-radius:16px;padding:18px}
+.ex .q{font-family:Georgia,serif;font-size:19px;margin:0 0 10px;color:var(--ink)}
+.ex .a{margin:0;color:#cfd6df;font-size:15.5px;line-height:1.6}
+.ex .src{display:block;margin-top:12px;font-size:13.5px;color:var(--muted);overflow-wrap:anywhere}
+
+.ledger{margin-top:24px;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.row{display:grid;grid-template-columns:1fr auto;gap:10px 14px;align-items:start;padding:14px 16px;border-bottom:1px solid #1b232f}
+.row:last-child{border-bottom:0}
+.row .name{font-weight:700}
+.row .why{grid-column:1/-1;font-size:13.5px;color:var(--muted);margin:2px 0 0}
+
+.dest{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px;margin-top:24px}
+.dest a.link{
+  display:block;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;
+  text-decoration:none;
+}
+.dest a.link:hover,.dest a.link:focus{border-color:var(--gold)}
+.dest .go{display:block;margin-top:10px;color:var(--gold);font-weight:800;font-size:14px;letter-spacing:.05em}
+.dest .u{display:block;margin-top:8px;font-size:13.5px;color:var(--muted);overflow-wrap:anywhere}
+
+.notyet{border:1px dashed #3a4557;border-radius:16px;padding:18px;margin-top:22px;background:#0c1118}
+.notyet ul{margin:10px 0 0;padding-left:18px;color:#cfd6df}
+.notyet li{margin:7px 0}
+
+footer{padding:38px 0 60px;color:var(--muted);font-size:14px}
+footer p{max-width:70ch}
+
+@media (max-width:560px){
+  body{font-size:16px}
+  section,.hero{padding:40px 0}
+  .wrap{padding:0 16px}
+  .eq dl{grid-template-columns:1fr;gap:2px 0}
+  .eq dd{margin:0 0 8px}
+  .chain li{font-size:12.5px;padding:7px 10px}
+  .row{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div>
+    <div class="brand">THYLORA</div>
+    <div class="sub">Public entry · no sign-in required to read this page</div>
+  </div>
+  <div class="sub">Capability states read from the THYLORA backend, 2026-09-20</div>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Start here</p>
+      <h1>What are you trying to understand, preserve, or build?</h1>
+      <p class="lead">
+        THYLORA is not a chat box and not a single product. It is a working method with a backend
+        behind it: every claim is filed with its evidence, every gap is filed as a gap, and
+        <strong>UNKNOWN stays UNKNOWN</strong>.
+      </p>
+      <p class="lead muted small">
+        Everything listed below is marked with the state of its evidence. Nothing on this page is
+        sold, activated, or claimed as a live service unless the backend can show the record.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ THREE DOORS ============ -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Three doors</p>
+      <h2>Pick the one that matches your problem.</h2>
+
+      <div class="doors">
+
+        <article class="door">
+          <span class="tag">DOOR ONE</span>
+          <h3>Understand it</h3>
+          <p class="small muted">You have a claim, a number, a quote, a document or a story and you
+          need to know what it actually supports.</p>
+          <ul class="small">
+            <li>Sharpen a vague question into one that can be answered</li>
+            <li>Map what is known, what is evidenced, and what is only asserted</li>
+            <li>Test a historical claim against what its source really says</li>
+            <li>Read an equation as a sentence before calculating anything</li>
+          </ul>
+        </article>
+
+        <article class="door">
+          <span class="tag">DOOR TWO</span>
+          <h3>Preserve it</h3>
+          <p class="small muted">You have something that will be lost if nobody records it
+          properly — a family story, an object, a line of work.</p>
+          <ul class="small">
+            <li>Record a told story with its teller, its date and its confidence level</li>
+            <li>Keep interpretation separate from what was actually said</li>
+            <li>Hold consent and visibility as fields, not as an afterthought</li>
+            <li>Keep a record's history when it changes instead of overwriting it</li>
+          </ul>
+        </article>
+
+        <article class="door">
+          <span class="tag">DOOR THREE</span>
+          <h3>Build it</h3>
+          <p class="small muted">You have a project, a world, a product line or a system and it
+          keeps drifting, contradicting itself, or stalling.</p>
+          <ul class="small">
+            <li>Give a project one restart point that survives an interruption</li>
+            <li>Name the blockers and the tests that say a thing is finished</li>
+            <li>Keep a story world internally consistent across many episodes</li>
+            <li>Separate lanes so one project cannot quietly contaminate another</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW THYLORA THINKS ============ -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">How THYLORA thinks</p>
+      <h2>The same seven steps, every time.</h2>
+      <p class="lead">This chain runs on a family story, a historical claim, a product decision and
+      a vehicle design without changing shape. If a step cannot be completed, it is recorded as
+      incomplete rather than skipped.</p>
+
+      <ol class="chain">
+        <li>OBSERVE</li><li class="arrow">→</li>
+        <li>GAP</li><li class="arrow">→</li>
+        <li>QUESTION</li><li class="arrow">→</li>
+        <li>EVIDENCE</li><li class="arrow">→</li>
+        <li>CONNECTION</li><li class="arrow">→</li>
+        <li>TEST</li><li class="arrow">→</li>
+        <li>NEXT ACTION</li>
+      </ol>
+
+      <div class="eq">
+        <p class="eyebrow" style="margin:0">The question function · MATH-Q-001 · ACTIVE</p>
+        <div class="expr">Q = f(K, E, C)</div>
+        <p style="margin:0;color:#cfd6df">
+          The question you are able to ask improves as knowledge, evidence and connections improve.
+          A vague question is usually not a thinking failure — it is a signal that one of the three
+          inputs is thin.
+        </p>
+        <dl>
+          <dt>K</dt><dd>what is known</dd>
+          <dt>E</dt><dd>what is evidenced</dd>
+          <dt>C</dt><dd>what connects to what</dd>
+          <dt>f</dt><dd>the relationship between them</dd>
+          <dt>Q</dt><dd>the question you can now ask</dd>
+        </dl>
+        <p class="small muted" style="margin:14px 0 0">
+          Use it when a problem feels vague: identify what is known, what is evidenced and what
+          connects, before asking the next question.
+        </p>
+      </div>
+
+      <div class="rule">
+        ACCESS ≠ AUTHORITY
+        <small>
+          Reaching a system and being allowed to act in it are two different things. THYLORA holds
+          this as an enforced gate, not a slogan: a process can have full read and write access to
+          the backend and still have no authority to publish, to spend, to release, or to speak for
+          anyone. This page was built by a process with write access to the backend and no authority
+          to publish anything — so nothing here was published.
+        </small>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT IS ACTUALLY BUILT ============ -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">What is actually built</p>
+      <h2>Six capabilities with working records behind them.</h2>
+      <p class="lead muted small">
+        PROVEN means the backend holds working records you could be shown. DEMONSTRABLE means the
+        method runs end to end but the records are private or unreleased.
+      </p>
+
+      <div class="cards">
+
+        <article class="card">
+          <span class="state proven">PROVEN</span>
+          <h3>Question improvement</h3>
+          <p>Turning a vague problem into a question that can actually be answered, with the
+          assumptions and missing evidence named out loud.</p>
+          <p class="ev">Evidence: Q = f(K,E,C) registered ACTIVE. Nine question-engineering products
+          filed, three in implementation. Eight evaluation cases. A plain-speech translation layer
+          (QYRIS) applied to 89 work items to date.</p>
+        </article>
+
+        <article class="card">
+          <span class="state proven">PROVEN</span>
+          <h3>Evidence mapping</h3>
+          <p>Laying out a subject as nodes and typed relationships so you can see what supports
+          what — and where a link is asserted rather than evidenced.</p>
+          <p class="ev">Evidence: 52 nodes, 149 edges, 202 version records, 461 exported triples,
+          20 registered node types and 8 predicate contracts. Seven integrity findings are currently
+          open and visible rather than hidden.</p>
+        </article>
+
+        <article class="card">
+          <span class="state proven">PROVEN</span>
+          <h3>Historical claim inspection</h3>
+          <p>Taking a widely repeated historical statement and separating the documented site fact
+          from the wider context, the attributed interpretation, and the unknown.</p>
+          <p class="ev">Evidence: nine method rules ACTIVE, including "construction phase is not
+          technology origin" and "UNKNOWN stays UNKNOWN". A ten-row evidence matrix where THYLORA
+          corrected its own earlier overstatement.</p>
+        </article>
+
+        <article class="card">
+          <span class="state proven">PROVEN</span>
+          <h3>Continuity and graph thinking</h3>
+          <p>Keeping a long, interrupted body of work coherent: what supersedes what, what is still
+          current, and exactly where to pick it up again.</p>
+          <p class="ev">Evidence: 137 restart records, each with an exact restart point, its
+          blocking dependency and its next action. Superseded records are preserved, never deleted.
+          A locked one-way gate stops two story lanes from merging.</p>
+        </article>
+
+        <article class="card">
+          <span class="state proven">PROVEN</span>
+          <h3>Math and reasoning</h3>
+          <p>Reading an equation as a sentence first — what it says, what it does not prove — then
+          using it as a decision tool instead of decoration.</p>
+          <p class="ev">Evidence: four equations registered ACTIVE with plain readings and everyday
+          use, covering question quality, understanding transfer, quote verification and offer
+          worth. 39 bindings from equations to specific records.</p>
+        </article>
+
+        <article class="card">
+          <span class="state proven">PROVEN</span>
+          <h3>Product and project organization</h3>
+          <p>Turning an overloaded body of work into named rooms, each with its own source of
+          truth, its live blockers and the tests that decide it is finished.</p>
+          <p class="ev">Evidence: 27 workrooms and 93 tracked tasks. Every workroom names its source
+          of truth and its completion tests; blockers are recorded as blockers rather than
+          converted into optimistic status.</p>
+        </article>
+
+        <article class="card">
+          <span class="state demo">DEMONSTRABLE</span>
+          <h3>Family story preservation</h3>
+          <p>Recording a told story with its teller, its date, how confident the memory is, who
+          consented to it, and who is allowed to see it.</p>
+          <p class="ev">Evidence: 11 family story archives, every one carrying source type, source
+          confidence, consent state and visibility state. All 11 are currently PRIVATE with consent
+          in DRAFT, so none appear anywhere public — including here.</p>
+        </article>
+
+        <article class="card">
+          <span class="state demo">DEMONSTRABLE</span>
+          <h3>Story and worldbuilding</h3>
+          <p>Holding an invented world consistent across episodes: who exists, where, evidenced by
+          which passage of text, and which lane it belongs to.</p>
+          <p class="ev">Evidence: 13 world records in the graph, each carrying its own evidence
+          class — from published-text-evidenced down to proposed. 40 story seeds registered. One
+          work is published and has sold.</p>
+        </article>
+
+        <article class="card">
+          <span class="state demo">DEMONSTRABLE</span>
+          <h3>Design and system thinking</h3>
+          <p>Treating a page or a system as a specification — its purpose, its rules, its
+          prohibitions and its open decisions — before anything is produced.</p>
+          <p class="ev">Evidence: 12 registered components, 8 of them ACTIVE, each with an interface,
+          test and permissions contract. Three page specifications exist, all explicitly marked
+          specification-only with no artwork generated.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REAL EXAMPLES ============ -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Real examples</p>
+      <h2>Four questions THYLORA has actually run.</h2>
+      <p class="lead muted small">These are THYLORA's own records. There are no customer
+      testimonials on this page because there is no customer story THYLORA has consent to tell.</p>
+
+      <div class="examples">
+
+        <article class="ex">
+          <p class="q">"Who built Windsor Castle in stone?"</p>
+          <p class="a">The common answer names William I. The record does not support it. What is
+          documented is that the c.1070 work was earth and timber; the first documented stone is
+          under Henry II; the silhouette people picture today is Edward III plus a nineteenth-century
+          remodelling. THYLORA had previously carried the overstatement itself, and the correction is
+          filed as a correction rather than quietly swapped in.</p>
+          <span class="src">Ten-row evidence matrix, four evidence classes · rule THY-HIST-METHOD-001,
+          "construction phase is not technology origin"</span>
+        </article>
+
+        <article class="ex">
+          <p class="q">"Is the 364-day calendar in the Dead Sea Scrolls solved?"</p>
+          <p class="a">Two different things get merged here. In weeks it is exactly stable —
+          364 ÷ 7 = 52, so every date falls on the same weekday every year, and that part is
+          arithmetically certain. Against the sun it is not stable at all: 365.2422 − 364 = 1.2422
+          days of drift per year. "Solved" and "found" are not the same claim, and the arithmetic is
+          separated from what any source asserts.</p>
+          <span class="src">Finding FIND-QUMRAN-364-DRIFT-566 · truth class ARITHMETIC_CERTAIN_PLUS_SOURCE_CLAIM</span>
+        </article>
+
+        <article class="ex">
+          <p class="q">"My AI assistant can act for me now. What is it allowed to do?"</p>
+          <p class="a">Almost all current reporting measures access — what an agent can reach. Very
+          little measures authority — what it is permitted to decide. THYLORA separates the two in
+          its own tables and can show the rows: a process here holds full backend write access and
+          zero publishing authority, and the gate is what stops it, not good intentions.</p>
+          <span class="src">Gate LAW-ACCESS-NOT-AUTHORITY-001 · state IMPLEMENTED</span>
+        </article>
+
+        <article class="ex">
+          <p class="q">"Is this famous quote real?"</p>
+          <p class="a">Widely circulated quotations fail primary-source checks at a high rate. So a
+          quote is scored before it is used at all: can the source be verified, is the attribution
+          right, is the context preserved, and does it turn into a real question. A quote that
+          cannot clear all four does not become a post — it becomes a recorded unknown.</p>
+          <span class="src">F = S × A × C × T, registered ACTIVE · 23 quotes scored,
+          lowest 320, highest 625</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HONEST LEDGER ============ -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">What is not available yet</p>
+      <h2>The parts that are still being built.</h2>
+      <p class="lead">A page that only lists strengths is an advertisement. These are recorded in the
+      same backend, in the same states, and are not offered as services.</p>
+
+      <div class="ledger">
+        <div class="row">
+          <div class="name">Object and maker provenance</div>
+          <span class="state dev">IN DEVELOPMENT</span>
+          <p class="why">Nineteen object categories are registered and the method is defined — but
+          every category is currently open with zero objects filed against it. The structure exists;
+          the records do not.</p>
+        </div>
+        <div class="row">
+          <div class="name">Vehicle and physical design</div>
+          <span class="state dev">IN DEVELOPMENT</span>
+          <p class="why">One concept has cleared its first gate. Measured dimensions, propulsion
+          architecture, materials validation, prototype and test evidence are all still open. No
+          physical claim is made.</p>
+        </div>
+        <div class="row">
+          <div class="name">Recurring memberships</div>
+          <span class="state dev">IN DEVELOPMENT</span>
+          <p class="why">Prices and channel entitlements are approved in the backend. The recurring
+          provider connection and the full subscribe → payment → entitlement → cancellation proof are
+          not complete, so no live Subscribe control is shown anywhere.</p>
+        </div>
+        <div class="row">
+          <div class="name">A public evidence and question surface</div>
+          <span class="state proposed">PROPOSED</span>
+          <p class="why">The question library, the math registry and the verified-quote work all
+          exist in the backend and none of them have a public destination yet. This is recorded as an
+          open gap, which is part of why this page exists.</p>
+        </div>
+        <div class="row">
+          <div class="name">Original shows, channels and live media</div>
+          <span class="state proposed">PROPOSED</span>
+          <p class="why">Channels are named in the backend and no episode has been published. Until
+          a publication record with real evidence exists, no show is presented as available.</p>
+        </div>
+      </div>
+
+      <div class="notyet">
+        <p class="eyebrow" style="margin:0">Also true</p>
+        <ul class="small">
+          <li>THYLORA has one live product and has served a small number of real orders. It is not a
+          large storefront and is not described as one.</li>
+          <li>Nothing on this page requires an account to read, and this page sets no cookies and
+          sends no analytics.</li>
+          <li>Where THYLORA has corrected itself, the correction is kept next to the original rather
+          than replacing it.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DESTINATIONS ============ -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Where to go next</p>
+      <h2>Only destinations that are actually public.</h2>
+      <p class="lead muted small">
+        Several THYLORA lanes have no public page yet. Those are listed above as gaps rather than
+        linked to something unrelated.
+      </p>
+
+      <div class="dest">
+
+        <a class="link" href="https://ersatzreality.myshopify.com/products/twelve-miles-for-flour-an-uncle-seezin-trail-story">
+          <span class="state proven">LIVE</span>
+          <h3 style="margin:10px 0 6px">Twelve Miles for Flour</h3>
+          <p class="small muted" style="margin:0">
+            An Unkle Seezin trail story. The one THYLORA product currently released and buyable —
+            a short digital title, $1.99. This is the worked example behind the story and continuity
+            capability above.
+          </p>
+          <span class="go">Read it →</span>
+          <span class="u">Backend store readback verified 2026-09-19: 1 active product, available for sale.</span>
+        </a>
+
+        <a class="link" href="./store.html">
+          <span class="state proven">PUBLIC</span>
+          <h3 style="margin:10px 0 6px">Access and memberships</h3>
+          <p class="small muted" style="margin:0">
+            What free access covers and what the approved membership tiers would include. Prices are
+            shown; no live subscribe control is shown, because the recurring checkout proof is not
+            complete.
+          </p>
+          <span class="go">See the tiers →</span>
+          <span class="u">Same site · no sign-in required to read</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>THYLORA · ErsatzReality</strong></p>
+    <p class="small">
+      Capability states on this page were read directly from the THYLORA backend on 2026-09-20 and
+      are dated rather than described as permanent. Where a capability is marked DEMONSTRABLE, the
+      method runs but the records are private or unreleased. Where a capability is marked IN
+      DEVELOPMENT or PROPOSED, it is not offered and not for sale.
+    </p>
+    <p class="small">
+      No family record, protected identity, private location or unreleased work appears on this
+      page. UNKNOWN stays UNKNOWN.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
