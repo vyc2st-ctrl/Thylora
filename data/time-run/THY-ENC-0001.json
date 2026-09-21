@@ -1,0 +1,175 @@
+{
+  "serial": "THY-ENC-0001",
+  "title": "Vyctor Ebenezer ↔ Inés Morales",
+  "packet_kind": "CONTINUITY_PACKET",
+  "scene_written": false,
+  "note": "This is the continuity packet, not the scene. No narrative prose is authorized by this record.",
+
+  "traveler": {
+    "traveler_id": "THY-PER-VYCTOR-EBENEZER",
+    "name": "Vyctor Ebenezer",
+    "native_era": "ERA_CURRENT",
+    "presence": "PHYSICAL",
+    "viewer_mode": false
+  },
+
+  "origin_era": "ERA_CURRENT",
+  "destination_era": "ERA_1700S",
+
+  "arrival_place": {
+    "place_id": "THY-PLACE-CASTLE-001",
+    "place_role": "THRESHOLD_CANDIDATE",
+    "era_stratum": "THY-PLACE-CASTLE-001/ERA_1700S",
+    "native_name_state": "CANDIDATE_SET_OPEN",
+    "prohibited_name_check": "PASSED"
+  },
+
+  "arrival_time": {
+    "era_band": "UNSEALED_1700S",
+    "exact_year": "UNSEALED",
+    "season": "UNSEALED",
+    "time_of_day": "UNSEALED",
+    "rule": "Exact event years remain open until sealed for a run. The era band governs."
+  },
+
+  "people_met": [
+    {
+      "person_id": "THY-PER-INES-MORALES",
+      "name": "Inés Morales",
+      "native_era": "ERA_1700S",
+      "living": true,
+      "era_role_state": "UNSEALED",
+      "role_candidates": [
+        "Household of the castle in that era",
+        "Family of the era's occupants",
+        "Visiting party present at the castle in that era"
+      ],
+      "agency": "Lives her own life. Not a prop, not scenery, not a generated extra.",
+      "consent_posture": "She may decline contact, decline information and decline to be recorded.",
+      "chairman_decision_required": "era_role_state"
+    }
+  ],
+
+  "objects_carried": [
+    {
+      "object_id": "OBJ-001",
+      "label": "Personal handset",
+      "domain": "COMPUTATION",
+      "capability_tier": 80,
+      "envelope_rule": "INERT"
+    },
+    {
+      "object_id": "OBJ-002",
+      "label": "Outer coat, wool",
+      "domain": "MATERIALS",
+      "capability_tier": 22,
+      "envelope_rule": "INERT"
+    },
+    {
+      "object_id": "OBJ-003",
+      "label": "Written note, ink on paper",
+      "domain": "RECORDING",
+      "capability_tier": 18,
+      "envelope_rule": "INERT"
+    }
+  ],
+
+  "capability_transformations": [
+    {
+      "object_id": "OBJ-001",
+      "declared_tier": 80,
+      "destination_ceiling": 12,
+      "arrival_state": "INERT",
+      "functioning_tier": 0,
+      "reason": "Above the 1700s COMPUTATION ceiling. Present as an object, does not function."
+    }
+  ],
+
+  "information_shared": {
+    "model_state": "OPEN",
+    "model_candidates": ["IT_A_SPEECH_ONLY", "IT_B_ERA_EXPRESSIBLE", "IT_C_LEDGERED_DISCLOSURE"],
+    "disclosures": [
+      {
+        "disclosure_id": "DISC-001",
+        "subject": "Who he is and where he is from",
+        "form": "SPOKEN",
+        "domain": "RECORDING",
+        "required_tier": 0,
+        "instantiable_in_era": true,
+        "era_impact": "ACTIONABLE_IN_ERA",
+        "declined_by_recipient": false
+      }
+    ],
+    "refused_by_rule": [
+      {
+        "subject": "Any description sufficient to build a later-era device",
+        "code": "NOT_INSTANTIABLE_IN_ERA",
+        "reason": "The era cannot supply the supporting capability. It can be described, not built."
+      }
+    ]
+  },
+
+  "departure": {
+    "mechanic_state": "OPEN",
+    "depends_on": ["ENTRY_EXIT", "VISIT_DURATION"],
+    "exit_place": "THY-PLACE-CASTLE-001",
+    "exit_time": "UNSEALED",
+    "objects_returned": ["OBJ-001", "OBJ-002", "OBJ-003"],
+    "objects_left_behind": [],
+    "objects_acquired_in_era": []
+  },
+
+  "memory_retained": {
+    "retained": true,
+    "by_traveler": ["IDENTITY", "MEMORY", "KNOWLEDGE", "EXPERIENCE"],
+    "not_retained": ["TECHNOLOGICAL_CAPABILITY"],
+    "by_people_met": {
+      "person_id": "THY-PER-INES-MORALES",
+      "retained": true,
+      "note": "She remembers the meeting. Her memory is hers and is not edited by the traveler's departure."
+    }
+  },
+
+  "historical_record": {
+    "model_state": "OPEN",
+    "under_CA_A_VISITS_BECOME_HISTORY": {
+      "record_state": "PENDING_FULFILLMENT",
+      "becomes": "FULFILLED once the departure exists",
+      "foresight_seal": "SEALED_FROM_TRAVELER",
+      "retcon": "FORBIDDEN once FULFILLED",
+      "harm": "PERMANENT"
+    },
+    "under_CA_B_BRANCH_ON_CHANGE": {
+      "record_state": "PENDING_FULFILLMENT",
+      "branch_opened": false,
+      "threshold_state": "UNDECLARED"
+    },
+    "under_CA_C_LEDGERED_CAUSALITY": {
+      "record_state": "PENDING_FULFILLMENT",
+      "ledger_entry": "ONE",
+      "contested": false
+    }
+  },
+
+  "provenance": {
+    "serial": "THY-ENC-0001",
+    "recorded_by": "THYLORA backend of record",
+    "workroom": "WR-TIMERUN-581",
+    "directive": "THY-WORK-TIME-RUN-LIVE-TRAVERSAL-581",
+    "record_state": "PENDING_FULFILLMENT",
+    "authored": "2026-09-21",
+    "canon": false,
+    "binding_correction_applied": true
+  },
+
+  "chairman_decisions_required": [
+    "ENTRY_EXIT mechanic",
+    "CLOTHING mechanic",
+    "VISIT_DURATION mechanic",
+    "INJURY_DEATH mechanic",
+    "CAUSALITY model",
+    "INFORMATION_TRANSFER model",
+    "Inés Morales era_role_state",
+    "Castle native name from the candidate set"
+  ]
+}

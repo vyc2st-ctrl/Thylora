@@ -1,0 +1,186 @@
+{
+  "place_id": "THY-PLACE-CASTLE-001",
+  "kind": "CASTLE",
+  "world": "EdereAriah",
+  "record_kind": "STABLE_PLACE_IDENTITY_WITH_ERA_STRATA",
+  "canon": false,
+
+  "prohibited_names": ["PEETE CASTLE"],
+  "prohibition_reason": "Chairman directive. The castle is named from the land, not from a family.",
+
+  "native_name_state": "CANDIDATE_SET_OPEN",
+  "naming_law": "NATIVE LAND + LANGUAGE + HISTORY. A name with no derivation is an assignment, and assignments are refused.",
+
+  "native_name_candidates": [
+    {
+      "candidate_id": "NAME-A",
+      "name": "Ederehald",
+      "derivation": {
+        "native_land": "EdereAriah",
+        "language": "Native tongue of EdereAriah (CANDIDATE — the language itself is unnamed in the backend)",
+        "history": "The structure remained while its occupants, its trades and its families changed. It is named for what it did, not for who held it.",
+        "morphemes": [
+          { "form": "edere", "gloss": "that which remains, that which endures — the root the land name itself carries" },
+          { "form": "hald", "gloss": "a holding, a keep, a thing kept" }
+        ],
+        "reading": "The enduring hold."
+      },
+      "era_renderings": {
+        "ERA_1700S": "Ederehald",
+        "ERA_1922": "Ederehald",
+        "ERA_CURRENT": "Ederehald"
+      },
+      "strength": "Ties the castle directly to the land name and to the one fact true in every era: it is still standing.",
+      "weakness": "Says nothing about the site itself. Any enduring building in EdereAriah could carry it."
+    },
+    {
+      "candidate_id": "NAME-B",
+      "name": "Ariahdura",
+      "derivation": {
+        "native_land": "EdereAriah",
+        "language": "Native tongue of EdereAriah (CANDIDATE)",
+        "history": "The site has always been the point at which people enter the land and leave it — gate, customs house, receiving hall, and under Time Run, threshold between living eras.",
+        "morphemes": [
+          { "form": "ariah", "gloss": "given ground, the land, that which was granted" },
+          { "form": "dura", "gloss": "threshold, doorway, the place of crossing" }
+        ],
+        "reading": "The land's threshold."
+      },
+      "era_renderings": {
+        "ERA_1700S": "Ariah Dura",
+        "ERA_1922": "Ariahdura",
+        "ERA_CURRENT": "Ariahdura"
+      },
+      "strength": "Earns its name from the site's function and pre-carries the Time Run threshold role without needing Time Run to justify it.",
+      "weakness": "If ENTRY_EXIT does not resolve to threshold sites, the name points at a mechanic that was not chosen."
+    },
+    {
+      "candidate_id": "NAME-C",
+      "name": "Torvaenah",
+      "derivation": {
+        "native_land": "EdereAriah",
+        "language": "Native tongue of EdereAriah (CANDIDATE)",
+        "history": "Named for how it was first sighted from the water: high stone standing toward the approach, visible before anything else on the shore.",
+        "morphemes": [
+          { "form": "tor", "gloss": "high stone, raised rock" },
+          { "form": "vaen", "gloss": "facing the water, turned toward the approach" },
+          { "form": "-ah", "gloss": "place suffix" }
+        ],
+        "reading": "The high stone that faces the water."
+      },
+      "era_renderings": {
+        "ERA_1700S": "Tor Vaenah",
+        "ERA_1922": "Torvaenah",
+        "ERA_CURRENT": "Torvaenah"
+      },
+      "strength": "Purely geographic. True in every era regardless of who holds the castle or which mechanics are selected.",
+      "weakness": "Requires the water relation to be fixed as an invariant before the name can be sealed."
+    }
+  ],
+
+  "invariants": {
+    "place_id": "THY-PLACE-CASTLE-001",
+    "native_name": "UNSEALED_PENDING_CHAIRMAN",
+    "site_ground": "Raised stone shelf above the approach",
+    "orientation": "Principal face toward the water approach",
+    "approach": "Single ascending road from the low ground",
+    "water_relation": "Overlooks the water approach; does not stand in it",
+    "footprint_origin": "Original keep footprint, never relocated"
+  },
+
+  "era_variable_fields": [
+    "rooms", "walls", "repairs", "objects", "occupants", "staff",
+    "businesses", "furniture", "art", "family_relationships", "name_rendering"
+  ],
+
+  "strata": [
+    {
+      "stratum_id": "THY-PLACE-CASTLE-001/ERA_1700S",
+      "era_id": "ERA_1700S",
+      "place_id": "THY-PLACE-CASTLE-001",
+      "native_name": "UNSEALED_PENDING_CHAIRMAN",
+      "site_ground": "Raised stone shelf above the approach",
+      "orientation": "Principal face toward the water approach",
+      "approach": "Single ascending road from the low ground",
+      "water_relation": "Overlooks the water approach; does not stand in it",
+      "footprint_origin": "Original keep footprint, never relocated",
+      "name_rendering": "UNSEALED",
+      "rooms": "Great hall, receiving room, chapel, kitchens below, sleeping floors above, stable court outside the wall",
+      "walls": "Full curtain wall intact; outer ditch maintained",
+      "repairs": "Roof lead renewed over the hall; east range re-floored",
+      "objects": "Candle and lamp light, hearth heating, hand-copied and printed books, horse tack, hand tools",
+      "occupants": "Resident household of the era, UNSEALED",
+      "staff": "Steward, cook, stable hands, house staff, chaplain",
+      "businesses": "Stable, smithy at the gate, farm rents collected at the hall",
+      "furniture": "Heavy timber, fixed benches, standing presses",
+      "art": "Portraits of the era's household, woven hangings",
+      "family_relationships": "UNSEALED",
+      "capability_ceiling": 30,
+      "people_state": "LIVING"
+    },
+    {
+      "stratum_id": "THY-PLACE-CASTLE-001/ERA_1922",
+      "era_id": "ERA_1922",
+      "place_id": "THY-PLACE-CASTLE-001",
+      "native_name": "UNSEALED_PENDING_CHAIRMAN",
+      "site_ground": "Raised stone shelf above the approach",
+      "orientation": "Principal face toward the water approach",
+      "approach": "Single ascending road from the low ground",
+      "water_relation": "Overlooks the water approach; does not stand in it",
+      "footprint_origin": "Original keep footprint, never relocated",
+      "name_rendering": "UNSEALED",
+      "rooms": "Great hall retained; chapel closed; two ranges converted to offices and lodging; kitchens modernised",
+      "walls": "Curtain wall breached on the south side and left open; ditch filled",
+      "repairs": "Electrical runs surface-mounted; hall roof patched after storm loss",
+      "objects": "Electric light on the main floors, telephone at the steward's desk, motor vehicles in the old stable court",
+      "occupants": "Resident household reduced; part of the building let",
+      "staff": "Housekeeper, driver, groundsman, office clerk",
+      "businesses": "Estate office, motor garage in the stable court, grain store let to a tenant",
+      "furniture": "Era chairs and desks beside retained timber pieces",
+      "art": "Earlier portraits retained and re-hung; photographs added",
+      "family_relationships": "UNSEALED",
+      "capability_ceiling": 55,
+      "people_state": "LIVING"
+    },
+    {
+      "stratum_id": "THY-PLACE-CASTLE-001/ERA_CURRENT",
+      "era_id": "ERA_CURRENT",
+      "place_id": "THY-PLACE-CASTLE-001",
+      "native_name": "UNSEALED_PENDING_CHAIRMAN",
+      "site_ground": "Raised stone shelf above the approach",
+      "orientation": "Principal face toward the water approach",
+      "approach": "Single ascending road from the low ground",
+      "water_relation": "Overlooks the water approach; does not stand in it",
+      "footprint_origin": "Original keep footprint, never relocated",
+      "name_rendering": "UNSEALED",
+      "rooms": "Hall in use; ranges rebuilt for working and residential use; kitchens rebuilt; chapel stabilised, not in service",
+      "walls": "Breach consolidated and left visible as a record of the 1922 state",
+      "repairs": "Structural survey on cycle; roof renewed; services concealed",
+      "objects": "Current-era services throughout, networked systems, current vehicles",
+      "occupants": "Current household and working occupants, UNSEALED",
+      "staff": "Site manager, maintenance, grounds, office",
+      "businesses": "Working offices, events use of the hall, grounds tenancies",
+      "furniture": "Mixed: retained historic pieces beside current-era working furniture",
+      "art": "Full retained sequence from earlier strata, catalogued",
+      "family_relationships": "UNSEALED",
+      "capability_ceiling": 80,
+      "people_state": "LIVING"
+    }
+  ],
+
+  "provenance": {
+    "serial": "THY-PLACE-CASTLE-001",
+    "recorded_by": "THYLORA backend of record",
+    "workroom": "WR-TIMERUN-581",
+    "directive": "THY-WORK-TIME-RUN-LIVE-TRAVERSAL-581",
+    "authored": "2026-09-21",
+    "record_state": "PENDING_FULFILLMENT"
+  },
+
+  "chairman_decisions_required": [
+    "Select NAME-A, NAME-B or NAME-C, or reject all three and restate the derivation",
+    "Name the native language of EdereAriah so the derivation has a named source",
+    "Seal or leave open the 1700s household, staff and family relationships",
+    "Confirm whether the castle is a Time Run threshold site (binds ENTRY_EXIT)"
+  ]
+}

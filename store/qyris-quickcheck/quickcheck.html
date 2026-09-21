@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>QYRIS QuickCheck</title>
+<meta name="description" content="A twelve-minute check you run on one decision before you commit to it.">
+<link rel="stylesheet" href="./quickcheck.css">
+</head>
+<body>
+
+<div class="toolbar screen-only" role="toolbar" aria-label="QuickCheck controls">
+  <strong>QYRIS QuickCheck</strong>
+  <span class="note">THY-QYRIS-QUICKCHECK-001 · REV A</span>
+  <span class="spacer"></span>
+  <button type="button" id="jumpSheet">Go to the sheet</button>
+  <button type="button" id="clearSheet">Clear my answers</button>
+  <button type="button" id="printDoc">Print / save as PDF</button>
+</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="mk-q" viewBox="0 0 48 48">
+    <path d="M24 5a19 19 0 1 1-13.4 32.4" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="24" cy="24" r="3.4" fill="currentColor"/>
+  </symbol>
+  <symbol id="mk-y" viewBox="0 0 48 48">
+    <line x1="4" y1="24" x2="44" y2="24" stroke="currentColor" stroke-width="1.5"/>
+    <rect x="11" y="9" width="10" height="15" fill="currentColor"/>
+    <rect x="27" y="24" width="10" height="11" fill="none" stroke="currentColor" stroke-width="2.4"/>
+  </symbol>
+  <symbol id="mk-r" viewBox="0 0 48 48">
+    <rect x="3" y="17" width="14" height="14" rx="7" fill="none" stroke="currentColor" stroke-width="3"/>
+    <rect x="17" y="19" width="14" height="10" rx="5" fill="none" stroke="var(--accent)" stroke-width="1.4"/>
+    <rect x="31" y="17" width="14" height="14" rx="7" fill="none" stroke="currentColor" stroke-width="3"/>
+  </symbol>
+  <symbol id="mk-i" viewBox="0 0 48 48">
+    <line x1="10" y1="6" x2="10" y2="42" stroke="currentColor" stroke-width="2"/>
+    <line x1="38" y1="6" x2="38" y2="42" stroke="currentColor" stroke-width="2"/>
+    <line x1="10" y1="38" x2="38" y2="38" stroke="currentColor" stroke-width="3.4"/>
+    <line x1="10" y1="29" x2="38" y2="29" stroke="currentColor" stroke-width="2.6" stroke-dasharray="6 4"/>
+    <line x1="10" y1="20" x2="38" y2="20" stroke="currentColor" stroke-width="2" stroke-dasharray="2 4"/>
+    <line x1="10" y1="11" x2="38" y2="11" stroke="var(--accent)" stroke-width="1" stroke-dasharray="1 5"/>
+  </symbol>
+  <symbol id="mk-s" viewBox="0 0 48 48">
+    <path d="M9 40V14a5 5 0 0 1 5-5h20a5 5 0 0 1 5 5v26" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    <line x1="4" y1="26" x2="44" y2="26" stroke="var(--accent)" stroke-width="3.4" stroke-linecap="round"/>
+  </symbol>
+</defs></svg>
+
+<!-- ============================================================ PAGE 1 -->
+<section class="page">
+  <div class="page-head"><b>QYRIS QuickCheck</b><span>THY-QYRIS-QUICKCHECK-001 · Rev A</span></div>
+
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
+    <p class="kicker">A twelve-minute check on one decision</p>
+    <h1>You do not need a better gut.<br>You need one pass that is<br>hard to fake.</h1>
+    <p class="lead" style="max-width:5.4in;margin-top:20px">Five moves, in order. Each one asks for something you can point at. At the end a rule table &mdash; not a score, not a feeling &mdash; tells you which of four things to do, and names the rule it used so you can argue with it.</p>
+
+    <div style="margin:38px 0 8px">
+      <svg viewBox="0 0 640 96" width="100%" height="96" role="img" aria-label="The five moves: Question, Yield, Reason, Inspect, Safeguard">
+        <line x1="8" y1="76" x2="632" y2="76" stroke="var(--rule-firm)" stroke-width="1"/>
+        <g color="var(--ink)">
+          <use href="#mk-q" x="16"  y="16" width="46" height="46"/>
+          <use href="#mk-y" x="150" y="16" width="46" height="46"/>
+          <use href="#mk-r" x="284" y="16" width="46" height="46"/>
+          <use href="#mk-i" x="418" y="16" width="46" height="46"/>
+          <use href="#mk-s" x="552" y="16" width="46" height="46"/>
+        </g>
+        <g font-family="Helvetica, Arial, sans-serif" font-size="9.5" letter-spacing="2.6" fill="var(--ink-faint)">
+          <text x="16"  y="92">QUESTION</text>
+          <text x="150" y="92">YIELD</text>
+          <text x="284" y="92">REASON</text>
+          <text x="418" y="92">INSPECT</text>
+          <text x="552" y="92">SAFEGUARD</text>
+        </g>
+        <g fill="var(--rule-firm)">
+          <circle cx="16" cy="76" r="3"/><circle cx="150" cy="76" r="3"/><circle cx="284" cy="76" r="3"/>
+          <circle cx="418" cy="76" r="3"/><circle cx="552" cy="76" r="3"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="page-foot"><span>THYLORA</span><span>Page 1 of 14</span></div>
+</section>
+
+<!-- ============================================================ PAGE 2 -->
+<section class="page">
+  <div class="page-head"><b>What this is</b><span>Page 2</span></div>
+  <h2>What it is, and what it is not.</h2>
+  <div class="two" style="margin-top:18px">
+    <div>
+      <h4>It is</h4>
+      <p class="small"><strong>A pass over one decision.</strong> One decision, one sheet. Not your life, not your quarter, not your five-year plan.</p>
+      <p class="small"><strong>A way of separating what you saw from what you were told, what you assumed and what you are hoping.</strong> Most decisions do not fail on logic. They fail because one link in the chain was hope wearing the clothes of a fact.</p>
+      <p class="small"><strong>Auditable.</strong> The verdict comes from five ordered rules. The sheet prints the rule that fired. If you think the rule is wrong, you can say exactly which one and why.</p>
+      <p class="small"><strong>Re-runnable.</strong> A hold is not a no. It names the missing fact. You go and get it, and you run the sheet again.</p>
+    </div>
+    <div>
+      <h4>It is not</h4>
+      <p class="small"><strong>Not a score.</strong> Nothing here gets rated out of ten. A number invented from nothing is the exact thing this replaces.</p>
+      <p class="small"><strong>Not a personality read.</strong> It asks nothing about you. It asks about the decision.</p>
+      <p class="small"><strong>Not advice.</strong> It does not know your situation. It applies your own answers to a fixed table and shows its working.</p>
+      <p class="small"><strong>Not a brake.</strong> Eight of the forty-eight possible input combinations return a clean <em>Proceed</em>, and ten more return <em>Proceed with safeguard</em>. It is built to let you move, with your eyes open.</p>
+    </div>
+  </div>
+
+  <div class="test-box" style="margin-top:22px">
+    <div class="label">The one rule of use</div>
+    <p>Fill it in before you commit, not after. Filled in afterwards it is a justification, and a justification always passes.</p>
+  </div>
+
+  <h4 style="margin-top:24px">Where the name comes from</h4>
+  <p class="small">QYRIS is the working discipline behind it: <strong>Question, Yield, Reason, Inspect, Safeguard</strong>. The five moves are the discipline applied to one decision at a time. Nothing in the method depends on knowing that.</p>
+
+  <div class="page-foot"><span>QYRIS QuickCheck</span><span>Page 2 of 14</span></div>
+</section>
+
+<!-- ============================================================ PAGE 3 -->
+<section class="page">
+  <div class="page-head"><b>The twelve minutes</b><span>Page 3</span></div>
+  <h2>Twelve minutes, spent unevenly on purpose.</h2>
+  <p class="small" style="max-width:5.6in">The two long moves are <strong>Reason</strong> and <strong>Inspect</strong>, because that is where decisions actually break. If you find yourself spending eight minutes on <strong>Question</strong>, you have not got a decision yet &mdash; you have got a worry.</p>
+
+  <div style="margin:26px 0">
+    <svg viewBox="0 0 640 118" width="100%" height="118" role="img" aria-label="Twelve minutes split across the five moves: two, two, three, three, two">
+      <g>
+        <rect x="0"   y="18" width="106" height="34" fill="none" stroke="var(--ink)" stroke-width="1.4"/>
+        <rect x="106" y="18" width="106" height="34" fill="none" stroke="var(--ink)" stroke-width="1.4"/>
+        <rect x="212" y="18" width="160" height="34" fill="var(--accent-pale)" stroke="var(--accent)" stroke-width="1.6"/>
+        <rect x="372" y="18" width="160" height="34" fill="var(--accent-pale)" stroke="var(--accent)" stroke-width="1.6"/>
+        <rect x="532" y="18" width="106" height="34" fill="none" stroke="var(--ink)" stroke-width="1.4"/>
+      </g>
+      <g font-family="Helvetica, Arial, sans-serif" font-size="10" letter-spacing="2.2" fill="var(--ink)">
+        <text x="12"  y="40">Q · 2 MIN</text>
+        <text x="118" y="40">Y · 2 MIN</text>
+        <text x="224" y="40">R · 3 MIN</text>
+        <text x="384" y="40">I · 3 MIN</text>
+        <text x="544" y="40">S · 2 MIN</text>
+      </g>
+      <line x1="0" y1="64" x2="638" y2="64" stroke="var(--rule-firm)" stroke-width="1"/>
+      <g font-family="Helvetica, Arial, sans-serif" font-size="8.5" fill="var(--ink-faint)">
+        <text x="0" y="80">0</text><text x="206" y="80">4</text><text x="366" y="80">7</text><text x="526" y="80">10</text><text x="614" y="80">12 min</text>
+      </g>
+      <g font-family="Helvetica, Arial, sans-serif" font-size="9" fill="var(--accent)" letter-spacing="1.4">
+        <text x="212" y="104">The six minutes in the middle are where the decision is actually made.</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="three" style="margin-top:6px">
+    <div><h4>Alone or with one other</h4><p class="small">Two people is the best size. A second person is the cheapest instrument you own for finding a weak link.</p></div>
+    <div><h4>Written, not thought</h4><p class="small">Hand or keyboard, it does not matter. Unwritten answers drift while you are writing the next one.</p></div>
+    <div><h4>Once per decision</h4><p class="small">If the decision changes shape &mdash; smaller, later, split in two &mdash; that is a new decision. New sheet.</p></div>
+  </div>
+
+  <div class="page-foot"><span>QYRIS QuickCheck</span><span>Page 3 of 14</span></div>
+</section>
+
+<!-- ============================================================ PAGE 4 -->
+<section class="page">
+  <div class="page-head"><b>Visual grammar</b><span>Page 4</span></div>
+  <h2>Four marks, used the same way every time.</h2>
+  <p class="small" style="max-width:5.6in">Every diagram in this document is built from these four. Once you know them you can read any page of the sheet at a glance, including someone else&rsquo;s filled-in copy.</p>
+
+  <div style="margin-top:22px">
+    <div class="registers">
+      <div>
+        <div class="label">Amber</div>
+        <div class="body"><strong>Amber means one thing: the weakest part.</strong> It is never decoration and never a warning of danger. Where you see amber, that is the place the decision is most likely to break. It appears at most once per diagram.</div>
+      </div>
+      <div>
+        <div class="label">Chain</div>
+        <div class="body"><strong>A chain is a reasoning chain.</strong> Thick links are premises you can point at. The thin amber link is the one you would least want tested. A chain is exactly as strong as its thinnest link &mdash; never the average of its links.</div>
+      </div>
+      <div>
+        <div class="label">Ladder</div>
+        <div class="body"><strong>A ladder is the evidence ladder</strong>, and it always reads bottom-up: solid rung = observed, dashed = reported, dotted = assumed, faint = hoped. Height on the ladder is not quality of thinking. It is distance from something you could actually check.</div>
+      </div>
+      <div>
+        <div class="label">Bracket</div>
+        <div class="body"><strong>A bracket with a bar across it is a safeguard</strong>: the bracket is the decision, the bar is the thing that stops it. A bracket drawn without its bar is a decision with no stop rule.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:26px">
+    <svg viewBox="0 0 640 120" width="100%" height="120" role="img" aria-label="The evidence ladder: observed, reported, assumed, hoped">
+      <line x1="60" y1="10" x2="60" y2="104" stroke="var(--ink)" stroke-width="2"/>
+      <line x1="300" y1="10" x2="300" y2="104" stroke="var(--ink)" stroke-width="2"/>
+      <line x1="60" y1="96" x2="300" y2="96" stroke="var(--ink)" stroke-width="4"/>
+      <line x1="60" y1="70" x2="300" y2="70" stroke="var(--ink)" stroke-width="3" stroke-dasharray="9 5"/>
+      <line x1="60" y1="44" x2="300" y2="44" stroke="var(--ink)" stroke-width="2.2" stroke-dasharray="3 5"/>
+      <line x1="60" y1="18" x2="300" y2="18" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="1 6"/>
+      <g font-family="Helvetica, Arial, sans-serif" font-size="10.5" letter-spacing="1.6">
+        <text x="318" y="100" fill="var(--ink)">OBSERVED &mdash; you saw it, or it is in writing in front of you</text>
+        <text x="318" y="74"  fill="var(--ink)">REPORTED &mdash; someone who would know told you</text>
+        <text x="318" y="48"  fill="var(--ink)">ASSUMED &mdash; it is reasonable, and nobody has checked</text>
+        <text x="318" y="22"  fill="var(--accent)">HOPED &mdash; you need it to be true</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="test-box">
+    <div class="label">Why the ladder is the whole trick</div>
+    <p>Almost nobody confuses <em>observed</em> with <em>hoped</em> when they are forced to write them in different places. Nearly everybody confuses them while thinking.</p>
+  </div>
+
+  <div class="page-foot"><span>QYRIS QuickCheck</span><span>Page 4 of 14</span></div>
+</section>
+
+<!-- ============================================================ PAGE 5 -->
+<section class="page">
+  <div class="page-head"><b>Move one</b><span>Page 5</span></div>
+  <div class="move-mark">
+    <svg width="46" height="46" style="color:var(--ink)" aria-hidden="true"><use href="#mk-q" width="46" height="46"/></svg>
+    <div><span class="letter">Q</span> <span class="naming">&nbsp;Question &middot; 2 minutes</span></div>
+  </div>
+  <h2>State it as a choice between things you could actually do.</h2>
+  <p class="small" style="max-width:5.6in">Most bad decisions are bad questions. &ldquo;Should I do something about this?&rdquo; has no answer. &ldquo;Do I do A, or B, or wait thirty days?&rdquo; has three.</p>
+
+  <div class="registers" style="margin-top:20px">
+    <div><div class="label">Plain</div><div class="body">What exactly are you choosing between? Write the options down.</div></div>
+    <div><div class="label">Everyday</div><div class="body">Write it as &ldquo;Do I do A, or B?&rdquo; with A and B being things you could start on Monday. If you can only name one option, you are not deciding, you are bracing yourself.</div></div>
+    <div><div class="label">Technical</div><div class="body">Express the decision as a set of mutually exclusive, individually executable alternatives, including the null alternative. An option set of size one is a commitment already made and should be checked as such.</div></div>
+  </div>
+
+  <div class="test-box">
+    <div class="label">The test for this move</div>
+    <p>Can you name at least two options, and could a stranger start on either one tomorrow without asking you a question? If not, keep writing.</p>
+  </div>
+
+  <h4 style="margin-top:22px">Three things that fail this test</h4>
+  <table>
+    <thead><tr><th style="width:2.6in">What gets written</th><th>Why it fails</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Written">&ldquo;Whether to deal with the supplier situation.&rdquo;</td><td data-label="Why it fails">No options. This is a topic.</td></tr>
+      <tr><td data-label="Written">&ldquo;Whether to be smarter about spending.&rdquo;</td><td data-label="Why it fails">Nobody can start it tomorrow.</td></tr>
+      <tr><td data-label="Written">&ldquo;Whether to take the offer.&rdquo;</td><td data-label="Why it fails">One option. The alternative is unwritten, so it will not get checked.</td></tr>
+    </tbody>
+  </table>
+
+  <p class="tiny" style="margin-top:16px">Always include <strong>wait</strong> as an option if waiting is genuinely available, and say how long. &ldquo;Wait&rdquo; with no end date is not an option, it is a mood.</p>
+
+  <div class="page-foot"><span>QYRIS QuickCheck</span><span>Page 5 of 14</span></div>
+</section>
+
+<!-- ============================================================ PAGE 6 -->
+<section class="page">
+  <div class="page-head"><b>Move two</b><span>Page 6</span></div>
+  <div class="move-mark">
+    <svg width="46" height="46" style="color:var(--ink)" aria-hidden="true"><use href="#mk-y" width="46" height="46"/></svg>
+    <div><span class="letter">Y</span> <span class="naming">&nbsp;Yield &middot; 2 minutes</span></div>
+  </div>
+  <h2>What it gives you if it works. What it takes if it does not.</h2>
+  <p class="small" style="max-width:5.6in">In the same units, where units exist. Money against money, weeks against weeks. A yield in money against a cost in dignity cannot be compared, and pretending otherwise is how people talk themselves into things.</p>
+
+  <div style="margin:22px 0">
+    <svg viewBox="0 0 640 160" width="100%" height="160" role="img" aria-label="Yield above the line, exposure below, with the absorbable limit marked">
+      <line x1="0" y1="80" x2="640" y2="80" stroke="var(--ink)" stroke-width="1.6"/>
+      <rect x="40"  y="34" width="110" height="46" fill="var(--ink)"/>
+      <rect x="40"  y="80" width="110" height="28" fill="none" stroke="var(--ink)" stroke-width="2"/>
+      <rect x="300" y="52" width="110" height="28" fill="var(--ink)"/>
+      <rect x="300" y="80" width="110" height="62" fill="none" stroke="var(--accent)" stroke-width="2.4"/>
+      <line x1="270" y1="126" x2="450" y2="126" stroke="var(--accent)" stroke-width="1.4" stroke-dasharray="5 4"/>
+      <g font-family="Helvetica, Arial, sans-serif" font-size="10" letter-spacing="1.8">
+        <text x="40"  y="26" fill="var(--ink)">YIELD IF IT WORKS</text>
+        <text x="40"  y="126" fill="var(--ink-faint)">COST IF IT FAILS</text>
+        <text x="170" y="60" fill="var(--ink-faint)">SURVIVABLE</text>
+        <text x="430" y="122" fill="var(--accent)">WHAT YOU CAN ABSORB</text>
+        <text x="430" y="140" fill="var(--accent)">EXPOSURE BELOW THE LINE</text>
+      </g>
+      <g font-family="Helvetica, Arial, sans-serif" font-size="9" fill="var(--ink-faint)">
+        <text x="40" y="156">A decision worth taking</text>
+        <text x="300" y="156">A decision that can end you</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="registers">
+    <div><div class="label">Plain</div><div class="body">What do you get, and what does it cost you if you are wrong?</div></div>
+    <div><div class="label">Everyday</div><div class="body">Write both numbers. Then ask the only question that matters here: <strong>if the bad case happens in full, are you still standing?</strong></div></div>
+    <div><div class="label">Technical</div><div class="body">Compare expected yield against maximum drawdown, not against expected loss. Probability-weighting an outcome you cannot survive is a category error: you do not get to play the average, you get the outcome.</div></div>
+  </div>
+
+  <div class="test-box">
+    <div class="label">The test for this move</div>
+    <p>Write the worst realistic case &mdash; not the worst imaginable one &mdash; in full. Then answer yes or no: <strong>can you absorb that?</strong> That yes or no goes straight into the readout.</p>
+  </div>
+
+  <div class="page-foot"><span>QYRIS QuickCheck</span><span>Page 6 of 14</span></div>
+</section>
+
+<!-- ============================================================ PAGE 7 -->
+<section class="page">
+  <div class="page-head"><b>Move three</b><span>Page 7</span></div>
+  <div class="move-mark">
+    <svg width="46" height="46" style="color:var(--ink)" aria-hidden="true"><use href="#mk-r" width="46" height="46"/></svg>
+    <div><span class="letter">R</span> <span class="naming">&nbsp;Reason &middot; 3 minutes</span></div>
+  </div>
+  <h2>Write the chain. Then point at the thinnest link.</h2>
+
+  <div style="margin:20px 0 24px">
+    <svg viewBox="0 0 640 128" width="100%" height="128" role="img" aria-label="A three-link reasoning chain with the middle link thin and amber">
+      <rect x="18"  y="40" width="150" height="48" rx="24" fill="none" stroke="var(--ink)" stroke-width="3.4"/>
+      <rect x="182" y="48" width="150" height="32" rx="16" fill="none" stroke="var(--accent)" stroke-width="1.3"/>
+      <rect x="346" y="40" width="150" height="48" rx="24" fill="none" stroke="var(--ink)" stroke-width="3.4"/>
+      <rect x="510" y="40" width="112" height="48" rx="6" fill="var(--ink)"/>
+      <g font-family="Helvetica, Arial, sans-serif" font-size="10" letter-spacing="1.2">
+        <text x="40"  y="69" fill="var(--ink)">BECAUSE THIS</text>
+        <text x="204" y="69" fill="var(--accent)">AND BECAUSE THIS</text>
+        <text x="372" y="69" fill="var(--ink)">AND BECAUSE THIS</text>
+        <text x="532" y="69" fill="var(--paper)">THEREFORE</text>
+      </g>
+      <g font-family="Helvetica, Arial, sans-serif" font-size="9" fill="var(--accent)">
+        <text x="182" y="108">The chain is exactly this strong. Not the average of the three.</text>
+      </g>
+      <line x1="182" y1="92" x2="332" y2="92" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3 3"/>
+    </svg>
+  </div>
+
+  <div class="registers">
+    <div><div class="label">Plain</div><div class="body">Why do you think this will work?</div></div>
+    <div><div class="label">Everyday</div><div class="body">Say it out loud as &ldquo;because&hellip; and because&hellip; therefore&hellip;&rdquo;. Then point at the <em class="weak">because</em> you would least want a stranger to test.</div></div>
+    <div><div class="label">Technical</div><div class="body">Decompose the decision into a premise chain terminating in the action. Chain strength is the minimum over premise strengths, not the mean. Identify the argmin premise; that premise, not the conclusion, is what the rest of the check is about.</div></div>
+  </div>
+
+  <div class="test-box">
+    <div class="label">The test for this move</div>
+    <p>Three <em>becauses</em> is usually enough. If you cannot get to three, the chain is short because it is unexamined, not because it is simple. If you need nine, you are defending rather than reasoning.</p>
+  </div>
+
+  <p class="tiny" style="margin-top:18px"><strong>Carry the thinnest link forward.</strong> It is the only thing from this move that the readout uses. Everything else you wrote here was to find it.</p>
+
+  <div class="page-foot"><span>QYRIS QuickCheck</span><span>Page 7 of 14</span></div>
+</section>
+
+<!-- ============================================================ PAGE 8 -->
+<section class="page">
+  <div class="page-head"><b>Move four</b><span>Page 8</span></div>
+  <div class="move-mark">
+    <svg width="46" height="46" style="color:var(--ink)" aria-hidden="true"><use href="#mk-i" width="46" height="46"/></svg>
+    <div><span class="letter">I</span> <span class="naming">&nbsp;Inspect &middot; 3 minutes</span></div>
+  </div>
+  <h2>Put the thinnest link on the ladder. Honestly.</h2>
+  <p class="small" style="max-width:5.6in">This is the move the whole sheet exists for. Take the <em class="weak">because</em> you pointed at, and find which rung it is standing on.</p>
+
+  <table style="margin-top:18px">
+    <thead><tr><th style="width:1.0in">Rung</th><th style="width:2.5in">It is here when&hellip;</th><th>What moves it down a rung</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Rung"><strong>Observed</strong></td><td data-label="It is here when">You saw it, or it is in writing in front of you right now.</td><td data-label="What moves it">Nothing. It is already as low as it goes.</td></tr>
+      <tr><td data-label="Rung"><strong>Reported</strong></td><td data-label="It is here when">Someone who would actually know told you.</td><td data-label="What moves it">Ask for it in writing. Usually takes one message.</td></tr>
+      <tr><td data-label="Rung"><strong>Assumed</strong></td><td data-label="It is here when">It is reasonable, and nobody has checked.</td><td data-label="What moves it">Name the cheapest check that would settle it, and its price.</td></tr>
+      <tr><td data-label="Rung"><strong style="color:var(--accent)">Hoped</strong></td><td data-label="It is here when">You need it to be true, and you have nothing.</td><td data-label="What moves it">Nothing cheap. This is why <em>hoped</em> always returns a hold.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="registers" style="margin-top:20px">
+    <div><div class="label">Plain</div><div class="body">How do you know that?</div></div>
+    <div><div class="label">Everyday</div><div class="body">Sort what you &ldquo;know&rdquo; into four piles: saw it, was told it, assumed it, hoping it. Your thinnest link sits in exactly one pile.</div></div>
+    <div><div class="label">Technical</div><div class="body">Classify the argmin premise by evidence provenance rather than by confidence. Self-reported confidence correlates poorly with provenance class, which is precisely why the class, not the confidence, is the input to the readout.</div></div>
+  </div>
+
+  <div class="test-box">
+    <div class="label">Then write the disconfirmer</div>
+    <p>One sentence: <strong>what would have to be true for me to drop this?</strong> If nothing you can name would change your mind, you are not checking a decision, you are announcing one.</p>
+  </div>
+
+  <div class="page-foot"><span>QYRIS QuickCheck</span><span>Page 8 of 14</span></div>
+</section>
+
+<!-- ============================================================ PAGE 9 -->
+<section class="page">
+  <div class="page-head"><b>Move five</b><span>Page 9</span></div>
+  <div class="move-mark">
+    <svg width="46" height="46" style="color:var(--ink)" aria-hidden="true"><use href="#mk-s" width="46" height="46"/></svg>
+    <div><span class="letter">S</span> <span class="naming">&nbsp;Safeguard &middot; 2 minutes</span></div>
+  </div>
+  <h2>What protects you if the thin link snaps.</h2>
+
+  <div style="margin:20px 0 22px">
+    <svg viewBox="0 0 640 132" width="100%" height="132" role="img" aria-label="Reversal cost dial with three segments: low, medium, high">
+      <path d="M60 110 A 80 80 0 0 1 106 37"  fill="none" stroke="var(--ink)" stroke-width="16"/>
+      <path d="M112 33 A 80 80 0 0 1 208 33"  fill="none" stroke="var(--ink-faint)" stroke-width="16"/>
+      <path d="M214 37 A 80 80 0 0 1 260 110" fill="none" stroke="var(--accent)" stroke-width="16"/>
+      <g font-family="Helvetica, Arial, sans-serif" font-size="9.5" letter-spacing="1.6">
+        <text x="16"  y="128" fill="var(--ink)">LOW</text>
+        <text x="132" y="22"  fill="var(--ink-faint)">MEDIUM</text>
+        <text x="232" y="128" fill="var(--accent)">HIGH</text>
+        <text x="310" y="46" fill="var(--ink)" font-size="10.5">LOW &mdash; you can undo it this week, at little cost.</text>
+        <text x="310" y="72" fill="var(--ink)" font-size="10.5">MEDIUM &mdash; undoing it costs real money or real time.</text>
+        <text x="310" y="98" fill="var(--accent)" font-size="10.5">HIGH &mdash; once it is done it is done.</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="small"><strong>A stop rule is one sentence with two halves:</strong> the observation that makes you stop, and what you do instead. &ldquo;I&rsquo;ll keep an eye on it&rdquo; is not a stop rule. &ldquo;If the inspection finds a second fault over $800, I do not repair &mdash; I sell as-is&rdquo; is one.</p>
+
+  <div class="registers" style="margin-top:14px">
+    <div><div class="label">Plain</div><div class="body">If you are wrong, how do you get out, and when do you decide to?</div></div>
+    <div><div class="label">Everyday</div><div class="body">Write the stop rule down and tell one person who is not invested in the answer. A stop rule nobody else knows about gets quietly revised at the worst moment.</div></div>
+    <div><div class="label">Technical</div><div class="body">Pre-commit an exit condition on an observable, not on a feeling, and externalise it to a witness. The function of the witness is to raise the cost of silent revision at the point where your judgement is least reliable.</div></div>
+  </div>
+
+  <div class="test-box">
+    <div class="label">The test for this move</div>
+    <p>Read your stop rule to someone and ask them: <strong>&ldquo;Would you know when this had happened?&rdquo;</strong> If they hesitate, it is not observable yet.</p>
+  </div>
+
+  <div class="page-foot"><span>QYRIS QuickCheck</span><span>Page 9 of 14</span></div>
+</section>
+
+<!-- ============================================================ PAGE 10 -->
+<section class="page">
+  <div class="page-head"><b>The readout</b><span>Page 10</span></div>
+  <h2>Five rules, in order. The first one that matches is your answer.</h2>
+  <p class="small" style="max-width:5.7in">Four things come out of the five moves: the rung your <strong>thinnest link</strong> stands on, the <strong>reversal cost</strong>, whether you <strong>can absorb</strong> the bad case, and whether a <strong>stop rule</strong> is written. That is all the table needs.</p>
+
+  <table style="margin-top:16px">
+    <thead><tr><th>Rule</th><th style="width:2.5in">Fires when</th><th style="width:1.35in">Verdict</th><th>Because</th></tr></thead>
+    <tbody>
+      <tr><td class="rule-id" data-label="Rule">R1</td><td data-label="Fires when">You cannot absorb the bad case <strong>and</strong> you cannot undo it.</td><td data-label="Verdict"><strong>Decline</strong></td><td data-label="Because">Two failures that are survivable apart are not survivable together.</td></tr>
+      <tr><td class="rule-id" data-label="Rule">R2</td><td data-label="Fires when">Your thinnest link is <em class="weak">hoped</em>.</td><td data-label="Verdict"><strong>Hold for one more fact</strong></td><td data-label="Because">Hope is not an evidence class. One fact usually moves it, and one fact is cheap.</td></tr>
+      <tr><td class="rule-id" data-label="Rule">R3</td><td data-label="Fires when">You cannot absorb the bad case, though you could undo it.</td><td data-label="Verdict"><strong>Hold for one more fact</strong></td><td data-label="Because">Shrink it until you can absorb it. The smaller version is a different decision &mdash; run it again.</td></tr>
+      <tr><td class="rule-id" data-label="Rule">R4</td><td data-label="Fires when">It is hard to undo, <strong>or</strong> your thinnest link is <em>assumed</em>.</td><td data-label="Verdict"><strong>Proceed with safeguard</strong></td><td data-label="Because">Either is survivable with a stop rule. Neither is survivable without one.</td></tr>
+      <tr><td class="rule-id" data-label="Rule">R5</td><td data-label="Fires when">Nothing above fired.</td><td data-label="Verdict"><strong>Proceed</strong></td><td data-label="Because">The chain holds on evidence you can point at, and being wrong is affordable.</td></tr>
+    </tbody>
+  </table>
+
+  <div style="margin:22px 0 4px">
+    <svg viewBox="0 0 640 96" width="100%" height="96" role="img" aria-label="How the forty-eight possible input combinations distribute across the four verdicts">
+      <g>
+        <rect x="0"   y="24" width="107" height="30" fill="var(--ink)"/>
+        <rect x="107" y="24" width="293" height="30" fill="var(--ink-faint)"/>
+        <rect x="400" y="24" width="133" height="30" fill="none" stroke="var(--ink)" stroke-width="2"/>
+        <rect x="533" y="24" width="107" height="30" fill="none" stroke="var(--accent)" stroke-width="2"/>
+      </g>
+      <g font-family="Helvetica, Arial, sans-serif" font-size="9.5" letter-spacing="1.3">
+        <text x="0"   y="18" fill="var(--ink)">DECLINE &middot; 8</text>
+        <text x="107" y="18" fill="var(--ink-faint)">HOLD &middot; 22</text>
+        <text x="400" y="18" fill="var(--ink)">SAFEGUARD &middot; 10</text>
+        <text x="640" y="18" fill="var(--accent)" text-anchor="end">PROCEED &middot; 8</text>
+      </g>
+      <text x="0" y="76" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="var(--ink-faint)">All 48 possible input combinations. Every one reaches exactly one verdict, and every rule can fire.</text>
+    </svg>
+  </div>
+
+  <div class="test-box">
+    <div class="label">A hold is not a no</div>
+    <p>Twenty-two of the forty-eight combinations return a hold, and a hold always names the missing fact. Most holds cost one phone call or one inspection and then the sheet is run again.</p>
+  </div>
+
+  <div class="page-foot"><span>QYRIS QuickCheck</span><span>Page 10 of 14</span></div>
+</section>
+
+<!-- ============================================================ PAGE 11 -->
+<section class="page">
+  <div class="page-head"><b>Worked example &middot; one</b><span>Page 11</span></div>
+  <p class="kicker">A real, ordinary decision, filled in properly</p>
+  <h2>The transmission quote is $4,200. The car is worth about $6,800.</h2>
+
+  <h4 style="margin-top:20px">Q &middot; Question</h4>
+  <div class="filled hand">A &mdash; pay $4,200 for the transmission repair and keep the car.<br>
+  B &mdash; sell it as-is for about $1,900 and buy a replacement at about $9,500.<br>
+  C &mdash; do nothing for thirty days and use the second car.</div>
+  <div class="annot">Three options. Each one could be started tomorrow. &ldquo;Wait&rdquo; has an end date.</div>
+
+  <h4>Y &middot; Yield</h4>
+  <div class="filled hand"><strong>If it works:</strong> about three more years of use, no new car payment. Roughly $5,300 better than option B over those three years.<br>
+  <strong>If it fails:</strong> $4,200 spent and still needing to replace &mdash; about $13,700 in total, against $9,500 if I go straight to B.<br>
+  <strong>Can I absorb $4,200 going nowhere?</strong> Yes. It hurts. It does not end anything.</div>
+  <div class="annot">Both sides in dollars. The absorb answer is a plain yes.</div>
+
+  <h4>R &middot; Reason</h4>
+  <div class="filled hand"><strong>Because</strong> the transmission is the only fault the shop has named,<br>
+  <strong>and because</strong> the rest of the car has about three years left in it,<br>
+  <strong>and because</strong> $4,200 for three years beats $9,500 for the same three years,<br>
+  <strong>therefore</strong> I repair it.</div>
+
+  <div style="margin:10px 0 4px">
+    <svg viewBox="0 0 640 86" width="100%" height="86" role="img" aria-label="The three-link chain for this decision with the middle link marked as weakest">
+      <rect x="6"   y="24" width="190" height="40" rx="20" fill="none" stroke="var(--ink)" stroke-width="3.2"/>
+      <rect x="212" y="30" width="190" height="28" rx="14" fill="none" stroke="var(--accent)" stroke-width="1.3"/>
+      <rect x="418" y="24" width="216" height="40" rx="20" fill="none" stroke="var(--ink)" stroke-width="3.2"/>
+      <g font-family="Helvetica, Arial, sans-serif" font-size="9.5" letter-spacing=".6">
+        <text x="24"  y="48" fill="var(--ink)">ONLY FAULT NAMED</text>
+        <text x="228" y="48" fill="var(--accent)">THREE YEARS LEFT IN IT</text>
+        <text x="436" y="48" fill="var(--ink)">$4,200 BEATS $9,500</text>
+        <text x="212" y="80" fill="var(--accent)">THE THINNEST LINK</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="page-foot"><span>QYRIS QuickCheck</span><span>Page 11 of 14</span></div>
+</section>
+
+<!-- ============================================================ PAGE 12 -->
+<section class="page">
+  <div class="page-head"><b>Worked example &middot; two</b><span>Page 12</span></div>
+
+  <h4>I &middot; Inspect &mdash; the thinnest link on the ladder</h4>
+  <div class="filled hand"><strong>Observed:</strong> the written quote; the mileage on the clock.<br>
+  <strong>Reported:</strong> the shop says the engine is sound.<br>
+  <strong>Assumed:</strong> no second major failure in the next three years. &larr; <em class="weak">this is the thin link</em><br>
+  <strong>Hoped:</strong> nothing in this decision rests on hope, now that it is written out.</div>
+  <div class="annot">Rung: ASSUMED. And an assumption is checkable &mdash; that is the difference between R4 and R2.</div>
+
+  <div class="filled hand"><strong>What would change my mind:</strong> any second fault over $800 found before I authorise the work.<br>
+  <strong>Cheapest check that settles it:</strong> a $180 pre-repair inspection of engine, suspension and rust.</div>
+  <div class="annot">$180 to move a $4,200 decision off an assumption. This is the moment the sheet earns its price.</div>
+
+  <h4 style="margin-top:18px">S &middot; Safeguard</h4>
+  <div class="filled hand"><strong>Reversal cost:</strong> HIGH. Once the shop is paid, that money is gone.<br>
+  <strong>Stop rule:</strong> if the $180 inspection finds a second fault over $800, I do not repair &mdash; I go to option B.<br>
+  <strong>Told:</strong> the shop, written on the work order; and my partner.</div>
+
+  <div class="readout-band" style="margin-top:20px">
+    <div>
+      <div class="verdict">Proceed<br>with safeguard</div>
+      <div class="tiny" style="margin-top:8px">Rule R4 fired</div>
+    </div>
+    <div class="why">
+      <p style="margin:0 0 6px"><b>Why:</b> it is hard to undo <b>and</b> the thinnest link is an assumption. Either one alone would have triggered R4.</p>
+      <p style="margin:0 0 6px"><b>What that means here:</b> the $180 inspection and the written stop rule go in <b>before</b> the work is authorised, not after.</p>
+      <p style="margin:0"><b>What the sheet actually did:</b> it turned &ldquo;just fix it&rdquo; into a $180 test that can change the answer. That is the whole return on twelve minutes.</p>
+    </div>
+  </div>
+
+  <div class="test-box" style="margin-top:18px">
+    <div class="label">Note what did not happen</div>
+    <p>The sheet did not tell anyone what to do with their car. It took four answers the owner already had and applied a fixed rule to them &mdash; and named the rule, so the owner can disagree with R4 rather than with a number.</p>
+  </div>
+
+  <div class="page-foot"><span>QYRIS QuickCheck</span><span>Page 12 of 14</span></div>
+</section>
+
+<!-- ============================================================ PAGE 13 -->
+<section class="page" id="sheet">
+  <div class="page-head"><b>The sheet</b><span>Page 13 &middot; one decision per sheet</span></div>
+
+  <div class="sheet">
+    <div class="sheet-band"><span>QYRIS QuickCheck</span><span>THY-QYRIS-QUICKCHECK-001 &middot; Rev A</span></div>
+
+    <div class="sheet-row">
+      <div class="cue"><b>Decision</b><span>&mdash; and the date you filled this in</span></div>
+      <input class="write" data-key="decision" placeholder="In one line">
+      <input class="write" data-key="date" placeholder="Date" style="max-width:2.2in;margin-top:6px">
+    </div>
+
+    <div class="sheet-row">
+      <div class="cue"><b>Q</b><span>&mdash; what am I choosing between? At least two things I could start tomorrow.</span></div>
+      <textarea class="write tall" data-key="q" placeholder="A —&#10;B —&#10;C — wait until ____"></textarea>
+    </div>
+
+    <div class="sheet-row">
+      <div class="cue"><b>Y</b><span>&mdash; what it gives me, what it costs me, and whether I can absorb that</span></div>
+      <input class="write" data-key="y_up" placeholder="If it works:">
+      <input class="write" data-key="y_down" placeholder="If it fails, in full:" style="margin-top:6px">
+      <div class="cue" style="margin:9px 0 0"><span>Can I absorb the bad case?</span></div>
+      <div class="pickrow" data-group="can_absorb">
+        <button type="button" class="pick" data-value="true" aria-pressed="false">Yes</button>
+        <button type="button" class="pick" data-value="false" aria-pressed="false">No</button>
+      </div>
+    </div>
+
+    <div class="sheet-row">
+      <div class="cue"><b>R</b><span>&mdash; because&hellip; and because&hellip; therefore&hellip;</span></div>
+      <textarea class="write tall" data-key="r" placeholder="Because —&#10;and because —&#10;therefore —"></textarea>
+      <input class="write" data-key="r_weak" placeholder="The because I would least want tested:" style="margin-top:6px">
+    </div>
+
+    <div class="sheet-row">
+      <div class="cue"><b>I</b><span>&mdash; which rung is that link standing on?</span></div>
+      <div class="pickrow" data-group="weakest_link">
+        <button type="button" class="pick" data-value="OBSERVED" aria-pressed="false">Observed</button>
+        <button type="button" class="pick" data-value="REPORTED" aria-pressed="false">Reported</button>
+        <button type="button" class="pick" data-value="ASSUMED" aria-pressed="false">Assumed</button>
+        <button type="button" class="pick" data-value="HOPED" aria-pressed="false">Hoped</button>
+      </div>
+      <input class="write" data-key="i_change" placeholder="What would change my mind:" style="margin-top:9px">
+      <input class="write" data-key="i_check" placeholder="Cheapest check that would settle it, and its price:" style="margin-top:6px">
+    </div>
+
+    <div class="sheet-row">
+      <div class="cue"><b>S</b><span>&mdash; what it costs to undo, and what stops me</span></div>
+      <div class="pickrow" data-group="reversal_cost">
+        <button type="button" class="pick" data-value="LOW" aria-pressed="false">Low &mdash; undo it this week</button>
+        <button type="button" class="pick" data-value="MEDIUM" aria-pressed="false">Medium &mdash; costs to undo</button>
+        <button type="button" class="pick" data-value="HIGH" aria-pressed="false">High &mdash; cannot undo</button>
+      </div>
+      <input class="write" data-key="s_stop" placeholder="Stop rule — if ____ happens, I ____ instead" style="margin-top:9px">
+      <div class="pickrow" data-group="stop_rule" style="margin-top:6px">
+        <button type="button" class="pick" data-value="true" aria-pressed="false">Stop rule written</button>
+        <button type="button" class="pick" data-value="false" aria-pressed="false">Not yet</button>
+      </div>
+      <input class="write" data-key="s_told" placeholder="Who I told:" style="margin-top:9px">
+    </div>
+  </div>
+
+  <div class="readout-band">
+    <div>
+      <div class="verdict" id="verdictLabel">Readout</div>
+      <div class="tiny" id="verdictRule" style="margin-top:8px">Answer the four marked choices</div>
+    </div>
+    <div class="why">
+      <p style="margin:0 0 6px" id="verdictMeaning">The verdict comes from four answers: the rung, the reversal cost, whether you can absorb the bad case, and whether a stop rule is written.</p>
+      <p style="margin:0" id="verdictRequired"></p>
+    </div>
+  </div>
+  <p class="tiny" style="margin-top:8px">Printing this page with the four choices left blank gives you a clean paper sheet. Nothing you type is sent anywhere; it stays in this browser on this device.</p>
+
+  <div class="page-foot"><span>QYRIS QuickCheck</span><span>Page 13 of 14</span></div>
+</section>
+
+<!-- ============================================================ PAGE 14 -->
+<section class="page">
+  <div class="page-head"><b>Credits and rights</b><span>Page 14</span></div>
+  <h2>Where this came from, and what you may do with it.</h2>
+
+  <div class="registers" style="margin-top:18px">
+    <div><div class="label">Serial</div><div class="body"><strong>THY-QYRIS-QUICKCHECK-001 &middot; Rev A</strong><br>Issued 21 September 2026.</div></div>
+    <div><div class="label">Credits</div><div class="body">Method, page design, visual grammar, worked example and verdict table: THYLORA.<br>Worked example decision drawn from ordinary vehicle-repair economics; no person and no business is quoted or identified in it.</div></div>
+    <div><div class="label">Provenance</div><div class="body">Authored in the THYLORA source repository under workroom <strong>WR-STORE-QYRIS-581</strong>. The verdict table is not prose: it is executable, at <span style="font-family:var(--mono);font-size:9pt">store/qyris-quickcheck/lib/readout.js</span>, and is covered by fourteen tests asserting that all forty-eight input combinations reach exactly one verdict and that every rule can fire.</div></div>
+    <div><div class="label">Rights</div><div class="body"><strong>You may:</strong> use this for your own decisions and inside your own household, team or business; print it as often as you like; fill it in and keep or share your filled-in sheets as your own work.<br>
+      <strong>You may not:</strong> resell or redistribute the document itself, republish it in whole or in part, present the method as your own, or use it as training data for any model.<br>
+      <strong>Your filled-in answers are yours.</strong> Nothing typed into the sheet leaves the device it was typed on. There is no account, no telemetry and no network call anywhere in this document.</div></div>
+    <div><div class="label">Corrections</div><div class="body">If a rule is wrong, it is meant to be arguable &mdash; that is why every verdict names the rule that produced it. Corrections are issued as a new revision letter with the serial unchanged, never as a silent edit.</div></div>
+  </div>
+
+  <div class="test-box" style="margin-top:22px">
+    <div class="label">What this document does not claim</div>
+    <p>It does not claim to improve outcomes on average, because that has not been measured. What it claims is narrower and checkable: that the same four answers always produce the same verdict, that the verdict names its rule, and that hope never returns a proceed.</p>
+  </div>
+
+  <div class="page-foot"><span>THYLORA &middot; QYRIS QuickCheck &middot; THY-QYRIS-QUICKCHECK-001 Rev A</span><span>Page 14 of 14</span></div>
+</section>
+
+<script src="./quickcheck.js"></script>
+</body>
+</html>
