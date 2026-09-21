@@ -38,10 +38,11 @@ Three products, no others in this delta. **No Bramble. No City Power. No Last Ma
 | Item | SKU | State |
 |---|---|---|
 | `THY-QYRIS-QUICKCHECK-001` | `THY-UTIL-QC-001` | **PREVIEW-READY** — written to the Chairman preview lane |
-| `THY-STUCK-LOOP-RESET-001` | `THY-UTIL-SLR-001` | IN PRODUCTION |
-| `THY-BEFORE-YOU-BUY-001` | `THY-UTIL-BYB-001` | IN PRODUCTION |
+| `THY-STUCK-LOOP-RESET-001` | `THY-UTIL-SLR-001` | **PREVIEW-READY** |
+| `THY-BEFORE-YOU-BUY-001` | `THY-UTIL-BYB-001` | **PREVIEW-READY** |
 
-QuickCheck did not wait for the other two. It went to the preview lane the moment it passed D5.
+QuickCheck did not wait for the other two. It went to the preview lane the moment it passed D5,
+in its own commit, and the other two followed behind it.
 
 ---
 
@@ -59,6 +60,8 @@ QuickCheck did not wait for the other two. It went to the preview lane the momen
 | `store/lib/catalog.js` | One record per product: SKU, serial grammar, credits, provenance, rights, delivery, re-access, price **proposal**, store description, alt text, D-gate |
 | `store/lib/packet.js` | Packet runtime: serial stamp, keep-what-you-type (device only), print, copy-to-clipboard |
 | `store/qyris-quickcheck/index.html` | Eight-page packet, complete |
+| `store/stuck-loop-reset/index.html` | Eight-page packet, complete, with a copyable escalation message |
+| `store/before-you-buy/index.html` | Eight-page packet, complete, with the total-cost ladder |
 | `store/validation/print-check.sh` · `print-check.py` | Renders each packet to A4 PDF and refuses a spill page or a page with no ink |
 | `tests/packets.test.mjs` | 17 tests over the catalogue and the packets |
 
@@ -117,12 +120,14 @@ Nine inspections run against this lane's own design decisions.
 | 3c | Authority mismatch | A browser session able to alter a sold record | **Routed** — the fillable page writes to the device only. No server write, no account, no network call |
 | 4 | Evidence gap | "No blank white PDF" asserted rather than shown | **Routed** — the packet was rendered to A4 and inspected page by page. The first render **failed**: 13 pages instead of 8, with a spill page carrying six words. Print typography was corrected and re-rendered: 8 pages, 771–2,953 marks per page |
 | 4b | Evidence gap | The delivery and entitlement route described but not implemented | **Held → B1.** Described honestly as the route, named as a Chairman decision (CD-5), not claimed as built |
+| 4d | Evidence gap | Products two and three called complete without being printed | **Routed** — all three rendered to A4: 8 pages each, 771–7,518 marks per page, none below the floor |
 | 4c | Evidence gap | Prices presented as researched figures | **Routed** — labelled proposals, with the reasoning stated rather than a market claim |
 | 5 | Unnecessary waiting | Holding the whole lane until all three products were finished | **Routed** — QuickCheck was written to the preview lane at D5 while the other two were still being written |
 | 5b | Unnecessary waiting | A buyer unable to use a packet until they sign in or the backend exists | **Routed** — a packet is a self-contained page: no backend, no sign-in, and fully usable with JavaScript switched off |
 | 6 | Friction on the other side | Losing the printed copy and having to buy again | **Routed** — perpetual re-access printed **inside** the packet, not only in the store listing |
 | 6b | Friction on the other side | Private browsing or storage refusal losing what a person typed | **Routed** — every storage call is wrapped; typing and printing still work when storage throws |
 | 6c | Friction on the other side | A 210 mm sheet unreadable on a phone | **Routed** — the deck reflows below 840 px: full-width fields, single-column blocks, no horizontal scroll |
+| 6e | Friction on the other side | A copy control that silently does nothing when the browser refuses clipboard access | **Routed** — it falls back to selecting the text and saying so on the button itself |
 | 6d | Friction on the other side | A greyscale printer stripping the meaning out of coloured chips | **Routed** — every chip is labelled in words and outlined; colour carries no meaning on its own |
 | 7 | Rights and privacy | What a person types into a packet leaking | **Routed** — device-only storage, no network call, no analytics, no external font or script; a test fails the build on any external reference |
 | 7b | Rights and privacy | A serial identifying the holder | **Routed** — the serial identifies the copy. It carries no personal detail, and the packet says so in print |
@@ -137,7 +142,7 @@ Nine inspections run against this lane's own design decisions.
 | 9d | Failure and recovery | A correction to a packet somebody already bought | **Routed by rule** — corrections are issued as a new edition and the existing entitlement opens it at no cost; stated inside the packet |
 | 9e | Failure and recovery | Print correctness on an unseen device | **Held → B2.** Verified on one A4 engine. Letter paper and physical printers are a device check |
 
-**30 inspections · 26 routed · 3 held against a named blocker · 1 correction forced by evidence
+**31 inspections · 28 routed · 3 held against a named blocker · 1 correction forced by evidence
 (the 13-page spill).** No gap was reported and left unrouted where a safe reversible route existed.
 
 ---
@@ -149,11 +154,11 @@ the public store below D7. **D6 and D7 are Chairman-only.**
 
 | Gate | Condition | QuickCheck | Stuck Loop Reset | Before You Buy |
 |---|---|---|---|---|
-| D1 | Copy complete — no placeholder, no TBD | **PASS** | in progress | in progress |
-| D2 | Design complete — laid out in the grammar, ink on every printed page | **PASS** | in progress | in progress |
-| D3 | Worked example — filled, fictional, marked | **PASS** | in progress | in progress |
-| D4 | Fillable final page — fill, keep, print with values visible | **PASS** | in progress | in progress |
-| D5 | Identity complete — cover, serial, SKU, credits, provenance, rights, delivery, re-access | **PASS** | in progress | in progress |
+| D1 | Copy complete — no placeholder, no TBD | **PASS** | **PASS** | **PASS** |
+| D2 | Design complete — laid out in the grammar, ink on every printed page | **PASS** | **PASS** | **PASS** |
+| D3 | Worked example — filled, fictional, marked | **PASS** | **PASS** | **PASS** |
+| D4 | Fillable final page — fill, keep, print with values visible | **PASS** | **PASS** | **PASS** |
+| D5 | Identity complete — cover, serial, SKU, credits, provenance, rights, delivery, re-access | **PASS** | **PASS** | **PASS** |
 | D6 | **Price locked** — written by the Chairman | **HELD** | HELD | HELD |
 | D7 | **Release authorised** — publication to the public store | **HELD** | HELD | HELD |
 
@@ -163,10 +168,10 @@ the public store below D7. **D6 and D7 are Chairman-only.**
 
 | Claim | Evidence |
 |---|---|
-| Tests pass | `npm test` → **65 tests, 65 pass, 0 fail** (48 existing RAE Link + 17 new packet tests) |
+| Tests pass | `npm test` → **65 tests, 65 pass, 0 fail** (48 existing RAE Link + 17 new packet tests), over all three packets |
 | No baseline regression | No dashboard file, workflow, Time Run, sports-betting, RAE Link or app runtime file changed |
 | Store runs while Time Run works | Three additive edits only: two rewrites, two nav entries |
-| **No blank white PDF** | `store/validation/print-check.sh` → QuickCheck prints **8 pages for 8 sheets**, 771–2,953 drawing marks per page, zero pages below the 120-mark floor |
+| **No blank white PDF** | `store/validation/print-check.sh` → all three packets print **8 pages for 8 sheets**, 771–7,518 drawing marks per page, zero pages below the 120-mark floor, harness exit 0 |
 | The blank-page check is not vacuous | Negative-tested against a deliberately empty sheet: reported 0 marks and failed, exit 1 |
 | Spill pages are caught | The first render of QuickCheck **failed this check** at 13 pages; the defect was in print typography, was fixed, and the re-render passes |
 | Packets are self-contained | A test fails the build on any `src="http…"` or `href="http…"` in a packet |
@@ -174,7 +179,8 @@ the public store below D7. **D6 and D7 are Chairman-only.**
 | Nothing is priced | Every price is labelled a proposal in the catalogue, on the lane, and by assertion in the test suite |
 | Fields are labelled | Every input, textarea and select carries a label or `aria-label`, asserted in the suite |
 | Mobile | Deck reflows at 840 px; asserted in the suite against the grammar |
-| Surface weight | `store/` raw ≈ 60 KB, no images, no framework, no font download |
+| Surface weight | `store/` raw ≈ 115 KB across three packets, the lane and the grammar. No images, no framework, no font download |
+| One grammar, three products | The second and third packets added no new visual element: same six elements, same runtime, same catalogue shape |
 
 **Not measured, not claimed:** physical print output on paper, Letter-size pagination, real store
 order flow, entitlement writes, payment, or any figure about what these products would earn.
@@ -231,7 +237,7 @@ If this work resumes cold:
 2. **Verify the floor:** `npm test` → expect 65 passing.
    Then `store/validation/print-check.sh` → expect exit 0 and one page per sheet for every
    preview-ready packet.
-3. **Open `/store`** — the Chairman preview lane. It reads its state from
+3. **Open `/store`** — the Chairman preview lane, which reads 3 of 3 preview-ready. It reads its state from
    `store/lib/catalog.js`, so the lane can never claim a product is further along than its gate.
 4. **If the Chairman has answered CD-1…CD-3:** write the price into the catalogue, flip D6 to
    PASS for that product, and the lane state advances on its own.
@@ -252,12 +258,12 @@ If this work resumes cold:
 | | |
 |---|---|
 | Workroom | **OPEN** |
-| QYRIS QuickCheck | **Complete · preview-ready · written to the Chairman preview lane** |
-| Stuck Loop Reset | In production |
-| Before You Buy | In production |
+| QYRIS QuickCheck | **Complete · preview-ready · in the Chairman preview lane** |
+| Stuck Loop Reset | **Complete · preview-ready · in the Chairman preview lane** |
+| Before You Buy | **Complete · preview-ready · in the Chairman preview lane** |
 | Visual grammar | Complete · six elements · shared by the lane |
 | Tests | 65 / 65 |
-| Print | 8 pages for 8 sheets · ink on every page · harness committed |
+| Print | 8 pages for 8 sheets on all three · ink on every page · harness committed |
 | Price | **Proposed only.** Not locked. |
 | Publication | **None.** |
 | Baseline regression | **None.** |

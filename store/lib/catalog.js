@@ -93,8 +93,8 @@ export const PRODUCTS = [
     alt_text:
       'Cover of the Stuck Loop Reset packet: a white sheet with a gold diamond mark, the title Stuck Loop Reset, '
       + 'and a six-segment progress ladder along the lower edge.',
-    d_gate: { D1:'IN PROGRESS', D2:'IN PROGRESS', D3:'IN PROGRESS', D4:'IN PROGRESS', D5:'IN PROGRESS', D6:'HELD', D7:'HELD' },
-    lane_state: 'IN PRODUCTION',
+    d_gate: { D1:'PASS', D2:'PASS', D3:'PASS', D4:'PASS', D5:'PASS', D6:'HELD', D7:'HELD' },
+    lane_state: 'PREVIEW-READY',
   },
   {
     id: 'THY-BEFORE-YOU-BUY-001',
@@ -127,8 +127,8 @@ export const PRODUCTS = [
     alt_text:
       'Cover of the Before You Buy packet: a white sheet with a gold diamond mark, the title Before You Buy, '
       + 'and a seven-segment progress ladder along the lower edge.',
-    d_gate: { D1:'IN PROGRESS', D2:'IN PROGRESS', D3:'IN PROGRESS', D4:'IN PROGRESS', D5:'IN PROGRESS', D6:'HELD', D7:'HELD' },
-    lane_state: 'IN PRODUCTION',
+    d_gate: { D1:'PASS', D2:'PASS', D3:'PASS', D4:'PASS', D5:'PASS', D6:'HELD', D7:'HELD' },
+    lane_state: 'PREVIEW-READY',
   },
 ];
 
