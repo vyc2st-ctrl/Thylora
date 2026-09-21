@@ -1,0 +1,300 @@
+{
+  "catalog_id": "THY-STORE-WAVE1-580",
+  "work_item": "THY-WORK-STORE-UTILITY-WAVE1-580",
+  "generated": "2026-09-21",
+  "shelf_rule": "UTILITY FIRST. The lead shelf is the utility shelf. Story and world titles are inventory, not the lead shelf.",
+  "release_state": "CHAIRMAN PREVIEW — not published, not purchasable, no live-commerce claim.",
+  "price_state": "PROPOSED — NOT LOCKED. No price on this shelf is final until the Chairman locks it.",
+  "design_system": {
+    "id": "TPS-1",
+    "name": "THYLORA Product Page System",
+    "stylesheet": "store/design/product-system.css",
+    "behaviour": "store/lib/fillable.js",
+    "plate_model": "Every page is a plate. Every plate carries a colour rail, a plate number, an eyebrow, and one job.",
+    "registers": ["PLAIN", "EVERYDAY", "TECHNICAL"],
+    "forbidden_registers": ["CHILD", "ADULT", "SCHOLAR"],
+    "print": "Letter, 14mm margin, one plate per sheet, colour rails preserved.",
+    "mobile": "Single column below 760px. No horizontal scroll. Fields reachable one-handed.",
+    "dependencies": "None. No framework, no font download, no external script, no network call from a product page."
+  },
+
+  "lead_shelf": [
+    {
+      "sku": "THY-QYRIS-QUICKCHECK-001",
+      "position": 1,
+      "title": "THYLORA QYRIS QuickCheck",
+      "subtitle": "One Decision, Five Passes",
+      "customer_job": "Make one real decision you have been carrying, using five passes: Question, Yield, Reason, Inspect, Safeguard.",
+      "artifact": {
+        "path": "store/qyris-quickcheck/index.html",
+        "format": "Self-contained designed HTML, print-to-PDF at letter size",
+        "plates": 8,
+        "fillable": true,
+        "reusable": true,
+        "worked_example": "An ordinary repair-or-replace decision on a twelve-year-old car. No politics. No medical content. No customer story, invented or otherwise.",
+        "plate_map": [
+          "1 · Cover — One Decision Before You Move",
+          "2 · QYRIS visual — Question to Yield to Reason to Inspect to Safeguard",
+          "3 · QUESTION — what decision are you actually making",
+          "4 · YIELD + REASON — what outcome, and why it matters",
+          "5 · INSPECT — known, evidence, inference, unknown, connections",
+          "6 · SAFEGUARD — must not happen, who is affected, permission, what would stop you",
+          "7 · WORKED EXAMPLE",
+          "8 · REUSABLE QUICKCHECK — fillable one-plate instrument, with colophon"
+        ]
+      },
+      "cover": {
+        "path": "store/covers/qyris-quickcheck.svg",
+        "ratio": "4:5",
+        "alt_text": "Dark warm cover. Five markers graded from gold to blue run across the middle, labelled Question, Yield, Reason, Inspect and Safeguard, each with a short plain-language note beneath. Title reads One Decision, Five Passes."
+      },
+      "serial": {
+        "root": "THY-QYRIS-QUICKCHECK-001",
+        "edition": 1,
+        "year": 2026,
+        "per_copy_format": "TQC-1-NNNNNN",
+        "printed_on": "Plate 8 colophon"
+      },
+      "provenance": "Authored for the THYLORA utility shelf, Wave 1, sequence 580. QYRIS method, applied whole rather than summarised.",
+      "publisher": "THYLORA",
+      "editor": "Recorded on release. Field present and required before publication.",
+      "designer": "THYLORA Product Page System TPS-1",
+      "rights": "Single-person licence. Print, fill and reuse for the buyer's own decisions, including at work. No resale, no redistribution, no bundling into another product.",
+      "delivery": {
+        "spine": "Existing protected digital-delivery spine. No new commerce infrastructure built.",
+        "mechanism": "Entitlement-gated artifact on the existing THYLORA entitlement path",
+        "re_access": "Permanent re-access for the buying account. Re-download does not consume an allowance.",
+        "new_infrastructure_built": false
+      },
+      "mobile": {
+        "single_column_below": "760px",
+        "horizontal_scroll": false,
+        "tap_targets": "Fields and controls at or above 44px effective height",
+        "offline_after_load": true
+      },
+      "store_copy": {
+        "shelf_line": "One decision. Five passes. Then you move.",
+        "paragraph": "You already know the decision. QuickCheck splits it into five passes — Question, Yield, Reason, Inspect, Safeguard — so each pass has somewhere different to go, and the last one has the authority to stop you. Eight designed plates, a worked example run all the way through, and a one-plate version you can reuse for every decision after this one.",
+        "what_you_get": [
+          "8 designed plates, print or fill on screen",
+          "A worked example carried through all five passes",
+          "A reusable one-plate QuickCheck",
+          "Fields that save in your browser only — nothing is sent anywhere"
+        ]
+      },
+      "customer_value": "A decision you have been turning over for weeks either gets made, or turns into a short list of facts to go and get. Both are progress. Neither happens while it stays in your head.",
+      "refund_fit": "Digital artifact with immediate delivery. Refundable on request within the standard window where the file could not be opened, was not as described, or was bought in error. Stated plainly at point of sale rather than buried.",
+      "price_proposal": { "amount": 3.00, "currency": "USD", "locked": false, "note": "Proposed. Lowest price on the shelf on purpose: this is the instrument the other two are built on." }
+    },
+
+    {
+      "sku": "THY-STUCK-LOOP-RESET-001",
+      "position": 2,
+      "title": "THYLORA Stuck Loop Reset",
+      "subtitle": "Get Out of the Click-Again Cycle",
+      "customer_job": "Escape a repeating login, website, app, form, customer-service or verification loop by preserving state instead of repeating attempts.",
+      "artifact": {
+        "path": "store/stuck-loop-reset/index.html",
+        "format": "Self-contained designed HTML, print-to-PDF at letter size",
+        "plates": 6,
+        "fillable": true,
+        "reusable": true,
+        "worked_example": "A verification code that consistently arrives after it expires, on a utility bill payment. Ordinary, checkable, not invented as a testimonial.",
+        "core_path": [
+          "Stop duplicate attempts",
+          "Record current state",
+          "Record what worked",
+          "Record what failed",
+          "Identify last verified step",
+          "Try one next action",
+          "Escalate with evidence",
+          "Record result"
+        ],
+        "plate_map": [
+          "1 · Cover — Get Out of the Click-Again Cycle",
+          "2 · Why repeating makes it worse, and the eight-step path",
+          "3 · STATE CAPTURE CARD — steps 1 to 4",
+          "4 · LAST VERIFIED STEP and ONE ACTION — steps 5 and 6",
+          "5 · ESCALATION SCRIPT, copyable, three variants — steps 7 and 8",
+          "6 · WORKED EXAMPLE, reusable card, colophon"
+        ],
+        "escalation_script": {
+          "copyable": true,
+          "variants": ["Main script, spoken or written", "When you are being sent back to the start", "When the channel itself is the loop"]
+        }
+      },
+      "cover": {
+        "path": "store/covers/stuck-loop-reset.svg",
+        "ratio": "4:5",
+        "alt_text": "Dark cover showing a dashed closed loop labelled try again, same error, start over, same screen. A single gold arrow breaks out of the loop toward the word STOP and the instruction capture the state."
+      },
+      "serial": {
+        "root": "THY-STUCK-LOOP-RESET-001",
+        "edition": 1,
+        "year": 2026,
+        "per_copy_format": "TSL-1-NNNNNN",
+        "printed_on": "Plate 6 colophon"
+      },
+      "provenance": "Authored for the THYLORA utility shelf, Wave 1, sequence 580. Built on the QYRIS friction pass, applied to repeating-state failures.",
+      "publisher": "THYLORA",
+      "editor": "Recorded on release. Field present and required before publication.",
+      "designer": "THYLORA Product Page System TPS-1",
+      "rights": "Single-person licence. Print, fill and reuse for the buyer's own loops, including at work. No resale, no redistribution.",
+      "delivery": {
+        "spine": "Existing protected digital-delivery spine. No new commerce infrastructure built.",
+        "mechanism": "Entitlement-gated artifact on the existing THYLORA entitlement path",
+        "re_access": "Permanent re-access for the buying account.",
+        "new_infrastructure_built": false
+      },
+      "mobile": {
+        "single_column_below": "760px",
+        "horizontal_scroll": false,
+        "tap_targets": "Fields and controls at or above 44px effective height",
+        "offline_after_load": true,
+        "note": "Designed to be used on a phone while on hold on the same phone. Scripts wrap rather than scroll sideways."
+      },
+      "store_copy": {
+        "shelf_line": "A loop is a state problem, not an effort problem.",
+        "paragraph": "The login that sends you back to the login. The code that arrives after it expires. You are not failing at this — you are inside a loop, and loops are not beaten by going faster. Stop, capture the state on one card, make exactly one move, and escalate with evidence instead of frustration. Six designed plates, a copy-out escalation script, and a worked example that went from two evenings of clicking to six minutes on a call.",
+        "what_you_get": [
+          "6 designed plates, print or fill on screen",
+          "A state capture card built to be read aloud or pasted into a chat",
+          "An escalation script in three variants, copy to clipboard",
+          "A worked example carried all the way to a case number"
+        ]
+      },
+      "customer_value": "You stop arriving as somebody who cannot log in — a problem support hears a hundred times a day — and start arriving with a named failing step, a timestamp and a test you already ran. Same facts you always had. The card is what makes them usable.",
+      "refund_fit": "Digital artifact with immediate delivery. Refundable on request within the standard window where the file could not be opened, was not as described, or was bought in error.",
+      "price_proposal": { "amount": 5.00, "currency": "USD", "locked": false, "note": "Proposed. Carries the escalation script, which is the part customers reuse most." }
+    },
+
+    {
+      "sku": "THY-BEFORE-YOU-BUY-001",
+      "position": 3,
+      "title": "THYLORA Before You Buy",
+      "subtitle": "10-Minute Evidence Check",
+      "customer_job": "Inspect a purchase or service claim before spending money, in about ten minutes.",
+      "artifact": {
+        "path": "store/before-you-buy/index.html",
+        "format": "Self-contained designed HTML, print-to-PDF at letter size",
+        "plates": 8,
+        "fillable": true,
+        "reusable": true,
+        "worked_example": "A fictional window film from a fictional seller. Explicitly labelled invented on the plate. No current commercial product is evaluated anywhere in the artifact.",
+        "fields": ["QUESTION", "CLAIM", "SOURCE", "EVIDENCE", "TOTAL COST", "CONSTRAINT", "UNKNOWN", "ACT / ASK / HOLD"],
+        "teaches": [
+          "CLAIM is not EVIDENCE",
+          "PRICE is not TOTAL COST",
+          "REVIEW is not INDEPENDENT TEST",
+          "ACCESS is not AUTHORITY",
+          "UNKNOWN is not FALSE"
+        ],
+        "plate_map": [
+          "1 · Cover — Before You Buy",
+          "2 · The five confusions that cost money",
+          "3 · QUESTION and CLAIM",
+          "4 · SOURCE and EVIDENCE",
+          "5 · TOTAL COST — ten-line ledger",
+          "6 · CONSTRAINT and UNKNOWN",
+          "7 · ACT / ASK / HOLD, and protecting the purchase",
+          "8 · WORKED EXAMPLE, reusable ten-minute card, colophon"
+        ]
+      },
+      "cover": {
+        "path": "store/covers/before-you-buy.svg",
+        "ratio": "4:5",
+        "alt_text": "Dark cover with three facing pairs separated by a not-equals sign: claim and evidence, price and total cost, review and independent test. Title reads Before You Buy, 10-Minute Evidence Check."
+      },
+      "serial": {
+        "root": "THY-BEFORE-YOU-BUY-001",
+        "edition": 1,
+        "year": 2026,
+        "per_copy_format": "TBB-1-NNNNNN",
+        "printed_on": "Plate 8 colophon"
+      },
+      "provenance": "Authored for the THYLORA utility shelf, Wave 1, sequence 580. QYRIS inspect and safeguard passes, applied to purchase claims.",
+      "publisher": "THYLORA",
+      "editor": "Recorded on release. Field present and required before publication.",
+      "designer": "THYLORA Product Page System TPS-1",
+      "rights": "Single-person licence. Print, fill and reuse for the buyer's own purchases, including at work. No resale, no redistribution.",
+      "delivery": {
+        "spine": "Existing protected digital-delivery spine. No new commerce infrastructure built.",
+        "mechanism": "Entitlement-gated artifact on the existing THYLORA entitlement path",
+        "re_access": "Permanent re-access for the buying account.",
+        "new_infrastructure_built": false
+      },
+      "mobile": {
+        "single_column_below": "760px",
+        "horizontal_scroll": false,
+        "tap_targets": "Fields and controls at or above 44px effective height",
+        "offline_after_load": true,
+        "note": "Built to be used standing in a shop or sitting in front of a checkout page."
+      },
+      "store_copy": {
+        "shelf_line": "Ten minutes, eight fields, one purchase.",
+        "paragraph": "Most money is not lost to outright lies. It is lost in the gap between a claim and the evidence for it, and between a price and a total cost. Eight fields, about ten minutes: what is being claimed, who is saying it, what would show it is true, what this really costs over a year, what actually limits you, and what you could not check. Then one of three answers — act, ask, or hold — with a date on it.",
+        "what_you_get": [
+          "8 designed plates, print or fill on screen",
+          "A ten-line total-cost ledger, including what it costs to undo",
+          "A worked example, clearly labelled as invented",
+          "A reusable ten-minute card"
+        ]
+      },
+      "customer_value": "Either you buy with your eyes open, or you find out in ten minutes that the thing being sold is harder to check than it was made to look. The second outcome is worth more than the price of the product the first time it happens.",
+      "refund_fit": "Digital artifact with immediate delivery. Refundable on request within the standard window where the file could not be opened, was not as described, or was bought in error. A product about honest purchasing has to be sold honestly.",
+      "price_proposal": { "amount": 5.00, "currency": "USD", "locked": false, "note": "Proposed. Same tier as Stuck Loop Reset; broadest audience of the three." }
+    }
+  ],
+
+  "story_world_inventory": {
+    "rule": "Moved off the lead shelf. History preserved. Not deleted, not rebuilt this pass, not used as BUILD NEXT.",
+    "items": [
+      { "name": "Bramble Wick", "disposition": "story/world inventory", "history_preserved": true, "deleted": false, "rebuilt_this_pass": false },
+      { "name": "City Power",   "disposition": "story/world inventory", "history_preserved": true, "deleted": false, "rebuilt_this_pass": false },
+      { "name": "Last Match",   "disposition": "story/world inventory", "history_preserved": true, "deleted": false, "rebuilt_this_pass": false },
+      { "name": "Handoff",      "disposition": "story/world inventory", "history_preserved": true, "deleted": false, "rebuilt_this_pass": false }
+    ],
+    "history_location_in_this_repository": {
+      "found": ["Bramble Wick — development material in app/index.html, WORLD SHOWS section, plus styling in app/styles.css and the full git history of both"],
+      "not_found_in_this_repository": ["City Power", "Last Match", "Handoff"],
+      "note": "This repository is development source, not the deployment authority (see DASHBOARD_AUTHORITY.md). Absence here is not absence of record. No history was deleted or altered by this pass."
+    }
+  },
+
+  "quality_gate": {
+    "plain_white_paper": false,
+    "generic_worksheet": false,
+    "text_dumped_on_pages": false,
+    "ai_looking_filler": false,
+    "fake_testimonials": false,
+    "stock_motivational_language": false,
+    "authored_voice": true,
+    "designed_page_system": true,
+    "illustration_diagram_plan": true,
+    "real_examples": true,
+    "clear_use_case": true,
+    "serial": true,
+    "provenance": true,
+    "publisher": true,
+    "editor_designer_fields": true,
+    "rights": true,
+    "delivery": true,
+    "mobile_readability": true,
+    "customer_value": true
+  },
+
+  "release_gate": {
+    "rule": "No publication without final release. Chairman decides each item below; nothing on this shelf is purchasable until every row is YES.",
+    "rows": [
+      { "gate": "artifact",       "state": "READY",   "evidence": "Three artifacts authored, 22 plates total, tests pass" },
+      { "gate": "quality",        "state": "READY",   "evidence": "Quality gate above, verified by tests/store-wave1.test.mjs" },
+      { "gate": "rights",         "state": "READY",   "evidence": "Single-person licence recorded per product and printed in each colophon" },
+      { "gate": "delivery",       "state": "READY",   "evidence": "Reuses existing protected digital-delivery spine; no new commerce infrastructure" },
+      { "gate": "mobile",         "state": "READY",   "evidence": "Single column below 760px, no horizontal scroll, verified by tests" },
+      { "gate": "price",          "state": "PROPOSED — NOT LOCKED", "evidence": "$3 / $5 / $5 proposed; Chairman locks or changes" },
+      { "gate": "editor_named",   "state": "OPEN — CHAIRMAN",  "evidence": "Editor field present in every colophon and catalogue entry; the name itself is not invented here" },
+      { "gate": "chairman_preview", "state": "OPEN — CHAIRMAN", "evidence": "This catalogue plus store/index.html is the preview" },
+      { "gate": "final_release",  "state": "OPEN — CHAIRMAN",  "evidence": "Withheld. No publication, no purchase button, no live-commerce claim." }
+    ]
+  }
+}

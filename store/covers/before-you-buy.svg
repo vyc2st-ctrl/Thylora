@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" role="img"
+     aria-labelledby="t3 d3" width="1200" height="1500">
+  <title id="t3">THYLORA Before You Buy cover</title>
+  <desc id="d3">A dark cover with three facing pairs separated by a not-equals sign — claim and evidence, price and total cost, review and independent test — beneath the title "Before You Buy, 10-Minute Evidence Check".</desc>
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#191309"/><stop offset="0.5" stop-color="#121722"/><stop offset="1" stop-color="#0d1117"/>
+    </linearGradient>
+    <radialGradient id="glow3" cx="0.8" cy="0.2" r="0.55">
+      <stop offset="0" stop-color="#e5b65b" stop-opacity="0.2"/><stop offset="1" stop-color="#e5b65b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="1500" fill="url(#bg3)"/>
+  <rect width="1200" height="1500" fill="url(#glow3)"/>
+  <rect x="0" y="0" width="26" height="1500" fill="#166DD6"/>
+  <rect x="0" y="0" width="26" height="520" fill="#a8761c"/>
+
+  <text x="96" y="150" font-family="Inter,system-ui,sans-serif" font-size="27" font-weight="900"
+        letter-spacing="9" fill="#e5b65b">THYLORA</text>
+  <text x="96" y="196" font-family="Inter,system-ui,sans-serif" font-size="20" font-weight="800"
+        letter-spacing="6" fill="#8d8172">QYRIS INSTRUMENT · UTILITY SHELF</text>
+
+  <text x="96" y="440" font-family="Georgia,serif" font-size="132" fill="#f7f0e5">Before You Buy</text>
+  <text x="96" y="522" font-family="Inter,system-ui,sans-serif" font-size="30" font-weight="800"
+        letter-spacing="5" fill="#e5b65b">10-MINUTE EVIDENCE CHECK</text>
+
+  <g font-family="Inter,system-ui,sans-serif" font-size="31" font-weight="900" letter-spacing="3" text-anchor="middle">
+    <g>
+      <rect x="96" y="690" width="400" height="86" rx="14" fill="none" stroke="#a8761c" stroke-width="4"/>
+      <text x="296" y="746" fill="#e5b65b">CLAIM</text>
+      <text x="600" y="752" font-size="54" fill="#c4683f">&#8800;</text>
+      <rect x="704" y="690" width="400" height="86" rx="14" fill="none" stroke="#166DD6" stroke-width="4"/>
+      <text x="904" y="746" fill="#7fb0e4">EVIDENCE</text>
+    </g>
+    <g>
+      <rect x="96" y="820" width="400" height="86" rx="14" fill="none" stroke="#a8761c" stroke-width="4"/>
+      <text x="296" y="876" fill="#e5b65b">PRICE</text>
+      <text x="600" y="882" font-size="54" fill="#c4683f">&#8800;</text>
+      <rect x="704" y="820" width="400" height="86" rx="14" fill="none" stroke="#166DD6" stroke-width="4"/>
+      <text x="904" y="876" fill="#7fb0e4">TOTAL COST</text>
+    </g>
+    <g>
+      <rect x="96" y="950" width="400" height="86" rx="14" fill="none" stroke="#a8761c" stroke-width="4"/>
+      <text x="296" y="1006" fill="#e5b65b">REVIEW</text>
+      <text x="600" y="1012" font-size="54" fill="#c4683f">&#8800;</text>
+      <rect x="704" y="950" width="400" height="86" rx="14" fill="none" stroke="#166DD6" stroke-width="4"/>
+      <text x="904" y="1006" font-size="27" fill="#7fb0e4">INDEPENDENT TEST</text>
+    </g>
+  </g>
+
+  <text x="96" y="1150" font-family="Georgia,serif" font-size="40" fill="#cfc2ac">Inspect the claim before you</text>
+  <text x="96" y="1206" font-family="Georgia,serif" font-size="40" fill="#cfc2ac">spend the money.</text>
+
+  <line x1="96" y1="1300" x2="1104" y2="1300" stroke="#4a4034" stroke-width="2"/>
+  <g font-family="Inter,system-ui,sans-serif" font-size="23" font-weight="700" letter-spacing="2.6" fill="#8d8172">
+    <text x="96" y="1360">8 PLATES · FILLABLE · REUSABLE</text>
+    <text x="96" y="1404">THY-BEFORE-YOU-BUY-001 · EDITION 1 · 2026</text>
+  </g>
+</svg>

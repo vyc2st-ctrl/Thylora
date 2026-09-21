@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" role="img"
+     aria-labelledby="t1 d1" width="1200" height="1500">
+  <title id="t1">THYLORA QYRIS QuickCheck cover</title>
+  <desc id="d1">A dark warm cover. Five gold-to-blue markers run across the middle, labelled Question, Yield, Reason, Inspect and Safeguard, beneath the title "One Decision, Five Passes".</desc>
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1d1710"/><stop offset="0.52" stop-color="#15110b"/><stop offset="1" stop-color="#0e131a"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0.84" cy="0.16" r="0.5">
+      <stop offset="0" stop-color="#e5b65b" stop-opacity="0.26"/><stop offset="1" stop-color="#e5b65b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="chain1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e5b65b"/><stop offset="1" stop-color="#166DD6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1500" fill="url(#bg1)"/>
+  <rect width="1200" height="1500" fill="url(#glow1)"/>
+  <rect x="0" y="0" width="26" height="1500" fill="#a8761c"/>
+  <rect x="0" y="1000" width="26" height="500" fill="#8f3f24"/>
+
+  <text x="96" y="150" font-family="Inter,system-ui,sans-serif" font-size="27" font-weight="900"
+        letter-spacing="9" fill="#e5b65b">THYLORA</text>
+  <text x="96" y="196" font-family="Inter,system-ui,sans-serif" font-size="20" font-weight="800"
+        letter-spacing="6" fill="#8d8172">QYRIS INSTRUMENT · UTILITY SHELF</text>
+
+  <text x="96" y="470" font-family="Georgia,serif" font-size="126" fill="#f7f0e5">One Decision,</text>
+  <text x="96" y="600" font-family="Georgia,serif" font-size="126" fill="#f7f0e5">Five Passes</text>
+
+  <text x="96" y="682" font-family="Inter,system-ui,sans-serif" font-size="30" font-weight="800"
+        letter-spacing="5" fill="#e5b65b">QYRIS QUICKCHECK</text>
+
+  <line x1="96" y1="880" x2="1104" y2="880" stroke="url(#chain1)" stroke-width="4"/>
+  <g>
+    <circle cx="96"  cy="880" r="17" fill="#e5b65b"/>
+    <circle cx="348" cy="880" r="17" fill="#d1a44c"/>
+    <circle cx="600" cy="880" r="17" fill="#9c9a6f"/>
+    <circle cx="852" cy="880" r="17" fill="#5588b4"/>
+    <circle cx="1104" cy="880" r="17" fill="#166DD6"/>
+  </g>
+  <g font-family="Inter,system-ui,sans-serif" font-size="24" font-weight="900"
+     letter-spacing="3.4" fill="#efe4d1" text-anchor="middle">
+    <text x="96" y="828">QUESTION</text><text x="348" y="828">YIELD</text>
+    <text x="600" y="828">REASON</text><text x="852" y="828">INSPECT</text>
+    <text x="1104" y="828">SAFEGUARD</text>
+  </g>
+  <g font-family="Georgia,serif" font-size="23" font-style="italic" fill="#9d9280" text-anchor="middle">
+    <text x="96" y="936">what am I</text><text x="96" y="966">deciding</text>
+    <text x="348" y="936">what outcome</text><text x="348" y="966">I want</text>
+    <text x="600" y="936">why it</text><text x="600" y="966">matters</text>
+    <text x="852" y="936">what is</text><text x="852" y="966">actually true</text>
+    <text x="1104" y="936">what must</text><text x="1104" y="966">not happen</text>
+  </g>
+
+  <text x="96" y="1140" font-family="Georgia,serif" font-size="40" fill="#cfc2ac">Make the decision you have been</text>
+  <text x="96" y="1196" font-family="Georgia,serif" font-size="40" fill="#cfc2ac">carrying around. Then move.</text>
+
+  <line x1="96" y1="1300" x2="1104" y2="1300" stroke="#4a4034" stroke-width="2"/>
+  <g font-family="Inter,system-ui,sans-serif" font-size="23" font-weight="700" letter-spacing="2.6" fill="#8d8172">
+    <text x="96" y="1360">8 PLATES · FILLABLE · REUSABLE</text>
+    <text x="96" y="1404">THY-QYRIS-QUICKCHECK-001 · EDITION 1 · 2026</text>
+  </g>
+</svg>

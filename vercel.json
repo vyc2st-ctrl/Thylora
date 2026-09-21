@@ -20,6 +20,14 @@
     {
       "source": "/rae-link/",
       "destination": "/rae-link/index.html"
+    },
+    {
+      "source": "/store",
+      "destination": "/store/index.html"
+    },
+    {
+      "source": "/store/",
+      "destination": "/store/index.html"
     }
   ]
 }
