@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a0e14">
+<title>THYLORA Work Store — utility lane · Chairman preview</title>
+<meta name="description" content="Chairman preview lane for the THYLORA Work Store utility products: QYRIS QuickCheck, Stuck Loop Reset, Before You Buy. Preview packets, D-gate state, price proposals and the decisions held for the Chairman.">
+<link rel="stylesheet" href="./packet.css">
+<link rel="stylesheet" href="./lane.css">
+</head>
+<body>
+<a class="skip" href="#lane">Skip to the lane</a>
+
+<header class="packet-bar">
+  <div class="who">
+    <span class="mark" aria-hidden="true">◈</span>
+    <div><p>THYLORA WORK STORE</p><h1>Utility lane · Chairman preview</h1></div>
+  </div>
+  <div class="acts">
+    <span class="state-chip" id="laneChip">LANE · LOADING</span>
+    <span class="state-chip warn">NOT PUBLISHED</span>
+  </div>
+</header>
+
+<main class="lane-wrap" id="lane">
+  <section class="lane-hero">
+    <p class="eyebrow" style="color:var(--floor-gold)">THY-WORK-STORE-UTILITY-PRODUCTION-582</p>
+    <h2>Three utility products, previewable now, unpriced until the Chairman says otherwise.</h2>
+    <p>A utility product is a page a person can use on the worst day of their week. It carries no
+      story, no seminar and no blank paper. Every packet below is complete copy, complete design, a
+      worked example, a fillable page, and its own identity — cover, serial, SKU, credits,
+      provenance, rights, delivery and re-access. Nothing here is published, and no price is locked.</p>
+  </section>
+
+  <div id="cards"></div>
+
+  <section>
+    <h3 class="sans" style="margin:24px 0 10px">Held for the Chairman</h3>
+    <div id="decisions"></div>
+    <div class="lane-note" id="gateNote"></div>
+  </section>
+
+  <section>
+    <h3 class="sans" style="margin:24px 0 10px">Delivery and re-access, one rule for the lane</h3>
+    <div class="lane-card">
+      <dl>
+        <dt>Delivery</dt><dd>Store order → entitlement written against the order → the packet opens at
+          its product path. Print or save as PDF from inside the packet. No attachment to lose, no
+          download link to expire.</dd>
+        <dt>Re-access</dt><dd>Perpetual. A purchase entitlement, not a subscription: cancellation
+          cannot revoke it, and it is not limited to one device or one download.</dd>
+        <dt>Corrections</dt><dd>Issued as a new edition. An existing entitlement opens the new edition
+          at no cost.</dd>
+        <dt>Serial</dt><dd>Identifies the copy, not the holder. Carries no personal detail. Preview
+          copies are stamped 0000.</dd>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<script type="module">
+import { PRODUCTS, D_GATE, CHAIRMAN_DECISIONS, dGateState, LANE } from './lib/catalog.js';
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+document.getElementById('cards').innerHTML = PRODUCTS.map(p => `
+  <article class="lane-card">
+    <div class="lane-head">
+      <div>
+        <p class="eyebrow" style="color:var(--floor-gold)">${esc(p.id)}</p>
+        <h3>${esc(p.title)}</h3>
+        <p class="shelf">${esc(p.shelf_line)}</p>
+      </div>
+      <span class="state-chip ${dGateState(p) === 'PREVIEW-READY' ? 'ok' : 'warn'}">${esc(dGateState(p))}</span>
+    </div>
+    <p>${esc(p.store_description)}</p>
+    <div class="gate-row">${D_GATE.map(g => `
+      <span class="gate-pill ${p.d_gate[g.id] === 'PASS' ? 'pass' : 'held'}">${g.id} ${esc(g.name)} · ${esc(p.d_gate[g.id])}</span>`).join('')}</div>
+    <dl>
+      <dt>SKU</dt><dd>${esc(p.sku)} · ${esc(p.edition)} · ${p.pages} pages</dd>
+      <dt>Serial</dt><dd>${esc(p.serial_grammar)} — ${esc(p.serial_note)}</dd>
+      <dt>Credits</dt><dd>Author ${esc(p.author)} · Editor ${esc(p.editor)} · Designer ${esc(p.designer)}</dd>
+      <dt>Provenance</dt><dd>${esc(p.provenance)}</dd>
+      <dt>Rights</dt><dd>${esc(p.rights)}</dd>
+      <dt>Price proposal</dt><dd>${esc(p.price_proposal.currency)} ${esc(p.price_proposal.single)} single ·
+        ${esc(p.price_proposal.currency)} ${esc(p.price_proposal.team_10)} ten-seat — <b>${esc(p.price_proposal.note)}</b></dd>
+      <dt>Alt text</dt><dd>${esc(p.alt_text)}</dd>
+    </dl>
+    <div class="lane-actions"><a class="btn primary" href="..${esc(p.path)}">OPEN PREVIEW PACKET</a></div>
+  </article>`).join('');
+
+document.getElementById('decisions').innerHTML = CHAIRMAN_DECISIONS.map(d => `
+  <div class="decision"><span class="g">${esc(d.gate)}</span>
+    <b>${esc(d.id)} · ${esc(d.ask)}</b><span>${esc(d.options)}</span></div>`).join('');
+
+const held = D_GATE.filter(g => g.authority === 'CHAIRMAN').map(g => `${g.id} ${g.name}`).join(' · ');
+document.getElementById('gateNote').textContent =
+  `Every packet in this lane stands at ${held}. Those two gates are Chairman-only: a price proposal is not a price, and preview is not publication.`;
+
+document.getElementById('laneChip').textContent =
+  `LANE · ${PRODUCTS.filter(p => dGateState(p) === 'PREVIEW-READY').length} OF ${PRODUCTS.length} PREVIEW-READY`;
+document.getElementById('laneChip').classList.add('ok');
+document.title = `${LANE.name} — Chairman preview`;
+</script>
+</body>
+</html>

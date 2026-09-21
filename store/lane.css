@@ -1,0 +1,30 @@
+/* THYLORA STORE · Chairman preview lane · WR-STORE-UTILITY-582 */
+.lane-wrap{max-width:1080px;margin:0 auto;padding:20px 16px 72px}
+.lane-hero{border:1px solid #3b2f1d;border-radius:22px;padding:22px;margin-bottom:18px;
+  background:radial-gradient(circle at 84% 10%,rgba(224,179,91,.18),transparent 34%),
+             linear-gradient(145deg,#161d28,#0c121a 62%,#15100a)}
+.lane-hero h2{font-family:system-ui,sans-serif;font-size:1.8rem;margin:0 0 8px;max-width:26ch}
+.lane-hero p{max-width:80ch;color:var(--floor-muted);font-family:system-ui,sans-serif;font-size:.95rem}
+.lane-card{border:1px solid var(--floor-line);border-radius:16px;padding:18px;margin-bottom:14px;
+  background:linear-gradient(160deg,#111823,#0d131c);font-family:system-ui,sans-serif}
+.lane-card h3{font-size:1.25rem;margin:2px 0 4px}
+.lane-card .shelf{color:var(--floor-gold);font-size:.95rem;margin:0 0 10px}
+.lane-card p{font-size:.9rem;color:var(--floor-muted);margin:0 0 9px}
+.lane-card dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:0 0 10px;font-size:.82rem}
+.lane-card dt{color:var(--floor-gold);font-weight:800;letter-spacing:.06em;font-size:.66rem;
+  text-transform:uppercase;padding-top:3px}
+.lane-card dd{margin:0;color:var(--floor-muted)}
+.lane-head{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+.gate-row{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px}
+.gate-pill{font-size:.64rem;font-weight:800;letter-spacing:.08em;border-radius:6px;padding:5px 8px;
+  border:1px solid var(--floor-line);color:var(--floor-muted)}
+.gate-pill.pass{border-color:#2f6b46;color:#82d8a0}
+.gate-pill.held{border-color:#6b5a2f;color:#f0c674}
+.lane-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.decision{border-left:3px solid var(--floor-gold);background:#141a24;border-radius:0 10px 10px 0;
+  padding:10px 13px;margin:0 0 9px;font-family:system-ui,sans-serif}
+.decision b{display:block;font-size:.92rem;margin-bottom:3px}
+.decision span{font-size:.82rem;color:var(--floor-muted)}
+.decision .g{float:right;font-size:.64rem;font-weight:800;letter-spacing:.1em;color:var(--floor-gold)}
+.lane-note{border:1px dashed #6b5a2f;border-radius:12px;padding:12px 14px;margin:16px 0;
+  font-family:system-ui,sans-serif;font-size:.85rem;color:#f0c674}
