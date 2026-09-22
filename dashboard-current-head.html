@@ -239,10 +239,55 @@ const quick=[['Chairman','home'],['Family','family-section'],['Ideas','ideas-sec
     ];
   }
 
+  // The eleven fields a gate rule carries, in the order the gate law names them.
+  // Used only as a fallback: when the payload carries field_order, that wins, so
+  // the surface can never quietly reorder the law it is displaying.
+  const GATE_FIELDS = ['SCOPE', 'AUTHORITY', 'EVIDENCE', 'CONTEXT', 'TRIGGER',
+    'STATE', 'EXCEPTION', 'VERSION', 'SUPERSEDES', 'READBACK', 'NEXT_REVIEW'];
+
+  function gateFieldOrder(read) {
+    const order = read && Array.isArray(read.field_order) ? read.field_order : null;
+    return order && order.length ? order : GATE_FIELDS;
+  }
+
+  // A gate rendered as label/value pairs. A field the backend did not send is
+  // shown as "not stated" rather than dropped: a missing field of a gate rule is
+  // information, not an empty space.
+  function gateView(gate, order) {
+    return (order || GATE_FIELDS).map((key) => [
+      key.replace(/_/g, ' '),
+      gate && gate[key] != null && gate[key] !== '' ? gate[key] : 'not stated'
+    ]);
+  }
+
+  // BLOCKED and OPEN read as live; settled states read as settled. RETIRED is
+  // neither — it is shown plainly so a retired rule is never mistaken for a pass.
+  function gateSeverity(state) {
+    if (state === 'BLOCKED' || state === 'OPEN' || state === 'HELD') return 'open';
+    if (state === 'PASSED' || state === 'WAIVED') return 'good';
+    return '';
+  }
+
+  // The next question queue, already ordered by the backend. The surface keeps
+  // that order and shows where each item came from, so a topic curiosity can
+  // never be displayed above a blocking gate.
+  function nextQuestionRows(read) {
+    const queue = read && Array.isArray(read.queue) ? read.queue : [];
+    return queue.map((q) => ({
+      source: q.source || 'UNKNOWN',
+      ref: q.ref || '',
+      topic_key: q.topic_key || null,
+      question: q.question || '',
+      why_it_matters: q.why_it_matters || '',
+      blocking: q.source === 'GATE'
+    }));
+  }
+
   const api = {
-    MARK, LEDGER_COLUMNS, PATH_SECTIONS,
+    MARK, LEDGER_COLUMNS, PATH_SECTIONS, GATE_FIELDS,
     esc, normalizeKey, orderSections, partitionStatements,
-    readState, stateMessage, sequenceView, qyrisLines
+    readState, stateMessage, sequenceView, qyrisLines,
+    gateFieldOrder, gateView, gateSeverity, nextQuestionRows
   };
 
   /* ---------- DOM half ---------- */
@@ -316,6 +361,8 @@ const quick=[['Chairman','home'],['Family','family-section'],['Ideas','ideas-sec
       + '<div class="thy-omni-tabs">'
       + '<button type="button" id="thyOmniTabContext" class="active">CONTEXT</button>'
       + '<button type="button" id="thyOmniTabSequence">SEQUENCE</button>'
+      + '<button type="button" id="thyOmniTabGates">GATES</button>'
+      + '<button type="button" id="thyOmniTabNext">NEXT</button>'
       + '<button type="button" id="thyOmniRefresh">Refresh</button></div>'
       + '<div class="thy-omni-body" id="thyOmniBody"></div>';
     doc.body.appendChild(panel);
@@ -334,18 +381,31 @@ const quick=[['Chairman','home'],['Family','family-section'],['Ideas','ideas-sec
         + '</div></div>';
     }
 
+    const SUBTITLE = {
+      CONTEXT: 'Current state, then the history behind it.',
+      SEQUENCE: 'Every sequence: what changed, why, on whose authority.',
+      GATES: 'The rule in force for every gate, blocking ones first.',
+      NEXT: 'One question, chosen by what is actually blocking.'
+    };
+    const LOADER = {
+      CONTEXT: () => loadContext(),
+      SEQUENCE: () => loadLedger(),
+      GATES: () => loadGates(),
+      NEXT: () => loadNext()
+    };
+
     function open(which) {
       view = which || view;
-      panel.classList.add('open');
       $('thyOmniTabContext').classList.toggle('active', view === 'CONTEXT');
       $('thyOmniTabSequence').classList.toggle('active', view === 'SEQUENCE');
-      $('thyOmniTitle').textContent = view;
-      $('thyOmniSub').textContent = view === 'CONTEXT'
-        ? 'Current state, then the history behind it.'
-        : 'Every sequence: what changed, why, on whose authority.';
+      $('thyOmniTabGates').classList.toggle('active', view === 'GATES');
+      $('thyOmniTabNext').classList.toggle('active', view === 'NEXT');
+      panel.classList.add('open');
+      $('thyOmniTitle').textContent = view === 'NEXT' ? 'NEXT QUESTION' : view;
+      $('thyOmniSub').textContent = SUBTITLE[view] || '';
       const drawer = $('drawer');
       if (drawer) drawer.classList.remove('open');
-      return view === 'CONTEXT' ? loadContext() : loadLedger();
+      return (LOADER[view] || LOADER.CONTEXT)();
     }
 
     function close() { panel.classList.remove('open'); }
@@ -489,6 +549,80 @@ const quick=[['Chairman','home'],['Family','family-section'],['Ideas','ideas-sec
       doc.querySelectorAll('[data-omni-seq]').forEach((b) => { b.onclick = () => loadSequence(b.dataset.omniSeq); });
     }
 
+    // CURRENT GATES. Reads the gate law directly, so what is shown is the rule in
+    // force and not a cached summary of it.
+    async function loadGates() {
+      note('Reading the gates in force\u2026');
+      let read;
+      try { read = await rpc('thy_gate_law_readback', {}); }
+      catch (e) { const st = readState(e); return note(stateMessage(st) + (st === 'ERROR' ? ' ' + (e.message || '') : ''), st !== 'NOT_APPLIED'); }
+
+      const order = gateFieldOrder(read);
+      const gates = read.gates || [];
+      const counts = read.counts || {};
+      const due = read.review_due || [];
+
+      body.innerHTML =
+        '<div class="thy-omni-step">CURRENT GATES</div>'
+        + '<div class="thy-omni-row">'
+        + '<span class="thy-omni-pill' + (Number(counts.blocked) ? ' open' : ' good') + '">' + esc(counts.blocked || 0) + ' blocked</span>'
+        + '<span class="thy-omni-pill' + (Number(counts.open) ? ' open' : ' good') + '">' + esc(counts.open || 0) + ' open</span>'
+        + '<span class="thy-omni-pill good">' + esc(counts.settled || 0) + ' settled</span>'
+        + '<div class="m" style="margin-top:8px">' + esc((read.law || []).join(' \u00b7 ')) + '</div></div>'
+        + (due.length
+          ? '<div class="thy-omni-step">REVIEW OVERDUE</div>'
+            + due.map((d) => '<div class="thy-omni-row"><b>' + esc(d.GATE) + '</b> version ' + esc(d.VERSION)
+              + '<div class="m">due ' + esc(d.NEXT_REVIEW) + '</div></div>').join('')
+          : '')
+        + (gates.length ? gates.map((g) =>
+          '<div class="thy-omni-step">' + esc(g.GATE) + ' \u00b7 version ' + esc(g.VERSION) + '</div>'
+          + '<div class="thy-omni-row">'
+          + '<span class="thy-omni-pill ' + gateSeverity(g.STATE) + '">' + esc(g.STATE) + '</span>'
+          + '<div class="thy-omni-kv" style="margin-top:8px">'
+          + gateView(g, order).map((kv) => '<b>' + esc(kv[0]) + '</b><span>' + esc(kv[1]) + '</span>').join('')
+          + '</div></div>').join('')
+          : '<div class="thy-omni-note">No gate is declared. An undeclared gate is not a passed one.</div>');
+    }
+
+    // NEXT QUESTION. The order comes from the backend and is not re-sorted here.
+    async function loadNext() {
+      note('Reading what is actually blocking\u2026');
+      let read;
+      try { read = await rpc('thy_spine_next_question', { p_limit: 8 }); }
+      catch (e) { const st = readState(e); return note(stateMessage(st) + (st === 'ERROR' ? ' ' + (e.message || '') : ''), st !== 'NOT_APPLIED'); }
+
+      const top = read.next_question || {};
+      const rows = nextQuestionRows(read);
+      const notRead = read.not_read || [];
+
+      body.innerHTML =
+        '<div class="thy-omni-step">NEXT QUESTION</div>'
+        + '<div class="thy-omni-row"><b>' + esc(top.question || '') + '</b>'
+        + '<div class="m" style="margin-top:8px">' + esc(top.source || '') + (top.ref ? ' \u00b7 ' + esc(top.ref) : '') + '</div>'
+        + (top.why_it_matters ? '<div class="m" style="margin-top:6px">' + esc(top.why_it_matters) + '</div>' : '')
+        + '</div>'
+        + '<div class="thy-omni-step">QUEUE \u00b7 ' + esc(read.total || 0) + ' open</div>'
+        + (rows.length ? rows.map((q) =>
+          (q.topic_key
+            ? '<button type="button" class="thy-omni-card" data-omni-topic="' + esc(q.topic_key) + '" style="margin-bottom:8px">'
+            : '<div class="thy-omni-row">')
+          + '<span class="thy-omni-pill' + (q.blocking ? ' open' : '') + '">' + esc(q.source) + '</span>'
+          + (q.ref ? '<span class="thy-omni-pill">' + esc(q.ref) + '</span>' : '')
+          + '<div style="margin-top:7px">' + esc(q.question) + '</div>'
+          + (q.why_it_matters ? '<div class="m" style="margin-top:6px">' + esc(q.why_it_matters) + '</div>' : '')
+          + (q.topic_key ? '</button>' : '</div>')).join('')
+          : '<div class="thy-omni-note">Nothing is queued.</div>')
+        + '<div class="thy-omni-note" style="margin-top:12px">' + esc(read.ordering || '') + '</div>'
+        + (notRead.length
+          ? '<div class="thy-omni-step">NOT READ</div>'
+            + notRead.map((n) => '<div class="thy-omni-row sup">' + esc(n) + '</div>').join('')
+          : '');
+
+      doc.querySelectorAll('[data-omni-topic]').forEach((b) => {
+        b.onclick = () => { view = 'CONTEXT'; open('CONTEXT').then(() => loadTopic(b.dataset.omniTopic)); };
+      });
+    }
+
     async function loadSequence(no) {
       note('Reading sequence ' + no + '…');
       let read;
@@ -535,6 +669,8 @@ const quick=[['Chairman','home'],['Family','family-section'],['Ideas','ideas-sec
     $('thyOmniClose').onclick = close;
     $('thyOmniTabContext').onclick = () => open('CONTEXT');
     $('thyOmniTabSequence').onclick = () => open('SEQUENCE');
+    $('thyOmniTabGates').onclick = () => open('GATES');
+    $('thyOmniTabNext').onclick = () => open('NEXT');
     $('thyOmniRefresh').onclick = () => open(view);
 
     // Mount the entry points into the host page's own navigation. The drawer is
@@ -547,15 +683,24 @@ const quick=[['Chairman','home'],['Family','family-section'],['Ideas','ideas-sec
       entry.innerHTML = '<h3>OMNIVIEW</h3><div class="nav-grid">'
         + '<button type="button" class="nav-btn" id="thyOmniOpenContext"><b>CONTEXT</b><div class="sub">Topic canon, history, links, gates</div></button>'
         + '<button type="button" class="nav-btn" id="thyOmniOpenSequence"><b>SEQUENCE</b><div class="sub">Every change, reason and authority</div></button>'
+        + '<button type="button" class="nav-btn" id="thyOmniOpenGates"><b>GATES</b><div class="sub">The rule in force, blocking ones first</div></button>'
+        + '<button type="button" class="nav-btn" id="thyOmniOpenNext"><b>NEXT QUESTION</b><div class="sub">What is actually blocking</div></button>'
         + '</div>';
       drawerBody.insertBefore(entry, drawerBody.firstChild);
     } else {
-      entry.innerHTML = '<button type="button" id="thyOmniOpenContext" style="position:fixed;right:14px;bottom:calc(76px + env(safe-area-inset-bottom));z-index:120;border:1px solid #b28a3d;background:#17120b;color:#fff;border-radius:999px;padding:11px 15px;font-weight:800">CONTEXT</button>'
-        + '<button type="button" id="thyOmniOpenSequence" style="position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:120;border:1px solid #b28a3d;background:#17120b;color:#fff;border-radius:999px;padding:11px 15px;font-weight:800">SEQUENCE</button>';
+      const pill = (id, label, bottom) => '<button type="button" id="' + id + '" style="position:fixed;right:14px;bottom:calc('
+        + bottom + 'px + env(safe-area-inset-bottom));z-index:120;border:1px solid #b28a3d;background:#17120b;color:#fff;border-radius:999px;padding:11px 15px;font-weight:800">'
+        + label + '</button>';
+      entry.innerHTML = pill('thyOmniOpenContext', 'CONTEXT', 200)
+        + pill('thyOmniOpenSequence', 'SEQUENCE', 138)
+        + pill('thyOmniOpenGates', 'GATES', 76)
+        + pill('thyOmniOpenNext', 'NEXT', 14);
       doc.body.appendChild(entry);
     }
     $('thyOmniOpenContext').onclick = () => open('CONTEXT');
     $('thyOmniOpenSequence').onclick = () => open('SEQUENCE');
+    $('thyOmniOpenGates').onclick = () => open('GATES');
+    $('thyOmniOpenNext').onclick = () => open('NEXT');
 
     doc.addEventListener('keydown', (e) => { if (e.key === 'Escape' && panel.classList.contains('open')) close(); });
     return true;

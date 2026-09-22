@@ -17,7 +17,7 @@ test('the pack applies in a documented numeric order', () => {
   assert.deepEqual(files, [
     '0001_sequence_ledger.sql', '0002_topic_manifest.sql', '0003_read_model.sql',
     '0004_write_path.sql', '0005_rls_policies.sql', '0006_seed_manifest.sql',
-    '0007_prior_context.sql'
+    '0007_prior_context.sql', '0008_topics_alistair_sports.sql'
   ]);
   const readme = readFileSync(`${DIR}/README.md`, 'utf8');
   for (const f of files) assert.ok(readme.includes(f), `${f} is not documented in the apply order`);

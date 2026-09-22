@@ -16,6 +16,7 @@ a production mutation and is held for Chairman execution — see `APPLY.md`.
 | `0005_rls_policies.sql` | Row level security: signed-in sessions read, only the service role writes |
 | `0006_seed_manifest.sql` | The named topics, the ledger floor at 587, sequence 588, and canon only where a file proves it |
 | `0007_prior_context.sql` | Guarded bridge to pre-ledger history in `thylora_query_carryforward` |
+| `0008_topics_alistair_sports.sql` | Registers ALISTAIR and SPORTS for the 588 named-topic read test; both left UNSEEDED with the question that would settle them |
 
 Run in numeric order, one transaction per file.
 

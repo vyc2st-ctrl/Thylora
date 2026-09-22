@@ -72,12 +72,51 @@ for (const file of SURFACES) {
   });
 }
 
-test('the OMNIVIEW surface wires every control it adds', () => {
+// The closeout runs in BOTH directions. A control that is created and never
+// wired is a dead button; a control that is wired and never created is a crash
+// the first time the surface opens. The earlier version of this test only
+// caught the first, and only for ids written as a literal id="..." — which a
+// refactor into a helper could silently slip past.
+const omniControls = () => {
   const js = read('app/omniview-surface.js');
-  const added = [...new Set([...js.matchAll(/id="(thyOmni[A-Za-z]+)"/g)].map((m) => m[1]))];
-  assert.ok(added.length >= 6, 'expected the OMNIVIEW surface to declare its controls');
-  for (const id of added) {
-    const wired = new RegExp(`\\$\\('${id}'\\)`).test(js) || new RegExp(`getElementById\\('${id}'\\)`).test(js);
-    assert.ok(wired, `OMNIVIEW control ${id} is declared but never wired`);
+  const created = new Set([
+    ...[...js.matchAll(/id="(thyOmni[A-Za-z]+)"/g)].map((m) => m[1]),
+    // ids handed to a builder helper, e.g. pill('thyOmniOpenGates', 'GATES', 76)
+    ...[...js.matchAll(/\b\w+\(\s*'(thyOmni[A-Za-z]+)'\s*,/g)].map((m) => m[1]),
+    // ids set as a property, e.g. panel.id = 'thyOmniviewPanel'
+    ...[...js.matchAll(/\.id\s*=\s*'(thyOmni[A-Za-z]+)'/g)].map((m) => m[1])
+  ]);
+  const wired = new Set(
+    [...js.matchAll(/(?:\$|getElementById)\(\s*'(thyOmni[A-Za-z]+)'\s*\)/g)].map((m) => m[1])
+  );
+  return { created, wired };
+};
+
+test('the OMNIVIEW surface wires every control it adds', () => {
+  const { created, wired } = omniControls();
+  assert.ok(created.size >= 10, `expected the OMNIVIEW surface to declare its controls, found ${created.size}`);
+  const dead = [...created].filter((id) => !wired.has(id));
+  assert.deepEqual(dead, [], `OMNIVIEW controls declared but never wired: ${dead.join(', ')}`);
+});
+
+test('the OMNIVIEW surface creates every control it wires', () => {
+  const { created, wired } = omniControls();
+  // Controls belonging to the host page, not to this surface.
+  const hostOwned = new Set(['thyOmniTitle', 'thyOmniSub', 'thyOmniBody', 'thyOmniBack']);
+  const phantom = [...wired].filter((id) => !created.has(id) && !hostOwned.has(id));
+  assert.deepEqual(phantom, [], `OMNIVIEW controls wired but never created: ${phantom.join(', ')}`);
+});
+
+test('the four head surfaces are all reachable from the panel', () => {
+  const js = read('app/omniview-surface.js');
+  for (const tab of ['thyOmniTabContext', 'thyOmniTabSequence', 'thyOmniTabGates', 'thyOmniTabNext']) {
+    assert.match(js, new RegExp(`\\$\\('${tab}'\\)\\.onclick`), `${tab} opens nothing`);
+  }
+  for (const entry of ['thyOmniOpenContext', 'thyOmniOpenSequence', 'thyOmniOpenGates', 'thyOmniOpenNext']) {
+    assert.match(js, new RegExp(`\\$\\('${entry}'\\)\\.onclick`), `${entry} opens nothing`);
+  }
+  // Every view named in the loader table must have a loader behind it.
+  for (const view of ['CONTEXT', 'SEQUENCE', 'GATES', 'NEXT']) {
+    assert.match(js, new RegExp(`${view}:\\s*\\(\\)\\s*=>\\s*load`), `view ${view} has no loader`);
   }
 });
