@@ -1,0 +1,112 @@
+{
+  "register_code": "THY-GEN-SEEDS-587",
+  "opened": "2026-09-22",
+  "backend_of_record": "thylora-dash (jvsdxhrfhtlgaknhjxlz)",
+  "intake_state": "NOT READ - the live backend was unreachable from this session (see search-log.json S00, S01).",
+  "standing_rules": [
+    "Source citation for every accepted relationship.",
+    "No random surname matching.",
+    "No race or tribal-citizenship claim from surname or geography alone.",
+    "Prioritise deceased people. The possibly-living are held private and deferred.",
+    "Log negative searches."
+  ],
+  "verified_relationships": 0,
+  "note": "Nothing in this file is a finding. These are the names as the Chairman gave them, plus the variants a search should use and the facts a search needs before it can be run.",
+  "seeds": [
+    {
+      "seed_id": "SEED-01",
+      "name_as_given": "Hester Harris Wright",
+      "surname": "Wright",
+      "possible_maiden_surname": "Harris",
+      "given_variants": ["Hester", "Hesther", "Esther", "Hettie", "Hester Ann", "Hester L."],
+      "surname_variants": ["Wright", "Write", "Rite", "Wrighte"],
+      "certainty_as_given": "NAMED",
+      "known": [],
+      "required_before_search": ["county/state of residence", "approximate birth year window", "approximate death year window", "spouse or household member name"],
+      "living_status": "UNKNOWN - no birth or death year supplied, so treated as POSSIBLY_LIVING until a record says otherwise",
+      "asserted_relationships": []
+    },
+    {
+      "seed_id": "SEED-02",
+      "name_as_given": "Eugene Wright",
+      "also_known_as": "Kid Wright",
+      "surname": "Wright",
+      "given_variants": ["Eugene", "Gene", "Eugine", "Kid"],
+      "surname_variants": ["Wright", "Write", "Rite"],
+      "certainty_as_given": "NAMED",
+      "nickname_note": "\"Kid\" is a ring, field or street name. It will appear in newspapers and sports columns far more often than in vital records, and must never be matched on its own.",
+      "known": [],
+      "required_before_search": ["county/state", "birth year window", "death year window", "trade or sport if the nickname came from one"],
+      "living_status": "UNKNOWN",
+      "asserted_relationships": []
+    },
+    {
+      "seed_id": "SEED-03",
+      "name_as_given": "Eddie Ree Peete",
+      "surname": "Peete",
+      "given_variants": ["Eddie Ree", "Eddie Rae", "Eddie Lee", "Eddie", "Edward", "Edd", "Ed", "Eddye"],
+      "surname_variants": ["Peete", "Peet", "Peets", "Pete", "Peate", "Piete"],
+      "certainty_as_given": "NAMED",
+      "name_note": "\"Ree\" is a common rendering of Rae/Rhea/Rea and is frequently transcribed as \"Lee\" in indexes. All four must be searched.",
+      "known": [],
+      "required_before_search": ["county/state", "birth year window", "death year window", "parents or spouse"],
+      "living_status": "UNKNOWN",
+      "asserted_relationships": []
+    },
+    {
+      "seed_id": "SEED-04",
+      "name_as_given": "Walter James Peete",
+      "surname": "Peete",
+      "given_variants": ["Walter James", "Walter J.", "Walter", "W. J.", "Walt"],
+      "surname_variants": ["Peete", "Peet", "Peets", "Pete", "Peate"],
+      "certainty_as_given": "NAMED",
+      "known": [],
+      "required_before_search": ["county/state", "birth year window", "death year window", "draft registration would settle a birth date if the state is known"],
+      "living_status": "UNKNOWN",
+      "asserted_relationships": []
+    },
+    {
+      "seed_id": "SEED-05",
+      "name_as_given": "Willie Peete",
+      "surname": "Peete",
+      "given_variants": ["Willie", "William", "Will", "Wille", "Willy"],
+      "surname_variants": ["Peete", "Peet", "Peets", "Pete", "Peate"],
+      "certainty_as_given": "UNCERTAIN - flagged uncertain by the Chairman",
+      "known": [],
+      "required_before_search": ["county/state", "birth year window", "death year window", "relationship to the other seeds"],
+      "living_status": "UNKNOWN",
+      "asserted_relationships": [
+        {
+          "assertion_id": "CAND-01",
+          "status": "CANDIDATE - NOT ACCEPTED",
+          "person_id": "SEED-05",
+          "related_person_id": null,
+          "relationship_type": "PARENT_OF",
+          "candidate_text": "A search aggregator surfaced a Willie Peete married to a Hattie (Whitley), with a son Elmer Peete said to be born 16 December 1930 near Covington, Tennessee and to have died 16 February 2001 in Missouri.",
+          "why_noted": "It is the only result in this session that pairs a Willie Peete with a Hattie, which is the shape of SEED-05 and SEED-06.",
+          "why_not_accepted": [
+            "The aggregator page itself was unreachable (egress blocked), so nothing was read at source.",
+            "No record was seen. The only thing observed was a search-engine summary of a summary.",
+            "Nothing ties this household to the Chairman's line - no county, no date window and no household member was supplied to test it against.",
+            "Accepting it would be surname matching, which is prohibited."
+          ],
+          "citations": [],
+          "next_action": "If the Chairman confirms a Tennessee/Tipton County connection, test it against the 1940 census, the Tennessee death index and Tipton County marriage records. If he does not, drop it."
+        }
+      ]
+    },
+    {
+      "seed_id": "SEED-06",
+      "name_as_given": "Hattie Peete",
+      "surname": "Peete",
+      "given_variants": ["Hattie", "Harriet", "Hatti", "Hettie", "Hattie Mae"],
+      "surname_variants": ["Peete", "Peet", "Peets", "Pete", "Peate"],
+      "certainty_as_given": "UNCERTAIN - flagged uncertain by the Chairman",
+      "name_note": "Peete may be a married surname. Her maiden surname is unknown and is the single most valuable missing fact in this register.",
+      "known": [],
+      "required_before_search": ["maiden surname", "county/state", "birth year window", "death year window"],
+      "living_status": "UNKNOWN",
+      "asserted_relationships": []
+    }
+  ]
+}
