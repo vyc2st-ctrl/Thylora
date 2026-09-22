@@ -63,6 +63,7 @@
     'LINKED WORK': 'linked_work',
     'LINKED GATES': 'linked_gates',
     'CURRENT VS SUPERSEDED': 'current_vs_superseded',
+    'LAST CHAIRMAN CORRECTION': 'last_chairman_correction',
     'LAST RESTART': 'last_restart',
     'ANSWER': 'answer'
   };
@@ -384,6 +385,13 @@
             + '<div class="m" style="margin-top:6px">entered #' + esc(s.entered_sequence_no)
             + ' · superseded at #' + esc(s.superseded_sequence_no) + '</div></div>').join('')
             || '<div class="thy-omni-note">Nothing has been superseded.</div>'),
+        last_chairman_correction: () => {
+          const c = read.last_chairman_correction;
+          if (!c || !c.found) return '<div class="thy-omni-note">' + esc((c && c.note) || 'No Chairman correction recorded.') + '</div>';
+          return '<div class="thy-omni-row"><b>#' + esc(c.sequence_no) + ' · ' + esc(c.correction_kind) + '</b><br>'
+            + '<span class="sup">' + esc(c.corrected_from) + '</span><br>→ ' + esc(c.corrected_to)
+            + '<div class="m" style="margin-top:6px">' + esc(c.authority) + (c.source_ref ? ' · ' + esc(c.source_ref) : '') + '</div></div>';
+        },
         last_restart: () => '<div class="thy-omni-row">'
           + esc((read.last_restart && read.last_restart.restart_point) || 'No restart point recorded.') + '</div>',
         answer: () => '<div class="thy-omni-row"><b>ANSWER RULE</b><br>' + esc(read.answer_rule) + '</div>'

@@ -8,7 +8,7 @@
 --
 --   NEWEST DELTAS -> TOPIC MANIFEST -> AUTHORITY LOCKS -> LINKED GRAPH ->
 --   LINKED PEOPLE/PLACES/OBJECTS/PRODUCTS -> LINKED WORK -> LINKED GATES ->
---   CURRENT VS SUPERSEDED -> LAST RESTART -> ANSWER
+--   CURRENT VS SUPERSEDED -> LAST CHAIRMAN CORRECTION -> LAST RESTART -> ANSWER
 --
 -- The order is data, not a convention a client is trusted to remember: every
 -- response carries read_path, and the surface renders in that order.
@@ -182,6 +182,7 @@ declare
   v_deltas     jsonb;
   v_last_seq   jsonb;
   v_restart    jsonb;
+  v_chair      jsonb;
 begin
   select * into t from thy_omniview_topics where topic_key = k;
 
@@ -275,6 +276,35 @@ begin
      where lt.topic_key = k
      order by l.sequence_no desc limit 1) x;
 
+  -- LAST CHAIRMAN CORRECTION: the newest supersession on this topic made under
+  -- the Chairman's authority, either a canon statement replaced or a sequence
+  -- that supersedes an earlier one. Only recorded supersessions count; nothing
+  -- is inferred from wording, and "none recorded" is returned as such.
+  select c.j into v_chair from (
+    select jsonb_build_object(
+             'found', true, 'correction_kind', 'STATEMENT_SUPERSEDED',
+             'sequence_no', n.entered_sequence_no, 'authority', n.authority,
+             'corrected_from', o.body, 'corrected_to', n.body,
+             'superseded_statement_id', o.id, 'current_statement_id', n.id,
+             'source_ref', n.source_ref) as j,
+           n.entered_sequence_no as seq, n.id as tiebreak
+      from thy_omniview_statements o
+      join thy_omniview_statements n on n.id = o.superseded_by_id
+     where o.topic_key = k and n.authority ilike 'chairman%'
+    union all
+    select jsonb_build_object(
+             'found', true, 'correction_kind', 'SEQUENCE_SUPERSEDED',
+             'sequence_no', l.sequence_no, 'authority', l.authority,
+             'corrected_from', p.what_changed, 'corrected_to', l.what_changed,
+             'superseded_sequence_no', l.supersedes_sequence_no,
+             'source_ref', l.source_ref),
+           l.sequence_no, 0
+      from thy_sequence_ledger l
+      join thy_sequence_ledger_topics lt on lt.sequence_no = l.sequence_no and lt.topic_key = k
+      join thy_sequence_ledger p on p.sequence_no = l.supersedes_sequence_no
+     where l.authority ilike 'chairman%'
+     order by 2 desc, 3 desc limit 1) c;
+
   select to_jsonb(x) into v_restart from (
     select restart_point, reason, authority, sequence_no
       from thy_omniview_restarts
@@ -286,7 +316,7 @@ begin
     'read_path', jsonb_build_array(
       'NEWEST DELTAS','TOPIC MANIFEST','AUTHORITY LOCKS','LINKED GRAPH',
       'LINKED PEOPLE/PLACES/OBJECTS/PRODUCTS','LINKED WORK','LINKED GATES',
-      'CURRENT VS SUPERSEDED','LAST RESTART','ANSWER'),
+      'CURRENT VS SUPERSEDED','LAST CHAIRMAN CORRECTION','LAST RESTART','ANSWER'),
     'found', true,
     'topic_key', t.topic_key,
     'newest_deltas', v_deltas,
@@ -309,6 +339,9 @@ begin
     'open_questions', v_questions,
     'next_better_question', coalesce(v_next_q, 'null'::jsonb),
     'last_sequence', coalesce(v_last_seq, 'null'::jsonb),
+    'last_chairman_correction', coalesce(v_chair, jsonb_build_object(
+      'found', false,
+      'note', 'No Chairman correction is recorded for this topic. None is inferred.')),
     'last_restart', coalesce(v_restart, 'null'::jsonb),
     'answer_rule', case
       when t.canon_state = 'UNSEEDED' then

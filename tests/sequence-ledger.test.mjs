@@ -65,13 +65,13 @@ test('the read model returns the whole pre-response path', () => {
   for (const step of [
     'NEWEST DELTAS', 'TOPIC MANIFEST', 'AUTHORITY LOCKS', 'LINKED GRAPH',
     'LINKED PEOPLE/PLACES/OBJECTS/PRODUCTS', 'LINKED WORK', 'LINKED GATES',
-    'CURRENT VS SUPERSEDED', 'LAST RESTART', 'ANSWER'
+    'CURRENT VS SUPERSEDED', 'LAST CHAIRMAN CORRECTION', 'LAST RESTART', 'ANSWER'
   ]) {
     assert.ok(model.includes(`'${step}'`), `read_path is missing ${step}`);
   }
   for (const key of [
     'newest_deltas', 'topic_manifest', 'authority_locks', 'linked_graph', 'linked_entities',
-    'linked_work', 'linked_gates', 'current_vs_superseded', 'last_restart', 'last_sequence',
+    'linked_work', 'linked_gates', 'current_vs_superseded', 'last_chairman_correction', 'last_restart', 'last_sequence',
     'open_questions', 'next_better_question', 'answer_rule', 'qyris'
   ]) {
     assert.ok(model.includes(`'${key}'`), `the topic read does not return ${key}`);

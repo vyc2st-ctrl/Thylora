@@ -56,8 +56,8 @@ begin
     raise notice 'PROOF FAIL: the read is missing a section of the pre-response path'; ok := false;
   end if;
 
-  if jsonb_array_length(v_read->'read_path') <> 10 then
-    raise notice 'PROOF FAIL: read_path does not carry all ten steps'; ok := false;
+  if jsonb_array_length(v_read->'read_path') <> 11 then
+    raise notice 'PROOF FAIL: read_path does not carry all eleven steps'; ok := false;
   end if;
 
   -- CURRENT: the new statement. SUPERSEDED: the old one, still readable.

@@ -58,6 +58,15 @@ begin
       raise notice 'PROOF FAIL: % returned no GATES section', t; ok := false;
     end if;
 
+    -- LAST CHAIRMAN CORRECTION ------------------------------------------------
+    -- Always present. Absent a recorded correction it says so; it never guesses.
+    if not (v ? 'last_chairman_correction') or v->'last_chairman_correction'->>'found' is null then
+      raise notice 'PROOF FAIL: % returned no LAST CHAIRMAN CORRECTION section', t; ok := false;
+    elsif v->'last_chairman_correction'->>'found' = 'false'
+      and coalesce(v->'last_chairman_correction'->>'note','') = '' then
+      raise notice 'PROOF FAIL: % has no Chairman correction and did not say so', t; ok := false;
+    end if;
+
     -- LAST RESTART ------------------------------------------------------------
     if not (v ? 'last_restart') then
       raise notice 'PROOF FAIL: % returned no LAST RESTART section', t; ok := false;
@@ -125,6 +134,31 @@ begin
     raise notice 'PROOF FAIL: SPORTS returned CANON while its defining question is still open'; ok := false;
   end if;
 
+  -- LAST CHAIRMAN CORRECTION is read from recorded supersession, not wording.
+  -- A non-Chairman supersession must not register; a Chairman one must, and
+  -- carry both the old and the new text.
+  if thy_sequence_head() < 588 then
+    raise notice 'PROOF FAIL: sequence head is below 588; the correction check has no sequence to enter on'; ok := false;
+  else
+    declare s_old bigint; s_mid bigint; begin
+      perform thy_omniview_state_canon('STORE', 'Proof-only statement A.', 'REPO_VERIFIED', 'Build session', 588);
+      select max(id) into s_old from thy_omniview_statements where topic_key = 'STORE';
+      perform thy_omniview_state_canon('STORE', 'Proof-only statement B.', 'REPO_VERIFIED', 'Build session', 588, s_old);
+      select max(id) into s_mid from thy_omniview_statements where topic_key = 'STORE';
+      v := thy_omniview_topic('STORE', 5);
+      if coalesce(v->'last_chairman_correction'->>'current_statement_id','') = s_mid::text then
+        raise notice 'PROOF FAIL: a non-Chairman supersession was reported as a Chairman correction'; ok := false;
+      end if;
+      perform thy_omniview_state_canon('STORE', 'Proof-only statement C.', 'CHAIRMAN_ASSERTED', 'Chairman', 588, s_mid);
+      v := thy_omniview_topic('STORE', 5);
+      if v->'last_chairman_correction'->>'corrected_from' is distinct from 'Proof-only statement B.'
+         or v->'last_chairman_correction'->>'corrected_to' is distinct from 'Proof-only statement C.' then
+        raise notice 'PROOF FAIL: the Chairman correction was not returned as LAST CHAIRMAN CORRECTION: %',
+          v->'last_chairman_correction'; ok := false;
+      end if;
+    end;
+  end if;
+
   -- Aliases resolve to the same topic, so a read never misses on spelling.
   if thy_omniview_resolve_topic('time-run')   <> 'TIME RUN' then raise notice 'PROOF FAIL: time-run did not resolve'; ok := false; end if;
   if thy_omniview_resolve_topic('the castle') <> 'CASTLE'   then raise notice 'PROOF FAIL: the castle did not resolve'; ok := false; end if;
@@ -133,7 +167,7 @@ begin
   if thy_omniview_resolve_topic('shop')       <> 'STORE'    then raise notice 'PROOF FAIL: shop did not resolve'; ok := false; end if;
 
   if ok then
-    raise notice 'PROOF PASS: FIVE NAMED TOPICS — TIME RUN, ALISTAIR, CASTLE, STORE and SPORTS each returned one read carrying authority, superseded state, people/places/objects/products, work, gates, last restart and source references; % answered from source and % refused with the question that would settle them', v_answered, v_unseeded;
+    raise notice 'PROOF PASS: FIVE NAMED TOPICS — TIME RUN, ALISTAIR, CASTLE, STORE and SPORTS each returned one read carrying authority, superseded state, people/places/objects/products, work, gates, last Chairman correction, last restart and source references; % answered from source and % refused with the question that would settle them', v_answered, v_unseeded;
   end if;
 end $$;
 

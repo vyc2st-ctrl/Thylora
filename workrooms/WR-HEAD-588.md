@@ -480,3 +480,50 @@ cycle 588 and surfaced by NEXT QUESTION:
 4. Five topics have no source; ALISTAIR and SPORTS join them at 588.
 5. The Chairman local timezone of record is unknown, so LOCAL DATE/TIME still defaults to UTC.
 6. Sequences 589–873 have not happened. Milestone 874 cannot be compared until they do.
+
+---
+
+## 17 · Follow-up at 588: the eleventh field
+
+**Session:** `claude/thylora-head-spine-forward-2sf31g`, built on this branch's head `0484ec5`.
+Nothing above was redone. The four source branches, the gate law, the QYRIS transfer,
+the 874 floor and the workflow fix were read and re-verified, not rebuilt.
+
+**Gap found.** The OMNIVIEW brief names eleven sections for a topic read. Section 7
+above lists ten. **LAST CHAIRMAN CORRECTION was named in the proof's header comment
+and never returned or checked.** The proof passed because it did not test for it.
+
+**Fix.**
+
+- `thy_omniview_topic` now returns `last_chairman_correction`, and `read_path` carries
+  `LAST CHAIRMAN CORRECTION` between `CURRENT VS SUPERSEDED` and `LAST RESTART`.
+- It is read from **recorded supersession only**: the newest canon statement replaced
+  by a Chairman-authority statement, or the newest Chairman-authority sequence that
+  names what it supersedes. Nothing is inferred from wording.
+- With none recorded it returns `found: false` and says so. It is never absent.
+- The surface renders it in the topic read. The injected dashboard copy was regenerated
+  with `tools/inject-omniview.mjs`.
+
+**Proof.** `proof_5_named_topics.sql` now checks the section for all five topics, then,
+inside its rolled-back transaction, writes one build-session supersession (must **not**
+register) and one Chairman supersession (must register with old and new text).
+Removing the Chairman filter from the read model turns the proof red. It went green
+again once the filter was restored. `proof_1_time_run.sql` now expects eleven steps.
+
+**Readback.** Five topics, one read each, against a throwaway PostgreSQL 16 database:
+TIME RUN, ALISTAIR, CASTLE, STORE, SPORTS all return `found: false`, which means no
+Chairman correction has been recorded in the ledger for any of them. That matches the
+ledger, which opens at 587. The TIME RUN binding correction on
+`claude/time-run-binding-correction-4undjy` is **not** in the ledger, and it was not
+written here: it enters as a sequence when the packs are applied, not before.
+
+```
+db/omniview/validation/run.sh          exit 0   18 reject · 5 proof
+db/gate-law/validation/run.sh          exit 0
+db/qyris-transfer/validation/run.sh    exit 0
+db/milestone-874/validation/run.sh     exit 0
+db/spine-588/validation/run.sh         exit 0
+npm test                               418 pass · 0 fail
+```
+
+`GATE-BACKEND-EGRESS` still holds. Nothing is applied to `thylora-dash`.
