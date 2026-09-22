@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: thylora-dashboard-head
+  cancel-in-progress: false
+
 jobs:
   build-r8:
     runs-on: ubuntu-latest

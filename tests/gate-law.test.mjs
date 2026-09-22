@@ -97,8 +97,9 @@ test('every seeded gate answers all eleven fields with something real', () => {
     assert.ok(key, 'a seeded gate has no key');
     assert.match(body, /NO EXCEPTION/, `${key} does not state its exception`);
     assert.match(body, /v_seq|588/, `${key} does not name the sequence that put it in force`);
-    // Evidence must be a real reference or an explicit statement that there is none.
-    assert.ok(/\.md|\.json|\.sql|\.mjs|run\.sh|No evidence|not reached|recorded/.test(body),
+    // Evidence must be a checkable reference — a file in this repository, a
+    // workflow run id, or an explicit statement that there is none.
+    assert.ok(/\.md|\.json|\.sql|\.mjs|run\.sh|Runs? \d{8,}|No evidence|not reached|recorded/.test(body),
       `${key} cites no evidence and does not say it has none`);
   }
 });

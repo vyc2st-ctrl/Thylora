@@ -1,0 +1,3 @@
+Trigger file for r7-dashboard.
+Edit this file to fire that dashboard patcher, or run it from the Actions tab.
+The patcher guards on its own release marker and refuses to patch a foreign baseline.

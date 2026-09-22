@@ -116,7 +116,7 @@ TRIGGER, STATE, EXCEPTION, VERSION, SUPERSEDES, READBACK, NEXT REVIEW.
 silence is never read as permission. `NEXT REVIEW` is a date **or** a stated reason
 there is none. A state change is a new version; there is no setter for `gate_state`.
 
-Six gates are in force at 588: three BLOCKED, one OPEN, two PASSED.
+Seven gates are in force at 588: three BLOCKED, one OPEN, one HELD, two PASSED.
 
 ### QYRIS TRANSFER — `db/qyris-transfer/`
 
@@ -156,7 +156,7 @@ real tables; six state why they could not be measured:
 | Social | UNMEASURED — no platform queried |
 | Dashboard and app | MEASURED — 8 surfaces in source; live state **not claimed** |
 | World Windows | MEASURED — 3 |
-| Gate health | MEASURED — 3 blocked, 1 open, 2 settled |
+| Gate health | MEASURED — counted from the gate law at apply time |
 | Canon changes | MEASURED — 11 statements at or before 588 |
 
 ### DASHBOARD — `db/spine-588/` and `app/omniview-surface.js`
@@ -320,6 +320,59 @@ triple-quoted strings balanced; every file declares a job, a runner and steps; e
 dashboard patcher still refuses to patch a foreign baseline. Verified by
 reintroducing the exact break — the suite went red, and green again on restore.
 
+### What the fix then did, observed rather than predicted
+
+The fix worked, and it had a consequence worth stating plainly. Four patchers had
+been dormant **only** because they did not parse. Repairing the parse re-armed all
+of them, and three fired on the very push that repaired them — because they were
+triggered by a change to their own workflow file, which is exactly what the repair
+was.
+
+| Run | Result |
+|---|---|
+| `Patch THYLORA dashboard R7` | **success** — patched the head and pushed |
+| `Patch THYLORA dashboard R6` | failure — patched fine, push rejected: `cannot lock ref` |
+| `Build repaired THYLORA R7` | failure — same race |
+
+The two failures were **not logic failures**. All three checked out the same commit,
+patched the same file, and raced to push; R7 won. R6's log shows the patch applied
+cleanly and only the push rejected.
+
+The run names alone prove the parse fix landed: they now read *"Patch THYLORA
+dashboard R7"* instead of the file path, and jobs were created and executed.
+
+**Two things were changed in response**, and both are behaviour changes rather than
+formatting, so they are named here:
+
+1. **The three self-firing patchers now fire from a trigger file** —
+   `.github/triggers/r3-dashboard.txt`, `r6-dashboard.txt`, `r7-dashboard.txt`,
+   `r7-repair-dashboard.txt` — plus a manual `workflow_dispatch`. This is the
+   convention `patch-dashboard-r8` and `spine-forward-both` already used, and it is
+   why those two never self-fired. A workflow repair can no longer rewrite the head
+   as a side effect.
+2. **All six patchers share one concurrency group** (`thylora-dashboard-head`), so
+   two can never again race for the same branch.
+
+**R7's patch was kept, not reverted.** It is the Chairman's own workflow doing the
+work it was written to do, blocked until now only by the parse bug. Reverting it
+would be this session overriding that. One consequence is recorded rather than
+hidden: **the head marker moved R5 → R7**, so R6, R7-repair and R8 — which all guard
+on an R5 floor — will no longer match and will refuse to patch. That is their guard
+working correctly, and it means the R6/R8 lanes now need the Chairman's decision
+rather than a re-run.
+
+This is held as `GATE-DASHBOARD-PATCHERS` (HELD).
+
+### One inherited test was too narrow
+
+R7's patch introduced `<select data-speech-rate>`, and
+`every form input is named or read` failed on it. That was a **false positive in the
+test, not a regression in the patch**: the select is genuinely read, by
+`closest('[data-speech-rate]').value` in a change listener. The test accepted only
+an `id` or a `name`; a control reached through its own data attribute is a third,
+equally real wiring, and the sweep now accepts it. Confirmed still strict by
+injecting a genuinely orphaned input — the suite went red, then green on restore.
+
 ## 14 · WRITEBACK — verified readback
 
 Every pack applied to a throwaway PostgreSQL 16 database, twice, then exercised.
@@ -362,7 +415,14 @@ Registered, authority on the Chairman, canon UNSEEDED, and the read refuses to a
 This is the designed behaviour, not a gap. It joins CASTLE, INÉS, VERONICA, FOOTBALL
 and VEHICLES — **six named topics now await a source**, and SPORTS awaits a definition.
 
-**FINDING 3 — two lanes have now failed to reach the backend of record.**
+**FINDING 3 — a dormant workflow is not a safe workflow.**
+Four dashboard patchers were harmless only because they were broken. Repairing them
+re-armed four agents that rewrite the head and push, and three fired immediately on
+the repair itself. Anything that edits the head and pushes should fire deliberately,
+never as a side effect of maintenance — now enforced by trigger-file activation and
+a shared concurrency group, and held as `GATE-DASHBOARD-PATCHERS`.
+
+**FINDING 4 — two lanes have now failed to reach the backend of record.**
 `WR-RAELINK-001` on 2026-09-11 and this session on 2026-09-22. It is no longer a
 per-session note; it is `GATE-BACKEND-EGRESS`, and it is the top of the queue. Until
 it clears, every commerce number THYLORA reports is UNMEASURED — and the milestone

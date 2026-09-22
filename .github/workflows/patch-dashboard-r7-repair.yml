@@ -3,10 +3,18 @@ name: Build repaired THYLORA R7
 on:
   push:
     paths:
-      - '.github/workflows/patch-dashboard-r7-repair.yml'
+      - '.github/triggers/r7-repair-dashboard.txt'
+
+  workflow_dispatch:
 
 permissions:
   contents: write
+
+# These patchers all rewrite dashboard-current-head.html and push. Without a
+# shared group they race each other and all but one push is rejected.
+concurrency:
+  group: thylora-dashboard-head
+  cancel-in-progress: false
 
 jobs:
   repair-dashboard:

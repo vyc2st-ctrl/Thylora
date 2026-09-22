@@ -103,6 +103,21 @@ begin
       v_seq, null, 'Permanent law of the ledger; reviewed only if the Chairman restates it.', 'OMNIVIEW');
   end if;
 
+
+  if not exists (select 1 from thy_gate_law where gate_key = 'GATE-DASHBOARD-PATCHERS') then
+    perform thy_gate_declare(
+      'GATE-DASHBOARD-PATCHERS',
+      'SURFACE',
+      'WORKROOM','THY-WORK-DASHBOARD-INTERACTION-CLOSEOUT-562',
+      'Runs 35767767643, 35767767656 and 35767767760 on 2026-09-22: three patchers fired on one push, one pushed, two were rejected with "cannot lock ref".',
+      'Four dashboard patchers were dormant only because their YAML did not parse. Repairing the parse re-armed all of them at once, and three fired on the very push that fixed them.',
+      'Evaluated whenever a dashboard patcher is edited, added or fired.',
+      'HELD',
+      'The patchers now fire from .github/triggers/*.txt or a manual dispatch, never from an edit to their own file, and they share one concurrency group so two can no longer race for the same branch. R7 won the race before this was in place and moved the head marker from R5 to R7, so R6, R7-repair and R8 will no longer match their R5 floor.',
+      'NO EXCEPTION. A patcher that rewrites the head does not fire on a maintenance edit.',
+      'Dashboard patchers fire deliberately, one at a time. A workflow repair must never be able to rewrite the head as a side effect.',
+      v_seq, null, 'Re-evaluated when the head marker or any patcher changes.', 'DASHBOARD');
+  end if;
 end $$;
 
 commit;

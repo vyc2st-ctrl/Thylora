@@ -65,7 +65,12 @@ for (const file of SURFACES) {
       const id = (attrs.match(/\bid="([^"]+)"/) || [])[1];
       const name = (attrs.match(/\bname="([^"]+)"/) || [])[1];
       if (name) return false;                      // read through FormData
-      if (!id) return true;                        // no id and no name: unreachable
+      // A control can also be reached through its own data attribute, e.g.
+      // <select data-speech-rate> read by closest('[data-speech-rate]').value.
+      // That is a real wiring, so it is not an orphan.
+      const dataAttrs = [...attrs.matchAll(/\b(data-[a-z-]+)(?:=|\s|$)/g)].map((d) => d[1]);
+      if (dataAttrs.some((a) => wiring.includes(`[${a}`))) return false;
+      if (!id) return true;                        // no id, no name, no handled data attribute
       return !new RegExp(`['"(\\[]${id}['")\\]]`).test(wiring);
     });
     assert.equal(orphan.length, 0, `${orphan.length} input(s) in ${file} cannot be read by any handler`);
