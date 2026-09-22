@@ -363,6 +363,27 @@ rather than a re-run.
 
 This is held as `GATE-DASHBOARD-PATCHERS` (HELD).
 
+### The new triggers were then tested by their own arrival
+
+Adding `.github/triggers/*.txt` matched the new path filters, so the patchers fired
+once more — the last time they can fire without being asked. That firing is the
+proof the fix works, because this time nothing raced and nothing landed:
+
+| Run | Result |
+|---|---|
+| `Patch THYLORA dashboard R3` | **cancelled** by the concurrency group |
+| `Patch THYLORA dashboard R6` | **cancelled** by the concurrency group |
+| `Patch THYLORA dashboard R7` | refused: `R5 floor marker missing; refuse silent patch` |
+| `Build repaired THYLORA R7` | refused on the same guard |
+
+Two were stopped by the shared group before they could run; the two that ran were
+stopped by their own baseline guard, because the head is at R7 and they require R5.
+**No push was made and the branch did not move.** Compare with the first firing, an
+hour earlier, where three ran and one overwrote the head.
+
+Both layers are doing their job: the group stops the race, and the baseline guard
+stops the patch. The head is unchanged at `fc1b0c8`.
+
 ### One inherited test was too narrow
 
 R7's patch introduced `<select data-speech-rate>`, and
