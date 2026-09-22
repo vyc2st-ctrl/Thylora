@@ -20,6 +20,14 @@
     {
       "source": "/rae-link/",
       "destination": "/rae-link/index.html"
+    },
+    {
+      "source": "/qyris",
+      "destination": "/qyris/index.html"
+    },
+    {
+      "source": "/qyris/",
+      "destination": "/qyris/index.html"
     }
   ]
 }

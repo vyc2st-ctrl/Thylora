@@ -1,0 +1,11 @@
+{
+  "name": "THYLORA QYRIS",
+  "short_name": "QYRIS",
+  "description": "Visible QYRIS — recursive question packs, the industry template, and Trusted Six support.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0d1117",
+  "theme_color": "#0d1117",
+  "orientation": "any"
+}
