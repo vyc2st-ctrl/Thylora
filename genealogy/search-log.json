@@ -1,0 +1,116 @@
+{
+  "log_code": "THY-GEN-SEARCHLOG-587",
+  "session_date": "2026-09-22",
+  "operator": "THYLORA build session",
+  "note": "Every search run this session, including the ones that found nothing and the ones that could not be run at all. No entry was removed for being unflattering.",
+  "entries": [
+    {
+      "search_id": "S00",
+      "searched_at": "2026-09-22",
+      "repository": "thylora-dash backend (jvsdxhrfhtlgaknhjxlz.supabase.co)",
+      "query": "READ EXISTING INTAKE FIRST - family_story_archives and any genealogy intake tables",
+      "result": "UNREACHABLE",
+      "obstacle": "Egress proxy answered 403 to CONNECT. Same organisation policy denial recorded against this host on 2026-09-11 in WR-RAELINK-001 blocker B1. Still open.",
+      "consequence": "The existing intake could not be read. Every fact the Chairman has already entered - localities, dates, relationships - was invisible to this session."
+    },
+    {
+      "search_id": "S01",
+      "searched_at": "2026-09-22",
+      "repository": "vyc2st-ctrl/Thylora git repository (local working copy)",
+      "query": "grep for genealogy / ancestry / lineage / family_story / the six seed surnames across all tracked files",
+      "result": "NEGATIVE",
+      "coverage": "All tracked files at HEAD (3a01e82). Found the family_story_archives WRITE path in app/app.js and the FAMILY_STORY channel class in db/rae-link/, i.e. the containers. Found no genealogy intake rows, no locality, no date window and no prior research for any of the six seeds.",
+      "consequence": "There is no committed intake in this repository to read. The intake lives only in the unreachable backend."
+    },
+    {
+      "search_id": "S02",
+      "searched_at": "2026-09-22",
+      "repository": "All six seeds - intake completeness check",
+      "query": "Do the seeds carry the minimum a lawful record search needs: county/state, date window, one household member?",
+      "result": "INSUFFICIENT_INPUT",
+      "coverage": "Six of six seeds carry a name only. None carries a state, a county, a birth or death year, a spouse, or a parent.",
+      "consequence": "Name-only searching on Peete, Wright and Harris across the United States produces coincidence, not identification. Running it and reporting the results would be exactly the random surname matching the Chairman prohibited. The correct output is this entry, not a family tree."
+    },
+    {
+      "search_id": "S03",
+      "searched_at": "2026-09-22",
+      "repository": "FamilySearch (www.familysearch.org)",
+      "query": "Direct connection for record search",
+      "result": "UNREACHABLE",
+      "obstacle": "Egress proxy answered 403 to CONNECT at 13:45:46Z. The host is not on this environment's network allowlist.",
+      "consequence": "The largest free source of census, death and marriage images could not be searched at all."
+    },
+    {
+      "search_id": "S04",
+      "searched_at": "2026-09-22",
+      "repository": "Find a Grave (www.findagrave.com)",
+      "query": "Direct connection for cemetery and memorial search",
+      "result": "UNREACHABLE",
+      "obstacle": "Egress proxy answered 403 to CONNECT at 13:45:46Z.",
+      "consequence": "No cemetery search was possible."
+    },
+    {
+      "search_id": "S05",
+      "searched_at": "2026-09-22",
+      "repository": "National Archives (www.archives.gov)",
+      "query": "Vital records guidance and federal holdings for genealogy",
+      "result": "UNREACHABLE",
+      "obstacle": "Fetch refused: EGRESS_BLOCKED by the network egress proxy.",
+      "consequence": "NARA holdings could not be checked from this session."
+    },
+    {
+      "search_id": "S06",
+      "searched_at": "2026-09-22",
+      "repository": "General web index (search only - no repository page could be opened)",
+      "query": "\"Eddie Ree Peete\" OR \"Eddie Rae Peete\" OR \"Eddie Lee Peete\" obituary death record",
+      "result": "NEGATIVE",
+      "coverage": "Index-level search across obituary aggregators and encyclopaedic sources, all spellings of the given name, no locality filter because none was available. Returned only unrelated Peete individuals: an Edward Julian Peete Sr (Moreno Valley, California, d. 2026), an Edward Peete (b. 1931, d. 2024), an Edwin C. Peete (Tacoma), an Eddie Mae Peet (Racine, Wisconsin), and Calvin and Charlie Peete, who are public figures.",
+      "consequence": "No candidate. None of the returned individuals shares an anchor with SEED-03 beyond the surname, and the surname alone is not an identification."
+    },
+    {
+      "search_id": "S07",
+      "searched_at": "2026-09-22",
+      "repository": "General web index",
+      "query": "\"Walter James Peete\" OR \"Walter J. Peete\" death index obituary",
+      "result": "NEGATIVE",
+      "coverage": "Index-level search, both name forms, no locality filter. Returned a Walter Tyrone Peete (d. 22 May 2026) and a James Morris Peete, neither of which is the name searched. One aggregator states it holds 225 Peete obituaries, which were not individually reachable.",
+      "consequence": "No candidate for SEED-04. A 225-record surname collection exists and remains unsearched; it is named in NEXT RECORD SOURCES."
+    },
+    {
+      "search_id": "S08",
+      "searched_at": "2026-09-22",
+      "repository": "General web index",
+      "query": "\"Hester Wright\" OR \"Hester Harris Wright\" death record cemetery obituary",
+      "result": "NEGATIVE",
+      "coverage": "Index-level search, both name forms, no locality filter. Returned a Hester Imogene Wright (Dyersburg, Tennessee), a Hester A. Wright (Kansas), a Hester Cooke Wright (1620-1675, Plymouth colony) and a Hester Lee Wright (b. 1802, Pitt County, North Carolina). None was returned under the name as given.",
+      "consequence": "No candidate for SEED-01. Note without weight: Dyersburg is in Dyer County, Tennessee, roughly fifty miles from Covington in Tipton County, which appears in the unrelated CAND-01 lead. Two Tennessee place names in one session is a coincidence until a record says otherwise, and it is recorded here only so a later session does not discover it and mistake it for a finding."
+    },
+    {
+      "search_id": "S09",
+      "searched_at": "2026-09-22",
+      "repository": "General web index",
+      "query": "\"Hattie Peete\" OR \"Willie Peete\" census death record genealogy",
+      "result": "NEGATIVE",
+      "coverage": "Index-level search, both names, no locality filter. One aggregator summary described an Elmer Peete, said to be born 16 December 1930 near Covington, Tennessee and to have died 16 February 2001 in Missouri, named as the son of a Willie Peete and a Hattie Whitley. Also returned Willie Peete the football coach (d. aged 87), who is a different, public individual.",
+      "consequence": "Recorded as candidate CAND-01 against SEED-05 and NOT accepted. The source page itself was unreachable, no record was seen, and nothing connects the household to the Chairman's line. It is a lead for a session that has a locality to test it against."
+    },
+    {
+      "search_id": "S10",
+      "searched_at": "2026-09-22",
+      "repository": "sortedbyname.com (aggregator surfaced by S09)",
+      "query": "Direct read of the Peete surname page to see the CAND-01 entry at source",
+      "result": "UNREACHABLE",
+      "obstacle": "Fetch refused: EGRESS_BLOCKED by the network egress proxy.",
+      "consequence": "CAND-01 could not be read at source, only as a search-engine summary. That is why it is a candidate and not evidence."
+    },
+    {
+      "search_id": "S11",
+      "searched_at": "2026-09-22",
+      "repository": "General web index",
+      "query": "\"Eugene Wright\" \"Kid Wright\" obituary death record genealogy",
+      "result": "NEGATIVE",
+      "coverage": "Index-level search pairing the given name with the nickname, no locality filter. Returned Eugene Joseph Wright the jazz bassist (1923-2020), Chalky Wright and Billy Wright the boxers, and an unrelated Eugene Wright (1960-2026, Goose Creek, South Carolina). No individual was returned under the nickname \"Kid Wright\".",
+      "consequence": "No candidate for SEED-02. The nickname is the only distinguishing term available and it returns public figures, which is what a nickname search does without a locality."
+    }
+  ]
+}

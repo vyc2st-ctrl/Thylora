@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  THYLORA · FIRST SHIRT · FRONT PRINT MASTER
+  THY-WORK-POD-FIRST-SHIRT-587
+
+  Canvas: 3600 x 4800 px = 12.00in x 16.00in at 300 dpi.
+  That is the standard maximum DTG front print area on a Bella+Canvas 3001
+  in adult sizes; smaller garment sizes crop it, so the live artwork is kept
+  inside the 2700 x 2400 safe band drawn on the PREFLIGHT layer.
+
+  PREFLIGHT, BEFORE THIS FILE IS UPLOADED ANYWHERE:
+    1. Convert every <text> element to outlines. A print service does not
+       have your font. Text left as text will be substituted or dropped.
+    2. Delete the layer id="preflight". Those guides must never print.
+    3. Export PNG at 300 dpi with a transparent background.
+    4. Confirm the ink colour against the chosen garment colour.
+
+  Colour: one ink. THYLORA Bone #F2EDE3 for dark garments.
+  A one-ink design is deliberate: it prints identically in DTG, screen print
+  and single-head embroidery, so the decoration method stays an open decision
+  after the art is finished rather than before.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="3600" height="4800" viewBox="0 0 3600 4800" version="1.1">
+  <title>THYLORA front print master</title>
+  <desc>THYLORA wordmark with globe-O, ERSATZREALITY line, VYC2ST origin mark and serial block.</desc>
+
+  <defs>
+    <style>
+      /* Placeholder family. The licensed display face is a Chairman decision -
+         see FIRST-SHIRT-SPEC.md, blocker F2. Outline before upload. */
+      .word  { font-family: "Inter", "Helvetica Neue", Arial, sans-serif; font-weight: 800; }
+      .sub   { font-family: "Inter", "Helvetica Neue", Arial, sans-serif; font-weight: 500; }
+      .micro { font-family: "IBM Plex Mono", "Courier New", monospace; font-weight: 500; }
+    </style>
+    <!-- The globe-O. Built from geometry, not from a font glyph, so it is the
+         one element that survives any typeface decision unchanged. -->
+    <g id="globe-o">
+      <circle cx="0" cy="0" r="150" fill="none" stroke="#F2EDE3" stroke-width="42"/>
+      <!-- parallels: chords of the sphere, thinner than the rim -->
+      <line x1="-138" y1="-72" x2="138" y2="-72" stroke="#F2EDE3" stroke-width="20" stroke-linecap="round"/>
+      <line x1="-150" y1="0"   x2="150" y2="0"   stroke="#F2EDE3" stroke-width="20" stroke-linecap="round"/>
+      <line x1="-138" y1="72"  x2="138" y2="72"  stroke="#F2EDE3" stroke-width="20" stroke-linecap="round"/>
+      <!-- meridians: two ellipses, giving the rotation read -->
+      <ellipse cx="0" cy="0" rx="58"  ry="150" fill="none" stroke="#F2EDE3" stroke-width="20"/>
+      <ellipse cx="0" cy="0" rx="112" ry="150" fill="none" stroke="#F2EDE3" stroke-width="16" opacity="0.55"/>
+    </g>
+  </defs>
+
+  <g id="artwork">
+    <!-- THYLORA wordmark. The O is replaced by the globe: the letter is not
+         decorated with a globe, it IS the globe. Letters are positioned
+         individually so the globe sits on the same optical centre line. -->
+    <g id="wordmark" transform="translate(1800 2180)">
+      <text class="word" x="-1015" y="55" font-size="400" fill="#F2EDE3" letter-spacing="26">THYL</text>
+      <g transform="translate(-40 -80)"><use href="#globe-o"/></g>
+      <text class="word" x="160" y="55" font-size="400" fill="#F2EDE3" letter-spacing="26">RA</text>
+    </g>
+
+    <!-- Rule + enterprise line -->
+    <line x1="1090" y1="2400" x2="2510" y2="2400" stroke="#F2EDE3" stroke-width="7" opacity="0.8"/>
+    <text class="sub" x="1800" y="2560" font-size="126" fill="#F2EDE3" text-anchor="middle" letter-spacing="38">ERSATZREALITY</text>
+
+    <!-- The embedded relationship. Three names, one hierarchy, read top down:
+         the house, the enterprise that sells, the origin that answers for it. -->
+    <g id="relationship" transform="translate(1800 2830)">
+      <text class="micro" x="0" y="0"   font-size="60" fill="#F2EDE3" text-anchor="middle" opacity="0.85" letter-spacing="14">THYLORA  HOUSE</text>
+      <text class="micro" x="0" y="96"  font-size="60" fill="#F2EDE3" text-anchor="middle" opacity="0.85" letter-spacing="14">ERSATZREALITY  ENTERPRISE</text>
+      <text class="micro" x="0" y="192" font-size="60" fill="#F2EDE3" text-anchor="middle" opacity="0.85" letter-spacing="14">VYC2ST  ORIGIN</text>
+      <line x1="-430" y1="-52" x2="-430" y2="230" stroke="#F2EDE3" stroke-width="5" opacity="0.6"/>
+      <line x1="-430" y1="-52" x2="-390" y2="-52" stroke="#F2EDE3" stroke-width="5" opacity="0.6"/>
+      <line x1="-430" y1="44"  x2="-390" y2="44"  stroke="#F2EDE3" stroke-width="5" opacity="0.6"/>
+      <line x1="-430" y1="140" x2="-390" y2="140" stroke="#F2EDE3" stroke-width="5" opacity="0.6"/>
+      <line x1="-430" y1="230" x2="-390" y2="230" stroke="#F2EDE3" stroke-width="5" opacity="0.6"/>
+    </g>
+
+    <!-- Serial. Edition 0001 is the Chairman's own shirt. -->
+    <text class="micro" id="serial" x="1800" y="3200" font-size="52" fill="#F2EDE3"
+          text-anchor="middle" opacity="0.7" letter-spacing="10">THY-G-001-0001 / FIRST SAMPLE / 2026</text>
+  </g>
+
+  <!-- ===================== DELETE BEFORE UPLOAD ===================== -->
+  <g id="preflight" opacity="0.5">
+    <rect x="0" y="0" width="3600" height="4800" fill="none" stroke="#FF3B30" stroke-width="6" stroke-dasharray="40 24"/>
+    <rect x="450" y="1200" width="2700" height="2400" fill="none" stroke="#34C759" stroke-width="6" stroke-dasharray="24 18"/>
+    <line x1="1800" y1="0" x2="1800" y2="4800" stroke="#34C759" stroke-width="3" stroke-dasharray="12 12"/>
+    <text class="micro" x="470" y="1170" font-size="46" fill="#34C759">SAFE BAND 2700 x 2400 px = 9.00in x 8.00in @300dpi</text>
+    <text class="micro" x="20" y="60" font-size="46" fill="#FF3B30">MAX PRINT AREA 3600 x 4800 px = 12in x 16in @300dpi — DELETE THIS LAYER BEFORE UPLOAD</text>
+  </g>
+</svg>
