@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QYRIS QUICKCHECK — THYLORA</title>
+<meta name="description" content="A five-field inspection you run before you commit. Question, Yield, Reason, Inspect, Safeguard.">
+<meta name="thylora:product-code" content="THY-PROD-QYRIS-QUICKCHECK-001">
+<meta name="thylora:artifact-version" content="v1">
+<meta name="thylora:release-state" content="RELEASE_HELD">
+<style>
+:root{
+  --ink:#12100d; --paper:#fbf9f5; --line:#ddd6c9; --muted:#6a6152;
+  --accent:#7a5c1e; --hold:#8a3b16; --pass:#2f5d33; --panel:#f4f0e7;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#f0ece4; --paper:#141310; --line:#3a352c; --muted:#a49a88;
+    --accent:#d9b364; --hold:#e08356; --pass:#86c08d; --panel:#1d1b17;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#f0ece4; --paper:#141310; --line:#3a352c; --muted:#a49a88;
+  --accent:#d9b364; --hold:#e08356; --pass:#86c08d; --panel:#1d1b17;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font:16px/1.6 ui-serif,Georgia,"Iowan Old Style",serif;
+  padding:0 16px;
+}
+.wrap{max-width:46rem;margin:0 auto;padding:40px 0 72px}
+header{border-bottom:2px solid var(--ink);padding-bottom:18px;margin-bottom:34px}
+.eyebrow{font:600 11px/1.4 ui-sans-serif,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+h1{font-size:clamp(28px,7vw,40px);line-height:1.1;margin:0 0 10px;letter-spacing:-.01em}
+.sub{color:var(--muted);margin:0;font-size:15px}
+h2{font-size:clamp(20px,5vw,26px);margin:44px 0 6px;line-height:1.2}
+h3{font-size:17px;margin:26px 0 4px}
+p{margin:0 0 14px}
+.lede{font-size:17px}
+.rule{border:0;border-top:1px solid var(--line);margin:34px 0}
+.field{border:1px solid var(--line);border-left:4px solid var(--accent);background:var(--panel);border-radius:6px;padding:16px 18px;margin:0 0 16px}
+.field .letter{font:700 12px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.12em;color:var(--accent);text-transform:uppercase}
+.field h3{margin:6px 0 6px;font-size:19px}
+.field .ask{font-style:italic;color:var(--ink);margin:0 0 10px}
+.field p:last-child{margin-bottom:0}
+ul,ol{margin:0 0 14px;padding-left:1.25em}
+li{margin:0 0 6px}
+.callout{border:1px solid var(--line);border-radius:6px;padding:14px 16px;margin:0 0 18px;background:var(--panel)}
+.callout strong{display:block;margin-bottom:4px}
+table{width:100%;border-collapse:collapse;margin:0 0 18px;font-size:14px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 11px/1.4 ui-sans-serif,system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.hold{color:var(--hold);font-weight:600}
+.pass{color:var(--pass);font-weight:600}
+.sheet{border:2px solid var(--ink);border-radius:8px;padding:20px;margin:0 0 20px}
+.sheet .line{border-bottom:1px solid var(--line);min-height:2.1em;margin:0 0 4px}
+.sheet label{display:block;font:600 11px/1.4 ui-sans-serif,system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:14px 0 4px}
+footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+code{font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--panel);padding:1px 5px;border-radius:4px}
+@media print{
+  body{background:#fff;color:#000;padding:0}
+  .wrap{max-width:none;padding:0}
+  .field,.callout,.sheet{break-inside:avoid}
+  h2{break-after:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">THYLORA · Quickcheck series · 001</p>
+  <h1>QYRIS Quickcheck</h1>
+  <p class="sub">Five questions you answer before you commit — and the one rule that makes them bite.</p>
+</header>
+
+<p class="lede">Most bad decisions are not made by people who skipped thinking. They are made by people who thought hard about the wrong five minutes. QYRIS is a fixed five-field inspection that forces the thinking into the part that actually decides the outcome, and then refuses to let you mark the thing done until each field is answered.</p>
+
+<p>It takes about eight minutes. It is designed to be run <em>before</em> money, a public claim, a release, or an irreversible step — not after.</p>
+
+<div class="callout">
+  <strong>The rule that makes it work</strong>
+  No active, ready, or done state without a QYRIS pass. Not "we discussed it." A written answer in all five fields, or the thing is on hold. A gate you can talk your way past is not a gate.
+</div>
+
+<hr class="rule">
+
+<h2>The five fields</h2>
+
+<div class="field">
+  <span class="letter">Q · Question</span>
+  <h3>What is actually being asked?</h3>
+  <p class="ask">Write the request in the words it arrived in — then write what it is really asking for.</p>
+  <p>Most failures start here. Someone asks for a report; what they need is a decision. Someone asks for a faster build; what they need is to stop shipping broken ones. If those two sentences differ, everything downstream is aimed at the wrong target, and no amount of execution quality fixes it.</p>
+  <p><strong>Done when:</strong> you have written both sentences and they are different sentences, or you can say why they are the same.</p>
+</div>
+
+<div class="field">
+  <span class="letter">Y · Yield</span>
+  <h3>What does this produce, in plain words?</h3>
+  <p class="ask">If this goes exactly as planned, what exists afterward that does not exist now?</p>
+  <p>Name the artifact, the state change, or the money. "Improved alignment" is not a yield. "A signed contract," "a working checkout," "four hours a week back" are yields. If you cannot name the thing, you cannot later tell whether you got it — and work that cannot be checked tends to be reported as complete.</p>
+  <p><strong>Done when:</strong> a stranger could look at the world afterward and tell you whether it happened.</p>
+</div>
+
+<div class="field">
+  <span class="letter">R · Reason</span>
+  <h3>Why does this matter enough to do now?</h3>
+  <p class="ask">What gets worse if this waits a month? What gets worse if it never happens?</p>
+  <p>This field kills more work than the other four combined, which is its job. Much of what fills a week is real, legitimate, useful — and not load-bearing. Reason separates the two. If nothing gets worse when it waits, it waits, and something that does get worse moves up.</p>
+  <p><strong>Done when:</strong> you have named a specific cost of delay, or you have decided to defer it on purpose.</p>
+</div>
+
+<div class="field">
+  <span class="letter">I · Inspect</span>
+  <h3>Known, unknown, next step.</h3>
+  <p class="ask">Three lists. What you can evidence. What you cannot. The one thing you do next.</p>
+  <p>This is the field people fake, by moving items from "unknown" to "known" on the strength of a strong feeling. The discipline is simple and hard: an item is <em>known</em> only if you can point at where it is written. Everything else is unknown — including things you are confident about.</p>
+  <p>A long unknown list is not a failure. An empty unknown list on a decision of any size is almost always a lie you are telling yourself.</p>
+  <p><strong>Done when:</strong> every "known" has a pointer, and the next step is one action, not a plan.</p>
+</div>
+
+<div class="field">
+  <span class="letter">S · Safeguard</span>
+  <h3>What protects the people this touches if it goes wrong?</h3>
+  <p class="ask">Who is exposed, how, and what catches them.</p>
+  <p>Not risk to the project — risk to people. The customer who paid, the person whose name is on it, the one who inherits the mess. Then ask the harder version: is the safeguard a mechanism, or an intention? "We'll be careful" is an intention. "The database refuses the write" is a mechanism. Intentions fail quietly on the day everyone is busy.</p>
+  <p><strong>Done when:</strong> each exposed party has a mechanism, or you have written down that they do not.</p>
+</div>
+
+<hr class="rule">
+
+<h2>How to score it</h2>
+
+<p>QYRIS does not average. A check is <span class="pass">PASS</span> only when all five fields are answered. Any field blank is <span class="hold">HOLD</span>, and hold means the work does not move to active, ready, or done — regardless of how far along it already is.</p>
+
+<table>
+  <thead><tr><th>State</th><th>Means</th><th>What you do</th></tr></thead>
+  <tbody>
+    <tr><td class="pass">PASS</td><td>All five answered, Inspect has pointers</td><td>Proceed</td></tr>
+    <tr><td class="hold">HOLD</td><td>A field is blank, or a "known" has no pointer</td><td>Fill it, or stop</td></tr>
+    <tr><td class="hold">HOLD</td><td>Active work with no check on record at all</td><td>Run the check before the next step</td></tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  <strong>The third row is the one that matters</strong>
+  Work already in flight with no check is not "fine because it's going well." It is unchecked. Absence of a check is a hold, not a pass — otherwise the gate only ever catches the careful.
+</div>
+
+<h2>Four failures this catches</h2>
+
+<h3>1 · The confident unknown</h3>
+<p>Someone lists a dependency as known. Asked where it says so, nobody can point. Inspect converts confidence into a pointer or into an unknown — there is no third option.</p>
+
+<h3>2 · The answered-but-not-asked</h3>
+<p>The work is excellent and delivers something nobody asked for. Question catches it in the first two minutes, before the excellent work happens.</p>
+
+<h3>3 · The urgent non-essential</h3>
+<p>Something loud crowds out something load-bearing. Reason asks what gets worse if it waits, and loud things frequently have no answer.</p>
+
+<h3>4 · The intention dressed as a control</h3>
+<p>"We'll review that carefully." Safeguard asks whether the protection is a mechanism or a plan to remember. On the bad day, only mechanisms are still running.</p>
+
+<hr class="rule">
+
+<h2>The worksheet</h2>
+<p>One check, one page. Print it, or copy the headings.</p>
+
+<div class="sheet">
+  <label>Subject / work item</label><div class="line"></div>
+  <label>Date &amp; who ran it</label><div class="line"></div>
+
+  <label>Q · Asked as / actually asking for</label>
+  <div class="line"></div><div class="line"></div>
+
+  <label>Y · What exists afterward that does not exist now</label>
+  <div class="line"></div><div class="line"></div>
+
+  <label>R · What gets worse if this waits</label>
+  <div class="line"></div><div class="line"></div>
+
+  <label>I · Known (with pointer)</label>
+  <div class="line"></div><div class="line"></div>
+  <label>I · Unknown</label>
+  <div class="line"></div><div class="line"></div>
+  <label>I · Next step (one action)</label>
+  <div class="line"></div>
+
+  <label>S · Who is exposed / what mechanism catches them</label>
+  <div class="line"></div><div class="line"></div>
+
+  <label>State</label><div class="line"></div>
+</div>
+
+<h2>A worked example</h2>
+
+<table>
+  <tbody>
+    <tr><th>Subject</th><td>Turn on recurring subscription billing this week</td></tr>
+    <tr><th>Q</th><td>Asked: "switch on subscriptions." Actually asking: can we take money monthly and have access match what was paid for, including when someone cancels.</td></tr>
+    <tr><th>Y</th><td>A member pays, gains the right channels, cancels, and loses them — proven once end to end on a real account.</td></tr>
+    <tr><th>R</th><td>Every month without it is a month of members who would have paid and could not. Cost of delay is countable, so it is real.</td></tr>
+    <tr><th>I</th><td><strong>Known:</strong> prices and channel entitlements are approved — the store page states them. <strong>Unknown:</strong> whether cancellation actually removes access; no one has run it. <strong>Next step:</strong> run one controlled subscribe → pay → access → cancel → access-removed cycle.</td></tr>
+    <tr><th>S</th><td>Exposed: anyone charged for access they do not get, or who cancels and is charged again. Mechanism: no purchase button until the cycle passes; no live-commerce claim on the page meanwhile.</td></tr>
+    <tr><th>State</th><td class="hold">HOLD — one unknown blocks it, and the next step is a single action.</td></tr>
+  </tbody>
+</table>
+
+<p>Note what the example does <em>not</em> do: it does not call the work blocked and stop. It names one unknown and one action that removes it. A good QYRIS hold is a short hold.</p>
+
+<hr class="rule">
+
+<h2>Where this comes from</h2>
+<p>QYRIS is the inspection THYLORA runs on its own work. The five fields, the pass rule, and the "active with no check is a hold" rule are the same ones enforced in the THYLORA backend, where a check is a stored record with five fields rather than a conversation. This quickcheck is that method, extracted so it can be run with a pen.</p>
+
+<footer>
+  <p><strong>QYRIS QUICKCHECK</strong> · <code>THY-PROD-QYRIS-QUICKCHECK-001</code> · artifact <code>v1</code></p>
+  <p>© THYLORA. Licensed to the purchaser for personal and internal business use, including printing for a team. Not for resale or redistribution as a product.</p>
+  <p>This artifact is complete and self-contained. It makes no claim about any THYLORA commerce path being live.</p>
+</footer>
+
+</div>
+</body>
+</html>
