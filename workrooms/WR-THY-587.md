@@ -314,6 +314,8 @@ what this session wrote. The result is recorded in §11.
 | Shopify | Read only · nothing created, changed or published |
 | Backend | **Unreachable** (G1, open since 2026-09-11) |
 | Tests | **101 / 101** |
+| Writeback | Repository, branch `claude/thylora-genealogy-commerce-m6q9hn`, commit `596064c`. **Backend not written — unreachable (G1)** |
+| Readback | **VERIFIED** — `origin/claude/thylora-genealogy-commerce-m6q9hn` = `596064c`, `git diff HEAD origin/...` empty, 17 new paths present on the remote ref, and the log read back from the remote reports 12 entries (5 unreachable · 6 negative · 1 insufficient input), 6 seeds, **0 verified relationships, 0 accepted assertions** |
 | Baseline regression | **None.** No baseline capability removed, renamed or disconnected |
 
 NO LOSS. DO NOT GO BACKWARD. ONE SOURCE OF TRUTH. ACCESS ≠ AUTHORITY.
