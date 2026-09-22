@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<title>THYLORA QYRIS</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div>
+    <p class="eyebrow">THYLORA · QYRIS</p>
+    <h1>Visible QYRIS</h1>
+  </div>
+  <div class="top-actions">
+    <span class="chip" id="backendChip">BACKEND · CHECKING</span>
+    <a class="button-link" href="../app/">App</a>
+  </div>
+</header>
+
+<p class="rule-banner">
+  <strong>The frontier remains OPEN.</strong>
+  A current pass pauses when another question would not change
+  <b>ACTION</b> / <b>EVIDENCE</b> / <b>RISK</b> / <b>AUTHORITY</b> / <b>TRANSFER</b>.
+  Inquiry is never globally finished.
+</p>
+
+<nav class="tabs" aria-label="QYRIS sections">
+  <button class="active" data-view="pack">Pre-Marriage Pack</button>
+  <button data-view="pass">Live Pass</button>
+  <button data-view="industry">Industry Template</button>
+  <button data-view="support">Trusted Six</button>
+  <button data-view="sr">SR Test Bench</button>
+  <button data-view="readback">Readback</button>
+</nav>
+
+<main>
+
+<!-- ── PACK ──────────────────────────────────────────────────────────── -->
+<section id="pack" class="view active-view">
+  <p class="eyebrow">A · PRE-MARRIAGE QYRIS QUESTION PACK</p>
+  <h2>Sixteen recursive clusters. Every question carries its own safeguard.</h2>
+  <p class="lead" id="packSummary">Loading…</p>
+  <p class="notice" id="packNotice"></p>
+  <div class="legend">
+    <span><b>QUESTION</b> what is asked</span>
+    <span><b>YIELD</b> what a real answer produces</span>
+    <span><b>REASON</b> why it is asked here</span>
+    <span><b>INSPECT</b> how you would know it is wrong</span>
+    <span><b>SAFEGUARD</b> what protects the person if it is misused</span>
+  </div>
+  <div class="controls">
+    <button type="button" id="expandAll" class="ghost">Expand all</button>
+    <button type="button" id="collapseAll" class="ghost">Collapse all</button>
+    <label class="filter">Filter by delta
+      <select id="deltaFilter">
+        <option value="">All</option>
+        <option value="ACTION">ACTION</option>
+        <option value="EVIDENCE">EVIDENCE</option>
+        <option value="RISK">RISK</option>
+        <option value="AUTHORITY">AUTHORITY</option>
+        <option value="TRANSFER">TRANSFER</option>
+      </select>
+    </label>
+  </div>
+  <div id="packTree" class="tree"></div>
+</section>
+
+<!-- ── LIVE PASS ─────────────────────────────────────────────────────── -->
+<section id="pass" class="view">
+  <p class="eyebrow">THE RECURSIVE STOPPING RULE, RUNNING</p>
+  <h2>Answer questions. Watch the frontier. It never closes.</h2>
+  <p class="lead">
+    Pick a cluster, answer its questions, and the pass pauses the moment no
+    remaining question would move any of the five deltas. Then disturb a delta —
+    a new fact arriving — and the pass resumes. There is no state in this system
+    that says inquiry is finished.
+  </p>
+  <div class="controls">
+    <label class="filter">Scope
+      <select id="passScope"></select>
+    </label>
+    <button type="button" id="passReset" class="ghost">Restart pass</button>
+  </div>
+  <div class="pass-grid">
+    <div>
+      <div class="card" id="passState"></div>
+      <div class="card">
+        <strong>Disturb a delta</strong>
+        <p class="muted">New facts arrive. This is why the frontier stays open.</p>
+        <div class="delta-buttons" id="disturbButtons"></div>
+      </div>
+    </div>
+    <div>
+      <strong class="card-title">Live questions</strong>
+      <div id="passFrontier" class="frontier"></div>
+      <strong class="card-title">Pass trail</strong>
+      <div id="passTrail" class="trail"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── INDUSTRY ──────────────────────────────────────────────────────── -->
+<section id="industry" class="view">
+  <p class="eyebrow">B · INDUSTRY TEMPLATE</p>
+  <h2>The same grammar. Six domains. Domain-specific questions.</h2>
+  <p class="lead" id="industrySummary">Loading…</p>
+  <div class="controls" id="domainButtons"></div>
+  <p class="notice" id="provenanceNote"></p>
+  <div id="industryList" class="tree"></div>
+</section>
+
+<!-- ── TRUSTED SIX ───────────────────────────────────────────────────── -->
+<section id="support" class="view">
+  <p class="eyebrow">C · TRUSTED SIX SUPPORT</p>
+  <h2>Eight paid support families. Six seats. Seven mechanisms.</h2>
+  <p class="notice" id="fictionNotice"></p>
+  <div class="grid" id="mechanismGrid"></div>
+  <strong class="card-title">Role families</strong>
+  <div class="grid" id="familyGrid"></div>
+  <strong class="card-title">Live register</strong>
+  <p class="lead">
+    This runs the real model in the page. Every button below goes through the
+    same rules the backend enforces — seat the Trusted Six, try a seventh, grant
+    scope, draw company resources for mission-aligned work, record a breach,
+    stand down, appeal. The audit trail underneath is append-only.
+  </p>
+  <div class="controls" id="registerButtons"></div>
+  <div class="pass-grid">
+    <div class="card" id="registerState"></div>
+    <div>
+      <strong class="card-title">Append-only audit</strong>
+      <div id="registerTrail" class="trail"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SR ────────────────────────────────────────────────────────────── -->
+<section id="sr" class="view">
+  <p class="eyebrow">CANDIDATE EQUATION · UNDER TEST</p>
+  <h2>SR = N × E × S × A × C × R</h2>
+  <p class="notice danger" id="srCanonNotice"></p>
+  <div class="grid" id="srFactorGrid"></div>
+  <div class="controls">
+    <button type="button" id="runBattery">Run the failure-mode battery</button>
+  </div>
+  <div id="srResults"></div>
+  <div class="card" id="srRecommendation"></div>
+</section>
+
+<!-- ── READBACK ──────────────────────────────────────────────────────── -->
+<section id="readback" class="view">
+  <p class="eyebrow">VERIFY READBACK</p>
+  <h2>What was written, read back — and what could not be checked.</h2>
+  <p class="lead">
+    A write that cannot be read back in the shape it went in is not a write, it
+    is a hope. Two readbacks run here: the local one always works, the backend
+    one depends on the migrations having been applied.
+  </p>
+  <strong class="card-title">Local readback — source of truth against rendered surface</strong>
+  <div id="localReadback" class="trail"></div>
+  <strong class="card-title">Backend probes</strong>
+  <p class="muted" id="probeNote">Checking…</p>
+  <div id="probeList" class="trail"></div>
+  <div class="card">
+    <strong>What is not claimed</strong>
+    <p class="muted">
+      The THYLORA backend host was not reachable from the build session — the
+      egress proxy returned 403 on CONNECT. The migrations in <code>db/qyris</code>
+      were validated against a local PostgreSQL 16 instance twice over for
+      idempotency, with behavioural rejection checks and a full readback harness.
+      What remains unverified is named rather than assumed: compatibility with
+      the live backend's existing objects, and whether any name collides with
+      the <code>qyr_</code> prefix.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  THYLORA · QYRIS · WR-QYRIS-585 · the frontier remains OPEN · SR is not canon
+</footer>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>
