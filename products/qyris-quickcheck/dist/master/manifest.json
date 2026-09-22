@@ -1,0 +1,59 @@
+{
+  "artifact_id": "THY-QYRIS-QUICKCHECK-001",
+  "sku": "THY-QYRIS-QC-001",
+  "customer_title": "QYRIS QuickCheck — The Nine-Inspection Pass",
+  "edition": "First edition",
+  "version": "1.0",
+  "edition_date": "22 September 2026",
+  "serial": "THY-QC1-0000-MASTER",
+  "entitlement": {
+    "kind": "PURCHASE",
+    "perpetual": true,
+    "revocable_by_cancellation": false
+  },
+  "delivery": {
+    "package": "THYLORA-QYRIS-QuickCheck-v1.0-THY-QC1-0000-MASTER.zip",
+    "rebuildable": true,
+    "deterministic": true
+  },
+  "files": [
+    {
+      "name": "THYLORA-QYRIS-QuickCheck-v1.0-PRINT-THY-QC1-0000-MASTER.pdf",
+      "role": "artifact.print",
+      "label": "Print and tablet edition",
+      "bytes": 49661,
+      "sha256": "cd5d3cca32de40f0e614922d488b117880fe30f5ad5125f1318f94fca88a64a7"
+    },
+    {
+      "name": "THYLORA-QYRIS-QuickCheck-v1.0-MOBILE-THY-QC1-0000-MASTER.pdf",
+      "role": "artifact.mobile",
+      "label": "Phone edition",
+      "bytes": 54379,
+      "sha256": "ad5af773777e69a25ee6a1e22ec12e65c4f18b1fc22ba2d7b66e9f1af15b4e30"
+    },
+    {
+      "name": "READ-ME-FIRST.txt",
+      "role": "readme",
+      "label": "Read me first",
+      "bytes": 658,
+      "sha256": "791a3ab2f1e59545358005392a54056af6b466207e27bb98b26ac8a9080c6664"
+    },
+    {
+      "name": "LICENCE-AND-RIGHTS.txt",
+      "role": "rights",
+      "label": "Licence, rights and provenance",
+      "bytes": 1520,
+      "sha256": "78fda950455bb5eaa91a981cdb14fb7ff89c8094a2eb1da45caaf73b1b873d3d"
+    },
+    {
+      "name": "RE-ACCESS.txt",
+      "role": "reaccess",
+      "label": "How to get these files again",
+      "bytes": 899,
+      "sha256": "c2e827120e671ba1b5cc6ab57008ce8327639ca3b53c711dff669febd64fa091"
+    }
+  ],
+  "rights_line": "(c) 2026 THYLORA. Licensed to the named serial holder for their own work and their organisation’s internal use, including printing the sheet as often as they like. Not licensed for resale, redistribution, public posting or inclusion in a paid course. The licence does not expire and is not revoked by ending a membership.",
+  "provenance": "Derived from the QYRIS inspection discipline recorded in workroom WR-RAELINK-001 (THYLORA, 11 September 2026), where the same nine inspections were run against a forty-table backend and twenty-eight gaps were found, routed or held. This artifact is the customer-usable form of that discipline. Typeset by the THYLORA Artifact Engine v1: vector pages, no embedded font, no external asset, deterministic rebuild.",
+  "built_by": "THYLORA Artifact Engine v1"
+}

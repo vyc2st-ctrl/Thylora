@@ -1,0 +1,68 @@
+{
+  "writeback_id": "WB-QYRIS-STORE-001",
+  "workroom": "WR-QYRIS-STORE-001",
+  "primary": "THY-WORK-STORE-UTILITY-ARTIFACT-583",
+  "generated": "2026-09-22",
+  "backend_of_record": "thylora-dash (jvsdxhrfhtlgaknhjxlz)",
+  "status": "PENDING_EGRESS",
+  "reason": "Backend returned 403 on CONNECT through the egress proxy (organization policy) on 2026-09-22, the same denial as WR-RAELINK-001 blocker B1. Nothing was written to the backend. This file is the payload to write when egress exists or when the Chairman runs it.",
+  "rows": [
+    {
+      "table": "thylora_query_carryforward",
+      "op": "append",
+      "payload": {
+        "session_label": "THY-QYRIS-QUICKCHECK-001 / WR-QYRIS-STORE-001",
+        "user_message": "Create the actual customer artifact for THY-QYRIS-QUICKCHECK-001 first; then continue THY-STUCK-LOOP-RESET-001 and THY-BEFORE-YOU-BUY-001. Visible QYRIS required. No publication.",
+        "assistant_message": "Artifact built and at Chairman preview. 12-page print/tablet edition and 23-screen phone edition, 33 fillable fields, serial THY-QC1-0000-MASTER on cover, colophon and every foot. Delivery package with manifest and SHA-256 per file; re-access proved byte-identical from the serial alone. Store registration written and validated on three fixture databases, NOT applied. Stuck Loop Reset and Before You Buy carry complete production copy and full design specs. 29 QYRIS gaps inspected, 25 routed, 1 partly routed, 3 held. Tests 69/69. Backend read through sequence 583 was refused at the proxy and is reported as not performed."
+      }
+    },
+    {
+      "table": "products",
+      "op": "upsert_by_sku",
+      "held": true,
+      "held_reason": "Production DDL/DML is a Chairman action (C2). Column mapping unverified because the live schema could not be read (C1).",
+      "apply_with": "db/store/0001_digital_delivery_qyris_quickcheck.sql",
+      "payload": {
+        "sku": "THY-QYRIS-QC-001",
+        "artifact_id": "THY-QYRIS-QUICKCHECK-001",
+        "name": "QYRIS QuickCheck - The Nine-Inspection Pass",
+        "product_kind": "DIGITAL",
+        "delivery_mode": "DIGITAL_DOWNLOAD",
+        "price_minor": 2900,
+        "currency": "USD",
+        "status": "CHAIRMAN_PREVIEW",
+        "rights_state": "CLEARED_OWN_WORK",
+        "provenance": "WR-RAELINK-001 section 5, QYRIS gap report",
+        "thumbnail_path": "products/qyris-quickcheck/dist/store/qyris-quickcheck-thumb-1200x1500.png",
+        "package_path": "products/qyris-quickcheck/dist/master/THYLORA-QYRIS-QuickCheck-v1.0-THY-QC1-0000-MASTER.zip",
+        "entitlement_kind": "PURCHASE",
+        "perpetual": true,
+        "serial_policy": "PER_COPY_STAMPED_AT_DELIVERY",
+        "reaccess_policy": "REBUILD_FROM_SERIAL_UNLIMITED"
+      }
+    },
+    {
+      "table": "products",
+      "op": "reserve_sku",
+      "held": true,
+      "payload": { "sku": "THY-SLR-002", "name": "Stuck Loop Reset", "status": "COPY_AND_DESIGN_COMPLETE", "price_minor": 2400, "currency": "USD" }
+    },
+    {
+      "table": "products",
+      "op": "reserve_sku",
+      "held": true,
+      "payload": { "sku": "THY-BYB-003", "name": "Before You Buy", "status": "COPY_AND_DESIGN_COMPLETE", "price_minor": 2400, "currency": "USD" }
+    }
+  ],
+  "artifact_checksums_at_writeback": "products/qyris-quickcheck/dist/master/manifest.json",
+  "chairman_decisions_requested": [
+    "Price: $29.00 USD one-off for THY-QYRIS-QC-001, $24.00 each for THY-SLR-002 and THY-BYB-003.",
+    "Customer-facing title: 'QYRIS QuickCheck - The Nine-Inspection Pass'.",
+    "Permission to register THY-QYRIS-QC-001 in the live product registry in CHAIRMAN_PREVIEW state (apply db/store/0001).",
+    "Whether a three-item Standards Series bundle SKU is wanted; it needs a bundle entitlement decision first."
+  ],
+  "not_requested": [
+    "Publication. Nothing is routed in vercel.json and nothing is linked from public-site.",
+    "Any live-commerce claim."
+  ]
+}

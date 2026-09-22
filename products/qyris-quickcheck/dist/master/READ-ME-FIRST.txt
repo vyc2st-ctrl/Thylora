@@ -1,0 +1,16 @@
+QYRIS QuickCheck — The Nine-Inspection Pass
+
+Two files, one purchase:
+  · the PRINT edition, for paper, desktop and iPad;
+  · the MOBILE edition, typeset for a phone rather than shrunk to fit one.
+
+Both open in any PDF reader. No app, no account, no font download, no internet.
+The QuickCheck Sheet near the end is fillable on screen and printable as often as you like.
+
+Start on plate 00. If you have four minutes rather than twelve, run inspections 4 and 9.
+
+Your serial is printed on the cover and in the colophon. Keep it: it is how re-access works.
+
+Serial: THY-QC1-0000-MASTER
+SKU: THY-QYRIS-QC-001
+Edition: First edition v1.0 · 22 September 2026

@@ -1,0 +1,19 @@
+LICENCE AND RIGHTS — QYRIS QuickCheck — The Nine-Inspection Pass
+
+Serial: THY-QC1-0000-MASTER
+
+(c) 2026 THYLORA. Licensed to the named serial holder for their own work and their organisation’s internal use, including printing the sheet as often as they like. Not licensed for resale, redistribution, public posting or inclusion in a paid course. The licence does not expire and is not revoked by ending a membership.
+
+PROVENANCE
+Derived from the QYRIS inspection discipline recorded in workroom WR-RAELINK-001 (THYLORA, 11 September 2026), where the same nine inspections were run against a forty-table backend and twenty-eight gaps were found, routed or held. This artifact is the customer-usable form of that discipline. Typeset by the THYLORA Artifact Engine v1: vector pages, no embedded font, no external asset, deterministic rebuild.
+
+CREDITS
+Discipline and copy · THYLORA Standards
+Source workroom · WR-RAELINK-001 · section 5, QYRIS gap report
+Artifact engine, layout and typesetting · THYLORA Artifact Engine v1
+Worked example · a THYLORA first-digital-product launch, recorded as it ran
+
+WHAT THIS IS NOT
+This is a thinking instrument. It is not legal, financial, medical, tax or safety advice, and it does not replace a regulated review where one is required.
+It finds gaps. It does not close them. Every route on the sheet needs a person and a date or it is decoration.
+A pass is a record of what you saw on one day. Keep the old sheets: the drift between them is worth more than any single pass.

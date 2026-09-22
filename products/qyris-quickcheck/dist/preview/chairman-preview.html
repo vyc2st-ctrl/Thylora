@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>CHAIRMAN PREVIEW · QYRIS QuickCheck — The Nine-Inspection Pass</title>
+<style>
+:root{--bg:#0a0e14;--panel:#111823;--panel2:#0d131c;--line:#24303f;--text:#f4efe6;
+      --muted:#9fabbb;--gold:#e0b35b;--gold-deep:#6d4f18;--good:#82d8a0;--warn:#f0c674}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);-webkit-text-size-adjust:100%;
+  font:16px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{padding:16px 20px;border-bottom:1px solid var(--line);
+  background:linear-gradient(150deg,#141b26,#0b1019);display:flex;flex-wrap:wrap;gap:12px;
+  align-items:center;justify-content:space-between;position:sticky;top:0;z-index:5}
+.brand{font-weight:800;letter-spacing:.16em}
+.chip{border:1px solid var(--gold-deep);color:var(--gold);border-radius:999px;
+  padding:6px 12px;font-size:.7rem;font-weight:800;letter-spacing:.09em}
+main{max-width:1060px;margin:auto;padding:22px 20px 80px}
+h1{font-family:Georgia,serif;font-size:clamp(28px,5vw,44px);line-height:1.1;margin:.2em 0}
+h2{font-family:Georgia,serif;font-size:clamp(20px,3.2vw,28px);margin:34px 0 10px}
+.eyebrow{font-size:.7rem;letter-spacing:.18em;color:var(--gold);font-weight:800;margin:0}
+.lede{color:#d5d8dd;font-size:1.05rem;max-width:62ch}
+.split{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:26px;align-items:start}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}
+.thumb{background:var(--panel2);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.thumb svg{display:block;width:100%;height:auto}
+dl{display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);gap:8px 18px;margin:0}
+dt{color:var(--muted);font-size:.82rem;letter-spacing:.04em}
+dd{margin:0}
+table{width:100%;border-collapse:collapse;font-size:.86rem}
+th{text-align:left;color:var(--muted);font-size:.68rem;letter-spacing:.12em;
+  border-bottom:1px solid var(--gold-deep);padding:0 8px 7px 0;font-weight:800}
+td{border-bottom:1px solid var(--line);padding:9px 8px 9px 0;vertical-align:top}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.78rem;word-break:break-all}
+.sha{color:var(--muted)}
+.num{white-space:nowrap}
+ul{padding-left:18px}li{margin:6px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.ok::before{content:"✓ ";color:var(--good);font-weight:800}
+.held::before{content:"○ ";color:var(--warn);font-weight:800}
+.decision{border:1px solid var(--gold);border-radius:16px;padding:20px;
+  background:linear-gradient(150deg,#151a22,#1b130b)}
+footer{border-top:1px solid var(--line);padding:22px 20px;color:var(--muted);font-size:.82rem;text-align:center}
+@media(max-width:760px){.split{grid-template-columns:1fr}dl{grid-template-columns:1fr}
+  dt{margin-top:8px}body{font-size:15px}}
+</style></head>
+<body>
+<header>
+  <div class="brand">THYLORA</div>
+  <div class="chip">CHAIRMAN PREVIEW · NOT PUBLISHED</div>
+</header>
+<main>
+  <p class="eyebrow">THYLORA STANDARDS SERIES · 01 · THY-QYRIS-QC-001</p>
+  <h1>QYRIS QuickCheck — The Nine-Inspection Pass</h1>
+  <p class="lede">The nine-inspection pass for anything you are about to ship, sign, buy or launch.</p>
+
+  <div class="split">
+    <div>
+      <div class="thumb"><svg xmlns="http://www.w3.org/2000/svg" width="480" height="600" viewBox="0 0 480 600"><path d="M0 0h480v600h-480Z" fill="rgb(10,14,20)" stroke="none" stroke-width="1"/><path d="M0 0h480v372h-480Z" fill="rgb(12,18,27)" stroke="none" stroke-width="1"/><path d="M0 0h480v6h-480Z" fill="rgb(224,179,91)" stroke="none" stroke-width="1"/><path d="M44.6 54.600000000000016h35.32v35.32h-35.32Z" fill="none" stroke="rgb(138,100,21)" stroke-width="1.2"/><path d="M88.6 54.600000000000016h35.32v35.32h-35.32Z" fill="none" stroke="rgb(138,100,21)" stroke-width="1.2"/><path d="M132.6 54.600000000000016h35.32v35.32h-35.32Z" fill="none" stroke="rgb(138,100,21)" stroke-width="1.2"/><path d="M44.6 98.60000000000002h35.32v35.32h-35.32Z" fill="none" stroke="rgb(138,100,21)" stroke-width="1.2"/><path d="M88 97.99999999999997h36.52v36.52h-36.52Z" fill="rgb(224,179,91)" stroke="none" stroke-width="1.2"/><path d="M132.6 98.60000000000002h35.32v35.32h-35.32Z" fill="none" stroke="rgb(138,100,21)" stroke-width="1.2"/><path d="M44.6 142.60000000000002h35.32v35.32h-35.32Z" fill="none" stroke="rgb(138,100,21)" stroke-width="1.2"/><path d="M88.6 142.60000000000002h35.32v35.32h-35.32Z" fill="none" stroke="rgb(138,100,21)" stroke-width="1.2"/><path d="M132.6 142.60000000000002h35.32v35.32h-35.32Z" fill="none" stroke="rgb(138,100,21)" stroke-width="1.2"/><text x="349.371" y="74" fill="rgb(244,239,230)" font-family='"Liberation Sans", Arial, sans-serif' font-size="13" font-weight="700" font-style="normal" letter-spacing="3.4" xml:space="preserve">THYLORA</text><text x="332.73" y="96" fill="rgb(142,155,173)" font-family='"Liberation Sans", Arial, sans-serif' font-size="9.4" font-weight="700" font-style="normal" letter-spacing="2.6" xml:space="preserve">STANDARDS 01</text><text x="44" y="288" fill="rgb(244,239,230)" font-family='"Liberation Serif", "Times New Roman", serif' font-size="70" font-weight="700" font-style="normal" xml:space="preserve">QYRIS</text><text x="44" y="352" fill="rgb(224,179,91)" font-family='"Liberation Serif", "Times New Roman", serif' font-size="70" font-weight="700" font-style="normal" xml:space="preserve">QuickCheck</text><path d="M44 386 L136 386" fill="none" stroke="rgb(224,179,91)" stroke-width="3"/><text x="44" y="420" fill="rgb(200,206,218)" font-family='"Liberation Sans", Arial, sans-serif' font-size="11.5" font-weight="700" font-style="normal" letter-spacing="3" xml:space="preserve">THE NINE-INSPECTION PASS</text><text x="44" y="460" fill="rgb(142,155,173)" font-family='"Liberation Sans", Arial, sans-serif' font-size="11.6" font-weight="400" font-style="normal" xml:space="preserve">Twelve minutes, nine questions, one page you can hand to anyone. The</text><text x="44" y="477.5" fill="rgb(142,155,173)" font-family='"Liberation Sans", Arial, sans-serif' font-size="11.6" font-weight="400" font-style="normal" xml:space="preserve">pass that finds what is missing, unowned, unproven or unrecoverable —</text><text x="44" y="495" fill="rgb(142,155,173)" font-family='"Liberation Sans", Arial, sans-serif' font-size="11.6" font-weight="400" font-style="normal" xml:space="preserve">before it reaches a customer.</text><path d="M0 546h480v54h-480Z" fill="rgb(8,12,18)" stroke="none" stroke-width="3"/><path d="M0 546 L480 546" fill="none" stroke="rgb(36,48,63)" stroke-width="1"/><text x="44" y="578" fill="rgb(224,179,91)" font-family='"Liberation Sans", Arial, sans-serif' font-size="9.8" font-weight="700" font-style="normal" letter-spacing="1.8" xml:space="preserve">12 PAGES · PRINT + PHONE</text><text x="327.722" y="578" fill="rgb(142,155,173)" font-family='"Liberation Sans", Arial, sans-serif' font-size="9.6" font-weight="400" font-style="normal" letter-spacing="1.2" xml:space="preserve">THY-QYRIS-QC-001</text></svg></div>
+      <p class="mono" style="color:var(--muted);margin-top:10px">store thumbnail · 480×600 source · 1200×1500 raster</p>
+    </div>
+    <div>
+      <h2 style="margin-top:0">Customer description</h2>
+      <p>QYRIS QuickCheck is a nine-inspection pass you run on anything you are about to ship, sign, buy or launch.</p>
+      <p>It is not a review. A review asks whether something is good. A QuickCheck asks whether anything is missing, unowned, unproven or unrecoverable — and then routes it. Nine questions, roughly a minute each, and a readiness line you can read out loud in a meeting without dressing anything up.</p>
+      <p>Inside: a twelve-page designed artifact. Eight plates covering how to run the pass, all nine inspections with the phrases that signal each gap and the route that closes it, the disposition vocabulary (routed, held, open), scoring and the readiness line, and the five ways a pass goes weak. Then a worked example — a real first digital product going live, nine findings, one held, two failures caught before they reached a paying customer — and the QuickCheck Sheet itself: fillable on screen, printable, reusable forever.</p>
+      <p>Two files, one purchase: a print and tablet edition, and a phone edition typeset for a phone rather than shrunk to fit one. Both open in any reader with no app, no account and no font download.</p>
+      <p>Your copy carries a serial. Re-access is permanent: the purchase entitlement does not expire and ending a membership never removes it.</p>
+      <ul><li>12 designed pages · print/tablet edition and a true phone edition</li><li>All nine inspections, each with signal phrases, a route and a one-line test</li><li>Worked example from a real launch — filled in, not illustrative</li><li>The QuickCheck Sheet: fillable on screen, printable, reusable</li><li>Serial-marked · permanent re-access · no app, no account to read it</li></ul>
+    </div>
+  </div>
+
+  <h2>What was actually built</h2>
+  <div class="card"><dl>
+    <dt>Print / tablet edition</dt><dd>12 pages · 612 × 792 pt (US Letter) · 48.5 KB</dd>
+    <dt>Phone edition</dt><dd>23 screens · 360 × 640 pt portrait · 53.1 KB</dd>
+    <dt>Fillable fields</dt><dd>33 on the print sheet · 33 on the phone sheet</dd>
+    <dt>Outline / bookmarks</dt><dd>Present in both editions</dd>
+    <dt>Embedded fonts</dt><dd>None — base-14 only, so it opens with no download on any reader</dd>
+    <dt>External references</dt><dd>None — no URL, no remote asset, no tracking</dd>
+    <dt>Serial</dt><dd>THY-QC1-0000-MASTER · on the cover, in the colophon, in the running foot of every interior page, and in the file metadata</dd>
+    <dt>Delivery package</dt><dd>THYLORA-QYRIS-QuickCheck-v1.0-THY-QC1-0000-MASTER.zip · 64.1 KB</dd>
+    <dt>Re-access</dt><dd>Rebuilt from the serial. Byte-identical on every rebuild — checked in the test suite.</dd>
+  </dl></div>
+
+  <h2>Delivery package</h2>
+  <div class="card">
+    <table><thead><tr><th>FILE</th><th>WHAT IT IS</th><th>SIZE</th><th>SHA-256</th></tr></thead>
+    <tbody>
+  <tr><td class="mono">THYLORA-QYRIS-QuickCheck-v1.0-PRINT-THY-QC1-0000-MASTER.pdf</td><td>Print and tablet edition</td>
+      <td class="num">48.5 KB</td><td class="mono sha">cd5d3cca32de40f0e614922d…</td></tr>
+  <tr><td class="mono">THYLORA-QYRIS-QuickCheck-v1.0-MOBILE-THY-QC1-0000-MASTER.pdf</td><td>Phone edition</td>
+      <td class="num">53.1 KB</td><td class="mono sha">ad5af773777e69a25ee6a1e2…</td></tr>
+  <tr><td class="mono">READ-ME-FIRST.txt</td><td>Read me first</td>
+      <td class="num">0.6 KB</td><td class="mono sha">791a3ab2f1e5954535800539…</td></tr>
+  <tr><td class="mono">LICENCE-AND-RIGHTS.txt</td><td>Licence, rights and provenance</td>
+      <td class="num">1.5 KB</td><td class="mono sha">78fda950455bb5eaa91a981c…</td></tr>
+  <tr><td class="mono">RE-ACCESS.txt</td><td>How to get these files again</td>
+      <td class="num">0.9 KB</td><td class="mono sha">c2e827120e671ba1b5cc6ab5…</td></tr>
+    <tr><td class="mono">manifest.json</td><td>Serial, entitlement contract, checksums</td>
+        <td class="num">2.5 KB</td><td class="mono sha">generated</td></tr>
+    </tbody></table>
+    <p style="margin-bottom:0">Packaged as <span class="mono">THYLORA-QYRIS-QuickCheck-v1.0-THY-QC1-0000-MASTER.zip</span> (64.1 KB),
+    delivered on the existing digital path: order → entitlement → download, with re-access by serial.</p>
+  </div>
+
+  <h2>Tested</h2>
+  <div class="grid">
+    <div class="card"><p class="eyebrow">ARTIFACT</p>
+      <ul style="padding-left:16px">
+        <li class="ok">Opens: header, cross-reference table, every object at its stated offset, every stream inflates</li>
+        <li class="ok">12 pages, US Letter, no page missing</li>
+        <li class="ok">Sheet fields present and marked for the reader to render</li>
+        <li class="held">Rendered in Acrobat / Preview / iOS Files — needs a device</li>
+      </ul></div>
+    <div class="card"><p class="eyebrow">DELIVERY</p>
+      <ul style="padding-left:16px">
+        <li class="ok">Archive readable, central directory intact, manifest inside</li>
+        <li class="ok">Checksums match the bytes shipped</li>
+        <li class="ok">Filenames safe on every OS, under 80 characters</li>
+        <li class="held">Live store order → entitlement → download — needs the backend (B1)</li>
+      </ul></div>
+    <div class="card"><p class="eyebrow">RE-ACCESS</p>
+      <ul style="padding-left:16px">
+        <li class="ok">Rebuild from serial is byte-identical</li>
+        <li class="ok">A different serial produces a correctly stamped, different copy</li>
+        <li class="ok">Entitlement contract: perpetual, not revocable by cancellation</li>
+        <li class="held">Live re-access button — needs the backend (B1)</li>
+      </ul></div>
+    <div class="card"><p class="eyebrow">MOBILE AND IPAD</p>
+      <ul style="padding-left:16px">
+        <li class="ok">Phone edition is portrait 360×640 pt, typeset for a phone</li>
+        <li class="ok">Print edition reads full-width on iPad without zooming</li>
+        <li class="ok">This preview page reflows at 390 pt, 834 pt and desktop</li>
+        <li class="held">Real-device scroll and tap — needs a device</li>
+      </ul></div>
+  </div>
+
+  <h2>Decision</h2>
+  <div class="decision">
+    <p class="eyebrow">PROPOSED PRICE</p>
+    <p style="font-family:Georgia,serif;font-size:1.6rem;margin:.1em 0">$29.00 USD one-off · permanent re-access · no subscription</p>
+    <p style="color:#d5c4a1;margin-bottom:0">Publication is not requested. What is requested is a decision on
+    price, on the customer-facing title, and on whether the product may be registered in the live store registry
+    in <span class="mono">CHAIRMAN_PREVIEW</span> state.</p>
+  </div>
+</main>
+<footer>THY-QYRIS-QC-001 · serial THY-QC1-0000-MASTER · First edition v1.0 ·
+preview surface, not routed, not published</footer>
+</body></html>

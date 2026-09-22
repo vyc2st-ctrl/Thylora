@@ -1,0 +1,22 @@
+RE-ACCESS — QYRIS QuickCheck — The Nine-Inspection Pass
+
+Serial: THY-QC1-0000-MASTER
+SKU: THY-QYRIS-QC-001
+
+Your purchase entitlement is permanent. It does not expire, and ending a
+membership does not remove it.
+
+To get these files again:
+  1. Sign in to the THYLORA store account that made the purchase.
+  2. Open Orders, find this SKU, and choose Re-access.
+  3. Quote the serial above if you are asked to identify the copy.
+
+You do not need to email anyone, and there is no download limit.
+
+A corrected or extended edition is delivered to the same entitlement at no
+further cost. It carries this same serial with a new edition line, so your
+copy stays yours and stays identifiable.
+
+Every re-access is rebuilt from the same source at the same serial, so the
+files you receive are byte-for-byte the files you first received. The
+checksums in manifest.json are how you can prove that yourself.
