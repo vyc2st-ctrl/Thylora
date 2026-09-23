@@ -34,7 +34,9 @@ for pass in "first" "second (idempotency)"; do
 done
 
 echo "== behavioural checks (ERROR lines below are the passing result)"
-cat "$HERE/behaviour.sql" | psql -q -d "$DB" 2>&1 | grep -E 'EXPECT-REJECT|^ERROR'
+bout=$(cat "$HERE/behaviour.sql" | psql -q -d "$DB" 2>&1)
+echo "$bout" | grep -E 'EXPECT-REJECT|^ERROR'
+if echo "$bout" | grep -qE 'EXPECT-REJECT FAIL|^ERROR'; then status=1; fi
 
 for proof in "$HERE"/proof_*.sql; do
   echo "== $(basename "$proof")"

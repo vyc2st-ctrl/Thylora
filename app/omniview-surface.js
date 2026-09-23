@@ -5,9 +5,11 @@
  * dashboard: it adds two surfaces — CONTEXT and SEQUENCE — into whatever host
  * page it is loaded into, using that page's own visual language.
  *
- * It reads the OMNIVIEW read model through PostgREST RPC. Until the pack in
- * db/omniview/ is applied to the backend of record, every read comes back
- * "NOT YET APPLIED" with the apply path, never as a broken surface.
+ * It reads the OMNIVIEW read model through PostgREST RPC. The pack is applied to
+ * thylora-dash at ledger 591 (THY-WORK-OMNIVIEW-LIVE-APPLY-591), and reads are
+ * Chairman-only. Every other state is named plainly instead of rendering an
+ * empty or broken surface: NOT YET APPLIED on a backend without the pack,
+ * SIGNED OUT with no session, NOT THE CHAIRMAN for any other signed-in account.
  *
  * The pure logic is exported for tests; the DOM half only runs in a browser.
  */
@@ -87,15 +89,31 @@
     if (text.includes('pgrst202') || text.includes('could not find the function')
       || text.includes('does not exist') || text.includes('404')) return 'NOT_APPLIED';
     if (text.includes('jwt') || text.includes('401') || text.includes('sign in')) return 'SIGNED_OUT';
+    if (text.includes('42501') || text.includes('permission denied') || text.includes('403')) return 'NOT_CHAIRMAN';
     return 'ERROR';
+  }
+
+  // Reads are Chairman-only (thylora_is_chairman). Any other signed-in account
+  // gets a successful but empty read: no sequence head, no rows. The seeded
+  // ledger is never empty, so an empty read means "not the Chairman", not
+  // "nothing recorded" — and must never be shown as an empty board.
+  function accessState(read) {
+    if (!read || typeof read !== 'object') return 'ERROR';
+    const head = read.sequence_head !== undefined ? read.sequence_head : read.head;
+    if (head === null) return 'NOT_CHAIRMAN';
+    return 'OK';
   }
 
   function stateMessage(state) {
     if (state === 'NOT_APPLIED') {
-      return 'OMNIVIEW is not applied to the backend of record yet. Apply ' + APPLY_PATH
-        + ' to thylora-dash, then reopen this surface. Nothing else on this dashboard is affected.';
+      return 'OMNIVIEW is not applied to this backend yet. Apply ' + APPLY_PATH
+        + ', then reopen this surface. Nothing else on this dashboard is affected.';
     }
     if (state === 'SIGNED_OUT') return 'Sign in first. CONTEXT and SEQUENCE read protected rows.';
+    if (state === 'NOT_CHAIRMAN') {
+      return 'Signed in, but not as the Chairman. CONTEXT and SEQUENCE are readable only by the Chairman account; '
+        + 'this account sees nothing, by design.';
+    }
     return 'Read failed.';
   }
 
@@ -131,7 +149,7 @@
   const api = {
     MARK, LEDGER_COLUMNS, PATH_SECTIONS,
     esc, normalizeKey, orderSections, partitionStatements,
-    readState, stateMessage, sequenceView, qyrisLines
+    readState, accessState, stateMessage, sequenceView, qyrisLines
   };
 
   /* ---------- DOM half ---------- */
@@ -166,7 +184,10 @@
     const style = doc.createElement('style');
     style.id = 'thy-omniview-style';
     style.textContent = [
-      '.thy-omni-panel{position:fixed;inset:0;z-index:95;background:#080d14;display:none;flex-direction:column}',
+      // Full-screen and opaque: it sits above the host's floating launchers
+      // (SPINE FORWARD .thy-spine-launch 120 / panel 121, and its own at 120),
+      // so nothing floats over the content on a phone.
+      '.thy-omni-panel{position:fixed;inset:0;z-index:125;background:#080d14;display:none;flex-direction:column}',
       '.thy-omni-panel.open{display:flex}',
       '.thy-omni-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:calc(14px + env(safe-area-inset-top)) 16px 13px;border-bottom:1px solid #293342;background:#0b1119;flex:none}',
       '.thy-omni-head strong{font-size:17px;letter-spacing:.06em}',
@@ -175,7 +196,8 @@
       '.thy-omni-tabs button.active{background:#6d4f18;border-color:#a0792d}',
       '.thy-omni-body{flex:1;min-height:0;overflow:auto;padding:14px;-webkit-overflow-scrolling:touch}',
       '.thy-omni-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px}',
-      '.thy-omni-card{border:1px solid #26313e;background:#0b121a;border-radius:13px;padding:12px;text-align:left;width:100%;color:#f4efe6}',
+      '.thy-omni-card{border:1px solid #26313e;background:#0b121a;border-radius:13px;padding:12px;text-align:left;width:100%;min-width:0;color:#f4efe6;white-space:normal;overflow-wrap:anywhere;word-break:break-word}',
+      '.thy-omni-body *{max-width:100%}',
       '.thy-omni-card b.t{display:block;font-size:15px;font-weight:850;margin-bottom:4px}',
       '.thy-omni-card .m{font-size:12px;color:#9fa8b5}',
       '.thy-omni-step{margin:16px 0 8px;color:#d6a348;font-size:12px;font-weight:850;letter-spacing:.09em;text-transform:uppercase;border-top:1px solid #1e2734;padding-top:12px}',
@@ -244,6 +266,7 @@
       let read;
       try { read = await rpc('thy_omniview_manifest', { p_delta_limit: 8 }); }
       catch (e) { const s = readState(e); return note(stateMessage(s) + (s === 'ERROR' ? ' ' + (e.message || '') : ''), s !== 'NOT_APPLIED'); }
+      if (accessState(read) !== 'OK') return note(stateMessage(accessState(read)), true);
 
       const topics = read.topic_manifest || [];
       body.innerHTML =
@@ -362,6 +385,7 @@
       let read;
       try { read = await rpc('thy_sequence_ledger_page', { p_limit: 60 }); }
       catch (e) { const s = readState(e); return note(stateMessage(s) + (s === 'ERROR' ? ' ' + (e.message || '') : ''), s !== 'NOT_APPLIED'); }
+      if (accessState(read) !== 'OK') return note(stateMessage(accessState(read)), true);
 
       const rows = read.rows || [];
       body.innerHTML = '<div class="thy-omni-step">SEQUENCE LEDGER · head ' + esc(read.head) + '</div>'

@@ -29,7 +29,7 @@ values
  ('VERONICA','VERONICA', array['VERÓNICA'],'PERSON',
   null,'CHAIRMAN','Chairman','UNSEEDED'),
 
- ('CASTLE','CASTLE', array['THE CASTLE'],'PLACE',
+ ('CASTLE','CASTLE', array['THE CASTLE','ROYAL CASTLE'],'PLACE',
   null,'CHAIRMAN','Chairman','UNSEEDED'),
 
  ('STORE','STORE', array['STOREFRONT','SHOP','THE STORE'],'PRODUCT',
@@ -40,9 +40,8 @@ values
   'Chairman executive dashboard. Deployment authority is held outside this repository.',
   'DEPLOYMENT_REPOSITORY','vyc2st-ctrl/thylora-executive-dashboard','PARTIAL'),
 
- ('QYRIS','QYRIS', array['QYRIS TRACE'],'SYSTEM',
-  'The visible read trace attached to every OMNIVIEW answer.',
-  'CHAIRMAN','Chairman','PARTIAL'),
+ ('QYRIS','QYRIS', array['QYRIS GATE','QYRIS ALL WORK'],'SYSTEM',
+  null,'CHAIRMAN','Chairman','UNSEEDED'),
 
  ('FOOTBALL','FOOTBALL', array['SOCCER'],'PROGRAM',
   null,'CHAIRMAN','Chairman','UNSEEDED'),
@@ -66,58 +65,47 @@ on conflict (topic_key) do update
       authority_holder = excluded.authority_holder,
       updated_at   = now();
 
--- 2. SEQUENCE 587 — the read floor -------------------------------------------
+-- 2. SEQUENCE 587 — the ledger opens on the build it can stand behind ------
+-- 591 CORRECTION (made before first live apply): the reviewed seed wrote two
+-- rows, 587 ("read floor") and 588 ("this build"). Live thylora_query_carryforward
+-- already assigns 588 to THY-Q-20260922-TRANSFER-GATES-ALISTAIR-LIFEFIRST-588, a
+-- different change, so a ledger row 588 would have contradicted the backend of
+-- record. The OMNIVIEW build (commit 9d359c6, 2026-09-22 14:05:31Z) happened
+-- inside the 587 window (carryforward 587 at 13:35:01Z, 588 at 17:39:26Z) and
+-- was the execution of THY-WORK-OMNIVIEW-ROUNDTRIP-587, so it is recorded as 587.
+-- Local time uses America/New_York, the earth_anchor_timezone held by
+-- thylora_timestamp_punch_gate on the backend of record.
 insert into thy_sequence_ledger (
   sequence_no, previous_sequence_no, occurred_utc, occurred_local, local_timezone,
   why_change_occurred, what_changed, why_it_changed, what_remained,
   authority, truth_class, next_better_question, restart_point, source_ref)
 select 587, null,
-  timestamptz '2026-09-22 00:00:00+00', timestamp '2026-09-22 00:00', 'UTC',
-  'The Chairman named sequence 587 as the read floor for the OMNIVIEW spine.',
-  'The sequence change ledger was opened at 587. Earlier sequences were not imported.',
-  'A ledger that back-dates rows it never witnessed would make its own truth class meaningless. '
-  || '587 is the first sequence this ledger can stand behind.',
-  'Sequences 1-586 remain where they already live: prior session history and thylora_query_carryforward. '
-  || 'They are readable as pre-ledger context through thy_sequence_prior_context and are never presented as ledger rows.',
-  'Chairman', 'CHAIRMAN_ASSERTED',
-  'What is the Chairman local timezone of record, so LOCAL DATE/TIME stops defaulting to UTC?',
-  'OMNIVIEW ledger open at 587. Next sequence is 588.',
-  'THY-WORK-SEQUENCE-CHANGE-LEDGER-587'
-where not exists (select 1 from thy_sequence_ledger where sequence_no = 587);
-
--- 3. SEQUENCE 588 — this build -----------------------------------------------
-insert into thy_sequence_ledger (
-  sequence_no, previous_sequence_no, occurred_utc, occurred_local, local_timezone,
-  why_change_occurred, what_changed, why_it_changed, what_remained,
-  authority, truth_class, next_better_question, restart_point, source_ref)
-select 588, 587,
-  timestamptz '2026-09-22 00:00:00+00', timestamp '2026-09-22 00:00', 'UTC',
-  'THY-WORK-OMNIVIEW-ROUNDTRIP-587: the spine had no single read that returns current state plus the history behind it.',
-  'CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION implemented: topic manifest, authority locks, linked graph, '
-  || 'linked people/places/objects/products, linked work, gates, current-vs-superseded canon, last restart, '
-  || 'QYRIS read trace, append-only sequence ledger, and CONTEXT + SEQUENCE surfaces inside the existing dashboard.',
+  timestamptz '2026-09-22 14:05:31+00', timestamp '2026-09-22 10:05:31', 'America/New_York',
+  'THY-WORK-OMNIVIEW-ROUNDTRIP-587 and THY-WORK-SEQUENCE-CHANGE-LEDGER-587: the spine had no single read that returns current state plus the history behind it, and sequence numbers were not an auditable change ledger.',
+  'The sequence change ledger was opened at 587, and CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION was written: topic manifest, authority locks, '
+  || 'linked graph, linked people/places/objects/products, linked work, gates, current-vs-superseded canon, last restart, '
+  || 'an OMNIVIEW read trace on every read, and CONTEXT + SEQUENCE surfaces inside the existing dashboard.',
   'Re-reading every raw backend row each turn is slow and still unprovable. One governed read returns the state '
   || 'and names exactly which tables it touched, so an answer can no longer claim a table it never read.',
-  'No existing THYLORA table was dropped, renamed or rewritten. The dashboard was extended, not replaced: every '
-  || 'baseline capability in dashboard-baseline.json is still present. Deployment authority stays with '
-  || 'vyc2st-ctrl/thylora-executive-dashboard.',
+  'No existing THYLORA table was dropped, renamed or rewritten. The dashboard was extended, not replaced. Deployment authority stays with '
+  || 'vyc2st-ctrl/thylora-executive-dashboard. Sequences 1-586, and every later carryforward sequence that is not a ledger row, stay in '
+  || 'thylora_query_carryforward and are readable through thy_sequence_prior_context, never presented as ledger rows.',
   'Chairman', 'REPO_VERIFIED',
   'Which UNSEEDED topic does the Chairman want seeded first: CASTLE, INÉS, VERONICA, FOOTBALL or VEHICLES?',
-  'OMNIVIEW pack written and verified against a throwaway PostgreSQL 16 database. '
-  || 'Held for Chairman execution against thylora-dash; not yet applied to the live backend.',
-  'db/omniview/'
-where not exists (select 1 from thy_sequence_ledger where sequence_no = 588);
+  'OMNIVIEW pack written and verified against a throwaway PostgreSQL 16 database (commit 9d359c6). '
+  || 'Not applied to the live backend at 587.',
+  'db/omniview/ @ 9d359c6'
+where not exists (select 1 from thy_sequence_ledger where sequence_no = 587);
 
--- 4. WHICH TOPICS SEQUENCE 588 TOUCHED ---------------------------------------
+-- 4. WHICH TOPICS SEQUENCE 587 TOUCHED ---------------------------------------
 insert into thy_sequence_ledger_topics (sequence_no, topic_key, effect) values
-  (587,'OMNIVIEW','RESTARTED'),
-  (588,'OMNIVIEW','CANON_CHANGED'),
-  (588,'QYRIS','CANON_CHANGED'),
-  (588,'DASHBOARD','WORK_CHANGED'),
-  (588,'TIME RUN','TOUCHED'),
-  (588,'STORE','TOUCHED'),
-  (588,'CASTLE','TOUCHED'),
-  (588,'ECONOMY','TOUCHED')
+  (587,'OMNIVIEW','CANON_CHANGED'),
+  (587,'QYRIS','TOUCHED'),
+  (587,'DASHBOARD','WORK_CHANGED'),
+  (587,'TIME RUN','TOUCHED'),
+  (587,'STORE','TOUCHED'),
+  (587,'CASTLE','TOUCHED'),
+  (587,'ECONOMY','TOUCHED')
 on conflict (sequence_no, topic_key) do nothing;
 
 update thy_omniview_topics t
@@ -132,43 +120,43 @@ insert into thy_omniview_statements (topic_key, statement_kind, body, truth_clas
 select * from (values
  ('DASHBOARD','CANON',
   'Deployment authority for the Chairman dashboard is NOT this repository. The authoritative deployment repository is vyc2st-ctrl/thylora-executive-dashboard, the authoritative runtime project is thylora-public-world, and the backend is thylora-dash (jvsdxhrfhtlgaknhjxlz). A change is not live until it is merged there and witnessed on thylora-public-world.',
-  'REPO_VERIFIED','Chairman',588,'DASHBOARD_AUTHORITY.md'),
+  'REPO_VERIFIED','Chairman',587,'DASHBOARD_AUTHORITY.md'),
 
  ('DASHBOARD','CONSTRAINT',
   'Baseline THY-DASH-FLOOR-20260823-001 holds: a future dashboard version may change appearance but may not silently remove a baseline capability, disconnect the existing backend, or replace the current head with an older state.',
-  'REPO_VERIFIED','Chairman',588,'dashboard-baseline.json'),
+  'REPO_VERIFIED','Chairman',587,'dashboard-baseline.json'),
 
  ('DASHBOARD','EVIDENCE',
-  'FINDING at sequence 588: the copy of the head in vyc2st-ctrl/Thylora is seven capabilities below baseline THY-DASH-FLOOR-20260823-001 — Product & Storefront, Commerce Proof, System Health, Required Chairman Action, Approvals, Digital Product Passports, Connection Evidence. The shortfall is present in the file before the OMNIVIEW delta, so the delta did not cause it. The live head on thylora-public-world was not reachable and is NOT claimed either way.',
-  'REPO_VERIFIED','Chairman',588,'dashboard-baseline-gap.json'),
+  'FINDING at sequence 587: the copy of the head in vyc2st-ctrl/Thylora is seven capabilities below baseline THY-DASH-FLOOR-20260823-001 — Product & Storefront, Commerce Proof, System Health, Required Chairman Action, Approvals, Digital Product Passports, Connection Evidence. The shortfall is present in the file before the OMNIVIEW delta, so the delta did not cause it. The live head on thylora-public-world was not reachable and is NOT claimed either way.',
+  'REPO_VERIFIED','Chairman',587,'dashboard-baseline-gap.json'),
 
  ('DASHBOARD','EVIDENCE',
   'CONTEXT and SEQUENCE surfaces were added to the existing dashboard as an injected delta (app/omniview-surface.js), in the same pattern as the SPINE FORWARD command spine. No new dashboard was built.',
-  'REPO_VERIFIED','Chairman',588,'app/omniview-surface.js'),
+  'REPO_VERIFIED','Chairman',587,'app/omniview-surface.js'),
 
- ('QYRIS','CANON',
-  'QYRIS-1 is the visible read trace. Every OMNIVIEW read returns, in the same call that returns the answer: scope, topic, read timestamp, sequence head, the exact tables read with row counts, and an explicit not_read list. An answer may claim only the tables listed in tables_read.',
-  'REPO_VERIFIED','Chairman',588,'db/omniview/0003_read_model.sql'),
+ ('QYRIS','EVIDENCE',
+  'OMNIVIEW emits a read trace labelled QYRIS-1 on every read: scope, topic, read timestamp, sequence head, the exact tables read with row counts, and an explicit not_read list. It is the inspect evidence OMNIVIEW supplies to QYRIS; it does not define QYRIS, whose authority is held on the backend of record.',
+  'REPO_VERIFIED','Chairman',587,'db/omniview/0003_read_model.sql'),
 
  ('OMNIVIEW','CANON',
   'The pre-response path is data, not convention. Every topic read returns read_path = NEWEST DELTAS, TOPIC MANIFEST, AUTHORITY LOCKS, LINKED GRAPH, LINKED PEOPLE/PLACES/OBJECTS/PRODUCTS, LINKED WORK, LINKED GATES, CURRENT VS SUPERSEDED, LAST RESTART, ANSWER — and the surface renders in that order.',
-  'REPO_VERIFIED','Chairman',588,'db/omniview/0003_read_model.sql'),
+  'REPO_VERIFIED','Chairman',587,'db/omniview/0003_read_model.sql'),
 
  ('OMNIVIEW','CONSTRAINT',
   'Source history is never rewritten. thy_sequence_ledger refuses UPDATE and DELETE at the database level; a correction is a new sequence carrying supersedes_sequence_no. Canon statements are superseded, never edited.',
-  'REPO_VERIFIED','Chairman',588,'db/omniview/0001_sequence_ledger.sql'),
+  'REPO_VERIFIED','Chairman',587,'db/omniview/0001_sequence_ledger.sql'),
 
  ('TIME RUN','EVIDENCE',
   'Time Run has a surface in the member app (app/time-run.html, app/time-run.js, app/time-run.css) and is wired into accepted app navigation. Whether that surface is the whole of TIME RUN canon is not established by this repository.',
-  'REPO_VERIFIED','Chairman',588,'app/time-run.html'),
+  'REPO_VERIFIED','Chairman',587,'app/time-run.html'),
 
  ('STORE','EVIDENCE',
   'The storefront exists as public-site/store.html with a THYLORA membership storefront surface, and the dashboard reads products, orders, payments and entitlements from the backend of record.',
-  'REPO_VERIFIED','Chairman',588,'public-site/store.html'),
+  'REPO_VERIFIED','Chairman',587,'public-site/store.html'),
 
  ('ECONOMY','EVIDENCE',
-  'Money is held in integer minor units with gross, fees, refunds, chargebacks, platform share, creator share, beneficiary share and net payable kept as separate columns. No opaque net proceeds, no floating point money.',
-  'REPO_VERIFIED','Chairman',588,'db/rae-link/0005_monetization_ledger.sql')
+  'The RAE Link monetization ledger defined in db/rae-link/0005 holds money in integer minor units with gross, fees, refunds, chargebacks, platform share, creator share, beneficiary share and net payable as separate columns. That ledger is a repository definition: rael_revenue_ledger is not present on thylora-dash (checked at 591).',
+  'REPO_VERIFIED','Chairman',587,'db/rae-link/0005_monetization_ledger.sql')
 ) v(topic_key, statement_kind, body, truth_class, authority, entered_sequence_no, source_ref)
 where not exists (
   select 1 from thy_omniview_statements s
@@ -183,34 +171,34 @@ insert into thy_omniview_links (topic_key, link_class, link_key, display_name, r
                                 source_table, source_ref, entered_sequence_no)
 values
  ('DASHBOARD','WORK','THY-WORK-DASHBOARD-INTERACTION-CLOSEOUT-562','Dashboard interaction closeout',
-  'Open work: every control reaches a real destination','ACTIVE',null,'tests/dead-controls.test.mjs',588),
+  'Open work: every control reaches a real destination','ACTIVE',null,'tests/dead-controls.test.mjs',587),
  ('DASHBOARD','WORK','THY-WORK-OMNIVIEW-ROUNDTRIP-587','OMNIVIEW round trip',
-  'CONTEXT and SEQUENCE surfaces inside the existing dashboard','ACTIVE',null,'app/omniview-surface.js',588),
- ('DASHBOARD','SYSTEM','thylora-public-world','thylora-public-world','Authoritative runtime project','ACTIVE',null,'DASHBOARD_AUTHORITY.md',588),
- ('DASHBOARD','SYSTEM','thylora-dash','thylora-dash (jvsdxhrfhtlgaknhjxlz)','Backend of record','ACTIVE',null,'DASHBOARD_AUTHORITY.md',588),
- ('DASHBOARD','TOPIC','OMNIVIEW','OMNIVIEW','Dashboard surfaces the OMNIVIEW read model','ACTIVE',null,null,588),
+  'CONTEXT and SEQUENCE surfaces inside the existing dashboard','ACTIVE',null,'app/omniview-surface.js',587),
+ ('DASHBOARD','SYSTEM','thylora-public-world','thylora-public-world','Authoritative runtime project','ACTIVE',null,'DASHBOARD_AUTHORITY.md',587),
+ ('DASHBOARD','SYSTEM','thylora-dash','thylora-dash (jvsdxhrfhtlgaknhjxlz)','Backend of record','ACTIVE',null,'DASHBOARD_AUTHORITY.md',587),
+ ('DASHBOARD','TOPIC','OMNIVIEW','OMNIVIEW','Dashboard surfaces the OMNIVIEW read model','ACTIVE',null,null,587),
 
- ('OMNIVIEW','WORK','THY-WORK-OMNIVIEW-ROUNDTRIP-587','OMNIVIEW round trip','Implements the read model','ACTIVE',null,'db/omniview/',588),
- ('OMNIVIEW','WORK','THY-WORK-SEQUENCE-CHANGE-LEDGER-587','Sequence change ledger','Implements the ledger','ACTIVE',null,'db/omniview/0001_sequence_ledger.sql',588),
- ('OMNIVIEW','TOPIC','QYRIS','QYRIS','Every OMNIVIEW read carries a QYRIS trace','ACTIVE',null,null,588),
+ ('OMNIVIEW','WORK','THY-WORK-OMNIVIEW-ROUNDTRIP-587','OMNIVIEW round trip','Implements the read model','ACTIVE',null,'db/omniview/',587),
+ ('OMNIVIEW','WORK','THY-WORK-SEQUENCE-CHANGE-LEDGER-587','Sequence change ledger','Implements the ledger','ACTIVE',null,'db/omniview/0001_sequence_ledger.sql',587),
+ ('OMNIVIEW','TOPIC','QYRIS','QYRIS','Every OMNIVIEW read carries a QYRIS trace','ACTIVE',null,null,587),
 
- ('QYRIS','SYSTEM','thy_omniview_qyris','thy_omniview_qyris()','Produces the trace in the same call as the answer','ACTIVE',null,'db/omniview/0003_read_model.sql',588),
+ ('QYRIS','SYSTEM','thy_omniview_qyris','thy_omniview_qyris()','Produces the trace in the same call as the answer','ACTIVE',null,'db/omniview/0003_read_model.sql',587),
 
- ('STORE','PRODUCT','products','Product registry','Store products live in the backend of record','ACTIVE','products',null,588),
- ('STORE','SYSTEM','orders','Order registry','Commerce proof','ACTIVE','orders',null,588),
- ('STORE','SYSTEM','entitlements','Entitlement registry','What a buyer may access','ACTIVE','entitlements',null,588),
- ('STORE','OBJECT','public-site/store.html','Public storefront page','Public store surface','ACTIVE',null,'public-site/store.html',588),
- ('STORE','TOPIC','ECONOMY','ECONOMY','Store revenue settles through the economy spine','ACTIVE',null,null,588),
+ ('STORE','PRODUCT','products','Product registry','Store products live in the backend of record','ACTIVE','products',null,587),
+ ('STORE','SYSTEM','orders','Order registry','Commerce proof','ACTIVE','orders',null,587),
+ ('STORE','SYSTEM','entitlements','Entitlement registry','What a buyer may access','ACTIVE','entitlements',null,587),
+ ('STORE','OBJECT','public-site/store.html','Public storefront page','Public store surface','ACTIVE',null,'public-site/store.html',587),
+ ('STORE','TOPIC','ECONOMY','ECONOMY','Store revenue settles through the economy spine','ACTIVE',null,null,587),
 
- ('TIME RUN','OBJECT','app/time-run.html','Time Run app surface','Member app surface','ACTIVE',null,'app/time-run.html',588),
- ('TIME RUN','SYSTEM','app','THYLORA member app','Time Run is wired into accepted app navigation','ACTIVE',null,'app/index.html',588),
+ ('TIME RUN','OBJECT','app/time-run.html','Time Run app surface','Member app surface','ACTIVE',null,'app/time-run.html',587),
+ ('TIME RUN','SYSTEM','app','THYLORA member app','Time Run is wired into accepted app navigation','ACTIVE',null,'app/index.html',587),
 
- ('ECONOMY','MONEY','rael_revenue_ledger','Revenue ledger','Gross, fees and shares held separately','ACTIVE','rael_revenue_ledger','db/rae-link/0005_monetization_ledger.sql',588),
- ('ECONOMY','SYSTEM','financial_decision_register','Financial decision register','Money decisions of record','ACTIVE','financial_decision_register',null,588),
+ ('ECONOMY','MONEY','rael_revenue_ledger','RAE Link revenue ledger (repository definition)','Defined in db/rae-link/0005; not applied to thylora-dash','BLOCKED',null,'db/rae-link/0005_monetization_ledger.sql',587),
+ ('ECONOMY','SYSTEM','financial_decision_register','Financial decision register','Money decisions of record','ACTIVE','financial_decision_register',null,587),
 
  ('FOOTBALL','WORK','GAME-BET-001','GAME-BET-001 sportsbook and casino workroom',
   'ADJACENT, UNCONFIRMED: a sports surface exists in the app. Whether it belongs to FOOTBALL canon is not established.',
-  'BLOCKED',null,'app/sports-betting.html',588)
+  'BLOCKED',null,'app/sports-betting.html',587)
 on conflict (topic_key, link_class, link_key) do nothing;
 
 -- 7. GATES --------------------------------------------------------------------
@@ -220,31 +208,31 @@ values
  ('GATE-OMNIVIEW-APPLIED','OMNIVIEW',
   'The OMNIVIEW pack is applied to thylora-dash and thy_omniview_manifest() returns from the live backend.',
   'BLOCKED',
-  'This build session cannot reach jvsdxhrfhtlgaknhjxlz.supabase.co (egress denied). Applying DDL to the live backend is a Chairman execution.',
-  'Chairman','db/omniview/APPLY.md',588,null),
+  'At 587 the build session could not reach jvsdxhrfhtlgaknhjxlz.supabase.co (egress denied), so the pack was not applied.',
+  'Chairman','db/omniview/APPLY.md',587,null),
 
  ('GATE-OMNIVIEW-WITNESSED','DASHBOARD',
   'CONTEXT and SEQUENCE are witnessed working on thylora-public-world after merge into vyc2st-ctrl/thylora-executive-dashboard.',
-  'BLOCKED','Deployment authority is not this repository.','Chairman','DASHBOARD_AUTHORITY.md',588,null),
+  'BLOCKED','Deployment authority is not this repository.','Chairman','DASHBOARD_AUTHORITY.md',587,null),
 
  ('GATE-BASELINE-PRESERVED','DASHBOARD',
   'The OMNIVIEW delta removes no capability that the current head already carried.',
-  'PASSED',null,'Chairman','tests/dashboard-delta.test.mjs',588,588),
+  'PASSED',null,'Chairman','tests/dashboard-delta.test.mjs',587,587),
 
  ('GATE-BASELINE-FLOOR','DASHBOARD',
   'The head carries every capability named in baseline THY-DASH-FLOOR-20260823-001.',
   'BLOCKED',
   'Seven baseline capabilities are absent from this repository copy of the head: Product & Storefront, Commerce Proof, System Health, Required Chairman Action, Approvals, Digital Product Passports, Connection Evidence. '
-  || 'The shortfall predates sequence 588 and was not caused by the OMNIVIEW delta. Whether the live head on thylora-public-world carries them could not be checked: egress was denied.',
-  'Chairman','dashboard-baseline-gap.json',588,null),
+  || 'The shortfall predates sequence 587 and was not caused by the OMNIVIEW delta. Whether the live head on thylora-public-world carries them could not be checked: egress was denied.',
+  'Chairman','dashboard-baseline-gap.json',587,null),
 
  ('GATE-DEAD-CONTROLS','DASHBOARD',
   'Every button, control and in-page link in the dashboard, app, public site and RAE Link reaches a real destination.',
-  'PASSED',null,'Chairman','tests/dead-controls.test.mjs',588,588),
+  'PASSED',null,'Chairman','tests/dead-controls.test.mjs',587,587),
 
  ('GATE-CANON-SOURCE','CASTLE',
   'CASTLE canon is stated by the Chairman before any answer treats it as settled.',
-  'OPEN','No source in this repository establishes CASTLE.','Chairman',null,588,null)
+  'OPEN','No source in this repository establishes CASTLE.','Chairman',null,587,null)
 on conflict (gate_key) do update
   set requirement = excluded.requirement, gate_state = excluded.gate_state,
       blocker = excluded.blocker,
@@ -254,27 +242,27 @@ on conflict (gate_key) do update
 insert into thy_omniview_questions (topic_key, question, why_it_matters, is_next_better, entered_sequence_no)
 select * from (values
  ('CASTLE','What is CASTLE — a property, a build, a programme or a metaphor — and who or what is its source of record?',
-  'CASTLE is registered and asked about, but nothing in the backend or repository establishes it. Until this is answered every CASTLE answer is invention.', true, 588),
+  'CASTLE is registered and asked about, but nothing in the backend or repository establishes it. Until this is answered every CASTLE answer is invention.', true, 587),
  ('INES','What is INÉS to THYLORA, and which record should hold that: a family profile, a partnership, or a person on the living world register?',
-  'INÉS is a named topic with no linked record. The right registry has to be chosen before canon is written.', true, 588),
+  'INÉS is a named topic with no linked record. The right registry has to be chosen before canon is written.', true, 587),
  ('VERONICA','What is VERONICA to THYLORA, and which existing registry already holds part of it?',
-  'Registering canon in the wrong place creates a second source of truth.', true, 588),
+  'Registering canon in the wrong place creates a second source of truth.', true, 587),
  ('FOOTBALL','Does FOOTBALL canon include the GAME-BET-001 sportsbook surface, or is FOOTBALL a separate programme?',
-  'A sports surface exists in the app. Linking it to FOOTBALL without the Chairman saying so would invent a relationship.', true, 588),
+  'A sports surface exists in the app. Linking it to FOOTBALL without the Chairman saying so would invent a relationship.', true, 587),
  ('VEHICLES','Which vehicles are on the THYLORA register, and is the register an asset list, a fleet, or a product line?',
-  'VEHICLES is registered with no linked record of any class.', true, 588),
+  'VEHICLES is registered with no linked record of any class.', true, 587),
  ('TIME RUN','Is the app Time Run surface the whole of TIME RUN, or the visible part of a larger programme?',
-  'The repository proves the surface exists; it does not prove what TIME RUN is.', true, 588),
+  'The repository proves the surface exists; it does not prove what TIME RUN is.', true, 587),
  ('STORE','Which products are RELEASED and carry an active purchase path right now in the backend of record?',
-  'The store surface is proven; live product state can only come from a backend read.', true, 588),
+  'The store surface is proven; live product state can only come from a backend read.', true, 587),
  ('OMNIVIEW','What is the Chairman local timezone of record, so LOCAL DATE/TIME stops defaulting to UTC?',
-  'Every ledger row carries a local time. Defaulting it to UTC is a known, recorded compromise.', true, 588),
+  'Every ledger row carries a local time. Defaulting it to UTC is a known, recorded compromise.', true, 587),
  ('DASHBOARD','Does the live head on thylora-public-world still carry the seven capabilities missing from this repository copy, and if it does, should this copy be refreshed from vyc2st-ctrl/thylora-executive-dashboard?',
-  'A baseline floor that is silently below itself is worse than no floor. This is the one DASHBOARD answer that cannot be settled from inside this repository.', true, 588),
+  'A baseline floor that is silently below itself is worse than no floor. This is the one DASHBOARD answer that cannot be settled from inside this repository.', true, 587),
  ('DASHBOARD','After the OMNIVIEW pack is applied, which surface should open first on sign-in: CURRENT HEAD or CONTEXT?',
-  'The Chairman decides the landing surface; the delta ships CONTEXT as an added surface, not a replacement.', false, 588),
+  'The Chairman decides the landing surface; the delta ships CONTEXT as an added surface, not a replacement.', false, 587),
  ('ECONOMY','Which revenue lanes are live in the backend of record today, and which are defined but not yet earning?',
-  'The lane definitions are proven by migration; live state is not.', true, 588)
+  'The lane definitions are proven by migration; live state is not.', true, 587)
 ) v(topic_key, question, why_it_matters, is_next_better, entered_sequence_no)
 where not exists (select 1 from thy_omniview_questions q
                    where q.topic_key = v.topic_key and q.question = v.question);
@@ -282,11 +270,11 @@ where not exists (select 1 from thy_omniview_questions q
 -- 9. RESTART POINT ------------------------------------------------------------
 insert into thy_omniview_restarts (scope, topic_key, restart_point, reason, authority, sequence_no)
 select 'SPINE', null,
-  'OMNIVIEW pack written and verified against PostgreSQL 16 locally. Held for Chairman execution against thylora-dash. '
+  'OMNIVIEW pack written and verified against PostgreSQL 16 locally. Not yet applied to thylora-dash at 587. '
   || 'Dashboard CONTEXT and SEQUENCE surfaces are in the current head and degrade to a clear NOT YET APPLIED state until the pack is applied. '
   || 'Next: apply db/omniview/ to thylora-dash, then answer the next-better question on the UNSEEDED topics.',
-  'Sequence 588 closed the OMNIVIEW round trip and the sequence ledger.',
-  'Chairman', 588
-where not exists (select 1 from thy_omniview_restarts where sequence_no = 588 and scope = 'SPINE');
+  'Sequence 587 closed the OMNIVIEW round trip and opened the sequence ledger.',
+  'Chairman', 587
+where not exists (select 1 from thy_omniview_restarts where sequence_no = 587 and scope = 'SPINE');
 
 commit;

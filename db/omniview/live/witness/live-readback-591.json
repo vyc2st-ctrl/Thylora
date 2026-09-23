@@ -1,0 +1,4326 @@
+{
+ "captured_as": "postgres via Supabase connector (owner; RLS not applied) - equals the Chairman view",
+ "captured_at": "2026-09-23T17:43:39.707404+00:00",
+ "thy_omniview_topic": {
+  "INES": {
+   "found": true,
+   "qyris": {
+    "scope": "TOPIC_EXPANSION",
+    "topic": "INES",
+    "not_read": [
+     "raw THYLORA registries were not swept this turn",
+     "soft-referenced rows are resolved only when a link is opened",
+     "anything absent from the OMNIVIEW tables is reported as UNSEEDED, never inferred"
+    ],
+    "claim_rule": "Only tables listed in tables_read were read. No other table may be claimed.",
+    "read_at_utc": "2026-09-23T17:43:39Z",
+    "tables_read": [
+     {
+      "rows": 1,
+      "table": "thy_omniview_topics"
+     },
+     {
+      "rows": 0,
+      "table": "thy_omniview_statements"
+     },
+     {
+      "rows": 0,
+      "table": "thy_omniview_links"
+     },
+     {
+      "rows": 0,
+      "table": "thy_omniview_gates"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_questions"
+     },
+     {
+      "rows": 0,
+      "table": "thy_sequence_ledger"
+     },
+     {
+      "rows": 0,
+      "table": "thy_sequence_ledger_topics"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_restarts"
+     }
+    ],
+    "qyris_version": "QYRIS-1",
+    "sequence_head": 591
+   },
+   "read_path": [
+    "NEWEST DELTAS",
+    "TOPIC MANIFEST",
+    "AUTHORITY LOCKS",
+    "LINKED GRAPH",
+    "LINKED PEOPLE/PLACES/OBJECTS/PRODUCTS",
+    "LINKED WORK",
+    "LINKED GATES",
+    "CURRENT VS SUPERSEDED",
+    "LAST RESTART",
+    "ANSWER"
+   ],
+   "topic_key": "INES",
+   "read_model": "CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION",
+   "answer_rule": "Canon for this topic is not written. Answer with the open question, not with an assumption.",
+   "linked_work": [],
+   "last_restart": {
+    "reason": "Sequence 591 applied the OMNIVIEW pack live and linked live topic authority.",
+    "authority": "Chairman",
+    "sequence_no": 591,
+    "restart_point": "OMNIVIEW is LIVE APPLIED on thylora-dash at ledger 591 and NOT LIVE UI WITNESSED. Chairman-only reads. Next: Chairman phone sign-in to CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard and restore the seven baseline capabilities there before promotion; answer the Royal Castle name, the Alistair household, the Time Run final name and ERFL-001 vs GGL-001."
+   },
+   "linked_gates": [],
+   "linked_graph": [],
+   "last_sequence": null,
+   "newest_deltas": [],
+   "open_questions": [
+    {
+     "id": 2,
+     "state": "OPEN",
+     "question": "What is INÉS to THYLORA, and which record should hold that: a family profile, a partnership, or a person on the living world register?",
+     "is_next_better": true,
+     "why_it_matters": "INÉS is a named topic with no linked record. The right registry has to be chosen before canon is written.",
+     "entered_sequence_no": 587
+    }
+   ],
+   "topic_manifest": {
+    "summary": null,
+    "topic_key": "INES",
+    "canon_state": "UNSEEDED",
+    "topic_class": "PERSON",
+    "display_name": "INÉS",
+    "last_sequence_no": null,
+    "superseded_by_topic": null
+   },
+   "authority_locks": {
+    "authority_lock": "CHAIRMAN",
+    "authority_holder": "Chairman",
+    "answerable_as_canon": false
+   },
+   "linked_entities": {
+    "money": [],
+    "people": [],
+    "places": [],
+    "topics": [],
+    "objects": [],
+    "systems": [],
+    "products": []
+   },
+   "next_better_question": {
+    "question": "What is INÉS to THYLORA, and which record should hold that: a family profile, a partnership, or a person on the living world register?",
+    "why_it_matters": "INÉS is a named topic with no linked record. The right registry has to be chosen before canon is written."
+   },
+   "current_vs_superseded": {
+    "current": [],
+    "superseded": [],
+    "current_count": 0,
+    "superseded_count": 0
+   }
+  },
+  "QYRIS": {
+   "found": true,
+   "qyris": {
+    "scope": "TOPIC_EXPANSION",
+    "topic": "QYRIS",
+    "not_read": [
+     "raw THYLORA registries were not swept this turn",
+     "soft-referenced rows are resolved only when a link is opened",
+     "anything absent from the OMNIVIEW tables is reported as UNSEEDED, never inferred"
+    ],
+    "claim_rule": "Only tables listed in tables_read were read. No other table may be claimed.",
+    "read_at_utc": "2026-09-23T17:43:39Z",
+    "tables_read": [
+     {
+      "rows": 1,
+      "table": "thy_omniview_topics"
+     },
+     {
+      "rows": 4,
+      "table": "thy_omniview_statements"
+     },
+     {
+      "rows": 5,
+      "table": "thy_omniview_links"
+     },
+     {
+      "rows": 0,
+      "table": "thy_omniview_gates"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_questions"
+     },
+     {
+      "rows": 2,
+      "table": "thy_sequence_ledger"
+     },
+     {
+      "rows": 2,
+      "table": "thy_sequence_ledger_topics"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_restarts"
+     }
+    ],
+    "qyris_version": "QYRIS-1",
+    "sequence_head": 591
+   },
+   "read_path": [
+    "NEWEST DELTAS",
+    "TOPIC MANIFEST",
+    "AUTHORITY LOCKS",
+    "LINKED GRAPH",
+    "LINKED PEOPLE/PLACES/OBJECTS/PRODUCTS",
+    "LINKED WORK",
+    "LINKED GATES",
+    "CURRENT VS SUPERSEDED",
+    "LAST RESTART",
+    "ANSWER"
+   ],
+   "topic_key": "QYRIS",
+   "read_model": "CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION",
+   "answer_rule": "Answer from current statements. Superseded statements are history, not canon.",
+   "linked_work": [
+    {
+     "status": "ACTIVE",
+     "link_key": "THY-WORK-OMNIVIEW-LIVE-APPLY-591",
+     "relation": "QYRIS PASS recorded before execution",
+     "link_class": "WORK",
+     "source_ref": "THY-WORK-OMNIVIEW-LIVE-APPLY-591",
+     "display_name": "OMNIVIEW live apply",
+     "source_table": "thylora_qyris_work_item_checks",
+     "entered_sequence_no": 591
+    }
+   ],
+   "last_restart": {
+    "reason": "Sequence 591 applied the OMNIVIEW pack live and linked live topic authority.",
+    "authority": "Chairman",
+    "sequence_no": 591,
+    "restart_point": "OMNIVIEW is LIVE APPLIED on thylora-dash at ledger 591 and NOT LIVE UI WITNESSED. Chairman-only reads. Next: Chairman phone sign-in to CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard and restore the seven baseline capabilities there before promotion; answer the Royal Castle name, the Alistair household, the Time Run final name and ERFL-001 vs GGL-001."
+   },
+   "linked_gates": [],
+   "linked_graph": [
+    {
+     "status": "ACTIVE",
+     "link_key": "LAW-QYRIS-ALL-WORK-001",
+     "relation": "Governing law",
+     "link_class": "GATE",
+     "source_ref": "LAW-QYRIS-ALL-WORK-001",
+     "display_name": "QYRIS All-Work Gate",
+     "source_table": "thylora_graph_nodes",
+     "entered_sequence_no": 591
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "thylora_qyris_work_item_checks",
+     "relation": "Pre-execution checks",
+     "link_class": "SYSTEM",
+     "source_ref": null,
+     "display_name": "QYRIS execution registry",
+     "source_table": "thylora_qyris_work_item_checks",
+     "entered_sequence_no": 591
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "THY-QYRIS-PLAIN-SPEECH-001",
+     "relation": "Equation and output contract",
+     "link_class": "SYSTEM",
+     "source_ref": "THY-QYRIS-PLAIN-SPEECH-001",
+     "display_name": "QYRIS plain-speech layer",
+     "source_table": "thylora_qyris_translation_layer",
+     "entered_sequence_no": 591
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "thy_omniview_qyris",
+     "relation": "Produces the trace in the same call as the answer",
+     "link_class": "SYSTEM",
+     "source_ref": "db/omniview/0003_read_model.sql",
+     "display_name": "thy_omniview_qyris()",
+     "source_table": null,
+     "entered_sequence_no": 587
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "THY-WORK-OMNIVIEW-LIVE-APPLY-591",
+     "relation": "QYRIS PASS recorded before execution",
+     "link_class": "WORK",
+     "source_ref": "THY-WORK-OMNIVIEW-LIVE-APPLY-591",
+     "display_name": "OMNIVIEW live apply",
+     "source_table": "thylora_qyris_work_item_checks",
+     "entered_sequence_no": 591
+    }
+   ],
+   "last_sequence": {
+    "authority": "Chairman",
+    "sequence_no": 591,
+    "truth_class": "BACKEND_VERIFIED",
+    "occurred_utc": "2026-09-23T17:39:23Z",
+    "what_changed": "The OMNIVIEW pack (thy_sequence_* and thy_omniview_*: 8 tables, read model, write path, Chairman-only RLS) is applied to thylora-dash. Live topic authority was read from the backend of record and linked for TIME RUN, CASTLE (ROYAL CASTLE), ALISTAIR CROWE, STORE, SPORTS and QYRIS.",
+    "restart_point": "OMNIVIEW is live on thylora-dash at ledger 591. Next: Chairman mobile witness of CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard; answer the open next-better questions (Royal Castle name, Alistair household, Time Run final name).",
+    "what_remained": "No existing THYLORA table, policy, function or row was altered or removed. The only writes outside thy_* objects are one QYRIS work-item check (pre-execution) and additive graph nodes, edges and versions. Deployment authority for the dashboard stays with vyc2st-ctrl/thylora-executive-dashboard; CONTEXT and SEQUENCE are LIVE APPLIED on the backend, NOT LIVE UI WITNESSED.",
+    "local_timezone": "America/New_York",
+    "occurred_local": "2026-09-23 13:39",
+    "why_it_changed": "Before apply, three conflicts between the reviewed pack and the live backend were corrected: reads were open to any signed-in account (now thylora_is_chairman(), the rule carryforward already uses); the carryforward context reader was SECURITY DEFINER and would have bypassed carryforward RLS (now SECURITY INVOKER); and the seed wrote ledger 588 for a change that carryforward 588 assigns to different work (now 587).",
+    "next_better_question": "Will the Chairman sign in on the phone and open CONTEXT and SEQUENCE on the current head, so LIVE APPLIED can become LIVE UI WITNESSED?"
+   },
+   "newest_deltas": [
+    {
+     "topics": [
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "ALISTAIR CROWE"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "CASTLE"
+      },
+      {
+       "effect": "GATE_CHANGED",
+       "topic_key": "DASHBOARD"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "OMNIVIEW"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "QYRIS"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "SPORTS"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "STORE"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "TIME RUN"
+      }
+     ],
+     "authority": "Chairman",
+     "supersedes": null,
+     "sequence_no": 591,
+     "truth_class": "BACKEND_VERIFIED",
+     "occurred_utc": "2026-09-23T17:39:23Z",
+     "what_changed": "The OMNIVIEW pack (thy_sequence_* and thy_omniview_*: 8 tables, read model, write path, Chairman-only RLS) is applied to thylora-dash. Live topic authority was read from the backend of record and linked for TIME RUN, CASTLE (ROYAL CASTLE), ALISTAIR CROWE, STORE, SPORTS and QYRIS.",
+     "restart_point": "OMNIVIEW is live on thylora-dash at ledger 591. Next: Chairman mobile witness of CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard; answer the open next-better questions (Royal Castle name, Alistair household, Time Run final name).",
+     "what_remained": "No existing THYLORA table, policy, function or row was altered or removed. The only writes outside thy_* objects are one QYRIS work-item check (pre-execution) and additive graph nodes, edges and versions. Deployment authority for the dashboard stays with vyc2st-ctrl/thylora-executive-dashboard; CONTEXT and SEQUENCE are LIVE APPLIED on the backend, NOT LIVE UI WITNESSED.",
+     "local_timezone": "America/New_York",
+     "occurred_local": "2026-09-23 13:39",
+     "why_it_changed": "Before apply, three conflicts between the reviewed pack and the live backend were corrected: reads were open to any signed-in account (now thylora_is_chairman(), the rule carryforward already uses); the carryforward context reader was SECURITY DEFINER and would have bypassed carryforward RLS (now SECURITY INVOKER); and the seed wrote ledger 588 for a change that carryforward 588 assigns to different work (now 587).",
+     "why_change_occurred": "Carryforward 591 directed that the reviewed OMNIVIEW branch be applied to the live backend and witnessed (THY-WORK-OMNIVIEW-LIVE-APPLY-591).",
+     "next_better_question": "Will the Chairman sign in on the phone and open CONTEXT and SEQUENCE on the current head, so LIVE APPLIED can become LIVE UI WITNESSED?",
+     "previous_sequence_no": 587
+    },
+    {
+     "topics": [
+      {
+       "effect": "TOUCHED",
+       "topic_key": "CASTLE"
+      },
+      {
+       "effect": "WORK_CHANGED",
+       "topic_key": "DASHBOARD"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "ECONOMY"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "OMNIVIEW"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "QYRIS"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "STORE"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "TIME RUN"
+      }
+     ],
+     "authority": "Chairman",
+     "supersedes": null,
+     "sequence_no": 587,
+     "truth_class": "REPO_VERIFIED",
+     "occurred_utc": "2026-09-22T14:05:31Z",
+     "what_changed": "The sequence change ledger was opened at 587, and CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION was written: topic manifest, authority locks, linked graph, linked people/places/objects/products, linked work, gates, current-vs-superseded canon, last restart, an OMNIVIEW read trace on every read, and CONTEXT + SEQUENCE surfaces inside the existing dashboard.",
+     "restart_point": "OMNIVIEW pack written and verified against a throwaway PostgreSQL 16 database (commit 9d359c6). Not applied to the live backend at 587.",
+     "what_remained": "No existing THYLORA table was dropped, renamed or rewritten. The dashboard was extended, not replaced. Deployment authority stays with vyc2st-ctrl/thylora-executive-dashboard. Sequences 1-586, and every later carryforward sequence that is not a ledger row, stay in thylora_query_carryforward and are readable through thy_sequence_prior_context, never presented as ledger rows.",
+     "local_timezone": "America/New_York",
+     "occurred_local": "2026-09-22 10:05",
+     "why_it_changed": "Re-reading every raw backend row each turn is slow and still unprovable. One governed read returns the state and names exactly which tables it touched, so an answer can no longer claim a table it never read.",
+     "why_change_occurred": "THY-WORK-OMNIVIEW-ROUNDTRIP-587 and THY-WORK-SEQUENCE-CHANGE-LEDGER-587: the spine had no single read that returns current state plus the history behind it, and sequence numbers were not an auditable change ledger.",
+     "next_better_question": "Which UNSEEDED topic does the Chairman want seeded first: CASTLE, INÉS, VERONICA, FOOTBALL or VEHICLES?",
+     "previous_sequence_no": null
+    }
+   ],
+   "open_questions": [
+    {
+     "id": 18,
+     "state": "OPEN",
+     "question": "Should the empty recursive QYRIS tables from 584 (thylora_qyris_node, thylora_qyris_cluster) be populated, or are the work-item checks the whole registry?",
+     "is_next_better": true,
+     "why_it_matters": "The law requires an execution registry. Two of its tables are empty, and nothing on the backend says whether that is by design.",
+     "entered_sequence_no": 591
+    }
+   ],
+   "topic_manifest": {
+    "summary": "QYRIS = Question → Yield → Reason → Inspect → Safeguard. Governed by LAW-QYRIS-ALL-WORK-001 and the plain-speech layer THY-QYRIS-PLAIN-SPEECH-001.",
+    "topic_key": "QYRIS",
+    "canon_state": "PARTIAL",
+    "topic_class": "SYSTEM",
+    "display_name": "QYRIS",
+    "last_sequence_no": 591,
+    "superseded_by_topic": null
+   },
+   "authority_locks": {
+    "authority_lock": "CHAIRMAN",
+    "authority_holder": "Chairman (thylora_graph_nodes LAW-QYRIS-ALL-WORK-001)",
+    "answerable_as_canon": true
+   },
+   "linked_entities": {
+    "money": [],
+    "people": [],
+    "places": [],
+    "topics": [],
+    "objects": [],
+    "systems": [
+     {
+      "status": "ACTIVE",
+      "link_key": "thylora_qyris_work_item_checks",
+      "relation": "Pre-execution checks",
+      "link_class": "SYSTEM",
+      "source_ref": null,
+      "display_name": "QYRIS execution registry",
+      "source_table": "thylora_qyris_work_item_checks",
+      "entered_sequence_no": 591
+     },
+     {
+      "status": "ACTIVE",
+      "link_key": "THY-QYRIS-PLAIN-SPEECH-001",
+      "relation": "Equation and output contract",
+      "link_class": "SYSTEM",
+      "source_ref": "THY-QYRIS-PLAIN-SPEECH-001",
+      "display_name": "QYRIS plain-speech layer",
+      "source_table": "thylora_qyris_translation_layer",
+      "entered_sequence_no": 591
+     },
+     {
+      "status": "ACTIVE",
+      "link_key": "thy_omniview_qyris",
+      "relation": "Produces the trace in the same call as the answer",
+      "link_class": "SYSTEM",
+      "source_ref": "db/omniview/0003_read_model.sql",
+      "display_name": "thy_omniview_qyris()",
+      "source_table": null,
+      "entered_sequence_no": 587
+     }
+    ],
+    "products": []
+   },
+   "next_better_question": {
+    "question": "Should the empty recursive QYRIS tables from 584 (thylora_qyris_node, thylora_qyris_cluster) be populated, or are the work-item checks the whole registry?",
+    "why_it_matters": "The law requires an execution registry. Two of its tables are empty, and nothing on the backend says whether that is by design."
+   },
+   "current_vs_superseded": {
+    "current": [
+     {
+      "id": 26,
+      "body": "At 591 the execution registry thylora_qyris_work_item_checks held 158 checks. Two of them are PASS records for THY-WORK-OMNIVIEW-LIVE-APPLY-591: one written with carryforward 591 at 2026-09-23 14:58:41Z (id 8ee15f18-faa0-4cd3-8807-4fd7e3302ce6) and the pre-execution check written by the apply session at 17:27:49Z (id de1f1064-5e2c-4bc9-b2ce-b2482721b3cb). The recursive QYRIS tables from 584 (thylora_qyris_node, thylora_qyris_cluster) hold 0 rows.",
+      "kind": "EVIDENCE",
+      "authority": "Chairman",
+      "source_ref": "thylora_qyris_work_item_checks",
+      "truth_class": "BACKEND_VERIFIED",
+      "entered_sequence_no": 591
+     },
+     {
+      "id": 23,
+      "body": "QYRIS = Question → Yield → Reason → Inspect → Safeguard (THY-QYRIS-PLAIN-SPEECH-001, ACTIVE). Governed by the QYRIS All-Work Gate LAW-QYRIS-ALL-WORK-001 (IMPLEMENTED, Chairman): a PASS is required before execution, the execution registry is required, it is visible in every major reply, and UNKNOWN is preserved.",
+      "kind": "CANON",
+      "authority": "Chairman",
+      "source_ref": "thylora_graph_nodes:LAW-QYRIS-ALL-WORK-001; thylora_qyris_translation_layer:THY-QYRIS-PLAIN-SPEECH-001",
+      "truth_class": "BACKEND_VERIFIED",
+      "entered_sequence_no": 591
+     },
+     {
+      "id": 5,
+      "body": "OMNIVIEW emits a read trace labelled QYRIS-1 on every read: scope, topic, read timestamp, sequence head, the exact tables read with row counts, and an explicit not_read list. It is the inspect evidence OMNIVIEW supplies to QYRIS; it does not define QYRIS, whose authority is held on the backend of record.",
+      "kind": "EVIDENCE",
+      "authority": "Chairman",
+      "source_ref": "db/omniview/0003_read_model.sql",
+      "truth_class": "REPO_VERIFIED",
+      "entered_sequence_no": 587
+     }
+    ],
+    "superseded": [
+     {
+      "id": 24,
+      "body": "At 591 the execution registry thylora_qyris_work_item_checks held 159 checks, including the PASS recorded for THY-WORK-OMNIVIEW-LIVE-APPLY-591 before this apply. The recursive QYRIS tables from 584 (thylora_qyris_node, thylora_qyris_cluster) hold 0 rows.",
+      "kind": "EVIDENCE",
+      "authority": "Chairman",
+      "truth_class": "BACKEND_VERIFIED",
+      "superseded_by_id": 26,
+      "entered_sequence_no": 591,
+      "superseded_sequence_no": 591
+     }
+    ],
+    "current_count": 3,
+    "superseded_count": 1
+   }
+  },
+  "STORE": {
+   "found": true,
+   "qyris": {
+    "scope": "TOPIC_EXPANSION",
+    "topic": "STORE",
+    "not_read": [
+     "raw THYLORA registries were not swept this turn",
+     "soft-referenced rows are resolved only when a link is opened",
+     "anything absent from the OMNIVIEW tables is reported as UNSEEDED, never inferred"
+    ],
+    "claim_rule": "Only tables listed in tables_read were read. No other table may be claimed.",
+    "read_at_utc": "2026-09-23T17:43:39Z",
+    "tables_read": [
+     {
+      "rows": 1,
+      "table": "thy_omniview_topics"
+     },
+     {
+      "rows": 3,
+      "table": "thy_omniview_statements"
+     },
+     {
+      "rows": 8,
+      "table": "thy_omniview_links"
+     },
+     {
+      "rows": 0,
+      "table": "thy_omniview_gates"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_questions"
+     },
+     {
+      "rows": 2,
+      "table": "thy_sequence_ledger"
+     },
+     {
+      "rows": 2,
+      "table": "thy_sequence_ledger_topics"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_restarts"
+     }
+    ],
+    "qyris_version": "QYRIS-1",
+    "sequence_head": 591
+   },
+   "read_path": [
+    "NEWEST DELTAS",
+    "TOPIC MANIFEST",
+    "AUTHORITY LOCKS",
+    "LINKED GRAPH",
+    "LINKED PEOPLE/PLACES/OBJECTS/PRODUCTS",
+    "LINKED WORK",
+    "LINKED GATES",
+    "CURRENT VS SUPERSEDED",
+    "LAST RESTART",
+    "ANSWER"
+   ],
+   "topic_key": "STORE",
+   "read_model": "CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION",
+   "answer_rule": "Answer from current statements. Superseded statements are history, not canon.",
+   "linked_work": [],
+   "last_restart": {
+    "reason": "Sequence 591 applied the OMNIVIEW pack live and linked live topic authority.",
+    "authority": "Chairman",
+    "sequence_no": 591,
+    "restart_point": "OMNIVIEW is LIVE APPLIED on thylora-dash at ledger 591 and NOT LIVE UI WITNESSED. Chairman-only reads. Next: Chairman phone sign-in to CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard and restore the seven baseline capabilities there before promotion; answer the Royal Castle name, the Alistair household, the Time Run final name and ERFL-001 vs GGL-001."
+   },
+   "linked_gates": [],
+   "linked_graph": [
+    {
+     "status": "ACTIVE",
+     "link_key": "LAW-STORE-DRAW-VALUE-001",
+     "relation": "Governs shelving",
+     "link_class": "GATE",
+     "source_ref": "LAW-STORE-DRAW-VALUE-001",
+     "display_name": "Store Draw + Worth Gate",
+     "source_table": "thylora_graph_nodes",
+     "entered_sequence_no": 591
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "public-site/store.html",
+     "relation": "Public store surface",
+     "link_class": "OBJECT",
+     "source_ref": "public-site/store.html",
+     "display_name": "Public storefront page",
+     "source_table": null,
+     "entered_sequence_no": 587
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "products",
+     "relation": "Store products live in the backend of record",
+     "link_class": "PRODUCT",
+     "source_ref": null,
+     "display_name": "Product registry",
+     "source_table": "products",
+     "entered_sequence_no": 587
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "Twelve Miles for Flour",
+     "relation": "The one ACTIVE product",
+     "link_class": "PRODUCT",
+     "source_ref": "active_allowed = true",
+     "display_name": "Twelve Miles for Flour — An Unkle Seezin Trail Story",
+     "source_table": "thylora_store_product_readiness",
+     "entered_sequence_no": 591
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "entitlements",
+     "relation": "What a buyer may access",
+     "link_class": "SYSTEM",
+     "source_ref": null,
+     "display_name": "Entitlement registry",
+     "source_table": "entitlements",
+     "entered_sequence_no": 587
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "orders",
+     "relation": "Commerce proof",
+     "link_class": "SYSTEM",
+     "source_ref": null,
+     "display_name": "Order registry",
+     "source_table": "orders",
+     "entered_sequence_no": 587
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "thylora_store_product_readiness",
+     "relation": "Product state of record",
+     "link_class": "SYSTEM",
+     "source_ref": null,
+     "display_name": "Store product readiness",
+     "source_table": "thylora_store_product_readiness",
+     "entered_sequence_no": 591
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "ECONOMY",
+     "relation": "Store revenue settles through the economy spine",
+     "link_class": "TOPIC",
+     "source_ref": null,
+     "display_name": "ECONOMY",
+     "source_table": null,
+     "entered_sequence_no": 587
+    }
+   ],
+   "last_sequence": {
+    "authority": "Chairman",
+    "sequence_no": 591,
+    "truth_class": "BACKEND_VERIFIED",
+    "occurred_utc": "2026-09-23T17:39:23Z",
+    "what_changed": "The OMNIVIEW pack (thy_sequence_* and thy_omniview_*: 8 tables, read model, write path, Chairman-only RLS) is applied to thylora-dash. Live topic authority was read from the backend of record and linked for TIME RUN, CASTLE (ROYAL CASTLE), ALISTAIR CROWE, STORE, SPORTS and QYRIS.",
+    "restart_point": "OMNIVIEW is live on thylora-dash at ledger 591. Next: Chairman mobile witness of CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard; answer the open next-better questions (Royal Castle name, Alistair household, Time Run final name).",
+    "what_remained": "No existing THYLORA table, policy, function or row was altered or removed. The only writes outside thy_* objects are one QYRIS work-item check (pre-execution) and additive graph nodes, edges and versions. Deployment authority for the dashboard stays with vyc2st-ctrl/thylora-executive-dashboard; CONTEXT and SEQUENCE are LIVE APPLIED on the backend, NOT LIVE UI WITNESSED.",
+    "local_timezone": "America/New_York",
+    "occurred_local": "2026-09-23 13:39",
+    "why_it_changed": "Before apply, three conflicts between the reviewed pack and the live backend were corrected: reads were open to any signed-in account (now thylora_is_chairman(), the rule carryforward already uses); the carryforward context reader was SECURITY DEFINER and would have bypassed carryforward RLS (now SECURITY INVOKER); and the seed wrote ledger 588 for a change that carryforward 588 assigns to different work (now 587).",
+    "next_better_question": "Will the Chairman sign in on the phone and open CONTEXT and SEQUENCE on the current head, so LIVE APPLIED can become LIVE UI WITNESSED?"
+   },
+   "newest_deltas": [
+    {
+     "topics": [
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "ALISTAIR CROWE"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "CASTLE"
+      },
+      {
+       "effect": "GATE_CHANGED",
+       "topic_key": "DASHBOARD"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "OMNIVIEW"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "QYRIS"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "SPORTS"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "STORE"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "TIME RUN"
+      }
+     ],
+     "authority": "Chairman",
+     "supersedes": null,
+     "sequence_no": 591,
+     "truth_class": "BACKEND_VERIFIED",
+     "occurred_utc": "2026-09-23T17:39:23Z",
+     "what_changed": "The OMNIVIEW pack (thy_sequence_* and thy_omniview_*: 8 tables, read model, write path, Chairman-only RLS) is applied to thylora-dash. Live topic authority was read from the backend of record and linked for TIME RUN, CASTLE (ROYAL CASTLE), ALISTAIR CROWE, STORE, SPORTS and QYRIS.",
+     "restart_point": "OMNIVIEW is live on thylora-dash at ledger 591. Next: Chairman mobile witness of CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard; answer the open next-better questions (Royal Castle name, Alistair household, Time Run final name).",
+     "what_remained": "No existing THYLORA table, policy, function or row was altered or removed. The only writes outside thy_* objects are one QYRIS work-item check (pre-execution) and additive graph nodes, edges and versions. Deployment authority for the dashboard stays with vyc2st-ctrl/thylora-executive-dashboard; CONTEXT and SEQUENCE are LIVE APPLIED on the backend, NOT LIVE UI WITNESSED.",
+     "local_timezone": "America/New_York",
+     "occurred_local": "2026-09-23 13:39",
+     "why_it_changed": "Before apply, three conflicts between the reviewed pack and the live backend were corrected: reads were open to any signed-in account (now thylora_is_chairman(), the rule carryforward already uses); the carryforward context reader was SECURITY DEFINER and would have bypassed carryforward RLS (now SECURITY INVOKER); and the seed wrote ledger 588 for a change that carryforward 588 assigns to different work (now 587).",
+     "why_change_occurred": "Carryforward 591 directed that the reviewed OMNIVIEW branch be applied to the live backend and witnessed (THY-WORK-OMNIVIEW-LIVE-APPLY-591).",
+     "next_better_question": "Will the Chairman sign in on the phone and open CONTEXT and SEQUENCE on the current head, so LIVE APPLIED can become LIVE UI WITNESSED?",
+     "previous_sequence_no": 587
+    },
+    {
+     "topics": [
+      {
+       "effect": "TOUCHED",
+       "topic_key": "CASTLE"
+      },
+      {
+       "effect": "WORK_CHANGED",
+       "topic_key": "DASHBOARD"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "ECONOMY"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "OMNIVIEW"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "QYRIS"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "STORE"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "TIME RUN"
+      }
+     ],
+     "authority": "Chairman",
+     "supersedes": null,
+     "sequence_no": 587,
+     "truth_class": "REPO_VERIFIED",
+     "occurred_utc": "2026-09-22T14:05:31Z",
+     "what_changed": "The sequence change ledger was opened at 587, and CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION was written: topic manifest, authority locks, linked graph, linked people/places/objects/products, linked work, gates, current-vs-superseded canon, last restart, an OMNIVIEW read trace on every read, and CONTEXT + SEQUENCE surfaces inside the existing dashboard.",
+     "restart_point": "OMNIVIEW pack written and verified against a throwaway PostgreSQL 16 database (commit 9d359c6). Not applied to the live backend at 587.",
+     "what_remained": "No existing THYLORA table was dropped, renamed or rewritten. The dashboard was extended, not replaced. Deployment authority stays with vyc2st-ctrl/thylora-executive-dashboard. Sequences 1-586, and every later carryforward sequence that is not a ledger row, stay in thylora_query_carryforward and are readable through thy_sequence_prior_context, never presented as ledger rows.",
+     "local_timezone": "America/New_York",
+     "occurred_local": "2026-09-22 10:05",
+     "why_it_changed": "Re-reading every raw backend row each turn is slow and still unprovable. One governed read returns the state and names exactly which tables it touched, so an answer can no longer claim a table it never read.",
+     "why_change_occurred": "THY-WORK-OMNIVIEW-ROUNDTRIP-587 and THY-WORK-SEQUENCE-CHANGE-LEDGER-587: the spine had no single read that returns current state plus the history behind it, and sequence numbers were not an auditable change ledger.",
+     "next_better_question": "Which UNSEEDED topic does the Chairman want seeded first: CASTLE, INÉS, VERONICA, FOOTBALL or VEHICLES?",
+     "previous_sequence_no": null
+    }
+   ],
+   "open_questions": [
+    {
+     "id": 16,
+     "state": "OPEN",
+     "question": "What is the first shirt sample artwork, now that Printful is reported CONNECTED (carryforward 591)?",
+     "is_next_better": true,
+     "why_it_matters": "Carryforward 591 moves the physical-goods lane to the first shirt sample; 589 decision (d), which mark goes on the shirt, is still open.",
+     "entered_sequence_no": 591
+    }
+   ],
+   "topic_manifest": {
+    "summary": "THYLORA storefront: public store surface, products, orders, entitlements.",
+    "topic_key": "STORE",
+    "canon_state": "PARTIAL",
+    "topic_class": "PRODUCT",
+    "display_name": "STORE",
+    "last_sequence_no": 591,
+    "superseded_by_topic": null
+   },
+   "authority_locks": {
+    "authority_lock": "BACKEND_OF_RECORD",
+    "authority_holder": "thylora_store_product_readiness + LAW-STORE-DRAW-VALUE-001 on thylora-dash",
+    "answerable_as_canon": true
+   },
+   "linked_entities": {
+    "money": [],
+    "people": [],
+    "places": [],
+    "topics": [
+     {
+      "status": "ACTIVE",
+      "link_key": "ECONOMY",
+      "relation": "Store revenue settles through the economy spine",
+      "link_class": "TOPIC",
+      "source_ref": null,
+      "display_name": "ECONOMY",
+      "source_table": null,
+      "entered_sequence_no": 587
+     }
+    ],
+    "objects": [
+     {
+      "status": "ACTIVE",
+      "link_key": "public-site/store.html",
+      "relation": "Public store surface",
+      "link_class": "OBJECT",
+      "source_ref": "public-site/store.html",
+      "display_name": "Public storefront page",
+      "source_table": null,
+      "entered_sequence_no": 587
+     }
+    ],
+    "systems": [
+     {
+      "status": "ACTIVE",
+      "link_key": "entitlements",
+      "relation": "What a buyer may access",
+      "link_class": "SYSTEM",
+      "source_ref": null,
+      "display_name": "Entitlement registry",
+      "source_table": "entitlements",
+      "entered_sequence_no": 587
+     },
+     {
+      "status": "ACTIVE",
+      "link_key": "orders",
+      "relation": "Commerce proof",
+      "link_class": "SYSTEM",
+      "source_ref": null,
+      "display_name": "Order registry",
+      "source_table": "orders",
+      "entered_sequence_no": 587
+     },
+     {
+      "status": "ACTIVE",
+      "link_key": "thylora_store_product_readiness",
+      "relation": "Product state of record",
+      "link_class": "SYSTEM",
+      "source_ref": null,
+      "display_name": "Store product readiness",
+      "source_table": "thylora_store_product_readiness",
+      "entered_sequence_no": 591
+     }
+    ],
+    "products": [
+     {
+      "status": "ACTIVE",
+      "link_key": "products",
+      "relation": "Store products live in the backend of record",
+      "link_class": "PRODUCT",
+      "source_ref": null,
+      "display_name": "Product registry",
+      "source_table": "products",
+      "entered_sequence_no": 587
+     },
+     {
+      "status": "ACTIVE",
+      "link_key": "Twelve Miles for Flour",
+      "relation": "The one ACTIVE product",
+      "link_class": "PRODUCT",
+      "source_ref": "active_allowed = true",
+      "display_name": "Twelve Miles for Flour — An Unkle Seezin Trail Story",
+      "source_table": "thylora_store_product_readiness",
+      "entered_sequence_no": 591
+     }
+    ]
+   },
+   "next_better_question": {
+    "question": "What is the first shirt sample artwork, now that Printful is reported CONNECTED (carryforward 591)?",
+    "why_it_matters": "Carryforward 591 moves the physical-goods lane to the first shirt sample; 589 decision (d), which mark goes on the shirt, is still open."
+   },
+   "current_vs_superseded": {
+    "current": [
+     {
+      "id": 20,
+      "body": "Store Draw + Worth Gate (LAW-STORE-DRAW-VALUE-001, v1.1.0, IMPLEMENTED) governs shelving. Finding FIND-STORE-DRAW-GATE-CEILING-558: the Draw gate is mathematically unreachable for every current candidate. Finding FIND-STORE-DEMAND-BASELINE-556B: measured zero external demand at 2026-09-20. Do not treat an external customer as already acquired.",
+      "kind": "CONSTRAINT",
+      "authority": "Chairman",
+      "source_ref": "thylora_graph_nodes:LAW-STORE-DRAW-VALUE-001",
+      "truth_class": "BACKEND_VERIFIED",
+      "entered_sequence_no": 591
+     },
+     {
+      "id": 19,
+      "body": "Exactly one product is ACTIVE with an active purchase path: \"Twelve Miles for Flour — An Unkle Seezin Trail Story\". Checkout path, delivery, re-access, rights and mobile preview are all verified on its readiness row, with no blockers. At 591 thylora_store_product_readiness held 17 products: 1 ACTIVE, 10 DRAFT, 1 BUILT_NOT_RELEASED, 1 DESIGN_PROPOSED, 1 DRAFT_PRODUCTION_ACTIVE, 2 CONCEPT_PRICED_NOT_BUILT, 1 CONCEPT_PRICE_NOT_AUTHORIZED_NOT_BUILT.",
+      "kind": "CANON",
+      "authority": "Chairman",
+      "source_ref": "thylora_store_product_readiness",
+      "truth_class": "BACKEND_VERIFIED",
+      "entered_sequence_no": 591
+     },
+     {
+      "id": 9,
+      "body": "The storefront exists as public-site/store.html with a THYLORA membership storefront surface, and the dashboard reads products, orders, payments and entitlements from the backend of record.",
+      "kind": "EVIDENCE",
+      "authority": "Chairman",
+      "source_ref": "public-site/store.html",
+      "truth_class": "REPO_VERIFIED",
+      "entered_sequence_no": 587
+     }
+    ],
+    "superseded": [],
+    "current_count": 3,
+    "superseded_count": 0
+   }
+  },
+  "CASTLE": {
+   "found": true,
+   "qyris": {
+    "scope": "TOPIC_EXPANSION",
+    "topic": "CASTLE",
+    "not_read": [
+     "raw THYLORA registries were not swept this turn",
+     "soft-referenced rows are resolved only when a link is opened",
+     "anything absent from the OMNIVIEW tables is reported as UNSEEDED, never inferred"
+    ],
+    "claim_rule": "Only tables listed in tables_read were read. No other table may be claimed.",
+    "read_at_utc": "2026-09-23T17:43:39Z",
+    "tables_read": [
+     {
+      "rows": 1,
+      "table": "thy_omniview_topics"
+     },
+     {
+      "rows": 3,
+      "table": "thy_omniview_statements"
+     },
+     {
+      "rows": 6,
+      "table": "thy_omniview_links"
+     },
+     {
+      "rows": 2,
+      "table": "thy_omniview_gates"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_questions"
+     },
+     {
+      "rows": 2,
+      "table": "thy_sequence_ledger"
+     },
+     {
+      "rows": 2,
+      "table": "thy_sequence_ledger_topics"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_restarts"
+     }
+    ],
+    "qyris_version": "QYRIS-1",
+    "sequence_head": 591
+   },
+   "read_path": [
+    "NEWEST DELTAS",
+    "TOPIC MANIFEST",
+    "AUTHORITY LOCKS",
+    "LINKED GRAPH",
+    "LINKED PEOPLE/PLACES/OBJECTS/PRODUCTS",
+    "LINKED WORK",
+    "LINKED GATES",
+    "CURRENT VS SUPERSEDED",
+    "LAST RESTART",
+    "ANSWER"
+   ],
+   "topic_key": "CASTLE",
+   "read_model": "CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION",
+   "answer_rule": "Answer from current statements. Superseded statements are history, not canon.",
+   "linked_work": [
+    {
+     "status": "BLOCKED",
+     "link_key": "SCENE-WW-001-ROYAL-KITCHEN-20260922",
+     "relation": "Preview-ready; not generated or published. Chairman field-by-field review pending (carryforward 589, 592)",
+     "link_class": "WORK",
+     "source_ref": "589",
+     "display_name": "World Window 001, Royal Kitchen",
+     "source_table": "thylora_query_carryforward",
+     "entered_sequence_no": 591
+    }
+   ],
+   "last_restart": {
+    "reason": "Sequence 591 applied the OMNIVIEW pack live and linked live topic authority.",
+    "authority": "Chairman",
+    "sequence_no": 591,
+    "restart_point": "OMNIVIEW is LIVE APPLIED on thylora-dash at ledger 591 and NOT LIVE UI WITNESSED. Chairman-only reads. Next: Chairman phone sign-in to CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard and restore the seven baseline capabilities there before promotion; answer the Royal Castle name, the Alistair household, the Time Run final name and ERFL-001 vs GGL-001."
+   },
+   "linked_gates": [
+    {
+     "blocker": "name_state OPEN on ER-CASTLE-ROYAL-001 (OPEN_PENDING_CHAIRMAN_NAME_RECOVERY)",
+     "gate_key": "GATE-CASTLE-NAME",
+     "authority": "Chairman",
+     "gate_state": "BLOCKED",
+     "requirement": "The Royal Castle canonical name is recovered or chosen by the Chairman before it is used anywhere.",
+     "evidence_ref": "thylora_graph_nodes:ER-CASTLE-ROYAL-001",
+     "entered_sequence_no": 591,
+     "settled_sequence_no": null
+    },
+    {
+     "blocker": null,
+     "gate_key": "GATE-CANON-SOURCE",
+     "authority": "Chairman",
+     "gate_state": "PASSED",
+     "requirement": "CASTLE canon is stated by the Chairman before any answer treats it as settled.",
+     "evidence_ref": "thylora_graph_nodes:ER-CASTLE-ROYAL-001",
+     "entered_sequence_no": 587,
+     "settled_sequence_no": 591
+    }
+   ],
+   "linked_graph": [
+    {
+     "status": "ACTIVE",
+     "link_key": "thylora_castle_economy_accounts",
+     "relation": "Castle economy",
+     "link_class": "MONEY",
+     "source_ref": null,
+     "display_name": "Castle economy accounts",
+     "source_table": "thylora_castle_economy_accounts",
+     "entered_sequence_no": 591
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "thylora_royal_collection_registry",
+     "relation": "Accessioned objects",
+     "link_class": "OBJECT",
+     "source_ref": null,
+     "display_name": "Royal collection",
+     "source_table": "thylora_royal_collection_registry",
+     "entered_sequence_no": 591
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "HH-1700-COOK",
+     "relation": "Bound to HH-1700-COOK (LOCK-ER-ROYAL-COOK-001)",
+     "link_class": "PERSON",
+     "source_ref": "534",
+     "display_name": "Inés Morales, Royal Cook",
+     "source_table": "thylora_query_carryforward",
+     "entered_sequence_no": 591
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "ER-CASTLE-ROYAL-001",
+     "relation": "The place itself",
+     "link_class": "PLACE",
+     "source_ref": "ER-CASTLE-ROYAL-001",
+     "display_name": "Royal Castle (name OPEN)",
+     "source_table": "thylora_graph_nodes",
+     "entered_sequence_no": 591
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "THY-CASTLE-ROYAL-KITCHEN-001",
+     "relation": "Part of the Royal Castle",
+     "link_class": "PLACE",
+     "source_ref": "THY-CASTLE-ROYAL-KITCHEN-001",
+     "display_name": "Royal Kitchen",
+     "source_table": "thylora_graph_nodes",
+     "entered_sequence_no": 591
+    },
+    {
+     "status": "BLOCKED",
+     "link_key": "SCENE-WW-001-ROYAL-KITCHEN-20260922",
+     "relation": "Preview-ready; not generated or published. Chairman field-by-field review pending (carryforward 589, 592)",
+     "link_class": "WORK",
+     "source_ref": "589",
+     "display_name": "World Window 001, Royal Kitchen",
+     "source_table": "thylora_query_carryforward",
+     "entered_sequence_no": 591
+    }
+   ],
+   "last_sequence": {
+    "authority": "Chairman",
+    "sequence_no": 591,
+    "truth_class": "BACKEND_VERIFIED",
+    "occurred_utc": "2026-09-23T17:39:23Z",
+    "what_changed": "The OMNIVIEW pack (thy_sequence_* and thy_omniview_*: 8 tables, read model, write path, Chairman-only RLS) is applied to thylora-dash. Live topic authority was read from the backend of record and linked for TIME RUN, CASTLE (ROYAL CASTLE), ALISTAIR CROWE, STORE, SPORTS and QYRIS.",
+    "restart_point": "OMNIVIEW is live on thylora-dash at ledger 591. Next: Chairman mobile witness of CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard; answer the open next-better questions (Royal Castle name, Alistair household, Time Run final name).",
+    "what_remained": "No existing THYLORA table, policy, function or row was altered or removed. The only writes outside thy_* objects are one QYRIS work-item check (pre-execution) and additive graph nodes, edges and versions. Deployment authority for the dashboard stays with vyc2st-ctrl/thylora-executive-dashboard; CONTEXT and SEQUENCE are LIVE APPLIED on the backend, NOT LIVE UI WITNESSED.",
+    "local_timezone": "America/New_York",
+    "occurred_local": "2026-09-23 13:39",
+    "why_it_changed": "Before apply, three conflicts between the reviewed pack and the live backend were corrected: reads were open to any signed-in account (now thylora_is_chairman(), the rule carryforward already uses); the carryforward context reader was SECURITY DEFINER and would have bypassed carryforward RLS (now SECURITY INVOKER); and the seed wrote ledger 588 for a change that carryforward 588 assigns to different work (now 587).",
+    "next_better_question": "Will the Chairman sign in on the phone and open CONTEXT and SEQUENCE on the current head, so LIVE APPLIED can become LIVE UI WITNESSED?"
+   },
+   "newest_deltas": [
+    {
+     "topics": [
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "ALISTAIR CROWE"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "CASTLE"
+      },
+      {
+       "effect": "GATE_CHANGED",
+       "topic_key": "DASHBOARD"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "OMNIVIEW"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "QYRIS"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "SPORTS"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "STORE"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "TIME RUN"
+      }
+     ],
+     "authority": "Chairman",
+     "supersedes": null,
+     "sequence_no": 591,
+     "truth_class": "BACKEND_VERIFIED",
+     "occurred_utc": "2026-09-23T17:39:23Z",
+     "what_changed": "The OMNIVIEW pack (thy_sequence_* and thy_omniview_*: 8 tables, read model, write path, Chairman-only RLS) is applied to thylora-dash. Live topic authority was read from the backend of record and linked for TIME RUN, CASTLE (ROYAL CASTLE), ALISTAIR CROWE, STORE, SPORTS and QYRIS.",
+     "restart_point": "OMNIVIEW is live on thylora-dash at ledger 591. Next: Chairman mobile witness of CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard; answer the open next-better questions (Royal Castle name, Alistair household, Time Run final name).",
+     "what_remained": "No existing THYLORA table, policy, function or row was altered or removed. The only writes outside thy_* objects are one QYRIS work-item check (pre-execution) and additive graph nodes, edges and versions. Deployment authority for the dashboard stays with vyc2st-ctrl/thylora-executive-dashboard; CONTEXT and SEQUENCE are LIVE APPLIED on the backend, NOT LIVE UI WITNESSED.",
+     "local_timezone": "America/New_York",
+     "occurred_local": "2026-09-23 13:39",
+     "why_it_changed": "Before apply, three conflicts between the reviewed pack and the live backend were corrected: reads were open to any signed-in account (now thylora_is_chairman(), the rule carryforward already uses); the carryforward context reader was SECURITY DEFINER and would have bypassed carryforward RLS (now SECURITY INVOKER); and the seed wrote ledger 588 for a change that carryforward 588 assigns to different work (now 587).",
+     "why_change_occurred": "Carryforward 591 directed that the reviewed OMNIVIEW branch be applied to the live backend and witnessed (THY-WORK-OMNIVIEW-LIVE-APPLY-591).",
+     "next_better_question": "Will the Chairman sign in on the phone and open CONTEXT and SEQUENCE on the current head, so LIVE APPLIED can become LIVE UI WITNESSED?",
+     "previous_sequence_no": 587
+    },
+    {
+     "topics": [
+      {
+       "effect": "TOUCHED",
+       "topic_key": "CASTLE"
+      },
+      {
+       "effect": "WORK_CHANGED",
+       "topic_key": "DASHBOARD"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "ECONOMY"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "OMNIVIEW"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "QYRIS"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "STORE"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "TIME RUN"
+      }
+     ],
+     "authority": "Chairman",
+     "supersedes": null,
+     "sequence_no": 587,
+     "truth_class": "REPO_VERIFIED",
+     "occurred_utc": "2026-09-22T14:05:31Z",
+     "what_changed": "The sequence change ledger was opened at 587, and CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION was written: topic manifest, authority locks, linked graph, linked people/places/objects/products, linked work, gates, current-vs-superseded canon, last restart, an OMNIVIEW read trace on every read, and CONTEXT + SEQUENCE surfaces inside the existing dashboard.",
+     "restart_point": "OMNIVIEW pack written and verified against a throwaway PostgreSQL 16 database (commit 9d359c6). Not applied to the live backend at 587.",
+     "what_remained": "No existing THYLORA table was dropped, renamed or rewritten. The dashboard was extended, not replaced. Deployment authority stays with vyc2st-ctrl/thylora-executive-dashboard. Sequences 1-586, and every later carryforward sequence that is not a ledger row, stay in thylora_query_carryforward and are readable through thy_sequence_prior_context, never presented as ledger rows.",
+     "local_timezone": "America/New_York",
+     "occurred_local": "2026-09-22 10:05",
+     "why_it_changed": "Re-reading every raw backend row each turn is slow and still unprovable. One governed read returns the state and names exactly which tables it touched, so an answer can no longer claim a table it never read.",
+     "why_change_occurred": "THY-WORK-OMNIVIEW-ROUNDTRIP-587 and THY-WORK-SEQUENCE-CHANGE-LEDGER-587: the spine had no single read that returns current state plus the history behind it, and sequence numbers were not an auditable change ledger.",
+     "next_better_question": "Which UNSEEDED topic does the Chairman want seeded first: CASTLE, INÉS, VERONICA, FOOTBALL or VEHICLES?",
+     "previous_sequence_no": null
+    }
+   ],
+   "open_questions": [
+    {
+     "id": 14,
+     "state": "OPEN",
+     "question": "What is the canonical name of the Royal Castle (ER-CASTLE-ROYAL-001)?",
+     "is_next_better": true,
+     "why_it_matters": "The backend holds the place, its kitchen and its economy, but its name is OPEN and marked do-not-guess.",
+     "entered_sequence_no": 591
+    }
+   ],
+   "topic_manifest": {
+    "summary": "The Royal Castle in EdereAirah (graph node ER-CASTLE-ROYAL-001). Canonical name OPEN: do not guess.",
+    "topic_key": "CASTLE",
+    "canon_state": "PARTIAL",
+    "topic_class": "PLACE",
+    "display_name": "CASTLE",
+    "last_sequence_no": 591,
+    "superseded_by_topic": null
+   },
+   "authority_locks": {
+    "authority_lock": "CHAIRMAN",
+    "authority_holder": "Chairman (thylora_graph_nodes ER-CASTLE-ROYAL-001)",
+    "answerable_as_canon": true
+   },
+   "linked_entities": {
+    "money": [
+     {
+      "status": "ACTIVE",
+      "link_key": "thylora_castle_economy_accounts",
+      "relation": "Castle economy",
+      "link_class": "MONEY",
+      "source_ref": null,
+      "display_name": "Castle economy accounts",
+      "source_table": "thylora_castle_economy_accounts",
+      "entered_sequence_no": 591
+     }
+    ],
+    "people": [
+     {
+      "status": "ACTIVE",
+      "link_key": "HH-1700-COOK",
+      "relation": "Bound to HH-1700-COOK (LOCK-ER-ROYAL-COOK-001)",
+      "link_class": "PERSON",
+      "source_ref": "534",
+      "display_name": "Inés Morales, Royal Cook",
+      "source_table": "thylora_query_carryforward",
+      "entered_sequence_no": 591
+     }
+    ],
+    "places": [
+     {
+      "status": "ACTIVE",
+      "link_key": "ER-CASTLE-ROYAL-001",
+      "relation": "The place itself",
+      "link_class": "PLACE",
+      "source_ref": "ER-CASTLE-ROYAL-001",
+      "display_name": "Royal Castle (name OPEN)",
+      "source_table": "thylora_graph_nodes",
+      "entered_sequence_no": 591
+     },
+     {
+      "status": "ACTIVE",
+      "link_key": "THY-CASTLE-ROYAL-KITCHEN-001",
+      "relation": "Part of the Royal Castle",
+      "link_class": "PLACE",
+      "source_ref": "THY-CASTLE-ROYAL-KITCHEN-001",
+      "display_name": "Royal Kitchen",
+      "source_table": "thylora_graph_nodes",
+      "entered_sequence_no": 591
+     }
+    ],
+    "topics": [],
+    "objects": [
+     {
+      "status": "ACTIVE",
+      "link_key": "thylora_royal_collection_registry",
+      "relation": "Accessioned objects",
+      "link_class": "OBJECT",
+      "source_ref": null,
+      "display_name": "Royal collection",
+      "source_table": "thylora_royal_collection_registry",
+      "entered_sequence_no": 591
+     }
+    ],
+    "systems": [],
+    "products": []
+   },
+   "next_better_question": {
+    "question": "What is the canonical name of the Royal Castle (ER-CASTLE-ROYAL-001)?",
+    "why_it_matters": "The backend holds the place, its kitchen and its economy, but its name is OPEN and marked do-not-guess."
+   },
+   "current_vs_superseded": {
+    "current": [
+     {
+      "id": 16,
+      "body": "The Royal Kitchen (THY-CASTLE-ROYAL-KITCHEN-001) is STRUCTURE_DEFINED. At 591 the backend held 8 kitchen posts, 8 royal collection accessions, 13 castle economy accounts, 2 castle space geometry rows and 0 castle object state rows; every Royal Kitchen maker is OPEN (FIND-KITCHEN-OBJECT-MAKERS-ALL-OPEN-571).",
+      "kind": "EVIDENCE",
+      "authority": "Chairman",
+      "source_ref": "thylora_graph_nodes:THY-CASTLE-ROYAL-KITCHEN-001",
+      "truth_class": "BACKEND_VERIFIED",
+      "entered_sequence_no": 591
+     },
+     {
+      "id": 15,
+      "body": "Do not guess the Royal Castle name. No public interior images or maps by default (THY-FAMILY-VESSEL-CASTLE-PRIVACY-001).",
+      "kind": "CONSTRAINT",
+      "authority": "Chairman",
+      "source_ref": "thylora_graph_nodes:ER-CASTLE-ROYAL-001.properties",
+      "truth_class": "BACKEND_VERIFIED",
+      "entered_sequence_no": 591
+     },
+     {
+      "id": 14,
+      "body": "The Royal Castle is an EdereAirah place held as graph node ER-CASTLE-ROYAL-001, authority Chairman, truth_class OPEN_PENDING_CHAIRMAN_NAME_RECOVERY. Its canonical name, city and territory are OPEN. Time region: 1700s. Earth mirror: Windsor Castle, England, for layout and function only; names, people, dates and events do not transfer.",
+      "kind": "CANON",
+      "authority": "Chairman",
+      "source_ref": "thylora_graph_nodes:ER-CASTLE-ROYAL-001",
+      "truth_class": "BACKEND_VERIFIED",
+      "entered_sequence_no": 591
+     }
+    ],
+    "superseded": [],
+    "current_count": 3,
+    "superseded_count": 0
+   }
+  },
+  "SPORTS": {
+   "found": true,
+   "qyris": {
+    "scope": "TOPIC_EXPANSION",
+    "topic": "SPORTS",
+    "not_read": [
+     "raw THYLORA registries were not swept this turn",
+     "soft-referenced rows are resolved only when a link is opened",
+     "anything absent from the OMNIVIEW tables is reported as UNSEEDED, never inferred"
+    ],
+    "claim_rule": "Only tables listed in tables_read were read. No other table may be claimed.",
+    "read_at_utc": "2026-09-23T17:43:39Z",
+    "tables_read": [
+     {
+      "rows": 1,
+      "table": "thy_omniview_topics"
+     },
+     {
+      "rows": 2,
+      "table": "thy_omniview_statements"
+     },
+     {
+      "rows": 6,
+      "table": "thy_omniview_links"
+     },
+     {
+      "rows": 0,
+      "table": "thy_omniview_gates"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_questions"
+     },
+     {
+      "rows": 1,
+      "table": "thy_sequence_ledger"
+     },
+     {
+      "rows": 1,
+      "table": "thy_sequence_ledger_topics"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_restarts"
+     }
+    ],
+    "qyris_version": "QYRIS-1",
+    "sequence_head": 591
+   },
+   "read_path": [
+    "NEWEST DELTAS",
+    "TOPIC MANIFEST",
+    "AUTHORITY LOCKS",
+    "LINKED GRAPH",
+    "LINKED PEOPLE/PLACES/OBJECTS/PRODUCTS",
+    "LINKED WORK",
+    "LINKED GATES",
+    "CURRENT VS SUPERSEDED",
+    "LAST RESTART",
+    "ANSWER"
+   ],
+   "topic_key": "SPORTS",
+   "read_model": "CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION",
+   "answer_rule": "Answer from current statements. Superseded statements are history, not canon.",
+   "linked_work": [
+    {
+     "status": "ACTIVE",
+     "link_key": "ELEVEN-LAYER-SPORTS-MAP",
+     "relation": "Agent-side work named at 589",
+     "link_class": "WORK",
+     "source_ref": "589",
+     "display_name": "Eleven-layer sports map against ER-SA-001",
+     "source_table": "thylora_query_carryforward",
+     "entered_sequence_no": 591
+    }
+   ],
+   "last_restart": {
+    "reason": "Sequence 591 applied the OMNIVIEW pack live and linked live topic authority.",
+    "authority": "Chairman",
+    "sequence_no": 591,
+    "restart_point": "OMNIVIEW is LIVE APPLIED on thylora-dash at ledger 591 and NOT LIVE UI WITNESSED. Chairman-only reads. Next: Chairman phone sign-in to CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard and restore the seven baseline capabilities there before promotion; answer the Royal Castle name, the Alistair household, the Time Run final name and ERFL-001 vs GGL-001."
+   },
+   "linked_gates": [],
+   "linked_graph": [
+    {
+     "status": "ACTIVE",
+     "link_key": "sports_readiness_gate",
+     "relation": "6 gates at 591",
+     "link_class": "GATE",
+     "source_ref": null,
+     "display_name": "Sports readiness gates",
+     "source_table": "sports_readiness_gate",
+     "entered_sequence_no": 591
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "ER-SA-001",
+     "relation": "Authority record",
+     "link_class": "SYSTEM",
+     "source_ref": "ER-SA-001",
+     "display_name": "ER Sports Authority",
+     "source_table": "sports_authority_registry",
+     "entered_sequence_no": 591
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "sports_competition_registry",
+     "relation": "2 competitions at 591",
+     "link_class": "SYSTEM",
+     "source_ref": null,
+     "display_name": "Sports competition registry",
+     "source_table": "sports_competition_registry",
+     "entered_sequence_no": 591
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "sports_team_registry",
+     "relation": "33 teams at 591",
+     "link_class": "SYSTEM",
+     "source_ref": null,
+     "display_name": "Sports team registry",
+     "source_table": "sports_team_registry",
+     "entered_sequence_no": 591
+    },
+    {
+     "status": "BLOCKED",
+     "link_key": "FOOTBALL",
+     "relation": "Whether FOOTBALL is a sport under ER-SA-001 is not established",
+     "link_class": "TOPIC",
+     "source_ref": null,
+     "display_name": "FOOTBALL",
+     "source_table": null,
+     "entered_sequence_no": 591
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "ELEVEN-LAYER-SPORTS-MAP",
+     "relation": "Agent-side work named at 589",
+     "link_class": "WORK",
+     "source_ref": "589",
+     "display_name": "Eleven-layer sports map against ER-SA-001",
+     "source_table": "thylora_query_carryforward",
+     "entered_sequence_no": 591
+    }
+   ],
+   "last_sequence": {
+    "authority": "Chairman",
+    "sequence_no": 591,
+    "truth_class": "BACKEND_VERIFIED",
+    "occurred_utc": "2026-09-23T17:39:23Z",
+    "what_changed": "The OMNIVIEW pack (thy_sequence_* and thy_omniview_*: 8 tables, read model, write path, Chairman-only RLS) is applied to thylora-dash. Live topic authority was read from the backend of record and linked for TIME RUN, CASTLE (ROYAL CASTLE), ALISTAIR CROWE, STORE, SPORTS and QYRIS.",
+    "restart_point": "OMNIVIEW is live on thylora-dash at ledger 591. Next: Chairman mobile witness of CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard; answer the open next-better questions (Royal Castle name, Alistair household, Time Run final name).",
+    "what_remained": "No existing THYLORA table, policy, function or row was altered or removed. The only writes outside thy_* objects are one QYRIS work-item check (pre-execution) and additive graph nodes, edges and versions. Deployment authority for the dashboard stays with vyc2st-ctrl/thylora-executive-dashboard; CONTEXT and SEQUENCE are LIVE APPLIED on the backend, NOT LIVE UI WITNESSED.",
+    "local_timezone": "America/New_York",
+    "occurred_local": "2026-09-23 13:39",
+    "why_it_changed": "Before apply, three conflicts between the reviewed pack and the live backend were corrected: reads were open to any signed-in account (now thylora_is_chairman(), the rule carryforward already uses); the carryforward context reader was SECURITY DEFINER and would have bypassed carryforward RLS (now SECURITY INVOKER); and the seed wrote ledger 588 for a change that carryforward 588 assigns to different work (now 587).",
+    "next_better_question": "Will the Chairman sign in on the phone and open CONTEXT and SEQUENCE on the current head, so LIVE APPLIED can become LIVE UI WITNESSED?"
+   },
+   "newest_deltas": [
+    {
+     "topics": [
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "ALISTAIR CROWE"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "CASTLE"
+      },
+      {
+       "effect": "GATE_CHANGED",
+       "topic_key": "DASHBOARD"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "OMNIVIEW"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "QYRIS"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "SPORTS"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "STORE"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "TIME RUN"
+      }
+     ],
+     "authority": "Chairman",
+     "supersedes": null,
+     "sequence_no": 591,
+     "truth_class": "BACKEND_VERIFIED",
+     "occurred_utc": "2026-09-23T17:39:23Z",
+     "what_changed": "The OMNIVIEW pack (thy_sequence_* and thy_omniview_*: 8 tables, read model, write path, Chairman-only RLS) is applied to thylora-dash. Live topic authority was read from the backend of record and linked for TIME RUN, CASTLE (ROYAL CASTLE), ALISTAIR CROWE, STORE, SPORTS and QYRIS.",
+     "restart_point": "OMNIVIEW is live on thylora-dash at ledger 591. Next: Chairman mobile witness of CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard; answer the open next-better questions (Royal Castle name, Alistair household, Time Run final name).",
+     "what_remained": "No existing THYLORA table, policy, function or row was altered or removed. The only writes outside thy_* objects are one QYRIS work-item check (pre-execution) and additive graph nodes, edges and versions. Deployment authority for the dashboard stays with vyc2st-ctrl/thylora-executive-dashboard; CONTEXT and SEQUENCE are LIVE APPLIED on the backend, NOT LIVE UI WITNESSED.",
+     "local_timezone": "America/New_York",
+     "occurred_local": "2026-09-23 13:39",
+     "why_it_changed": "Before apply, three conflicts between the reviewed pack and the live backend were corrected: reads were open to any signed-in account (now thylora_is_chairman(), the rule carryforward already uses); the carryforward context reader was SECURITY DEFINER and would have bypassed carryforward RLS (now SECURITY INVOKER); and the seed wrote ledger 588 for a change that carryforward 588 assigns to different work (now 587).",
+     "why_change_occurred": "Carryforward 591 directed that the reviewed OMNIVIEW branch be applied to the live backend and witnessed (THY-WORK-OMNIVIEW-LIVE-APPLY-591).",
+     "next_better_question": "Will the Chairman sign in on the phone and open CONTEXT and SEQUENCE on the current head, so LIVE APPLIED can become LIVE UI WITNESSED?",
+     "previous_sequence_no": 587
+    }
+   ],
+   "open_questions": [
+    {
+     "id": 17,
+     "state": "OPEN",
+     "question": "Is ERFL-001 or GGL-001 canonical, and how does the other relate if both survive?",
+     "is_next_better": true,
+     "why_it_matters": "It is Chairman decision (c) at 589 and the first sports canon question still open.",
+     "entered_sequence_no": 591
+    }
+   ],
+   "topic_manifest": {
+    "summary": "ER Sports Authority and its team, competition, network and readiness registries on thylora-dash.",
+    "topic_key": "SPORTS",
+    "canon_state": "PARTIAL",
+    "topic_class": "PROGRAM",
+    "display_name": "SPORTS",
+    "last_sequence_no": 591,
+    "superseded_by_topic": null
+   },
+   "authority_locks": {
+    "authority_lock": "BACKEND_OF_RECORD",
+    "authority_holder": "sports_authority_registry ER-SA-001 (governing authority: Chairman / MAH-001)",
+    "answerable_as_canon": true
+   },
+   "linked_entities": {
+    "money": [],
+    "people": [],
+    "places": [],
+    "topics": [
+     {
+      "status": "BLOCKED",
+      "link_key": "FOOTBALL",
+      "relation": "Whether FOOTBALL is a sport under ER-SA-001 is not established",
+      "link_class": "TOPIC",
+      "source_ref": null,
+      "display_name": "FOOTBALL",
+      "source_table": null,
+      "entered_sequence_no": 591
+     }
+    ],
+    "objects": [],
+    "systems": [
+     {
+      "status": "ACTIVE",
+      "link_key": "ER-SA-001",
+      "relation": "Authority record",
+      "link_class": "SYSTEM",
+      "source_ref": "ER-SA-001",
+      "display_name": "ER Sports Authority",
+      "source_table": "sports_authority_registry",
+      "entered_sequence_no": 591
+     },
+     {
+      "status": "ACTIVE",
+      "link_key": "sports_competition_registry",
+      "relation": "2 competitions at 591",
+      "link_class": "SYSTEM",
+      "source_ref": null,
+      "display_name": "Sports competition registry",
+      "source_table": "sports_competition_registry",
+      "entered_sequence_no": 591
+     },
+     {
+      "status": "ACTIVE",
+      "link_key": "sports_team_registry",
+      "relation": "33 teams at 591",
+      "link_class": "SYSTEM",
+      "source_ref": null,
+      "display_name": "Sports team registry",
+      "source_table": "sports_team_registry",
+      "entered_sequence_no": 591
+     }
+    ],
+    "products": []
+   },
+   "next_better_question": {
+    "question": "Is ERFL-001 or GGL-001 canonical, and how does the other relate if both survive?",
+    "why_it_matters": "It is Chairman decision (c) at 589 and the first sports canon question still open."
+   },
+   "current_vs_superseded": {
+    "current": [
+     {
+      "id": 22,
+      "body": "Unresolved on ER-SA-001: the exact four commissioner identities, the final commissioner portfolio boundaries, and the Earth legal structure if any Earth entity is formed. Team naming is not restarted and the thirty empty ERFL slots are not filled without the Chairman (carryforward 589).",
+      "kind": "CONSTRAINT",
+      "authority": "Chairman",
+      "source_ref": "sports_authority_registry:ER-SA-001.unresolved",
+      "truth_class": "BACKEND_VERIFIED",
+      "entered_sequence_no": 591
+     },
+     {
+      "id": 21,
+      "body": "ER Sports Authority (ER-SA-001) is the sports authority of record: status IMPLEMENTATION_ACTIVE, governing authority Chairman / MAH-001. At 591 the backend held 33 teams, 2 competitions, 1 network and 6 readiness gates under it.",
+      "kind": "CANON",
+      "authority": "Chairman",
+      "source_ref": "sports_authority_registry:ER-SA-001",
+      "truth_class": "BACKEND_VERIFIED",
+      "entered_sequence_no": 591
+     }
+    ],
+    "superseded": [],
+    "current_count": 2,
+    "superseded_count": 0
+   }
+  },
+  "ECONOMY": {
+   "found": true,
+   "qyris": {
+    "scope": "TOPIC_EXPANSION",
+    "topic": "ECONOMY",
+    "not_read": [
+     "raw THYLORA registries were not swept this turn",
+     "soft-referenced rows are resolved only when a link is opened",
+     "anything absent from the OMNIVIEW tables is reported as UNSEEDED, never inferred"
+    ],
+    "claim_rule": "Only tables listed in tables_read were read. No other table may be claimed.",
+    "read_at_utc": "2026-09-23T17:43:39Z",
+    "tables_read": [
+     {
+      "rows": 1,
+      "table": "thy_omniview_topics"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_statements"
+     },
+     {
+      "rows": 2,
+      "table": "thy_omniview_links"
+     },
+     {
+      "rows": 0,
+      "table": "thy_omniview_gates"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_questions"
+     },
+     {
+      "rows": 1,
+      "table": "thy_sequence_ledger"
+     },
+     {
+      "rows": 1,
+      "table": "thy_sequence_ledger_topics"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_restarts"
+     }
+    ],
+    "qyris_version": "QYRIS-1",
+    "sequence_head": 591
+   },
+   "read_path": [
+    "NEWEST DELTAS",
+    "TOPIC MANIFEST",
+    "AUTHORITY LOCKS",
+    "LINKED GRAPH",
+    "LINKED PEOPLE/PLACES/OBJECTS/PRODUCTS",
+    "LINKED WORK",
+    "LINKED GATES",
+    "CURRENT VS SUPERSEDED",
+    "LAST RESTART",
+    "ANSWER"
+   ],
+   "topic_key": "ECONOMY",
+   "read_model": "CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION",
+   "answer_rule": "Answer from current statements. Superseded statements are history, not canon.",
+   "linked_work": [],
+   "last_restart": {
+    "reason": "Sequence 591 applied the OMNIVIEW pack live and linked live topic authority.",
+    "authority": "Chairman",
+    "sequence_no": 591,
+    "restart_point": "OMNIVIEW is LIVE APPLIED on thylora-dash at ledger 591 and NOT LIVE UI WITNESSED. Chairman-only reads. Next: Chairman phone sign-in to CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard and restore the seven baseline capabilities there before promotion; answer the Royal Castle name, the Alistair household, the Time Run final name and ERFL-001 vs GGL-001."
+   },
+   "linked_gates": [],
+   "linked_graph": [
+    {
+     "status": "BLOCKED",
+     "link_key": "rael_revenue_ledger",
+     "relation": "Defined in db/rae-link/0005; not applied to thylora-dash",
+     "link_class": "MONEY",
+     "source_ref": "db/rae-link/0005_monetization_ledger.sql",
+     "display_name": "RAE Link revenue ledger (repository definition)",
+     "source_table": null,
+     "entered_sequence_no": 587
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "financial_decision_register",
+     "relation": "Money decisions of record",
+     "link_class": "SYSTEM",
+     "source_ref": null,
+     "display_name": "Financial decision register",
+     "source_table": "financial_decision_register",
+     "entered_sequence_no": 587
+    }
+   ],
+   "last_sequence": {
+    "authority": "Chairman",
+    "sequence_no": 587,
+    "truth_class": "REPO_VERIFIED",
+    "occurred_utc": "2026-09-22T14:05:31Z",
+    "what_changed": "The sequence change ledger was opened at 587, and CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION was written: topic manifest, authority locks, linked graph, linked people/places/objects/products, linked work, gates, current-vs-superseded canon, last restart, an OMNIVIEW read trace on every read, and CONTEXT + SEQUENCE surfaces inside the existing dashboard.",
+    "restart_point": "OMNIVIEW pack written and verified against a throwaway PostgreSQL 16 database (commit 9d359c6). Not applied to the live backend at 587.",
+    "what_remained": "No existing THYLORA table was dropped, renamed or rewritten. The dashboard was extended, not replaced. Deployment authority stays with vyc2st-ctrl/thylora-executive-dashboard. Sequences 1-586, and every later carryforward sequence that is not a ledger row, stay in thylora_query_carryforward and are readable through thy_sequence_prior_context, never presented as ledger rows.",
+    "local_timezone": "America/New_York",
+    "occurred_local": "2026-09-22 10:05",
+    "why_it_changed": "Re-reading every raw backend row each turn is slow and still unprovable. One governed read returns the state and names exactly which tables it touched, so an answer can no longer claim a table it never read.",
+    "next_better_question": "Which UNSEEDED topic does the Chairman want seeded first: CASTLE, INÉS, VERONICA, FOOTBALL or VEHICLES?"
+   },
+   "newest_deltas": [
+    {
+     "topics": [
+      {
+       "effect": "TOUCHED",
+       "topic_key": "CASTLE"
+      },
+      {
+       "effect": "WORK_CHANGED",
+       "topic_key": "DASHBOARD"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "ECONOMY"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "OMNIVIEW"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "QYRIS"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "STORE"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "TIME RUN"
+      }
+     ],
+     "authority": "Chairman",
+     "supersedes": null,
+     "sequence_no": 587,
+     "truth_class": "REPO_VERIFIED",
+     "occurred_utc": "2026-09-22T14:05:31Z",
+     "what_changed": "The sequence change ledger was opened at 587, and CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION was written: topic manifest, authority locks, linked graph, linked people/places/objects/products, linked work, gates, current-vs-superseded canon, last restart, an OMNIVIEW read trace on every read, and CONTEXT + SEQUENCE surfaces inside the existing dashboard.",
+     "restart_point": "OMNIVIEW pack written and verified against a throwaway PostgreSQL 16 database (commit 9d359c6). Not applied to the live backend at 587.",
+     "what_remained": "No existing THYLORA table was dropped, renamed or rewritten. The dashboard was extended, not replaced. Deployment authority stays with vyc2st-ctrl/thylora-executive-dashboard. Sequences 1-586, and every later carryforward sequence that is not a ledger row, stay in thylora_query_carryforward and are readable through thy_sequence_prior_context, never presented as ledger rows.",
+     "local_timezone": "America/New_York",
+     "occurred_local": "2026-09-22 10:05",
+     "why_it_changed": "Re-reading every raw backend row each turn is slow and still unprovable. One governed read returns the state and names exactly which tables it touched, so an answer can no longer claim a table it never read.",
+     "why_change_occurred": "THY-WORK-OMNIVIEW-ROUNDTRIP-587 and THY-WORK-SEQUENCE-CHANGE-LEDGER-587: the spine had no single read that returns current state plus the history behind it, and sequence numbers were not an auditable change ledger.",
+     "next_better_question": "Which UNSEEDED topic does the Chairman want seeded first: CASTLE, INÉS, VERONICA, FOOTBALL or VEHICLES?",
+     "previous_sequence_no": null
+    }
+   ],
+   "open_questions": [
+    {
+     "id": 11,
+     "state": "OPEN",
+     "question": "Which revenue lanes are live in the backend of record today, and which are defined but not yet earning?",
+     "is_next_better": true,
+     "why_it_matters": "The lane definitions are proven by migration; live state is not.",
+     "entered_sequence_no": 587
+    }
+   ],
+   "topic_manifest": {
+    "summary": "THYLORA money spine: revenue lanes, splits, ledger, payouts, financial decisions.",
+    "topic_key": "ECONOMY",
+    "canon_state": "PARTIAL",
+    "topic_class": "ECONOMY",
+    "display_name": "ECONOMY",
+    "last_sequence_no": 587,
+    "superseded_by_topic": null
+   },
+   "authority_locks": {
+    "authority_lock": "BACKEND_OF_RECORD",
+    "authority_holder": "thylora-dash (jvsdxhrfhtlgaknhjxlz)",
+    "answerable_as_canon": true
+   },
+   "linked_entities": {
+    "money": [
+     {
+      "status": "BLOCKED",
+      "link_key": "rael_revenue_ledger",
+      "relation": "Defined in db/rae-link/0005; not applied to thylora-dash",
+      "link_class": "MONEY",
+      "source_ref": "db/rae-link/0005_monetization_ledger.sql",
+      "display_name": "RAE Link revenue ledger (repository definition)",
+      "source_table": null,
+      "entered_sequence_no": 587
+     }
+    ],
+    "people": [],
+    "places": [],
+    "topics": [],
+    "objects": [],
+    "systems": [
+     {
+      "status": "ACTIVE",
+      "link_key": "financial_decision_register",
+      "relation": "Money decisions of record",
+      "link_class": "SYSTEM",
+      "source_ref": null,
+      "display_name": "Financial decision register",
+      "source_table": "financial_decision_register",
+      "entered_sequence_no": 587
+     }
+    ],
+    "products": []
+   },
+   "next_better_question": {
+    "question": "Which revenue lanes are live in the backend of record today, and which are defined but not yet earning?",
+    "why_it_matters": "The lane definitions are proven by migration; live state is not."
+   },
+   "current_vs_superseded": {
+    "current": [
+     {
+      "id": 10,
+      "body": "The RAE Link monetization ledger defined in db/rae-link/0005 holds money in integer minor units with gross, fees, refunds, chargebacks, platform share, creator share, beneficiary share and net payable as separate columns. That ledger is a repository definition: rael_revenue_ledger is not present on thylora-dash (checked at 591).",
+      "kind": "EVIDENCE",
+      "authority": "Chairman",
+      "source_ref": "db/rae-link/0005_monetization_ledger.sql",
+      "truth_class": "REPO_VERIFIED",
+      "entered_sequence_no": 587
+     }
+    ],
+    "superseded": [],
+    "current_count": 1,
+    "superseded_count": 0
+   }
+  },
+  "FOOTBALL": {
+   "found": true,
+   "qyris": {
+    "scope": "TOPIC_EXPANSION",
+    "topic": "FOOTBALL",
+    "not_read": [
+     "raw THYLORA registries were not swept this turn",
+     "soft-referenced rows are resolved only when a link is opened",
+     "anything absent from the OMNIVIEW tables is reported as UNSEEDED, never inferred"
+    ],
+    "claim_rule": "Only tables listed in tables_read were read. No other table may be claimed.",
+    "read_at_utc": "2026-09-23T17:43:39Z",
+    "tables_read": [
+     {
+      "rows": 1,
+      "table": "thy_omniview_topics"
+     },
+     {
+      "rows": 0,
+      "table": "thy_omniview_statements"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_links"
+     },
+     {
+      "rows": 0,
+      "table": "thy_omniview_gates"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_questions"
+     },
+     {
+      "rows": 0,
+      "table": "thy_sequence_ledger"
+     },
+     {
+      "rows": 0,
+      "table": "thy_sequence_ledger_topics"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_restarts"
+     }
+    ],
+    "qyris_version": "QYRIS-1",
+    "sequence_head": 591
+   },
+   "read_path": [
+    "NEWEST DELTAS",
+    "TOPIC MANIFEST",
+    "AUTHORITY LOCKS",
+    "LINKED GRAPH",
+    "LINKED PEOPLE/PLACES/OBJECTS/PRODUCTS",
+    "LINKED WORK",
+    "LINKED GATES",
+    "CURRENT VS SUPERSEDED",
+    "LAST RESTART",
+    "ANSWER"
+   ],
+   "topic_key": "FOOTBALL",
+   "read_model": "CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION",
+   "answer_rule": "Canon for this topic is not written. Answer with the open question, not with an assumption.",
+   "linked_work": [
+    {
+     "status": "BLOCKED",
+     "link_key": "GAME-BET-001",
+     "relation": "ADJACENT, UNCONFIRMED: a sports surface exists in the app. Whether it belongs to FOOTBALL canon is not established.",
+     "link_class": "WORK",
+     "source_ref": "app/sports-betting.html",
+     "display_name": "GAME-BET-001 sportsbook and casino workroom",
+     "source_table": null,
+     "entered_sequence_no": 587
+    }
+   ],
+   "last_restart": {
+    "reason": "Sequence 591 applied the OMNIVIEW pack live and linked live topic authority.",
+    "authority": "Chairman",
+    "sequence_no": 591,
+    "restart_point": "OMNIVIEW is LIVE APPLIED on thylora-dash at ledger 591 and NOT LIVE UI WITNESSED. Chairman-only reads. Next: Chairman phone sign-in to CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard and restore the seven baseline capabilities there before promotion; answer the Royal Castle name, the Alistair household, the Time Run final name and ERFL-001 vs GGL-001."
+   },
+   "linked_gates": [],
+   "linked_graph": [
+    {
+     "status": "BLOCKED",
+     "link_key": "GAME-BET-001",
+     "relation": "ADJACENT, UNCONFIRMED: a sports surface exists in the app. Whether it belongs to FOOTBALL canon is not established.",
+     "link_class": "WORK",
+     "source_ref": "app/sports-betting.html",
+     "display_name": "GAME-BET-001 sportsbook and casino workroom",
+     "source_table": null,
+     "entered_sequence_no": 587
+    }
+   ],
+   "last_sequence": null,
+   "newest_deltas": [],
+   "open_questions": [
+    {
+     "id": 4,
+     "state": "OPEN",
+     "question": "Does FOOTBALL canon include the GAME-BET-001 sportsbook surface, or is FOOTBALL a separate programme?",
+     "is_next_better": true,
+     "why_it_matters": "A sports surface exists in the app. Linking it to FOOTBALL without the Chairman saying so would invent a relationship.",
+     "entered_sequence_no": 587
+    }
+   ],
+   "topic_manifest": {
+    "summary": null,
+    "topic_key": "FOOTBALL",
+    "canon_state": "UNSEEDED",
+    "topic_class": "PROGRAM",
+    "display_name": "FOOTBALL",
+    "last_sequence_no": null,
+    "superseded_by_topic": null
+   },
+   "authority_locks": {
+    "authority_lock": "CHAIRMAN",
+    "authority_holder": "Chairman",
+    "answerable_as_canon": false
+   },
+   "linked_entities": {
+    "money": [],
+    "people": [],
+    "places": [],
+    "topics": [],
+    "objects": [],
+    "systems": [],
+    "products": []
+   },
+   "next_better_question": {
+    "question": "Does FOOTBALL canon include the GAME-BET-001 sportsbook surface, or is FOOTBALL a separate programme?",
+    "why_it_matters": "A sports surface exists in the app. Linking it to FOOTBALL without the Chairman saying so would invent a relationship."
+   },
+   "current_vs_superseded": {
+    "current": [],
+    "superseded": [],
+    "current_count": 0,
+    "superseded_count": 0
+   }
+  },
+  "OMNIVIEW": {
+   "found": true,
+   "qyris": {
+    "scope": "TOPIC_EXPANSION",
+    "topic": "OMNIVIEW",
+    "not_read": [
+     "raw THYLORA registries were not swept this turn",
+     "soft-referenced rows are resolved only when a link is opened",
+     "anything absent from the OMNIVIEW tables is reported as UNSEEDED, never inferred"
+    ],
+    "claim_rule": "Only tables listed in tables_read were read. No other table may be claimed.",
+    "read_at_utc": "2026-09-23T17:43:39Z",
+    "tables_read": [
+     {
+      "rows": 1,
+      "table": "thy_omniview_topics"
+     },
+     {
+      "rows": 3,
+      "table": "thy_omniview_statements"
+     },
+     {
+      "rows": 4,
+      "table": "thy_omniview_links"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_gates"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_questions"
+     },
+     {
+      "rows": 2,
+      "table": "thy_sequence_ledger"
+     },
+     {
+      "rows": 2,
+      "table": "thy_sequence_ledger_topics"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_restarts"
+     }
+    ],
+    "qyris_version": "QYRIS-1",
+    "sequence_head": 591
+   },
+   "read_path": [
+    "NEWEST DELTAS",
+    "TOPIC MANIFEST",
+    "AUTHORITY LOCKS",
+    "LINKED GRAPH",
+    "LINKED PEOPLE/PLACES/OBJECTS/PRODUCTS",
+    "LINKED WORK",
+    "LINKED GATES",
+    "CURRENT VS SUPERSEDED",
+    "LAST RESTART",
+    "ANSWER"
+   ],
+   "topic_key": "OMNIVIEW",
+   "read_model": "CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION",
+   "answer_rule": "Answer from current statements. Superseded statements are history, not canon.",
+   "linked_work": [
+    {
+     "status": "ACTIVE",
+     "link_key": "THY-WORK-OMNIVIEW-LIVE-APPLY-591",
+     "relation": "Applied the pack to thylora-dash",
+     "link_class": "WORK",
+     "source_ref": "db/omniview/live/",
+     "display_name": "OMNIVIEW live apply",
+     "source_table": null,
+     "entered_sequence_no": 591
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "THY-WORK-OMNIVIEW-ROUNDTRIP-587",
+     "relation": "Implements the read model",
+     "link_class": "WORK",
+     "source_ref": "db/omniview/",
+     "display_name": "OMNIVIEW round trip",
+     "source_table": null,
+     "entered_sequence_no": 587
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "THY-WORK-SEQUENCE-CHANGE-LEDGER-587",
+     "relation": "Implements the ledger",
+     "link_class": "WORK",
+     "source_ref": "db/omniview/0001_sequence_ledger.sql",
+     "display_name": "Sequence change ledger",
+     "source_table": null,
+     "entered_sequence_no": 587
+    }
+   ],
+   "last_restart": {
+    "reason": "Sequence 591 applied the OMNIVIEW pack live and linked live topic authority.",
+    "authority": "Chairman",
+    "sequence_no": 591,
+    "restart_point": "OMNIVIEW is LIVE APPLIED on thylora-dash at ledger 591 and NOT LIVE UI WITNESSED. Chairman-only reads. Next: Chairman phone sign-in to CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard and restore the seven baseline capabilities there before promotion; answer the Royal Castle name, the Alistair household, the Time Run final name and ERFL-001 vs GGL-001."
+   },
+   "linked_gates": [
+    {
+     "blocker": null,
+     "gate_key": "GATE-OMNIVIEW-APPLIED",
+     "authority": "Chairman",
+     "gate_state": "PASSED",
+     "requirement": "The OMNIVIEW pack is applied to thylora-dash and thy_omniview_manifest() returns from the live backend.",
+     "evidence_ref": "db/omniview/live/EVIDENCE-591.md",
+     "entered_sequence_no": 587,
+     "settled_sequence_no": 591
+    }
+   ],
+   "linked_graph": [
+    {
+     "status": "ACTIVE",
+     "link_key": "QYRIS",
+     "relation": "Every OMNIVIEW read carries a QYRIS trace",
+     "link_class": "TOPIC",
+     "source_ref": null,
+     "display_name": "QYRIS",
+     "source_table": null,
+     "entered_sequence_no": 587
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "THY-WORK-OMNIVIEW-LIVE-APPLY-591",
+     "relation": "Applied the pack to thylora-dash",
+     "link_class": "WORK",
+     "source_ref": "db/omniview/live/",
+     "display_name": "OMNIVIEW live apply",
+     "source_table": null,
+     "entered_sequence_no": 591
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "THY-WORK-OMNIVIEW-ROUNDTRIP-587",
+     "relation": "Implements the read model",
+     "link_class": "WORK",
+     "source_ref": "db/omniview/",
+     "display_name": "OMNIVIEW round trip",
+     "source_table": null,
+     "entered_sequence_no": 587
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "THY-WORK-SEQUENCE-CHANGE-LEDGER-587",
+     "relation": "Implements the ledger",
+     "link_class": "WORK",
+     "source_ref": "db/omniview/0001_sequence_ledger.sql",
+     "display_name": "Sequence change ledger",
+     "source_table": null,
+     "entered_sequence_no": 587
+    }
+   ],
+   "last_sequence": {
+    "authority": "Chairman",
+    "sequence_no": 591,
+    "truth_class": "BACKEND_VERIFIED",
+    "occurred_utc": "2026-09-23T17:39:23Z",
+    "what_changed": "The OMNIVIEW pack (thy_sequence_* and thy_omniview_*: 8 tables, read model, write path, Chairman-only RLS) is applied to thylora-dash. Live topic authority was read from the backend of record and linked for TIME RUN, CASTLE (ROYAL CASTLE), ALISTAIR CROWE, STORE, SPORTS and QYRIS.",
+    "restart_point": "OMNIVIEW is live on thylora-dash at ledger 591. Next: Chairman mobile witness of CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard; answer the open next-better questions (Royal Castle name, Alistair household, Time Run final name).",
+    "what_remained": "No existing THYLORA table, policy, function or row was altered or removed. The only writes outside thy_* objects are one QYRIS work-item check (pre-execution) and additive graph nodes, edges and versions. Deployment authority for the dashboard stays with vyc2st-ctrl/thylora-executive-dashboard; CONTEXT and SEQUENCE are LIVE APPLIED on the backend, NOT LIVE UI WITNESSED.",
+    "local_timezone": "America/New_York",
+    "occurred_local": "2026-09-23 13:39",
+    "why_it_changed": "Before apply, three conflicts between the reviewed pack and the live backend were corrected: reads were open to any signed-in account (now thylora_is_chairman(), the rule carryforward already uses); the carryforward context reader was SECURITY DEFINER and would have bypassed carryforward RLS (now SECURITY INVOKER); and the seed wrote ledger 588 for a change that carryforward 588 assigns to different work (now 587).",
+    "next_better_question": "Will the Chairman sign in on the phone and open CONTEXT and SEQUENCE on the current head, so LIVE APPLIED can become LIVE UI WITNESSED?"
+   },
+   "newest_deltas": [
+    {
+     "topics": [
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "ALISTAIR CROWE"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "CASTLE"
+      },
+      {
+       "effect": "GATE_CHANGED",
+       "topic_key": "DASHBOARD"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "OMNIVIEW"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "QYRIS"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "SPORTS"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "STORE"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "TIME RUN"
+      }
+     ],
+     "authority": "Chairman",
+     "supersedes": null,
+     "sequence_no": 591,
+     "truth_class": "BACKEND_VERIFIED",
+     "occurred_utc": "2026-09-23T17:39:23Z",
+     "what_changed": "The OMNIVIEW pack (thy_sequence_* and thy_omniview_*: 8 tables, read model, write path, Chairman-only RLS) is applied to thylora-dash. Live topic authority was read from the backend of record and linked for TIME RUN, CASTLE (ROYAL CASTLE), ALISTAIR CROWE, STORE, SPORTS and QYRIS.",
+     "restart_point": "OMNIVIEW is live on thylora-dash at ledger 591. Next: Chairman mobile witness of CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard; answer the open next-better questions (Royal Castle name, Alistair household, Time Run final name).",
+     "what_remained": "No existing THYLORA table, policy, function or row was altered or removed. The only writes outside thy_* objects are one QYRIS work-item check (pre-execution) and additive graph nodes, edges and versions. Deployment authority for the dashboard stays with vyc2st-ctrl/thylora-executive-dashboard; CONTEXT and SEQUENCE are LIVE APPLIED on the backend, NOT LIVE UI WITNESSED.",
+     "local_timezone": "America/New_York",
+     "occurred_local": "2026-09-23 13:39",
+     "why_it_changed": "Before apply, three conflicts between the reviewed pack and the live backend were corrected: reads were open to any signed-in account (now thylora_is_chairman(), the rule carryforward already uses); the carryforward context reader was SECURITY DEFINER and would have bypassed carryforward RLS (now SECURITY INVOKER); and the seed wrote ledger 588 for a change that carryforward 588 assigns to different work (now 587).",
+     "why_change_occurred": "Carryforward 591 directed that the reviewed OMNIVIEW branch be applied to the live backend and witnessed (THY-WORK-OMNIVIEW-LIVE-APPLY-591).",
+     "next_better_question": "Will the Chairman sign in on the phone and open CONTEXT and SEQUENCE on the current head, so LIVE APPLIED can become LIVE UI WITNESSED?",
+     "previous_sequence_no": 587
+    },
+    {
+     "topics": [
+      {
+       "effect": "TOUCHED",
+       "topic_key": "CASTLE"
+      },
+      {
+       "effect": "WORK_CHANGED",
+       "topic_key": "DASHBOARD"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "ECONOMY"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "OMNIVIEW"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "QYRIS"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "STORE"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "TIME RUN"
+      }
+     ],
+     "authority": "Chairman",
+     "supersedes": null,
+     "sequence_no": 587,
+     "truth_class": "REPO_VERIFIED",
+     "occurred_utc": "2026-09-22T14:05:31Z",
+     "what_changed": "The sequence change ledger was opened at 587, and CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION was written: topic manifest, authority locks, linked graph, linked people/places/objects/products, linked work, gates, current-vs-superseded canon, last restart, an OMNIVIEW read trace on every read, and CONTEXT + SEQUENCE surfaces inside the existing dashboard.",
+     "restart_point": "OMNIVIEW pack written and verified against a throwaway PostgreSQL 16 database (commit 9d359c6). Not applied to the live backend at 587.",
+     "what_remained": "No existing THYLORA table was dropped, renamed or rewritten. The dashboard was extended, not replaced. Deployment authority stays with vyc2st-ctrl/thylora-executive-dashboard. Sequences 1-586, and every later carryforward sequence that is not a ledger row, stay in thylora_query_carryforward and are readable through thy_sequence_prior_context, never presented as ledger rows.",
+     "local_timezone": "America/New_York",
+     "occurred_local": "2026-09-22 10:05",
+     "why_it_changed": "Re-reading every raw backend row each turn is slow and still unprovable. One governed read returns the state and names exactly which tables it touched, so an answer can no longer claim a table it never read.",
+     "why_change_occurred": "THY-WORK-OMNIVIEW-ROUNDTRIP-587 and THY-WORK-SEQUENCE-CHANGE-LEDGER-587: the spine had no single read that returns current state plus the history behind it, and sequence numbers were not an auditable change ledger.",
+     "next_better_question": "Which UNSEEDED topic does the Chairman want seeded first: CASTLE, INÉS, VERONICA, FOOTBALL or VEHICLES?",
+     "previous_sequence_no": null
+    }
+   ],
+   "open_questions": [
+    {
+     "id": 19,
+     "state": "OPEN",
+     "question": "Which UNSEEDED topic does the Chairman want seeded first: INÉS, VERONICA, FOOTBALL, VEHICLES or ALISTAIR CROWE?",
+     "is_next_better": true,
+     "why_it_matters": "CASTLE moved from UNSEEDED to PARTIAL at 591 because the backend already holds it. The remaining UNSEEDED topics need a Chairman source.",
+     "entered_sequence_no": 591
+    }
+   ],
+   "topic_manifest": {
+    "summary": "CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION read model and the sequence ledger behind it.",
+    "topic_key": "OMNIVIEW",
+    "canon_state": "PARTIAL",
+    "topic_class": "SYSTEM",
+    "display_name": "OMNIVIEW",
+    "last_sequence_no": 591,
+    "superseded_by_topic": null
+   },
+   "authority_locks": {
+    "authority_lock": "CHAIRMAN",
+    "authority_holder": "Chairman",
+    "answerable_as_canon": true
+   },
+   "linked_entities": {
+    "money": [],
+    "people": [],
+    "places": [],
+    "topics": [
+     {
+      "status": "ACTIVE",
+      "link_key": "QYRIS",
+      "relation": "Every OMNIVIEW read carries a QYRIS trace",
+      "link_class": "TOPIC",
+      "source_ref": null,
+      "display_name": "QYRIS",
+      "source_table": null,
+      "entered_sequence_no": 587
+     }
+    ],
+    "objects": [],
+    "systems": [],
+    "products": []
+   },
+   "next_better_question": {
+    "question": "Which UNSEEDED topic does the Chairman want seeded first: INÉS, VERONICA, FOOTBALL, VEHICLES or ALISTAIR CROWE?",
+    "why_it_matters": "CASTLE moved from UNSEEDED to PARTIAL at 591 because the backend already holds it. The remaining UNSEEDED topics need a Chairman source."
+   },
+   "current_vs_superseded": {
+    "current": [
+     {
+      "id": 25,
+      "body": "LOCAL DATE/TIME on ledger rows uses America/New_York, the earth_anchor_timezone held by thylora_timestamp_punch_gate on the backend of record.",
+      "kind": "DECISION",
+      "authority": "Chairman",
+      "source_ref": "thylora_timestamp_punch_gate.earth_anchor_timezone",
+      "truth_class": "BACKEND_VERIFIED",
+      "entered_sequence_no": 591
+     },
+     {
+      "id": 7,
+      "body": "Source history is never rewritten. thy_sequence_ledger refuses UPDATE and DELETE at the database level; a correction is a new sequence carrying supersedes_sequence_no. Canon statements are superseded, never edited.",
+      "kind": "CONSTRAINT",
+      "authority": "Chairman",
+      "source_ref": "db/omniview/0001_sequence_ledger.sql",
+      "truth_class": "REPO_VERIFIED",
+      "entered_sequence_no": 587
+     },
+     {
+      "id": 6,
+      "body": "The pre-response path is data, not convention. Every topic read returns read_path = NEWEST DELTAS, TOPIC MANIFEST, AUTHORITY LOCKS, LINKED GRAPH, LINKED PEOPLE/PLACES/OBJECTS/PRODUCTS, LINKED WORK, LINKED GATES, CURRENT VS SUPERSEDED, LAST RESTART, ANSWER — and the surface renders in that order.",
+      "kind": "CANON",
+      "authority": "Chairman",
+      "source_ref": "db/omniview/0003_read_model.sql",
+      "truth_class": "REPO_VERIFIED",
+      "entered_sequence_no": 587
+     }
+    ],
+    "superseded": [],
+    "current_count": 3,
+    "superseded_count": 0
+   }
+  },
+  "TIME RUN": {
+   "found": true,
+   "qyris": {
+    "scope": "TOPIC_EXPANSION",
+    "topic": "TIME RUN",
+    "not_read": [
+     "raw THYLORA registries were not swept this turn",
+     "soft-referenced rows are resolved only when a link is opened",
+     "anything absent from the OMNIVIEW tables is reported as UNSEEDED, never inferred"
+    ],
+    "claim_rule": "Only tables listed in tables_read were read. No other table may be claimed.",
+    "read_at_utc": "2026-09-23T17:43:39Z",
+    "tables_read": [
+     {
+      "rows": 1,
+      "table": "thy_omniview_topics"
+     },
+     {
+      "rows": 3,
+      "table": "thy_omniview_statements"
+     },
+     {
+      "rows": 6,
+      "table": "thy_omniview_links"
+     },
+     {
+      "rows": 0,
+      "table": "thy_omniview_gates"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_questions"
+     },
+     {
+      "rows": 2,
+      "table": "thy_sequence_ledger"
+     },
+     {
+      "rows": 2,
+      "table": "thy_sequence_ledger_topics"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_restarts"
+     }
+    ],
+    "qyris_version": "QYRIS-1",
+    "sequence_head": 591
+   },
+   "read_path": [
+    "NEWEST DELTAS",
+    "TOPIC MANIFEST",
+    "AUTHORITY LOCKS",
+    "LINKED GRAPH",
+    "LINKED PEOPLE/PLACES/OBJECTS/PRODUCTS",
+    "LINKED WORK",
+    "LINKED GATES",
+    "CURRENT VS SUPERSEDED",
+    "LAST RESTART",
+    "ANSWER"
+   ],
+   "topic_key": "TIME RUN",
+   "read_model": "CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION",
+   "answer_rule": "Answer from current statements. Superseded statements are history, not canon.",
+   "linked_work": [],
+   "last_restart": {
+    "reason": "Sequence 591 applied the OMNIVIEW pack live and linked live topic authority.",
+    "authority": "Chairman",
+    "sequence_no": 591,
+    "restart_point": "OMNIVIEW is LIVE APPLIED on thylora-dash at ledger 591 and NOT LIVE UI WITNESSED. Chairman-only reads. Next: Chairman phone sign-in to CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard and restore the seven baseline capabilities there before promotion; answer the Royal Castle name, the Alistair household, the Time Run final name and ERFL-001 vs GGL-001."
+   },
+   "linked_gates": [],
+   "linked_graph": [
+    {
+     "status": "ACTIVE",
+     "link_key": "app/time-run.html",
+     "relation": "Member app surface",
+     "link_class": "OBJECT",
+     "source_ref": "app/time-run.html",
+     "display_name": "Time Run app surface",
+     "source_table": null,
+     "entered_sequence_no": 587
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "THY-TIME-RUN-001",
+     "relation": "Authority record",
+     "link_class": "SYSTEM",
+     "source_ref": "THY-TIME-RUN-001",
+     "display_name": "THY-TIME-RUN-001 Time Run registry",
+     "source_table": "thylora_time_run_registry",
+     "entered_sequence_no": 591
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "app",
+     "relation": "Time Run is wired into accepted app navigation",
+     "link_class": "SYSTEM",
+     "source_ref": "app/index.html",
+     "display_name": "THYLORA member app",
+     "source_table": null,
+     "entered_sequence_no": 587
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "thylora_time_run_award_catalog",
+     "relation": "Programme registry",
+     "link_class": "SYSTEM",
+     "source_ref": null,
+     "display_name": "Time Run award catalog",
+     "source_table": "thylora_time_run_award_catalog",
+     "entered_sequence_no": 591
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "thylora_time_run_events",
+     "relation": "Programme registry",
+     "link_class": "SYSTEM",
+     "source_ref": null,
+     "display_name": "Time Run events",
+     "source_table": "thylora_time_run_events",
+     "entered_sequence_no": 591
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "thylora_time_run_host_rules",
+     "relation": "Programme registry",
+     "link_class": "SYSTEM",
+     "source_ref": null,
+     "display_name": "Time Run host rules",
+     "source_table": "thylora_time_run_host_rules",
+     "entered_sequence_no": 591
+    }
+   ],
+   "last_sequence": {
+    "authority": "Chairman",
+    "sequence_no": 591,
+    "truth_class": "BACKEND_VERIFIED",
+    "occurred_utc": "2026-09-23T17:39:23Z",
+    "what_changed": "The OMNIVIEW pack (thy_sequence_* and thy_omniview_*: 8 tables, read model, write path, Chairman-only RLS) is applied to thylora-dash. Live topic authority was read from the backend of record and linked for TIME RUN, CASTLE (ROYAL CASTLE), ALISTAIR CROWE, STORE, SPORTS and QYRIS.",
+    "restart_point": "OMNIVIEW is live on thylora-dash at ledger 591. Next: Chairman mobile witness of CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard; answer the open next-better questions (Royal Castle name, Alistair household, Time Run final name).",
+    "what_remained": "No existing THYLORA table, policy, function or row was altered or removed. The only writes outside thy_* objects are one QYRIS work-item check (pre-execution) and additive graph nodes, edges and versions. Deployment authority for the dashboard stays with vyc2st-ctrl/thylora-executive-dashboard; CONTEXT and SEQUENCE are LIVE APPLIED on the backend, NOT LIVE UI WITNESSED.",
+    "local_timezone": "America/New_York",
+    "occurred_local": "2026-09-23 13:39",
+    "why_it_changed": "Before apply, three conflicts between the reviewed pack and the live backend were corrected: reads were open to any signed-in account (now thylora_is_chairman(), the rule carryforward already uses); the carryforward context reader was SECURITY DEFINER and would have bypassed carryforward RLS (now SECURITY INVOKER); and the seed wrote ledger 588 for a change that carryforward 588 assigns to different work (now 587).",
+    "next_better_question": "Will the Chairman sign in on the phone and open CONTEXT and SEQUENCE on the current head, so LIVE APPLIED can become LIVE UI WITNESSED?"
+   },
+   "newest_deltas": [
+    {
+     "topics": [
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "ALISTAIR CROWE"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "CASTLE"
+      },
+      {
+       "effect": "GATE_CHANGED",
+       "topic_key": "DASHBOARD"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "OMNIVIEW"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "QYRIS"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "SPORTS"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "STORE"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "TIME RUN"
+      }
+     ],
+     "authority": "Chairman",
+     "supersedes": null,
+     "sequence_no": 591,
+     "truth_class": "BACKEND_VERIFIED",
+     "occurred_utc": "2026-09-23T17:39:23Z",
+     "what_changed": "The OMNIVIEW pack (thy_sequence_* and thy_omniview_*: 8 tables, read model, write path, Chairman-only RLS) is applied to thylora-dash. Live topic authority was read from the backend of record and linked for TIME RUN, CASTLE (ROYAL CASTLE), ALISTAIR CROWE, STORE, SPORTS and QYRIS.",
+     "restart_point": "OMNIVIEW is live on thylora-dash at ledger 591. Next: Chairman mobile witness of CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard; answer the open next-better questions (Royal Castle name, Alistair household, Time Run final name).",
+     "what_remained": "No existing THYLORA table, policy, function or row was altered or removed. The only writes outside thy_* objects are one QYRIS work-item check (pre-execution) and additive graph nodes, edges and versions. Deployment authority for the dashboard stays with vyc2st-ctrl/thylora-executive-dashboard; CONTEXT and SEQUENCE are LIVE APPLIED on the backend, NOT LIVE UI WITNESSED.",
+     "local_timezone": "America/New_York",
+     "occurred_local": "2026-09-23 13:39",
+     "why_it_changed": "Before apply, three conflicts between the reviewed pack and the live backend were corrected: reads were open to any signed-in account (now thylora_is_chairman(), the rule carryforward already uses); the carryforward context reader was SECURITY DEFINER and would have bypassed carryforward RLS (now SECURITY INVOKER); and the seed wrote ledger 588 for a change that carryforward 588 assigns to different work (now 587).",
+     "why_change_occurred": "Carryforward 591 directed that the reviewed OMNIVIEW branch be applied to the live backend and witnessed (THY-WORK-OMNIVIEW-LIVE-APPLY-591).",
+     "next_better_question": "Will the Chairman sign in on the phone and open CONTEXT and SEQUENCE on the current head, so LIVE APPLIED can become LIVE UI WITNESSED?",
+     "previous_sequence_no": 587
+    },
+    {
+     "topics": [
+      {
+       "effect": "TOUCHED",
+       "topic_key": "CASTLE"
+      },
+      {
+       "effect": "WORK_CHANGED",
+       "topic_key": "DASHBOARD"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "ECONOMY"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "OMNIVIEW"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "QYRIS"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "STORE"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "TIME RUN"
+      }
+     ],
+     "authority": "Chairman",
+     "supersedes": null,
+     "sequence_no": 587,
+     "truth_class": "REPO_VERIFIED",
+     "occurred_utc": "2026-09-22T14:05:31Z",
+     "what_changed": "The sequence change ledger was opened at 587, and CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION was written: topic manifest, authority locks, linked graph, linked people/places/objects/products, linked work, gates, current-vs-superseded canon, last restart, an OMNIVIEW read trace on every read, and CONTEXT + SEQUENCE surfaces inside the existing dashboard.",
+     "restart_point": "OMNIVIEW pack written and verified against a throwaway PostgreSQL 16 database (commit 9d359c6). Not applied to the live backend at 587.",
+     "what_remained": "No existing THYLORA table was dropped, renamed or rewritten. The dashboard was extended, not replaced. Deployment authority stays with vyc2st-ctrl/thylora-executive-dashboard. Sequences 1-586, and every later carryforward sequence that is not a ledger row, stay in thylora_query_carryforward and are readable through thy_sequence_prior_context, never presented as ledger rows.",
+     "local_timezone": "America/New_York",
+     "occurred_local": "2026-09-22 10:05",
+     "why_it_changed": "Re-reading every raw backend row each turn is slow and still unprovable. One governed read returns the state and names exactly which tables it touched, so an answer can no longer claim a table it never read.",
+     "why_change_occurred": "THY-WORK-OMNIVIEW-ROUNDTRIP-587 and THY-WORK-SEQUENCE-CHANGE-LEDGER-587: the spine had no single read that returns current state plus the history behind it, and sequence numbers were not an auditable change ledger.",
+     "next_better_question": "Which UNSEEDED topic does the Chairman want seeded first: CASTLE, INÉS, VERONICA, FOOTBALL or VEHICLES?",
+     "previous_sequence_no": null
+    }
+   ],
+   "open_questions": [
+    {
+     "id": 13,
+     "state": "OPEN",
+     "question": "What is the canonical final name of THY-TIME-RUN-001?",
+     "is_next_better": true,
+     "why_it_matters": "It is the first unresolved item on the registry of record; every public use of the name waits on it.",
+     "entered_sequence_no": 591
+    }
+   ],
+   "topic_manifest": {
+    "summary": "Time Run surface carried in the member app.",
+    "topic_key": "TIME RUN",
+    "canon_state": "PARTIAL",
+    "topic_class": "PROGRAM",
+    "display_name": "TIME RUN",
+    "last_sequence_no": 591,
+    "superseded_by_topic": null
+   },
+   "authority_locks": {
+    "authority_lock": "BACKEND_OF_RECORD",
+    "authority_holder": "Chairman directive held in thylora_time_run_registry THY-TIME-RUN-001",
+    "answerable_as_canon": true
+   },
+   "linked_entities": {
+    "money": [],
+    "people": [],
+    "places": [],
+    "topics": [],
+    "objects": [
+     {
+      "status": "ACTIVE",
+      "link_key": "app/time-run.html",
+      "relation": "Member app surface",
+      "link_class": "OBJECT",
+      "source_ref": "app/time-run.html",
+      "display_name": "Time Run app surface",
+      "source_table": null,
+      "entered_sequence_no": 587
+     }
+    ],
+    "systems": [
+     {
+      "status": "ACTIVE",
+      "link_key": "THY-TIME-RUN-001",
+      "relation": "Authority record",
+      "link_class": "SYSTEM",
+      "source_ref": "THY-TIME-RUN-001",
+      "display_name": "THY-TIME-RUN-001 Time Run registry",
+      "source_table": "thylora_time_run_registry",
+      "entered_sequence_no": 591
+     },
+     {
+      "status": "ACTIVE",
+      "link_key": "app",
+      "relation": "Time Run is wired into accepted app navigation",
+      "link_class": "SYSTEM",
+      "source_ref": "app/index.html",
+      "display_name": "THYLORA member app",
+      "source_table": null,
+      "entered_sequence_no": 587
+     },
+     {
+      "status": "ACTIVE",
+      "link_key": "thylora_time_run_award_catalog",
+      "relation": "Programme registry",
+      "link_class": "SYSTEM",
+      "source_ref": null,
+      "display_name": "Time Run award catalog",
+      "source_table": "thylora_time_run_award_catalog",
+      "entered_sequence_no": 591
+     },
+     {
+      "status": "ACTIVE",
+      "link_key": "thylora_time_run_events",
+      "relation": "Programme registry",
+      "link_class": "SYSTEM",
+      "source_ref": null,
+      "display_name": "Time Run events",
+      "source_table": "thylora_time_run_events",
+      "entered_sequence_no": 591
+     },
+     {
+      "status": "ACTIVE",
+      "link_key": "thylora_time_run_host_rules",
+      "relation": "Programme registry",
+      "link_class": "SYSTEM",
+      "source_ref": null,
+      "display_name": "Time Run host rules",
+      "source_table": "thylora_time_run_host_rules",
+      "entered_sequence_no": 591
+     }
+    ],
+    "products": []
+   },
+   "next_better_question": {
+    "question": "What is the canonical final name of THY-TIME-RUN-001?",
+    "why_it_matters": "It is the first unresolved item on the registry of record; every public use of the name waits on it."
+   },
+   "current_vs_superseded": {
+    "current": [
+     {
+      "id": 13,
+      "body": "Fourteen items are unresolved on THY-TIME-RUN-001, first among them the canonical final name, the exact era/year sequence, and trust legal identity and payout mechanics. Until they are settled none of them may be stated as canon.",
+      "kind": "CONSTRAINT",
+      "authority": "Chairman",
+      "source_ref": "thylora_time_run_registry:THY-TIME-RUN-001.unresolved",
+      "truth_class": "BACKEND_VERIFIED",
+      "entered_sequence_no": 591
+     },
+     {
+      "id": 12,
+      "body": "THY-TIME-RUN-001 \"THYLORA Time Run / era travel competition\" is the Time Run of record: truth_class CHAIRMAN_DIRECTIVE, state IMPLEMENTATION_ACTIVE, version 4 (updated 2026-09-21T21:07Z). It is a whole programme with award catalog, events and host-rule registries; the member-app surface is one visible part of it.",
+      "kind": "CANON",
+      "authority": "Chairman",
+      "source_ref": "thylora_time_run_registry:THY-TIME-RUN-001",
+      "truth_class": "BACKEND_VERIFIED",
+      "entered_sequence_no": 591
+     },
+     {
+      "id": 8,
+      "body": "Time Run has a surface in the member app (app/time-run.html, app/time-run.js, app/time-run.css) and is wired into accepted app navigation. Whether that surface is the whole of TIME RUN canon is not established by this repository.",
+      "kind": "EVIDENCE",
+      "authority": "Chairman",
+      "source_ref": "app/time-run.html",
+      "truth_class": "REPO_VERIFIED",
+      "entered_sequence_no": 587
+     }
+    ],
+    "superseded": [],
+    "current_count": 3,
+    "superseded_count": 0
+   }
+  },
+  "VEHICLES": {
+   "found": true,
+   "qyris": {
+    "scope": "TOPIC_EXPANSION",
+    "topic": "VEHICLES",
+    "not_read": [
+     "raw THYLORA registries were not swept this turn",
+     "soft-referenced rows are resolved only when a link is opened",
+     "anything absent from the OMNIVIEW tables is reported as UNSEEDED, never inferred"
+    ],
+    "claim_rule": "Only tables listed in tables_read were read. No other table may be claimed.",
+    "read_at_utc": "2026-09-23T17:43:39Z",
+    "tables_read": [
+     {
+      "rows": 1,
+      "table": "thy_omniview_topics"
+     },
+     {
+      "rows": 0,
+      "table": "thy_omniview_statements"
+     },
+     {
+      "rows": 0,
+      "table": "thy_omniview_links"
+     },
+     {
+      "rows": 0,
+      "table": "thy_omniview_gates"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_questions"
+     },
+     {
+      "rows": 0,
+      "table": "thy_sequence_ledger"
+     },
+     {
+      "rows": 0,
+      "table": "thy_sequence_ledger_topics"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_restarts"
+     }
+    ],
+    "qyris_version": "QYRIS-1",
+    "sequence_head": 591
+   },
+   "read_path": [
+    "NEWEST DELTAS",
+    "TOPIC MANIFEST",
+    "AUTHORITY LOCKS",
+    "LINKED GRAPH",
+    "LINKED PEOPLE/PLACES/OBJECTS/PRODUCTS",
+    "LINKED WORK",
+    "LINKED GATES",
+    "CURRENT VS SUPERSEDED",
+    "LAST RESTART",
+    "ANSWER"
+   ],
+   "topic_key": "VEHICLES",
+   "read_model": "CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION",
+   "answer_rule": "Canon for this topic is not written. Answer with the open question, not with an assumption.",
+   "linked_work": [],
+   "last_restart": {
+    "reason": "Sequence 591 applied the OMNIVIEW pack live and linked live topic authority.",
+    "authority": "Chairman",
+    "sequence_no": 591,
+    "restart_point": "OMNIVIEW is LIVE APPLIED on thylora-dash at ledger 591 and NOT LIVE UI WITNESSED. Chairman-only reads. Next: Chairman phone sign-in to CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard and restore the seven baseline capabilities there before promotion; answer the Royal Castle name, the Alistair household, the Time Run final name and ERFL-001 vs GGL-001."
+   },
+   "linked_gates": [],
+   "linked_graph": [],
+   "last_sequence": null,
+   "newest_deltas": [],
+   "open_questions": [
+    {
+     "id": 5,
+     "state": "OPEN",
+     "question": "Which vehicles are on the THYLORA register, and is the register an asset list, a fleet, or a product line?",
+     "is_next_better": true,
+     "why_it_matters": "VEHICLES is registered with no linked record of any class.",
+     "entered_sequence_no": 587
+    }
+   ],
+   "topic_manifest": {
+    "summary": null,
+    "topic_key": "VEHICLES",
+    "canon_state": "UNSEEDED",
+    "topic_class": "OBJECT",
+    "display_name": "VEHICLES",
+    "last_sequence_no": null,
+    "superseded_by_topic": null
+   },
+   "authority_locks": {
+    "authority_lock": "CHAIRMAN",
+    "authority_holder": "Chairman",
+    "answerable_as_canon": false
+   },
+   "linked_entities": {
+    "money": [],
+    "people": [],
+    "places": [],
+    "topics": [],
+    "objects": [],
+    "systems": [],
+    "products": []
+   },
+   "next_better_question": {
+    "question": "Which vehicles are on the THYLORA register, and is the register an asset list, a fleet, or a product line?",
+    "why_it_matters": "VEHICLES is registered with no linked record of any class."
+   },
+   "current_vs_superseded": {
+    "current": [],
+    "superseded": [],
+    "current_count": 0,
+    "superseded_count": 0
+   }
+  },
+  "VERONICA": {
+   "found": true,
+   "qyris": {
+    "scope": "TOPIC_EXPANSION",
+    "topic": "VERONICA",
+    "not_read": [
+     "raw THYLORA registries were not swept this turn",
+     "soft-referenced rows are resolved only when a link is opened",
+     "anything absent from the OMNIVIEW tables is reported as UNSEEDED, never inferred"
+    ],
+    "claim_rule": "Only tables listed in tables_read were read. No other table may be claimed.",
+    "read_at_utc": "2026-09-23T17:43:39Z",
+    "tables_read": [
+     {
+      "rows": 1,
+      "table": "thy_omniview_topics"
+     },
+     {
+      "rows": 0,
+      "table": "thy_omniview_statements"
+     },
+     {
+      "rows": 0,
+      "table": "thy_omniview_links"
+     },
+     {
+      "rows": 0,
+      "table": "thy_omniview_gates"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_questions"
+     },
+     {
+      "rows": 0,
+      "table": "thy_sequence_ledger"
+     },
+     {
+      "rows": 0,
+      "table": "thy_sequence_ledger_topics"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_restarts"
+     }
+    ],
+    "qyris_version": "QYRIS-1",
+    "sequence_head": 591
+   },
+   "read_path": [
+    "NEWEST DELTAS",
+    "TOPIC MANIFEST",
+    "AUTHORITY LOCKS",
+    "LINKED GRAPH",
+    "LINKED PEOPLE/PLACES/OBJECTS/PRODUCTS",
+    "LINKED WORK",
+    "LINKED GATES",
+    "CURRENT VS SUPERSEDED",
+    "LAST RESTART",
+    "ANSWER"
+   ],
+   "topic_key": "VERONICA",
+   "read_model": "CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION",
+   "answer_rule": "Canon for this topic is not written. Answer with the open question, not with an assumption.",
+   "linked_work": [],
+   "last_restart": {
+    "reason": "Sequence 591 applied the OMNIVIEW pack live and linked live topic authority.",
+    "authority": "Chairman",
+    "sequence_no": 591,
+    "restart_point": "OMNIVIEW is LIVE APPLIED on thylora-dash at ledger 591 and NOT LIVE UI WITNESSED. Chairman-only reads. Next: Chairman phone sign-in to CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard and restore the seven baseline capabilities there before promotion; answer the Royal Castle name, the Alistair household, the Time Run final name and ERFL-001 vs GGL-001."
+   },
+   "linked_gates": [],
+   "linked_graph": [],
+   "last_sequence": null,
+   "newest_deltas": [],
+   "open_questions": [
+    {
+     "id": 3,
+     "state": "OPEN",
+     "question": "What is VERONICA to THYLORA, and which existing registry already holds part of it?",
+     "is_next_better": true,
+     "why_it_matters": "Registering canon in the wrong place creates a second source of truth.",
+     "entered_sequence_no": 587
+    }
+   ],
+   "topic_manifest": {
+    "summary": null,
+    "topic_key": "VERONICA",
+    "canon_state": "UNSEEDED",
+    "topic_class": "PERSON",
+    "display_name": "VERONICA",
+    "last_sequence_no": null,
+    "superseded_by_topic": null
+   },
+   "authority_locks": {
+    "authority_lock": "CHAIRMAN",
+    "authority_holder": "Chairman",
+    "answerable_as_canon": false
+   },
+   "linked_entities": {
+    "money": [],
+    "people": [],
+    "places": [],
+    "topics": [],
+    "objects": [],
+    "systems": [],
+    "products": []
+   },
+   "next_better_question": {
+    "question": "What is VERONICA to THYLORA, and which existing registry already holds part of it?",
+    "why_it_matters": "Registering canon in the wrong place creates a second source of truth."
+   },
+   "current_vs_superseded": {
+    "current": [],
+    "superseded": [],
+    "current_count": 0,
+    "superseded_count": 0
+   }
+  },
+  "DASHBOARD": {
+   "found": true,
+   "qyris": {
+    "scope": "TOPIC_EXPANSION",
+    "topic": "DASHBOARD",
+    "not_read": [
+     "raw THYLORA registries were not swept this turn",
+     "soft-referenced rows are resolved only when a link is opened",
+     "anything absent from the OMNIVIEW tables is reported as UNSEEDED, never inferred"
+    ],
+    "claim_rule": "Only tables listed in tables_read were read. No other table may be claimed.",
+    "read_at_utc": "2026-09-23T17:43:39Z",
+    "tables_read": [
+     {
+      "rows": 1,
+      "table": "thy_omniview_topics"
+     },
+     {
+      "rows": 4,
+      "table": "thy_omniview_statements"
+     },
+     {
+      "rows": 5,
+      "table": "thy_omniview_links"
+     },
+     {
+      "rows": 4,
+      "table": "thy_omniview_gates"
+     },
+     {
+      "rows": 2,
+      "table": "thy_omniview_questions"
+     },
+     {
+      "rows": 2,
+      "table": "thy_sequence_ledger"
+     },
+     {
+      "rows": 2,
+      "table": "thy_sequence_ledger_topics"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_restarts"
+     }
+    ],
+    "qyris_version": "QYRIS-1",
+    "sequence_head": 591
+   },
+   "read_path": [
+    "NEWEST DELTAS",
+    "TOPIC MANIFEST",
+    "AUTHORITY LOCKS",
+    "LINKED GRAPH",
+    "LINKED PEOPLE/PLACES/OBJECTS/PRODUCTS",
+    "LINKED WORK",
+    "LINKED GATES",
+    "CURRENT VS SUPERSEDED",
+    "LAST RESTART",
+    "ANSWER"
+   ],
+   "topic_key": "DASHBOARD",
+   "read_model": "CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION",
+   "answer_rule": "Answer from current statements. Superseded statements are history, not canon.",
+   "linked_work": [
+    {
+     "status": "ACTIVE",
+     "link_key": "THY-WORK-DASHBOARD-INTERACTION-CLOSEOUT-562",
+     "relation": "Open work: every control reaches a real destination",
+     "link_class": "WORK",
+     "source_ref": "tests/dead-controls.test.mjs",
+     "display_name": "Dashboard interaction closeout",
+     "source_table": null,
+     "entered_sequence_no": 587
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "THY-WORK-OMNIVIEW-ROUNDTRIP-587",
+     "relation": "CONTEXT and SEQUENCE surfaces inside the existing dashboard",
+     "link_class": "WORK",
+     "source_ref": "app/omniview-surface.js",
+     "display_name": "OMNIVIEW round trip",
+     "source_table": null,
+     "entered_sequence_no": 587
+    }
+   ],
+   "last_restart": {
+    "reason": "Sequence 591 applied the OMNIVIEW pack live and linked live topic authority.",
+    "authority": "Chairman",
+    "sequence_no": 591,
+    "restart_point": "OMNIVIEW is LIVE APPLIED on thylora-dash at ledger 591 and NOT LIVE UI WITNESSED. Chairman-only reads. Next: Chairman phone sign-in to CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard and restore the seven baseline capabilities there before promotion; answer the Royal Castle name, the Alistair household, the Time Run final name and ERFL-001 vs GGL-001."
+   },
+   "linked_gates": [
+    {
+     "blocker": "Seven baseline capabilities are absent from this repository copy of the head: Product & Storefront, Commerce Proof, System Health, Required Chairman Action, Approvals, Digital Product Passports, Connection Evidence. The shortfall predates sequence 587 and was not caused by the OMNIVIEW delta. Whether the live head on thylora-public-world carries them could not be checked: egress was denied.",
+     "gate_key": "GATE-BASELINE-FLOOR",
+     "authority": "Chairman",
+     "gate_state": "BLOCKED",
+     "requirement": "The head carries every capability named in baseline THY-DASH-FLOOR-20260823-001.",
+     "evidence_ref": "dashboard-baseline-gap.json",
+     "entered_sequence_no": 587,
+     "settled_sequence_no": null
+    },
+    {
+     "blocker": "LIVE APPLIED is not LIVE UI WITNESSED. Needs: merge into vyc2st-ctrl/thylora-executive-dashboard, deploy on thylora-public-world, and a Chairman sign-in on the phone.",
+     "gate_key": "GATE-OMNIVIEW-WITNESSED",
+     "authority": "Chairman",
+     "gate_state": "BLOCKED",
+     "requirement": "CONTEXT and SEQUENCE are witnessed working on thylora-public-world after merge into vyc2st-ctrl/thylora-executive-dashboard.",
+     "evidence_ref": "DASHBOARD_AUTHORITY.md",
+     "entered_sequence_no": 587,
+     "settled_sequence_no": null
+    },
+    {
+     "blocker": null,
+     "gate_key": "GATE-BASELINE-PRESERVED",
+     "authority": "Chairman",
+     "gate_state": "PASSED",
+     "requirement": "The OMNIVIEW delta removes no capability that the current head already carried.",
+     "evidence_ref": "tests/dashboard-delta.test.mjs",
+     "entered_sequence_no": 587,
+     "settled_sequence_no": 587
+    },
+    {
+     "blocker": null,
+     "gate_key": "GATE-DEAD-CONTROLS",
+     "authority": "Chairman",
+     "gate_state": "PASSED",
+     "requirement": "Every button, control and in-page link in the dashboard, app, public site and RAE Link reaches a real destination.",
+     "evidence_ref": "tests/dead-controls.test.mjs",
+     "entered_sequence_no": 587,
+     "settled_sequence_no": 587
+    }
+   ],
+   "linked_graph": [
+    {
+     "status": "ACTIVE",
+     "link_key": "thylora-dash",
+     "relation": "Backend of record",
+     "link_class": "SYSTEM",
+     "source_ref": "DASHBOARD_AUTHORITY.md",
+     "display_name": "thylora-dash (jvsdxhrfhtlgaknhjxlz)",
+     "source_table": null,
+     "entered_sequence_no": 587
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "thylora-public-world",
+     "relation": "Authoritative runtime project",
+     "link_class": "SYSTEM",
+     "source_ref": "DASHBOARD_AUTHORITY.md",
+     "display_name": "thylora-public-world",
+     "source_table": null,
+     "entered_sequence_no": 587
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "OMNIVIEW",
+     "relation": "Dashboard surfaces the OMNIVIEW read model",
+     "link_class": "TOPIC",
+     "source_ref": null,
+     "display_name": "OMNIVIEW",
+     "source_table": null,
+     "entered_sequence_no": 587
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "THY-WORK-DASHBOARD-INTERACTION-CLOSEOUT-562",
+     "relation": "Open work: every control reaches a real destination",
+     "link_class": "WORK",
+     "source_ref": "tests/dead-controls.test.mjs",
+     "display_name": "Dashboard interaction closeout",
+     "source_table": null,
+     "entered_sequence_no": 587
+    },
+    {
+     "status": "ACTIVE",
+     "link_key": "THY-WORK-OMNIVIEW-ROUNDTRIP-587",
+     "relation": "CONTEXT and SEQUENCE surfaces inside the existing dashboard",
+     "link_class": "WORK",
+     "source_ref": "app/omniview-surface.js",
+     "display_name": "OMNIVIEW round trip",
+     "source_table": null,
+     "entered_sequence_no": 587
+    }
+   ],
+   "last_sequence": {
+    "authority": "Chairman",
+    "sequence_no": 591,
+    "truth_class": "BACKEND_VERIFIED",
+    "occurred_utc": "2026-09-23T17:39:23Z",
+    "what_changed": "The OMNIVIEW pack (thy_sequence_* and thy_omniview_*: 8 tables, read model, write path, Chairman-only RLS) is applied to thylora-dash. Live topic authority was read from the backend of record and linked for TIME RUN, CASTLE (ROYAL CASTLE), ALISTAIR CROWE, STORE, SPORTS and QYRIS.",
+    "restart_point": "OMNIVIEW is live on thylora-dash at ledger 591. Next: Chairman mobile witness of CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard; answer the open next-better questions (Royal Castle name, Alistair household, Time Run final name).",
+    "what_remained": "No existing THYLORA table, policy, function or row was altered or removed. The only writes outside thy_* objects are one QYRIS work-item check (pre-execution) and additive graph nodes, edges and versions. Deployment authority for the dashboard stays with vyc2st-ctrl/thylora-executive-dashboard; CONTEXT and SEQUENCE are LIVE APPLIED on the backend, NOT LIVE UI WITNESSED.",
+    "local_timezone": "America/New_York",
+    "occurred_local": "2026-09-23 13:39",
+    "why_it_changed": "Before apply, three conflicts between the reviewed pack and the live backend were corrected: reads were open to any signed-in account (now thylora_is_chairman(), the rule carryforward already uses); the carryforward context reader was SECURITY DEFINER and would have bypassed carryforward RLS (now SECURITY INVOKER); and the seed wrote ledger 588 for a change that carryforward 588 assigns to different work (now 587).",
+    "next_better_question": "Will the Chairman sign in on the phone and open CONTEXT and SEQUENCE on the current head, so LIVE APPLIED can become LIVE UI WITNESSED?"
+   },
+   "newest_deltas": [
+    {
+     "topics": [
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "ALISTAIR CROWE"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "CASTLE"
+      },
+      {
+       "effect": "GATE_CHANGED",
+       "topic_key": "DASHBOARD"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "OMNIVIEW"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "QYRIS"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "SPORTS"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "STORE"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "TIME RUN"
+      }
+     ],
+     "authority": "Chairman",
+     "supersedes": null,
+     "sequence_no": 591,
+     "truth_class": "BACKEND_VERIFIED",
+     "occurred_utc": "2026-09-23T17:39:23Z",
+     "what_changed": "The OMNIVIEW pack (thy_sequence_* and thy_omniview_*: 8 tables, read model, write path, Chairman-only RLS) is applied to thylora-dash. Live topic authority was read from the backend of record and linked for TIME RUN, CASTLE (ROYAL CASTLE), ALISTAIR CROWE, STORE, SPORTS and QYRIS.",
+     "restart_point": "OMNIVIEW is live on thylora-dash at ledger 591. Next: Chairman mobile witness of CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard; answer the open next-better questions (Royal Castle name, Alistair household, Time Run final name).",
+     "what_remained": "No existing THYLORA table, policy, function or row was altered or removed. The only writes outside thy_* objects are one QYRIS work-item check (pre-execution) and additive graph nodes, edges and versions. Deployment authority for the dashboard stays with vyc2st-ctrl/thylora-executive-dashboard; CONTEXT and SEQUENCE are LIVE APPLIED on the backend, NOT LIVE UI WITNESSED.",
+     "local_timezone": "America/New_York",
+     "occurred_local": "2026-09-23 13:39",
+     "why_it_changed": "Before apply, three conflicts between the reviewed pack and the live backend were corrected: reads were open to any signed-in account (now thylora_is_chairman(), the rule carryforward already uses); the carryforward context reader was SECURITY DEFINER and would have bypassed carryforward RLS (now SECURITY INVOKER); and the seed wrote ledger 588 for a change that carryforward 588 assigns to different work (now 587).",
+     "why_change_occurred": "Carryforward 591 directed that the reviewed OMNIVIEW branch be applied to the live backend and witnessed (THY-WORK-OMNIVIEW-LIVE-APPLY-591).",
+     "next_better_question": "Will the Chairman sign in on the phone and open CONTEXT and SEQUENCE on the current head, so LIVE APPLIED can become LIVE UI WITNESSED?",
+     "previous_sequence_no": 587
+    },
+    {
+     "topics": [
+      {
+       "effect": "TOUCHED",
+       "topic_key": "CASTLE"
+      },
+      {
+       "effect": "WORK_CHANGED",
+       "topic_key": "DASHBOARD"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "ECONOMY"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "OMNIVIEW"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "QYRIS"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "STORE"
+      },
+      {
+       "effect": "TOUCHED",
+       "topic_key": "TIME RUN"
+      }
+     ],
+     "authority": "Chairman",
+     "supersedes": null,
+     "sequence_no": 587,
+     "truth_class": "REPO_VERIFIED",
+     "occurred_utc": "2026-09-22T14:05:31Z",
+     "what_changed": "The sequence change ledger was opened at 587, and CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION was written: topic manifest, authority locks, linked graph, linked people/places/objects/products, linked work, gates, current-vs-superseded canon, last restart, an OMNIVIEW read trace on every read, and CONTEXT + SEQUENCE surfaces inside the existing dashboard.",
+     "restart_point": "OMNIVIEW pack written and verified against a throwaway PostgreSQL 16 database (commit 9d359c6). Not applied to the live backend at 587.",
+     "what_remained": "No existing THYLORA table was dropped, renamed or rewritten. The dashboard was extended, not replaced. Deployment authority stays with vyc2st-ctrl/thylora-executive-dashboard. Sequences 1-586, and every later carryforward sequence that is not a ledger row, stay in thylora_query_carryforward and are readable through thy_sequence_prior_context, never presented as ledger rows.",
+     "local_timezone": "America/New_York",
+     "occurred_local": "2026-09-22 10:05",
+     "why_it_changed": "Re-reading every raw backend row each turn is slow and still unprovable. One governed read returns the state and names exactly which tables it touched, so an answer can no longer claim a table it never read.",
+     "why_change_occurred": "THY-WORK-OMNIVIEW-ROUNDTRIP-587 and THY-WORK-SEQUENCE-CHANGE-LEDGER-587: the spine had no single read that returns current state plus the history behind it, and sequence numbers were not an auditable change ledger.",
+     "next_better_question": "Which UNSEEDED topic does the Chairman want seeded first: CASTLE, INÉS, VERONICA, FOOTBALL or VEHICLES?",
+     "previous_sequence_no": null
+    }
+   ],
+   "open_questions": [
+    {
+     "id": 9,
+     "state": "OPEN",
+     "question": "Does the live head on thylora-public-world still carry the seven capabilities missing from this repository copy, and if it does, should this copy be refreshed from vyc2st-ctrl/thylora-executive-dashboard?",
+     "is_next_better": true,
+     "why_it_matters": "A baseline floor that is silently below itself is worse than no floor. This is the one DASHBOARD answer that cannot be settled from inside this repository.",
+     "entered_sequence_no": 587
+    },
+    {
+     "id": 10,
+     "state": "OPEN",
+     "question": "After the OMNIVIEW pack is applied, which surface should open first on sign-in: CURRENT HEAD or CONTEXT?",
+     "is_next_better": false,
+     "why_it_matters": "The Chairman decides the landing surface; the delta ships CONTEXT as an added surface, not a replacement.",
+     "entered_sequence_no": 587
+    }
+   ],
+   "topic_manifest": {
+    "summary": "Chairman executive dashboard. Deployment authority is held outside this repository.",
+    "topic_key": "DASHBOARD",
+    "canon_state": "PARTIAL",
+    "topic_class": "SYSTEM",
+    "display_name": "DASHBOARD",
+    "last_sequence_no": 591,
+    "superseded_by_topic": null
+   },
+   "authority_locks": {
+    "authority_lock": "DEPLOYMENT_REPOSITORY",
+    "authority_holder": "vyc2st-ctrl/thylora-executive-dashboard",
+    "answerable_as_canon": true
+   },
+   "linked_entities": {
+    "money": [],
+    "people": [],
+    "places": [],
+    "topics": [
+     {
+      "status": "ACTIVE",
+      "link_key": "OMNIVIEW",
+      "relation": "Dashboard surfaces the OMNIVIEW read model",
+      "link_class": "TOPIC",
+      "source_ref": null,
+      "display_name": "OMNIVIEW",
+      "source_table": null,
+      "entered_sequence_no": 587
+     }
+    ],
+    "objects": [],
+    "systems": [
+     {
+      "status": "ACTIVE",
+      "link_key": "thylora-dash",
+      "relation": "Backend of record",
+      "link_class": "SYSTEM",
+      "source_ref": "DASHBOARD_AUTHORITY.md",
+      "display_name": "thylora-dash (jvsdxhrfhtlgaknhjxlz)",
+      "source_table": null,
+      "entered_sequence_no": 587
+     },
+     {
+      "status": "ACTIVE",
+      "link_key": "thylora-public-world",
+      "relation": "Authoritative runtime project",
+      "link_class": "SYSTEM",
+      "source_ref": "DASHBOARD_AUTHORITY.md",
+      "display_name": "thylora-public-world",
+      "source_table": null,
+      "entered_sequence_no": 587
+     }
+    ],
+    "products": []
+   },
+   "next_better_question": {
+    "question": "Does the live head on thylora-public-world still carry the seven capabilities missing from this repository copy, and if it does, should this copy be refreshed from vyc2st-ctrl/thylora-executive-dashboard?",
+    "why_it_matters": "A baseline floor that is silently below itself is worse than no floor. This is the one DASHBOARD answer that cannot be settled from inside this repository."
+   },
+   "current_vs_superseded": {
+    "current": [
+     {
+      "id": 4,
+      "body": "CONTEXT and SEQUENCE surfaces were added to the existing dashboard as an injected delta (app/omniview-surface.js), in the same pattern as the SPINE FORWARD command spine. No new dashboard was built.",
+      "kind": "EVIDENCE",
+      "authority": "Chairman",
+      "source_ref": "app/omniview-surface.js",
+      "truth_class": "REPO_VERIFIED",
+      "entered_sequence_no": 587
+     },
+     {
+      "id": 3,
+      "body": "FINDING at sequence 587: the copy of the head in vyc2st-ctrl/Thylora is seven capabilities below baseline THY-DASH-FLOOR-20260823-001 — Product & Storefront, Commerce Proof, System Health, Required Chairman Action, Approvals, Digital Product Passports, Connection Evidence. The shortfall is present in the file before the OMNIVIEW delta, so the delta did not cause it. The live head on thylora-public-world was not reachable and is NOT claimed either way.",
+      "kind": "EVIDENCE",
+      "authority": "Chairman",
+      "source_ref": "dashboard-baseline-gap.json",
+      "truth_class": "REPO_VERIFIED",
+      "entered_sequence_no": 587
+     },
+     {
+      "id": 2,
+      "body": "Baseline THY-DASH-FLOOR-20260823-001 holds: a future dashboard version may change appearance but may not silently remove a baseline capability, disconnect the existing backend, or replace the current head with an older state.",
+      "kind": "CONSTRAINT",
+      "authority": "Chairman",
+      "source_ref": "dashboard-baseline.json",
+      "truth_class": "REPO_VERIFIED",
+      "entered_sequence_no": 587
+     },
+     {
+      "id": 1,
+      "body": "Deployment authority for the Chairman dashboard is NOT this repository. The authoritative deployment repository is vyc2st-ctrl/thylora-executive-dashboard, the authoritative runtime project is thylora-public-world, and the backend is thylora-dash (jvsdxhrfhtlgaknhjxlz). A change is not live until it is merged there and witnessed on thylora-public-world.",
+      "kind": "CANON",
+      "authority": "Chairman",
+      "source_ref": "DASHBOARD_AUTHORITY.md",
+      "truth_class": "REPO_VERIFIED",
+      "entered_sequence_no": 587
+     }
+    ],
+    "superseded": [],
+    "current_count": 4,
+    "superseded_count": 0
+   }
+  },
+  "ALISTAIR CROWE": {
+   "found": true,
+   "qyris": {
+    "scope": "TOPIC_EXPANSION",
+    "topic": "ALISTAIR CROWE",
+    "not_read": [
+     "raw THYLORA registries were not swept this turn",
+     "soft-referenced rows are resolved only when a link is opened",
+     "anything absent from the OMNIVIEW tables is reported as UNSEEDED, never inferred"
+    ],
+    "claim_rule": "Only tables listed in tables_read were read. No other table may be claimed.",
+    "read_at_utc": "2026-09-23T17:43:39Z",
+    "tables_read": [
+     {
+      "rows": 1,
+      "table": "thy_omniview_topics"
+     },
+     {
+      "rows": 2,
+      "table": "thy_omniview_statements"
+     },
+     {
+      "rows": 0,
+      "table": "thy_omniview_links"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_gates"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_questions"
+     },
+     {
+      "rows": 1,
+      "table": "thy_sequence_ledger"
+     },
+     {
+      "rows": 1,
+      "table": "thy_sequence_ledger_topics"
+     },
+     {
+      "rows": 1,
+      "table": "thy_omniview_restarts"
+     }
+    ],
+    "qyris_version": "QYRIS-1",
+    "sequence_head": 591
+   },
+   "read_path": [
+    "NEWEST DELTAS",
+    "TOPIC MANIFEST",
+    "AUTHORITY LOCKS",
+    "LINKED GRAPH",
+    "LINKED PEOPLE/PLACES/OBJECTS/PRODUCTS",
+    "LINKED WORK",
+    "LINKED GATES",
+    "CURRENT VS SUPERSEDED",
+    "LAST RESTART",
+    "ANSWER"
+   ],
+   "topic_key": "ALISTAIR CROWE",
+   "read_model": "CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION",
+   "answer_rule": "Canon for this topic is not written. Answer with the open question, not with an assumption.",
+   "linked_work": [],
+   "last_restart": {
+    "reason": "Sequence 591 applied the OMNIVIEW pack live and linked live topic authority.",
+    "authority": "Chairman",
+    "sequence_no": 591,
+    "restart_point": "OMNIVIEW is LIVE APPLIED on thylora-dash at ledger 591 and NOT LIVE UI WITNESSED. Chairman-only reads. Next: Chairman phone sign-in to CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard and restore the seven baseline capabilities there before promotion; answer the Royal Castle name, the Alistair household, the Time Run final name and ERFL-001 vs GGL-001."
+   },
+   "linked_gates": [
+    {
+     "blocker": "Chairman decision (b) at carryforward 589 is unanswered.",
+     "gate_key": "GATE-ALISTAIR-SOURCE",
+     "authority": "Chairman",
+     "gate_state": "OPEN",
+     "requirement": "The Chairman states whether the Alistair family is a household in canon or an archive lead, and the source of the Crowe name, before any detail is written.",
+     "evidence_ref": "thylora_query_carryforward:589",
+     "entered_sequence_no": 591,
+     "settled_sequence_no": null
+    }
+   ],
+   "linked_graph": [],
+   "last_sequence": {
+    "authority": "Chairman",
+    "sequence_no": 591,
+    "truth_class": "BACKEND_VERIFIED",
+    "occurred_utc": "2026-09-23T17:39:23Z",
+    "what_changed": "The OMNIVIEW pack (thy_sequence_* and thy_omniview_*: 8 tables, read model, write path, Chairman-only RLS) is applied to thylora-dash. Live topic authority was read from the backend of record and linked for TIME RUN, CASTLE (ROYAL CASTLE), ALISTAIR CROWE, STORE, SPORTS and QYRIS.",
+    "restart_point": "OMNIVIEW is live on thylora-dash at ledger 591. Next: Chairman mobile witness of CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard; answer the open next-better questions (Royal Castle name, Alistair household, Time Run final name).",
+    "what_remained": "No existing THYLORA table, policy, function or row was altered or removed. The only writes outside thy_* objects are one QYRIS work-item check (pre-execution) and additive graph nodes, edges and versions. Deployment authority for the dashboard stays with vyc2st-ctrl/thylora-executive-dashboard; CONTEXT and SEQUENCE are LIVE APPLIED on the backend, NOT LIVE UI WITNESSED.",
+    "local_timezone": "America/New_York",
+    "occurred_local": "2026-09-23 13:39",
+    "why_it_changed": "Before apply, three conflicts between the reviewed pack and the live backend were corrected: reads were open to any signed-in account (now thylora_is_chairman(), the rule carryforward already uses); the carryforward context reader was SECURITY DEFINER and would have bypassed carryforward RLS (now SECURITY INVOKER); and the seed wrote ledger 588 for a change that carryforward 588 assigns to different work (now 587).",
+    "next_better_question": "Will the Chairman sign in on the phone and open CONTEXT and SEQUENCE on the current head, so LIVE APPLIED can become LIVE UI WITNESSED?"
+   },
+   "newest_deltas": [
+    {
+     "topics": [
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "ALISTAIR CROWE"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "CASTLE"
+      },
+      {
+       "effect": "GATE_CHANGED",
+       "topic_key": "DASHBOARD"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "OMNIVIEW"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "QYRIS"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "SPORTS"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "STORE"
+      },
+      {
+       "effect": "CANON_CHANGED",
+       "topic_key": "TIME RUN"
+      }
+     ],
+     "authority": "Chairman",
+     "supersedes": null,
+     "sequence_no": 591,
+     "truth_class": "BACKEND_VERIFIED",
+     "occurred_utc": "2026-09-23T17:39:23Z",
+     "what_changed": "The OMNIVIEW pack (thy_sequence_* and thy_omniview_*: 8 tables, read model, write path, Chairman-only RLS) is applied to thylora-dash. Live topic authority was read from the backend of record and linked for TIME RUN, CASTLE (ROYAL CASTLE), ALISTAIR CROWE, STORE, SPORTS and QYRIS.",
+     "restart_point": "OMNIVIEW is live on thylora-dash at ledger 591. Next: Chairman mobile witness of CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard; answer the open next-better questions (Royal Castle name, Alistair household, Time Run final name).",
+     "what_remained": "No existing THYLORA table, policy, function or row was altered or removed. The only writes outside thy_* objects are one QYRIS work-item check (pre-execution) and additive graph nodes, edges and versions. Deployment authority for the dashboard stays with vyc2st-ctrl/thylora-executive-dashboard; CONTEXT and SEQUENCE are LIVE APPLIED on the backend, NOT LIVE UI WITNESSED.",
+     "local_timezone": "America/New_York",
+     "occurred_local": "2026-09-23 13:39",
+     "why_it_changed": "Before apply, three conflicts between the reviewed pack and the live backend were corrected: reads were open to any signed-in account (now thylora_is_chairman(), the rule carryforward already uses); the carryforward context reader was SECURITY DEFINER and would have bypassed carryforward RLS (now SECURITY INVOKER); and the seed wrote ledger 588 for a change that carryforward 588 assigns to different work (now 587).",
+     "why_change_occurred": "Carryforward 591 directed that the reviewed OMNIVIEW branch be applied to the live backend and witnessed (THY-WORK-OMNIVIEW-LIVE-APPLY-591).",
+     "next_better_question": "Will the Chairman sign in on the phone and open CONTEXT and SEQUENCE on the current head, so LIVE APPLIED can become LIVE UI WITNESSED?",
+     "previous_sequence_no": 587
+    }
+   ],
+   "open_questions": [
+    {
+     "id": 15,
+     "state": "OPEN",
+     "question": "Is the Alistair family a household in canon or only an archive lead, and where does the name Crowe come from?",
+     "is_next_better": true,
+     "why_it_matters": "It is Chairman decision (b) at 589. Until it is answered, every Alistair answer is either the open question or invention.",
+     "entered_sequence_no": 591
+    }
+   ],
+   "topic_manifest": {
+    "summary": "Named by the Chairman. No person registry row exists; see the constraint before naming anyone or anything around this name.",
+    "topic_key": "ALISTAIR CROWE",
+    "canon_state": "UNSEEDED",
+    "topic_class": "PERSON",
+    "display_name": "ALISTAIR CROWE",
+    "last_sequence_no": 591,
+    "superseded_by_topic": null
+   },
+   "authority_locks": {
+    "authority_lock": "CHAIRMAN",
+    "authority_holder": "Chairman",
+    "answerable_as_canon": false
+   },
+   "linked_entities": {
+    "money": [],
+    "people": [],
+    "places": [],
+    "topics": [],
+    "objects": [],
+    "systems": [],
+    "products": []
+   },
+   "next_better_question": {
+    "question": "Is the Alistair family a household in canon or only an archive lead, and where does the name Crowe come from?",
+    "why_it_matters": "It is Chairman decision (b) at 589. Until it is answered, every Alistair answer is either the open question or invention."
+   },
+   "current_vs_superseded": {
+    "current": [
+     {
+      "id": 18,
+      "body": "Alistair household canon is not fabricated. Carryforward 531 proves a family/home reference existed; exact surname, role, family and address are not in any person registry. Crowe is a Chairman recovery clue only until sourced. Until the Chairman says whether the Alistair family is a household in canon or only an archive lead, no town, street, spouse, child or animal may be named in any public report.",
+      "kind": "CONSTRAINT",
+      "authority": "Chairman",
+      "source_ref": "thylora_query_carryforward:588,589",
+      "truth_class": "CHAIRMAN_ASSERTED",
+      "entered_sequence_no": 591
+     },
+     {
+      "id": 17,
+      "body": "At 591 no person registry, name canon, graph node or graph edge on thylora-dash names Alistair or Crowe. The name appears only in carryforward 531 (castle living detail), 588 and 589.",
+      "kind": "EVIDENCE",
+      "authority": "Chairman",
+      "source_ref": "thylora_person_name_canon, thylora_graph_nodes, thylora_graph_edges, thylora_query_carryforward",
+      "truth_class": "BACKEND_VERIFIED",
+      "entered_sequence_no": 591
+     }
+    ],
+    "superseded": [],
+    "current_count": 2,
+    "superseded_count": 0
+   }
+  }
+ },
+ "thy_omniview_manifest": {
+  "qyris": {
+   "scope": "MANIFEST",
+   "topic": null,
+   "not_read": [
+    "raw THYLORA registries were not swept this turn",
+    "soft-referenced rows are resolved only when a link is opened",
+    "anything absent from the OMNIVIEW tables is reported as UNSEEDED, never inferred"
+   ],
+   "claim_rule": "Only tables listed in tables_read were read. No other table may be claimed.",
+   "read_at_utc": "2026-09-23T17:43:39Z",
+   "tables_read": [
+    {
+     "rows": 2,
+     "table": "thy_sequence_ledger"
+    },
+    {
+     "rows": 13,
+     "table": "thy_omniview_topics"
+    },
+    {
+     "rows": 25,
+     "table": "thy_omniview_statements"
+    },
+    {
+     "rows": 8,
+     "table": "thy_omniview_gates"
+    },
+    {
+     "rows": 18,
+     "table": "thy_omniview_questions"
+    },
+    {
+     "rows": 43,
+     "table": "thy_omniview_links"
+    },
+    {
+     "rows": 2,
+     "table": "thy_omniview_restarts"
+    },
+    {
+     "rows": 15,
+     "table": "thy_sequence_ledger_topics"
+    }
+   ],
+   "qyris_version": "QYRIS-1",
+   "sequence_head": 591
+  },
+  "counts": {
+   "gates": 8,
+   "links": 43,
+   "topics": 13,
+   "restarts": 2,
+   "questions": 18,
+   "sequences": 2,
+   "statements": 25
+  },
+  "read_path": [
+   "NEWEST DELTAS",
+   "TOPIC MANIFEST",
+   "AUTHORITY LOCKS",
+   "LAST RESTART",
+   "ANSWER"
+  ],
+  "read_model": "CURRENT_STATE_MANIFEST",
+  "last_restart": {
+   "scope": "SPINE",
+   "reason": "Sequence 591 applied the OMNIVIEW pack live and linked live topic authority.",
+   "authority": "Chairman",
+   "topic_key": null,
+   "created_utc": "2026-09-23T17:39:23Z",
+   "sequence_no": 591,
+   "restart_point": "OMNIVIEW is LIVE APPLIED on thylora-dash at ledger 591 and NOT LIVE UI WITNESSED. Chairman-only reads. Next: Chairman phone sign-in to CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard and restore the seven baseline capabilities there before promotion; answer the Royal Castle name, the Alistair household, the Time Run final name and ERFL-001 vs GGL-001."
+  },
+  "newest_deltas": [
+   {
+    "topics": [
+     {
+      "effect": "CANON_CHANGED",
+      "topic_key": "ALISTAIR CROWE"
+     },
+     {
+      "effect": "CANON_CHANGED",
+      "topic_key": "CASTLE"
+     },
+     {
+      "effect": "GATE_CHANGED",
+      "topic_key": "DASHBOARD"
+     },
+     {
+      "effect": "CANON_CHANGED",
+      "topic_key": "OMNIVIEW"
+     },
+     {
+      "effect": "CANON_CHANGED",
+      "topic_key": "QYRIS"
+     },
+     {
+      "effect": "CANON_CHANGED",
+      "topic_key": "SPORTS"
+     },
+     {
+      "effect": "CANON_CHANGED",
+      "topic_key": "STORE"
+     },
+     {
+      "effect": "CANON_CHANGED",
+      "topic_key": "TIME RUN"
+     }
+    ],
+    "authority": "Chairman",
+    "supersedes": null,
+    "sequence_no": 591,
+    "truth_class": "BACKEND_VERIFIED",
+    "occurred_utc": "2026-09-23T17:39:23Z",
+    "what_changed": "The OMNIVIEW pack (thy_sequence_* and thy_omniview_*: 8 tables, read model, write path, Chairman-only RLS) is applied to thylora-dash. Live topic authority was read from the backend of record and linked for TIME RUN, CASTLE (ROYAL CASTLE), ALISTAIR CROWE, STORE, SPORTS and QYRIS.",
+    "restart_point": "OMNIVIEW is live on thylora-dash at ledger 591. Next: Chairman mobile witness of CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard; answer the open next-better questions (Royal Castle name, Alistair household, Time Run final name).",
+    "what_remained": "No existing THYLORA table, policy, function or row was altered or removed. The only writes outside thy_* objects are one QYRIS work-item check (pre-execution) and additive graph nodes, edges and versions. Deployment authority for the dashboard stays with vyc2st-ctrl/thylora-executive-dashboard; CONTEXT and SEQUENCE are LIVE APPLIED on the backend, NOT LIVE UI WITNESSED.",
+    "local_timezone": "America/New_York",
+    "occurred_local": "2026-09-23 13:39",
+    "why_it_changed": "Before apply, three conflicts between the reviewed pack and the live backend were corrected: reads were open to any signed-in account (now thylora_is_chairman(), the rule carryforward already uses); the carryforward context reader was SECURITY DEFINER and would have bypassed carryforward RLS (now SECURITY INVOKER); and the seed wrote ledger 588 for a change that carryforward 588 assigns to different work (now 587).",
+    "why_change_occurred": "Carryforward 591 directed that the reviewed OMNIVIEW branch be applied to the live backend and witnessed (THY-WORK-OMNIVIEW-LIVE-APPLY-591).",
+    "next_better_question": "Will the Chairman sign in on the phone and open CONTEXT and SEQUENCE on the current head, so LIVE APPLIED can become LIVE UI WITNESSED?",
+    "previous_sequence_no": 587
+   },
+   {
+    "topics": [
+     {
+      "effect": "TOUCHED",
+      "topic_key": "CASTLE"
+     },
+     {
+      "effect": "WORK_CHANGED",
+      "topic_key": "DASHBOARD"
+     },
+     {
+      "effect": "TOUCHED",
+      "topic_key": "ECONOMY"
+     },
+     {
+      "effect": "CANON_CHANGED",
+      "topic_key": "OMNIVIEW"
+     },
+     {
+      "effect": "TOUCHED",
+      "topic_key": "QYRIS"
+     },
+     {
+      "effect": "TOUCHED",
+      "topic_key": "STORE"
+     },
+     {
+      "effect": "TOUCHED",
+      "topic_key": "TIME RUN"
+     }
+    ],
+    "authority": "Chairman",
+    "supersedes": null,
+    "sequence_no": 587,
+    "truth_class": "REPO_VERIFIED",
+    "occurred_utc": "2026-09-22T14:05:31Z",
+    "what_changed": "The sequence change ledger was opened at 587, and CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION was written: topic manifest, authority locks, linked graph, linked people/places/objects/products, linked work, gates, current-vs-superseded canon, last restart, an OMNIVIEW read trace on every read, and CONTEXT + SEQUENCE surfaces inside the existing dashboard.",
+    "restart_point": "OMNIVIEW pack written and verified against a throwaway PostgreSQL 16 database (commit 9d359c6). Not applied to the live backend at 587.",
+    "what_remained": "No existing THYLORA table was dropped, renamed or rewritten. The dashboard was extended, not replaced. Deployment authority stays with vyc2st-ctrl/thylora-executive-dashboard. Sequences 1-586, and every later carryforward sequence that is not a ledger row, stay in thylora_query_carryforward and are readable through thy_sequence_prior_context, never presented as ledger rows.",
+    "local_timezone": "America/New_York",
+    "occurred_local": "2026-09-22 10:05",
+    "why_it_changed": "Re-reading every raw backend row each turn is slow and still unprovable. One governed read returns the state and names exactly which tables it touched, so an answer can no longer claim a table it never read.",
+    "why_change_occurred": "THY-WORK-OMNIVIEW-ROUNDTRIP-587 and THY-WORK-SEQUENCE-CHANGE-LEDGER-587: the spine had no single read that returns current state plus the history behind it, and sequence numbers were not an auditable change ledger.",
+    "next_better_question": "Which UNSEEDED topic does the Chairman want seeded first: CASTLE, INÉS, VERONICA, FOOTBALL or VEHICLES?",
+    "previous_sequence_no": null
+   }
+  ],
+  "sequence_head": 591,
+  "topic_manifest": [
+   {
+    "summary": "Named by the Chairman. No person registry row exists; see the constraint before naming anyone or anything around this name.",
+    "topic_key": "ALISTAIR CROWE",
+    "open_gates": 1,
+    "active_work": 0,
+    "canon_state": "UNSEEDED",
+    "topic_class": "PERSON",
+    "display_name": "ALISTAIR CROWE",
+    "restart_point": null,
+    "superseded_by": null,
+    "authority_lock": "CHAIRMAN",
+    "open_questions": 1,
+    "authority_holder": "Chairman",
+    "last_sequence_no": 591,
+    "current_statements": 2,
+    "superseded_statements": 0
+   },
+   {
+    "summary": "The Royal Castle in EdereAirah (graph node ER-CASTLE-ROYAL-001). Canonical name OPEN: do not guess.",
+    "topic_key": "CASTLE",
+    "open_gates": 1,
+    "active_work": 0,
+    "canon_state": "PARTIAL",
+    "topic_class": "PLACE",
+    "display_name": "CASTLE",
+    "restart_point": "OMNIVIEW is live on thylora-dash at ledger 591. Next: Chairman mobile witness of CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard; answer the open next-better questions (Royal Castle name, Alistair household, Time Run final name).",
+    "superseded_by": null,
+    "authority_lock": "CHAIRMAN",
+    "open_questions": 1,
+    "authority_holder": "Chairman (thylora_graph_nodes ER-CASTLE-ROYAL-001)",
+    "last_sequence_no": 591,
+    "current_statements": 3,
+    "superseded_statements": 0
+   },
+   {
+    "summary": "Chairman executive dashboard. Deployment authority is held outside this repository.",
+    "topic_key": "DASHBOARD",
+    "open_gates": 2,
+    "active_work": 2,
+    "canon_state": "PARTIAL",
+    "topic_class": "SYSTEM",
+    "display_name": "DASHBOARD",
+    "restart_point": "OMNIVIEW is live on thylora-dash at ledger 591. Next: Chairman mobile witness of CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard; answer the open next-better questions (Royal Castle name, Alistair household, Time Run final name).",
+    "superseded_by": null,
+    "authority_lock": "DEPLOYMENT_REPOSITORY",
+    "open_questions": 2,
+    "authority_holder": "vyc2st-ctrl/thylora-executive-dashboard",
+    "last_sequence_no": 591,
+    "current_statements": 4,
+    "superseded_statements": 0
+   },
+   {
+    "summary": "THYLORA money spine: revenue lanes, splits, ledger, payouts, financial decisions.",
+    "topic_key": "ECONOMY",
+    "open_gates": 0,
+    "active_work": 0,
+    "canon_state": "PARTIAL",
+    "topic_class": "ECONOMY",
+    "display_name": "ECONOMY",
+    "restart_point": "OMNIVIEW pack written and verified against a throwaway PostgreSQL 16 database (commit 9d359c6). Not applied to the live backend at 587.",
+    "superseded_by": null,
+    "authority_lock": "BACKEND_OF_RECORD",
+    "open_questions": 1,
+    "authority_holder": "thylora-dash (jvsdxhrfhtlgaknhjxlz)",
+    "last_sequence_no": 587,
+    "current_statements": 1,
+    "superseded_statements": 0
+   },
+   {
+    "summary": null,
+    "topic_key": "FOOTBALL",
+    "open_gates": 0,
+    "active_work": 0,
+    "canon_state": "UNSEEDED",
+    "topic_class": "PROGRAM",
+    "display_name": "FOOTBALL",
+    "restart_point": null,
+    "superseded_by": null,
+    "authority_lock": "CHAIRMAN",
+    "open_questions": 1,
+    "authority_holder": "Chairman",
+    "last_sequence_no": null,
+    "current_statements": 0,
+    "superseded_statements": 0
+   },
+   {
+    "summary": null,
+    "topic_key": "INES",
+    "open_gates": 0,
+    "active_work": 0,
+    "canon_state": "UNSEEDED",
+    "topic_class": "PERSON",
+    "display_name": "INÉS",
+    "restart_point": null,
+    "superseded_by": null,
+    "authority_lock": "CHAIRMAN",
+    "open_questions": 1,
+    "authority_holder": "Chairman",
+    "last_sequence_no": null,
+    "current_statements": 0,
+    "superseded_statements": 0
+   },
+   {
+    "summary": "CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION read model and the sequence ledger behind it.",
+    "topic_key": "OMNIVIEW",
+    "open_gates": 0,
+    "active_work": 3,
+    "canon_state": "PARTIAL",
+    "topic_class": "SYSTEM",
+    "display_name": "OMNIVIEW",
+    "restart_point": "OMNIVIEW is live on thylora-dash at ledger 591. Next: Chairman mobile witness of CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard; answer the open next-better questions (Royal Castle name, Alistair household, Time Run final name).",
+    "superseded_by": null,
+    "authority_lock": "CHAIRMAN",
+    "open_questions": 1,
+    "authority_holder": "Chairman",
+    "last_sequence_no": 591,
+    "current_statements": 3,
+    "superseded_statements": 0
+   },
+   {
+    "summary": "QYRIS = Question → Yield → Reason → Inspect → Safeguard. Governed by LAW-QYRIS-ALL-WORK-001 and the plain-speech layer THY-QYRIS-PLAIN-SPEECH-001.",
+    "topic_key": "QYRIS",
+    "open_gates": 0,
+    "active_work": 1,
+    "canon_state": "PARTIAL",
+    "topic_class": "SYSTEM",
+    "display_name": "QYRIS",
+    "restart_point": "OMNIVIEW is live on thylora-dash at ledger 591. Next: Chairman mobile witness of CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard; answer the open next-better questions (Royal Castle name, Alistair household, Time Run final name).",
+    "superseded_by": null,
+    "authority_lock": "CHAIRMAN",
+    "open_questions": 1,
+    "authority_holder": "Chairman (thylora_graph_nodes LAW-QYRIS-ALL-WORK-001)",
+    "last_sequence_no": 591,
+    "current_statements": 3,
+    "superseded_statements": 1
+   },
+   {
+    "summary": "ER Sports Authority and its team, competition, network and readiness registries on thylora-dash.",
+    "topic_key": "SPORTS",
+    "open_gates": 0,
+    "active_work": 1,
+    "canon_state": "PARTIAL",
+    "topic_class": "PROGRAM",
+    "display_name": "SPORTS",
+    "restart_point": null,
+    "superseded_by": null,
+    "authority_lock": "BACKEND_OF_RECORD",
+    "open_questions": 1,
+    "authority_holder": "sports_authority_registry ER-SA-001 (governing authority: Chairman / MAH-001)",
+    "last_sequence_no": 591,
+    "current_statements": 2,
+    "superseded_statements": 0
+   },
+   {
+    "summary": "THYLORA storefront: public store surface, products, orders, entitlements.",
+    "topic_key": "STORE",
+    "open_gates": 0,
+    "active_work": 0,
+    "canon_state": "PARTIAL",
+    "topic_class": "PRODUCT",
+    "display_name": "STORE",
+    "restart_point": "OMNIVIEW is live on thylora-dash at ledger 591. Next: Chairman mobile witness of CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard; answer the open next-better questions (Royal Castle name, Alistair household, Time Run final name).",
+    "superseded_by": null,
+    "authority_lock": "BACKEND_OF_RECORD",
+    "open_questions": 1,
+    "authority_holder": "thylora_store_product_readiness + LAW-STORE-DRAW-VALUE-001 on thylora-dash",
+    "last_sequence_no": 591,
+    "current_statements": 3,
+    "superseded_statements": 0
+   },
+   {
+    "summary": "Time Run surface carried in the member app.",
+    "topic_key": "TIME RUN",
+    "open_gates": 0,
+    "active_work": 0,
+    "canon_state": "PARTIAL",
+    "topic_class": "PROGRAM",
+    "display_name": "TIME RUN",
+    "restart_point": "OMNIVIEW is live on thylora-dash at ledger 591. Next: Chairman mobile witness of CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard; answer the open next-better questions (Royal Castle name, Alistair household, Time Run final name).",
+    "superseded_by": null,
+    "authority_lock": "BACKEND_OF_RECORD",
+    "open_questions": 1,
+    "authority_holder": "Chairman directive held in thylora_time_run_registry THY-TIME-RUN-001",
+    "last_sequence_no": 591,
+    "current_statements": 3,
+    "superseded_statements": 0
+   },
+   {
+    "summary": null,
+    "topic_key": "VEHICLES",
+    "open_gates": 0,
+    "active_work": 0,
+    "canon_state": "UNSEEDED",
+    "topic_class": "OBJECT",
+    "display_name": "VEHICLES",
+    "restart_point": null,
+    "superseded_by": null,
+    "authority_lock": "CHAIRMAN",
+    "open_questions": 1,
+    "authority_holder": "Chairman",
+    "last_sequence_no": null,
+    "current_statements": 0,
+    "superseded_statements": 0
+   },
+   {
+    "summary": null,
+    "topic_key": "VERONICA",
+    "open_gates": 0,
+    "active_work": 0,
+    "canon_state": "UNSEEDED",
+    "topic_class": "PERSON",
+    "display_name": "VERONICA",
+    "restart_point": null,
+    "superseded_by": null,
+    "authority_lock": "CHAIRMAN",
+    "open_questions": 1,
+    "authority_holder": "Chairman",
+    "last_sequence_no": null,
+    "current_statements": 0,
+    "superseded_statements": 0
+   }
+  ],
+  "authority_locks": [
+   {
+    "topics": [
+     "ECONOMY",
+     "SPORTS",
+     "STORE",
+     "TIME RUN"
+    ],
+    "authority_lock": "BACKEND_OF_RECORD"
+   },
+   {
+    "topics": [
+     "ALISTAIR CROWE",
+     "CASTLE",
+     "FOOTBALL",
+     "INES",
+     "OMNIVIEW",
+     "QYRIS",
+     "VEHICLES",
+     "VERONICA"
+    ],
+    "authority_lock": "CHAIRMAN"
+   },
+   {
+    "topics": [
+     "DASHBOARD"
+    ],
+    "authority_lock": "DEPLOYMENT_REPOSITORY"
+   }
+  ]
+ },
+ "thy_omniview_sequence": {
+  "587": {
+   "delta": {
+    "what_changed": "The sequence change ledger was opened at 587, and CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION was written: topic manifest, authority locks, linked graph, linked people/places/objects/products, linked work, gates, current-vs-superseded canon, last restart, an OMNIVIEW read trace on every read, and CONTEXT + SEQUENCE surfaces inside the existing dashboard.",
+    "what_remained": "No existing THYLORA table was dropped, renamed or rewritten. The dashboard was extended, not replaced. Deployment authority stays with vyc2st-ctrl/thylora-executive-dashboard. Sequences 1-586, and every later carryforward sequence that is not a ledger row, stay in thylora_query_carryforward and are readable through thy_sequence_prior_context, never presented as ledger rows."
+   },
+   "found": true,
+   "qyris": {
+    "scope": "SEQUENCE",
+    "topic": null,
+    "not_read": [
+     "raw THYLORA registries were not swept this turn",
+     "soft-referenced rows are resolved only when a link is opened",
+     "anything absent from the OMNIVIEW tables is reported as UNSEEDED, never inferred"
+    ],
+    "claim_rule": "Only tables listed in tables_read were read. No other table may be claimed.",
+    "read_at_utc": "2026-09-23T17:43:39Z",
+    "tables_read": [
+     {
+      "rows": 1,
+      "table": "thy_sequence_ledger"
+     },
+     {
+      "rows": 7,
+      "table": "thy_sequence_ledger_topics"
+     },
+     {
+      "rows": 7,
+      "table": "thy_omniview_topics"
+     }
+    ],
+    "qyris_version": "QYRIS-1",
+    "sequence_head": 591
+   },
+   "reason": {
+    "why_it_changed": "Re-reading every raw backend row each turn is slow and still unprovable. One governed read returns the state and names exactly which tables it touched, so an answer can no longer claim a table it never read.",
+    "why_change_occurred": "THY-WORK-OMNIVIEW-ROUNDTRIP-587 and THY-WORK-SEQUENCE-CHANGE-LEDGER-587: the spine had no single read that returns current state plus the history behind it, and sequence numbers were not an auditable change ledger."
+   },
+   "topics": [
+    {
+     "effect": "TOUCHED",
+     "topic_key": "CASTLE",
+     "canon_state": "PARTIAL",
+     "display_name": "CASTLE"
+    },
+    {
+     "effect": "WORK_CHANGED",
+     "topic_key": "DASHBOARD",
+     "canon_state": "PARTIAL",
+     "display_name": "DASHBOARD"
+    },
+    {
+     "effect": "TOUCHED",
+     "topic_key": "ECONOMY",
+     "canon_state": "PARTIAL",
+     "display_name": "ECONOMY"
+    },
+    {
+     "effect": "CANON_CHANGED",
+     "topic_key": "OMNIVIEW",
+     "canon_state": "PARTIAL",
+     "display_name": "OMNIVIEW"
+    },
+    {
+     "effect": "TOUCHED",
+     "topic_key": "QYRIS",
+     "canon_state": "PARTIAL",
+     "display_name": "QYRIS"
+    },
+    {
+     "effect": "TOUCHED",
+     "topic_key": "STORE",
+     "canon_state": "PARTIAL",
+     "display_name": "STORE"
+    },
+    {
+     "effect": "TOUCHED",
+     "topic_key": "TIME RUN",
+     "canon_state": "PARTIAL",
+     "display_name": "TIME RUN"
+    }
+   ],
+   "authority": {
+    "authority": "Chairman",
+    "recorded_at": "2026-09-23T17:36:21Z",
+    "recorded_by": "postgres",
+    "truth_class": "REPO_VERIFIED"
+   },
+   "read_path": [
+    "DELTA",
+    "REASON",
+    "AUTHORITY",
+    "NEXT QUESTION",
+    "RESTART POINT"
+   ],
+   "read_model": "SEQUENCE_EXPANSION",
+   "source_ref": "db/omniview/ @ 9d359c6",
+   "sequence_no": 587,
+   "utc_datetime": "2026-09-22T14:05:31Z",
+   "next_question": "Which UNSEEDED topic does the Chairman want seeded first: CASTLE, INÉS, VERONICA, FOOTBALL or VEHICLES?",
+   "restart_point": "OMNIVIEW pack written and verified against a throwaway PostgreSQL 16 database (commit 9d359c6). Not applied to the live backend at 587.",
+   "local_datetime": "2026-09-22 10:05",
+   "local_timezone": "America/New_York",
+   "next_sequence_no": 591,
+   "previous_sequence_no": null,
+   "supersedes_sequence_no": null,
+   "superseded_by_sequence_no": null
+  },
+  "591": {
+   "delta": {
+    "what_changed": "The OMNIVIEW pack (thy_sequence_* and thy_omniview_*: 8 tables, read model, write path, Chairman-only RLS) is applied to thylora-dash. Live topic authority was read from the backend of record and linked for TIME RUN, CASTLE (ROYAL CASTLE), ALISTAIR CROWE, STORE, SPORTS and QYRIS.",
+    "what_remained": "No existing THYLORA table, policy, function or row was altered or removed. The only writes outside thy_* objects are one QYRIS work-item check (pre-execution) and additive graph nodes, edges and versions. Deployment authority for the dashboard stays with vyc2st-ctrl/thylora-executive-dashboard; CONTEXT and SEQUENCE are LIVE APPLIED on the backend, NOT LIVE UI WITNESSED."
+   },
+   "found": true,
+   "qyris": {
+    "scope": "SEQUENCE",
+    "topic": null,
+    "not_read": [
+     "raw THYLORA registries were not swept this turn",
+     "soft-referenced rows are resolved only when a link is opened",
+     "anything absent from the OMNIVIEW tables is reported as UNSEEDED, never inferred"
+    ],
+    "claim_rule": "Only tables listed in tables_read were read. No other table may be claimed.",
+    "read_at_utc": "2026-09-23T17:43:39Z",
+    "tables_read": [
+     {
+      "rows": 1,
+      "table": "thy_sequence_ledger"
+     },
+     {
+      "rows": 8,
+      "table": "thy_sequence_ledger_topics"
+     },
+     {
+      "rows": 8,
+      "table": "thy_omniview_topics"
+     }
+    ],
+    "qyris_version": "QYRIS-1",
+    "sequence_head": 591
+   },
+   "reason": {
+    "why_it_changed": "Before apply, three conflicts between the reviewed pack and the live backend were corrected: reads were open to any signed-in account (now thylora_is_chairman(), the rule carryforward already uses); the carryforward context reader was SECURITY DEFINER and would have bypassed carryforward RLS (now SECURITY INVOKER); and the seed wrote ledger 588 for a change that carryforward 588 assigns to different work (now 587).",
+    "why_change_occurred": "Carryforward 591 directed that the reviewed OMNIVIEW branch be applied to the live backend and witnessed (THY-WORK-OMNIVIEW-LIVE-APPLY-591)."
+   },
+   "topics": [
+    {
+     "effect": "CANON_CHANGED",
+     "topic_key": "ALISTAIR CROWE",
+     "canon_state": "UNSEEDED",
+     "display_name": "ALISTAIR CROWE"
+    },
+    {
+     "effect": "CANON_CHANGED",
+     "topic_key": "CASTLE",
+     "canon_state": "PARTIAL",
+     "display_name": "CASTLE"
+    },
+    {
+     "effect": "GATE_CHANGED",
+     "topic_key": "DASHBOARD",
+     "canon_state": "PARTIAL",
+     "display_name": "DASHBOARD"
+    },
+    {
+     "effect": "CANON_CHANGED",
+     "topic_key": "OMNIVIEW",
+     "canon_state": "PARTIAL",
+     "display_name": "OMNIVIEW"
+    },
+    {
+     "effect": "CANON_CHANGED",
+     "topic_key": "QYRIS",
+     "canon_state": "PARTIAL",
+     "display_name": "QYRIS"
+    },
+    {
+     "effect": "CANON_CHANGED",
+     "topic_key": "SPORTS",
+     "canon_state": "PARTIAL",
+     "display_name": "SPORTS"
+    },
+    {
+     "effect": "CANON_CHANGED",
+     "topic_key": "STORE",
+     "canon_state": "PARTIAL",
+     "display_name": "STORE"
+    },
+    {
+     "effect": "CANON_CHANGED",
+     "topic_key": "TIME RUN",
+     "canon_state": "PARTIAL",
+     "display_name": "TIME RUN"
+    }
+   ],
+   "authority": {
+    "authority": "Chairman",
+    "recorded_at": "2026-09-23T17:39:23Z",
+    "recorded_by": "postgres",
+    "truth_class": "BACKEND_VERIFIED"
+   },
+   "read_path": [
+    "DELTA",
+    "REASON",
+    "AUTHORITY",
+    "NEXT QUESTION",
+    "RESTART POINT"
+   ],
+   "read_model": "SEQUENCE_EXPANSION",
+   "source_ref": "THY-Q-20260923-KITCHEN-CAUSE-LIVE-OMNIVIEW-591",
+   "sequence_no": 591,
+   "utc_datetime": "2026-09-23T17:39:23Z",
+   "next_question": "Will the Chairman sign in on the phone and open CONTEXT and SEQUENCE on the current head, so LIVE APPLIED can become LIVE UI WITNESSED?",
+   "restart_point": "OMNIVIEW is live on thylora-dash at ledger 591. Next: Chairman mobile witness of CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard; answer the open next-better questions (Royal Castle name, Alistair household, Time Run final name).",
+   "local_datetime": "2026-09-23 13:39",
+   "local_timezone": "America/New_York",
+   "next_sequence_no": null,
+   "previous_sequence_no": 587,
+   "supersedes_sequence_no": null,
+   "superseded_by_sequence_no": null
+  }
+ },
+ "thy_sequence_ledger_page": {
+  "head": 591,
+  "rows": [
+   {
+    "topics": [
+     "ALISTAIR CROWE",
+     "CASTLE",
+     "DASHBOARD",
+     "OMNIVIEW",
+     "QYRIS",
+     "SPORTS",
+     "STORE",
+     "TIME RUN"
+    ],
+    "authority": "Chairman",
+    "sequence_no": 591,
+    "truth_class": "BACKEND_VERIFIED",
+    "utc_datetime": "2026-09-23T17:39:23Z",
+    "what_changed": "The OMNIVIEW pack (thy_sequence_* and thy_omniview_*: 8 tables, read model, write path, Chairman-only RLS) is applied to thylora-dash. Live topic authority was read from the backend of record and linked for TIME RUN, CASTLE (ROYAL CASTLE), ALISTAIR CROWE, STORE, SPORTS and QYRIS.",
+    "restart_point": "OMNIVIEW is live on thylora-dash at ledger 591. Next: Chairman mobile witness of CONTEXT and SEQUENCE; merge the surface into vyc2st-ctrl/thylora-executive-dashboard; answer the open next-better questions (Royal Castle name, Alistair household, Time Run final name).",
+    "what_remained": "No existing THYLORA table, policy, function or row was altered or removed. The only writes outside thy_* objects are one QYRIS work-item check (pre-execution) and additive graph nodes, edges and versions. Deployment authority for the dashboard stays with vyc2st-ctrl/thylora-executive-dashboard; CONTEXT and SEQUENCE are LIVE APPLIED on the backend, NOT LIVE UI WITNESSED.",
+    "local_datetime": "2026-09-23 13:39",
+    "local_timezone": "America/New_York",
+    "why_it_changed": "Before apply, three conflicts between the reviewed pack and the live backend were corrected: reads were open to any signed-in account (now thylora_is_chairman(), the rule carryforward already uses); the carryforward context reader was SECURITY DEFINER and would have bypassed carryforward RLS (now SECURITY INVOKER); and the seed wrote ledger 588 for a change that carryforward 588 assigns to different work (now 587).",
+    "why_change_occurred": "Carryforward 591 directed that the reviewed OMNIVIEW branch be applied to the live backend and witnessed (THY-WORK-OMNIVIEW-LIVE-APPLY-591).",
+    "next_better_question": "Will the Chairman sign in on the phone and open CONTEXT and SEQUENCE on the current head, so LIVE APPLIED can become LIVE UI WITNESSED?",
+    "previous_sequence_no": 587,
+    "supersedes_sequence_no": null
+   },
+   {
+    "topics": [
+     "CASTLE",
+     "DASHBOARD",
+     "ECONOMY",
+     "OMNIVIEW",
+     "QYRIS",
+     "STORE",
+     "TIME RUN"
+    ],
+    "authority": "Chairman",
+    "sequence_no": 587,
+    "truth_class": "REPO_VERIFIED",
+    "utc_datetime": "2026-09-22T14:05:31Z",
+    "what_changed": "The sequence change ledger was opened at 587, and CURRENT_STATE_MANIFEST_PLUS_TOPIC_EXPANSION was written: topic manifest, authority locks, linked graph, linked people/places/objects/products, linked work, gates, current-vs-superseded canon, last restart, an OMNIVIEW read trace on every read, and CONTEXT + SEQUENCE surfaces inside the existing dashboard.",
+    "restart_point": "OMNIVIEW pack written and verified against a throwaway PostgreSQL 16 database (commit 9d359c6). Not applied to the live backend at 587.",
+    "what_remained": "No existing THYLORA table was dropped, renamed or rewritten. The dashboard was extended, not replaced. Deployment authority stays with vyc2st-ctrl/thylora-executive-dashboard. Sequences 1-586, and every later carryforward sequence that is not a ledger row, stay in thylora_query_carryforward and are readable through thy_sequence_prior_context, never presented as ledger rows.",
+    "local_datetime": "2026-09-22 10:05",
+    "local_timezone": "America/New_York",
+    "why_it_changed": "Re-reading every raw backend row each turn is slow and still unprovable. One governed read returns the state and names exactly which tables it touched, so an answer can no longer claim a table it never read.",
+    "why_change_occurred": "THY-WORK-OMNIVIEW-ROUNDTRIP-587 and THY-WORK-SEQUENCE-CHANGE-LEDGER-587: the spine had no single read that returns current state plus the history behind it, and sequence numbers were not an auditable change ledger.",
+    "next_better_question": "Which UNSEEDED topic does the Chairman want seeded first: CASTLE, INÉS, VERONICA, FOOTBALL or VEHICLES?",
+    "previous_sequence_no": null,
+    "supersedes_sequence_no": null
+   }
+  ],
+  "qyris": {
+   "scope": "SEQUENCE_LEDGER",
+   "topic": null,
+   "not_read": [
+    "raw THYLORA registries were not swept this turn",
+    "soft-referenced rows are resolved only when a link is opened",
+    "anything absent from the OMNIVIEW tables is reported as UNSEEDED, never inferred"
+   ],
+   "claim_rule": "Only tables listed in tables_read were read. No other table may be claimed.",
+   "read_at_utc": "2026-09-23T17:43:39Z",
+   "tables_read": [
+    {
+     "rows": 2,
+     "table": "thy_sequence_ledger"
+    },
+    {
+     "rows": 15,
+     "table": "thy_sequence_ledger_topics"
+    }
+   ],
+   "qyris_version": "QYRIS-1",
+   "sequence_head": 591
+  },
+  "columns": [
+   "SEQUENCE",
+   "LOCAL DATE/TIME",
+   "UTC DATE/TIME",
+   "PREVIOUS SEQUENCE",
+   "WHY CHANGE OCCURRED",
+   "WHAT CHANGED",
+   "WHY IT CHANGED",
+   "WHAT REMAINED",
+   "AUTHORITY",
+   "TRUTH CLASS",
+   "NEXT-BETTER QUESTION",
+   "RESTART POINT"
+  ],
+  "read_model": "SEQUENCE_LEDGER"
+ }
+}

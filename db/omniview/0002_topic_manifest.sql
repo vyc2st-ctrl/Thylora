@@ -102,7 +102,7 @@ create index if not exists thy_omniview_statements_topic_idx
 -- A superseded statement stays byte-identical. Only the supersession columns may
 -- ever move, and only in the CURRENT -> SUPERSEDED direction.
 create or replace function thy_omniview_statement_no_rewrite()
-returns trigger language plpgsql as $$
+returns trigger language plpgsql set search_path = public as $$
 begin
   if tg_op = 'DELETE' then
     raise exception 'STATEMENT_IMMUTABLE: delete is refused. Supersede statement % instead.', old.id;

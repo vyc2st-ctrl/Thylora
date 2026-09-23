@@ -57,9 +57,12 @@ create index if not exists thy_sequence_ledger_super_idx    on thy_sequence_ledg
 -- A sequence must continue the chain: it points at the current head, and it is
 -- higher than the head. Backfilling into the middle of history is refused.
 create or replace function thy_sequence_ledger_chain_guard()
-returns trigger language plpgsql as $$
+returns trigger language plpgsql set search_path = public as $$
 declare head bigint;
 begin
+  -- Serialise appends so two concurrent writers cannot both read the same head
+  -- and fork the chain. Held to the end of the inserting transaction.
+  perform pg_advisory_xact_lock(hashtext('thy_sequence_ledger_chain'));
   select max(sequence_no) into head from thy_sequence_ledger;
 
   if head is null then
@@ -89,7 +92,7 @@ create trigger thy_sequence_ledger_chain
 -- 2. APPEND ONLY --------------------------------------------------------------
 -- "Do not rewrite source history" is enforced by the database, not by habit.
 create or replace function thy_sequence_ledger_append_only()
-returns trigger language plpgsql as $$
+returns trigger language plpgsql set search_path = public as $$
 begin
   raise exception 'SEQUENCE_LEDGER_IMMUTABLE: % on thy_sequence_ledger is refused. Write a new sequence that supersedes sequence %.',
     tg_op, coalesce(old.sequence_no, 0);

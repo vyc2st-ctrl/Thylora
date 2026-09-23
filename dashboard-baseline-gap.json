@@ -2,7 +2,7 @@
   "gap_id": "THY-DASH-GAP-587-001",
   "baseline_id": "THY-DASH-FLOOR-20260823-001",
   "source_file": "dashboard-current-head.html",
-  "found_at_sequence": 588,
+  "found_at_sequence": 587,
   "finding": "The copy of the head in this repository does not carry every capability named in dashboard-baseline.json. The shortfall predates THY-WORK-OMNIVIEW-ROUNDTRIP-587: it is present in the file at the commit before the OMNIVIEW delta, and the delta removed nothing.",
   "missing_capabilities": [
     "Product & Storefront",
@@ -13,7 +13,7 @@
     "Digital Product Passports",
     "Connection Evidence"
   ],
-  "unverified": "Whether the LIVE head on thylora-public-world carries these capabilities could not be checked from the build session: egress to the backend and the runtime project was denied. DASHBOARD_AUTHORITY.md states that this repository is not the deployment source of truth, so the live head may well carry them.",
+  "unverified": "At 591 the deployment repository head (vyc2st-ctrl/thylora-executive-dashboard @ a634249) was read: it carries 14 of 17 and is missing Product & Storefront, Commerce Proof and Digital Product Passports. Which commit thylora-public-world serves is still not established (Vercel 403 on listing deployments).",
   "rule": "tests/dashboard-delta.test.mjs compares the live shortfall against this file. A NEW removal fails the suite. Repairing one of these capabilities also fails the suite, which is the signal to remove it from this list.",
-  "next_better_question": "Does the live head on thylora-public-world still carry these seven capabilities, and if it does, should this repository's copy be refreshed from the deployment repository?"
+  "next_better_question": "Restore Product & Storefront, Commerce Proof and Digital Product Passports in the deployment repository from which earlier head, and who confirms the serving commit?"
 }

@@ -105,7 +105,7 @@ begin
     raise notice 'PROOF FAIL: sequence expansion is missing delta, reason, authority or next question'; ok := false;
   end if;
   if v->>'local_datetime' is null or v->>'utc_datetime' is null
-     or (v->>'previous_sequence_no')::bigint <> 588 then
+     or (v->>'previous_sequence_no')::bigint <> 587 then
     raise notice 'PROOF FAIL: sequence expansion is missing a clock or the previous sequence'; ok := false;
   end if;
 

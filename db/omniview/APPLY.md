@@ -1,7 +1,8 @@
 # Applying OMNIVIEW to the backend of record
 
-Held for Chairman execution. This repository does not apply DDL to
-`thylora-dash` (`jvsdxhrfhtlgaknhjxlz`).
+**Applied to `thylora-dash` at ledger 591** (THY-WORK-OMNIVIEW-LIVE-APPLY-591). Evidence, before/after and
+rollback: `db/omniview/live/EVIDENCE-591.md`. The live-only record is in `db/omniview/live/` (0008–0012).
+The steps below remain the procedure for any other backend.
 
 ## Before applying
 

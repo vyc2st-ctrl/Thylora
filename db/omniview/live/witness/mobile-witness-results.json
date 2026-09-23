@@ -1,0 +1,388 @@
+{
+ "witnessed_at": "2026-09-23T17:48:10.893Z",
+ "device": "iPhone 13 profile (390x844, DPR 3, touch), Chromium",
+ "data": "live-readback-591.json captured 2026-09-23T17:43:39.707404+00:00",
+ "nature": "REPLAYED LIVE DATA IN THE REAL SURFACE. Not an authenticated live session; not LIVE UI WITNESSED.",
+ "pass": 54,
+ "total": 54,
+ "results": [
+  {
+   "host": "dashboard",
+   "scenario": "HOST",
+   "step": "visible controls 28: own handler/link 10, delegated 18, none 0",
+   "ok": true,
+   "detail": "none"
+  },
+  {
+   "host": "dashboard",
+   "scenario": "CHAIRMAN",
+   "step": "CONTEXT opens on the live manifest",
+   "ok": true,
+   "detail": "TOPIC MANIFEST · HEAD 591"
+  },
+  {
+   "host": "dashboard",
+   "scenario": "CHAIRMAN",
+   "step": "no horizontal overflow at 390px",
+   "ok": true,
+   "detail": "scrollWidth 390 / viewport 390"
+  },
+  {
+   "host": "dashboard",
+   "scenario": "CHAIRMAN",
+   "step": "nothing floats over the open panel",
+   "ok": true,
+   "detail": "panel is topmost everywhere sampled"
+  },
+  {
+   "host": "dashboard",
+   "scenario": "CHAIRMAN",
+   "step": "topic TIME RUN: nothing runs off the right edge",
+   "ok": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "host": "dashboard",
+   "scenario": "CHAIRMAN",
+   "step": "topic TIME RUN → TIME RUN",
+   "ok": true,
+   "detail": "lock BACKEND_OF_RECORD · PARTIAL · next: What is the canonical final name of THY-TIME-RUN-001?"
+  },
+  {
+   "host": "dashboard",
+   "scenario": "CHAIRMAN",
+   "step": "topic ROYAL CASTLE: nothing runs off the right edge",
+   "ok": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "host": "dashboard",
+   "scenario": "CHAIRMAN",
+   "step": "topic ROYAL CASTLE → CASTLE",
+   "ok": true,
+   "detail": "lock CHAIRMAN · PARTIAL · next: What is the canonical name of the Royal Castle (ER-CASTLE-ROYAL-001)?"
+  },
+  {
+   "host": "dashboard",
+   "scenario": "CHAIRMAN",
+   "step": "a delta card on a topic opens its sequence",
+   "ok": true,
+   "detail": "sequence #591"
+  },
+  {
+   "host": "dashboard",
+   "scenario": "CHAIRMAN",
+   "step": "topic ALISTAIR CROWE: nothing runs off the right edge",
+   "ok": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "host": "dashboard",
+   "scenario": "CHAIRMAN",
+   "step": "topic ALISTAIR CROWE → ALISTAIR CROWE",
+   "ok": true,
+   "detail": "lock CHAIRMAN · UNSEEDED · next: Is the Alistair family a household in canon or only an archive lead, and where does the name Crowe come from?"
+  },
+  {
+   "host": "dashboard",
+   "scenario": "CHAIRMAN",
+   "step": "topic STORE: nothing runs off the right edge",
+   "ok": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "host": "dashboard",
+   "scenario": "CHAIRMAN",
+   "step": "topic STORE → STORE",
+   "ok": true,
+   "detail": "lock BACKEND_OF_RECORD · PARTIAL · next: What is the first shirt sample artwork, now that Printful is reported CONNECTED (carryforward 591)?"
+  },
+  {
+   "host": "dashboard",
+   "scenario": "CHAIRMAN",
+   "step": "topic SPORTS: nothing runs off the right edge",
+   "ok": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "host": "dashboard",
+   "scenario": "CHAIRMAN",
+   "step": "topic SPORTS → SPORTS",
+   "ok": true,
+   "detail": "lock BACKEND_OF_RECORD · PARTIAL · next: Is ERFL-001 or GGL-001 canonical, and how does the other relate if both survive?"
+  },
+  {
+   "host": "dashboard",
+   "scenario": "CHAIRMAN",
+   "step": "topic QYRIS: nothing runs off the right edge",
+   "ok": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "host": "dashboard",
+   "scenario": "CHAIRMAN",
+   "step": "topic QYRIS → QYRIS",
+   "ok": true,
+   "detail": "lock CHAIRMAN · PARTIAL · next: Should the empty recursive QYRIS tables from 584 (thylora_qyris_node, thylora_qyris_cluster) be populated, or are the work-item checks the whole registry?"
+  },
+  {
+   "host": "dashboard",
+   "scenario": "CHAIRMAN",
+   "step": "SEQUENCE tab lists the live ledger",
+   "ok": true,
+   "detail": "SEQUENCE LEDGER · HEAD 591"
+  },
+  {
+   "host": "dashboard",
+   "scenario": "CHAIRMAN",
+   "step": "sequence #591 shows every required field",
+   "ok": true,
+   "detail": "previous 587 · BACKEND_VERIFIED"
+  },
+  {
+   "host": "dashboard",
+   "scenario": "CHAIRMAN",
+   "step": "a topic button inside a sequence opens that topic",
+   "ok": true,
+   "detail": "CASTLE"
+  },
+  {
+   "host": "dashboard",
+   "scenario": "CHAIRMAN",
+   "step": "Refresh re-reads the current view",
+   "ok": true,
+   "detail": "CONTEXT reloaded"
+  },
+  {
+   "host": "dashboard",
+   "scenario": "CHAIRMAN",
+   "step": "Escape closes the surface",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "host": "dashboard",
+   "scenario": "CHAIRMAN",
+   "step": "Close closes the surface",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "host": "dashboard",
+   "scenario": "CHAIRMAN",
+   "step": "no script errors",
+   "ok": true,
+   "detail": "none"
+  },
+  {
+   "host": "dashboard",
+   "scenario": "NON_CHAIRMAN",
+   "step": "CONTEXT says \"not the Chairman\", not an empty board",
+   "ok": true,
+   "detail": "Signed in, but not as the Chairman. CONTEXT and SEQUENCE are readable only by the Chairman account; this account sees no"
+  },
+  {
+   "host": "dashboard",
+   "scenario": "NON_CHAIRMAN",
+   "step": "SEQUENCE says \"not the Chairman\", not an empty ledger",
+   "ok": true,
+   "detail": "Signed in, but not as the Chairman. CONTEXT and SEQUENCE are readable only by the Chairman account; this account sees no"
+  },
+  {
+   "host": "dashboard",
+   "scenario": "SIGNED_OUT",
+   "step": "CONTEXT asks for sign-in",
+   "ok": true,
+   "detail": "Sign in first. CONTEXT and SEQUENCE read protected rows."
+  },
+  {
+   "host": "app",
+   "scenario": "HOST",
+   "step": "visible controls 25: own handler/link 25, delegated 0, none 0",
+   "ok": true,
+   "detail": "none"
+  },
+  {
+   "host": "app",
+   "scenario": "CHAIRMAN",
+   "step": "CONTEXT opens on the live manifest",
+   "ok": true,
+   "detail": "TOPIC MANIFEST · HEAD 591"
+  },
+  {
+   "host": "app",
+   "scenario": "CHAIRMAN",
+   "step": "no horizontal overflow at 390px",
+   "ok": true,
+   "detail": "scrollWidth 390 / viewport 390"
+  },
+  {
+   "host": "app",
+   "scenario": "CHAIRMAN",
+   "step": "nothing floats over the open panel",
+   "ok": true,
+   "detail": "panel is topmost everywhere sampled"
+  },
+  {
+   "host": "app",
+   "scenario": "CHAIRMAN",
+   "step": "topic TIME RUN: nothing runs off the right edge",
+   "ok": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "host": "app",
+   "scenario": "CHAIRMAN",
+   "step": "topic TIME RUN → TIME RUN",
+   "ok": true,
+   "detail": "lock BACKEND_OF_RECORD · PARTIAL · next: What is the canonical final name of THY-TIME-RUN-001?"
+  },
+  {
+   "host": "app",
+   "scenario": "CHAIRMAN",
+   "step": "topic ROYAL CASTLE: nothing runs off the right edge",
+   "ok": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "host": "app",
+   "scenario": "CHAIRMAN",
+   "step": "topic ROYAL CASTLE → CASTLE",
+   "ok": true,
+   "detail": "lock CHAIRMAN · PARTIAL · next: What is the canonical name of the Royal Castle (ER-CASTLE-ROYAL-001)?"
+  },
+  {
+   "host": "app",
+   "scenario": "CHAIRMAN",
+   "step": "a delta card on a topic opens its sequence",
+   "ok": true,
+   "detail": "sequence #591"
+  },
+  {
+   "host": "app",
+   "scenario": "CHAIRMAN",
+   "step": "topic ALISTAIR CROWE: nothing runs off the right edge",
+   "ok": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "host": "app",
+   "scenario": "CHAIRMAN",
+   "step": "topic ALISTAIR CROWE → ALISTAIR CROWE",
+   "ok": true,
+   "detail": "lock CHAIRMAN · UNSEEDED · next: Is the Alistair family a household in canon or only an archive lead, and where does the name Crowe come from?"
+  },
+  {
+   "host": "app",
+   "scenario": "CHAIRMAN",
+   "step": "topic STORE: nothing runs off the right edge",
+   "ok": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "host": "app",
+   "scenario": "CHAIRMAN",
+   "step": "topic STORE → STORE",
+   "ok": true,
+   "detail": "lock BACKEND_OF_RECORD · PARTIAL · next: What is the first shirt sample artwork, now that Printful is reported CONNECTED (carryforward 591)?"
+  },
+  {
+   "host": "app",
+   "scenario": "CHAIRMAN",
+   "step": "topic SPORTS: nothing runs off the right edge",
+   "ok": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "host": "app",
+   "scenario": "CHAIRMAN",
+   "step": "topic SPORTS → SPORTS",
+   "ok": true,
+   "detail": "lock BACKEND_OF_RECORD · PARTIAL · next: Is ERFL-001 or GGL-001 canonical, and how does the other relate if both survive?"
+  },
+  {
+   "host": "app",
+   "scenario": "CHAIRMAN",
+   "step": "topic QYRIS: nothing runs off the right edge",
+   "ok": true,
+   "detail": "overflow 0px"
+  },
+  {
+   "host": "app",
+   "scenario": "CHAIRMAN",
+   "step": "topic QYRIS → QYRIS",
+   "ok": true,
+   "detail": "lock CHAIRMAN · PARTIAL · next: Should the empty recursive QYRIS tables from 584 (thylora_qyris_node, thylora_qyris_cluster) be populated, or are the work-item checks the whole registry?"
+  },
+  {
+   "host": "app",
+   "scenario": "CHAIRMAN",
+   "step": "SEQUENCE tab lists the live ledger",
+   "ok": true,
+   "detail": "SEQUENCE LEDGER · HEAD 591"
+  },
+  {
+   "host": "app",
+   "scenario": "CHAIRMAN",
+   "step": "sequence #591 shows every required field",
+   "ok": true,
+   "detail": "previous 587 · BACKEND_VERIFIED"
+  },
+  {
+   "host": "app",
+   "scenario": "CHAIRMAN",
+   "step": "a topic button inside a sequence opens that topic",
+   "ok": true,
+   "detail": "CASTLE"
+  },
+  {
+   "host": "app",
+   "scenario": "CHAIRMAN",
+   "step": "Refresh re-reads the current view",
+   "ok": true,
+   "detail": "CONTEXT reloaded"
+  },
+  {
+   "host": "app",
+   "scenario": "CHAIRMAN",
+   "step": "Escape closes the surface",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "host": "app",
+   "scenario": "CHAIRMAN",
+   "step": "Close closes the surface",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "host": "app",
+   "scenario": "CHAIRMAN",
+   "step": "no script errors",
+   "ok": true,
+   "detail": "none"
+  },
+  {
+   "host": "app",
+   "scenario": "NON_CHAIRMAN",
+   "step": "CONTEXT says \"not the Chairman\", not an empty board",
+   "ok": true,
+   "detail": "Signed in, but not as the Chairman. CONTEXT and SEQUENCE are readable only by the Chairman account; this account sees no"
+  },
+  {
+   "host": "app",
+   "scenario": "NON_CHAIRMAN",
+   "step": "SEQUENCE says \"not the Chairman\", not an empty ledger",
+   "ok": true,
+   "detail": "Signed in, but not as the Chairman. CONTEXT and SEQUENCE are readable only by the Chairman account; this account sees no"
+  },
+  {
+   "host": "app",
+   "scenario": "SIGNED_OUT",
+   "step": "CONTEXT asks for sign-in",
+   "ok": true,
+   "detail": "Sign in first. CONTEXT and SEQUENCE read protected rows."
+  }
+ ]
+}

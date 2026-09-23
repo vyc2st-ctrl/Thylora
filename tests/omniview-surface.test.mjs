@@ -115,3 +115,23 @@ test('every value rendered into the surface is escaped', () => {
   const interpolations = body.match(/\+ (?!esc\()(?:read|v|r|t|d|s|g|q|w|p|l)[.\[][^+]*\+ '/g) || [];
   assert.deepEqual(interpolations, [], `unescaped values rendered into HTML: ${interpolations.join(' | ')}`);
 });
+
+// THY-WORK-OMNIVIEW-LIVE-APPLY-591 — reads are Chairman-only on thylora-dash.
+test('a signed-in account that is not the Chairman is told so, never shown an empty board', () => {
+  // What thylora-dash returns to a non-Chairman session: 200, no head, no rows.
+  assert.equal(O.accessState({ sequence_head: null, topic_manifest: [], counts: { sequences: 0 } }), 'NOT_CHAIRMAN');
+  assert.equal(O.accessState({ head: null, rows: [] }), 'NOT_CHAIRMAN');
+  assert.equal(O.accessState({ sequence_head: 591, topic_manifest: [{ topic_key: 'STORE' }] }), 'OK');
+  assert.equal(O.accessState({ head: 591, rows: [] }), 'OK');
+  assert.match(O.stateMessage('NOT_CHAIRMAN'), /not as the Chairman/);
+  assert.doesNotMatch(O.stateMessage('NOT_CHAIRMAN'), /No topics|nothing recorded/i);
+});
+
+test('a permission refusal is an access state, not a vague failure', () => {
+  // A signed-in role refused by PostgREST comes back 403 / 42501.
+  assert.equal(O.readState({ code: '403 42501', message: 'permission denied for function thy_omniview_manifest' }), 'NOT_CHAIRMAN');
+  // anon refused comes back 401: that caller is signed out.
+  assert.equal(O.readState({ code: '401 42501', message: 'permission denied for function thy_omniview_manifest' }), 'SIGNED_OUT');
+  assert.equal(O.readState({ code: '401 PGRST301', message: 'JWT expired' }), 'SIGNED_OUT');
+  assert.equal(O.readState({ code: '404 PGRST202', message: 'Could not find the function' }), 'NOT_APPLIED');
+});
