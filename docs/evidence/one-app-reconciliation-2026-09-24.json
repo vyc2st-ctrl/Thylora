@@ -1,0 +1,282 @@
+{
+  "read_at": "2026-09-24T13:13:53Z",
+  "backend": "thylora-dash (jvsdxhrfhtlgaknhjxlz)",
+  "mode": "READ_ONLY — no inserts, updates, deletes, merges or DDL",
+  "registry_state_all_rows": "IN PRODUCTION",
+  "registry": [
+    {
+      "app_code": "APP-ADULT-CREATOR-001",
+      "template_type": "AGE_GATED_CREATOR_PLATFORM",
+      "business_id": "DEPT-ADULT-001",
+      "business_resolves": false,
+      "module_count": 13,
+      "flow_steps": 8,
+      "privacy_rules_empty": false,
+      "release_rules_empty": false,
+      "ui_module": null,
+      "classification": "BACKEND_ONLY_PLATFORM_SPEC"
+    },
+    {
+      "app_code": "CW-LIVING-APP-001",
+      "template_type": "BUSINESS_FACTORY_CUSTOMER_001",
+      "business_id": "CW-AUTO-CUSTOMS-001",
+      "business_resolves": true,
+      "module_count": 11,
+      "flow_steps": 7,
+      "privacy_rules_empty": false,
+      "release_rules_empty": false,
+      "ui_module": null,
+      "classification": "BUSINESS_INSTANCE_NOT_DEPLOYED"
+    },
+    {
+      "app_code": "LBA-CLOTHING-001",
+      "template_type": "CLOTHING",
+      "business_id": null,
+      "business_resolves": false,
+      "module_count": 9,
+      "flow_steps": 0,
+      "privacy_rules_empty": true,
+      "release_rules_empty": true,
+      "ui_module": null,
+      "classification": "TEMPLATE_PRESET"
+    },
+    {
+      "app_code": "LBA-DISPENSARY-DEMO-001",
+      "template_type": "DISPENSARY_DEMO",
+      "business_id": null,
+      "business_resolves": false,
+      "module_count": 10,
+      "flow_steps": 10,
+      "privacy_rules_empty": false,
+      "release_rules_empty": false,
+      "ui_module": null,
+      "classification": "TEMPLATE_PRESET"
+    },
+    {
+      "app_code": "LBA-FARM-001",
+      "template_type": "FARM",
+      "business_id": null,
+      "business_resolves": false,
+      "module_count": 8,
+      "flow_steps": 0,
+      "privacy_rules_empty": true,
+      "release_rules_empty": true,
+      "ui_module": null,
+      "classification": "TEMPLATE_PRESET"
+    },
+    {
+      "app_code": "LBA-GAME-BET-001",
+      "template_type": "SPORTS_GAMING",
+      "business_id": "ER-CHAIRMAN-HOUSE-001",
+      "business_resolves": false,
+      "module_count": 10,
+      "flow_steps": 7,
+      "privacy_rules_empty": false,
+      "release_rules_empty": false,
+      "ui_module": {
+        "module_key": "GAME-BET-001",
+        "section_key": "SPORTS",
+        "route_path": "/app/sports-betting.html",
+        "status": "ACTIVE"
+      },
+      "classification": "DEPLOYED_SCREEN_NOT_LINKED"
+    },
+    {
+      "app_code": "LBA-GENERAL-001",
+      "template_type": "GENERAL",
+      "business_id": null,
+      "business_resolves": false,
+      "module_count": 14,
+      "flow_steps": 7,
+      "privacy_rules_empty": false,
+      "release_rules_empty": false,
+      "ui_module": null,
+      "classification": "TEMPLATE_BASE"
+    },
+    {
+      "app_code": "LBA-MECHANIC-001",
+      "template_type": "MECHANIC",
+      "business_id": null,
+      "business_resolves": false,
+      "module_count": 10,
+      "flow_steps": 0,
+      "privacy_rules_empty": true,
+      "release_rules_empty": true,
+      "ui_module": null,
+      "classification": "TEMPLATE_PRESET"
+    },
+    {
+      "app_code": "LBA-MUSEUM-001",
+      "template_type": "MUSEUM",
+      "business_id": null,
+      "business_resolves": false,
+      "module_count": 8,
+      "flow_steps": 0,
+      "privacy_rules_empty": true,
+      "release_rules_empty": true,
+      "ui_module": null,
+      "classification": "TEMPLATE_PRESET"
+    },
+    {
+      "app_code": "LBA-REPAIRSHOP-001",
+      "template_type": "REPAIR_SHOP",
+      "business_id": null,
+      "business_resolves": false,
+      "module_count": 7,
+      "flow_steps": 0,
+      "privacy_rules_empty": true,
+      "release_rules_empty": true,
+      "ui_module": null,
+      "classification": "TEMPLATE_PRESET"
+    },
+    {
+      "app_code": "LBA-RESTAURANT-001",
+      "template_type": "RESTAURANT",
+      "business_id": null,
+      "business_resolves": false,
+      "module_count": 8,
+      "flow_steps": 0,
+      "privacy_rules_empty": true,
+      "release_rules_empty": true,
+      "ui_module": null,
+      "classification": "TEMPLATE_PRESET"
+    },
+    {
+      "app_code": "LBA-SALON-001",
+      "template_type": "SALON_BARBER",
+      "business_id": null,
+      "business_resolves": false,
+      "module_count": 8,
+      "flow_steps": 0,
+      "privacy_rules_empty": true,
+      "release_rules_empty": true,
+      "ui_module": null,
+      "classification": "TEMPLATE_PRESET"
+    }
+  ],
+  "counts": {
+    "public_tables": 906,
+    "thylora_ui_modules": 76,
+    "public_site_navigation": 13,
+    "businesses": 7
+  },
+  "public_nav_routes_all_IN_PRODUCTION": [
+    "/",
+    "/what-we-build",
+    "/business-residency",
+    "/business-admission",
+    "/client-app-builder",
+    "/watch",
+    "/learn-and-make",
+    "/shop",
+    "/stories",
+    "/warehouse",
+    "/family",
+    "/about",
+    "/sign-in"
+  ],
+  "cw": {
+    "business": {
+      "business_code": "CW-AUTO-CUSTOMS-001",
+      "business_state": "IMPLEMENTATION_ACTIVE",
+      "public_state": "PRIVATE_DEVELOPMENT",
+      "trust_state": "REVIEW_ACTIVE",
+      "factory_session": "BF-CUST-001-CW"
+    },
+    "residency": {
+      "application_id": "THY-BRA-CW-AUTO-001",
+      "business_id": "THY-BIZ-CW-AUTO-001",
+      "admission_state": "ACCEPTED WITH CORRECTIONS",
+      "publish_state": "PRIVATE"
+    },
+    "program": "CW-GATE1-001 IMPLEMENTATION_ACTIVE",
+    "workroom": "WR-CNW-GARAGE-001 ACTIVE_SIMULATION_PRODUCTION",
+    "store_products": [
+      {
+        "title": "THYLORA Gap Hunt — 21 Things You’re Not Seeing",
+        "state": "DRAFT",
+        "active_allowed": false
+      },
+      {
+        "title": "C&W Vehicle Civilization — Engineering Notebook Vol. 1",
+        "state": "DRAFT",
+        "active_allowed": false
+      },
+      {
+        "title": "Eight Things Cars Still Get Wrong — A C&W Design Notebook",
+        "state": "DRAFT",
+        "active_allowed": false
+      }
+    ],
+    "record_hits_by_table": {
+      "thylora_department_personnel": 52,
+      "er_automotive_staff_assignments": 52,
+      "er_vehicle_project_pipeline": 10,
+      "er_automotive_show_episode_registry": 10,
+      "program_registry": 10,
+      "er_automotive_identifier_map": 8
+    }
+  },
+  "game_bet_rows": {
+    "game_bet_operators": 1,
+    "game_bet_market_catalog": 11,
+    "game_bet_markets": 0,
+    "game_bet_tickets": 0,
+    "game_bet_accounts": 0
+  },
+  "adult_rows": {
+    "adult_desks": 11,
+    "adult_operating_instruments": 13,
+    "adult_talent": 0,
+    "adult_creator_channels": 0,
+    "adult_payouts": 0
+  },
+  "seed_command": {
+    "canonical_id": "THY-CMD-20260825-BUSINESS-RESIDENCY-001",
+    "status": "ROUTED",
+    "evidence_output": {
+      "templates": "SEEDED",
+      "navigation": "SEEDED",
+      "backend_schema": "CREATED"
+    },
+    "dashul_response": "Backend foundation created and routed; frontend/public-site source must be connected and tested before live claim."
+  },
+  "hosts": {
+    "vercel_projects": [
+      "thylora-public-world",
+      "thylora-store",
+      "thylora-warehouse",
+      "thylora-submit",
+      "thylora-head-current",
+      "thylora-library-open",
+      "thylora-library",
+      "thylora-head-authority-probe",
+      "thylora-current-head",
+      "thylora-dashboard-recovery",
+      "thylora-independent-dashboard",
+      "storefront-dashboard"
+    ],
+    "vercel_projects_linked_to_vyc2st-ctrl/Thylora": [],
+    "vercel_projects_linked_to_vyc2st-ctrl/thylora-executive-dashboard": [
+      "thylora-public-world",
+      "thylora-head-current"
+    ],
+    "thylora_public_world_production": {
+      "deployment": "dpl_CYd64iR6miVsVhfGQWEup9EY87P1",
+      "sha": "90003f3602455ba5dc7a5c6bc02270ed1206cb5d",
+      "state": "READY"
+    },
+    "authority_repo_master": "a634249 (2026-09-19)",
+    "sports_betting_page_present": {
+      "vyc2st-ctrl/Thylora": "app/sports-betting.html (commit e4a9a83)",
+      "vyc2st-ctrl/thylora-executive-dashboard": "app/sports-betting.html"
+    },
+    "sports_betting_linked_from_nav": false,
+    "authority_repo_mentions": {
+      "living_business_app": 0,
+      "C&W": 0,
+      "business_residency": 0,
+      "client-app-builder": 0
+    }
+  }
+}
