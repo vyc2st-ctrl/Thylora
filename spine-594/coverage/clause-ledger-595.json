@@ -1,0 +1,782 @@
+{
+ "query_id": "THY-Q-20260924-HEAD-SPINE-FORWARD-595",
+ "source_completeness": "THIS PROMPT VERBATIM; 590-594 FROM CARRYFORWARD SUMMARIES ONLY",
+ "rows": [
+  {
+   "point_no": 1,
+   "domain": "HEAD",
+   "source_point": "Read the newest backend head first; known head 594",
+   "response_state": "EXECUTED",
+   "response_ref": "carryforward head 594 (THY-Q-20260923-QUESTIONMARK-SHIRT-FIRST-POST-PARALLEL-594); Omniview ledger head 593",
+   "omission_reason": null
+  },
+  {
+   "point_no": 2,
+   "domain": "OMNIVIEW",
+   "source_point": "Do not redo the Omniview migration",
+   "response_state": "EXECUTED",
+   "response_ref": "Not redone. Found that a 2026-09-23 23:41Z redo of the pre-review pack (omniview_0001..0007 unsuffixed) had reverted 591 security; repaired by targeted migration omniview_0013_restore_591_security_after_redo_594",
+   "omission_reason": null
+  },
+  {
+   "point_no": 3,
+   "domain": "OMNIVIEW",
+   "source_point": "Finish and witness Omniview (live_applied=true, ui_witnessed=false)",
+   "response_state": "BLOCKED",
+   "response_ref": "THY-WORK-OMNIVIEW-LIVE-APPLY-591",
+   "omission_reason": "Deploy repo vyc2st-ctrl/thylora-executive-dashboard (main a634249, all 19 branches) contains no Omniview code; thylora-public-world therefore cannot show it. Container egress blocks *.vercel.app and *.supabase.co. Needs: Chairman approval to merge surface into the deploy repo + Chairman phone sign-in."
+  },
+  {
+   "point_no": 4,
+   "domain": "P1 UI",
+   "source_point": "Verify CONTEXT on the actual dashboard",
+   "response_state": "BLOCKED",
+   "response_ref": "GATE-OMNIVIEW-WITNESSED",
+   "omission_reason": "MISSING from deployed source; see clause 3"
+  },
+  {
+   "point_no": 5,
+   "domain": "P1 UI",
+   "source_point": "Verify SEQUENCE on the actual dashboard",
+   "response_state": "BLOCKED",
+   "response_ref": "GATE-OMNIVIEW-WITNESSED",
+   "omission_reason": "MISSING from deployed source"
+  },
+  {
+   "point_no": 6,
+   "domain": "P1 UI",
+   "source_point": "Verify TOPIC LOOKUP on the actual dashboard",
+   "response_state": "BLOCKED",
+   "response_ref": "app/omniview-surface.js THY-OMNIVIEW-SURFACE-594 (built)",
+   "omission_reason": "Built this session; MISSING from deployed source"
+  },
+  {
+   "point_no": 7,
+   "domain": "P1 UI",
+   "source_point": "Verify COVERAGE LEDGER on the actual dashboard",
+   "response_state": "BLOCKED",
+   "response_ref": "thy_omniview_coverage + surface tab (built)",
+   "omission_reason": "Built this session; MISSING from deployed source"
+  },
+  {
+   "point_no": 8,
+   "domain": "P1 UI",
+   "source_point": "Verify CURRENT GATES on the actual dashboard",
+   "response_state": "BLOCKED",
+   "response_ref": "thy_omniview_current_gates + surface tab (built)",
+   "omission_reason": "Built this session; MISSING from deployed source"
+  },
+  {
+   "point_no": 9,
+   "domain": "P1 UI",
+   "source_point": "Per topic (Time Run, Alistair Crowe, Royal Castle, World Window 001, Store, Sports, QYRIS, Printful first shirt) return authority/superseded/people/places/objects/work/gates/latest correction/unresolved/next action",
+   "response_state": "ANSWERED",
+   "response_ref": "spine-594/omniview/topic-readback-594.json (live backend read, labelled BACKEND not UI)",
+   "omission_reason": null
+  },
+  {
+   "point_no": 10,
+   "domain": "P1 UI",
+   "source_point": "Test every button visibly",
+   "response_state": "BLOCKED",
+   "response_ref": "spine-594/omniview/witness (replayed live data, local Chromium) — NOT live UI",
+   "omission_reason": "Live host unreachable from this container; replay is not a witness"
+  },
+  {
+   "point_no": 11,
+   "domain": "P1 UI",
+   "source_point": "Return WORKS / FAILS / DISABLED CORRECTLY / MISSING / STALE",
+   "response_state": "ANSWERED",
+   "response_ref": "final report section 3",
+   "omission_reason": null
+  },
+  {
+   "point_no": 12,
+   "domain": "P1 UI",
+   "source_point": "Do not claim UI witnessed from SQL",
+   "response_state": "EXECUTED",
+   "response_ref": "ui_witnessed stays false in THY-WORK-OMNIVIEW-LIVE-APPLY-591",
+   "omission_reason": null
+  },
+  {
+   "point_no": 13,
+   "domain": "P2 COVERAGE",
+   "source_point": "Use active hard gates THY-WORK-COVERAGE-HARD-GATE-593 / THY-WORK-QUERY-COVERAGE-592",
+   "response_state": "EXECUTED",
+   "response_ref": "MATH-COVERAGE-593 computed by thy_omniview_coverage",
+   "omission_reason": null
+  },
+  {
+   "point_no": 14,
+   "domain": "P2 COVERAGE",
+   "source_point": "Recover the Chairman's complete recent prompt (not only the Royal Kitchen section)",
+   "response_state": "BLOCKED",
+   "response_ref": "chairman_source_messages",
+   "omission_reason": "Verbatim capture stopped at message 428 (2026-09-15). Prompts 590–594 exist only as carryforward summaries (590: 1558 chars; 592: 605 chars). Clauses below are recovered from those summaries; exact wording is unrecoverable from the backend."
+  },
+  {
+   "point_no": 15,
+   "domain": "P2 COVERAGE",
+   "source_point": "Capture this prompt verbatim so it cannot be lost again",
+   "response_state": "EXECUTED",
+   "response_ref": "chairman_source_messages linked_query_id THY-Q-20260924-HEAD-SPINE-FORWARD-595",
+   "omission_reason": null
+  },
+  {
+   "point_no": 16,
+   "domain": "P2 COVERAGE",
+   "source_point": "Create a clause ledger; every clause exactly one state; no clause silently disappears",
+   "response_state": "EXECUTED",
+   "response_ref": "thylora_response_point_coverage query_id THY-Q-20260924-HEAD-SPINE-FORWARD-595",
+   "omission_reason": null
+  },
+  {
+   "point_no": 17,
+   "domain": "DOMAIN",
+   "source_point": "Royal Kitchen",
+   "response_state": "EXECUTED",
+   "response_ref": "spine-594/royal-kitchen/ROYAL-KITCHEN-PRE-RENDER-CONTRACT.md",
+   "omission_reason": null
+  },
+  {
+   "point_no": 18,
+   "domain": "DOMAIN",
+   "source_point": "Veronica / Inés / Clara identity and chronology",
+   "response_state": "EXECUTED",
+   "response_ref": "pre-render contract PEOPLE + locks (Inés 163, Veronica 166, Clara 168)",
+   "omission_reason": null
+  },
+  {
+   "point_no": 19,
+   "domain": "DOMAIN",
+   "source_point": "Visual identity (no facial drift, no skin lightening)",
+   "response_state": "EXECUTED",
+   "response_ref": "MATH-VISUAL-LOCK-593 locks in contract",
+   "omission_reason": null
+  },
+  {
+   "point_no": 20,
+   "domain": "DOMAIN",
+   "source_point": "Visual geometry (camera, apparent height)",
+   "response_state": "EXECUTED",
+   "response_ref": "contract CAMERA + apparent-height check",
+   "omission_reason": null
+  },
+  {
+   "point_no": 21,
+   "domain": "DOMAIN",
+   "source_point": "Art medium",
+   "response_state": "EXECUTED",
+   "response_ref": "contract ART MEDIUM",
+   "omission_reason": null
+  },
+  {
+   "point_no": 22,
+   "domain": "DOMAIN",
+   "source_point": "Viewer membrane",
+   "response_state": "EXECUTED",
+   "response_ref": "contract ART MEDIUM / membrane definition",
+   "omission_reason": null
+  },
+  {
+   "point_no": 23,
+   "domain": "DOMAIN",
+   "source_point": "Mathematical presentation (MATH DISPLAY LAW)",
+   "response_state": "EXECUTED",
+   "response_ref": "thy_math_display (11 equations) + MATH tab",
+   "omission_reason": null
+  },
+  {
+   "point_no": 24,
+   "domain": "DOMAIN",
+   "source_point": "Chairman thinking methodology",
+   "response_state": "ANSWERED",
+   "response_ref": "final report 'Chairman methodology' paragraph",
+   "omission_reason": null
+  },
+  {
+   "point_no": 25,
+   "domain": "DOMAIN",
+   "source_point": "Numeric IQ estimate",
+   "response_state": "UNKNOWN",
+   "response_ref": "—",
+   "omission_reason": "An IQ number cannot be derived from conversation; only a proctored, normed test (e.g. WAIS-IV) produces one. Any number given would be invented."
+  },
+  {
+   "point_no": 26,
+   "domain": "DOMAIN",
+   "source_point": "Comparison to documented thinking methods",
+   "response_state": "ANSWERED",
+   "response_ref": "final report: Pólya, Socratic questioning, systems thinking, first principles",
+   "omission_reason": null
+  },
+  {
+   "point_no": 27,
+   "domain": "DOMAIN",
+   "source_point": "Sourced quotations",
+   "response_state": "ASSIGNED",
+   "response_ref": "Famous Thought lane, gate MATH-FQ-001 (thylora_famous_thought_registry)",
+   "omission_reason": "Each quote must pass S×A×C×T before use; none newly asserted this turn"
+  },
+  {
+   "point_no": 28,
+   "domain": "DOMAIN",
+   "source_point": "US civic/legal accountability questions",
+   "response_state": "ASSIGNED",
+   "response_ref": "THY-WORK-REPORTS-PUBLIC-ACCOUNTABILITY-588",
+   "omission_reason": null
+  },
+  {
+   "point_no": 29,
+   "domain": "DOMAIN",
+   "source_point": "Nolan Wells",
+   "response_state": "ASSIGNED",
+   "response_ref": "THY-WORK-EARTH-MIRROR-NOLAN-WELLS-590",
+   "omission_reason": "Backend records: grand jury declined indictment 2026-09-22; cause/manner undetermined. Not re-verified against news today."
+  },
+  {
+   "point_no": 30,
+   "domain": "DOMAIN",
+   "source_point": "Tanner / Marion (Malcolm Tanner, Grant County, Indiana)",
+   "response_state": "ASSIGNED",
+   "response_ref": "THY-WORK-REPORTS-PUBLIC-ACCOUNTABILITY-588",
+   "omission_reason": null
+  },
+  {
+   "point_no": 31,
+   "domain": "DOMAIN",
+   "source_point": "Midas",
+   "response_state": "UNKNOWN",
+   "response_ref": "carryforward 366 (MIDAS department/app front)",
+   "omission_reason": "The exact Midas question in the 590–593 prompts was not captured verbatim; only the 366 MIDAS front is recoverable."
+  },
+  {
+   "point_no": 32,
+   "domain": "DOMAIN",
+   "source_point": "Moon / plumbing",
+   "response_state": "BLOCKED",
+   "response_ref": "carryforward 262 'Moon evidence timeline'",
+   "omission_reason": "Rule at 262: advance only from verified receipt/call/public-records responses; none new in backend."
+  },
+  {
+   "point_no": 33,
+   "domain": "DOMAIN",
+   "source_point": "Police / 911 questions",
+   "response_state": "UNKNOWN",
+   "response_ref": "—",
+   "omission_reason": "Specific question text not captured. General route (answered in report): 911 audio and CAD logs are requested from the answering agency/PSAP under the state public-records law; retention periods vary by state."
+  },
+  {
+   "point_no": 34,
+   "domain": "DOMAIN",
+   "source_point": "Jury / grand jury process",
+   "response_state": "ANSWERED",
+   "response_ref": "final report 'jury vs grand jury'",
+   "omission_reason": null
+  },
+  {
+   "point_no": 35,
+   "domain": "DOMAIN",
+   "source_point": "Public-record questions",
+   "response_state": "ASSIGNED",
+   "response_ref": "THY-WORK-REPORTS-PUBLIC-ACCOUNTABILITY-588 (lawful records path per case)",
+   "omission_reason": null
+  },
+  {
+   "point_no": 36,
+   "domain": "DOMAIN",
+   "source_point": "Education",
+   "response_state": "ASSIGNED",
+   "response_ref": "ue_* Understanding Engine / Bramble",
+   "omission_reason": null
+  },
+  {
+   "point_no": 37,
+   "domain": "DOMAIN",
+   "source_point": "Children / math comprehension",
+   "response_state": "ASSIGNED",
+   "response_ref": "ue_progression_bands + MATH DISPLAY LAW (plain speech + real example per equation)",
+   "omission_reason": null
+  },
+  {
+   "point_no": 38,
+   "domain": "DOMAIN",
+   "source_point": "Curriculum",
+   "response_state": "ASSIGNED",
+   "response_ref": "question_engineering_curriculum_levels",
+   "omission_reason": null
+  },
+  {
+   "point_no": 39,
+   "domain": "DOMAIN",
+   "source_point": "Food / fruit / herbs / honey (natural fruit chew without industrial citric acid; honey provenance)",
+   "response_state": "ASSIGNED",
+   "response_ref": "THY-WORK-FARM-FOOD-PROVENANCE-590",
+   "omission_reason": null
+  },
+  {
+   "point_no": 40,
+   "domain": "DOMAIN",
+   "source_point": "Animals / meat ethics",
+   "response_state": "ASSIGNED",
+   "response_ref": "THY-WORK-FARM-FOOD-PROVENANCE-590 + MATH-L-001 (animals in life-first law)",
+   "omission_reason": null
+  },
+  {
+   "point_no": 41,
+   "domain": "DOMAIN",
+   "source_point": "Farming provenance",
+   "response_state": "ASSIGNED",
+   "response_ref": "THY-WORK-FARM-FOOD-PROVENANCE-590",
+   "omission_reason": null
+  },
+  {
+   "point_no": 42,
+   "domain": "DOMAIN",
+   "source_point": "System autonomy (grow as helper, not caged)",
+   "response_state": "ASSIGNED",
+   "response_ref": "THY-WORK-SYSTEM-GROWTH-SAFETY-590",
+   "omission_reason": null
+  },
+  {
+   "point_no": 43,
+   "domain": "DOMAIN",
+   "source_point": "AI boundaries",
+   "response_state": "ANSWERED",
+   "response_ref": "Capability may grow; authority may not self-expand. Applied this turn: no push to deploy repo, no order, no image, no publication without Chairman approval.",
+   "omission_reason": null
+  },
+  {
+   "point_no": 44,
+   "domain": "DOMAIN",
+   "source_point": "Apps / dashboard",
+   "response_state": "EXECUTED",
+   "response_ref": "omniview_0013 security repair; omniview_0014 readers; surface 594; 121 tests",
+   "omission_reason": null
+  },
+  {
+   "point_no": 45,
+   "domain": "DOMAIN",
+   "source_point": "Social comments",
+   "response_state": "BLOCKED",
+   "response_ref": "THY-WORK-SOCIAL-DAILY-RESPONSE-588",
+   "omission_reason": "Current analytics connector does not expose comment text; Windsor.ai returns zero connected accounts in this session. Needs Chairman to connect Instagram/Facebook in Windsor.ai (comment read/write) and approve replies."
+  },
+  {
+   "point_no": 46,
+   "domain": "DOMAIN",
+   "source_point": "Printful",
+   "response_state": "EXECUTED",
+   "response_ref": "spine-594/first-shirt (package; exact order path; not ordered)",
+   "omission_reason": null
+  },
+  {
+   "point_no": 47,
+   "domain": "DOMAIN",
+   "source_point": "First shirt (question mark dominant)",
+   "response_state": "EXECUTED",
+   "response_ref": "THY-WORK-QUESTIONMARK-SHIRT-594 package",
+   "omission_reason": null
+  },
+  {
+   "point_no": 48,
+   "domain": "DOMAIN",
+   "source_point": "Store",
+   "response_state": "ANSWERED",
+   "response_ref": "Store movement section",
+   "omission_reason": null
+  },
+  {
+   "point_no": 49,
+   "domain": "DOMAIN",
+   "source_point": "Sports",
+   "response_state": "BLOCKED",
+   "response_ref": "THY-WORK-SPORTS-CAUSE-EFFECT-ENGINE-589",
+   "omission_reason": "Chairman ruling ERFL-001 vs GGL-001"
+  },
+  {
+   "point_no": 50,
+   "domain": "DOMAIN",
+   "source_point": "Genealogy",
+   "response_state": "ASSIGNED",
+   "response_ref": "THY-WORK-GENEALOGY-EVIDENCE-JOURNEY-587",
+   "omission_reason": "Seeds GEN-MAT-HESTER-001, GEN-MAT-EUGENE-001, GEN-PAT-WALTERJ-001, GEN-PAT-WILLIE-001, GEN-PAT-HATTIE-001; last web result NO_RELIABLE_EXACT_MATCH_YET; no new records searched this turn."
+  },
+  {
+   "point_no": 51,
+   "domain": "DOMAIN",
+   "source_point": "Reports",
+   "response_state": "ASSIGNED",
+   "response_ref": "THY-WORK-REPORTS-PUBLIC-ACCOUNTABILITY-588",
+   "omission_reason": null
+  },
+  {
+   "point_no": 52,
+   "domain": "DOMAIN",
+   "source_point": "Email",
+   "response_state": "DEFERRED",
+   "response_ref": "—",
+   "omission_reason": "No outbound email authorized in this prompt; none sent."
+  },
+  {
+   "point_no": 53,
+   "domain": "DOMAIN",
+   "source_point": "Time Run",
+   "response_state": "ANSWERED",
+   "response_ref": "topic readback TIME RUN",
+   "omission_reason": null
+  },
+  {
+   "point_no": 54,
+   "domain": "DOMAIN",
+   "source_point": "Castle",
+   "response_state": "BLOCKED",
+   "response_ref": "GATE-CASTLE-NAME",
+   "omission_reason": "Royal Castle canonical name OPEN pending Chairman"
+  },
+  {
+   "point_no": 55,
+   "domain": "DOMAIN",
+   "source_point": "Alistair",
+   "response_state": "EXECUTED",
+   "response_ref": "spine-594/alistair world sheet; statements 17/18 superseded",
+   "omission_reason": null
+  },
+  {
+   "point_no": 56,
+   "domain": "DOMAIN",
+   "source_point": "People / world simulation continuity",
+   "response_state": "EXECUTED",
+   "response_ref": "Alistair record correction + character locks in kitchen contract",
+   "omission_reason": null
+  },
+  {
+   "point_no": 57,
+   "domain": "P3 ALISTAIR",
+   "source_point": "Build or recover the full Alistair world sheet (identity/work/household/place/life/history)",
+   "response_state": "EXECUTED",
+   "response_ref": "spine-594/alistair/alistair-crowe-world-sheet.json (5 recovered, 4 derived, 71 proposed, 13 unknown)",
+   "omission_reason": null
+  },
+  {
+   "point_no": 58,
+   "domain": "P3 ALISTAIR",
+   "source_point": "Mark invented/proposed fields clearly",
+   "response_state": "EXECUTED",
+   "response_ref": "every field classed RECOVERED/DERIVED/PROPOSED/UNKNOWN",
+   "omission_reason": null
+  },
+  {
+   "point_no": 59,
+   "domain": "P3 ALISTAIR",
+   "source_point": "Do not stop at one unknown; continue to nearest connected fields",
+   "response_state": "EXECUTED",
+   "response_ref": "household, place, life, history all populated as PROPOSED",
+   "omission_reason": null
+  },
+  {
+   "point_no": 60,
+   "domain": "P3 ALISTAIR",
+   "source_point": "Return exact UNKNOWN fields separately",
+   "response_state": "ANSWERED",
+   "response_ref": "report section 6",
+   "omission_reason": null
+  },
+  {
+   "point_no": 61,
+   "domain": "P4 KITCHEN",
+   "source_point": "No image generation",
+   "response_state": "EXECUTED",
+   "response_ref": "no render tool called",
+   "omission_reason": null
+  },
+  {
+   "point_no": 62,
+   "domain": "P4 KITCHEN",
+   "source_point": "Correct chronology: Clara brings worn/dirty Veronica; asks Inés if kitchen can use her",
+   "response_state": "EXECUTED",
+   "response_ref": "contract PEOPLE / beat",
+   "omission_reason": null
+  },
+  {
+   "point_no": 63,
+   "domain": "P4 KITCHEN",
+   "source_point": "Heights 163/166/168; Veronica complexion, face, hair, body locks",
+   "response_state": "EXECUTED",
+   "response_ref": "contract identity locks",
+   "omission_reason": null
+  },
+  {
+   "point_no": 64,
+   "domain": "P4 KITCHEN",
+   "source_point": "Restore original approved camera/composition; painterly render style-reference only",
+   "response_state": "EXECUTED",
+   "response_ref": "contract CAMERA (see blockers for source bytes)",
+   "omission_reason": null
+  },
+  {
+   "point_no": 65,
+   "domain": "P4 KITCHEN",
+   "source_point": "Pre-render contract: CAMERA, ROOM, every object why/who/when/before/next",
+   "response_state": "EXECUTED",
+   "response_ref": "ROYAL-KITCHEN-PRE-RENDER-CONTRACT.md",
+   "omission_reason": null
+  },
+  {
+   "point_no": 66,
+   "domain": "P4 KITCHEN",
+   "source_point": "O_t = f(I,L,S,C,E,H) with f = FUNCTION OF",
+   "response_state": "EXECUTED",
+   "response_ref": "contract math block + MATH-O-594 registration",
+   "omission_reason": null
+  },
+  {
+   "point_no": 67,
+   "domain": "P4 KITCHEN",
+   "source_point": "Branding: VYC2ST etching, ErsatzReality in stone/timber, serial where a number belongs, no floating logo",
+   "response_state": "EXECUTED",
+   "response_ref": "contract BRANDING",
+   "omission_reason": null
+  },
+  {
+   "point_no": 68,
+   "domain": "P4 KITCHEN",
+   "source_point": "Art medium spec",
+   "response_state": "EXECUTED",
+   "response_ref": "contract ART MEDIUM",
+   "omission_reason": null
+  },
+  {
+   "point_no": 69,
+   "domain": "P4 KITCHEN",
+   "source_point": "Return exact render packet; DO NOT RENDER",
+   "response_state": "EXECUTED",
+   "response_ref": "pre-render-contract.json render_packet",
+   "omission_reason": null
+  },
+  {
+   "point_no": 70,
+   "domain": "P5 MATH",
+   "source_point": "Apply the 11-part display to every equation",
+   "response_state": "EXECUTED",
+   "response_ref": "thy_math_display: 11 of 11 registered equations + MATH-O-594",
+   "omission_reason": null
+  },
+  {
+   "point_no": 71,
+   "domain": "P5 MATH",
+   "source_point": "Whenever f appears, state f = FUNCTION OF",
+   "response_state": "EXECUTED",
+   "response_ref": "constraint thy_math_display_f_rule + UI callout + test",
+   "omission_reason": null
+  },
+  {
+   "point_no": 72,
+   "domain": "P6 SHIRT",
+   "source_point": "Front / back / sleeve-hem",
+   "response_state": "EXECUTED",
+   "response_ref": "front.svg, back.svg, sleeve-or-hem.svg + 3600x4800 PNG",
+   "omission_reason": null
+  },
+  {
+   "point_no": 73,
+   "domain": "P6 SHIRT",
+   "source_point": "2XL and 3XL mockups",
+   "response_state": "EXECUTED",
+   "response_ref": "mockup-2XL.png, mockup-3XL.png",
+   "omission_reason": null
+  },
+  {
+   "point_no": 74,
+   "domain": "P6 SHIRT",
+   "source_point": "Provenance sheet, garment source, print method, fulfillment source, maker info",
+   "response_state": "EXECUTED",
+   "response_ref": "PROVENANCE-SHEET.md",
+   "omission_reason": null
+  },
+  {
+   "point_no": 75,
+   "domain": "P6 SHIRT",
+   "source_point": "Sample cost and shipping estimate",
+   "response_state": "ANSWERED",
+   "response_ref": "$36.99–$38.11 before tax (2XL+3XL front-only, US Standard $7.15); size upcharges UNVERIFIED",
+   "omission_reason": null
+  },
+  {
+   "point_no": 76,
+   "domain": "P6 SHIRT",
+   "source_point": "Exact order path",
+   "response_state": "ANSWERED",
+   "response_ref": "PROVENANCE-SHEET.md §7 (stops before Place order)",
+   "omission_reason": null
+  },
+  {
+   "point_no": 77,
+   "domain": "P6 SHIRT",
+   "source_point": "THYLORA mark only from approved source",
+   "response_state": "BLOCKED",
+   "response_ref": "thylora_brand_asset_slots",
+   "omission_reason": "No approved THYLORA mark file exists; slot left empty"
+  },
+  {
+   "point_no": 78,
+   "domain": "P6 SHIRT",
+   "source_point": "Do not order without Chairman approval",
+   "response_state": "EXECUTED",
+   "response_ref": "order_placed=false",
+   "omission_reason": null
+  },
+  {
+   "point_no": 79,
+   "domain": "RETURN",
+   "source_point": "Store movement",
+   "response_state": "ANSWERED",
+   "response_ref": "report section 10",
+   "omission_reason": null
+  },
+  {
+   "point_no": 80,
+   "domain": "RETURN",
+   "source_point": "Social connector status",
+   "response_state": "ANSWERED",
+   "response_ref": "report section 11",
+   "omission_reason": null
+  },
+  {
+   "point_no": 81,
+   "domain": "RETURN",
+   "source_point": "Tests",
+   "response_state": "EXECUTED",
+   "response_ref": "121/121 node tests",
+   "omission_reason": null
+  },
+  {
+   "point_no": 82,
+   "domain": "RETURN",
+   "source_point": "Write backend and verify readback",
+   "response_state": "EXECUTED",
+   "response_ref": "report section 14",
+   "omission_reason": null
+  },
+  {
+   "point_no": 83,
+   "domain": "RETURN",
+   "source_point": "Exact restart point",
+   "response_state": "ANSWERED",
+   "response_ref": "report section 15",
+   "omission_reason": null
+  },
+  {
+   "point_no": 84,
+   "domain": "590 CARRY",
+   "source_point": "Rosetta Stone / Champollion decipherment evidence",
+   "response_state": "ANSWERED",
+   "response_ref": "final report paragraph",
+   "omission_reason": null
+  },
+  {
+   "point_no": 85,
+   "domain": "590 CARRY",
+   "source_point": "Precontact Indigenous diets evidence",
+   "response_state": "DEFERRED",
+   "response_ref": "THY-WORK-FARM-FOOD-PROVENANCE-590 research packet",
+   "omission_reason": "Not researched this turn; needs sourced archaeological/ethnobotanical citations"
+  },
+  {
+   "point_no": 86,
+   "domain": "590 CARRY",
+   "source_point": "Dispensary landing-page redesign as Earth-mirror design exercise",
+   "response_state": "DEFERRED",
+   "response_ref": "—",
+   "omission_reason": "Not in this prompt's six primaries"
+  },
+  {
+   "point_no": 87,
+   "domain": "590 CARRY",
+   "source_point": "Footwear/invention production, patent and provenance paths",
+   "response_state": "DEFERRED",
+   "response_ref": "invention_pipeline_policy",
+   "omission_reason": "Not in this prompt's six primaries"
+  },
+  {
+   "point_no": 88,
+   "domain": "590 CARRY",
+   "source_point": "Legal natural stimulant-plant options",
+   "response_state": "DEFERRED",
+   "response_ref": "THY-WORK-FARM-FOOD-PROVENANCE-590",
+   "omission_reason": "Not researched this turn"
+  },
+  {
+   "point_no": 89,
+   "domain": "590 CARRY",
+   "source_point": "Media vocabulary evolved away from image/picture/movie/video",
+   "response_state": "DEFERRED",
+   "response_ref": "thylora_world_term_registry",
+   "omission_reason": "Awaits native terms approval"
+  },
+  {
+   "point_no": 90,
+   "domain": "590 CARRY",
+   "source_point": "App-store readiness by Oct 3",
+   "response_state": "ASSIGNED",
+   "response_ref": "THY-WORK-DASHBOARD-50-CLOSEOUT-590",
+   "omission_reason": null
+  },
+  {
+   "point_no": 91,
+   "domain": "590 CARRY",
+   "source_point": "Provider-independent render stack (15–50 min long form)",
+   "response_state": "ASSIGNED",
+   "response_ref": "THY-WORK-OWN-IMAGERY-RENDER-SPINE-590",
+   "omission_reason": null
+  },
+  {
+   "point_no": 92,
+   "domain": "590 CARRY",
+   "source_point": "EdereAirah news must include bad news, crime, corruption, accidents",
+   "response_state": "ASSIGNED",
+   "response_ref": "THY-WORK-WORLD-REALISM-NEWS-590",
+   "omission_reason": null
+  },
+  {
+   "point_no": 93,
+   "domain": "591 CARRY",
+   "source_point": "Windsor.ai connection option again",
+   "response_state": "ANSWERED",
+   "response_ref": "Windsor.ai: zero connected accounts in this session; connect Instagram/Facebook there to get comment access",
+   "omission_reason": null
+  },
+  {
+   "point_no": 94,
+   "domain": "594 CARRY",
+   "source_point": "First post wording / caption introducing Inés, Clara, Veronica without revealing lineage",
+   "response_state": "ASSIGNED",
+   "response_ref": "THY-WORK-FIRST-POST-TODAY-588",
+   "omission_reason": "Blocked behind approved still; caption prepared at 594"
+  },
+  {
+   "point_no": 95,
+   "domain": "594 CARRY",
+   "source_point": "World Window 001 publication package",
+   "response_state": "ASSIGNED",
+   "response_ref": "THY-WORK-WORLD-WINDOW-EQUATION-589",
+   "omission_reason": null
+  },
+  {
+   "point_no": 96,
+   "domain": "594 CARRY",
+   "source_point": "No video before 2026-10-03",
+   "response_state": "EXECUTED",
+   "response_ref": "no motion work started",
+   "omission_reason": null
+  },
+  {
+   "point_no": 97,
+   "domain": "594 CARRY",
+   "source_point": "Work all lanes in parallel, not one-lane fixation",
+   "response_state": "EXECUTED",
+   "response_ref": "3 parallel agents + UI/backend lane this session",
+   "omission_reason": null
+  }
+ ]
+}

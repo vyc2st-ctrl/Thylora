@@ -1,0 +1,296 @@
+{
+  "package": "THY-SHIRT-FIRST-001-ART-PACKAGE",
+  "product_code": "THY-SHIRT-FIRST-001",
+  "work_codes": [
+    "THY-WORK-QUESTIONMARK-SHIRT-594",
+    "THY-WORK-POD-FIRST-SHIRT-587"
+  ],
+  "prepared": {
+    "by": "Claude Code (THYLORA session)",
+    "when": "2026-09-24",
+    "where": "repo vyc2st-ctrl/Thylora, branch claude/thylora-head-spine-forward-4nf7hh, spine-594/first-shirt",
+    "why": "Chairman seq 594: question mark must be huge on the first shirt; target wear date 2026-10-03"
+  },
+  "approval_state": "AWAITING_CHAIRMAN_APPROVAL",
+  "order_placed": false,
+  "product_created": false,
+  "published": false,
+  "backend_written": false,
+  "files": {
+    "PROVENANCE-SHEET.md": "2392608d85b03af7daf5855deebd5041cae59baa156206b4643f7afa69918d6a",
+    "back-print-3600x4800.png": "d6ce73279a7a08d5c516acbd9e171b78a8251eb11b3735e78857e4b8e8f47d8d",
+    "back.svg": "99802124f49d1cf47c2767a5352034c04fce617c376524bef2858048165adfc7",
+    "build/gen.js": "b974ae9e6a5b7b46f7868302c503fed9b68211fa21107fab1bf2c1badcce8c18",
+    "build/render.js": "3f284dfa9a75571330ce8cc687453e503e2705445941ff9fdc2bd0ba89699a07",
+    "front-preview.png": "6f3236eb72dd7a11ff34774f73964bc89559d3be9656c8603001e376e5171d38",
+    "front-print-3600x4800.png": "f690ddca7f2a6df7ffee280aec2a06d622b003bbaba3ff6941d7a182d03bd2de",
+    "front.svg": "5348e1a4758afd6fb45a99e42216506b4a46b3e3a245779beea5fe2aa797f010",
+    "mockup-2XL.png": "ca9ca2eaaebba90f1d4d7a3751d1966e9c2b837752cbfcca0b6eb03440e31bf3",
+    "mockup-2XL.svg": "899d95a3d34115de97ab9e873e68d23dcba353e6f54a6dcc001bc4fff92e7faa",
+    "mockup-3XL.png": "ab3817fb2ae1e49f8e58ff5a8609adb907af91e04ec2ec66da1e5cef0023bf8f",
+    "mockup-3XL.svg": "440bfe8ace4f18b6ef0015c6fcc12adcb14ba7993a535089499076425e00d019",
+    "sleeve-or-hem.svg": "d560b37351e361128d6dad6e9280683641402c9c35dcedf590d50f16fe945002"
+  },
+  "upload_files": {
+    "front": "front-print-3600x4800.png",
+    "back_optional": "back-print-3600x4800.png"
+  },
+  "print_spec": {
+    "artboard_in": [
+      12,
+      16
+    ],
+    "dpi": 300,
+    "px": [
+      3600,
+      4800
+    ],
+    "background": "transparent",
+    "inks": 1,
+    "ink_hex": "#ECE4D2",
+    "ink_for_garment": "black",
+    "min_stroke_pt": 1.68,
+    "ink_width_in": 9.6,
+    "question_mark_height_in": 13.8,
+    "guide_layers_hidden_in_print": [
+      "GUIDE-NONPRINT-THYLORA-MARK-SLOT"
+    ]
+  },
+  "concept": "Huge masonry question mark set out with a compass (voussoir hook, ashlar stem); the dot is a world-window aperture into the EdereAirah Royal Kitchen hearth wall; etched construction marks show the question being worked.",
+  "elements": [
+    {
+      "id": "E1",
+      "name": "question mark",
+      "role": "PRIMARY",
+      "source": "constructed vector geometry, build/gen.js",
+      "approval": "PROPOSED"
+    },
+    {
+      "id": "E2",
+      "name": "masonry language (vault/ashlar)",
+      "role": "PRIMARY-detail",
+      "source": "WR-WORLD-WINDOW-583 §10 EA-RK-STRUCT-VAULT, EA-RK-STRUCT-WALL (origin/claude/thylora-world-window-vefjrp)",
+      "approval": "PROPOSED; source scene awaiting Chairman decision (a) seq 589"
+    },
+    {
+      "id": "E3",
+      "name": "Royal Kitchen hearth wall in aperture",
+      "role": "SECONDARY",
+      "source": "SCENE-WW-001-ROYAL-KITCHEN-20260922 / ER-VIS-20260922-0001: EA-RK-WIN-001, EA-RK-HC-001, EA-RK-HC-002, EA-RK-IR-0031, EA-RK-STRUCT-FLOOR, EA-RK-DR-001 smoke bend; no people",
+      "approval": "PROPOSED"
+    },
+    {
+      "id": "E5",
+      "name": "back question 'WHOSE KNIFE IS THAT, AND WHERE DOES IT SLEEP?'",
+      "role": "BACK",
+      "source": "WR-WORLD-WINDOW-583 §2.1 REASON",
+      "approval": "PROPOSED"
+    },
+    {
+      "id": "E7",
+      "name": "ErsatzReality",
+      "role": "TERTIARY",
+      "source": "BRAND-ERNEWS-MASTHEAD spelling (CHAIRMAN_APPROVED); font UNKNOWN (BRAND-FONT-FAMILY) so provisional monospace",
+      "approval": "SPELLING_APPROVED_TYPE_PROVISIONAL"
+    },
+    {
+      "id": "E8",
+      "name": "VYC2ST",
+      "role": "TERTIARY",
+      "source": "registry 587 evidence marks_available_now; plain text",
+      "approval": "AVAILABLE_TYPE_PROVISIONAL"
+    },
+    {
+      "id": "E9",
+      "name": "ErsatzReality glass-and-hat mark",
+      "role": "TERTIARY",
+      "source": "BRAND-ER-MARK-GLASS-HAT approved description; no file found",
+      "approval": "NOT_USED_NO_FILE"
+    },
+    {
+      "id": "E10",
+      "name": "THYLORA mark",
+      "role": "TERTIARY",
+      "source": "BRAND-THYLORA-MARK NOT_APPROVED, truth_class UNKNOWN; no file in backend or any remote branch",
+      "approval": "BLOCKED",
+      "rendering": "empty labelled non-printing slot"
+    },
+    {
+      "id": "E11",
+      "name": "serial ERM-SHIRT-LS-QMARKWINDOW-R001",
+      "role": "PROVENANCE",
+      "source": "MERCH-SERIAL-001 grammar (origin/claude/thylora-merchandise-dev-8fs58s)",
+      "approval": "PROPOSED; gate G6 not passed; not written"
+    },
+    {
+      "id": "E12",
+      "name": "QR",
+      "source": "BRAND-QR-DESTINATIONS NOT_APPROVED",
+      "approval": "NOT_USED"
+    }
+  ],
+  "garment": {
+    "provider": "Printful",
+    "provider_connection": "USER_REPORTED_CONNECTED",
+    "blank": "Bella+Canvas 3001 Unisex Staple T-Shirt",
+    "fibre": {
+      "value": "100% combed ring-spun cotton (solid colours incl. black); some heathers 99/1 cotton/poly",
+      "state": "SOURCED",
+      "source": "https://www.bellacanvas.com/spec/3001%20specs.pdf (2026-09-24)"
+    },
+    "weight": {
+      "value": "~4.2 oz/yd2 (~142 gsm)",
+      "state": "UNVERIFIED",
+      "note": "below 589 spec target 180-220 gsm"
+    },
+    "country_of_manufacture": "UNKNOWN",
+    "print_method": {
+      "value": "DTG",
+      "state": "PROVIDER_DEFAULT_CONFIRM_IN_DESIGN_MAKER"
+    },
+    "print_area_in": {
+      "value": [
+        12,
+        16
+      ],
+      "state": "UNVERIFIED"
+    },
+    "fulfillment_facility": "UNKNOWN",
+    "maker": {
+      "blank_brand": "Bella+Canvas",
+      "mill": "UNKNOWN",
+      "printer": "Printful routed facility staff, UNKNOWN by name"
+    },
+    "size_chart_in": {
+      "2XL": {
+        "chest_flat": 26,
+        "length_hps": 32
+      },
+      "3XL": {
+        "chest_flat": 28,
+        "length_hps": 33
+      },
+      "state": "VERIFIED",
+      "source": "https://www.bellacanvas.com/spec/3001%20specs.pdf"
+    }
+  },
+  "cost_usd": {
+    "base_front_dtg": {
+      "value": 11.92,
+      "state": "SOURCED_PARTIAL",
+      "source": "Printful product page schema.org offer (cache 2026-09-23), https://www.printful.com/custom/mens/t-shirts/unisex-staple-t-shirt-bella-canvas-3001"
+    },
+    "upcharge_2XL": {
+      "range": [
+        2.5,
+        2.56
+      ],
+      "state": "UNVERIFIED",
+      "source": "podvector.ai third-party, May 2026"
+    },
+    "upcharge_3XL": {
+      "range": [
+        3.5,
+        4.56
+      ],
+      "state": "UNVERIFIED",
+      "source": "podvector.ai third-party, May 2026"
+    },
+    "black_colour_premium": {
+      "range": [
+        0,
+        1.0
+      ],
+      "state": "UNVERIFIED"
+    },
+    "back_placement_each": {
+      "value": 5.95,
+      "state": "UNVERIFIED"
+    },
+    "shipping_us_standard": {
+      "first": 4.95,
+      "additional": 2.2,
+      "total": 7.15,
+      "state": "SOURCED",
+      "source": "https://www.printful.com/shipping (read 2026-09-24)"
+    },
+    "tax": "UNKNOWN",
+    "arithmetic_front_only": {
+      "2XL": [
+        14.42,
+        14.48
+      ],
+      "3XL": [
+        15.42,
+        16.48
+      ],
+      "garments": [
+        29.84,
+        30.96
+      ],
+      "shipping": 7.15,
+      "total_before_tax": [
+        36.99,
+        38.11
+      ],
+      "with_black_premium_max": 40.11
+    },
+    "arithmetic_front_and_back": {
+      "total_before_tax": [
+        48.89,
+        52.01
+      ]
+    }
+  },
+  "timing": {
+    "fulfillment_business_days": "2-5",
+    "us_standard_business_days": "3-4",
+    "if_ordered": "2026-09-24",
+    "standard_delivery_window": [
+      "2026-10-01",
+      "2026-10-07"
+    ],
+    "target": "2026-10-03",
+    "target_guaranteed": false
+  },
+  "shopify_read_2026_09_24": {
+    "shop": "ErsatzReality (ersatzreality.myshopify.com), Basic, USD",
+    "vendor_printful_products": 0,
+    "shirt_products": 0,
+    "note": "no Printful-synced products exist"
+  },
+  "order_path": [
+    "printful.com -> Sign in (or Shopify Admin -> Apps -> Printful -> Open app)",
+    "Orders",
+    "New order / Create order (manual; not 'Add product to store')",
+    "Add product -> Men's clothing -> T-shirts -> Unisex Staple T-Shirt | Bella + Canvas 3001",
+    "Colour Black, Size 2XL, Qty 1",
+    "Front -> Upload front-print-3600x4800.png -> Fit to print area; leave Back/Sleeve/Inside label empty unless back approved",
+    "Add to order",
+    "Add product again -> same, 3XL, Qty 1, same file -> Add to order",
+    "Shipping address + method (Standard or Express)",
+    "Review order; record costs, tax, delivery estimate, facility",
+    "Billing method",
+    "STOP at 'Place order' — DO NOT PRESS; Chairman presses after checklist"
+  ],
+  "final_button_pressed": false,
+  "blocked": [
+    "THYLORA mark (no approved file)",
+    "ErsatzReality glass-and-hat mark (no file)",
+    "exact brand font (UNKNOWN)",
+    "QR (no approved destination)",
+    "serial assignment gate G6",
+    "source scene SCENE-WW-001 approval (decision a)"
+  ],
+  "chairman_decisions": [
+    "approve question mark",
+    "approve world fragment",
+    "front only vs front+back",
+    "garment weight: 3001 vs heavier blank",
+    "garment colour black vs bone",
+    "shipping speed for 2026-10-03",
+    "budget ceiling",
+    "serial",
+    "press Place order"
+  ]
+}

@@ -21,7 +21,7 @@
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
   'use strict';
 
-  const MARK = 'THY-OMNIVIEW-SURFACE-588';
+  const MARK = 'THY-OMNIVIEW-SURFACE-594';
   const BACKEND = 'https://jvsdxhrfhtlgaknhjxlz.supabase.co';
   const KEY = 'sb_publishable_ta33XJ9rtS8VljoUYw-GuA_Pi4OycpQ';
   const APPLY_PATH = 'db/omniview/ (see db/omniview/APPLY.md)';
@@ -146,10 +146,109 @@
     ];
   }
 
+  /* ---------- 594: COVERAGE LEDGER, CURRENT GATES, MATH DISPLAY, TOPIC SUMMARY ---------- */
+
+  // Exactly one of these per clause (THY-WORK-QUERY-COVERAGE-592). Anything
+  // else — OPEN included — is an unsettled clause and counts against C_q.
+  const COVERAGE_STATES = ['ANSWERED', 'EXECUTED', 'ASSIGNED', 'DEFERRED', 'BLOCKED', 'UNKNOWN'];
+
+  // The 594 readers answer {access:'DENIED'} for a non-Chairman account.
+  const deniedRead = (read) => !!(read && read.access === 'DENIED');
+
+  function coverageView(read) {
+    if (!read || typeof read !== 'object') return null;
+    if (deniedRead(read)) return { access: 'DENIED' };
+    const rows = Array.isArray(read.rows) ? read.rows : [];
+    const open = rows.filter((r) => !COVERAGE_STATES.includes(r.response_state));
+    const n = rows.length;
+    const settled = n - open.length;
+    return {
+      access: 'OK',
+      query_id: read.query_id || null,
+      queries: read.queries || [],
+      rows, open, n, settled,
+      // Recomputed here from the rows, so the screen never trusts a stale ratio.
+      c_q: n ? Math.round((settled / n) * 10000) / 10000 : null,
+      complete: n > 0 && open.length === 0,
+      by_state: rows.reduce((m, r) => { m[r.response_state] = (m[r.response_state] || 0) + 1; return m; }, {})
+    };
+  }
+
+  const F_MEANING = 'f = FUNCTION OF — the rule describing how these pieces work together.';
+
+  // MATH DISPLAY LAW: the eleven parts, always in this order, never skipped.
+  const MATH_PARTS = [
+    ['1_whole_equation', '1 · WHOLE EQUATION'],
+    ['2_left_side', '2 · LEFT SIDE'],
+    ['3_equal_sign', '3 · EQUAL SIGN'],
+    ['4_right_side', '4 · RIGHT SIDE'],
+    ['5_every_symbol', '5 · EVERY SYMBOL'],
+    ['6_every_unit', '6 · EVERY UNIT'],
+    ['7_plain_speech', '7 · PLAIN SPEECH'],
+    ['8_real_example', '8 · REAL EXAMPLE'],
+    ['9_where_used', '9 · WHERE SOMEONE WOULD USE IT'],
+    ['10_answer_meaning', '10 · WHAT THE ANSWER MEANS'],
+    ['11_next_question', '11 · NEXT QUESTION']
+  ];
+
+  const usesF = (text) => /(^|[^A-Za-z_])f\s*\(/.test(String(text || ''));
+
+  // Returns the parts as plain text lines. A missing part is shown as MISSING,
+  // never silently dropped; f is always explained when the equation uses it.
+  function mathParts(row) {
+    const d = (row && row.display) || null;
+    const parts = MATH_PARTS.map(([key, label]) => {
+      const v = d ? d[key] : null;
+      let text;
+      if (Array.isArray(v)) {
+        text = v.map((s) => key === '6_every_unit'
+          ? s.symbol + ' — ' + s.unit + (s.range ? ' (' + s.range + ')' : '')
+          : s.symbol + ' — ' + s.name + (s.meaning ? ': ' + s.meaning : '')).join('\n');
+      } else {
+        text = v == null || v === '' ? 'MISSING' : String(v);
+      }
+      return { key, label, text, missing: text === 'MISSING' };
+    });
+    const equation = (d && d['1_whole_equation']) || (row && row.registered_text) || '';
+    return { parts, uses_f: usesF(equation), f_meaning: usesF(equation) ? F_MEANING : null,
+      complete: !!d && parts.every((p) => !p.missing) };
+  }
+
+  // The ten things the Chairman asked every topic to show, read from one
+  // thy_omniview_topic payload. Empty means "nothing recorded", said plainly.
+  function topicSummary(read) {
+    if (!read || read.found === false) return null;
+    const links = read.linked_entities || {};
+    const names = (rows) => (rows || []).map((r) => r.display_name).filter(Boolean);
+    const parts = partitionStatements(read);
+    const latestCorrection = parts.superseded.slice()
+      .sort((a, b) => Number(b.superseded_sequence_no || 0) - Number(a.superseded_sequence_no || 0))[0];
+    const gates = read.linked_gates || [];
+    const openGates = gates.filter((g) => g.gate_state !== 'PASSED' && g.gate_state !== 'WAIVED');
+    const locks = read.authority_locks || {};
+    const next = (read.open_questions || []).find((q) => q.is_next_better);
+    return [
+      ['CURRENT AUTHORITY', (locks.authority_lock || '—') + (locks.authority_holder ? ' · ' + locks.authority_holder : '')
+        + ' · ' + parts.current.length + ' current statement(s)'],
+      ['SUPERSEDED MATERIAL', parts.superseded.length ? parts.superseded.length + ' superseded statement(s)' : 'Nothing superseded'],
+      ['PEOPLE', names(links.people).join(', ') || 'None linked'],
+      ['PLACES', names(links.places).join(', ') || 'None linked'],
+      ['OBJECTS', names(links.objects).concat(names(links.products)).join(', ') || 'None linked'],
+      ['WORK', (read.linked_work || []).map((w) => w.link_key).join(', ') || 'None linked'],
+      ['GATES', gates.length ? openGates.length + ' open/blocked of ' + gates.length
+        + (openGates.length ? ': ' + openGates.map((g) => g.gate_key + ' ' + g.gate_state).join(', ') : '') : 'No gates'],
+      ['LATEST CORRECTION', latestCorrection
+        ? '#' + latestCorrection.superseded_sequence_no + ': ' + latestCorrection.body : 'No correction recorded'],
+      ['UNRESOLVED QUESTIONS', String((read.open_questions || []).length)],
+      ['NEXT ACTION', (next && next.question) || (read.last_restart && read.last_restart.restart_point) || 'No next action recorded']
+    ];
+  }
+
   const api = {
-    MARK, LEDGER_COLUMNS, PATH_SECTIONS,
+    MARK, LEDGER_COLUMNS, PATH_SECTIONS, COVERAGE_STATES, MATH_PARTS, F_MEANING,
     esc, normalizeKey, orderSections, partitionStatements,
-    readState, accessState, stateMessage, sequenceView, qyrisLines
+    readState, accessState, stateMessage, sequenceView, qyrisLines,
+    coverageView, mathParts, usesF, topicSummary, deniedRead
   };
 
   /* ---------- DOM half ---------- */
@@ -212,6 +311,17 @@
       '.thy-omni-note.bad{color:#ff9090}',
       '.thy-omni-qyris{margin-top:16px;border:1px solid #5a4728;background:#12100b;border-radius:13px;padding:12px}',
       '.thy-omni-back{border:1px solid #384454;background:#141c27;color:#fff;border-radius:10px;padding:8px 12px;margin-bottom:12px}',
+      '.thy-omni-lookup{display:flex;gap:8px;margin-bottom:12px}',
+      '.thy-omni-lookup input{flex:1;min-width:0;border:1px solid #303b49;background:#0b121a;color:#f4efe6;border-radius:10px;padding:9px 11px;font-size:15px}',
+      '.thy-omni-lookup button{border:1px solid #a0792d;background:#6d4f18;color:#fff;border-radius:10px;padding:8px 14px;font-weight:800}',
+      '.thy-omni-summary{border:1px solid #a0792d;background:#110e08;border-radius:13px;padding:12px;margin-bottom:12px}',
+      '.thy-omni-part{border-left:3px solid #6d4f18;padding:6px 10px;margin:6px 0;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.55}',
+      '.thy-omni-part b{display:block;color:#d6a348;font-size:11px;letter-spacing:.08em}',
+      '.thy-omni-part.missing{border-left-color:#c07a7a;color:#ff9090}',
+      '.thy-omni-f{border:1px solid #4f8c68;background:#0b1510;border-radius:11px;padding:10px;margin:8px 0;color:#bfe8cf;font-weight:750}',
+      '.thy-omni-meter{height:10px;border-radius:999px;background:#1e2734;overflow:hidden;margin:8px 0}',
+      '.thy-omni-meter i{display:block;height:100%;background:#4f8c68}',
+      '.thy-omni-meter.bad i{background:#c07a7a}',
       '@media(max-width:700px){.thy-omni-kv{grid-template-columns:1fr}}'
     ].join('');
     doc.head.appendChild(style);
@@ -227,6 +337,9 @@
       + '<div class="thy-omni-tabs">'
       + '<button type="button" id="thyOmniTabContext" class="active">CONTEXT</button>'
       + '<button type="button" id="thyOmniTabSequence">SEQUENCE</button>'
+      + '<button type="button" id="thyOmniTabCoverage">COVERAGE LEDGER</button>'
+      + '<button type="button" id="thyOmniTabGates">CURRENT GATES</button>'
+      + '<button type="button" id="thyOmniTabMath">MATH</button>'
       + '<button type="button" id="thyOmniRefresh">Refresh</button></div>'
       + '<div class="thy-omni-body" id="thyOmniBody"></div>';
     doc.body.appendChild(panel);
@@ -245,18 +358,23 @@
         + '</div></div>';
     }
 
+    const VIEWS = {
+      CONTEXT: { tab: 'thyOmniTabContext', sub: 'Current state, then the history behind it.', load: () => loadContext() },
+      SEQUENCE: { tab: 'thyOmniTabSequence', sub: 'Every sequence: what changed, why, on whose authority.', load: () => loadLedger() },
+      'COVERAGE LEDGER': { tab: 'thyOmniTabCoverage', sub: 'Every clause of the Chairman query, with exactly one state.', load: () => loadCoverage() },
+      'CURRENT GATES': { tab: 'thyOmniTabGates', sub: 'What is blocked, what is open, what has passed.', load: () => loadGates() },
+      MATH: { tab: 'thyOmniTabMath', sub: 'Every equation in eleven parts. f = FUNCTION OF.', load: () => loadMath() }
+    };
+
     function open(which) {
-      view = which || view;
+      view = VIEWS[which] ? which : view;
       panel.classList.add('open');
-      $('thyOmniTabContext').classList.toggle('active', view === 'CONTEXT');
-      $('thyOmniTabSequence').classList.toggle('active', view === 'SEQUENCE');
+      Object.keys(VIEWS).forEach((k) => $(VIEWS[k].tab).classList.toggle('active', k === view));
       $('thyOmniTitle').textContent = view;
-      $('thyOmniSub').textContent = view === 'CONTEXT'
-        ? 'Current state, then the history behind it.'
-        : 'Every sequence: what changed, why, on whose authority.';
+      $('thyOmniSub').textContent = VIEWS[view].sub;
       const drawer = $('drawer');
       if (drawer) drawer.classList.remove('open');
-      return view === 'CONTEXT' ? loadContext() : loadLedger();
+      return VIEWS[view].load();
     }
 
     function close() { panel.classList.remove('open'); }
@@ -270,7 +388,11 @@
 
       const topics = read.topic_manifest || [];
       body.innerHTML =
-        '<div class="thy-omni-step">TOPIC MANIFEST · head ' + esc(read.sequence_head) + '</div>'
+        '<form class="thy-omni-lookup" id="thyOmniLookup"><input id="thyOmniLookupInput" type="search" '
+        + 'placeholder="TOPIC LOOKUP — e.g. Royal Castle, Alistair, first shirt" aria-label="Topic lookup" autocomplete="off">'
+        + '<button type="submit">Look up</button></form>'
+        + '<div class="thy-omni-note" id="thyOmniLookupNote" style="display:none"></div>'
+        + '<div class="thy-omni-step">TOPIC MANIFEST · head ' + esc(read.sequence_head) + '</div>'
         + '<div class="thy-omni-grid">'
         + (topics.length ? topics.map((t) =>
           '<button type="button" class="thy-omni-card" data-omni-topic="' + esc(t.topic_key) + '">'
@@ -291,6 +413,19 @@
         + qyrisBlock(read.qyris);
 
       doc.querySelectorAll('[data-omni-topic]').forEach((b) => { b.onclick = () => loadTopic(b.dataset.omniTopic); });
+      $('thyOmniLookup').onsubmit = async (ev) => {
+        ev.preventDefault();
+        const q = $('thyOmniLookupInput').value.trim();
+        const out = $('thyOmniLookupNote');
+        if (!q) return;
+        let key = null;
+        try { key = await rpc('thy_omniview_resolve_topic', { p_key: q }); } catch (_) { key = null; }
+        if (typeof key === 'string' && key) return loadTopic(key);
+        out.style.display = 'block';
+        out.className = 'thy-omni-note bad';
+        out.textContent = 'No registered topic or alias matches "' + q + '". Nothing was guessed. '
+          + 'Register it on the backend (thy_omniview_register_topic) before answering about it as canon.';
+      };
     }
 
     async function loadTopic(key) {
@@ -368,7 +503,11 @@
           + '<div class="thy-omni-row"><b>' + esc(read.topic_key) + '</b><br>' + esc(read.answer_rule) + '</div>'
           + '<div class="thy-omni-row">' + esc(read.next_better_question) + '</div>' + qyrisBlock(read.qyris);
       } else {
+        const sum = topicSummary(read) || [];
         body.innerHTML = '<button type="button" class="thy-omni-back" id="thyOmniBack">← All topics</button>'
+          + '<div class="thy-omni-summary"><div class="thy-omni-step" style="margin-top:0">'
+          + esc(read.topic_manifest.display_name) + ' · AT A GLANCE</div><div class="thy-omni-kv">'
+          + sum.map((l) => '<b>' + esc(l[0]) + '</b><span>' + esc(l[1]) + '</span>').join('') + '</div></div>'
           + orderSections(read).map((s) => {
             const render = section[s.section];
             return render ? '<div class="thy-omni-step">' + esc(s.step) + '</div>' + render() : '';
@@ -445,7 +584,95 @@
       doc.querySelectorAll('[data-omni-topic]').forEach((b) => { b.onclick = () => { view = 'CONTEXT'; open('CONTEXT'); loadTopic(b.dataset.omniTopic); }; });
     }
 
+    async function loadCoverage(queryId) {
+      note('Reading the coverage ledger…');
+      let read;
+      try { read = await rpc('thy_omniview_coverage', queryId ? { p_query_id: queryId } : {}); }
+      catch (e) { const s = readState(e); return note(stateMessage(s) + (s === 'ERROR' ? ' ' + (e.message || '') : ''), s !== 'NOT_APPLIED'); }
+      const v = coverageView(read);
+      if (!v || v.access === 'DENIED') return note(stateMessage('NOT_CHAIRMAN'), true);
+      const forQuery = v.query_id ? ' for ' + String(v.query_id) : '';
+      if (!v.n) return note('No clause ledger recorded yet' + forQuery + '.', true);
+      const pct = Math.round((v.c_q || 0) * 100);
+      const openRows = v.open.map(covRow).join('');
+      body.innerHTML =
+        (v.queries.length > 1 ? '<div class="thy-omni-lookup"><select id="thyOmniCovQuery" aria-label="Query">'
+          + v.queries.map((q) => '<option' + (q === v.query_id ? ' selected' : '') + '>' + esc(q) + '</option>').join('')
+          + '</select></div>' : '')
+        + '<div class="thy-omni-step">' + esc(v.query_id) + '</div>'
+        + '<div class="thy-omni-row"><b>C_q = (A+E+S+B+D+U) / N = ' + esc(v.settled) + ' / ' + esc(v.n) + ' = ' + esc(v.c_q) + '</b>'
+        + '<div class="thy-omni-meter' + (v.complete ? '' : ' bad') + '"><i style="width:' + pct + '%"></i></div>'
+        + (v.complete ? 'Every clause has exactly one state. Nothing silently disappeared.'
+          : v.open.length + ' clause(s) still OPEN — the response is NOT complete.')
+        + '<div class="m" style="margin-top:6px">' + COVERAGE_STATES.concat(['OPEN']).map((s) =>
+          '<span class="thy-omni-pill' + (s === 'OPEN' && v.open.length ? ' open' : '') + '">' + esc(s) + ' ' + esc(v.by_state[s] || 0) + '</span>').join('')
+        + '</div></div>'
+        + (v.open.length ? '<div class="thy-omni-step">OPEN — NEEDS A STATE</div>' + openRows : '')
+        + '<div class="thy-omni-step">ALL CLAUSES</div>' + v.rows.map(covRow).join('');
+      const sel = $('thyOmniCovQuery');
+      if (sel) sel.onchange = () => loadCoverage(sel.value);
+    }
+
+    function covRow(r) {
+      const settled = COVERAGE_STATES.includes(r.response_state);
+      return '<div class="thy-omni-row"><span class="thy-omni-pill' + (settled ? ' good' : ' open') + '">'
+        + esc(r.response_state) + '</span><b>#' + esc(r.point_no) + '</b> ' + esc(r.source_point)
+        + (r.response_ref ? '<div class="m" style="margin-top:6px">→ ' + esc(r.response_ref) + '</div>' : '')
+        + (r.omission_reason ? '<div class="m" style="margin-top:4px"><i>' + esc(r.omission_reason) + '</i></div>' : '')
+        + '</div>';
+    }
+
+    async function loadGates() {
+      note('Reading current gates…');
+      let read;
+      try { read = await rpc('thy_omniview_current_gates', {}); }
+      catch (e) { const s = readState(e); return note(stateMessage(s) + (s === 'ERROR' ? ' ' + (e.message || '') : ''), s !== 'NOT_APPLIED'); }
+      if (!read || deniedRead(read)) return note(stateMessage('NOT_CHAIRMAN'), true);
+      const tg = read.topic_gates || [];
+      const reg = read.registry || [];
+      const group = (st) => tg.filter((g) => g.gate_state === st);
+      const gateCard = (g) => '<div class="thy-omni-row"><span class="thy-omni-pill'
+        + (g.gate_state === 'PASSED' || g.gate_state === 'WAIVED' ? ' good' : ' open') + '">' + esc(g.gate_state) + '</span>'
+        + '<b>' + esc(g.gate_key) + '</b> <button type="button" class="thy-omni-pill" data-omni-topic="' + esc(g.topic_key) + '">'
+        + esc(g.topic_key) + '</button><br>' + esc(g.requirement)
+        + (g.blocker ? '<br><i>Blocker: ' + esc(g.blocker) + '</i>' : '')
+        + '<div class="m" style="margin-top:6px">entered #' + esc(g.entered_sequence_no)
+        + (g.settled_sequence_no ? ' · settled #' + esc(g.settled_sequence_no) : '') + ' · ' + esc(g.authority || '') + '</div></div>';
+      body.innerHTML = '<div class="thy-omni-step">TOPIC GATES · head ' + esc(read.head) + '</div>'
+        + ['BLOCKED', 'OPEN', 'PASSED', 'WAIVED'].map((st) => group(st).length
+          ? '<div class="thy-omni-note">' + st + ' (' + group(st).length + ')</div>' + group(st).map(gateCard).join('') : '').join('')
+        + '<div class="thy-omni-step">BACKEND GATE REGISTRY (' + reg.length + ')</div>'
+        + reg.map((d) => '<div class="thy-omni-row"><span class="thy-omni-pill' + (d.state === 'ACTIVE' ? ' good' : '') + '">'
+          + esc(d.state) + '</span><b>' + esc(d.title) + '</b> · ' + esc(d.gate_code)
+          + '<br>' + esc(d.purpose) + (d.equation ? '<div class="m" style="margin-top:6px">' + esc(d.equation) + '</div>' : '')
+          + '</div>').join('');
+      doc.querySelectorAll('[data-omni-topic]').forEach((b) => { b.onclick = () => { open('CONTEXT'); loadTopic(b.dataset.omniTopic); }; });
+    }
+
+    async function loadMath() {
+      note('Reading the equation registry…');
+      let read;
+      try { read = await rpc('thy_math_display_get', {}); }
+      catch (e) { const s = readState(e); return note(stateMessage(s) + (s === 'ERROR' ? ' ' + (e.message || '') : ''), s !== 'NOT_APPLIED'); }
+      if (!read || deniedRead(read)) return note(stateMessage('NOT_CHAIRMAN'), true);
+      const rows = read.rows || [];
+      body.innerHTML = '<div class="thy-omni-f">' + esc(F_MEANING) + '</div>'
+        + rows.map((r) => {
+          const m = mathParts(r);
+          return '<details class="thy-omni-row"><summary><b>'
+            + esc(r.registered_text) + '</b> · ' + esc(r.equation_name) + ' <span class="thy-omni-pill'
+            + (m.complete ? ' good">11/11' : ' open">INCOMPLETE') + '</span></summary>'
+            + (m.uses_f ? '<div class="thy-omni-f">' + esc(m.f_meaning) + '</div>' : '')
+            + m.parts.map((p) => '<div class="thy-omni-part' + (p.missing ? ' missing' : '') + '"><b>'
+              + esc(p.label) + '</b>' + esc(p.text) + '</div>').join('')
+            + '</details>';
+        }).join('');
+    }
+
     $('thyOmniClose').onclick = close;
+    $('thyOmniTabCoverage').onclick = () => open('COVERAGE LEDGER');
+    $('thyOmniTabGates').onclick = () => open('CURRENT GATES');
+    $('thyOmniTabMath').onclick = () => open('MATH');
     $('thyOmniTabContext').onclick = () => open('CONTEXT');
     $('thyOmniTabSequence').onclick = () => open('SEQUENCE');
     $('thyOmniRefresh').onclick = () => open(view);

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 760" width="1180" height="760" font-family="Helvetica, Arial, sans-serif">
+<title>Royal Kitchen floor plan — SCENE-WW-001 pre-render contract (diagram, not an illustration)</title>
+<rect x="0" y="0" width="1180" height="760" fill="#ffffff"/>
+<text x="20" y="28" font-size="17" font-weight="700" fill="#1a1917">THY-CASTLE-ROYAL-KITCHEN-001 · top-down plan · SCENE-WW-001-ROYAL-KITCHEN-20260922</text>
+<text x="20" y="48" font-size="11.5" fill="#5a5650">All dimensions PROPOSED (CSZ-KITCHEN-01, branch royal-kitchen-service-zone 576) — backend geometry is UNKNOWN. Datum RK-D0 = SW inner corner, finished floor. Units cm. DO NOT RENDER — awaiting Chairman approval.</text>
+<rect x="55.0" y="35.0" width="810.0" height="610.0" fill="#b9b3a8" stroke="#2e2c2a" stroke-width="1.2"/>
+<rect x="110.0" y="90.0" width="700.0" height="500.0" fill="#f4efe4" stroke="#2e2c2a" stroke-width="1.2"/>
+<rect x="400.0" y="590.0" width="70.0" height="55.0" fill="#f4efe4" stroke="#2e2c2a" stroke-width="0.8"/>
+<text x="435.0" y="659.0" font-size="10.5" text-anchor="middle" fill="#2e2c2a">P1 passage door (camera side) — PROPOSED</text>
+<rect x="210.0" y="590.0" width="60.0" height="55.0" fill="#cfe0ea" stroke="#2e2c2a" stroke-width="0.8"/>
+<text x="240.0" y="659.0" font-size="10.5" text-anchor="middle" fill="#2e2c2a">W3 high window</text>
+<rect x="610.0" y="590.0" width="60.0" height="55.0" fill="#cfe0ea" stroke="#2e2c2a" stroke-width="0.8"/>
+<text x="640.0" y="659.0" font-size="10.5" text-anchor="middle" fill="#2e2c2a">W4 high window</text>
+<rect x="810.0" y="375.0" width="55.0" height="90.0" fill="#f4efe4" stroke="#2e2c2a" stroke-width="0.8"/>
+<text x="871.0" y="424.0" font-size="10.5" text-anchor="start" fill="#2e2c2a">D1 corridor issue door</text>
+<text x="871.0" y="436.0" font-size="10.5" text-anchor="start" fill="#2e2c2a">1.80 × 2.40 m (Clara on threshold)</text>
+<rect x="810.0" y="180.0" width="55.0" height="60.0" fill="#cfe0ea" stroke="#2e2c2a" stroke-width="0.8"/>
+<text x="871.0" y="214.0" font-size="10.5" text-anchor="start" fill="#2e2c2a">W1 high window, sill z 230</text>
+<text x="871.0" y="226.0" font-size="10.5" text-anchor="start" fill="#2e2c2a">VYC2ST on lower reveal</text>
+<rect x="810.0" y="490.0" width="55.0" height="50.0" fill="#cfe0ea" stroke="#2e2c2a" stroke-width="0.8"/>
+<text x="871.0" y="519.0" font-size="10.5" text-anchor="start" fill="#2e2c2a">W2 high window</text>
+<rect x="55.0" y="450.0" width="55.0" height="80.0" fill="#f4efe4" stroke="#2e2c2a" stroke-width="0.8"/>
+<text x="49.0" y="494.0" font-size="10.5" text-anchor="end" fill="#2e2c2a">Scullery double door</text>
+<rect x="55.0" y="240.0" width="55.0" height="70.0" fill="#f4efe4" stroke="#2e2c2a" stroke-width="0.8"/>
+<text x="49.0" y="279.0" font-size="10.5" text-anchor="end" fill="#2e2c2a">Bakehouse arch →</text>
+<text x="49.0" y="291.0" font-size="10.5" text-anchor="end" fill="#2e2c2a">2 beehive ovens (out of frame)</text>
+<rect x="55.0" y="145.0" width="55.0" height="45.0" fill="#f4efe4" stroke="#2e2c2a" stroke-width="0.8"/>
+<text x="49.0" y="171.5" font-size="10.5" text-anchor="end" fill="#2e2c2a">Larder issue hatch</text>
+<text x="49.0" y="183.5" font-size="10.5" text-anchor="end" fill="#2e2c2a">counter z 95</text>
+<rect x="185.0" y="90.0" width="150.0" height="65.0" fill="#d8d2c6" stroke="#2e2c2a" stroke-width="1"/>
+<text x="260.0" y="127.5" font-size="10.5" text-anchor="middle" fill="#2e2c2a" font-weight="400">Boiling range</text>
+<rect x="390.0" y="90.0" width="150.0" height="65.0" fill="#cfc9bd" stroke="#2e2c2a" stroke-width="1"/>
+<text x="465.0" y="122.5" font-size="10.5" text-anchor="middle" fill="#2e2c2a" font-weight="400">H2 hearth</text>
+<text x="465.0" y="137.5" font-size="9.5" text-anchor="middle" fill="#2e2c2a" font-weight="400">banked, raked</text>
+<rect x="600.0" y="90.0" width="170.0" height="65.0" fill="#f1c7a8" stroke="#2e2c2a" stroke-width="1"/>
+<text x="685.0" y="120.0" font-size="10.5" text-anchor="middle" fill="#2e2c2a" font-weight="700">H1 hearth — LIVE</text>
+<text x="685.0" y="132.5" font-size="9.5" text-anchor="middle" fill="#2e2c2a" font-weight="400">crane + cauldron; oak bressummer</text>
+<text x="685.0" y="143.5" font-size="9.5" text-anchor="middle" fill="#8e2f1c" font-weight="400">ERSATZREALITY at beam right end</text>
+<rect x="772.5" y="92.5" width="32.5" height="32.5" fill="#e2dccf" stroke="#2e2c2a" stroke-width="1"/>
+<text x="788.5" y="112.5" font-size="9.5" text-anchor="middle" fill="#2e2c2a" font-weight="400">spit</text>
+<circle cx="740.0" cy="92.5" r="4" fill="#8e2f1c"/>
+<rect x="110.0" y="370.0" width="30.0" height="70.0" fill="#dfe7ea" stroke="#2e2c2a" stroke-width="1"/>
+<text x="145.0" y="407.5" font-size="9.5" text-anchor="start" fill="#2e2c2a" font-weight="400">stone sink + standpipe</text>
+<rect x="110.0" y="90.0" width="100.0" height="500.0" fill="none" stroke="#7f8e6e" stroke-width="0.8" stroke-dasharray="4 3"/>
+<text x="160.0" y="580.0" font-size="9" text-anchor="middle" fill="#5e7a4a" font-weight="400">floor fall to drain (x&lt;200 only)</text>
+<rect x="390.0" y="220.0" width="270.0" height="50.0" fill="#c9b48f" stroke="#2e2c2a" stroke-width="1"/>
+<text x="525.0" y="240.0" font-size="10.5" text-anchor="middle" fill="#2e2c2a" font-weight="700">T1 long work table 540 × 100, top z 86</text>
+<text x="525.0" y="254.0" font-size="9.5" text-anchor="middle" fill="#2e2c2a" font-weight="400">scrubbed hardwood (species UNKNOWN)</text>
+<circle cx="580.0" cy="240.0" r="4" fill="#5e7a4a"/>
+<text x="580.0" y="234.0" font-size="8.5" text-anchor="middle" fill="#2e2c2a" font-weight="400">day crock</text>
+<circle cx="590.0" cy="240.0" r="3" fill="none" stroke="#5e7a4a" stroke-width="1.5"/>
+<line x1="622.5" y1="231.0" x2="637.5" y2="229.0" stroke="#6b4a2e" stroke-width="3"/>
+<text x="632.5" y="226.0" font-size="8.5" text-anchor="middle" fill="#2e2c2a" font-weight="400">knife</text>
+<rect x="797.5" y="270.0" width="12.5" height="40.0" fill="#a58f6a" stroke="#2e2c2a" stroke-width="1"/>
+<text x="792.5" y="262.5" font-size="9" text-anchor="end" fill="#6b4a2e" font-weight="400">day-list board + ledger box (serial label)</text>
+<rect x="760.0" y="415.0" width="49.0" height="52.5" fill="none" stroke="#9a958c" stroke-width="0.6" stroke-dasharray="2 2"/>
+<text x="786.0" y="471.0" font-size="8.5" text-anchor="middle" fill="#2e2c2a" font-weight="400">apron pegs</text>
+<clipPath id="room"><rect x="110.0" y="90.0" width="700.0" height="500.0"/></clipPath>
+<polygon clip-path="url(#room)" points="435.0,535.0 656.7888834073935,-49.32413196521463 1039.3063943838902,375.50460286659546" fill="#e8b04a" fill-opacity="0.16" stroke="#b07a1e" stroke-width="1" stroke-dasharray="5 3"/>
+<line clip-path="url(#room)" x1="435.0" y1="535.0" x2="899.4655159233714" y2="116.79337102571361" stroke="#b07a1e" stroke-width="0.9" stroke-dasharray="2 3"/>
+<rect x="428.0" y="530.0" width="14" height="10" fill="#1a1917"/>
+<text x="435.0" y="555.0" font-size="10.5" text-anchor="middle" fill="#2e2c2a" font-weight="700">CAMERA station (650, 110, z 155)</text>
+<text x="435.0" y="565.0" font-size="9.5" text-anchor="middle" fill="#2e2c2a" font-weight="400">35 mm eq. · level · yaw 48° E of N · HFOV 54.4°</text>
+<circle cx="640.0" cy="205.0" r="9" fill="#a0522d" stroke="#ffffff" stroke-width="1.5"/>
+<line x1="640.0" y1="205.0" x2="661.014707886406" y2="232.98896304704817" stroke="#a0522d" stroke-width="2"/>
+<text x="640.0" y="190.0" font-size="11" text-anchor="middle" fill="#a0522d" font-weight="700">Ines · 163 cm</text>
+<text x="640.0" y="198.0" font-size="9" text-anchor="middle" fill="#a0522d" font-weight="400">Z 746.3 cm · dist 777.0 cm</text>
+<line x1="435.0" y1="535.0" x2="640.0" y2="205.0" stroke="#a0522d" stroke-width="0.6" stroke-opacity="0.6"/>
+<circle cx="760.0" cy="365.0" r="9" fill="#3d5a80" stroke="#ffffff" stroke-width="1.5"/>
+<line x1="760.0" y1="365.0" x2="735.7309360103466" y2="339.78071109118844" stroke="#3d5a80" stroke-width="2"/>
+<text x="755.0" y="384.0" font-size="11" text-anchor="middle" fill="#3d5a80" font-weight="700">Veronica · 166 cm</text>
+<text x="755.0" y="392.0" font-size="9" text-anchor="middle" fill="#3d5a80" font-weight="400">Z 710.5 cm · dist 733.6 cm</text>
+<line x1="435.0" y1="535.0" x2="760.0" y2="365.0" stroke="#3d5a80" stroke-width="0.6" stroke-opacity="0.6"/>
+<circle cx="807.5" cy="420.0" r="9" fill="#4a4a4a" stroke="#ffffff" stroke-width="1.5"/>
+<line x1="807.5" y1="420.0" x2="786.0000179965369" y2="392.38205703078586" stroke="#4a4a4a" stroke-width="2"/>
+<text x="732.5" y="442.5" font-size="11" text-anchor="middle" fill="#4a4a4a" font-weight="700">Clara · 168 cm</text>
+<text x="732.5" y="450.5" font-size="9" text-anchor="middle" fill="#4a4a4a" font-weight="400">Z 707.5 cm · dist 779.7 cm</text>
+<line x1="435.0" y1="535.0" x2="807.5" y2="420.0" stroke="#4a4a4a" stroke-width="0.6" stroke-opacity="0.6"/>
+<circle cx="110.0" cy="590.0" r="4" fill="#8e2f1c"/>
+<text x="116.0" y="584.0" font-size="10" fill="#8e2f1c">RK-D0 (0,0,0)</text>
+<g transform="translate(1110,120)"><line x1="0" y1="30" x2="0" y2="-10" stroke="#1a1917" stroke-width="2"/><polygon points="0,-18 -6,-4 6,-4" fill="#1a1917"/><text x="0" y="46" font-size="11" text-anchor="middle">+Y (plan N,</text><text x="0" y="58" font-size="11" text-anchor="middle">hearth wall)</text></g>
+<g transform="translate(110.0,687.0)"><line x1="0" y1="0" x2="100.0" y2="0" stroke="#1a1917" stroke-width="2"/><line x1="0" y1="-4" x2="0" y2="4" stroke="#1a1917"/><line x1="50.0" y1="-4" x2="50.0" y2="4" stroke="#1a1917"/><line x1="100.0" y1="-4" x2="100.0" y2="4" stroke="#1a1917"/><text x="50.0" y="16" font-size="10" text-anchor="middle">200 cm</text></g>
+<g font-size="10.5" fill="#2e2c2a"><text x="870" y="640" font-weight="700">Legend</text><rect x="870" y="648" width="14" height="9" fill="#e8b04a" fill-opacity="0.3" stroke="#b07a1e" stroke-dasharray="3 2"/><text x="890" y="656">camera view cone (HFOV 54.4°)</text><line x1="870" y1="670" x2="884" y2="670" stroke="#a0522d" stroke-width="2"/><text x="890" y="674">gaze direction (person)</text><rect x="870" y="682" width="14" height="9" fill="#cfe0ea" stroke="#2e2c2a"/><text x="890" y="690">window (all high-set, sill ≥ z 210)</text><circle cx="877" cy="704" r="4" fill="#8e2f1c"/><text x="890" y="708">datum / brand-mark point</text><text x="870" y="726" fill="#5a5650">Room interior 1400 × 1000 × 850, walls 110</text></g>
+</svg>
