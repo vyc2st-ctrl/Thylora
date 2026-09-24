@@ -1,0 +1,908 @@
+table,rows,class,kind,domain,D,P,E,W,T,M,missing,priority,exec_evidence,witness,transfer
+freshpath_orders,1,WITNESS MISSING,OPERATIONAL,COMMERCE,1,1,1,0,1,0,W,56.25,"reader_fn:freshpath_stage_durations_v1,freshpath_service_level_v1,freshpath_now_board_v1; fk_child_rows:band_arrival_events,freshpath_exceptions,freshpath_item_choices",{},fk_child
+business_products,11,WITNESS MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,0,1,0,W,50.0,fk_child_rows:business_provenance_events,{},fk_child
+game_bet_operators,1,WITNESS MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,1,0,1,0,W,50.0,"trigger:thy_name_guard; reader_fn:game_bet_ticket_gate; fk_child_rows:game_bet_casino_games,game_bet_staff_roster",{},fk_child
+productions,16,WITNESS MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,0,1,0,W,45.0,fk_child_rows:production_tasks,{},"repo:.github/workflows/patch-dashboard-r6.yml,.github/workflows/patch-dashboard-r7-repair.yml; fk_child"
+products,28,WITNESS MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,0,1,0,W,40.0,"trigger:thy_name_guard; reader_fn:thylora_dashboard_completion_v1,thylora_block_unreleased_checkout_product,thylora_process_stripe_checkout_completed; view:thylora_conveyor_candidates,thylora_sales_readiness_v1; fk_child_rows:business_products,digital_product_passports,order_items; edge:dash,lemon-squeezy-webhook,p0-checkout",{},"surface_fn:thylora_dashboard_completion_v1,thy_omniview_topic,thylora_operating_surface_v1; view; repo:.github/workflows/patch-dashboard-r6.yml,.github/workflows/patch-dashboard-r7-repair.yml; edge; fk_child"
+legal_matter,8,WITNESS MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,1,0,1,0,W,37.5,trigger:thy_name_guard; fk_child_rows:legal_opinion,{},fk_child
+membership_plans,7,WITNESS MISSING,POLICY/REGISTRY,COMMERCE,1,1,1,0,1,0,W,37.5,fk_child_rows:prices,{},fk_child
+prices,7,WITNESS MISSING,OPERATIONAL,COMMERCE,1,1,1,0,1,0,W,37.5,"reader_fn:thylora_process_stripe_checkout_completed,thylora_question_quest_commercial_v1; edge:p0-checkout",{},"repo:app/sports-betting.html,public-site/store.html; edge"
+thylora_bank_security_events,24,TRANSFER MISSING,EVENT,SAFETY/LEGAL,1,1,1,1,0,0,T,37.5,"writer_fn:thylora_bank_place_fraud_hold,thylora_bank_release_hold; reader_fn:thylora_bank_place_fraud_hold,thylora_bank_release_hold","{""row_evidence_fields"": 24}",
+thylora_product_entitlements,3,WITNESS MISSING,OPERATIONAL,COMMERCE,1,1,1,0,1,0,W,37.5,"writer_fn:grant_thylora_chairman_delivery_test_v1,thylora_process_product_stripe_checkout_completed_v1,thylora_commerce_ingest_order_event_v1; trigger:trg_submit_open_on_entitlement; reader_fn:grant_thylora_chairman_delivery_test_v1,thylora_process_product_stripe_checkout_completed_v1,thylora_customer_library_v1; view:thylora_fulfillment_reconciliation_candidates; fk_child_rows:thylora_delivery_attempts,thylora_entitlement_access_log; edge:thylora-protected-download",{},"surface_fn:grant_thylora_chairman_delivery_test_v1,thylora_customer_library_v1; view; edge; fk_child"
+thylora_security_posts,17,WITNESS MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,1,0,1,0,W,37.5,view:thylora_security_staffing_requirement_v1; fk_child_rows:thylora_security_rotations,{},view; fk_child
+digital_product_passports,2,WITNESS MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,0,1,0,W,35.0,trigger:thy_name_guard; fk_child_rows:business_products,{},fk_child
+businesses,7,WITNESS MISSING,OPERATIONAL,OPERATIONS,1,1,1,0,1,0,W,33.75,"trigger:thy_name_guard; fk_child_rows:business_accounts,business_locations,business_products",{},"repo:app/app.js,rae-link/index.html; fk_child"
+family_profiles,8,WITNESS MISSING,OPERATIONAL,OPERATIONS,1,1,1,0,1,0,W,33.75,"reader_fn:get_thylora_dashboard_identity_admin_v1,issue_thylora_dashboard_identity_invite_v1; fk_child_rows:ersatzreality_financial_accounts,family_media,family_reports; edge:thylora-department-talk",{},"surface_fn:get_thylora_dashboard_identity_admin_v1,issue_thylora_dashboard_identity_invite_v1; repo:dashboard-current-head.html; edge; fk_child"
+game_bet_staff_roster,9,WITNESS MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,1,0,1,0,W,31.25,reader_fn:thylora_person_roster_v1,{},repo:app/sports-betting.js
+thylora_security_rotations,16,WITNESS MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,1,0,1,0,W,31.25,view:thylora_security_staffing_requirement_v1,{},view
+thylora_security_zones,12,WITNESS MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,1,0,1,0,W,31.25,view:thylora_security_staffing_requirement_v1; fk_child_rows:thylora_security_posts,{},view; fk_child
+thylora_store_shelves,13,WITNESS MISSING,OPERATIONAL,COMMERCE,1,1,1,0,1,0,W,31.25,reader_fn:thylora_store_home_v1; fk_child_rows:thylora_store_shelf_assignments,{},fk_child
+business_accounts,17,WITNESS MISSING,OPERATIONAL,OPERATIONS,1,1,1,0,1,0,W,30.0,"trigger:thy_name_guard; fk_child_rows:thylora_bank_credit_facilities,thylora_bank_security_events",{},fk_child
+family_story_archives,11,WITNESS MISSING,OPERATIONAL,OPERATIONS,1,1,1,0,1,0,W,30.0,"fk_child_rows:family_story_audit,family_story_products",{},"repo:app/app.js,app/hotfix-20260831.js; fk_child"
+freshpath_service_workers,3,WITNESS MISSING,OPERATIONAL,OPERATIONS,1,1,1,0,1,0,W,30.0,"reader_fn:freshpath_now_board_v1,thylora_worker_spotlight_v1; fk_child_rows:freshpath_exceptions,freshpath_orders,freshpath_preferred_workers",{},fk_child
+thylora_ip_rights_parties,0,POPULATION MISSING,OPERATIONAL,SAFETY/LEGAL,1,0,1,0,1,0,PW,30.0,reader_fn:thylora_evaluate_rights_gate; fk_child_rows:thylora_ip_manifest_declarations,{},fk_child
+thylora_visual_approvals,2,TRANSFER MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,1,0,0,T,30.0,trigger:thylora_visual_approvals_set_updated_at,"{""row_evidence_fields"": 2}",
+thylora_world_market_instruments,6,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,27.5,trigger:thy_name_guard; fk_child_rows:thylora_world_market_ownership,{},fk_child
+qq_credit_ledger,2,WITNESS MISSING,OPERATIONAL,COMMERCE,1,1,1,0,0,0,WT,26.25,writer_fn:qq_confirm_understanding_v1; reader_fn:qq_confirm_understanding_v1,{},
+thylora_ip_consent_tokens,0,POPULATION MISSING,OPERATIONAL,SAFETY/LEGAL,1,0,1,1,0,0,PT,26.25,"trigger:trg_ip_consent_immutable; reader_fn:thylora_export_b2b_rights_package,thylora_evaluate_rights_gate","{""custody_trigger"": ""append_only""}",
+approval_queue,23,WITNESS MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,0,1,0,W,25.0,"writer_fn:thy_record_approval_v1; trigger:thy_name_guard; reader_fn:thylora_recovery_heartbeat,thylora_approval_queue_safe_v1,thylora_chairman_dash_v1; fk_child_rows:design_revision; edge:department-router,thylora-executive-patrol",{},"surface_fn:thylora_chairman_dash_v1,thylora_control_surface_v1; edge; fk_child"
+dashboard_status,55,WITNESS MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,0,1,0,W,25.0,"trigger:thy_name_guard; reader_fn:thylora_chairman_dash_v1,thylora_control_surface_v1; view:thylora_executive_board_v1; edge:dash,thylora-current-head,thylora-dashboard",{},"surface_fn:thylora_chairman_dash_v1,thylora_control_surface_v1; view; edge"
+ersatzreality_financial_accounts,24,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,25.0,"writer_fn:thylora_bank_place_fraud_hold,thylora_bank_release_hold; trigger:thy_name_guard; reader_fn:thylora_bank_open_statement,thylora_bank_place_fraud_hold,thylora_bank_release_hold; view:six_current_head_v; fk_child_rows:thylora_bank_credit_facilities,thylora_bank_security_events,thylora_bank_statements",{},view; fk_child
+family_identity_protection,9,WITNESS MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,1,0,1,0,W,25.0,trigger:thy_name_guard; view:six_current_head_v,{},view
+legal_issue_queue,9,TRANSFER MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,1,1,0,0,T,25.0,trigger:thy_name_guard,"{""row_evidence_fields"": 4}",
+member_dashboards,1,WITNESS MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,0,1,0,W,25.0,"writer_fn:claim_thylora_dashboard_identity_invite_v1; trigger:thylora_member_dashboard_eligibility_guard,thy_name_guard; reader_fn:claim_thylora_dashboard_identity_invite_v1",{},surface_fn:claim_thylora_dashboard_identity_invite_v1
+production_assignments,188,WITNESS MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,0,1,0,W,25.0,trigger:thy_name_guard; reader_fn:thylora_chairman_dash_v1; fk_child_rows:thylora_completion_schedule,{},surface_fn:thylora_chairman_dash_v1; repo:dashboard-current-head.html; fk_child
+qq_price_estimates,5,WITNESS MISSING,OPERATIONAL,COMMERCE,1,1,1,0,1,0,W,25.0,reader_fn:thylora_question_quest_commercial_v1; view:qq_margin_scenarios_v1,{},view
+tessa_candidate_products,1,WITNESS MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,0,1,0,W,25.0,"reader_fn:tessa_evaluate_candidate_v1,tessa_ingredient_passport_v1; fk_child_rows:tessa_selection_verdicts",{},fk_child
+thylora_authority_handoff_registry,1,WITNESS MISSING,POLICY/REGISTRY,DASHBOARD-FLOOR,1,1,1,0,1,0,W,25.0,fk_child_rows:thylora_constitution_volume_registry,{},fk_child
+thylora_chairman_preview_packets,4,WITNESS MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,0,1,0,W,25.0,"writer_fn:thylora_chairman_preview_decision_v1,thy_record_approval_v1,thy_record_preview_v1; trigger:thy_name_guard; reader_fn:thylora_chairman_approval_screen_v1,thylora_chairman_preview_decision_v1,thylora_chairman_today_v1; fk_child_rows:thylora_chairman_preview_decisions",{},"surface_fn:thylora_chairman_approval_screen_v1,thylora_chairman_preview_decision_v1,thylora_chairman_today_v1; fk_child"
+thylora_commerce_identity_aliases,3,WITNESS MISSING,OPERATIONAL,COMMERCE,1,1,1,0,1,0,W,25.0,"writer_fn:thylora_commerce_record_unlinked_purchase_v1,thylora_claim_pending_entitlements_v1; reader_fn:thylora_commerce_record_unlinked_purchase_v1,thylora_claim_pending_entitlements_v1; edge:lemon-squeezy-webhook,thylora-shopify-webhook",{},edge
+thylora_commerce_webhook_events,3,WITNESS MISSING,OPERATIONAL,COMMERCE,1,1,1,0,1,0,W,25.0,"writer_fn:thylora_commerce_ingest_order_event_v1,thylora_commerce_record_unlinked_purchase_v1,thylora_claim_pending_entitlements_v1; reader_fn:thylora_delivery_health_v1,thylora_commerce_ingest_order_event_v1,thylora_first_sale_chain_v1; view:thylora_commerce_event_witness_v1",{},view
+thylora_dashboard_eligibility_registry,7,WITNESS MISSING,POLICY/REGISTRY,DASHBOARD-FLOOR,1,1,1,0,1,0,W,25.0,"writer_fn:claim_thylora_dashboard_identity_invite_v1; reader_fn:get_thylora_dashboard_identity_admin_v1,issue_thylora_dashboard_identity_invite_v1,claim_thylora_dashboard_identity_invite_v1",{},"surface_fn:get_thylora_dashboard_identity_admin_v1,issue_thylora_dashboard_identity_invite_v1,claim_thylora_dashboard_identity_invite_v1"
+thylora_qyris_translation_layer,1,WITNESS MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,0,1,0,W,25.0,trigger:thy_name_guard; reader_fn:thy_record_qyris_pass_v1; fk_child_rows:thylora_qyris_work_item_checks,{},fk_child
+thylora_qyris_work_item_checks,164,WITNESS MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,0,1,0,W,25.0,"writer_fn:thy_record_qyris_pass_v1; trigger:thy_name_guard; reader_fn:thylora_chairman_today_v1,thylora_require_qyris_before_execution,thylora_qyris_state_v1",{},"surface_fn:thylora_chairman_today_v1,thylora_control_surface_v1"
+thylora_store_movement_map,225,TRANSFER MISSING,POLICY/REGISTRY,COMMERCE,1,1,1,1,0,0,T,25.0,trigger:thy_name_guard,"{""row_evidence_fields"": 7}",
+thylora_world_market_companies,6,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,25.0,"fk_child_rows:thylora_world_market_instruments,thylora_world_market_ownership",{},fk_child
+product_variants,0,POPULATION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,0,1,0,1,0,PW,24.0,fk_child_rows:order_items,{},fk_child
+business_locations,4,WITNESS MISSING,OPERATIONAL,OPERATIONS,1,1,1,0,1,0,W,22.5,trigger:thy_name_guard; fk_child_rows:properties,{},fk_child
+er_vehicle_project_pipeline,10,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,22.5,trigger:thy_name_guard; fk_child_rows:er_automotive_show_episode_registry,{},fk_child
+family_memberships,0,POPULATION MISSING,OPERATIONAL,COMMERCE,1,0,1,0,1,0,PW,22.5,writer_fn:claim_thylora_dashboard_identity_invite_v1; trigger:family_block_unapproved_child_provisioning_trigger; reader_fn:claim_thylora_dashboard_identity_invite_v1,{},surface_fn:claim_thylora_dashboard_identity_invite_v1
+game_bet_casino_games,2,EXECUTION MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,0,0,1,0,EW,22.5,,{},repo:app/sports-betting.js
+projects,6,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,22.5,trigger:thy_name_guard; fk_child_rows:assignments,{},repo:dashboard-current-head.html; fk_child
+reveng_job_specs,1,WITNESS MISSING,OPERATIONAL,OPERATIONS,1,1,1,0,1,0,W,22.5,fk_child_rows:reveng_render_jobs,{},fk_child
+stripe_webhook_events,0,POPULATION MISSING,OPERATIONAL,COMMERCE,1,0,1,0,1,0,PW,22.5,writer_fn:thylora_process_stripe_checkout_completed; reader_fn:thylora_process_stripe_checkout_completed; edge:stripe-webhook,{},edge
+studio_world_characters,14,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,22.5,trigger:thy_name_guard; fk_child_rows:studio_character_reference_assets,{},fk_child
+thy_omniview_topics,15,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,22.5,"writer_fn:thy_sequence_append,thy_omniview_register_topic,thy_omniview_state_canon; reader_fn:thy_omniview_resolve_topic,thy_omniview_sequence,thy_omniview_manifest; fk_child_rows:thy_omniview_gates,thy_omniview_links,thy_omniview_questions",{},"surface_fn:thy_omniview_resolve_topic,thy_omniview_sequence,thy_omniview_manifest; fk_child"
+thylora_dashboard_identity_invites,0,POPULATION MISSING,OPERATIONAL,SAFETY/LEGAL,1,0,1,0,1,0,PW,22.5,"writer_fn:issue_thylora_dashboard_identity_invite_v1,claim_thylora_dashboard_identity_invite_v1; reader_fn:issue_thylora_dashboard_identity_invite_v1,claim_thylora_dashboard_identity_invite_v1",{},"surface_fn:issue_thylora_dashboard_identity_invite_v1,claim_thylora_dashboard_identity_invite_v1"
+thylora_person_identity,84,WITNESS MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,1,0,0,0,WT,22.5,"trigger:thy_name_guard; reader_fn:thylora_person_life_record_v1,thylora_person_roster_v1",{},
+thylora_revenue_paths,305,WITNESS MISSING,OPERATIONAL,COMMERCE,1,1,1,0,0,0,WT,22.5,trigger:thylora_revenue_paths_updated_at,{},
+adult_assets,0,POPULATION MISSING,OPERATIONAL,SAFETY/LEGAL,1,0,1,0,0,0,PWT,20.0,"writer_fn:adult_takedown_quarantine_gate,adult_consent_withdrawal_quarantine,adult_consent_instruments; trigger:trg_adult_asset_live_gate; reader_fn:adult_takedown_quarantine_gate,adult_consent_withdrawal_quarantine",{},
+adult_talent,0,POPULATION MISSING,OPERATIONAL,SAFETY/LEGAL,1,0,1,0,0,0,PWT,20.0,reader_fn:adult_asset_live_gate,{},
+bramble_project_registry,1,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,20.0,trigger:thy_name_guard; fk_child_rows:bramble_episode_registry,{},fk_child
+game_bet_accounts,0,POPULATION MISSING,OPERATIONAL,SAFETY/LEGAL,1,0,1,0,0,0,PWT,20.0,reader_fn:game_bet_ticket_gate,{},
+game_bet_markets,0,POPULATION MISSING,OPERATIONAL,SAFETY/LEGAL,1,0,1,0,0,0,PWT,20.0,writer_fn:game_bet_pause_all_markets; reader_fn:game_bet_pause_all_markets,{},
+profiles,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,20.0,"reader_fn:claim_thylora_dashboard_identity_invite_v1; fk_child_rows:assignment_results,assignments,entitlements",{},surface_fn:claim_thylora_dashboard_identity_invite_v1; fk_child
+programs,21,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,20.0,"trigger:thy_name_guard; fk_child_rows:digital_product_passports,episodes,productions",{},fk_child
+properties,7,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,20.0,"reader_fn:thylora_graph_firewall_v1,thylora_graph_lookup_v1",{},surface_fn:thylora_graph_lookup_v1
+qq_participants,3,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,20.0,"reader_fn:qq_teacher_spotlight_v1; fk_child_rows:qq_credit_ledger,qq_explanations,qq_guardian_controls",{},fk_child
+qq_questions,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,20.0,"writer_fn:qq_confirm_understanding_v1; reader_fn:qq_principal_view_v1,qq_teacher_spotlight_v1,qq_confirm_understanding_v1; fk_child_rows:qq_explanations,qq_understanding_checks,qq_understanding_events",{},surface_fn:qq_principal_view_v1; fk_child
+qq_understanding_events,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,20.0,"writer_fn:qq_confirm_understanding_v1; reader_fn:qq_principal_view_v1,qq_teacher_spotlight_v1,qq_confirm_understanding_v1; fk_child_rows:qq_credit_ledger",{},surface_fn:qq_principal_view_v1; fk_child
+reveng_projects,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,20.0,"fk_child_rows:reveng_chat_messages,reveng_job_specs,reveng_render_jobs",{},fk_child
+sports_competition_registry,2,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,20.0,"fk_child_rows:sports_guest_coach_program,sports_merchandise_program,sports_team_registry",{},fk_child
+studio_people,23,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,20.0,"trigger:thy_name_guard; reader_fn:thylora_person_life_record_v1,thylora_person_roster_v1; fk_child_rows:production_tasks,system_jurist_credentials; edge:dash",{},edge; fk_child
+thylora_chairman_preview_tokens,7,WITNESS MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,0,1,0,W,20.0,"writer_fn:thylora_preview_token_redeem_v1,thylora_preview_token_mint_v1; reader_fn:thylora_preview_token_redeem_v1,thylora_preview_token_mint_v1",{},"surface_fn:thylora_preview_token_redeem_v1,thylora_preview_token_mint_v1"
+thylora_chairman_review_gates,2,WITNESS MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,0,1,0,W,20.0,"writer_fn:submit_thylora_review_gate_decision_v1; trigger:thylora_chairman_review_gates_updated_at; reader_fn:submit_thylora_review_gate_decision_v1,get_thylora_review_gates_v1",{},"surface_fn:submit_thylora_review_gate_decision_v1,get_thylora_review_gates_v1"
+thylora_continuity_anchor_authority,2,TRANSFER MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,1,0,0,T,20.0,"trigger:trg_validate_anchor_authority,trg_immutability_anchor_authority; reader_fn:thylora_current_controlling_floor","{""custody_trigger"": ""append_only""}",
+thylora_continuity_audit_shadow,573,TRANSFER MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,1,0,0,T,20.0,"writer_fn:thylora_capture_before_destructive_change,continuity_log,idea_registry; reader_fn:thylora_capture_before_destructive_change","{""is_witness_ledger"": true}",
+thylora_continuity_row_disposition,12,TRANSFER MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,1,0,0,T,20.0,trigger:trg_immutability_row_disposition; reader_fn:thylora_continuity_floor_state,"{""custody_trigger"": ""append_only""}",
+thylora_dashboard_authority_lock,1,WITNESS MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,0,1,0,W,20.0,"reader_fn:thylora_continuity_floor_state,thylora_operating_surface_v1,thylora_chairman_dash_v1; view:thylora_gap_summary_v1; edge:chairman-command,thylora-build-compiler",{},"surface_fn:thylora_operating_surface_v1,thylora_chairman_dash_v1,thylora_control_surface_v1; view; edge"
+thylora_ip_assets,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,20.0,"reader_fn:thylora_export_b2b_rights_package,thylora_evaluate_rights_gate; view:thylora_ip_product_readiness; fk_child_rows:thylora_ip_manifest_declarations",{},view; fk_child
+thylora_news_episode_registry,6,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,20.0,"trigger:thy_name_guard; reader_fn:thylora_operating_surface_v1; fk_child_rows:thylora_news_claim_ledger,thylora_news_scene_manifest",{},surface_fn:thylora_operating_surface_v1; fk_child
+thylora_pqr_question_clusters,6,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,20.0,"writer_fn:thylora_pqr_recount_cluster_v1; reader_fn:thylora_pqr_board_v1,thylora_pqr_recount_cluster_v1; fk_child_rows:thylora_pqr_board_rows,thylora_pqr_cluster_signals,thylora_pqr_evidence_checks",{},fk_child
+thylora_response_continuity_policy,23,TRANSFER MISSING,POLICY/REGISTRY,DASHBOARD-FLOOR,1,1,1,1,0,0,T,20.0,"trigger:trg_rootbound_audit_thylora_response_continuity_policy,thy_name_guard","{""sh"": 2, ""custody_trigger"": ""shadow_capture_before_destructive_change""}",
+thylora_succession_continuity_registry,5,TRANSFER MISSING,POLICY/REGISTRY,DASHBOARD-FLOOR,1,1,1,1,0,0,T,20.0,trigger:trg_rootbound_audit_thylora_succession_continuity_registry,"{""custody_trigger"": ""shadow_capture_before_destructive_change""}",
+thylora_thread_continuity_evidence,2,TRANSFER MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,1,0,0,T,20.0,trigger:trg_immutability_thread_continuity_evidence; reader_fn:thylora_new_thread_recovery_v1,"{""custody_trigger"": ""append_only""}",
+thylora_visual_assets,94,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,20.0,"trigger:thylora_visual_assets_set_updated_at,trg_mass_lock_visual_asset_approval,thy_name_guard; fk_child_rows:studio_character_reference_assets,thylora_visual_approvals,thylora_visual_provenance; edge:public-visual-registry",{},edge; fk_child
+thylora_world_entities,93,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,20.0,"trigger:thy_name_guard; fk_child_rows:studio_world_characters,thylora_food_provenance_chain,thylora_world_market_instruments",{},fk_child
+thylora_world_market_venues,5,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,20.0,"fk_child_rows:thylora_world_market_companies,thylora_world_market_instruments,thylora_world_market_sessions",{},fk_child
+transport_vehicle_registry,10,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,20.0,"fk_child_rows:er_automotive_build_sheets,er_vehicle_project_pipeline,transport_safety_case_registry",{},fk_child
+business_factory_sessions,2,WITNESS MISSING,OPERATIONAL,OPERATIONS,1,1,1,0,1,0,W,18.75,trigger:thy_name_guard; fk_child_rows:businesses,{},fk_child
+business_residency_applications,1,WITNESS MISSING,OPERATIONAL,OPERATIONS,1,1,1,0,1,0,W,18.75,fk_child_rows:business_residency_reviews,{},fk_child
+downloads,0,POPULATION MISSING,OPERATIONAL,COMMERCE,1,0,1,0,1,0,PW,18.75,"edge:p0-protected-download,thylora-current-head,thylora-dashboard",{},edge
+family_reports,7,WITNESS MISSING,OPERATIONAL,OPERATIONS,1,1,1,0,1,0,W,18.75,"edge:thylora-current-head,thylora-dashboard",{},repo:dashboard-current-head.html; edge
+freshpath_worker_specialties,5,TRANSFER MISSING,OPERATIONAL,OPERATIONS,1,1,1,1,0,0,T,18.75,reader_fn:thylora_worker_spotlight_v1,"{""row_evidence_fields"": 5}",
+legal_document,0,POPULATION MISSING,OPERATIONAL,SAFETY/LEGAL,1,0,1,0,1,0,PW,18.75,view:thylora_gap_summary_v1,{},view
+legal_opinion,1,EXECUTION MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,0,1,0,0,ET,18.75,,"{""row_evidence_fields"": 1}",
+thylora_entitlement_access_log,6,WITNESS MISSING,OPERATIONAL,COMMERCE,1,1,1,0,0,0,WT,18.75,"writer_fn:thylora_open_edf_v1; reader_fn:thylora_open_edf_v1,thylora_first_sale_chain_v1",{},
+thylora_identity_gate_records,0,POPULATION MISSING,OPERATIONAL,SAFETY/LEGAL,1,0,1,0,1,0,PW,18.75,trigger:thylora_identity_gate_records_updated_at; edge:thylora-executive-patrol,{},edge
+thylora_store_shelf_assignments,34,WITNESS MISSING,OPERATIONAL,COMMERCE,1,1,1,0,0,0,WT,18.75,reader_fn:thylora_store_home_v1,{},
+assignments,24,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,17.5,trigger:thy_name_guard; fk_child_rows:assignment_results,{},fk_child
+design_branch,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,17.5,fk_child_rows:design_revision,{},fk_child
+design_model,2,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,17.5,"fk_child_rows:design_branch,design_revision",{},fk_child
+financial_instrument_registry,3,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,17.5,"trigger:thy_name_guard; fk_child_rows:thylora_pay_periods,thylora_receivables_payables,thylora_wage_bands",{},fk_child
+hot_gossip_publications,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,17.5,"trigger:thy_name_guard; fk_child_rows:hot_gossip_issues,hot_gossip_personas",{},fk_child
+qq_explanations,2,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,17.5,"reader_fn:qq_teacher_spotlight_v1,qq_confirm_understanding_v1; fk_child_rows:qq_understanding_events",{},fk_child
+reveng_render_jobs,4,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,17.5,fk_child_rows:reveng_render_events,{},fk_child
+sports_authority_registry,1,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,17.5,"trigger:thy_name_guard; fk_child_rows:sports_commissioner_seat,sports_competition_registry,sports_network_registry",{},fk_child
+thylora_build_compiler_runs,6,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,17.5,"writer_fn:create_thylora_build_run,advance_thylora_build_stage; reader_fn:create_thylora_build_run,advance_thylora_build_stage,get_thylora_effective_build_runs_v1; fk_child_rows:thylora_build_compiler_stages,thylora_build_events,thylora_build_evidence; edge:thylora-build-compiler",{},edge; fk_child
+thylora_estate_land_units,7,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,17.5,"fk_child_rows:thylora_estate_animal_groups,thylora_estate_provision_orders",{},fk_child
+thylora_global_question_localizations,12,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,17.5,fk_child_rows:thylora_global_distribution_ledger,{},fk_child
+thylora_graph_edges,193,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,17.5,"trigger:trg_thylora_graph_validate_edge_v1; reader_fn:thylora_graph_context_v1,thylora_graph_firewall_v1,thylora_dashboard_completion_v1; view:thylora_graph_integrity_findings_v1,thylora_rdf_triples_v1,thylora_rdf_triples_v2",{},"surface_fn:thylora_dashboard_completion_v1,thylora_graph_lookup_v1; view"
+ue_progression_bands,8,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,17.5,"fk_child_rows:ue_concepts,ue_question_templates",{},fk_child
+adult_consent_instruments,0,POPULATION MISSING,OPERATIONAL,SAFETY/LEGAL,1,0,1,0,0,0,PWT,15.0,trigger:trg_adult_consent_withdrawal_quarantine; reader_fn:adult_asset_live_gate,{},
+adult_desks,11,WITNESS MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,1,0,0,0,WT,15.0,trigger:thy_name_guard,{},
+adult_operating_instruments,13,WITNESS MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,1,0,0,0,WT,15.0,trigger:thy_name_guard,{},
+assets,6,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,15.0,reader_fn:thylora_export_b2b_rights_package; fk_child_rows:vlegh_registry,{},"repo:.github/workflows/patch-dashboard-r8.yml,app/index.html; fk_child"
+bramble_episode_registry,1,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,15.0,fk_child_rows:bramble_episode_versions,{},fk_child
+chairman_source_amendments,0,POPULATION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,0,1,1,0,0,PT,15.0,trigger:trg_immutability_chairman_amendments,"{""custody_trigger"": ""append_only""}",
+commerce_credit_policy,2,WITNESS MISSING,POLICY/REGISTRY,COMMERCE,1,1,1,0,0,0,WT,15.0,trigger:thy_name_guard,{},
+earth_record_sources,7,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,15.0,"fk_child_rows:earth_record_connectors,earth_record_evidence",{},fk_child
+earth_research_cases,4,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,15.0,fk_child_rows:earth_record_evidence,{},fk_child
+family_identity_protection_audit,10,EXECUTION MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,0,1,0,0,ET,15.0,,"{""row_evidence_fields"": 10}",
+game_bet_market_catalog,11,EXECUTION MISSING,POLICY/REGISTRY,SAFETY/LEGAL,1,1,0,0,1,0,EW,15.0,,{},repo:app/sports-betting.js
+game_bet_report_policy,3,WITNESS MISSING,POLICY/REGISTRY,SAFETY/LEGAL,1,1,1,0,0,0,WT,15.0,trigger:thy_name_guard,{},
+game_bet_tickets,0,POPULATION MISSING,OPERATIONAL,SAFETY/LEGAL,1,0,1,0,0,0,PWT,15.0,trigger:trg_game_bet_ticket_gate,{},
+hot_gossip_issues,2,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,15.0,fk_child_rows:hot_gossip_issue_stories,{},fk_child
+legal_constitution_registry,1,WITNESS MISSING,POLICY/REGISTRY,SAFETY/LEGAL,1,1,1,0,0,0,WT,15.0,trigger:thy_name_guard,{},
+legal_coverage_team,24,WITNESS MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,1,0,0,0,WT,15.0,trigger:thy_name_guard,{},
+legal_office_registry,1,WITNESS MISSING,POLICY/REGISTRY,SAFETY/LEGAL,1,1,1,0,0,0,WT,15.0,trigger:thy_name_guard,{},
+legal_source_registry,13,WITNESS MISSING,POLICY/REGISTRY,SAFETY/LEGAL,1,1,1,0,0,0,WT,15.0,trigger:thy_name_guard,{},
+legal_staff_position,26,WITNESS MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,1,0,0,0,WT,15.0,trigger:thy_name_guard; reader_fn:thylora_person_roster_v1,{},
+legal_work_handoff,6,EXECUTION MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,0,1,0,0,ET,15.0,,"{""row_evidence_fields"": 6}",
+patient_advocacy_delivery_channels,5,EXECUTION MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,0,1,0,0,ET,15.0,,"{""row_evidence_fields"": 4}",
+public_site_commerce_events,0,POPULATION MISSING,OPERATIONAL,COMMERCE,1,0,1,0,1,0,PW,15.0,view:public_site_public_sales_metrics,{},view
+qq_revenue_map,10,WITNESS MISSING,POLICY/REGISTRY,COMMERCE,1,1,1,0,0,0,WT,15.0,reader_fn:thylora_question_quest_commercial_v1,{},
+restart_records,139,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,15.0,"trigger:thy_name_guard; reader_fn:thylora_operating_surface_v1,thylora_chairman_dash_v1; fk_child_rows:dashboard_status; edge:chairman-command,thylora-build-compiler,thylora-current-head",{},"surface_fn:thylora_operating_surface_v1,thylora_chairman_dash_v1; repo:dashboard-current-head.html; edge; fk_child"
+seasons,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,15.0,fk_child_rows:episodes,{},fk_child
+sports_network_registry,1,EXECUTION MISSING,POLICY/REGISTRY,DASHBOARD-FLOOR,1,1,0,0,1,0,EW,15.0,,{},repo:app/app.js
+studio_departments,3,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,15.0,"trigger:thy_name_guard; fk_child_rows:production_tasks,studio_people",{},repo:dashboard-current-head.html; fk_child
+thy_loochy_accounts,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,1,0,0,PT,15.0,writer_fn:thy_loochy_post_transaction; trigger:thy_loochy_accounts_no_direct_balance_change; reader_fn:thy_loochy_post_transaction,"{""custody_trigger"": ""ledger_write_guard""}",
+thy_omniview_links,56,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,15.0,"writer_fn:thy_omniview_link; reader_fn:thy_omniview_manifest,thy_omniview_topic,thy_omniview_link",{},"surface_fn:thy_omniview_manifest,thy_omniview_topic,thy_omniview_link"
+thy_omniview_questions,22,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,15.0,"writer_fn:thy_omniview_answer,thy_omniview_ask; reader_fn:thy_omniview_answer,thy_omniview_manifest,thy_omniview_topic",{},"surface_fn:thy_omniview_answer,thy_omniview_manifest,thy_omniview_topic"
+thy_omniview_restarts,2,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,15.0,"writer_fn:thy_omniview_restart; reader_fn:thy_omniview_manifest,thy_omniview_topic,thy_omniview_restart",{},"surface_fn:thy_omniview_manifest,thy_omniview_topic,thy_omniview_restart"
+thy_sequence_ledger_topics,33,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,15.0,"writer_fn:thy_sequence_append,thy_omniview_restart,thy_omniview_state_canon; reader_fn:thy_omniview_sequence,thy_omniview_manifest,thy_omniview_topic",{},"surface_fn:thy_omniview_sequence,thy_omniview_manifest,thy_omniview_topic"
+thylora_bank_account_types,7,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,15.0,"fk_child_rows:ersatzreality_financial_accounts,thylora_bank_rate_schedules",{},fk_child
+thylora_castle_economy_accounts,13,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,15.0,fk_child_rows:thylora_castle_economy_flows,{},fk_child
+thylora_commerce_provider_authority,1,WITNESS MISSING,OPERATIONAL,COMMERCE,1,1,1,0,0,0,WT,15.0,"reader_fn:get_thylora_effective_build_runs_v1,thylora_continuity_floor_state",{},
+thylora_estate_ledger_entries,15,EXECUTION MISSING,OPERATIONAL,COMMERCE,1,1,0,1,0,0,ET,15.0,,"{""row_evidence_fields"": 15}",
+thylora_estate_tenancies,6,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,15.0,"fk_child_rows:thylora_estate_land_units,thylora_estate_resident_households",{},fk_child
+thylora_famous_thought_math_bindings,39,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,15.0,reader_fn:thylora_famous_thought_dashboard_v1; view:thylora_famous_thought_public_v1,{},surface_fn:thylora_famous_thought_dashboard_v1; view
+thylora_famous_thought_themes,79,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,15.0,reader_fn:thylora_famous_thought_dashboard_v1; view:thylora_famous_thought_public_v1,{},surface_fn:thylora_famous_thought_dashboard_v1; view
+thylora_graph_predicates,8,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,15.0,"reader_fn:thylora_graph_validate_edge_v1,thylora_dashboard_completion_v1; fk_child_rows:thylora_graph_edges,thylora_graph_predicate_contracts",{},surface_fn:thylora_dashboard_completion_v1; fk_child
+thylora_ip_consent_state_events,0,POPULATION MISSING,OPERATIONAL,SAFETY/LEGAL,1,0,1,1,0,0,PT,15.0,trigger:trg_ip_consent_event_immutable; reader_fn:thylora_evaluate_rights_gate,"{""custody_trigger"": ""append_only""}",
+thylora_ip_manifest_declarations,1,TRANSFER MISSING,OPERATIONAL,GENERAL,1,1,1,1,0,0,T,15.0,trigger:trg_ip_manifest_immutable; reader_fn:thylora_evaluate_rights_gate,"{""row_evidence_fields"": 1, ""custody_trigger"": ""append_only""}",
+thylora_math_equation_registry,13,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,15.0,"reader_fn:thy_math_display_get; fk_child_rows:thy_math_display,thylora_famous_thought_math_bindings",{},fk_child
+thylora_news_program_registry,5,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,15.0,"trigger:thy_name_guard; reader_fn:thylora_operating_surface_v1; fk_child_rows:thylora_news_episode_registry,thylora_news_format_templates",{},surface_fn:thylora_operating_surface_v1; fk_child
+thylora_output_visual_identity_gate,12,WITNESS MISSING,POLICY/REGISTRY,SAFETY/LEGAL,1,1,1,0,0,0,WT,15.0,trigger:thy_name_guard,{},
+thylora_patrol_runs,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,1,1,0,P,15.0,edge:thylora-executive-patrol,"{""edge_writer_emits_audit_event"": true}",edge
+thylora_pay_periods,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,15.0,fk_child_rows:thylora_pay_period_lines,{},fk_child
+thylora_pending_entitlement_claims,1,WITNESS MISSING,OPERATIONAL,COMMERCE,1,1,1,0,0,0,WT,15.0,"writer_fn:thylora_commerce_record_unlinked_purchase_v1,thylora_claim_pending_entitlements_v1; reader_fn:thylora_commerce_record_unlinked_purchase_v1,thylora_claim_pending_entitlements_v1",{},
+thylora_pqr_evidence_checks,5,WITNESS MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,0,0,0,WT,15.0,reader_fn:thylora_pqr_release_gate_v1,{},
+thylora_pqr_opportunities,9,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,15.0,reader_fn:thylora_pqr_release_gate_v1; fk_child_rows:thylora_pqr_originality_gate,{},fk_child
+thylora_pqr_signals,14,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,15.0,reader_fn:thylora_pqr_recount_cluster_v1; fk_child_rows:thylora_pqr_cluster_signals,{},fk_child
+thylora_product_checkout_events,0,POPULATION MISSING,OPERATIONAL,COMMERCE,1,0,1,0,1,0,PW,15.0,"writer_fn:thylora_process_product_stripe_checkout_completed_v1; reader_fn:thylora_process_product_stripe_checkout_completed_v1,thylora_operating_surface_v1",{},surface_fn:thylora_operating_surface_v1
+thylora_product_download_audit,0,POPULATION MISSING,OPERATIONAL,COMMERCE,1,0,1,0,1,0,PW,15.0,edge:thylora-protected-download,{},edge
+thylora_product_passport_details,1,WITNESS MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,0,0,0,WT,15.0,"trigger:thylora_product_passport_details_updated_at,thy_name_guard",{},
+thylora_product_review_records,2,WITNESS MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,0,0,0,WT,15.0,trigger:thylora_product_review_records_touch_updated_at,{},
+thylora_production_approval_checks,0,POPULATION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,0,1,0,1,0,PW,15.0,trigger:thylora_production_approval_checks_updated_at; edge:thylora-executive-patrol,{},edge
+thylora_production_approval_templates,10,WITNESS MISSING,POLICY/REGISTRY,DASHBOARD-FLOOR,1,1,1,0,0,0,WT,15.0,trigger:thylora_production_approval_templates_updated_at,{},
+thylora_store_policy_registry,3,EXECUTION MISSING,POLICY/REGISTRY,COMMERCE,1,1,0,1,0,0,ET,15.0,,"{""row_evidence_fields"": 3}",
+thylora_store_readback_snapshots,1,EXECUTION MISSING,OPERATIONAL,COMMERCE,1,1,0,1,0,0,ET,15.0,,"{""row_evidence_fields"": 1}",
+thylora_submit_product_policy,8,WITNESS MISSING,POLICY/REGISTRY,DASHBOARD-FLOOR,1,1,1,0,0,0,WT,15.0,"reader_fn:thylora_submit_publication_guard,thylora_submit_open_v1,thylora_submit_my_submissions_v1",{},
+thylora_time_run_registry,1,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,15.0,fk_child_rows:thylora_time_run_events,{},fk_child
+thylora_visual_slots,46,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,15.0,"trigger:thylora_visual_slots_set_updated_at,thy_name_guard; fk_child_rows:thylora_visual_approvals; edge:public-visual-registry",{},edge; fk_child
+thylora_wage_bands,9,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,15.0,fk_child_rows:thylora_pay_period_lines,{},fk_child
+thylora_world_institution_registry,5,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,15.0,fk_child_rows:thylora_castle_economy_accounts,{},fk_child
+time_region_protection_doctrine,5,WITNESS MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,1,0,0,0,WT,15.0,trigger:thy_name_guard,{},
+ue_lb_senses,130,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,15.0,fk_child_rows:ue_lb_sentence_cases,{},fk_child
+ue_lb_terms,41,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,15.0,"fk_child_rows:ue_lb_senses,ue_lb_sentence_cases",{},fk_child
+ue_subject_adapters,17,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,15.0,fk_child_rows:ue_concepts,{},fk_child
+world_orders,0,POPULATION MISSING,OPERATIONAL,COMMERCE,1,0,0,0,1,0,PEW,15.0,,{},repo:app/app.js
+earth_record_evidence,8,EXECUTION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,0,0,0,0,EWT,14.0,,{},
+family_media,6,EXECUTION MISSING,OPERATIONAL,OPERATIONS,1,1,0,0,1,0,EW,13.5,,{},repo:dashboard-current-head.html
+freshpath_exceptions,2,WITNESS MISSING,EVENT,OPERATIONS,1,1,1,0,0,0,WT,13.5,reader_fn:freshpath_now_board_v1,{},
+freshpath_stage_events,20,WITNESS MISSING,OPERATIONAL,OPERATIONS,1,1,1,0,0,0,WT,13.5,"reader_fn:freshpath_stage_durations_v1,freshpath_now_board_v1",{},
+freshpath_worker_recognition,2,WITNESS MISSING,OPERATIONAL,OPERATIONS,1,1,1,0,0,0,WT,13.5,reader_fn:thylora_worker_spotlight_v1,{},
+thy_loochy_transactions,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,1,0,0,PT,13.5,writer_fn:thy_loochy_post_transaction; trigger:thy_loochy_transactions_immutable; reader_fn:thy_loochy_post_transaction,"{""custody_trigger"": ""append_only""}",
+thylora_business_settlements,5,EXECUTION MISSING,OPERATIONAL,OPERATIONS,1,1,0,1,0,0,ET,13.5,,"{""row_evidence_fields"": 5}",
+thylora_submit_submissions,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,1,0,PW,13.5,"writer_fn:thylora_submit_open_v1,thylora_submit_deliver_v1,thylora_submit_execute_deletion_v1; trigger:trg_submit_no_rebinding; reader_fn:thylora_submit_publication_guard,thylora_submit_owns,thylora_submit_open_v1",{},surface_fn:thylora_submit_present_for_review_v1
+er_automotive_department_roles,22,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,12.5,fk_child_rows:er_automotive_staff_assignments,{},fk_child
+er_automotive_facility_registry,1,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,12.5,trigger:thy_name_guard; fk_child_rows:er_automotive_staff_assignments,{},fk_child
+er_automotive_show_registry,5,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,12.5,fk_child_rows:er_automotive_show_episode_registry,{},fk_child
+ersatzreality_financial_ledger,0,POPULATION MISSING,OPERATIONAL,COMMERCE,1,0,1,0,0,0,PWT,12.5,reader_fn:thylora_bank_open_statement,{},
+media_assets,18,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,12.5,view:thylora_gap_summary_v1,{},view
+qq_guardian_controls,1,EXECUTION MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,0,0,0,0,EWT,12.5,,{},
+qq_reward_catalog,3,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,12.5,fk_child_rows:qq_credit_ledger,{},fk_child
+reveng_tenants,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,12.5,fk_child_rows:reveng_projects,{},fk_child
+six_member_profiles,6,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,12.5,view:six_current_head_v; fk_child_rows:six_nightly_report_config,{},view; fk_child
+six_nightly_report_config,6,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,12.5,view:six_current_head_v,{},view
+sports_team_registry,33,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,12.5,trigger:thy_name_guard,{},"repo:.github/workflows/patch-dashboard-r7.yml,app/app.js"
+tasteprint_profiles,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,12.5,fk_child_rows:tasteprint_versions,{},fk_child
+tasteprint_versions,1,TRANSFER MISSING,OPERATIONAL,GENERAL,1,1,1,1,0,0,T,12.5,trigger:trg_tasteprint_versions_immutable,"{""custody_trigger"": ""immutable""}",
+thylora_autonomy_runs,283,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,12.5,edge:thylora-autonomy-worker,{},edge
+thylora_build_events,9,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,12.5,"writer_fn:create_thylora_build_run,advance_thylora_build_stage,claim_thylora_build_event; reader_fn:create_thylora_build_run,advance_thylora_build_stage,claim_thylora_build_event; edge:thylora-build-compiler",{},edge
+thylora_business_tax_ledger,3,EXECUTION MISSING,OPERATIONAL,COMMERCE,1,1,0,0,0,0,EWT,12.5,,{},
+thylora_comm_contact_profiles,8,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,12.5,fk_child_rows:thylora_comm_events,{},fk_child
+thylora_delivery_attempts,3,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,12.5,"writer_fn:thylora_delivery_retry_v1,thylora_open_edf_v1,thylora_commerce_ingest_order_event_v1; reader_fn:thylora_delivery_retry_v1,thylora_delivery_health_v1,thylora_open_edf_v1; view:thylora_fulfillment_reconciliation_candidates",{},view
+thylora_department_profiles,39,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,12.5,"trigger:thylora_department_profiles_updated_at,thy_name_guard; edge:thylora-department-talk",{},edge
+thylora_economy_domain_registry,22,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,12.5,fk_child_rows:thylora_world_institution_registry,{},fk_child
+thylora_edf_packages,2,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,12.5,"writer_fn:thylora_edf_publish_v1,thylora_edf_create_v1,thylora_edf_set_release_metadata_v1; reader_fn:thylora_edf_guard_published,thylora_edf_publish_v1,thylora_edf_validate_v1; fk_child_rows:thylora_edf_text_blocks",{},surface_fn:thylora_customer_library_v1; fk_child
+thylora_edf_text_blocks,59,TRANSFER MISSING,OPERATIONAL,GENERAL,1,1,1,1,0,0,T,12.5,"writer_fn:thylora_edf_add_text_v1; trigger:trg_edf_hash_block,trg_edf_guard_blocks,thy_name_guard; reader_fn:thylora_edf_validate_v1,thylora_edf_manifest_v1,thylora_edf_add_text_v1","{""custody_trigger"": ""frozen_after_publish""}",
+thylora_famous_thought_people_in_time,23,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,12.5,"reader_fn:thylora_famous_thought_card_v1,thylora_famous_thought_dashboard_v1; view:thylora_famous_thought_public_v1",{},surface_fn:thylora_famous_thought_dashboard_v1; view
+thylora_famous_thought_theme_registry,20,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,12.5,reader_fn:thylora_famous_thought_dashboard_v1; fk_child_rows:thylora_famous_thought_themes,{},surface_fn:thylora_famous_thought_dashboard_v1; fk_child
+thylora_gate_definitions,8,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,12.5,"trigger:thylora_gate_definitions_updated_at,thy_name_guard; reader_fn:thylora_dashboard_completion_v1,thy_omniview_current_gates",{},"surface_fn:thylora_dashboard_completion_v1,thy_omniview_current_gates"
+thylora_global_question_registry,3,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,12.5,fk_child_rows:thylora_global_question_localizations,{},fk_child
+thylora_graph_nodes,82,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,12.5,"reader_fn:thylora_graph_validate_edge_v1,thylora_graph_context_v1,thylora_graph_firewall_v1; view:thylora_graph_integrity_findings_v1,thylora_graph_possible_name_conflicts_v1,thylora_rdf_triples_v1; fk_child_rows:thylora_graph_edges",{},"surface_fn:thylora_dashboard_completion_v1,thylora_graph_lookup_v1; view; fk_child"
+thylora_graph_predicate_contracts,8,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,12.5,view:thylora_graph_integrity_findings_v1,{},view
+thylora_hq_floor_registry,29,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,12.5,trigger:thy_name_guard,{},repo:dashboard-current-head.html
+thylora_idea_extensions,23,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,12.5,"trigger:thylora_idea_extensions_updated_at,thy_name_guard; view:thylora_idea_workspaces",{},view
+thylora_idea_links,21,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,12.5,view:thylora_idea_workspaces,{},view
+thylora_mass_lock_enforcers,10,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,12.5,fk_child_rows:thylora_mass_lock_enforcement_events,{},fk_child
+thylora_news_claim_ledger,34,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,12.5,reader_fn:thylora_operating_surface_v1,{},surface_fn:thylora_operating_surface_v1
+thylora_operational_invariants,18,TRANSFER MISSING,OPERATIONAL,GENERAL,1,1,1,1,0,0,T,12.5,"writer_fn:thylora_enforce_standing_invariants_v1; trigger:thy_name_guard; reader_fn:thylora_operational_numbers_v1,thylora_enforce_standing_invariants_v1","{""row_evidence_fields"": 18}",
+thylora_patrol_findings,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,1,1,0,P,12.5,trigger:thylora_patrol_findings_updated_at; edge:thylora-executive-patrol,"{""edge_writer_emits_audit_event"": true}",edge
+thylora_person_activation_states,7,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,12.5,trigger:thy_name_guard; fk_child_rows:thylora_person_identity,{},fk_child
+thylora_pqr_boards,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,12.5,fk_child_rows:thylora_pqr_board_rows,{},fk_child
+thylora_pqr_sources,17,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,12.5,fk_child_rows:thylora_pqr_signals,{},fk_child
+thylora_provider_registry,4,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,12.5,"trigger:thylora_provider_registry_updated_at; reader_fn:thylora_chairman_dash_v1; fk_child_rows:thylora_provider_adapters; edge:chairman-command,dash,thylora-build-compiler",{},surface_fn:thylora_chairman_dash_v1; edge; fk_child
+thylora_ui_action_contracts,9,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,12.5,trigger:trg_enforce_verified_ui_contract; view:thylora_ui_functional_state,{},view
+thylora_ui_modules,76,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,12.5,trigger:thy_name_guard; view:thylora_ui_functional_state; fk_child_rows:thylora_module_records,{},view; repo:dashboard-current-head.html; fk_child
+voice_profile_registry,4,TRANSFER MISSING,POLICY/REGISTRY,GENERAL,1,1,1,1,0,0,T,12.5,"reader_fn:thylora_person_life_record_v1,thylora_person_roster_v1","{""row_evidence_fields"": 4}",
+approval_records,0,POPULATION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,0,1,0,1,0,PW,12.0,reader_fn:thylora_control_surface_v1,{},surface_fn:thylora_control_surface_v1
+chairman_source_interpretation,1,EXECUTION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,0,0,0,0,EWT,12.0,,{},
+chairman_source_shorthand_expansion,1,EXECUTION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,0,0,0,0,EWT,12.0,,{},
+family_story_products,1,EXECUTION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,0,0,0,0,EWT,12.0,,{},
+thylora_chairman_launch_board,1,EXECUTION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,0,1,0,0,ET,12.0,,"{""row_evidence_fields"": 1}",
+thylora_chairman_margin_notes,0,POPULATION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,0,1,0,1,0,PW,12.0,"writer_fn:thylora_margin_note_add_v1,thylora_margin_reconcile_v1; trigger:margin_notes_touch; reader_fn:thylora_chairman_dash_v1,thylora_margin_queue_v1,thylora_margin_note_add_v1",{},surface_fn:thylora_chairman_dash_v1
+thylora_chairman_understanding_registry,10,WITNESS MISSING,POLICY/REGISTRY,DASHBOARD-FLOOR,1,1,1,0,0,0,WT,12.0,trigger:thy_name_guard,{},
+thylora_chairman_visit_log,0,POPULATION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,0,1,0,1,0,PW,12.0,"writer_fn:thylora_record_chairman_visit_v1; reader_fn:thylora_operating_surface_v1,thylora_record_chairman_visit_v1",{},"surface_fn:thylora_operating_surface_v1,thylora_record_chairman_visit_v1"
+thylora_continuity_boot_registry,1,WITNESS MISSING,POLICY/REGISTRY,DASHBOARD-FLOOR,1,1,1,0,0,0,WT,12.0,trigger:thy_name_guard,{},
+thylora_continuity_payloads,97,EXECUTION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,0,1,0,0,ET,12.0,,"{""audit_alias"": [""thylora_continuity_payload""]}",
+thylora_execution_policy,69,WITNESS MISSING,POLICY/REGISTRY,DASHBOARD-FLOOR,1,1,1,0,0,0,WT,12.0,trigger:thy_name_guard,{},
+thylora_historical_medicine_evidence,2,WITNESS MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,0,0,0,WT,12.0,trigger:thy_name_guard,{},
+thylora_product_copy_versions,2,WITNESS MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,0,0,0,WT,12.0,"writer_fn:thylora_approve_product_copy_v1; reader_fn:thylora_approve_product_copy_v1,thylora_product_copy_diff_v1",{},
+thylora_thread_handoff_bus,30,WITNESS MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,1,0,0,0,WT,12.0,trigger:thy_name_guard,{},
+ue_lb_product_designs,4,EXECUTION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,0,1,0,0,ET,12.0,,"{""row_evidence_fields"": 4}",
+workers,0,POPULATION MISSING,OPERATIONAL,OPERATIONS,1,0,0,0,1,0,PEW,12.0,,{},"repo:app/app.js,app/time-run.html"
+business_residency_reviews,1,EXECUTION MISSING,OPERATIONAL,OPERATIONS,1,1,0,1,0,0,ET,11.25,,"{""row_evidence_fields"": 1}",
+business_stories,1,WITNESS MISSING,OPERATIONAL,OPERATIONS,1,1,1,0,0,0,WT,11.25,trigger:thy_name_guard,{},
+family_story_audit,4,EXECUTION MISSING,OPERATIONAL,OPERATIONS,1,1,0,0,1,0,EW,11.25,,{},"repo:app/app.js,app/hotfix-20260831.js"
+freshpath_preferred_workers,2,WITNESS MISSING,OPERATIONAL,OPERATIONS,1,1,1,0,0,0,WT,11.25,reader_fn:thylora_worker_spotlight_v1,{},
+freshpath_worker_credentials,2,WITNESS MISSING,OPERATIONAL,OPERATIONS,1,1,1,0,0,0,WT,11.25,reader_fn:thylora_worker_spotlight_v1,{},
+crew_run,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,1,0,PW,10.5,view:thylora_gap_summary_v1,{},view
+episodes,3,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,1,0,EW,10.5,,{},repo:app/index.html
+child_safeguarding_policy,1,EXECUTION MISSING,POLICY/REGISTRY,SAFETY/LEGAL,1,1,0,0,0,0,EWT,10.0,,{},
+currency_visual_registry,2,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,10.0,edge:dash,{},edge
+dashboard_trust_protocol,1,EXECUTION MISSING,POLICY/REGISTRY,SAFETY/LEGAL,1,1,0,0,0,0,EWT,10.0,,{},
+design_revision,2,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,10.0,,{},
+er_automotive_revenue_matrix,18,EXECUTION MISSING,POLICY/REGISTRY,COMMERCE,1,1,0,0,0,0,EWT,10.0,,{},
+family_trustee_candidates,4,EXECUTION MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,0,0,0,0,EWT,10.0,,{},
+financial_decision_register,4,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,10.0,trigger:thy_name_guard,{},repo:dashboard-current-head.html
+game_bet_game_lab,4,EXECUTION MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,0,0,0,0,EWT,10.0,,{},
+game_bet_intelligence_reports,1,EXECUTION MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,0,0,0,0,EWT,10.0,,{},
+legal_domain_registry,52,EXECUTION MISSING,POLICY/REGISTRY,SAFETY/LEGAL,1,1,0,0,0,0,EWT,10.0,,{},
+legal_preparation_register,3,EXECUTION MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,0,0,0,0,EWT,10.0,,{},
+organization_contact_registry,4,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,10.0,reader_fn:thylora_chairman_dash_v1,{},surface_fn:thylora_chairman_dash_v1
+patient_advocacy_cases,0,POPULATION MISSING,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,10.0,,{},
+protected_record_index,3,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,10.0,edge:thylora-dashboard,{},edge
+protection_protocol_registry,2,EXECUTION MISSING,POLICY/REGISTRY,SAFETY/LEGAL,1,1,0,0,0,0,EWT,10.0,,{},
+public_site_visit_events,28,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,10.0,view:public_site_public_metrics,{},view
+qq_cost_estimates,5,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,10.0,reader_fn:thylora_question_quest_commercial_v1; view:qq_margin_scenarios_v1,{},view
+question_engineering_runs,1,TRANSFER MISSING,OPERATIONAL,GENERAL,1,1,1,1,0,0,T,10.0,writer_fn:create_question_engineering_run_v1; trigger:thy_name_guard; reader_fn:create_question_engineering_run_v1,"{""row_evidence_fields"": 1}",
+reward_commerce_bridge,1,EXECUTION MISSING,OPERATIONAL,COMMERCE,1,1,0,0,0,0,EWT,10.0,,{},
+social_channel_registry,23,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,10.0,"trigger:thy_name_guard; reader_fn:thylora_dashboard_completion_v1,thylora_operating_surface_v1,thylora_chairman_dash_v1",{},"surface_fn:thylora_dashboard_completion_v1,thylora_operating_surface_v1,thylora_chairman_dash_v1"
+studio_render_jobs,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,0,0,PWT,10.0,"writer_fn:studio_release_render_lease,studio_claim_next_render_job; reader_fn:studio_release_render_lease,studio_claim_next_render_job",{},
+system_jurist_accreditation,1,TRANSFER MISSING,OPERATIONAL,GENERAL,1,1,1,1,0,0,T,10.0,trigger:thy_name_guard,"{""row_evidence_fields"": 1}",
+thylora_ai_provider_profiles,5,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,10.0,edge:thylora-ai-router,{},edge
+thylora_art_commission_registry,1,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,10.0,trigger:thy_name_guard; edge:dash,{},edge
+thylora_autonomy_credentials,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,10.0,edge:thylora-autonomy-worker,{},edge
+thylora_autonomy_runtime,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,10.0,edge:thylora-autonomy-worker,{},edge
+thylora_brand_asset_slots,9,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,10.0,reader_fn:thylora_operating_surface_v1,{},surface_fn:thylora_operating_surface_v1
+thylora_component_library,12,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,10.0,edge:thylora-build-compiler,{},edge
+thylora_control_lane_registry,42,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,10.0,"writer_fn:thy_update_living_map_lane_v1; trigger:thy_name_guard; reader_fn:thylora_chairman_today_v1,thylora_control_surface_v1,thy_update_living_map_lane_v1",{},"surface_fn:thylora_chairman_today_v1,thylora_control_surface_v1"
+thylora_conveyor_unit_cost,10,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,10.0,view:thylora_conveyor_candidates,{},view
+thylora_delivery_assets,11,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,10.0,"writer_fn:activate_thylora_delivery_asset_v1; reader_fn:thylora_chairman_approval_screen_v1,thylora_chairman_preview_decision_v1,get_thylora_delivery_intake_status_v1; edge:thylora-delivery-ingest,thylora-protected-download",{},"surface_fn:thylora_chairman_approval_screen_v1,thylora_chairman_preview_decision_v1,grant_thylora_chairman_delivery_test_v1; edge"
+thylora_department_conversations,33,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,10.0,edge:thylora-department-talk,{},repo:dashboard-current-head.html; edge
+thylora_department_personnel,131,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,10.0,"trigger:thy_name_guard; reader_fn:thylora_person_life_record_v1,thylora_person_roster_v1; edge:thylora-department-talk",{},edge
+thylora_estate_work_orders,7,EXECUTION MISSING,OPERATIONAL,COMMERCE,1,1,0,0,0,0,EWT,10.0,,{},
+thylora_graph_node_type_registry,20,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,10.0,view:thylora_graph_integrity_findings_v1,{},view
+thylora_graph_versions,260,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,10.0,"reader_fn:thylora_graph_context_v1,thylora_graph_firewall_v1,thylora_dashboard_completion_v1",{},"surface_fn:thylora_dashboard_completion_v1,thylora_graph_lookup_v1"
+thylora_ip_legal_basis_registry,4,EXECUTION MISSING,POLICY/REGISTRY,SAFETY/LEGAL,1,1,0,0,0,0,EWT,10.0,,{},
+thylora_kitchen_stores,6,EXECUTION MISSING,OPERATIONAL,COMMERCE,1,1,0,0,0,0,EWT,10.0,,{},
+thylora_no_regression_floors,5,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,10.0,edge:thylora-build-compiler,{},edge
+thylora_one_way_gate_registry,35,TRANSFER MISSING,POLICY/REGISTRY,GENERAL,1,1,1,1,0,0,T,10.0,"trigger:trg_rootbound_audit_thylora_one_way_gate_registry,thy_name_guard","{""sh"": 3, ""custody_trigger"": ""shadow_capture_before_destructive_change""}",
+thylora_person_serial_registry,38,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,10.0,"reader_fn:thylora_person_life_record_v1,thylora_person_roster_v1; edge:dash",{},edge
+thylora_person_supersession,5,TRANSFER MISSING,OPERATIONAL,GENERAL,1,1,1,1,0,0,T,10.0,reader_fn:thylora_person_roster_v1,"{""row_evidence_fields"": 5}",
+thylora_price_calibration_proposals,6,EXECUTION MISSING,OPERATIONAL,COMMERCE,1,1,0,0,0,0,EWT,10.0,,{},
+thylora_product_verification_packets,1,EXECUTION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,0,0,0,0,EWT,10.0,,{},
+thylora_read_receipt_instrumentation,3,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,10.0,"reader_fn:thylora_read_state_for_surface,thylora_continuity_floor_state",{},surface_fn:thylora_read_state_for_surface
+thylora_report_workroom_spine,12,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,10.0,reader_fn:thylora_dashboard_completion_v1,{},surface_fn:thylora_dashboard_completion_v1
+thylora_response_point_coverage,97,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,10.0,reader_fn:thy_omniview_coverage,{},surface_fn:thy_omniview_coverage
+thylora_rootbound_mesh,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,10.0,edge:thylora-enforcer,{},edge
+thylora_run_findings,165,TRANSFER MISSING,OPERATIONAL,GENERAL,1,1,1,1,0,0,T,10.0,reader_fn:thylora_question_quest_commercial_v1,"{""row_evidence_fields"": 161}",
+thylora_scene_execution_contract,0,POPULATION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,0,1,0,0,0,PWT,10.0,reader_fn:thylora_enforce_studio_scene_contract,{},
+thylora_security_signals,6,EXECUTION MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,0,0,0,0,EWT,10.0,,{},
+thylora_six_protection_redundancy,5,EXECUTION MISSING,OPERATIONAL,SAFETY/LEGAL,1,1,0,0,0,0,EWT,10.0,,{},
+thylora_store_lane_routes,5,EXECUTION MISSING,OPERATIONAL,COMMERCE,1,1,0,0,0,0,EWT,10.0,,{},
+thylora_store_shelf_release_gate,1,EXECUTION MISSING,POLICY/REGISTRY,COMMERCE,1,1,0,0,0,0,EWT,10.0,,{},
+thylora_story_seed_registry,40,TRANSFER MISSING,POLICY/REGISTRY,GENERAL,1,1,1,1,0,0,T,10.0,"trigger:trg_rootbound_audit_thylora_story_seed_registry,thy_name_guard","{""sh"": 7, ""custody_trigger"": ""shadow_capture_before_destructive_change""}",
+thylora_submit_consents,0,POPULATION MISSING,OPERATIONAL,SAFETY/LEGAL,1,0,1,0,0,0,PWT,10.0,"writer_fn:thylora_submit_record_consent_v1; trigger:trg_submit_publication_guard; reader_fn:thylora_submit_my_submissions_v1,thylora_submit_status_v1,thylora_submit_record_consent_v1",{},
+thylora_succession_directives,7,TRANSFER MISSING,OPERATIONAL,GENERAL,1,1,1,1,0,0,T,10.0,trigger:trg_rootbound_audit_thylora_succession_directives,"{""custody_trigger"": ""shadow_capture_before_destructive_change""}",
+thylora_thread_clock_events,1,TRANSFER MISSING,OPERATIONAL,GENERAL,1,1,1,1,0,0,T,10.0,trigger:trg_immutability_thread_clock_events; reader_fn:thylora_thread_clock_duration_v1,"{""row_evidence_fields"": 1, ""custody_trigger"": ""append_only""}",
+thylora_thread_delta_registry,18,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,1,0,W,10.0,"reader_fn:thylora_chairman_qyris_v1,thylora_chairman_dash_v1",{},"surface_fn:thylora_chairman_qyris_v1,thylora_chairman_dash_v1"
+thylora_voice_identity_resolution_gate,1,EXECUTION MISSING,POLICY/REGISTRY,SAFETY/LEGAL,1,1,0,0,0,0,EWT,10.0,,{},
+thylora_voice_transcription_identity_gate,1,EXECUTION MISSING,POLICY/REGISTRY,SAFETY/LEGAL,1,1,0,0,0,0,EWT,10.0,,{},
+thylora_webhook_delivery_log,31,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,10.0,reader_fn:thylora_webhook_health_v1; view:thylora_commerce_event_witness_v1; edge:thylora-shopify-webhook,{},view; edge
+thylora_workroom_priority_inputs,16,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,1,0,W,10.0,trigger:priority_inputs_touch; reader_fn:thylora_chairman_dash_v1,{},surface_fn:thylora_chairman_dash_v1
+thylora_world_identity_gate,1,EXECUTION MISSING,POLICY/REGISTRY,SAFETY/LEGAL,1,1,0,0,0,0,EWT,10.0,,{},
+assignment_results,2,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,1,0,0,ET,9.0,,"{""row_evidence_fields"": 2}",
+business_factory_activation_matrix,20,EXECUTION MISSING,POLICY/REGISTRY,OPERATIONS,1,1,0,1,0,0,ET,9.0,,"{""row_evidence_fields"": 20}",
+business_provenance_events,2,EXECUTION MISSING,OPERATIONAL,OPERATIONS,1,1,0,0,0,0,EWT,9.0,,{},
+er_automotive_show_episode_registry,10,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,9.0,trigger:thy_name_guard,{},
+er_automotive_staff_assignments,52,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,9.0,trigger:thy_name_guard,{},
+family_letter_drafts,8,WITNESS MISSING,OPERATIONAL,OPERATIONS,1,1,1,0,0,0,WT,9.0,trigger:thy_name_guard,{},
+family_participation_program,1,WITNESS MISSING,OPERATIONAL,OPERATIONS,1,1,1,0,0,0,WT,9.0,trigger:thy_name_guard,{},
+family_safety_controls,1,WITNESS MISSING,OPERATIONAL,OPERATIONS,1,1,1,0,0,0,WT,9.0,reader_fn:family_block_unapproved_child_provisioning,{},
+living_business_app_registry,12,EXECUTION MISSING,POLICY/REGISTRY,OPERATIONS,1,1,0,0,0,0,EWT,9.0,,{},
+nightly_reports,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,1,0,PW,9.0,reader_fn:thylora_dashboard_completion_v1,{},surface_fn:thylora_dashboard_completion_v1
+qq_understanding_checks,3,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,9.0,reader_fn:qq_confirm_understanding_v1,{},
+thy_math_display,12,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,9.0,reader_fn:thy_math_display_get,{},
+thylora_bank_credit_facilities,17,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,9.0,writer_fn:thylora_bank_open_facility; reader_fn:thylora_bank_open_facility,{},
+thylora_family_invitation_packets,11,WITNESS MISSING,OPERATIONAL,OPERATIONS,1,1,1,0,0,0,WT,9.0,trigger:thy_name_guard,{},
+thylora_family_memory_registry,4,WITNESS MISSING,POLICY/REGISTRY,OPERATIONS,1,1,1,0,0,0,WT,9.0,trigger:thy_name_guard,{},
+thylora_ip_chain_of_title_events,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,1,0,0,PT,9.0,"trigger:trg_ip_title_immutable; reader_fn:thylora_export_b2b_rights_package,thylora_evaluate_rights_gate","{""custody_trigger"": ""append_only""}",
+thylora_pqr_board_rows,3,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,9.0,reader_fn:thylora_pqr_board_v1,{},
+thylora_pqr_cluster_signals,14,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,9.0,reader_fn:thylora_pqr_recount_cluster_v1,{},
+thylora_promotion_records,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,9.0,trigger:thylora_promotion_records_updated_at,{},
+thylora_visual_assignments,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,1,0,PW,9.0,"trigger:thylora_visual_assignments_set_updated_at,trg_mass_lock_visual_assignment; edge:public-visual-registry",{},edge
+personalized_production_program,1,EXECUTION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,0,0,0,0,EWT,8.0,,{},
+question_engineering_products,9,EXECUTION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,0,0,0,0,EWT,8.0,,{},
+tessa_passport_value_lines,4,EXECUTION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,0,0,0,0,EWT,8.0,,{},
+thylora_chairman_action_routes,6,EXECUTION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,0,0,0,0,EWT,8.0,,{},
+thylora_cross_thread_continuity_policy,2,EXECUTION MISSING,POLICY/REGISTRY,DASHBOARD-FLOOR,1,1,0,0,0,0,EWT,8.0,,{},
+thylora_evidence_factory_jobs,52,EXECUTION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,0,0,0,0,EWT,8.0,,{},
+thylora_execution_heavy_gate,1,EXECUTION MISSING,POLICY/REGISTRY,DASHBOARD-FLOOR,1,1,0,0,0,0,EWT,8.0,,{},
+thylora_execution_progress_gate,4,EXECUTION MISSING,POLICY/REGISTRY,DASHBOARD-FLOOR,1,1,0,0,0,0,EWT,8.0,,{},
+thylora_first_customer_witness_policy,2,EXECUTION MISSING,POLICY/REGISTRY,DASHBOARD-FLOOR,1,1,0,0,0,0,EWT,8.0,,{},
+thylora_production_authorization_registry,1,EXECUTION MISSING,POLICY/REGISTRY,DASHBOARD-FLOOR,1,1,0,0,0,0,EWT,8.0,,{},
+thylora_studio_execution_jobs,0,POPULATION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,0,1,0,0,0,PWT,8.0,trigger:trg_thylora_studio_execution_gate,{},
+thylora_windsor_evidence_matrix,10,EXECUTION MISSING,POLICY/REGISTRY,DASHBOARD-FLOOR,1,1,0,0,0,0,EWT,8.0,,{},
+ue_products,12,EXECUTION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,1,0,0,0,0,EWT,8.0,,{},
+business_time_periods,1,EXECUTION MISSING,OPERATIONAL,OPERATIONS,1,1,0,0,0,0,EWT,7.5,,{},
+carts,0,POPULATION MISSING,OPERATIONAL,COMMERCE,1,0,0,0,0,0,PEWT,7.5,,{},
+complaints,1,EXECUTION MISSING,EVENT,GENERAL,1,1,0,1,0,0,ET,7.5,,"{""row_evidence_fields"": 1}",
+er_automotive_build_sheets,10,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,1,0,0,ET,7.5,,"{""row_evidence_fields"": 1}",
+family_archive_workers,12,EXECUTION MISSING,OPERATIONAL,OPERATIONS,1,1,0,0,0,0,EWT,7.5,,{},
+family_relationships,0,POPULATION MISSING,OPERATIONAL,OPERATIONS,1,0,1,0,0,0,PWT,7.5,reader_fn:thylora_person_life_record_v1,{},
+freshpath_item_choices,1,EXECUTION MISSING,OPERATIONAL,OPERATIONS,1,1,0,0,0,0,EWT,7.5,,{},
+game_bet_casino_sessions,0,POPULATION MISSING,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,7.5,,{},
+payroll,0,POPULATION MISSING,OPERATIONAL,OPERATIONS,1,0,0,0,1,0,PEW,7.5,,{},"repo:app/app.js,app/index.html"
+questions,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,1,0,PW,7.5,"reader_fn:thy_omniview_manifest,score_question_engineering_payload_v1,thylora_question_mark_state_v1",{},"surface_fn:thy_omniview_manifest; repo:.github/workflows/patch-dashboard-r8.yml,app/index.html"
+stories,2,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,1,0,EW,7.5,,{},"repo:app/app.js,app/index.html"
+subscriptions,0,POPULATION MISSING,OPERATIONAL,COMMERCE,1,0,0,0,0,0,PEWT,7.5,,{},
+system_jurist_credentials,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,7.5,trigger:thy_name_guard,{},
+tessa_selection_verdicts,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,7.5,"writer_fn:tessa_evaluate_candidate_v1; reader_fn:tessa_evaluate_candidate_v1,tessa_ingredient_passport_v1",{},
+thy_loochy_product_prices,0,POPULATION MISSING,OPERATIONAL,COMMERCE,1,0,0,0,0,0,PEWT,7.5,,{},
+thylora_agent_memory_nodes,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,1,0,0,PT,7.5,"writer_fn:thylora_commit_consensus_memory; trigger:thylora_agent_memory_nodes_immutable; reader_fn:thylora_commit_consensus_memory,thylora_retrieve_memory","{""custody_trigger"": ""append_only""}",
+thylora_agent_memory_snapshots,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,1,0,0,PT,7.5,trigger:thylora_agent_memory_snapshots_immutable,"{""custody_trigger"": ""append_only""}",
+thylora_bank_statements,24,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,7.5,writer_fn:thylora_bank_open_statement; reader_fn:thylora_bank_open_statement,{},
+thylora_business_assets,5,EXECUTION MISSING,OPERATIONAL,OPERATIONS,1,1,0,0,0,0,EWT,7.5,,{},
+thylora_business_equity,7,EXECUTION MISSING,OPERATIONAL,OPERATIONS,1,1,0,0,0,0,EWT,7.5,,{},
+thylora_business_insurance,4,EXECUTION MISSING,OPERATIONAL,OPERATIONS,1,1,0,0,0,0,EWT,7.5,,{},
+thylora_business_period_results,1,EXECUTION MISSING,OPERATIONAL,OPERATIONS,1,1,0,0,0,0,EWT,7.5,,{},
+thylora_farmer_verification_records,80,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,1,0,0,ET,7.5,,"{""row_evidence_fields"": 80}",
+thylora_food_provenance_chain,2,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,1,0,0,ET,7.5,,"{""row_evidence_fields"": 1}",
+thylora_global_arrival_events,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,1,0,0,ET,7.5,,"{""row_evidence_fields"": 1}",
+thylora_global_distribution_ledger,7,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,1,0,0,ET,7.5,,"{""row_evidence_fields"": 7}",
+thylora_ip_jurisdiction_reviews,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,1,0,0,PT,7.5,trigger:trg_ip_legal_review_immutable; reader_fn:thylora_evaluate_rights_gate,"{""custody_trigger"": ""append_only""}",
+thylora_ip_license_grants,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,1,0,0,PT,7.5,trigger:trg_ip_license_immutable; reader_fn:thylora_export_b2b_rights_package,"{""custody_trigger"": ""append_only""}",
+thylora_ip_provenance_attestations,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,1,0,0,PT,7.5,"trigger:trg_ip_provenance_immutable; reader_fn:thylora_export_b2b_rights_package,thylora_evaluate_rights_gate","{""custody_trigger"": ""append_only""}",
+thylora_mass_lock_enforcement_events,9,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,1,0,0,ET,7.5,,"{""row_evidence_fields"": 9}",
+thylora_module_records,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,7.5,trigger:thy_name_guard,{},
+thylora_pqr_originality_gate,9,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,7.5,trigger:thylora_pqr_originality_verdict_trg; reader_fn:thylora_pqr_release_gate_v1,{},
+thylora_pqr_scores,3,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,7.5,reader_fn:thylora_pqr_release_gate_v1,{},
+thylora_ui_action_test_runs,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,1,0,PW,7.5,reader_fn:thylora_enforce_verified_ui_contract; view:thylora_ui_functional_state,{},view
+thylora_visual_provenance,55,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,7.5,"trigger:thylora_visual_provenance_set_updated_at,thy_name_guard",{},
+thylora_world_design_records,83,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,7.5,"trigger:thylora_world_design_records_updated_at,thy_name_guard",{},
+thylora_world_relationships,21,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,7.5,trigger:thy_name_guard,{},
+transport_garage_registry,1,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,7.5,trigger:thy_name_guard,{},
+transport_safety_case_registry,4,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,1,0,0,ET,7.5,,"{""row_evidence_fields"": 3}",
+ue_mastery_records,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,1,0,PW,7.5,trigger:ue_mastery_zero_rule; reader_fn:thylora_dashboard_completion_v1,{},surface_fn:thylora_dashboard_completion_v1
+studio_character_state_ledger,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,0,0,PWT,7.0,reader_fn:studio_get_latest_character_state,{},
+thylora_world_market_quotes,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,0,0,PWT,7.0,trigger:thy_name_guard,{},
+vlegh_registry,10,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,7.0,,{},
+business_subscriptions,0,POPULATION MISSING,OPERATIONAL,COMMERCE,1,0,0,0,0,0,PEWT,6.25,,{},
+cart_items,0,POPULATION MISSING,OPERATIONAL,COMMERCE,1,0,0,0,0,0,PEWT,6.25,,{},
+earth_identity_links,0,POPULATION MISSING,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,6.25,,{},
+family_archive_security_events,0,POPULATION MISSING,EVENT,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,6.25,,{},
+family_privacy_rules,0,POPULATION MISSING,POLICY/REGISTRY,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,6.25,,{},
+family_story_purge_requests,0,POPULATION MISSING,EVENT,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,6.25,,{},
+family_story_rights,0,POPULATION MISSING,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,6.25,,{},
+guardian_permissions,0,POPULATION MISSING,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,6.25,,{},
+trust_cases,0,POPULATION MISSING,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,6.25,,{},
+business_factory_configuration,1,EXECUTION MISSING,POLICY/REGISTRY,OPERATIONS,1,1,0,0,0,0,EWT,6.0,,{},
+championship_family_recognition_policy,1,EXECUTION MISSING,POLICY/REGISTRY,OPERATIONS,1,1,0,0,0,0,EWT,6.0,,{},
+compliance_control,6,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+er_automotive_oneoff_registry,1,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+er_vehicle_brand_language_registry,12,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+family_birthdate_claims,6,EXECUTION MISSING,OPERATIONAL,OPERATIONS,1,1,0,0,0,0,EWT,6.0,,{},
+family_jewel_registry,1,EXECUTION MISSING,POLICY/REGISTRY,OPERATIONS,1,1,0,0,0,0,EWT,6.0,,{},
+family_products,0,POPULATION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,0,0,0,0,0,PEWT,6.0,,{},
+genealogy_research_intake,7,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+hot_gossip_offers,4,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,1,0,0,ET,6.0,,"{""row_evidence_fields"": 4}",
+household_role_registry,25,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+indigenous_land_stewardship_program,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+invention_pipeline_policy,1,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+jewel_cut_registry,1,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+knowledge_library_network,7,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+land_naming_policy,1,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+media_disclosure_standard,3,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+merchandise_program,4,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+mirror_story_record,2,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+production_credits,0,POPULATION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,0,0,0,0,0,PEWT,6.0,,{},
+program_registry,154,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+qq_gtm_assets,7,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,reader_fn:thylora_question_quest_commercial_v1,{},
+qq_pilot_design,9,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,reader_fn:thylora_question_quest_commercial_v1,{},
+question_engineering_adapters,18,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,"reader_fn:question_engineering_gap_assist_v1,question_engineering_question_pack_v1",{},
+report_sections,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,1,0,PW,6.0,reader_fn:thylora_dashboard_completion_v1,{},surface_fn:thylora_dashboard_completion_v1
+serialized_collectible_policy,1,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+sports_equipment_company_registry,1,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+sports_readiness_gate,6,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+story_permission_policy,2,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+studio_character_reference_assets,14,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,6.0,,{},
+studio_render_worker_leases,0,POPULATION MISSING,OPERATIONAL,OPERATIONS,1,0,1,0,0,0,PWT,6.0,"writer_fn:studio_release_render_lease,studio_claim_next_render_job; reader_fn:studio_release_render_lease,studio_claim_next_render_job",{},
+system_jurist_program,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+tessa_ambiguous_declarations,8,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,reader_fn:tessa_evaluate_candidate_v1,{},
+tessa_household_memory,4,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,6.0,,{},
+tessa_household_standard,4,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,"reader_fn:tessa_evaluate_candidate_v1,tessa_ingredient_passport_v1",{},
+tessa_make_it_ourselves,2,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,reader_fn:tessa_ingredient_passport_v1,{},
+thylora_agent_memory_retrieval_telemetry,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,1,0,0,PT,6.0,writer_fn:thylora_retrieve_memory; trigger:thylora_agent_memory_retrieval_immutable; reader_fn:thylora_retrieve_memory,"{""custody_trigger"": ""append_only""}",
+thylora_agent_memory_votes,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,1,0,0,PT,6.0,trigger:thylora_agent_memory_votes_immutable; reader_fn:thylora_commit_consensus_memory,"{""custody_trigger"": ""append_only""}",
+thylora_ai_route_attempts,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,1,0,PW,6.0,edge:thylora-ai-router,{},edge
+thylora_board_meetings,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_castle_space_geometry,2,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,6.0,,{},
+thylora_company_help_targets,7,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,1,0,0,ET,6.0,,"{""row_evidence_fields"": 7}",
+thylora_control_agent,3,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,writer_fn:thy_record_agent_status_v1; reader_fn:thy_record_agent_status_v1,{},
+thylora_country_desk_slots,196,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,1,0,0,ET,6.0,,"{""row_evidence_fields"": 196}",
+thylora_department_operating_standard,1,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_directive_integrity_runs,1,EXECUTION MISSING,EVENT,GENERAL,1,1,0,1,0,0,ET,6.0,,"{""row_evidence_fields"": 1}",
+thylora_epistemic_resistance_gate,1,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_executive_opportunity_intake,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,1,0,0,ET,6.0,,"{""row_evidence_fields"": 1}",
+thylora_family_archive_access_registry,2,EXECUTION MISSING,POLICY/REGISTRY,OPERATIONS,1,1,0,0,0,0,EWT,6.0,,{},
+thylora_forward_quality_standards,4,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_hq_wardrobe_registry,31,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_internal_role_appointments,6,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,reader_fn:thylora_person_roster_v1,{},
+thylora_investment_pipeline,4,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_learning_repair_ledger,19,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,1,0,0,ET,6.0,,"{""row_evidence_fields"": 15}",
+thylora_living_imagery_requirements,5,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_media_system_records,12,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,"trigger:thylora_media_system_records_updated_at,thy_name_guard",{},
+thylora_miniworld_registry,1,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_name_guard_policy,1,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_name_normalization_gate,4,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_name_provenance_gate,1,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_object_maker_provenance,19,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_operating_charters,9,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_page_design_specs,3,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_pay_period_lines,24,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,6.0,,{},
+thylora_person_life_registry,42,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_person_name_canon,8,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,reader_fn:resolve_thylora_person_name_v1,{},
+thylora_person_spine_exclusions,3,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,reader_fn:thylora_person_roster_v1,{},
+thylora_plain_word_policy,1,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_post_routing_recommendations,3,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_prompt_totality_policy,32,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_question_marks,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,reader_fn:thylora_question_mark_state_v1,{},
+thylora_questions,3,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,reader_fn:thylora_question_mark_state_v1,{},
+thylora_recovery_runs,4708,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,writer_fn:thylora_recovery_heartbeat; reader_fn:thylora_recovery_heartbeat,{},
+thylora_report_author_assignments,8,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_rising_floor_contract,2,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_royal_collection_registry,8,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_software_health_records,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thylora_software_health_records_updated_at,{},
+thylora_standing_layer_registry,3,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_submit_sweep_credential,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,"reader_fn:thylora_submit_sweep_token_matches,thylora_submit_sweep_invoke_v1",{},
+thylora_submit_uploads,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,1,0,0,PT,6.0,"writer_fn:thylora_submit_execute_deletion_v1,thylora_submit_register_upload_v1; trigger:trg_submit_uploads_append_only; reader_fn:thylora_submit_my_submissions_v1,thylora_submit_sweep_targets_v1,thylora_submit_execute_deletion_v1","{""custody_trigger"": ""append_only""}",
+thylora_thread_clock_registry,2,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,"reader_fn:thylora_continuity_floor_state,thylora_thread_clock_duration_v1",{},
+thylora_time_run_host_rules,4,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,1,0,EW,6.0,,{},repo:app/time-run.js
+thylora_training_simulators,17,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_transmission_registry,1,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_truth_integrity_gate,5,WITNESS MISSING,EVENT,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_voice_name_aliases,18,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,reader_fn:resolve_thylora_spoken_person_v1,{},
+thylora_voice_provenance_gate,1,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_workforce_inclusion_policy,1,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_world_credential_continuum,8,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_world_households,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_world_market_ownership,6,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,6.0,,{},
+thylora_world_market_sessions,6,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,6.0,,{},
+thylora_world_schedule,4,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_world_term_registry,7,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+thylora_world_time_profiles,3,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+transcription_alias_registry,28,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+transport_program_registry,9,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+ue_lb_sentence_cases,43,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,6.0,,{},
+ue_question_templates,27,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,6.0,,{},
+work_catalog_requirement,1,WITNESS MISSING,OPERATIONAL,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+workforce_care_policy,2,WITNESS MISSING,POLICY/REGISTRY,GENERAL,1,1,1,0,0,0,WT,6.0,trigger:thy_name_guard,{},
+family_posts,0,POPULATION MISSING,OPERATIONAL,OPERATIONS,1,0,0,0,0,0,PEWT,5.25,,{},
+job_candidates,0,POPULATION MISSING,OPERATIONAL,OPERATIONS,1,0,0,0,0,0,PEWT,5.25,,{},
+band_arrival_events,7,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+bramble_episode_versions,5,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+bramble_question_categories,20,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+earth_record_connectors,3,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+family_story_production_jobs,0,POPULATION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,0,0,0,0,0,PEWT,5.0,,{},
+hot_gossip_issue_stories,16,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+hot_gossip_personas,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+inventory,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,1,0,PEW,5.0,,{},repo:app/index.html
+notepad_content,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,0,0,PWT,5.0,writer_fn:update_studio_notepad_line; trigger:studio_notepad_touch_revision_trg; reader_fn:update_studio_notepad_line,{},
+reveng_chat_messages,2,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+reveng_render_events,22,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+sports_commissioner_seat,4,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+sports_guest_coach_program,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+sports_merchandise_program,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+studio_continuity_qa_checks,0,POPULATION MISSING,OPERATIONAL,DASHBOARD-FLOOR,1,0,0,0,0,0,PEWT,5.0,,{},
+studio_project_collaborators,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,0,0,PWT,5.0,trigger:studio_collaborators_touch_trg,{},
+thy_loochy_spending_rules,10,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+thylora_agent_memory_proposals,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,0,0,PWT,5.0,writer_fn:thylora_commit_consensus_memory; reader_fn:thylora_commit_consensus_memory,{},
+thylora_bank_rate_schedules,10,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+thylora_castle_economy_flows,29,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+thylora_comm_events,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+thylora_completion_schedule,189,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+thylora_constitution_volume_registry,40,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+thylora_estate_animal_groups,7,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+thylora_estate_receiving_records,4,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+thylora_estate_resident_households,4,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+thylora_famous_thought_holds,6,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+thylora_invariant_events,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,0,0,PWT,5.0,writer_fn:thylora_enforce_standing_invariants_v1; reader_fn:thylora_enforce_standing_invariants_v1,{},
+thylora_ip_asset_persons,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,0,0,PWT,5.0,reader_fn:thylora_evaluate_rights_gate,{},
+thylora_news_format_templates,6,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+thylora_news_scene_manifest,6,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+thylora_pqr_gap_findings,4,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+thylora_provider_adapters,4,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+thylora_receivables_payables,12,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+thylora_site_channels,6,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+thylora_spine_recoil_registry,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+thylora_submit_reviews,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,0,0,PWT,5.0,"writer_fn:thylora_submit_customer_decide_v1; reader_fn:thylora_submit_deliver_v1,thylora_submit_status_v1,thylora_submit_customer_decide_v1",{},
+thylora_time_run_events,4,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+thylora_universal_depth_gate,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+thylora_visual_scene_manifest,3,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+track_bounces,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,0,0,PWT,5.0,writer_fn:set_active_track_bounce; trigger:studio_bounces_touch_trg; reader_fn:set_active_track_bounce,{},
+ue_concept_links,14,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+workflow_inspector,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,0,0,PWT,5.0,"writer_fn:resolve_inspector_flag,drop_inspector_flag; trigger:studio_inspector_touch_trg; reader_fn:resolve_inspector_flag,drop_inspector_flag",{},
+world_deep_links,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,5.0,,{},
+business_transactions,0,POPULATION MISSING,OPERATIONAL,OPERATIONS,1,0,0,0,0,0,PEWT,4.5,,{},
+family_archive_assignments,0,POPULATION MISSING,OPERATIONAL,OPERATIONS,1,0,0,0,0,0,PEWT,4.5,,{},
+family_comments,0,POPULATION MISSING,OPERATIONAL,OPERATIONS,1,0,0,0,0,0,PEWT,4.5,,{},
+family_correction_events,0,POPULATION MISSING,EVENT,OPERATIONS,1,0,0,0,0,0,PEWT,4.5,,{},
+family_story_permissions,0,POPULATION MISSING,OPERATIONAL,OPERATIONS,1,0,0,0,0,0,PEWT,4.5,,{},
+studio_scene_manifests,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,4.5,,{},
+worker_employment,0,POPULATION MISSING,OPERATIONAL,OPERATIONS,1,0,0,0,0,0,PEWT,4.5,,{},
+adult_venues,0,SCAFFOLD ONLY,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,4.38,,{},
+earth_identity_entities,0,SCAFFOLD ONLY,OPERATIONAL,SAFETY/LEGAL,1,0,1,0,1,0,PW,4.38,fk_child_rows:earth_record_evidence,{},fk_child
+_scan2,4,EXECUTION MISSING,EVENT,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+_scan_royal_cook,22,EXECUTION MISSING,EVENT,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+band_arrival_thresholds,2,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+brand_participation_compensation,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+cross_class_perspective_project,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+education_truth_gate_registry,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+er_all_vehicle_program_registry,5,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+er_automotive_dealership_matrix,4,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+er_automotive_derivative_registry,4,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+er_automotive_gap_registry,8,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+er_automotive_heritage_registry,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+er_automotive_identifier_map,8,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+er_automotive_impact_taxonomy,5,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+er_automotive_naming_corrections,1,EXECUTION MISSING,EVENT,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+er_automotive_parts_flow_registry,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+er_automotive_parts_taxonomy,4,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+er_automotive_service_matrix,3,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+er_automotive_taxonomy_reconciliation,6,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+er_automotive_vehicle_class_matrix,12,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+er_automotive_vehicle_deep_taxonomy,7,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+er_mobility_infrastructure_registry,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+er_vehicle_collectible_opportunity_registry,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+er_vehicle_survival_case_registry,2,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+exchange_rate_registry,2,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+external_provider_onboarding,7,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+household_access_register,2,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+household_shift_schedule,5,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+knowledge_collection,4,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+library_reading_room_program,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+library_tour_program,2,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+media_reassessment_record,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+merchant_audit_records,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,0,0,PWT,4.0,trigger:merchant_audit_records_updated_at,{},
+nightly_report_templates,7,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+person_name_pronunciation_lock,2,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+public_site_navigation,13,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+publication_records,2,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+question_engineering_curriculum_levels,6,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+question_engineering_evaluation_cases,8,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+social_account_strategy,5,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+sports_equipment_design_hypothesis,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+sports_knowledge_certification,2,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+studio_render_attempts,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,0,0,PWT,4.0,"writer_fn:studio_release_render_lease,studio_claim_next_render_job; reader_fn:studio_release_render_lease,studio_claim_next_render_job",{},
+studio_render_dependencies,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,0,0,PWT,4.0,reader_fn:studio_claim_next_render_job,{},
+tessa_package_claims,10,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thy_loochy_earning_rules,12,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thy_loochy_pilot_policy,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_activation_spine_gate,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_ai_route_policy,5,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_art_museum_registry,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_artifact_author_gate,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_artifact_regeneration_log,6,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_batch_completion_promotion_gate,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_change_authority_gate,2,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_character_lock_sheets,3,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_character_name_proposals,5,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_comm_agent_policies,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_comm_runtime_status,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_company_value_expansion,3,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_cross_domain_activation_policy,3,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_delivery_asset_archive,6,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_depth_question_gate,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_device_context_registry,3,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_estate_accounts,16,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_estate_fuel_cycle,5,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_estate_function_registry,35,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_estate_incidents,8,EXECUTION MISSING,EVENT,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_estate_inspections,8,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_estate_laundry_cycle,6,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_estate_market_access,3,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_estate_parallel_reconciliation,50,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_estate_staff_lodging,10,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_estate_supplier_slots,16,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_estate_supply_routes,19,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_estate_waste_returns,11,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_estate_water_system,8,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_explanation_depth_policy,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_external_action_completion_gate,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_garment_cost_components,21,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_gate_enforcement_audit,8,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_gate_verification_checkpoint,23,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_global_interpretation_gate,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_global_measurement_spec,10,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_graph_finding_classification_v1,39,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_graph_predicate_contract_proposals,5,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_historical_medicine_records,8,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_history_chronicle,8,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_history_method_rules,9,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_image_generation_authorizations,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,0,0,PWT,4.0,reader_fn:thylora_validate_image_generation_authorization,{},
+thylora_ingest_telemetry,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,0,0,PWT,4.0,writer_fn:record_thylora_ingest_telemetry_v1; reader_fn:record_thylora_ingest_telemetry_v1,{},
+thylora_intent_interpretation_runs,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_jewelry_watch_registry,2,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_kitchen_equipment,9,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_kitchen_meal_plans,5,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_kitchen_posts,8,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_kitchen_shift_segments,5,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_kitchen_suppliers,10,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_kitchen_waste_routes,7,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_living_story_detail_gate,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_logic_federation_policy,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_mass_lock_policy,3,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_mirror_name_registry,2,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_movement_scoreboard,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_museum_universe_registry,4,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_name_lock_changes,317,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_name_lock_worklist,395,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_name_variant_dispositions,425,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_operational_flow_registry,4,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_output_validation_gate,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_people_in_time_state,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_person_authenticity_checks,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_person_authenticity_rule,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_person_garment_registry,3,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_person_life_events,34,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_person_off_duty_routine,22,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_person_private_access,12,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_person_residence_options,3,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_person_route_registry,4,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_person_world_sheet,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_person_world_sheet_proposals,15,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_plain_speech_gate,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_prompt_architecture_reviews,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_prototype_rescue_registry,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_reference_image_bindings,7,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_relief_cycle_proposals,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_report_experience_layers,2,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_report_recompute_registry,2,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_research_depth_lattice,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_rootbound_gap_registry,12,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_shorthand_dictionary,24,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_specificity_intake_gate,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_stone_technology_lineage,7,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_story_speech_engine,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_studio_role_registry,26,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_studio_units,11,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_submit_access_log,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,0,0,PWT,4.0,"writer_fn:thylora_submit_open_delivery_v1; reader_fn:thylora_submit_my_submissions_v1,thylora_submit_status_v1,thylora_submit_open_delivery_v1",{},
+thylora_submit_deletion_requests,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,0,0,PWT,4.0,"writer_fn:thylora_submit_execute_deletion_v1,thylora_submit_request_deletion_v1; reader_fn:thylora_submit_my_submissions_v1,thylora_submit_sweep_targets_v1,thylora_submit_execute_deletion_v1",{},
+thylora_submit_deliveries,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,1,0,0,0,PWT,4.0,"writer_fn:thylora_submit_deliver_v1,thylora_submit_execute_deletion_v1; reader_fn:thylora_submit_deliver_v1,thylora_submit_my_submissions_v1,thylora_submit_sweep_targets_v1",{},
+thylora_system_evolution_markers,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_thought_blocker_gate,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_thread_derivative_gate,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_thread_signal_bus,2,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_thread_sync_gate,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_time_run_award_catalog,4,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_timestamp_punch_gate,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_visual_audit_runs,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_visual_preflight_gate,2,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_visual_serial_registry,3,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_voice_transcription_guard,1,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_wardrobe_supply_chain,11,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_world_infrastructure_blueprints,3,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+thylora_world_market_regulations,6,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+time_zone_transition_policy,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+transport_design_gate_registry,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+ue_engine_spec,16,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+ue_lb_analysis,9,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+ue_lb_misreading_patterns,11,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+ue_lb_sources,10,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+ue_safety_gates,6,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+ue_surfaces,7,EXECUTION MISSING,OPERATIONAL,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+wellness_monitoring_policy,1,EXECUTION MISSING,POLICY/REGISTRY,GENERAL,1,1,0,0,0,0,EWT,4.0,,{},
+adult_programs,0,SCAFFOLD ONLY,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,3.75,,{},
+business_customer_sessions,0,POPULATION MISSING,OPERATIONAL,OPERATIONS,1,0,0,0,0,0,PEWT,3.75,,{},
+business_demonstration_records,0,POPULATION MISSING,OPERATIONAL,OPERATIONS,1,0,0,0,0,0,PEWT,3.75,,{},
+business_events,0,POPULATION MISSING,OPERATIONAL,OPERATIONS,1,0,0,0,0,0,PEWT,3.75,,{},
+family_memorials,0,POPULATION MISSING,OPERATIONAL,OPERATIONS,1,0,0,0,0,0,PEWT,3.75,,{},
+family_moment_participants,0,POPULATION MISSING,OPERATIONAL,OPERATIONS,1,0,0,0,0,0,PEWT,3.75,,{},
+family_recipes,0,POPULATION MISSING,OPERATIONAL,OPERATIONS,1,0,0,0,0,0,PEWT,3.75,,{},
+family_story_access,0,POPULATION MISSING,OPERATIONAL,OPERATIONS,1,0,0,0,0,0,PEWT,3.75,,{},
+family_story_perspectives,0,POPULATION MISSING,OPERATIONAL,OPERATIONS,1,0,0,0,0,0,PEWT,3.75,,{},
+family_timelines,0,POPULATION MISSING,OPERATIONAL,OPERATIONS,1,0,0,0,0,0,PEWT,3.75,,{},
+freshpath_dispatch_events,0,POPULATION MISSING,OPERATIONAL,OPERATIONS,1,0,0,0,0,0,PEWT,3.75,,{},
+game_bet_events,0,SCAFFOLD ONLY,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,3.75,,{},
+job_interviews,0,POPULATION MISSING,OPERATIONAL,OPERATIONS,1,0,0,0,0,0,PEWT,3.75,,{},
+job_offers,0,POPULATION MISSING,OPERATIONAL,OPERATIONS,1,0,0,0,0,0,PEWT,3.75,,{},
+patient_advocacy_question_packets,0,SCAFFOLD ONLY,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,3.75,,{},
+hot_gossip_story_submissions,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,3.5,,{},
+studio_render_segments,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,3.5,,{},
+world_inventory,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,3.5,,{},
+adult_creator_channels,0,SCAFFOLD ONLY,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,3.12,,{},
+family_identity_claims,0,SCAFFOLD ONLY,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,3.12,,{},
+activity_sheets,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,3.0,,{},
+bramble_anonymous_questions,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,3.0,,{},
+er_vehicle_managed_fleet_registry,0,POPULATION MISSING,POLICY/REGISTRY,GENERAL,1,0,0,0,0,0,PEWT,3.0,,{},
+households,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,3.0,,{},
+property_leases,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,3.0,,{},
+ree_redemption_registry,0,POPULATION MISSING,POLICY/REGISTRY,GENERAL,1,0,0,0,0,0,PEWT,3.0,,{},
+studio_assembly_manifests,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,3.0,,{},
+studio_audio_events,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,3.0,,{},
+studio_jobs,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,3.0,,{},
+thylora_castle_object_state_registry,0,POPULATION MISSING,POLICY/REGISTRY,GENERAL,1,0,0,0,0,0,PEWT,3.0,,{},
+thylora_global_question_responses,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,3.0,,{},
+thylora_mass_lock_runs,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,3.0,,{},
+thylora_qyris_cluster,0,SCAFFOLD ONLY,OPERATIONAL,DASHBOARD-FLOOR,1,0,0,0,0,0,PEWT,3.0,,{},
+thylora_qyris_node,0,SCAFFOLD ONLY,OPERATIONAL,DASHBOARD-FLOOR,1,0,0,0,0,0,PEWT,3.0,,{},
+thylora_world_market_disclosures,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,3.0,,{},
+thylora_world_market_dividends,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,3.0,,{},
+transport_maintenance_reports,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,3.0,,{},
+ue_questions,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,3.0,,{},
+ue_transfer_tests,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,3.0,,{},
+watch_progress,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,3.0,,{},
+adult_ai_participants,0,SCAFFOLD ONLY,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,2.5,,{},
+adult_audits,0,SCAFFOLD ONLY,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,2.5,,{},
+adult_licenses,0,SCAFFOLD ONLY,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,2.5,,{},
+adult_participation_links,0,SCAFFOLD ONLY,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,2.5,,{},
+adult_payouts,0,SCAFFOLD ONLY,OPERATIONAL,COMMERCE,1,0,0,0,0,0,PEWT,2.5,,{},
+adult_ratings,0,SCAFFOLD ONLY,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,2.5,,{},
+adult_release_variants,0,SCAFFOLD ONLY,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,2.5,,{},
+adult_shifts,0,SCAFFOLD ONLY,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,2.5,,{},
+assembly_member,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+bonuses,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+bramble_pilot_registry,0,POPULATION MISSING,POLICY/REGISTRY,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+bramble_teacher_insights,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+conversations,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+crew_artifact,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+customer_suggestions,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+customer_visits,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+earth_lineage_relationships,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+er_vehicle_build_ledger,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+family_payout_readiness,0,SCAFFOLD ONLY,OPERATIONAL,COMMERCE,1,0,0,0,0,0,PEWT,2.5,,{},
+game_bet_casino_rounds,0,SCAFFOLD ONLY,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,2.5,,{},
+game_bet_handicap_packets,0,SCAFFOLD ONLY,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,2.5,,{},
+game_bet_integrity_cases,0,SCAFFOLD ONLY,EVENT,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,2.5,,{},
+game_bet_odds_history,0,SCAFFOLD ONLY,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,2.5,,{},
+game_bet_responsible_play_actions,0,SCAFFOLD ONLY,EVENT,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,2.5,,{},
+game_bet_ticket_legs,0,SCAFFOLD ONLY,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,2.5,,{},
+guide_assignments,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+legal_family_counsel_registry,0,SCAFFOLD ONLY,POLICY/REGISTRY,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,2.5,,{},
+messages,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+notifications,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+patient_advocacy_delivery_requests,0,SCAFFOLD ONLY,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,2.5,,{},
+patient_advocacy_followups,0,SCAFFOLD ONLY,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,2.5,,{},
+patient_advocacy_professional_credentials,0,SCAFFOLD ONLY,OPERATIONAL,SAFETY/LEGAL,1,0,0,0,0,0,PEWT,2.5,,{},
+product_understanding_guides,0,SCAFFOLD ONLY,OPERATIONAL,DASHBOARD-FLOOR,1,0,0,0,0,0,PEWT,2.5,,{},
+studio_character_injuries,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+studio_scene_character_snapshots,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+thylora_castle_space_connections,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+thylora_change_impact_queue,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+thylora_counterpart_registry,0,POPULATION MISSING,POLICY/REGISTRY,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+thylora_depth_gate_runs,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+thylora_hq_room_registry,0,POPULATION MISSING,POLICY/REGISTRY,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+thylora_visual_generation_pass,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+transport_provenance_registry,0,POPULATION MISSING,POLICY/REGISTRY,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+ue_adaptation_profiles,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+ue_explain_back,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+ue_learner_memory,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+ue_loop_events,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+understanding_records,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+warehouse_zones,0,POPULATION MISSING,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,2.5,,{},
+family_moments,0,SCAFFOLD ONLY,OPERATIONAL,OPERATIONS,1,0,0,0,0,0,PEWT,2.25,,{},
+thylora_qyris_contradiction,0,SCAFFOLD ONLY,OPERATIONAL,DASHBOARD-FLOOR,1,0,0,0,0,0,PEWT,2.0,,{},
+thylora_qyris_stop_test,0,SCAFFOLD ONLY,OPERATIONAL,DASHBOARD-FLOOR,1,0,0,0,0,0,PEWT,2.0,,{},
+family_moment_access,0,SCAFFOLD ONLY,OPERATIONAL,OPERATIONS,1,0,0,0,0,0,PEWT,1.5,,{},
+worker_personas,0,SCAFFOLD ONLY,OPERATIONAL,OPERATIONS,1,0,0,0,0,0,PEWT,1.5,,{},
+world_guides,0,SCAFFOLD ONLY,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,1.5,,{},
+studio_simulation_models,0,SCAFFOLD ONLY,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,1.25,,{},
+thy_loochy_awards,0,SCAFFOLD ONLY,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,1.25,,{},
+thylora_orah_reviews,0,SCAFFOLD ONLY,OPERATIONAL,GENERAL,1,0,1,0,1,0,PW,1.25,fk_child_rows:thylora_query_carryforward,{},fk_child
+collectible_edition_registry,0,SCAFFOLD ONLY,POLICY/REGISTRY,GENERAL,1,0,0,0,0,0,PEWT,1.0,,{},
+er_vehicle_rental_events,0,SCAFFOLD ONLY,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,1.0,,{},
+founder_customer_legacy,0,SCAFFOLD ONLY,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,1.0,,{},
+hot_gossip_compensation_offers,0,SCAFFOLD ONLY,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,1.0,,{},
+hot_gossip_verification_events,0,SCAFFOLD ONLY,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,1.0,,{},
+household_object_provenance,0,SCAFFOLD ONLY,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,1.0,,{},
+studio_prompt_packages,0,SCAFFOLD ONLY,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,1.0,,{},
+studio_provider_rate_limits,0,SCAFFOLD ONLY,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,1.0,,{},
+system_jurist_application,0,SCAFFOLD ONLY,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,1.0,,{},
+system_jurist_exam_record,0,SCAFFOLD ONLY,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,1.0,,{},
+system_jurist_study_record,0,SCAFFOLD ONLY,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,1.0,,{},
+tessa_safety_restrictions,0,SCAFFOLD ONLY,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,1.0,,{},
+thy_loochy_fraud_events,0,SCAFFOLD ONLY,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,1.0,,{},
+thy_loochy_holds,0,SCAFFOLD ONLY,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,1.0,,{},
+thy_loochy_purchase_packages,0,SCAFFOLD ONLY,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,1.0,,{},
+thy_loochy_reversals,0,SCAFFOLD ONLY,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,1.0,,{},
+thylora_asset_ingest_staging,0,SCAFFOLD ONLY,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,1.0,,{},
+thylora_castle_object_events,0,SCAFFOLD ONLY,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,1.0,,{},
+thylora_deal_register,0,SCAFFOLD ONLY,OPERATIONAL,GENERAL,1,0,0,0,0,0,PEWT,1.0,,{},
+thylora_gap_transfer_registry,0,SCAFFOLD ONLY,POLICY/REGISTRY,GENERAL,1,0,0,0,0,0,PEWT,1.0,,{},
+adult_takedowns,0,INTENTIONALLY EMPTY,EVENT,SAFETY/LEGAL,1,0,1,0,0,0,PWT,0.0,trigger:trg_adult_takedown_quarantine; reader_fn:adult_asset_live_gate,{},
+audit_events,331,PROMOTED (M=1),EVENT,GENERAL,1,1,1,1,1,1,,0.0,"writer_fn:thy_ctl_audit; trigger:trg_audit_immutable_update; reader_fn:prevent_audit_update_delete,thylora_chairman_dash_v1,thy_ctl_audit; edge:department-router,lemon-secret-store,lemon-squeezy-webhook","{""custody_trigger"": ""append_only"", ""is_witness_ledger"": true}",surface_fn:thylora_chairman_dash_v1; edge
+audit_log,25,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,fk_child_rows:design_revision,"{""row_evidence_fields"": 25}",fk_child
+chairman_action_cards,6,PROMOTED (M=1),OPERATIONAL,DASHBOARD-FLOOR,1,1,1,1,1,1,,0.0,reader_fn:thylora_operating_surface_v1,"{""row_evidence_fields"": 6}",surface_fn:thylora_operating_surface_v1
+chairman_source_messages,31,PROMOTED (M=1),OPERATIONAL,DASHBOARD-FLOOR,1,1,1,1,1,1,,0.0,"trigger:trg_hash_chairman_source,trg_immutability_chairman_source; reader_fn:thylora_hash_chairman_source,thylora_continuity_floor_state,query_chairman_exact_source; fk_child_rows:chairman_source_interpretation,chairman_source_segments,chairman_source_shorthand_expansion","{""custody_trigger"": ""append_only""}","surface_fn:thylora_hash_chairman_source,query_chairman_exact_source; fk_child"
+chairman_source_segments,1,PROMOTED (M=1),OPERATIONAL,DASHBOARD-FLOOR,1,1,1,1,1,1,,0.0,"trigger:trg_hash_chairman_segment,trg_immutability_chairman_segments; fk_child_rows:chairman_source_interpretation,chairman_source_shorthand_expansion","{""custody_trigger"": ""append_only""}",fk_child
+connection_evidence,10,PROMOTED (M=1),OPERATIONAL,DASHBOARD-FLOOR,1,1,1,1,1,1,,0.0,edge:thylora-system-check,"{""row_evidence_fields"": 10, ""edge_writer_emits_audit_event"": true}",edge
+continuity_log,329,PROMOTED (M=1),OPERATIONAL,DASHBOARD-FLOOR,1,1,1,1,1,1,,0.0,"trigger:trg_rootbound_audit_continuity_log; reader_fn:thylora_dashboard_completion_v1,thylora_chairman_qyris_v1,thylora_chairman_dash_v1; fk_child_rows:design_revision; edge:thylora-department-talk","{""custody_trigger"": ""shadow_capture_before_destructive_change""}","surface_fn:thylora_dashboard_completion_v1,thylora_chairman_qyris_v1,thylora_chairman_dash_v1; edge; fk_child"
+entitlements,1,PROMOTED (M=1),OPERATIONAL,COMMERCE,1,1,1,1,1,1,,0.0,"writer_fn:thylora_process_stripe_checkout_completed; reader_fn:thylora_process_stripe_checkout_completed; edge:lemon-squeezy-webhook,p0-protected-download,thylora-current-head","{""ml"": 2, ""audit_alias"": [""orders/payments/entitlements"", ""orders/entitlements""], ""edge_writer_emits_audit_event"": true}","repo:.github/workflows/patch-dashboard-r8.yml,dashboard-current-head.html; edge"
+er_vehicle_source_reference_registry,10,PROMOTED (M=1),POLICY/REGISTRY,GENERAL,1,1,1,1,1,1,,0.0,trigger:thy_name_guard; fk_child_rows:er_vehicle_project_pipeline,"{""row_evidence_fields"": 10}",fk_child
+game_bet_audit_events,0,INTENTIONALLY EMPTY,EVENT,SAFETY/LEGAL,1,0,1,0,0,0,PWT,0.0,writer_fn:game_bet_pause_all_markets; reader_fn:game_bet_pause_all_markets,{},
+idea_registry,294,PROMOTED (M=1),POLICY/REGISTRY,GENERAL,1,1,1,1,1,1,,0.0,"trigger:trg_rootbound_audit_idea_registry,thy_name_guard; reader_fn:thylora_seed_autonomy_from_ideas; view:thylora_conveyor_candidates,thylora_idea_workspaces; fk_child_rows:thylora_idea_extensions,thylora_idea_links,thylora_promotion_records","{""sh"": 127, ""audit_alias"": [""IDEA""], ""row_evidence_fields"": 238, ""custody_trigger"": ""shadow_capture_before_destructive_change""}","view; repo:.github/workflows/patch-dashboard-r6.yml,.github/workflows/patch-dashboard-r7-repair.yml; fk_child"
+order_items,1,PROMOTED (M=1),OPERATIONAL,COMMERCE,1,1,1,1,1,1,,0.0,writer_fn:thylora_process_stripe_checkout_completed; trigger:thylora_block_unreleased_checkout_product_trigger; reader_fn:thylora_process_stripe_checkout_completed; edge:lemon-squeezy-webhook,"{""edge_writer_emits_audit_event"": true}",edge
+orders,1,PROMOTED (M=1),OPERATIONAL,COMMERCE,1,1,1,1,1,1,,0.0,"writer_fn:thylora_process_stripe_checkout_completed; reader_fn:thylora_process_stripe_checkout_completed; view:thylora_gap_summary_v1; fk_child_rows:order_items,payments; edge:lemon-squeezy-webhook,thylora-current-head,thylora-dashboard","{""ml"": 2, ""audit_alias"": [""order"", ""orders/payments/entitlements"", ""orders/entitlements""], ""edge_writer_emits_audit_event"": true}","view; repo:.github/workflows/patch-dashboard-r8.yml,app/app.js; edge; fk_child"
+payments,1,PROMOTED (M=1),OPERATIONAL,COMMERCE,1,1,1,1,1,1,,0.0,"writer_fn:thylora_process_stripe_checkout_completed; reader_fn:thylora_process_stripe_checkout_completed; edge:lemon-squeezy-webhook,thylora-current-head,thylora-dashboard","{""ml"": 1, ""audit_alias"": [""orders/payments/entitlements""], ""edge_writer_emits_audit_event"": true}","repo:.github/workflows/patch-dashboard-r8.yml,dashboard-current-head.html; edge"
+private.adult_identity_vault,,UNKNOWN,OPERATIONAL,SAFETY/LEGAL,1,,,,,,?,0.0,,{},
+production_tasks,39,PROMOTED (M=1),OPERATIONAL,DASHBOARD-FLOOR,1,1,1,1,1,1,,0.0,reader_fn:thylora_chairman_dash_v1,"{""row_evidence_fields"": 39}",surface_fn:thylora_chairman_dash_v1
+refunds,0,INTENTIONALLY EMPTY,EVENT,COMMERCE,1,0,0,0,1,0,PEW,0.0,,{},"repo:rae-link/index.html,rae-link/lib/ledger.js"
+service_cost_registry,7,PROMOTED (M=1),POLICY/REGISTRY,GENERAL,1,1,1,1,1,1,,0.0,reader_fn:thylora_chairman_dash_v1,"{""row_evidence_fields"": 7}",surface_fn:thylora_chairman_dash_v1
+social_content_queue,33,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,"trigger:trg_thylora_require_content_value_before_schedule_v1; reader_fn:thylora_dashboard_completion_v1,thylora_chairman_today_v1,thylora_operating_surface_v1","{""audit_alias"": [""SOCIAL_CONTENT""]}","surface_fn:thylora_dashboard_completion_v1,thylora_chairman_today_v1,thylora_operating_surface_v1"
+thy_omniview_gates,12,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,"writer_fn:thy_omniview_set_gate; reader_fn:thy_omniview_manifest,thy_omniview_topic,thy_omniview_set_gate","{""row_evidence_fields"": 12}","surface_fn:thy_omniview_manifest,thy_omniview_topic,thy_omniview_set_gate"
+thy_omniview_statements,32,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,"writer_fn:thy_omniview_state_canon; trigger:thy_omniview_statements_guard; reader_fn:thy_omniview_manifest,thy_omniview_topic,thy_omniview_state_canon","{""custody_trigger"": ""supersede_only""}","surface_fn:thy_omniview_manifest,thy_omniview_topic,thy_omniview_state_canon"
+thy_sequence_ledger,5,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,"writer_fn:thy_sequence_append; trigger:thy_sequence_ledger_chain,thy_sequence_ledger_no_rewrite; reader_fn:thy_sequence_ledger_chain_guard,thy_sequence_ledger_append_only,thy_sequence_head; fk_child_rows:thy_math_display,thy_omniview_gates,thy_omniview_links","{""custody_trigger"": ""append_only+chain_guard""}","surface_fn:thy_omniview_sequence,thy_omniview_manifest,thy_omniview_topic; fk_child"
+thylora_agents,2,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,trigger:thylora_agents_updated_at; fk_child_rows:thylora_departments; edge:network-bootstrap,"{""edge_writer_emits_audit_event"": true}",edge; fk_child
+thylora_autonomy_tasks,277,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,"writer_fn:thylora_chairman_preview_decision_v1,thylora_release_expired_autonomy_leases,thylora_claim_autonomy_tasks; trigger:thy_name_guard; reader_fn:thylora_chairman_preview_decision_v1,thylora_release_expired_autonomy_leases,thylora_operational_numbers_v1; fk_child_rows:thylora_autonomy_runs; edge:thylora-autonomy-worker","{""row_evidence_fields"": 276}","surface_fn:thylora_chairman_preview_decision_v1,thylora_operating_surface_v1; edge; fk_child"
+thylora_build_compiler_stages,80,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,"writer_fn:create_thylora_build_run,record_thylora_build_evidence,advance_thylora_build_stage; reader_fn:create_thylora_build_run,record_thylora_build_evidence,advance_thylora_build_stage; edge:thylora-build-compiler","{""row_evidence_fields"": 24}",edge
+thylora_build_evidence,2,PROMOTED (M=1),OPERATIONAL,DASHBOARD-FLOOR,1,1,1,1,1,1,,0.0,"writer_fn:record_thylora_build_evidence; reader_fn:record_thylora_build_evidence,thylora_chairman_dash_v1; edge:thylora-build-compiler","{""row_evidence_fields"": 2}",surface_fn:thylora_chairman_dash_v1; edge
+thylora_business_invoices,4,PROMOTED (M=1),OPERATIONAL,COMMERCE,1,1,1,1,1,1,,0.0,fk_child_rows:thylora_business_settlements,"{""row_evidence_fields"": 4}",fk_child
+thylora_business_purchase_orders,4,PROMOTED (M=1),OPERATIONAL,COMMERCE,1,1,1,1,1,1,,0.0,fk_child_rows:thylora_business_invoices,"{""row_evidence_fields"": 4}",fk_child
+thylora_chairman_commands,114,PROMOTED (M=1),OPERATIONAL,DASHBOARD-FLOOR,1,1,1,1,1,1,,0.0,"trigger:thylora_chairman_commands_updated_at; edge:chairman-command,thylora-rls-isolation-test","{""ml"": 120, ""audit_alias"": [""THYLORA_CHAIRMAN_COMMAND"", ""thylora_chairman_commands""]}",edge
+thylora_chairman_preview_decisions,5,PROMOTED (M=1),OPERATIONAL,DASHBOARD-FLOOR,1,1,1,1,1,1,,0.0,"writer_fn:thylora_chairman_preview_decision_v1; reader_fn:thylora_chairman_approval_screen_v1,thylora_chairman_preview_decision_v1","{""row_evidence_fields"": 5}","surface_fn:thylora_chairman_approval_screen_v1,thylora_chairman_preview_decision_v1"
+thylora_chairman_review_decisions,2,PROMOTED (M=1),OPERATIONAL,DASHBOARD-FLOOR,1,1,1,1,1,1,,0.0,"writer_fn:submit_thylora_review_gate_decision_v1,thy_record_approval_v1; trigger:trg_immutability_review_decisions; reader_fn:submit_thylora_review_gate_decision_v1,get_thylora_review_gates_v1,thy_record_approval_v1","{""row_evidence_fields"": 2, ""custody_trigger"": ""append_only""}","surface_fn:submit_thylora_review_gate_decision_v1,get_thylora_review_gates_v1"
+thylora_commercial_product_registry,23,PROMOTED (M=1),POLICY/REGISTRY,DASHBOARD-FLOOR,1,1,1,1,1,1,,0.0,"trigger:thy_name_guard; reader_fn:thylora_dashboard_completion_v1,thylora_chairman_dash_v1; view:thylora_conveyor_candidates,thylora_ip_product_readiness; fk_child_rows:thylora_execution_work_registry,thylora_store_release_gate","{""row_evidence_fields"": 18}","surface_fn:thylora_dashboard_completion_v1,thylora_chairman_dash_v1; view; fk_child"
+thylora_conveyor_order_evidence,4,PROMOTED (M=1),OPERATIONAL,COMMERCE,1,1,1,1,1,1,,0.0,view:thylora_conveyor_candidates,"{""row_evidence_fields"": 4}",view
+thylora_conveyor_provider_readback,10,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,reader_fn:thylora_operating_surface_v1; view:thylora_conveyor_candidates,"{""row_evidence_fields"": 10}",surface_fn:thylora_operating_surface_v1; view
+thylora_daily_production_ledger,3,PROMOTED (M=1),OPERATIONAL,DASHBOARD-FLOOR,1,1,1,1,1,1,,0.0,view:thylora_daily_production_gauge,"{""row_evidence_fields"": 3}",view
+thylora_dashboard_regression_evidence,42,PROMOTED (M=1),OPERATIONAL,DASHBOARD-FLOOR,1,1,1,1,1,1,,0.0,"reader_fn:thylora_operating_surface_v1,thylora_chairman_dash_v1","{""row_evidence_fields"": 42}","surface_fn:thylora_operating_surface_v1,thylora_chairman_dash_v1"
+thylora_delivery_asset_intake,8,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,"writer_fn:activate_thylora_delivery_asset_v1; reader_fn:get_thylora_delivery_intake_status_v1,activate_thylora_delivery_asset_v1; edge:thylora-delivery-ingest","{""row_evidence_fields"": 8}",edge
+thylora_department_events,11,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,"edge:department-router,network-bootstrap,thylora-rls-isolation-test","{""edge_writer_emits_audit_event"": true}",edge
+thylora_departments,66,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,"writer_fn:thylora_recovery_heartbeat; trigger:thylora_departments_updated_at,thy_name_guard; reader_fn:thylora_recovery_heartbeat; fk_child_rows:thylora_chairman_commands,thylora_department_events,thylora_department_profiles; edge:chairman-command,department-router,network-bootstrap","{""edge_writer_emits_audit_event"": true}","repo:app/app.js,dashboard-current-head.html; edge; fk_child"
+thylora_estate_provision_orders,6,PROMOTED (M=1),OPERATIONAL,COMMERCE,1,1,1,1,1,1,,0.0,fk_child_rows:thylora_estate_receiving_records,"{""row_evidence_fields"": 6}",fk_child
+thylora_execution_work_registry,137,PROMOTED (M=1),POLICY/REGISTRY,DASHBOARD-FLOOR,1,1,1,1,1,1,,0.0,"writer_fn:thy_advance_work_state_v1,thy_record_evidence_v1; trigger:trg_thylora_qyris_execution_gate,thy_name_guard; reader_fn:thylora_chairman_today_v1,thylora_chairman_dash_v1,thylora_control_surface_v1","{""audit_alias"": [""execution_work""], ""row_evidence_fields"": 131}","surface_fn:thylora_chairman_today_v1,thylora_chairman_dash_v1,thylora_control_surface_v1"
+thylora_executive_briefs,1,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,trigger:thylora_executive_briefs_updated_at; reader_fn:thylora_dashboard_completion_v1; edge:thylora-executive-patrol,"{""edge_writer_emits_audit_event"": true}",surface_fn:thylora_dashboard_completion_v1; edge
+thylora_famous_thought_gate_evaluations,29,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,trigger:trg_thylora_famous_thought_gate_compute_v1; reader_fn:thylora_famous_thought_meaning_gate_v1; view:thylora_famous_thought_public_v1,"{""row_evidence_fields"": 29}",view
+thylora_famous_thought_publication_map,23,PROMOTED (M=1),POLICY/REGISTRY,GENERAL,1,1,1,1,1,1,,0.0,trigger:trg_thylora_famous_thought_meaning_gate_v1; view:thylora_famous_thought_public_v1,"{""row_evidence_fields"": 23}",view
+thylora_famous_thought_registry,29,PROMOTED (M=1),POLICY/REGISTRY,GENERAL,1,1,1,1,1,1,,0.0,"reader_fn:thylora_famous_thought_dashboard_v1; view:thylora_famous_thought_public_v1; fk_child_rows:thylora_famous_thought_gate_evaluations,thylora_famous_thought_holds,thylora_famous_thought_math_bindings","{""row_evidence_fields"": 29}",surface_fn:thylora_famous_thought_dashboard_v1; view; fk_child
+thylora_farmer_candidates,5,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,fk_child_rows:thylora_farmer_verification_records,"{""row_evidence_fields"": 5}",fk_child
+thylora_gap_intelligence_registry,61,PROMOTED (M=1),POLICY/REGISTRY,GENERAL,1,1,1,1,1,1,,0.0,"trigger:thy_name_guard; reader_fn:thylora_chairman_qyris_v1,thylora_chairman_dash_v1","{""row_evidence_fields"": 56}","surface_fn:thylora_chairman_qyris_v1,thylora_chairman_dash_v1"
+thylora_global_arrival_matrix,17,PROMOTED (M=1),POLICY/REGISTRY,GENERAL,1,1,1,1,1,1,,0.0,reader_fn:thylora_operating_surface_v1; fk_child_rows:thylora_global_arrival_events,"{""row_evidence_fields"": 5}",surface_fn:thylora_operating_surface_v1; fk_child
+thylora_ip_gate_evaluations,2,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,writer_fn:thylora_evaluate_rights_gate; trigger:trg_ip_evaluation_immutable; reader_fn:thylora_evaluate_rights_gate; view:thylora_ip_product_readiness,"{""custody_trigger"": ""append_only""}",view
+thylora_launch_readiness_checks,10,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,edge:thylora-build-compiler,"{""row_evidence_fields"": 10}",edge
+thylora_living_world_records,11,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,"trigger:thylora_living_world_records_updated_at,thy_name_guard","{""row_evidence_fields"": 1}",repo:dashboard-current-head.html
+thylora_master_ledger,325,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,"writer_fn:thylora_process_stripe_checkout_completed; reader_fn:thylora_process_stripe_checkout_completed; edge:lemon-squeezy-webhook,p0-checkout,p0-protected-download","{""row_evidence_fields"": 325, ""edge_writer_emits_audit_event"": true, ""is_witness_ledger"": true}",edge
+thylora_network_bootstrap_runs,1,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,edge:network-bootstrap,"{""edge_writer_emits_audit_event"": true}",edge
+thylora_patrol_definitions,6,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,trigger:thylora_patrol_definitions_updated_at; edge:thylora-executive-patrol,"{""edge_writer_emits_audit_event"": true}",edge
+thylora_payment_capture_witness,1,PROMOTED (M=1),OPERATIONAL,COMMERCE,1,1,1,1,1,1,,0.0,"reader_fn:thylora_first_sale_chain_v1,thylora_operating_surface_v1,thylora_chairman_dash_v1","{""row_evidence_fields"": 1}","surface_fn:thylora_operating_surface_v1,thylora_chairman_dash_v1"
+thylora_product_realization_registry,104,PROMOTED (M=1),POLICY/REGISTRY,DASHBOARD-FLOOR,1,1,1,1,1,1,,0.0,"trigger:thy_name_guard; reader_fn:thylora_operational_numbers_v1,thylora_enforce_standing_invariants_v1,thylora_chairman_dash_v1; view:thylora_conveyor_candidates","{""row_evidence_fields"": 103}",surface_fn:thylora_chairman_dash_v1; view
+thylora_product_release_decisions,25,PROMOTED (M=1),OPERATIONAL,DASHBOARD-FLOOR,1,1,1,1,1,1,,0.0,"writer_fn:thylora_chairman_preview_decision_v1,submit_thylora_product_release_decisions_v1; reader_fn:thylora_chairman_preview_decision_v1,submit_thylora_product_release_decisions_v1; edge:thylora-release-decision","{""row_evidence_fields"": 25}",surface_fn:thylora_chairman_preview_decision_v1; edge
+thylora_prompt_point_ledger,81,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,reader_fn:thylora_prompt_coverage_audit; edge:thylora-directive-preflight,"{""row_evidence_fields"": 48}",edge
+thylora_query_carryforward,595,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,"writer_fn:thylora_backlink_query_custody,thylora_complete_query_pair,thylora_capture_query_pair; trigger:trg_thylora_link_query_custody,trg_thylora_backlink_query_custody,trg_rootbound_audit_thylora_query_carryforward; reader_fn:thylora_dashboard_completion_v1,thylora_link_query_custody,thylora_backlink_query_custody; edge:dash,thylora-current-head,thylora-dashboard","{""sh"": 434, ""custody_trigger"": ""shadow_capture_before_destructive_change""}","surface_fn:thylora_dashboard_completion_v1,thylora_control_surface_v1; repo:dashboard-current-head.html; edge"
+thylora_rls_isolation_runs,3,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,"edge:thylora-rls-isolation-test,thylora-system-check","{""edge_writer_emits_audit_event"": true}",edge
+thylora_router_jobs,97,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,"writer_fn:thylora_recovery_heartbeat; trigger:thylora_router_jobs_updated_at,thy_name_guard; reader_fn:thylora_recovery_heartbeat,thylora_control_surface_v1; fk_child_rows:thylora_chairman_commands; edge:department-router,thylora-rls-isolation-test","{""ml"": 120, ""audit_alias"": [""THYLORA_AI_ROUTER"", ""thylora_router_jobs""], ""edge_writer_emits_audit_event"": true}",surface_fn:thylora_control_surface_v1; edge; fk_child
+thylora_shopify_fulfillment_reconciliation,3,PROMOTED (M=1),OPERATIONAL,COMMERCE,1,1,1,1,1,1,,0.0,view:thylora_fulfillment_reconciliation_candidates,"{""row_evidence_fields"": 3}",view
+thylora_store_draw_gate_evaluations,33,PROMOTED (M=1),OPERATIONAL,COMMERCE,1,1,1,1,1,1,,0.0,"trigger:trg_thylora_store_draw_gate_compute_v1; reader_fn:thylora_require_product_worth_before_release_v1,thylora_require_content_value_before_schedule_v1,thylora_dashboard_completion_v1","{""row_evidence_fields"": 33}","surface_fn:thylora_dashboard_completion_v1,thylora_chairman_today_v1"
+thylora_store_product_readiness,17,PROMOTED (M=1),OPERATIONAL,COMMERCE,1,1,1,1,1,1,,0.0,"writer_fn:thylora_chairman_preview_decision_v1,activate_thylora_delivery_asset_v1,submit_thylora_product_release_decisions_v1; trigger:thy_name_guard; reader_fn:thylora_chairman_approval_screen_v1,thylora_chairman_preview_decision_v1,thylora_dashboard_completion_v1; view:thylora_conveyor_candidates; edge:thylora-product-checkout,thylora-release-decision","{""row_evidence_fields"": 17}","surface_fn:thylora_chairman_approval_screen_v1,thylora_chairman_preview_decision_v1,thylora_dashboard_completion_v1; view; edge"
+thylora_store_release_gate,6,PROMOTED (M=1),POLICY/REGISTRY,COMMERCE,1,1,1,1,1,1,,0.0,trigger:trg_thylora_require_product_worth_before_release_v1; reader_fn:thylora_dashboard_completion_v1,"{""row_evidence_fields"": 1}",surface_fn:thylora_dashboard_completion_v1
+thylora_system_health_runs,13,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,"edge:thylora-executive-patrol,thylora-rls-isolation-test,thylora-system-check","{""edge_writer_emits_audit_event"": true}",edge
+thylora_thread_import_batches,30,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,edge:thylora-source-import,"{""audit_alias"": [""thylora_thread_import_batch""]}",edge
+thylora_user_roles,1,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,"trigger:thylora_user_roles_updated_at; reader_fn:thylora_is_chairman,drop_inspector_flag; edge:chairman-command,department-router,lemon-secret-store","{""edge_writer_emits_audit_event"": true}",surface_fn:thylora_is_chairman; edge
+thylora_vyc_enforcement_events,5,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,writer_fn:thylora_vyc_truth_preflight; reader_fn:thylora_vyc_truth_preflight; edge:thylora-enforcer,"{""row_evidence_fields"": 5}",edge
+thylora_workroom_registry,27,PROMOTED (M=1),POLICY/REGISTRY,GENERAL,1,1,1,1,1,1,,0.0,"trigger:thy_name_guard; reader_fn:thylora_operating_surface_v1,thylora_chairman_qyris_v1,thylora_chairman_dash_v1; fk_child_rows:thylora_workroom_task_registry","{""row_evidence_fields"": 27}","surface_fn:thylora_operating_surface_v1,thylora_chairman_qyris_v1,thylora_chairman_dash_v1; fk_child"
+thylora_workroom_task_registry,93,PROMOTED (M=1),POLICY/REGISTRY,GENERAL,1,1,1,1,1,1,,0.0,"trigger:thy_name_guard; reader_fn:thylora_operating_surface_v1,thylora_chairman_qyris_v1,thylora_chairman_dash_v1","{""row_evidence_fields"": 74}","surface_fn:thylora_operating_surface_v1,thylora_chairman_qyris_v1,thylora_chairman_dash_v1"
+ue_concepts,10,PROMOTED (M=1),OPERATIONAL,GENERAL,1,1,1,1,1,1,,0.0,fk_child_rows:ue_concept_links,"{""row_evidence_fields"": 10}",fk_child

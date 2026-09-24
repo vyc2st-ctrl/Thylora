@@ -1,0 +1,488 @@
+{
+  "network-bootstrap": {
+    "reads": [
+      "thylora_departments",
+      "thylora_network_bootstrap_runs",
+      "thylora_user_roles"
+    ],
+    "writes": [
+      "audit_events",
+      "thylora_agents",
+      "thylora_department_events",
+      "thylora_departments",
+      "thylora_network_bootstrap_runs"
+    ],
+    "rpcs": [],
+    "error": null
+  },
+  "department-router": {
+    "reads": [
+      "approval_queue",
+      "thylora_departments",
+      "thylora_router_jobs",
+      "thylora_user_roles"
+    ],
+    "writes": [
+      "audit_events",
+      "thylora_department_events",
+      "thylora_departments",
+      "thylora_router_jobs"
+    ],
+    "rpcs": [],
+    "error": null
+  },
+  "chairman-command": {
+    "reads": [
+      "restart_records",
+      "thylora_chairman_commands",
+      "thylora_dashboard_authority_lock",
+      "thylora_departments",
+      "thylora_provider_registry",
+      "thylora_user_roles"
+    ],
+    "writes": [
+      "thylora_chairman_commands"
+    ],
+    "rpcs": [],
+    "error": null
+  },
+  "thylora-system-check": {
+    "reads": [
+      "restart_records",
+      "thylora_departments",
+      "thylora_rls_isolation_runs",
+      "thylora_system_health_runs",
+      "thylora_user_roles"
+    ],
+    "writes": [
+      "audit_events",
+      "connection_evidence",
+      "thylora_system_health_runs"
+    ],
+    "rpcs": [],
+    "error": null
+  },
+  "thylora-rls-isolation-test": {
+    "reads": [
+      "audit_events",
+      "restart_records",
+      "thylora_chairman_commands",
+      "thylora_department_events",
+      "thylora_departments",
+      "thylora_provider_registry",
+      "thylora_router_jobs",
+      "thylora_system_health_runs",
+      "thylora_user_roles"
+    ],
+    "writes": [
+      "audit_events",
+      "thylora_rls_isolation_runs",
+      "thylora_user_roles"
+    ],
+    "rpcs": [],
+    "error": null
+  },
+  "thylora-ai-router": {
+    "reads": [
+      "thylora_ai_provider_profiles",
+      "thylora_user_roles"
+    ],
+    "writes": [
+      "thylora_ai_provider_profiles",
+      "thylora_ai_route_attempts"
+    ],
+    "rpcs": [],
+    "error": null
+  },
+  "public-visual-registry": {
+    "reads": [
+      "thylora_visual_assets",
+      "thylora_visual_assignments",
+      "thylora_visual_slots"
+    ],
+    "writes": [],
+    "rpcs": [],
+    "error": null
+  },
+  "thylora-executive-patrol": {
+    "reads": [
+      "approval_queue",
+      "thylora_identity_gate_records",
+      "thylora_patrol_definitions",
+      "thylora_patrol_findings",
+      "thylora_patrol_runs",
+      "thylora_production_approval_checks",
+      "thylora_system_health_runs",
+      "thylora_user_roles"
+    ],
+    "writes": [
+      "audit_events",
+      "thylora_executive_briefs",
+      "thylora_patrol_definitions",
+      "thylora_patrol_findings",
+      "thylora_patrol_runs"
+    ],
+    "rpcs": [],
+    "error": null
+  },
+  "p0-checkout": {
+    "reads": [
+      "prices",
+      "products"
+    ],
+    "writes": [
+      "thylora_master_ledger"
+    ],
+    "rpcs": [],
+    "error": null
+  },
+  "stripe-webhook": {
+    "reads": [
+      "stripe_webhook_events"
+    ],
+    "writes": [],
+    "rpcs": [
+      "thylora_process_product_stripe_checkout_completed_v1",
+      "thylora_process_stripe_checkout_completed"
+    ],
+    "error": null
+  },
+  "p0-protected-download": {
+    "reads": [
+      "entitlements"
+    ],
+    "writes": [
+      "downloads",
+      "thylora_master_ledger"
+    ],
+    "rpcs": [],
+    "error": null
+  },
+  "thylora-dashboard": {
+    "reads": [
+      "dashboard_status",
+      "downloads",
+      "entitlements",
+      "family_reports",
+      "orders",
+      "payments",
+      "products",
+      "protected_record_index",
+      "restart_records",
+      "thylora_query_carryforward"
+    ],
+    "writes": [],
+    "rpcs": [],
+    "error": null
+  },
+  "thylora-p0-commerce": {
+    "reads": [],
+    "writes": [],
+    "rpcs": [],
+    "error": null
+  },
+  "lemon-squeezy-webhook": {
+    "reads": [
+      "audit_events",
+      "entitlements",
+      "order_items",
+      "orders",
+      "payments",
+      "products",
+      "thylora_commerce_identity_aliases",
+      "thylora_master_ledger"
+    ],
+    "writes": [
+      "audit_events",
+      "entitlements",
+      "order_items",
+      "orders",
+      "payments",
+      "thylora_master_ledger"
+    ],
+    "rpcs": [
+      "thylora_lemon_webhook_secret_service"
+    ],
+    "error": null
+  },
+  "thylora-continuity-ingest": {
+    "reads": [
+      "thylora_user_roles"
+    ],
+    "writes": [],
+    "rpcs": [
+      "thylora_capture_query_pair"
+    ],
+    "error": null
+  },
+  "dash": {
+    "reads": [
+      "currency_visual_registry",
+      "dashboard_status",
+      "products",
+      "studio_people",
+      "thylora_art_commission_registry",
+      "thylora_person_serial_registry",
+      "thylora_provider_registry",
+      "thylora_query_carryforward"
+    ],
+    "writes": [],
+    "rpcs": [],
+    "error": null
+  },
+  "lemon-handoff": {
+    "reads": [],
+    "writes": [],
+    "rpcs": [
+      "thylora_is_chairman",
+      "thylora_lemon_webhook_secret_service"
+    ],
+    "error": null
+  },
+  "dash-view": {
+    "reads": [],
+    "writes": [],
+    "rpcs": [],
+    "error": null
+  },
+  "lemon-auto-connect": {
+    "reads": [],
+    "writes": [],
+    "rpcs": [
+      "thylora_is_chairman",
+      "thylora_lemon_webhook_secret_service"
+    ],
+    "error": null
+  },
+  "patient-advocacy-delivery": {
+    "reads": [],
+    "writes": [],
+    "rpcs": [],
+    "error": null
+  },
+  "lemon-secret-store": {
+    "reads": [
+      "thylora_user_roles"
+    ],
+    "writes": [
+      "audit_events"
+    ],
+    "rpcs": [
+      "thylora_set_lemon_webhook_secret_service"
+    ],
+    "error": null
+  },
+  "lemon-handoff-ui": {
+    "reads": [],
+    "writes": [],
+    "rpcs": [],
+    "error": null
+  },
+  "thylora-department-talk": {
+    "reads": [
+      "continuity_log",
+      "family_profiles",
+      "restart_records",
+      "thylora_department_conversations",
+      "thylora_department_personnel",
+      "thylora_department_profiles",
+      "thylora_departments",
+      "thylora_query_carryforward",
+      "thylora_user_roles"
+    ],
+    "writes": [
+      "thylora_department_conversations"
+    ],
+    "rpcs": [],
+    "error": null
+  },
+  "thylora-source-import": {
+    "reads": [
+      "thylora_query_carryforward",
+      "thylora_user_roles"
+    ],
+    "writes": [
+      "thylora_query_carryforward",
+      "thylora_thread_import_batches"
+    ],
+    "rpcs": [],
+    "error": null
+  },
+  "thylora-current-head": {
+    "reads": [
+      "dashboard_status",
+      "downloads",
+      "entitlements",
+      "family_reports",
+      "orders",
+      "payments",
+      "products",
+      "restart_records",
+      "thylora_query_carryforward"
+    ],
+    "writes": [],
+    "rpcs": [],
+    "error": null
+  },
+  "noop": {
+    "reads": [],
+    "writes": [],
+    "rpcs": [],
+    "error": null
+  },
+  "thylora-build-compiler": {
+    "reads": [
+      "restart_records",
+      "thylora_build_compiler_runs",
+      "thylora_build_compiler_stages",
+      "thylora_build_events",
+      "thylora_build_evidence",
+      "thylora_component_library",
+      "thylora_dashboard_authority_lock",
+      "thylora_launch_readiness_checks",
+      "thylora_no_regression_floors",
+      "thylora_provider_registry",
+      "thylora_user_roles"
+    ],
+    "writes": [
+      "thylora_build_compiler_runs",
+      "thylora_build_compiler_stages",
+      "thylora_build_events",
+      "thylora_build_evidence"
+    ],
+    "rpcs": [],
+    "error": null
+  },
+  "thylora-autonomy-worker": {
+    "reads": [
+      "thylora_autonomy_credentials",
+      "thylora_autonomy_runtime"
+    ],
+    "writes": [
+      "thylora_autonomy_runs",
+      "thylora_autonomy_runtime",
+      "thylora_autonomy_tasks"
+    ],
+    "rpcs": [
+      "thylora_claim_autonomy_tasks",
+      "thylora_release_expired_autonomy_leases"
+    ],
+    "error": null
+  },
+  "thylora-protected-download": {
+    "reads": [
+      "thylora_delivery_assets",
+      "thylora_product_entitlements"
+    ],
+    "writes": [
+      "thylora_product_download_audit"
+    ],
+    "rpcs": [],
+    "error": null
+  },
+  "thylora-delivery-ingest": {
+    "reads": [
+      "thylora_delivery_asset_intake",
+      "thylora_user_roles"
+    ],
+    "writes": [
+      "thylora_delivery_asset_intake",
+      "thylora_delivery_assets"
+    ],
+    "rpcs": [],
+    "error": null
+  },
+  "thylora-product-checkout": {
+    "reads": [
+      "thylora_store_product_readiness",
+      "thylora_user_roles"
+    ],
+    "writes": [
+      "thylora_master_ledger"
+    ],
+    "rpcs": [],
+    "error": null
+  },
+  "thylora-release-decision": {
+    "reads": [
+      "thylora_store_product_readiness",
+      "thylora_user_roles"
+    ],
+    "writes": [
+      "thylora_product_release_decisions",
+      "thylora_store_product_readiness"
+    ],
+    "rpcs": [],
+    "error": null
+  },
+  "thylora-directive-preflight": {
+    "reads": [
+      "thylora_prompt_point_ledger",
+      "thylora_query_carryforward"
+    ],
+    "writes": [],
+    "rpcs": [],
+    "error": null
+  },
+  "thylora-shopify-webhook": {
+    "reads": [
+      "thylora_commerce_identity_aliases"
+    ],
+    "writes": [
+      "thylora_webhook_delivery_log"
+    ],
+    "rpcs": [
+      "thylora_commerce_ingest_order_event_v1",
+      "thylora_commerce_record_unlinked_purchase_v1"
+    ],
+    "error": null
+  },
+  "thylora-library": {
+    "reads": [],
+    "writes": [],
+    "rpcs": [],
+    "error": null
+  },
+  "thylora-submit-sweep": {
+    "reads": [],
+    "writes": [],
+    "rpcs": [
+      "thylora_submit_execute_deletion_v1",
+      "thylora_submit_sweep_targets_v1",
+      "thylora_submit_sweep_token_matches"
+    ],
+    "error": null
+  },
+  "thylora-enforcer": {
+    "reads": [
+      "thylora_query_carryforward",
+      "thylora_rootbound_mesh",
+      "thylora_user_roles"
+    ],
+    "writes": [
+      "thylora_vyc_enforcement_events"
+    ],
+    "rpcs": [],
+    "error": null
+  },
+  "chairman-preview": {
+    "reads": [],
+    "writes": [],
+    "rpcs": [
+      "thylora_preview_token_redeem_v1"
+    ],
+    "error": null
+  },
+  "thylora-preview": {
+    "reads": [],
+    "writes": [],
+    "rpcs": [],
+    "error": null
+  },
+  "thylora-asset-witness": {
+    "reads": [],
+    "writes": [],
+    "rpcs": [],
+    "error": null
+  }
+}
