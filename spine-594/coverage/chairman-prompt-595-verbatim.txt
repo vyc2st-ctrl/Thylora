@@ -1,0 +1,453 @@
+THYLORA HEAD — SPINE FORWARD
+
+READ THE NEWEST BACKEND HEAD FIRST.
+
+KNOWN CURRENT HEAD:
+594
+
+IMPORTANT:
+DO NOT REDO OMNIVIEW MIGRATION.
+Backend evidence now shows:
+
+THY-WORK-OMNIVIEW-LIVE-APPLY-591
+live_applied = true
+ui_witnessed = false
+
+Your job is to FINISH AND WITNESS.
+
+==================================================
+PRIMARY 1 — OMNIVIEW LIVE UI WITNESS
+==================================================
+
+Use the already-applied live Omniview backend.
+
+Verify the actual existing dashboard/app surfaces:
+
+CONTEXT
+SEQUENCE
+TOPIC LOOKUP
+COVERAGE LEDGER
+CURRENT GATES
+
+Test real interaction, not database existence.
+
+Verify on the actual UI:
+
+TIME RUN
+ALISTAIR CROWE
+ROYAL CASTLE
+WORLD WINDOW 001
+STORE
+SPORTS
+QYRIS
+PRINTFUL FIRST SHIRT
+
+For each:
+- current authority
+- superseded material
+- people
+- places
+- objects
+- work
+- gates
+- latest correction
+- unresolved questions
+- next action
+
+Test every button visibly.
+
+Return:
+WORKS
+FAILS
+DISABLED CORRECTLY
+MISSING
+STALE
+
+Do not claim UI witnessed from SQL.
+
+==================================================
+PRIMARY 2 — FULL PROMPT COVERAGE
+==================================================
+
+Use the active hard gate:
+
+THY-WORK-COVERAGE-HARD-GATE-593
+THY-WORK-QUERY-COVERAGE-592
+
+Recover the Chairman's complete recent prompt,
+not merely the Royal Kitchen section.
+
+Create a clause ledger.
+
+Every substantive clause must receive exactly one:
+
+ANSWERED
+EXECUTED
+ASSIGNED
+DEFERRED
+BLOCKED
+UNKNOWN
+
+Domains that MUST be represented include:
+
+- Royal Kitchen
+- Veronica / Inés / Clara
+- visual identity
+- visual geometry
+- art medium
+- viewer membrane
+- mathematical presentation
+- Chairman thinking methodology
+- comparison to documented thinking methods
+- sourced quotations
+- US civic/legal accountability questions
+- Nolan Wells
+- Tanner / Marion
+- Midas
+- Moon / plumbing
+- police / 911 questions
+- jury / grand jury process
+- public-record questions
+- education
+- children / math comprehension
+- curriculum
+- food / fruit / herbs / honey
+- animals / meat ethics
+- farming provenance
+- system autonomy
+- AI boundaries
+- apps/dashboard
+- social comments
+- Printful
+- first shirt
+- store
+- sports
+- genealogy
+- reports
+- email
+- Time Run
+- castle
+- Alistair
+- people/world simulation continuity
+
+No clause may silently disappear.
+
+==================================================
+PRIMARY 3 — ALISTAIR CROWE: FINISH THE PERSON
+==================================================
+
+Do not stop at:
+
+Alistair Crowe
+Archive Steward
+
+Treat his nearest connected life as mandatory.
+
+Recover first.
+Invent only where existing world-authoring rules allow,
+and mark invented/proposed fields clearly.
+
+Build or recover:
+
+IDENTITY
+- full name
+- pronunciation
+- birth date/year
+- age
+- sex
+- appearance
+- height
+- weight
+- health state
+- habits
+- temperament
+- ambitions
+- fears
+- interests
+- worship/belief
+- politics/governance views
+- personal values
+
+WORK
+- exact department
+- title
+- boss
+- direct reports
+- salary
+- bonus
+- work history
+- why he joined
+- daily schedule
+- responsibilities
+- equipment
+- credential/wearable
+- commute
+- worksite
+
+HOUSEHOLD
+- spouse
+- children
+- ages
+- relatives nearby
+- pets/native animals
+- friends
+- neighbors
+- household employees if any
+
+PLACE
+- country
+- state/province equivalent
+- county equivalent
+- city/town
+- neighborhood
+- block
+- parcel
+- address
+- postal code equivalent
+- house construction date
+- architect/builder
+- construction crew
+- original cost
+- current value
+- mortgage/debt
+- insurance
+- taxes/fees
+- utilities
+- water
+- heat
+- power
+- sanitation
+- communications
+
+LIFE
+- meals
+- favorite foods
+- rest
+- vacations
+- entertainment
+- local shops
+- doctors
+- hospital
+- school
+- children's school travel
+- after-school life
+- neighborhood safety
+- worship/community places
+- library
+- parks
+- transportation
+- vehicles
+- household economy
+
+HISTORY
+- why the family came there
+- how many generations
+- where previous relatives lived
+- major family events
+- relationship to the surrounding area
+- local economy and history
+
+Do not stop because one field is unknown.
+Continue to nearest connected fields.
+
+Return exact UNKNOWN fields separately.
+
+==================================================
+PRIMARY 4 — ROYAL KITCHEN PRE-RENDER LOCK
+==================================================
+
+NO IMAGE GENERATION.
+
+Fix the scene logic first.
+
+Correct chronology:
+
+Clara brings Veronica into the household.
+Veronica has not yet been cleaned up or started kitchen work.
+Her clothes are visibly worn/dirty from her circumstances.
+Clara is asking Inés whether the kitchen can use her.
+
+Inés:
+163 cm
+
+Veronica:
+166 cm
+deep-brown complexion
+same original face
+same original hair
+slender
+slightly fuller hips/thighs/buttocks
+NO facial drift
+NO skin lightening
+
+Clara:
+168 cm
+same original identity
+
+Restore the original approved camera angle/composition.
+
+The newer painterly/etched render is:
+STYLE REFERENCE ONLY.
+
+Do not inherit:
+- altered faces
+- altered height appearance
+- altered skin tone
+- altered camera
+
+Build a PRE-RENDER CONTRACT containing:
+
+CAMERA
+- exact station
+- height
+- lens
+- horizon
+- perspective relationships
+- person-camera distances
+- apparent-height check
+
+ROOM
+- wall material
+- floor material
+- ceiling
+- hearth
+- oven/baking method
+- cooling/storage
+- cheese/milk storage
+- broom storage
+- washing
+- herbs
+- grinder
+- cutting tools
+- baskets
+- jars
+- labels/stamps
+- object positions
+- work residue
+- cleanup state
+
+EVERY OBJECT:
+WHY IS IT THERE?
+WHO PUT IT THERE?
+WHEN?
+WHAT HAPPENED BEFORE?
+WHAT HAPPENS NEXT?
+
+Use:
+O_t = f(I,L,S,C,E,H)
+
+And show:
+f means FUNCTION OF —
+the rule describing how the variables combine.
+
+BRANDING
+- VYC2ST as a tiny architectural etching near the lower-window area
+- ErsatzReality integrated into a plausible stone/timber detail
+- serial placed where a historical/production number visually belongs
+- no decorative floating logo text
+
+ART MEDIUM
+- illustrated
+- etched
+- painterly
+- sculptural depth
+- realistic individual human anatomy
+- NOT photoreal
+- NOT Disney/cartoon
+- visible sketchwork selectively
+- restrained color
+- viewer membrane visible only on close inspection
+
+Return exact render packet.
+DO NOT RENDER.
+
+==================================================
+PRIMARY 5 — MATH DISPLAY LAW
+==================================================
+
+Apply this to every equation:
+
+1. WHOLE EQUATION
+2. LEFT SIDE
+3. EQUAL SIGN
+4. RIGHT SIDE
+5. EVERY SYMBOL
+6. EVERY UNIT
+7. PLAIN SPEECH
+8. REAL EXAMPLE
+9. WHERE SOMEONE WOULD USE IT
+10. WHAT THE ANSWER MEANS
+11. NEXT QUESTION
+
+Whenever f appears:
+
+f = FUNCTION OF
+
+Plain meaning:
+“The rule describing how these pieces work together.”
+
+Never assume the reader knows that.
+
+==================================================
+PRIMARY 6 — FIRST SHIRT
+==================================================
+
+Printful is already connected.
+
+Do not repeat setup.
+
+Build the first shirt art package:
+
+PRIMARY:
+QUESTION MARK / QUESTION THINKING
+
+SECONDARY:
+small fragment of actual THYLORA world imagery
+
+TERTIARY:
+ErsatzReality
+VYC2ST
+THYLORA mark only from approved source
+
+No generic corporate shirt.
+
+Prepare:
+- front
+- back
+- sleeve/hem detail if useful
+- 2XL mockup
+- 3XL mockup
+- provenance sheet
+- garment source
+- print method
+- fulfillment source
+- known/unknown maker information
+- sample cost
+- shipping estimate
+- exact order path
+
+DO NOT ORDER WITHOUT CHAIRMAN APPROVAL.
+
+==================================================
+RETURN
+==================================================
+
+1. CURRENT HEAD
+2. QYRIS
+3. LIVE UI WITNESS
+4. FULL CLAUSE LEDGER
+5. ALISTAIR COMPLETE WORLD SHEET
+6. ALISTAIR UNKNOWN FIELDS
+7. ROYAL KITCHEN PRE-RENDER CONTRACT
+8. MATH DISPLAY IMPLEMENTATION
+9. FIRST SHIRT PACKAGE
+10. STORE MOVEMENT
+11. SOCIAL CONNECTOR STATUS
+12. TESTS
+13. FAILURES
+14. WRITEBACK
+15. EXACT RESTART POINT
+
+WRITE BACKEND.
+VERIFY READBACK.
+DO NOT STOP AT A REPORT IF EXECUTABLE WORK REMAINS.

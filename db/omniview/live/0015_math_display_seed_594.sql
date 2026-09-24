@@ -39,10 +39,10 @@ insert into thy_math_display (equation_id, whole_equation, left_side, equal_sign
    {"symbol":"/","name":"divided by","meaning":"share of the whole"}]',
  '[{"symbol":"A,E,S,B,D,U,N","unit":"count of clauses","range":"0 or more whole numbers"},{"symbol":"C_q","unit":"ratio (no unit)","range":"0 to 1"}]',
  'Count every request in the message. Count how many got a clear state. Divide. If the answer is not 1, something silently disappeared.',
- 'Query 594 has 60 clauses. 58 have a state and 2 are still OPEN. C_q = 58 / 60 = 0.967, so the response is not complete, and the two OPEN clauses are named on screen.',
+ 'Query 595 (this head) has 97 clauses: 39 executed, 19 assigned, 16 answered, 14 blocked, 6 deferred, 3 unknown. C_q = 97 / 97 = 1. That does not mean all 97 are done — 14 are blocked — it means none silently disappeared.',
  'Before any response, report or hand-off is called COMPLETE; in the COVERAGE LEDGER tab of OMNIVIEW.',
  'C_q = 1 means every clause is accounted for (answered, done, assigned, blocked, deferred or unknown). Below 1 means a request would be lost.',
- 'Which clause is still OPEN, and which of the six states does it honestly belong in?', null, 594),
+ 'Which clause is still OPEN, and which of the six states does it honestly belong in?', null, 595),
 
 ('MATH-D-001', 'D = A × H × W × T × M × P', 'D — the draw and worth of a store offer',
  '"=" means: the left side is exactly what the right side works out to.',
@@ -53,7 +53,7 @@ insert into thy_math_display (equation_id, whole_equation, left_side, equal_sign
  'Illustration only — not a recorded gate evaluation: if the first shirt scored A=5, H=3, W=4, T=5, M=5 but P=2 (no witnessed checkout yet), D = 5×3×4×5×5×2 = 3000, and P below 4 would keep it off the shelf until the purchase path is witnessed.',
  'Before a product goes on a store shelf or is promoted.',
  'A high D means every part is strong. A low D points to the weakest factor, which is what to fix first.',
- 'Which single factor is lowest, and what would raise it to at least 4?', null, 594),
+ 'Which single factor is lowest, and what would raise it to at least 4?', null, 595),
 
 ('MATH-FQ-001', 'F = S × A × C × T', 'F — whether a famous quotation is fit to use',
  '"=" means: the left side is exactly what the right side works out to.',
@@ -64,7 +64,7 @@ insert into thy_math_display (equation_id, whole_equation, left_side, equal_sign
  'A saying widely credited to Einstein, with no primary source found: S=0, so F=0 and it cannot be used as his quote.',
  'Before a quote appears in a post, report, lesson or dashboard card.',
  'F above 0 with every factor at least 4 means publishable. F = 0 means stop: the quote is unverified or misattributed.',
- 'Where is the earliest primary source, and does it say exactly these words?', null, 594),
+ 'Where is the earliest primary source, and does it say exactly these words?', null, 595),
 
 ('MATH-L-001', 'L = D × R × F × H × U × V', 'L — life-first fitness of a design',
  '"=" means: the left side is exactly what the right side works out to.',
@@ -75,7 +75,7 @@ insert into thy_math_display (equation_id, whole_equation, left_side, equal_sign
  'Ambulance brake design: two independent brake circuits give R=5. No driver warning light gives U=1. L is dragged down by U, so the fix is the warning, not more braking.',
  'Medical response, vehicles, roads, sports, buildings, animal care — before approval and after any incident.',
  'Any factor at 0 means the design fails outright. The lowest factor is the first thing to fix.',
- 'Which factor is weakest, and what would a second independent safeguard for it look like?', null, 594),
+ 'Which factor is weakest, and what would a second independent safeguard for it look like?', null, 595),
 
 ('MATH-Q-001', 'Q = f(K, E, C)', 'Q — the quality of the question you can ask',
  '"=" means: the left side is exactly what the right side works out to.',
@@ -86,7 +86,7 @@ insert into thy_math_display (equation_id, whole_equation, left_side, equal_sign
  'Genealogy: K = a great-grandmother''s name; E = one census line; C = the same household in the next census. Q becomes: "Which county courthouse holds the 1910 marriage record?" — far sharper than "who were my ancestors?"',
  'Whenever a problem feels vague: research, lessons, investigations, design reviews.',
  'Q is not a number. It tells you which input to improve to get a better question.',
- 'Of knowledge, evidence and connections, which one is thinnest right now?', 'f means FUNCTION OF — the rule describing how these pieces work together.', 594),
+ 'Of knowledge, evidence and connections, which one is thinnest right now?', 'f means FUNCTION OF — the rule describing how these pieces work together.', 595),
 
 ('MATH-REVERIFY-593', 'V_a = E × D × A × U × R', 'V_a — how well an answer has been re-verified',
  '"=" means: the left side is exactly what the right side works out to.',
@@ -94,10 +94,10 @@ insert into thy_math_display (equation_id, whole_equation, left_side, equal_sign
  '[{"symbol":"V_a","name":"verified-answer integrity","meaning":"how durable the answer is"},{"symbol":"E","name":"evidence","meaning":"support found for the answer"},{"symbol":"D","name":"disconfirming search","meaning":"a real search for proof it is wrong"},{"symbol":"A","name":"alternatives","meaning":"other explanations tested"},{"symbol":"U","name":"uncertainty","meaning":"how sure we are, stated honestly"},{"symbol":"R","name":"readback","meaning":"the source was re-read and matches"},{"symbol":"×","name":"times","meaning":"a zero anywhere makes the whole zero"}]',
  '[{"symbol":"E,D,A,U,R","unit":"score","range":"integer 0 to 5"},{"symbol":"V_a","unit":"score (no unit)","range":"0 to 3125"}]',
  'An answer is not safe just because we already believed it. Look for proof it is wrong, test other explanations, and re-read the source.',
- 'Head 594: the Omniview work record said live security was corrected at 591. Readback (R) found it had been reverted at 23:41Z. R=0 made V_a=0 until the repair was re-applied and re-read.',
+ 'Head 595: the Omniview work record said live security was corrected at 591. Readback (R) found it had been reverted at 23:41Z on 2026-09-23. R=0 made V_a=0 until the repair was re-applied and re-read.',
  'Before anything becomes canon, is published, or drives a consequential action.',
  'High V_a means the answer survived attempts to break it. V_a = 0 means it must stay marked as inference or unknown.',
- 'What single piece of evidence would prove this answer wrong, and has anyone looked for it?', null, 594),
+ 'What single piece of evidence would prove this answer wrong, and has anyone looked for it?', null, 595),
 
 ('MATH-SCENE-WHOLE-593', 'S_w = A × G × D × O × L × H × M', 'S_w — whether a scene is a complete, real place',
  '"=" means: the left side is exactly what the right side works out to.',
@@ -108,7 +108,7 @@ insert into thy_math_display (equation_id, whole_equation, left_side, equal_sign
  'Royal Kitchen: a broom leaning in the doorway with no reason gives O=2. Moving it to the broom rack, placed there by the scullery hand after the morning sweep, gives O=5.',
  'Before any render is approved and again on the finished frame.',
  'Every factor at least 4 means the scene holds. The lowest factor names what is still flat or fake.',
- 'Which object in the frame has no recorded reason for being there?', null, 594),
+ 'Which object in the frame has no recorded reason for being there?', null, 595),
 
 ('MATH-U-001', 'U = K × E × C × X × T', 'U — how usable an understanding is',
  '"=" means: the left side is exactly what the right side works out to.',
@@ -119,7 +119,7 @@ insert into thy_math_display (equation_id, whole_equation, left_side, equal_sign
  'The 589 first-post packet scored U = 1600 = 5×5×4×4×4: knowledge and evidence full, connections, explanation and transfer at 4. Maximum is 3125.',
  'Every outward post, report, lesson, product page and story.',
  'U with every factor at least 4 passes. U = 1600 means strong but not perfect; the three factors at 4 are where it can improve.',
- 'After seeing this, what could the viewer do or explain that they could not before?', null, 594),
+ 'After seeing this, what could the viewer do or explain that they could not before?', null, 595),
 
 ('MATH-VISUAL-LOCK-593', 'R_v = I × G × P × C × T × O', 'R_v — whether a render keeps what must not change',
  '"=" means: the left side is exactly what the right side works out to.',
@@ -130,7 +130,7 @@ insert into thy_math_display (equation_id, whole_equation, left_side, equal_sign
  'The painterly Royal Kitchen render lightened Veronica''s skin and changed faces: P=0 and I=0, so R_v=0. It is kept as a style reference only.',
  'Before any recurring character or scene is re-rendered, and when comparing a new render to the approved one.',
  'R_v above 0 with every lock at least 4 means safe to render. R_v = 0 means stop and fix the broken lock first.',
- 'Which lock would a style change most likely break, and how will we measure it before approving?', null, 594),
+ 'Which lock would a style change most likely break, and how will we measure it before approving?', null, 595),
 
 ('MATH-WW-001', 'WW = L × I × H × B × M × T', 'WW — whether an outward image is fit to publish',
  '"=" means: the left side is exactly what the right side works out to.',
@@ -138,10 +138,10 @@ insert into thy_math_display (equation_id, whole_equation, left_side, equal_sign
  '[{"symbol":"WW","name":"world-window fitness","meaning":"the image can be published"},{"symbol":"L","name":"logic","meaning":"it obeys locked world canon"},{"symbol":"I","name":"imagination","meaning":"worth looking at, not a poster"},{"symbol":"H","name":"theatre","meaning":"real staging, light and an action beat"},{"symbol":"B","name":"business","meaning":"embedded marks, serial and a commerce path"},{"symbol":"M","name":"membrane","meaning":"viewer-plane separation is held correctly"},{"symbol":"T","name":"transfer","meaning":"the viewer learns something"},{"symbol":"×","name":"times","meaning":"one strong factor cannot rescue a broken one"}]',
  '[{"symbol":"L,I,H,B,M,T","unit":"score","range":"integer 0 to 5; below 4 blocks"},{"symbol":"WW","unit":"score (no unit)","range":"0 to 15625"}]',
  'An image goes public only if it is true to the world, worth seeing, properly staged, carries the business, separates the viewer correctly and teaches something.',
- 'The 589 Royal Kitchen packet scored WW = 8000 = 5×5×5×4×4×4: three factors perfect, three at 4. It passes the packet check but still needs the second check on the rendered frame.',
+ 'The 589 Royal Kitchen packet scored WW = 8000 = 5×5×5×4×4×4: three factors perfect, three at 4. It passed the packet check then; the 595 contract re-score is 3840 (below the 4096 floor, B=3) until the brand-mark rulings clear.',
  'Twice for every public still, carousel or motion post: on the packet before generation, and on the rendered asset before publication.',
- 'Every factor at least 4 means publishable. 8000 out of a maximum 15625 means it passes, with three factors that could still improve.',
- 'Which of the three factors at 4 would most improve the post if it reached 5?', null, 594),
+ 'Every factor at least 4 means publishable (floor 4^6 = 4096). 8000 passes; 3840 fails because one factor is 3.',
+ 'Which of the three factors at 4 would most improve the post if it reached 5?', null, 595),
 
 ('MATH-G-588', 'G_t = f(S, A, E, C, R, V)', 'G_t — the state of a gate at time t',
  '"=" means: the left side is exactly what the right side works out to.',
@@ -152,7 +152,7 @@ insert into thy_math_display (equation_id, whole_equation, left_side, equal_sign
  'GATE-OMNIVIEW-WITNESSED on the DASHBOARD topic: S = CONTEXT and SEQUENCE on the live dashboard; A = Chairman; E = no live sign-in witness; C = the deploy repo does not contain the surface; R = claiming live when it is not; V = 591. So G_t = BLOCKED.',
  'Any time a rule, approval or restriction decides whether work can move.',
  'G_t tells you whether you may proceed, and the six inputs tell you exactly what would have to change to move it.',
- 'Which of the six inputs would have to change for this gate to move, and who has the authority to change it?', 'f means FUNCTION OF — the rule describing how these pieces work together.', 594)
+ 'Which of the six inputs would have to change for this gate to move, and who has the authority to change it?', 'f means FUNCTION OF — the rule describing how these pieces work together.', 595)
 
 on conflict (equation_id) do update set
   whole_equation = excluded.whole_equation, left_side = excluded.left_side, equal_sign = excluded.equal_sign,

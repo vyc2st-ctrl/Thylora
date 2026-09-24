@@ -71,7 +71,7 @@
    "domain": "P1 UI",
    "source_point": "Per topic (Time Run, Alistair Crowe, Royal Castle, World Window 001, Store, Sports, QYRIS, Printful first shirt) return authority/superseded/people/places/objects/work/gates/latest correction/unresolved/next action",
    "response_state": "ANSWERED",
-   "response_ref": "spine-594/omniview/topic-readback-594.json (live backend read, labelled BACKEND not UI)",
+   "response_ref": "spine-594/omniview/topic-readback-595.json (live backend read, labelled BACKEND not UI)",
    "omission_reason": null
   },
   {
@@ -183,7 +183,7 @@
    "domain": "DOMAIN",
    "source_point": "Mathematical presentation (MATH DISPLAY LAW)",
    "response_state": "EXECUTED",
-   "response_ref": "thy_math_display (11 equations) + MATH tab",
+   "response_ref": "thy_math_display (12 equations) + MATH tab",
    "omission_reason": null
   },
   {
@@ -510,16 +510,16 @@
    "point_no": 64,
    "domain": "P4 KITCHEN",
    "source_point": "Restore original approved camera/composition; painterly render style-reference only",
-   "response_state": "EXECUTED",
-   "response_ref": "contract CAMERA (see blockers for source bytes)",
-   "omission_reason": null
+   "response_state": "BLOCKED",
+   "response_ref": "pre-render-contract.json blockers B1, B9",
+   "omission_reason": "Original approved still bytes/hash are not in the backend (source_asset_hash NULL); camera is DERIVED from recovered text (35 mm, level, 155 cm) and must be re-solved from the anchor image once the Chairman supplies it."
   },
   {
    "point_no": 65,
    "domain": "P4 KITCHEN",
    "source_point": "Pre-render contract: CAMERA, ROOM, every object why/who/when/before/next",
    "response_state": "EXECUTED",
-   "response_ref": "ROYAL-KITCHEN-PRE-RENDER-CONTRACT.md",
+   "response_ref": "ROYAL-KITCHEN-PRE-RENDER-CONTRACT.md (status BLOCKED: 9 blockers B1–B9; 20 objects with why/who/when/before/next)",
    "omission_reason": null
   },
   {
@@ -527,7 +527,7 @@
    "domain": "P4 KITCHEN",
    "source_point": "O_t = f(I,L,S,C,E,H) with f = FUNCTION OF",
    "response_state": "EXECUTED",
-   "response_ref": "contract math block + MATH-O-594 registration",
+   "response_ref": "contract math block + MATH-O-595 registration",
    "omission_reason": null
   },
   {
@@ -559,7 +559,7 @@
    "domain": "P5 MATH",
    "source_point": "Apply the 11-part display to every equation",
    "response_state": "EXECUTED",
-   "response_ref": "thy_math_display: 11 of 11 registered equations + MATH-O-594",
+   "response_ref": "thy_math_display: 12 of 12 registered equations (10 prior + MATH-G-588 + MATH-O-595)",
    "omission_reason": null
   },
   {
