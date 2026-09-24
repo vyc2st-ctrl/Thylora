@@ -147,6 +147,6 @@ Under the standing directive, this lane is treated as a primary subject, not a s
 
 ## 7. Findings to flag, not fix
 
-- **Name-lock drift in this repo.** `rae-link/lib/rights.js` spells the planet **EdereAriah**. The backend canonical form is **EdereAirah** (lock at sequence 532, enforced by trigger `THY-NAMEGUARD-EDEREAIRAH-001`). I left it unchanged: QYRIS name_rule forbids a silent rewrite. It needs a Chairman ruling or an intentional correction commit.
+- **Name-lock drift in this repo.** The planet is spelled **EdereAriah** in `rae-link/lib/rights.js`, `rae-link/index.html`, `app/sports-betting.html` and `.github/workflows/patch-dashboard-r8.yml`. The backend canonical form is **EdereAirah** (lock at sequence 532, enforced by trigger `THY-NAMEGUARD-EDEREAIRAH-001`). I left it unchanged: QYRIS name_rule forbids a silent rewrite. It needs a Chairman ruling or an intentional correction commit.
 - **"Principal programme"** exists only as qq revenue line 6. If a standalone principal offer was intended, it has not been recorded.
 - **Nothing was written to thylora-dash in this pass.** All reads, no writes.
