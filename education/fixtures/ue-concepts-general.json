@@ -1,0 +1,37 @@
+{
+  "_source": "thylora-dash (jvsdxhrfhtlgaknhjxlz) public.ue_concepts, read 2026-09-24. Verbatim; do not edit here, edit in the backend.",
+  "concepts": [
+    {
+      "concept_code": "UE-C-PRESSURE-001",
+      "title": "Pressure is force spread over area",
+      "subject_code": "SCIENCE",
+      "band_min": "UE-BAND-03",
+      "band_max": "UE-BAND-08",
+      "truth_state": "SUPPORTED",
+      "safety_class": "GENERAL",
+      "what_it_is": "Pressure is how much force is pushing on each piece of a surface. The same push spread over a bigger area presses less hard on any one spot; squeezed into a smaller area it presses harder. Written plainly: pressure equals force divided by area.",
+      "how_we_know": "Direct measurement. You can put the same weight on a wide block and a narrow block on soft ground and measure how far each sinks. The relationship holds across repeated experiments in many laboratories and is used every day in engineering design that people trust with their lives.",
+      "test_question": "Two people press on your hand with exactly the same push, one with a fingertip and one with a flat palm. Which hurts more, and what exactly is different between them?",
+      "teach_back_challenge": "Explain to someone younger why walking on snow in boots sinks but on snowshoes it does not, without using the word pressure until the end.",
+      "real_world_application": "Choosing tyre width for a loaded trailer on soft ground; deciding whether a shelf bracket will pull out of plasterboard; understanding why a chef sharpens a knife instead of pushing harder.",
+      "common_misunderstanding": "That pressure and force are the same thing. A child will say the knife is stronger. The force from the hand can be identical; only the area changed.",
+      "what_remains_unknown": "The simple relationship assumes the surface is rigid enough and the force is spread evenly. Real contact patches are uneven, and predicting the exact pressure distribution on a soft, rough or moving surface is still difficult and is done with models rather than a single clean number."
+    },
+    {
+      "concept_code": "UE-C-LEVER-001",
+      "title": "A lever trades distance for force",
+      "subject_code": "MECHANICS",
+      "band_min": "UE-BAND-03",
+      "band_max": "UE-BAND-08",
+      "truth_state": "SUPPORTED",
+      "safety_class": "GENERAL",
+      "what_it_is": "A lever is a rigid bar turning on a pivot. Push the long side a long way with a small force and the short side moves a short way with a large force. You do not get free work out of it: what you gain in force you pay for in distance.",
+      "how_we_know": "Measurement. Hang known weights at measured distances from a pivot and the balance point is predictable every time. The relationship has been tested continuously since antiquity and underpins working machinery.",
+      "test_question": "You move the long end of a bar 60 centimetres to lift a load 10 centimetres. If the load weighs six times what you pushed with, where did the extra force come from?",
+      "teach_back_challenge": "Show a younger child with a ruler and a pencil why it is easier to lift a book from the far end, and get them to predict what happens if you move the pencil.",
+      "real_world_application": "Choosing where to grip a spanner on a tight bolt; understanding why a longer brake pedal feels lighter; setting up a wheelbarrow load so it lifts easily.",
+      "common_misunderstanding": "That a lever makes the work smaller. It does not. It makes the force smaller and the distance longer, and the work is roughly the same minus what friction takes.",
+      "what_remains_unknown": "Where friction, flex in the bar and the exact pivot behaviour matter, the clean relationship becomes an approximation. Real joints, including the joints in a human body, are messier than the textbook pivot."
+    }
+  ]
+}
