@@ -18,6 +18,8 @@ echo "== resetting $DB"
 psql -q -c "drop database if exists $DB" >/dev/null 2>&1
 psql -q -c "create database $DB"       >/dev/null 2>&1
 run "$HERE/supabase_stub.sql" >/dev/null || { echo "stub failed"; exit 1; }
+# Live registry shapes (read from thylora-dash 2026-09-24) so 0010 is tested against reality.
+run "$HERE/live_shape_stub.sql" >/dev/null || { echo "live-shape stub failed"; exit 1; }
 
 status=0
 for pass in "first" "second (idempotency)"; do

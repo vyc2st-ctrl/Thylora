@@ -1,0 +1,261 @@
+{
+ "captured_at": "2026-09-24T18:49:38.156422+00:00",
+ "total_open_items": 1461,
+ "by_registry": {
+  "autonomy_open": 279,
+  "commercial": 23,
+  "idea": 299,
+  "product": 27,
+  "production": 16,
+  "program": 154,
+  "realization": 103,
+  "revenue": 309,
+  "store": 16,
+  "work": 130,
+  "workroom": 27,
+  "wtask": 78
+ },
+ "lanes": {
+  "commerce": 623,
+  "store": 165,
+  "publishing": 198,
+  "film_show": 277,
+  "education": 214,
+  "software_app": 729,
+  "world_continuity": 665,
+  "rights_provenance": 437,
+  "security": 185,
+  "revenue": 409
+ },
+ "clusters": {
+  "LEGAL_REVIEW": 271,
+  "TRUTH_EVIDENCE_GATE": 197,
+  "RIGHTS_EVIDENCE": 150,
+  "RUNTIME_WITNESS": 126,
+  "MARKET_CHANNEL": 117,
+  "PROVIDER_ACCOUNT": 94,
+  "CHECKOUT_REACCESS_WITNESS": 69,
+  "VISUAL_APPROVAL": 37,
+  "ARTIFACT_QUALITY_REBUILD": 14,
+  "CHAIRMAN_RELEASE_REVIEW": 14,
+  "SOURCE_ACCESS": 13,
+  "PRICE_APPROVAL": 12
+ },
+ "gates": {
+  "SPEND_ACCOUNT": 32,
+  "PUBLIC_RELEASE": 143,
+  "LEGAL": 290,
+  "OUTREACH": 27,
+  "IDENTITY": 6,
+  "PAYMENT": 186,
+  "PRODUCTION_DDL": 1,
+  "CHAIRMAN_DECISION": 27,
+  "PRICE": 10
+ },
+ "findings": {
+  "BLOCKER_UNDECLARED": 179,
+  "STALE_OVER_14_DAYS": 756,
+  "TRUTH_CLASS_UNDECLARED": 215,
+  "TEMPLATE_NEXT_ACTION": 153,
+  "REVENUE_PATH_NO_PRODUCT": 308,
+  "MISSING_NEXT_ACTION": 157
+ },
+ "state_vocabulary_size": {
+  "autonomy_open": 4,
+  "commercial": 12,
+  "idea": 7,
+  "product": 3,
+  "production": 4,
+  "program": 13,
+  "realization": 13,
+  "revenue": 5,
+  "store": 6,
+  "work": 32,
+  "workroom": 14,
+  "wtask": 26
+ },
+ "money_nearest_gate_profile": [
+  {
+   "passed": 5,
+   "of": 8,
+   "missing": [
+    "reaccess",
+    "checkout",
+    "mobile"
+   ]
+  },
+  {
+   "passed": 5,
+   "of": 8,
+   "missing": [
+    "reaccess",
+    "checkout",
+    "mobile"
+   ]
+  },
+  {
+   "passed": 5,
+   "of": 8,
+   "missing": [
+    "reaccess",
+    "checkout",
+    "mobile"
+   ]
+  },
+  {
+   "passed": 5,
+   "of": 8,
+   "missing": [
+    "reaccess",
+    "checkout",
+    "mobile"
+   ]
+  },
+  {
+   "passed": 5,
+   "of": 8,
+   "missing": [
+    "reaccess",
+    "checkout",
+    "mobile"
+   ]
+  },
+  {
+   "passed": 5,
+   "of": 8,
+   "missing": [
+    "reaccess",
+    "checkout",
+    "mobile"
+   ]
+  },
+  {
+   "passed": 5,
+   "of": 8,
+   "missing": [
+    "reaccess",
+    "checkout",
+    "mobile"
+   ]
+  },
+  {
+   "passed": 4,
+   "of": 8,
+   "missing": [
+    "vis",
+    "reaccess",
+    "checkout",
+    "mobile"
+   ]
+  },
+  {
+   "passed": 3,
+   "of": 8,
+   "missing": [
+    "vis",
+    "delivery",
+    "reaccess",
+    "checkout",
+    "mobile"
+   ]
+  },
+  {
+   "passed": 1,
+   "of": 8,
+   "missing": [
+    "src",
+    "vis",
+    "rights",
+    "delivery",
+    "reaccess",
+    "checkout",
+    "mobile"
+   ]
+  },
+  {
+   "passed": 0,
+   "of": 8,
+   "missing": [
+    "src",
+    "art",
+    "vis",
+    "rights",
+    "delivery",
+    "reaccess",
+    "checkout",
+    "mobile"
+   ]
+  },
+  {
+   "passed": 0,
+   "of": 8,
+   "missing": [
+    "src",
+    "art",
+    "vis",
+    "rights",
+    "delivery",
+    "reaccess",
+    "checkout",
+    "mobile"
+   ]
+  },
+  {
+   "passed": 0,
+   "of": 8,
+   "missing": [
+    "src",
+    "art",
+    "vis",
+    "rights",
+    "delivery",
+    "reaccess",
+    "checkout",
+    "mobile"
+   ]
+  },
+  {
+   "passed": 0,
+   "of": 8,
+   "missing": [
+    "src",
+    "art",
+    "vis",
+    "rights",
+    "delivery",
+    "reaccess",
+    "checkout",
+    "mobile"
+   ]
+  },
+  {
+   "passed": 0,
+   "of": 8,
+   "missing": [
+    "src",
+    "art",
+    "vis",
+    "rights",
+    "delivery",
+    "reaccess",
+    "checkout",
+    "mobile"
+   ]
+  },
+  {
+   "passed": 0,
+   "of": 8,
+   "missing": [
+    "src",
+    "art",
+    "vis",
+    "rights",
+    "delivery",
+    "reaccess",
+    "checkout",
+    "mobile"
+   ]
+  }
+ ],
+ "note": "Counts only. Item-level records, titles and the named Chairman ledger are kept out of this public repository (spine/private/, gitignored)."
+}

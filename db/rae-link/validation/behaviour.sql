@@ -97,3 +97,14 @@ select 'tables='||count(*) from pg_class c join pg_namespace n on n.oid=c.relnam
 select 'policies='||count(*) from pg_policies where schemaname='public' and tablename like 'rael\_%';
 select 'check_constraints='||count(*) from pg_constraint c join pg_class t on t.oid=c.conrelid
  where t.relname like 'rael\_%' and c.contype='c';
+
+\echo == REPORT: 0010 registry link against the live registry shapes (live_shape_stub.sql)
+select 'workroom_registered='||count(*) from thylora_workroom_registry where workroom_code='WR-RAELINK-001';
+select 'departments_untouched='||(count(*)=0) from thylora_departments where department_code='WR-RAELINK-001';
+select 'resolve_by_product_id='||(rael_resolve_product_ref('FIXTURE-PLANNED')->>'resolved');
+select 'resolve_missing='||(rael_resolve_product_ref('NO-SUCH-PRODUCT')->>'reason');
+select 'purchasable_store_gate_active='||rael_product_is_purchasable('gid://fixture/Product/ACTIVE');
+select 'purchasable_store_gate_draft='||rael_product_is_purchasable('gid://fixture/Product/DRAFT');
+select 'purchasable_published_verified='||rael_product_is_purchasable('FIXTURE-PUBLISHED-VERIFIED');
+select 'purchasable_published_partial='||rael_product_is_purchasable('FIXTURE-PUBLISHED-PARTIAL');
+select 'purchasable_planned='||rael_product_is_purchasable('FIXTURE-PLANNED');

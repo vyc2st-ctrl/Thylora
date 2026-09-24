@@ -268,3 +268,34 @@ If this work resumes cold, start here:
 
 NO LOSS. DO NOT GO BACKWARD. ONE SOURCE OF TRUTH. ACCESS ≠ AUTHORITY.
 CURRENT BACKEND OUTRANKS HISTORICAL PROMPTS.
+
+---
+
+## 8 · Delta · 2026-09-24 · SPINE FORWARD full-spine run
+
+Sections 1–7 above are the 2026-09-11 record and are left as written.
+
+**B1 · Backend unreachable → cleared for reads.** The egress proxy still refuses
+`jvsdxhrfhtlgaknhjxlz.supabase.co:443` (403 on CONNECT, re-tested 2026-09-24). Read access
+now comes through the Supabase connector: PostgreSQL **17.6**, `pgcrypto` 1.3,
+`auth.users` present, **no existing `rael_` object**. The four items owed under
+"Verification still owed" in `db/rae-link/README.md` are answered. B1 is no longer a blocker for reads.
+
+**0010 v1 → v2.** Inspecting the live shape found three defects, reproduced locally with
+`validation/live_shape_stub.sql`:
+
+| # | v1 | Live reality | v2 |
+|---|---|---|---|
+| D1 | registered the workroom in `thylora_departments` | six more NOT NULL columns, a FK to `thylora_agents`, and a status CHECK that rejects `IMPLEMENTATION_ACTIVE`. The insert raises, the file's transaction rolls back, and **neither function is created** | insert-only into `thylora_workroom_registry`, beside WR-PQR-001 and the others |
+| D2 | `products.product_code` | no such column; the key is `product_id` | matches `product_id` or `id` |
+| D3 | `release_state` / `state` | `approval_state`, `release_evidence_state`; the sale decision lives in `thylora_store_product_readiness.active_allowed` | store gate first, then `published` + `verified` |
+
+Evidence: `validation/run.sh` exit 0 on both runs; 9 new checks give the expected answers (store-gate ACTIVE
+purchasable `true`, a DRAFT `false`, published+partial `false`). The same lookups were run as
+read-only SELECTs on the live backend and agree. v1 is kept, unchanged, at
+`db/rae-link/history/0010_registry_link.v1.sql`.
+
+**Still held:** B2 (applying DDL to production), B3–B7 unchanged.
+**Restart:** section 6 still holds. Step 3 is done: this section records the live-schema read.
+Full-spine counts: `spine/runs/2026-09-24/PUBLIC-SUMMARY.json`. The named Chairman ledger is kept
+out of this public repository.

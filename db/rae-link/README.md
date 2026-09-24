@@ -66,3 +66,9 @@ Validation ran on PostgreSQL 16 locally, not on the live backend. Before
 applying: confirm the live Postgres version, that `auth.users` is the identity
 table in use, that `pgcrypto` is available, and that no existing object already
 uses the `rael_` prefix.
+
+### Answered 2026-09-24 (read-only, live backend)
+
+PostgreSQL 17.6 · `auth.users` present · `pgcrypto` 1.3 · no existing `rael_` object.
+The live shape also showed that 0010 v1 would abort (see `0010_registry_link.sql` header and
+`validation/live_shape_stub.sql`). Fixed in v2; v1 is kept in `history/`.
