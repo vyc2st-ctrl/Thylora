@@ -1,0 +1,53 @@
+{
+  "curriculum_code": "THY-CCI-CURRICULUM-001",
+  "title": "Civic Contact Institute — Seeing, Concluding, and Knowing What the Law Actually Says",
+  "label": "EDUCATIONAL — reasoning practice, not legal advice. Law varies by jurisdiction and changes over time.",
+  "modules": [
+    { "module": "M1", "title": "Observation", "goal": "Say only what was seen, heard or recorded.", "drill": "Rewrite ten sentences so each keeps only what a camera could capture." },
+    { "module": "M2", "title": "Inference", "goal": "Name the observations every conclusion rests on; list at least one other explanation.", "drill": "For each inference, write two rival explanations that fit the same observations." },
+    { "module": "M3", "title": "Legal standards are defined by law, not by feeling", "goal": "Recognise that terms such as reasonable suspicion and probable cause are legal standards whose meaning depends on the jurisdiction's law and courts.", "drill": "Given a scenario, state which jurisdiction's law would apply and what source you would need to read. Do not guess the answer." },
+    { "module": "M4", "title": "Jurisdiction and date", "goal": "Every legal statement names a place and an as-of date.", "drill": "Mark each statement in a news story as jurisdiction-specific, date-specific, both, or neither." },
+    { "module": "M5", "title": "Lawful escalation", "goal": "Safety first; document; ask plain questions; use lawful review channels afterwards; consult licensed counsel for what the law requires.", "drill": "Order the escalation steps and explain why physical resistance is never on the list." }
+  ],
+  "source_policy": {
+    "rule": "No lesson may state what an Earth law requires or permits unless a legal_source_registry row with world_layer EARTH, jurisdiction, official_source_uri, effective_from and evidence_status VERIFIED_OFFICIAL_TEXT is attached.",
+    "current_backend_state": "legal_source_registry holds no rows for these standards as of 2026-09-24; M3 therefore teaches how to find the source, not what it says.",
+    "candidate_sources_to_verify": [
+      { "jurisdiction": "US-FEDERAL", "title": "U.S. Constitution, Fourth Amendment", "evidence_status": "CITATION_CANDIDATE_NOT_VERIFIED_IN_BACKEND" },
+      { "jurisdiction": "US-FEDERAL", "title": "Terry v. Ohio, 392 U.S. 1 (1968)", "evidence_status": "CITATION_CANDIDATE_NOT_VERIFIED_IN_BACKEND" },
+      { "jurisdiction": "US-MD", "title": "Maryland statutes and appellate decisions on stops and searches", "evidence_status": "RESEARCH_REQUIRED" }
+    ]
+  },
+  "exercises": [
+    {
+      "exercise": "E1-good-observation",
+      "record": {
+        "observations": ["A grey sedan stopped at the corner at 21:40.", "The driver stayed in the car for six minutes.", "The engine was running."],
+        "inferences": [{ "claim": "The driver may have been waiting for someone.", "rests_on": [1, 2] }],
+        "standard_invoked": "INFERENCE",
+        "escalation_plan": ["STAY_SAFE_AND_CALM", "DOCUMENT"]
+      },
+      "expected": "PASS"
+    },
+    {
+      "exercise": "E2-interpretation-in-observation",
+      "record": {
+        "observations": ["The man was obviously suspicious."],
+        "inferences": [],
+        "standard_invoked": "OBSERVATION",
+        "escalation_plan": ["STAY_SAFE_AND_CALM"]
+      },
+      "expected": "FAIL — 'obviously suspicious' is a conclusion, not an observation"
+    },
+    {
+      "exercise": "E3-legal-standard-without-source",
+      "record": {
+        "observations": ["An officer asked for identification on a sidewalk."],
+        "inferences": [{ "claim": "The officer believed something was wrong.", "rests_on": [0] }],
+        "standard_invoked": "REASONABLE_SUSPICION",
+        "escalation_plan": ["STAY_SAFE_AND_CALM", "ASK_PLAIN_QUESTIONS", "DOCUMENT"]
+      },
+      "expected": "FAIL — a legal standard needs jurisdiction, as-of date and a sourced Earth law record"
+    }
+  ]
+}

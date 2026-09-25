@@ -1,0 +1,62 @@
+{
+  "contract_id": "THY-TX-001-CONTRACT-BEFORE-YOU-CALL-THE-DOCTOR",
+  "title": "Transmission 001 — Before You Call the Doctor",
+  "contract_stage": "SCENE_WORLD_PERSON_PRODUCT_CONTRACT",
+  "render_allowed": false,
+  "render_unlock": {
+    "requires_chairman_approval": true,
+    "requires_clinician_content_review": true,
+    "gates": [
+      "thylora_visual_preflight_gate",
+      "thylora_world_identity_gate",
+      "thylora_voice_provenance_gate",
+      "thylora_output_visual_identity_gate",
+      "thylora_truth_integrity_gate"
+    ]
+  },
+  "reuses": [
+    "THY-IDEA-FIVE-DOCTOR-HOME-NETWORK-001 (pre-call health packet requirement)",
+    "THY-IDEA-REPORTER-POV-GRAMMAR-001 (reporter point-of-view grammar)",
+    "ER-TX-EDU-LMS-001 (fixed plate + voice mode while moving image is unstable)",
+    "thylora_transmission_registry (row to be created only when Chairman approves the number)"
+  ],
+  "scene": {
+    "logline": "Late evening in an EdereAirah household: a parent is about to call the doctor for a feverish child and first spends two minutes getting the facts in order, so the call is faster and nothing important is forgotten.",
+    "duration_target_s": 150,
+    "media_mode": "FIXED_PLATE_PLUS_VOICE",
+    "camera_grammar": "Reporter point of view through the unseen membrane; still plates, no invented motion; the checklist appears as an object in the room, not as overlay text.",
+    "beats": [
+      { "beat": "B1 Reporter open", "purpose": "Reporter identifies herself, EdereAirah and the Earth mirror: this is a habit people on both sides can use." },
+      { "beat": "B2 The moment before the call", "purpose": "Parent with phone in hand; child resting. Tension: what will the doctor ask?" },
+      { "beat": "B3 Danger first", "purpose": "Parent checks the danger signs card first — if any are present, call emergency services now, not the office line." },
+      { "beat": "B4 The packet", "purpose": "Parent writes: when it started, temperature and how it was taken, medicines given with dose and time, allergies, drinking and toileting, what has changed." },
+      { "beat": "B5 The questions", "purpose": "Parent writes the three questions they want answered before hanging up." },
+      { "beat": "B6 The call", "purpose": "The clinician on the line hears a clear timeline; the call is short and calm." },
+      { "beat": "B7 Earth mirror close", "purpose": "Reporter: the same one-page packet exists for Earth viewers; it prepares a call, it does not replace one." }
+    ]
+  },
+  "world": {
+    "world_name": "EdereAirah",
+    "location_state": "OPEN — canonical household location/place name not yet assigned; must pass the Indigenous-first mirror place naming law before lock",
+    "time_state": "Continuity Day dateline per THY-IDEA-TIME-CANON-RESTORE-003 (507 Earth-read-day orbit, candidate); local hour: evening",
+    "weather_state": "OPEN",
+    "earth_mirror": "Any Earth household preparing to phone a clinician or nurse line about a child's fever",
+    "barrier_grammar": "THY-IDEA-VISUAL-BARRIER-GRAMMAR-001"
+  },
+  "people": [
+    { "slot": "REPORTER", "function": "Narrates and frames; never gives medical instruction herself", "identity_state": "CANON_REF", "canon_ref": "Nia Carter — THY-IDEA-REPORTER-POV-GRAMMAR-001", "appearance_locked": false },
+    { "slot": "PARENT", "function": "Prepares the packet and makes the call", "identity_state": "OPEN_CASTING", "appearance_locked": false },
+    { "slot": "CHILD", "function": "Resting, visible but not the focus; no distress imagery", "identity_state": "OPEN_CASTING", "appearance_locked": false, "guardian_context": true },
+    { "slot": "CLINICIAN_ON_LINE", "function": "Voice only; asks the questions the packet answered", "identity_state": "OPEN_CASTING", "appearance_locked": false }
+  ],
+  "product": {
+    "product_code": "THY-PROD-PRECALL-PACKET-001 (proposed)",
+    "title": "Before You Call the Doctor — one-page pre-call packet",
+    "form": "Printable one-page PDF plus fillable phone version",
+    "sections": ["Danger signs — call emergency services now", "What happened and when", "Temperature and how it was measured", "Medicines given: name, dose, time", "Allergies and conditions", "Drinking, eating, toileting", "What changed since it started", "My three questions", "Who I spoke to and what they said"],
+    "content_boundary": "Organises information for a call. Gives no diagnosis, dosing or treatment advice. Danger-sign wording must be taken from, and cited to, a named public health authority and reviewed by a licensed clinician before any release.",
+    "promise": "Helps you give a clear timeline on the phone.",
+    "store_state": "NOT_LISTED",
+    "store_path": "thylora_store_product_readiness row only after clinician review + visual preflight"
+  }
+}

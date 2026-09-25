@@ -1,0 +1,39 @@
+{
+  "offer_code": "THY-PILOT-FIVE-IDEAS-FIVE-BUILDS-001",
+  "title": "Five Ideas / Five Builds — free pilot",
+  "state": "CHAIRMAN_REVIEW",
+  "participant_cap": 5,
+  "ideas_per_participant_max": 5,
+  "builds_per_participant": 1,
+  "selection_rule": "Participant ranks their ideas; THYLORA picks the one that fits the delivery scope and explains the choice in writing, including why the others were not chosen (Contribution Wake rejected_ideas).",
+  "delivery_scope": {
+    "hours_cap": 12,
+    "calendar_days_cap": 21,
+    "revision_rounds": 1,
+    "deliverable_types": ["one-page concept brief", "clickable prototype page", "printable product draft", "short explainer script", "store-listing draft (not published)"],
+    "exclusions": ["legal, medical, tax or financial advice", "publishing to any live store or social account", "paid ad spend", "trademark or patent filing", "handling participant passwords or account logins", "manufacturing or physical inventory"]
+  },
+  "rights": {
+    "participant_keeps_idea_ownership": true,
+    "thylora_keeps_preexisting_tools": true,
+    "build_license": "Participant receives a non-exclusive perpetual licence to the delivered build for their own use; any sale by either party of the build requires a separate written agreement.",
+    "showcase_requires_separate_consent": true,
+    "consent_revocable": true,
+    "minors_allowed": false,
+    "confidentiality": "Ideas are visible only to the assigned builder and the Chairman under Role Access grants; never used to train or seed other offers without written consent."
+  },
+  "proof_of_work": {
+    "lineage_run": true,
+    "contribution_wake": true,
+    "deliverable_hash_recorded": true,
+    "participant_acceptance_recorded": true
+  },
+  "conversion": {
+    "offered_after": "DELIVERY_ACCEPTED",
+    "automatic_billing": false,
+    "price_state": "CHAIRMAN_TO_SET",
+    "paths": ["second build at a fixed price", "monthly build retainer", "revenue-share on a store product (separate agreement)"]
+  },
+  "chairman_outreach_approval": null,
+  "public_copy": "Bring up to five ideas. We will build one of them with you, for free, within a fixed scope. You keep your idea. We show the work only if you say yes, and you can change your mind."
+}

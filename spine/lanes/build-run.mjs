@@ -1,0 +1,251 @@
+// Builds ten-lane-run-001.json from one source so lane records stay consistent.
+// Run: node spine/lanes/build-run.mjs
+import { writeFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const here = dirname(fileURLToPath(import.meta.url));
+const CHAIR = { id: 'Vyctor Peete', kind: 'PERSON', role: 'Chairman — direction and authority' };
+const AI = { id: 'Claude (Anthropic) via Claude Code', kind: 'AI_ASSISTANT', role: 'Drafted code, contracts and records under Chairman direction', disclosed: true };
+const BRANCH = 'claude/thylora-ten-lane-advancement-g9ru1x';
+const witness = (...refs) => ({ class: 'REPO_TEST_PASS', refs: [...refs, `branch ${BRANCH}`], note: 'npm test in this repository. No deployment, publication or UI witness.' });
+
+const lanes = [
+  {
+    lane_code: 'L01-TX001-DOCTOR',
+    title: 'Transmission 001 — Before You Call the Doctor',
+    baseline: 'Pre-call health packet existed only as one requirement line inside THY-IDEA-FIVE-DOCTOR-HOME-NETWORK-001. thylora_transmission_registry held one row (ER-TX-EDU-LMS-001). No scene/world/person/product contract.',
+    delta: 'Contract spine/lanes/transmission-001.contract.json (7 beats, world state, 4 person slots, product boundary) and validator contracts.validateTransmissionContract. Render stays locked behind five existing preflight gates plus Chairman approval and clinician content review.',
+    team: ['STUDIO-DIRECTOR (unassigned)', 'STUDIO-CASTING (unassigned)', 'Licensed clinician reviewer (not yet identified)'],
+    contributors: [CHAIR, AI],
+    reasoning: 'The doctor-network idea already names a pre-call packet; making Transmission 001 the story of that packet gives one artifact that is both an episode and a store product, and the product is useful without any medical claim because it only organises facts for a call.',
+    rejected_options: [
+      { option: 'Render a draft still now', reason: 'Instruction was contract only; people slots are unlocked and render gates have not run.' },
+      { option: 'Include symptom guidance or dosing', reason: 'That is medical advice; boundary keeps the packet to information gathering, with danger-sign wording sourced to a public health authority.' },
+      { option: 'Invent new canonical characters', reason: 'Only Nia Carter exists as a registered reporter; other slots stay OPEN_CASTING.' },
+    ],
+    open_questions: [
+      { question: 'Is "Transmission 001" this episode, or does the First Transmission origin story (THY-IDEA-FIRST-TRANSMISSION-ORIGIN-SIX-001) keep number 001?', owner: 'Chairman' },
+      { question: 'Canonical household location and place name?', owner: 'Chairman / world naming law' },
+      { question: 'Which licensed clinician reviews the danger-sign wording?', owner: 'Chairman' },
+    ],
+    rights: 'Original script and packet text by THYLORA; danger-sign wording must be quoted and cited from a public health source whose terms allow reuse. No real patient data. Child slot is GUARDIAN_CONTEXT.',
+    security: 'No PHI collected. The fillable phone version stores entries on the device only until a privacy design is approved.',
+    store_revenue_transfer: 'Product THY-PROD-PRECALL-PACKET-001 (proposed) → thylora_store_product_readiness row after clinician review and visual preflight; store_state NOT_LISTED. Later feeds the doctor-network intake.',
+    witness: witness('tests/spine-contracts.test.mjs'),
+    next_action: 'Chairman answers the numbering question and names a clinician reviewer; then fill location/time/weather and run preflight gates.',
+  },
+  {
+    lane_code: 'L02-LINEAGE-RUN',
+    title: 'VYC2ST 0→∞ Lineage Run',
+    baseline: 'No iteration/batch/unit ledger. Lineage existed as genealogy (THY-WORK-GENEALOGY-PUBLIC-RECORDS-586) and custody hashes on carryforward rows, not for artifacts.',
+    delta: 'Shared primitive spine/lib/lineage.js: iterations from 0 with no ceiling, batches, units, parents, provenance, canonical-JSON SHA-256 hash chain that detects edits, drops and reorders; ancestry() and wakeFor() queries.',
+    team: ['Backend engineering (unassigned)', 'Continuity desk (existing thylora_continuity_* tables)'],
+    contributors: [CHAIR, AI],
+    reasoning: 'Lanes 2, 3 and 5 all need the same thing — an append-only, provable record of what was made from what. Building it once and reusing it in the access log and stream queue avoids three ledgers.',
+    rejected_options: [
+      { option: 'New Supabase tables for runs/batches/units immediately', reason: 'DDL on production needs Chairman review; the contract is proven in code first and mirrored later.' },
+      { option: 'Reuse thylora_query_carryforward as the unit ledger', reason: 'That table holds query custody, not artifacts; mixing them would blur supersession rules.' },
+    ],
+    open_questions: [
+      { question: 'Mirror lineage units into thylora-dash as a new table, or into thylora_continuity_payloads?', owner: 'Chairman' },
+      { question: 'What is iteration 0 for VYC2ST — the first recorded idea, or this run?', owner: 'Chairman' },
+    ],
+    rights: 'Every unit carries provenance.rights_basis; a unit without it is refused.',
+    security: 'Hash chain is tamper-evident, not secret. Units must not contain credentials or private medical/legal data.',
+    store_revenue_transfer: 'Proof-of-work for Five Ideas/Five Builds and provenance marks on store products (shirt, packet) read from this ledger.',
+    witness: witness('tests/spine-lineage.test.mjs'),
+    next_action: 'Chairman picks the mirror target; then write the migration and back-fill this run\'s ten units.',
+  },
+  {
+    lane_code: 'L03-CONTRIBUTION-WAKE',
+    title: 'Contribution Wake',
+    baseline: 'THY-IDEA-CONTRIBUTION-REVIEW-001 (DESIGN_ACTIVE) and IDEA-FWD-016 World Worker Contribution Ledger (REGISTERED) described the need; no record format enforced.',
+    delta: 'validateContribution in lineage.js: maker (PERSON/TEAM/AI_ASSISTANT/IN_WORLD_CHARACTER), team, role, question answered, rejected ideas with reasons, open questions with owners, consent for public credit. appendUnit refuses any artifact without at least one valid wake record.',
+    team: ['Contribution Review desk (THY-IDEA-CONTRIBUTION-REVIEW-001, unstaffed)'],
+    contributors: [CHAIR, AI],
+    reasoning: 'Tying the wake to the unit append means an artifact cannot enter the lineage without its makers and its rejected paths, which is the only way "tied to every artifact" holds under pressure.',
+    rejected_options: [
+      { option: 'Separate contributions table joined later', reason: 'Allows artifacts with no wake; enforcement would depend on discipline.' },
+      { option: 'Hide AI contributions under the operator\'s name', reason: 'Violates disclosure; AI records must say they are AI.' },
+    ],
+    open_questions: [
+      { question: 'Public credit display rules for Earth contributors (name, handle, or anonymous)?', owner: 'Chairman' },
+      { question: 'Reward criteria link to the Contribution Review + Reward Desk?', owner: 'Chairman' },
+    ],
+    rights: 'Public credit for a person requires consent_state GRANTED. In-world characters must carry world_layer so they are never mistaken for Earth people.',
+    security: 'Wake records hold names and roles only; no contact details.',
+    store_revenue_transfer: 'Credits block on products and pilot builds; future reward payouts reference wake records.',
+    witness: witness('tests/spine-lineage.test.mjs'),
+    next_action: 'Link THY-IDEA-CONTRIBUTION-REVIEW-001 and IDEA-FWD-016 to this primitive and draft the public credit rule for Chairman approval.',
+  },
+  {
+    lane_code: 'L04-CIVIC-CONTACT',
+    title: 'Civic Contact Institute',
+    baseline: 'legal_source_registry exists but holds no rows for reasonable suspicion, probable cause or the Fourth Amendment. legal_family_counsel_registry holds 0 rows.',
+    delta: 'spine/lib/civic.js: five-rung ladder (observation → inference → reasonable suspicion → probable cause → legal authority), five-step lawful escalation, checkReasoning() that refuses interpretation inside observations, unsupported inferences, and any legal standard lacking jurisdiction, as-of date and a sourced EARTH law record. Curriculum spine/lanes/civic-curriculum-001.json with 5 modules and 3 graded exercises.',
+    team: ['Curriculum author (unassigned)', 'Licensed attorney reviewer per jurisdiction (not yet identified)'],
+    contributors: [CHAIR, AI],
+    reasoning: 'The curriculum can teach the reasoning discipline today without stating any law; the code makes it impossible to slip a legal claim in without a jurisdiction-specific, dated source.',
+    rejected_options: [
+      { option: 'Write plain-language definitions of reasonable suspicion and probable cause', reason: 'Those are legal claims; no verified source rows exist yet.' },
+      { option: 'Teach "know your rights" scripts', reason: 'Rights vary by jurisdiction and date; would be legal advice without counsel review.' },
+    ],
+    open_questions: [
+      { question: 'First jurisdiction to source (US-federal, Maryland, or both)?', owner: 'Chairman' },
+      { question: 'Which licensed attorney reviews module 3 before any learner sees it?', owner: 'Chairman' },
+    ],
+    rights: 'Official legal texts are public; commentary must be original or licensed.',
+    security: 'Exercises use invented scenarios; no real incident data.',
+    store_revenue_transfer: 'Course/workbook product after attorney review; not listed.',
+    witness: witness('tests/spine-civic.test.mjs'),
+    next_action: 'Insert the three candidate sources into legal_source_registry as RESEARCH_REQUIRED and verify against official text.',
+  },
+  {
+    lane_code: 'L05-VYC-STREAM',
+    title: 'VYC Stream',
+    baseline: 'Voice gates exist (thylora_voice_transcription_identity_gate, thylora_voice_provenance_gate, voice_profile_registry) and the SPINE FORWARD voice command patch is in app/. No atomic extraction, relation map or loss-proof queue.',
+    delta: 'spine/lib/stream.js: verbatim capture with transcript hash and DECLARED vs gate-VERIFIED speaker; atomic extraction whose spans tile every non-whitespace character; relation map (shared terms + registry names); queue with no discard state (PARK needs a reason); hash-verified snapshot/restore; restart point; end-to-end noLoss().',
+    team: ['Voice/continuity engineering (unassigned)', 'STREAM_REVIEWER role (Role Access template)'],
+    contributors: [CHAIR, AI],
+    reasoning: 'Request loss has been the repeated failure (carryforward 593). Coverage arithmetic makes loss detectable at extraction time rather than discovered later.',
+    rejected_options: [
+      { option: 'LLM-only summarisation into ideas', reason: 'Summaries can drop clauses silently; spans preserve every word and summaries can sit on top.' },
+      { option: 'Allow DISCARDED state', reason: 'Would reintroduce loss; PARKED with reason keeps the idea recoverable.' },
+    ],
+    open_questions: [
+      { question: 'Which capture device/app feeds transcripts first (dashboard voice patch, Wispr Flow, phone)?', owner: 'Chairman' },
+      { question: 'Should atoms mirror into idea_registry automatically or only after review?', owner: 'Chairman' },
+    ],
+    rights: 'Chairman voice captures are Chairman-owned; third-party voices need consent before storage.',
+    security: 'Raw audio refs stay private; speaker never promoted to VERIFIED without a gate reference.',
+    store_revenue_transfer: 'Faster idea → queue → store-lane routing; no direct product.',
+    witness: witness('tests/spine-stream.test.mjs'),
+    next_action: 'Run the ten-lane prompt itself through the stream as the first real capture and route each atom to its lane code.',
+  },
+  {
+    lane_code: 'L06-ROLE-ACCESS',
+    title: 'Role Access',
+    baseline: 'No contractor/social/writer/designer permission model in this repo; app shares one session key. thylora_studio_role_registry lists roles but not access scopes.',
+    delta: 'spine/lib/access.js: role templates (CONTRACTOR, SOCIAL, WRITER, DESIGNER plus FAMILY_LIAISON, STREAM_REVIEWER, PILOT_PARTICIPANT) with explicit scopes, max durations, reserved Chairman-only scopes, self-grant refusal, credential-field refusal, resource pinning, expiry, revocation, and a hash-chained log of every grant, check and denial.',
+    team: ['Security/backend engineering (unassigned)'],
+    contributors: [CHAIR, AI],
+    reasoning: 'A grant bound to the person\'s own identity makes password sharing unnecessary; refusing credential-shaped fields makes it impossible to smuggle one through the grant itself.',
+    rejected_options: [
+      { option: 'Shared team logins', reason: 'Explicitly forbidden; no attribution or revocation.' },
+      { option: 'Wildcard scopes such as workroom:*', reason: 'Breaks least privilege; every scope is enumerated.' },
+    ],
+    open_questions: [
+      { question: 'Map these templates onto Supabase RLS policies now, or after the first contractor is named?', owner: 'Chairman' },
+      { question: 'Default grant length for social contractors (template max is 30 days)?', owner: 'Chairman' },
+    ],
+    rights: 'Contractor work product terms belong in each contract; the grant carries no IP terms.',
+    security: 'Publication, payment capture, deletion, access administration and canon writes are reserved to the Chairman.',
+    store_revenue_transfer: 'Unblocks bringing in writers/designers for store products without exposing the backend.',
+    witness: witness('tests/spine-access.test.mjs'),
+    next_action: 'Draft RLS policy SQL that mirrors the templates for Chairman review (not applied).',
+  },
+  {
+    lane_code: 'L07-FAMILY-CRISIS',
+    title: 'Family Crisis Response',
+    baseline: 'THY-IDEA-CRISIS-WHOLE-RESPONSE-001 (DESIGN_ACTIVE) asked for a full-package matrix; workforce_care_policy and legal_family_counsel_registry exist; counsel registry has 0 rows.',
+    delta: 'spine/lib/crisis.js: incident types, emergency-first step (US 911 / 988 for mental health), single named point of contact, medical routing to the patient\'s own providers, counsel referral only from VERIFIED registry rows (otherwise bar referral service), work continuity, family support, privacy; route text passes the claim guard; liaison access is a 3-day scoped grant.',
+    team: ['People desk (unassigned)', 'Independent licensed counsel (none on file)'],
+    contributors: [CHAIR, AI],
+    reasoning: 'Routing the whole package at once answers the existing idea; keeping THYLORA as coordinator, with counsel working for the client, avoids any representation or medical-service claim.',
+    rejected_options: [
+      { option: 'Name specific lawyers or clinics now', reason: 'None are verified in the registry.' },
+      { option: 'In-house legal advice line', reason: 'Would be legal representation/advice; out of scope.' },
+    ],
+    open_questions: [
+      { question: 'Which employee population does this cover first (THYLORA staff, contractors, families of the Six)?', owner: 'Chairman' },
+      { question: 'Who verifies counsel entries and how often?', owner: 'Chairman' },
+    ],
+    rights: 'Incident records are private to the family and granted staff.',
+    security: 'Liaison grants pinned to one incident, 3-day expiry, every read logged.',
+    store_revenue_transfer: 'None direct; workforce care benefit. Possible later B2B template, not planned.',
+    witness: witness('tests/spine-crisis.test.mjs'),
+    next_action: 'Chairman names the first covered population; then add one verified counsel row per jurisdiction.',
+  },
+  {
+    lane_code: 'L08-SAFE-FAILURE',
+    title: 'Safe Failure Engineering',
+    baseline: 'transport_safety_case_registry holds rows for one vehicle; transport_design_gate_registry exists. No FMEA template or egress/redundancy rule set.',
+    delta: 'spine/lib/fmea.js: eight required hazards, RPN, action threshold, severity ≥ 9 rule, zero-energy egress fallback (no power, findable by touch, named operator), ≥ 2 redundant channels on different power sources, blank worksheet, export to transport_safety_case_registry rows as NOT_VALIDATED. Reference worksheet spine/lanes/fmea-template-vehicle-001.json.',
+    team: ['Vehicle safety engineer (unassigned)', 'Independent reviewer (unassigned)'],
+    contributors: [CHAIR, AI],
+    reasoning: 'Loss of power must never trap people; encoding that as a hard rule, rather than an RPN score, stops a low-probability entrapment from being ranked away.',
+    rejected_options: [
+      { option: 'RPN-only prioritisation', reason: 'Severity-10 low-occurrence entrapment could fall below threshold.' },
+      { option: 'Cite specific regulations as met', reason: 'Would imply certification; regulations must be sourced per jurisdiction and tested.' },
+    ],
+    open_questions: [
+      { question: 'Apply first to the vehicle already in transport_safety_case_registry, or to a machine (not a vehicle)?', owner: 'Chairman' },
+      { question: 'Which jurisdiction\'s vehicle standards to source first?', owner: 'Chairman' },
+    ],
+    rights: 'Template is original work.',
+    security: 'Not a certification; export marks every row NOT_VALIDATED.',
+    store_revenue_transfer: 'ER automotive lanes (er_automotive_*) can use the template for show episodes and collectible design notes.',
+    witness: witness('tests/spine-fmea.test.mjs'),
+    next_action: 'Fill a worksheet for the registry vehicle and insert its rows as NOT_VALIDATED after Chairman picks the subject.',
+  },
+  {
+    lane_code: 'L09-THE-SIX-LESSON',
+    title: 'THE SIX — first Earth-math → EdereAirah-understanding lesson',
+    baseline: 'WR-UNDERSTANDING-ENGINE-001 schema live with seeded concepts (e.g. UE-C-PRESSURE-001, UE-C-LEVER-001); UE-T-007 (author more concepts) is NEXT. No classroom lesson for THE SIX.',
+    delta: 'Lesson spine/lanes/the-six-lesson-001.mjs: concept UE-C-YEAR-RATIO-001 in ue_concepts shape (MATHEMATICS, bands 03–06), 3 worked examples checked by code, six classroom stages, K×E×C×X×T rubric with zero rule; orbit length disclosed to students as a canon candidate.',
+    team: ['Teacher for THE SIX (not yet named; guardian identity model undecided)'],
+    contributors: [CHAIR, AI],
+    reasoning: 'Age conversion is concrete for children, uses a real Earth measurement, and is the first place EdereAirah\'s own time canon becomes something a child can compute.',
+    rejected_options: [
+      { option: 'Treat 507 days as settled fact', reason: 'Backend holds it as DESIGN_ACTIVE; students are told it is a candidate.' },
+      { option: 'Start with geometry of the orbit', reason: 'Needs the unknown day length; ratio works with Earth-read days now.' },
+    ],
+    open_questions: [
+      { question: 'Lock 507 Earth-read days as the orbit?', owner: 'Chairman' },
+      { question: 'Is an EdereAirah day the same length as an Earth day?', owner: 'Chairman / time canon' },
+      { question: 'Who teaches and which of THE SIX first?', owner: 'Chairman' },
+    ],
+    rights: 'Original lesson text.',
+    security: 'Children\'s understanding_records are guardian-context data; no records written until the guardian model is decided.',
+    store_revenue_transfer: 'Understanding Card and printable lesson later feed the education store lane; not listed.',
+    witness: witness('tests/spine-contracts.test.mjs'),
+    next_action: 'Insert UE-C-YEAR-RATIO-001 into ue_concepts after Chairman review; then render its Understanding Card (UE-T-008).',
+  },
+  {
+    lane_code: 'L10-FIVE-BUILDS',
+    title: 'Five Ideas / Five Builds',
+    baseline: 'thylora_first_customer_witness_policy and thylora_commerce_event_witness_v1 exist; no pilot offer, scope or conversion path.',
+    delta: 'Offer spine/lanes/five-builds-offer.json and validator pilot.js: ≤5 participants × ≤5 ideas × exactly 1 build; 12-hour / 21-day cap, 1 revision, explicit exclusions; participant keeps idea ownership; showcase needs separate revocable consent; no minors; proof of work via lineage + wake; paid conversion only after accepted delivery, never auto-billed; price left to Chairman; OUTREACH state refused without witnessed Chairman approval.',
+    team: ['Builder(s) under Role Access PILOT/CONTRACTOR grants (unassigned)'],
+    contributors: [CHAIR, AI],
+    reasoning: 'A bounded free build produces proof-of-work and testimonials faster than cold selling, while the caps keep cost fixed and the rights terms keep trust.',
+    rejected_options: [
+      { option: 'Open-ended free work', reason: 'Unbounded cost; no conversion signal.' },
+      { option: 'Set a conversion price now', reason: 'Pricing is a Chairman decision.' },
+      { option: 'Begin outreach', reason: 'Explicitly held.' },
+    ],
+    open_questions: [
+      { question: 'Approve the 12-hour / 21-day scope?', owner: 'Chairman' },
+      { question: 'Conversion price and which of the three paid paths to offer first?', owner: 'Chairman' },
+      { question: 'Who is eligible (existing contacts, public intake)?', owner: 'Chairman' },
+    ],
+    rights: 'See offer.rights: idea ownership stays with participant; non-exclusive licence of the build; separate agreement for any sale.',
+    security: 'Participants never share passwords; access via PILOT_PARTICIPANT grants only.',
+    store_revenue_transfer: 'Nearest cash path in this run: conversion to second build or retainer after acceptance; builds may become store products under separate agreement.',
+    witness: witness('tests/spine-pilot.test.mjs'),
+    next_action: 'Chairman approves scope and sets price; state moves to APPROVED_NO_OUTREACH. Outreach remains a separate decision.',
+  },
+];
+
+const run = {
+  run_code: 'THY-TEN-LANE-RUN-001',
+  date: '2026-09-24',
+  authority: 'Vyctor Peete (Chairman)',
+  head_read: { carryforward_sequence: 596, backend: 'thylora-dash (jvsdxhrfhtlgaknhjxlz)' },
+  qyris_2st_note: 'No row named QYRIS-2ST exists in thylora-dash; this run applies the twelve fields the Chairman specified and validates them with spine/lib/qyris2st.js.',
+  shared_primitives_first: ['spine/lib/qyris2st.js', 'spine/lib/lineage.js', 'spine/lib/access.js'],
+  lanes,
+};
+writeFileSync(join(here, 'ten-lane-run-001.json'), JSON.stringify(run, null, 2) + '\n');
+console.log(`wrote ${lanes.length} lanes`);
