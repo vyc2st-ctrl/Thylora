@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Twelve Miles Welcome</title>
+<!--
+  THY-WELCOME-TWELVE-MILES-001 · Phase 2 · THY-CONTINUITY-SPINE-610
+  STATE: DRAFT FOR CHAIRMAN REVIEW. Not deployed. Not linked from Shopify.
+  The maker thank-you is a labelled simulation and only appears after the
+  customer chooses to see it. Feedback is sent by the customer's own mail app
+  (mailto); nothing is stored by this page.
+-->
+<style>
+:root{--bg:#f7f2e8;--card:#fffdf8;--ink:#1f1b16;--muted:#6b6154;--line:#d9c9a6;--gold:#8a6d2f;--accent:#3b5b3a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--card:#1f1c17;--ink:#f1eadb;--muted:#b3a893;--line:#4a4130;--gold:#d2b26b;--accent:#8fbf8a}}
+:root[data-theme="dark"]{--bg:#15130f;--card:#1f1c17;--ink:#f1eadb;--muted:#b3a893;--line:#4a4130;--gold:#d2b26b;--accent:#8fbf8a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Georgia,"Times New Roman",serif}
+main{max-width:980px;margin:0 auto;padding:28px 16px 60px}
+.k{font:600 12px/1.2 system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+h1{font-size:clamp(28px,5vw,42px);line-height:1.1;margin:8px 0 10px}
+h2{font-size:20px;margin:0 0 8px}
+p{margin:0 0 12px}
+.grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:20px}
+@media(min-width:820px){.grid{grid-template-columns:1.55fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px}
+.steps{margin:0;padding-left:20px}.steps li{margin-bottom:6px}
+a.btn,button{display:inline-block;font:600 15px system-ui,sans-serif;background:var(--accent);color:#fff;border:0;border-radius:8px;padding:11px 16px;text-decoration:none;cursor:pointer}
+button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.eq{font:700 20px/1.3 ui-monospace,Menlo,monospace;text-align:center;padding:10px;border:1px solid var(--line);border-radius:8px;margin:8px 0 12px}
+table{width:100%;border-collapse:collapse;font:14px/1.35 system-ui,sans-serif}
+td,th{padding:6px 4px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+td.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.note{font:13px/1.45 system-ui,sans-serif;color:var(--muted)}
+.sim{border-left:4px solid var(--gold);padding:12px 14px;background:color-mix(in srgb,var(--card) 85%,var(--gold) 15%);border-radius:6px;margin-top:10px}
+.tag{display:inline-block;font:700 11px system-ui,sans-serif;letter-spacing:.08em;border:1px solid var(--gold);color:var(--gold);padding:2px 6px;border-radius:4px}
+label{display:block;font:600 14px system-ui,sans-serif;margin:10px 0 4px}
+textarea,select{width:100%;font:15px system-ui,sans-serif;padding:8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+</style>
+</head>
+<body>
+<main>
+  <p class="k">ErsatzReality × THYLORA · Thank you</p>
+  <h1>Your copy of <em>Twelve Miles for Flour</em> is yours to keep.</h1>
+  <p>This was the first THYLORA product anyone could buy, open, and come back to. Thank you for being part of it.</p>
+
+  <div class="grid">
+    <section>
+      <div class="card">
+        <h2>Open your story</h2>
+        <ol class="steps">
+          <li>Go to your THYLORA library.</li>
+          <li>Sign in with the <b>same email</b> you used at checkout. The library may email you a secure sign-in link.</li>
+          <li>Open <i>Twelve Miles for Flour</i>. Read it now, print it, or come back next year — re-opening costs nothing and does not expire.</li>
+        </ol>
+        <p><a class="btn" href="https://thylora-library.vercel.app">Open my library</a></p>
+        <p class="note">Nothing physically ships. The story is not sent as an email attachment. If the library does not show your story within a few minutes of payment, write to <a href="mailto:ersatzrealityenterprise@gmail.com">ersatzrealityenterprise@gmail.com</a> with your order number.</p>
+      </div>
+
+      <div class="card" style="margin-top:18px">
+        <h2>A note from the trail</h2>
+        <p>Would you like to see a short thank-you written in the voice of Unkle Seezin, the trail boss in the story?</p>
+        <p class="note">It is a <b>simulation</b>: Seezin is a fictional character, and the note was written by the THYLORA team in his voice. It is not a message from a real person, and nobody is watching you open it.</p>
+        <div class="row">
+          <button id="showSim" type="button">Yes, show me</button>
+          <button id="skipSim" type="button" class="ghost">No thanks</button>
+        </div>
+        <div id="sim" class="sim" hidden>
+          <span class="tag">SIMULATED · FICTIONAL CHARACTER</span>
+          <p style="margin-top:8px">“Twelve miles, and you came the whole way. Most folks figure the road is the number on the sign. You’ll read how Caleb learned otherwise. Take your time with it. Mend what tore, thank who caught it, and draw the bridge on the board for the next rider.”</p>
+          <p class="note">— written in the voice of Unkle Seezin by the THYLORA team.</p>
+        </div>
+        <p id="skipped" class="note" hidden>No problem. The note stays closed.</p>
+      </div>
+
+      <div class="card" style="margin-top:18px">
+        <h2>Tell us what you thought</h2>
+        <p class="note">Your answer opens in your own email app, addressed to us. You choose whether to send it. This page stores nothing.</p>
+        <form id="fb">
+          <label for="r">How was the story?</label>
+          <select id="r"><option value="">Choose one</option><option>Loved it</option><option>Liked it</option><option>It was okay</option><option>Not for me</option></select>
+          <label for="w">What would make the next one better?</label>
+          <textarea id="w" rows="4" placeholder="Anything — the story, the price, the library, how it opened on your phone."></textarea>
+          <label><input type="checkbox" id="q"> You may quote my words (without my name) when describing the story.</label>
+          <p style="margin-top:12px"><button type="submit">Write the email</button></p>
+        </form>
+      </div>
+    </section>
+
+    <aside class="card" aria-label="Where your payment went">
+      <h2>Where your $1.99 went</h2>
+      <div class="eq">N = P − F − T − D</div>
+      <table>
+        <tr><td>P · you paid</td><td class="n">$1.99</td></tr>
+        <tr><td>F · card fee (2.9% + $0.30)</td><td class="n">− $0.36</td></tr>
+        <tr><td>T · sales tax passed to government</td><td class="n">− $0.00*</td></tr>
+        <tr><td>D · delivery cost of this copy</td><td class="n">− $0.00</td></tr>
+        <tr><th>N · left to share</th><th class="n">$1.63</th></tr>
+      </table>
+      <p class="note">Figures are from the store’s recorded Twelve Miles sale on 2026-09-16. *Tax depends on where you live; if it was added at checkout, it goes to your state, not to us.</p>
+      <div class="eq" style="font-size:17px">N = B + C + A + O + R</div>
+      <table>
+        <tr><td>B · beneficiary</td><td class="n">not set</td></tr>
+        <tr><td>C · creator</td><td class="n">not set</td></tr>
+        <tr><td>A · approved partner</td><td class="n">none</td></tr>
+        <tr><td>O · operation</td><td class="n">not set</td></tr>
+        <tr><td>R · reserve</td><td class="n">not set</td></tr>
+      </table>
+      <p class="note">No split has been published for this story yet. When one is, it will be written here before the sale — never decided afterwards.</p>
+    </aside>
+  </div>
+</main>
+<script>
+const sim=document.getElementById('sim'),skipped=document.getElementById('skipped');
+document.getElementById('showSim').onclick=()=>{sim.hidden=false;skipped.hidden=true};
+document.getElementById('skipSim').onclick=()=>{sim.hidden=true;skipped.hidden=false};
+document.getElementById('fb').onsubmit=e=>{
+  e.preventDefault();
+  const r=document.getElementById('r').value||'(no rating)',w=document.getElementById('w').value.trim()||'(no comment)',q=document.getElementById('q').checked;
+  const body=`Story: Twelve Miles for Flour\nRating: ${r}\nWhat would make it better: ${w}\nMay quote without name: ${q?'yes':'no'}\n`;
+  location.href='mailto:ersatzrealityenterprise@gmail.com?subject='+encodeURIComponent('Feedback: Twelve Miles for Flour')+'&body='+encodeURIComponent(body);
+};
+</script>
+</body>
+</html>
