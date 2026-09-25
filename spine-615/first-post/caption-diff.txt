@@ -1,0 +1,19 @@
+--- caption-608-verbatim.txt
++++ caption-615-proposed.txt
+@@ -3 +3,2 @@
+-Email ersatzrealityenterprise@gmail.com. Send your country, city or region, preferred language, what you need, and whether a deadline is close. If you cannot call, write “email only.” If someone you know needs help, ask them to write to us or get their permission before sharing their story.
++Email:
++ersatzrealityenterprise@gmail.com
+@@ -5 +6,3 @@
+-No U.S. hotline works everywhere. We will look for the relevant service *where you are*, show you the source and date, and help you form the next question. Then tell us what happened. If that door did not open, we keep looking for another route with you.
++Send your country, city or region, preferred language, what you need, and whether a deadline is close. If you cannot call, write “email only.” If someone you know needs help, ask them to write to us or get their permission before sharing their story.
++
++No U.S. hotline works everywhere. We will look for the relevant service where you are, show you the source and date, and help you form the next question. Then tell us what happened. If that door did not open, we keep looking for another route with you.
+@@ -9 +12 @@
+-Please do not send medical records, ID numbers, account details, court papers, or your exact sleeping location in the first email. We review messages manually; this is not an emergency service and no response time is guaranteed. If you need help right now, seek an established local emergency or aid service.
++Please do not send medical records, ID numbers, account details, court papers, or your exact sleeping location in the first email. We review messages manually; this is not an emergency service and no response time is guaranteed. Email is not a secure channel. We use what you send only to answer you — we do not post, sell or share it — and we delete it if you ask. If you need help right now, seek an established local emergency or aid service.
+@@ -11 +14,3 @@
+-Naya Aven is the Director of Access and Follow-Through in our *EdereAirah simulation*. She shows how the question keeps moving. Earth replies come from us, with sources you can check—not from an imaginary caseworker. What should we look at with you first?
++Naya Aven is the Director of Access and Follow-Through in our EdereAirah simulation. She shows how the question keeps moving. Earth replies come from us, with sources you can check—not from an imaginary caseworker. Replies are free: nothing is sold in this post, so no money moves (P = $0, N = $0).
++
++What should we look at with you first?
