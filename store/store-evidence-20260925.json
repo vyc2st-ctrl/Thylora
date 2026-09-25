@@ -1,0 +1,310 @@
+{
+  "report_id": "WR-STORE-SPINE-FORWARD-608",
+  "readback_at": "2026-09-25",
+  "backend_head": "THY-GLOBAL-HELP-PATH-608",
+  "programs": [
+    "THY-SPONSOR-ACCESS-CREDITS-609",
+    "THY-ERSATZ-CREATOR-NETWORK-001"
+  ],
+  "sources": {
+    "supabase_project": "jvsdxhrfhtlgaknhjxlz",
+    "shopify_store": "ersatzreality.myshopify.com",
+    "shopify_plan": "Basic"
+  },
+  "writes_performed": "NONE (read-only session against backend and Shopify)",
+  "critical_finding": {
+    "id": "SF608-F1",
+    "summary": "Question Deck, Gap Hunt, Build a World are ACTIVE and published on Shopify at 2026-09-25T12:59:55-56Z while backend readiness reads DRAFT/active_allowed=false and no EDF package is published for them; delivery unwitnessed.",
+    "decision_owner": "CHAIRMAN",
+    "options": [
+      "publish EDFs + witness one checkout per SKU",
+      "return to DRAFT until witnessed"
+    ]
+  },
+  "products": [
+    {
+      "n": 1,
+      "title": "Twelve Miles for Flour — An Unkle Seezin Trail Story",
+      "shopify_id": "gid://shopify/Product/7957652275277",
+      "sku": "ER-UNKLE-SEEZIN-FLOUR-001",
+      "status": "ACTIVE",
+      "equation": {
+        "payment": 1.99,
+        "fees": 0.36,
+        "fees_basis": "Shopify Payments Basic US online 2.9%+$0.30 published rate; not witnessed from payout",
+        "taxes": "T (UNKNOWN; tax_ready=false)",
+        "delivery_cost": "~0.00 (UNMETERED/UNKNOWN)",
+        "available_amount": "1.63 - T"
+      }
+    },
+    {
+      "n": 2,
+      "title": "THYLORA Question Deck — 50 Better Questions",
+      "shopify_id": "gid://shopify/Product/7957199913037",
+      "sku": "THY-Q-DECK-050",
+      "status": "UNKNOWN",
+      "shopify_status": "ACTIVE",
+      "backend_state": "DRAFT",
+      "next_three_rank": 1,
+      "store_url": "https://ersatzreality.myshopify.com/products/thylora-question-deck-50-better-questions",
+      "delivery_asset": "THY-DELIVERY-0CE19B19BC288F59",
+      "blockers": [
+        "no published EDF",
+        "checkout not witnessed for SKU",
+        "mobile preview not witnessed",
+        "backend not reconciled with Shopify ACTIVE"
+      ],
+      "equation": {
+        "payment": 12,
+        "fees": 0.65,
+        "fees_basis": "Shopify Payments Basic US online 2.9%+$0.30 published rate; not witnessed from payout",
+        "taxes": "T (UNKNOWN; tax_ready=false)",
+        "delivery_cost": "~0.00 (UNMETERED/UNKNOWN)",
+        "available_amount": "11.35 - T"
+      }
+    },
+    {
+      "n": 3,
+      "title": "THYLORA Gap Hunt — 21 Things You’re Not Seeing",
+      "shopify_id": "gid://shopify/Product/7957199749197",
+      "sku": "THY-GAP-HUNT-021",
+      "status": "UNKNOWN",
+      "shopify_status": "ACTIVE",
+      "backend_state": "DRAFT",
+      "next_three_rank": 2,
+      "store_url": "https://ersatzreality.myshopify.com/products/thylora-gap-hunt-21-things-you-re-not-seeing",
+      "delivery_asset": "THY-DELIVERY-8658F16FFC521665",
+      "blockers": [
+        "no published EDF",
+        "checkout not witnessed for SKU",
+        "mobile preview not witnessed",
+        "backend not reconciled with Shopify ACTIVE"
+      ],
+      "equation": {
+        "payment": 7,
+        "fees": 0.5,
+        "fees_basis": "Shopify Payments Basic US online 2.9%+$0.30 published rate; not witnessed from payout",
+        "taxes": "T (UNKNOWN; tax_ready=false)",
+        "delivery_cost": "~0.00 (UNMETERED/UNKNOWN)",
+        "available_amount": "6.50 - T"
+      }
+    },
+    {
+      "n": 4,
+      "title": "Build a World From One Idea — THYLORA Starter Kit",
+      "shopify_id": "gid://shopify/Product/7957200109645",
+      "sku": "THY-WORLD-KIT-001",
+      "status": "UNKNOWN",
+      "shopify_status": "ACTIVE",
+      "backend_state": "DRAFT",
+      "next_three_rank": 3,
+      "store_url": "https://ersatzreality.myshopify.com/products/build-a-world-from-one-idea-thylora-starter-kit",
+      "delivery_asset": "THY-DELIVERY-589D0EC598F737C1",
+      "blockers": [
+        "no published EDF",
+        "checkout not witnessed for SKU",
+        "mobile preview not witnessed",
+        "backend not reconciled with Shopify ACTIVE"
+      ],
+      "equation": {
+        "payment": 19,
+        "fees": 0.85,
+        "fees_basis": "Shopify Payments Basic US online 2.9%+$0.30 published rate; not witnessed from payout",
+        "taxes": "T (UNKNOWN; tax_ready=false)",
+        "delivery_cost": "~0.00 (UNMETERED/UNKNOWN)",
+        "available_amount": "18.15 - T"
+      }
+    },
+    {
+      "n": 5,
+      "title": "Bramble Wick — The Lantern That Wouldn't Go Out",
+      "shopify_id": "gid://shopify/Product/7956697448525",
+      "status": "BLOCKED"
+    },
+    {
+      "n": 6,
+      "title": "The Last Match — A THYLORA Family Story About Legacy",
+      "shopify_id": "gid://shopify/Product/7957206630477",
+      "status": "DRAFT"
+    },
+    {
+      "n": 7,
+      "title": "The Handoff — A THYLORA Story About Leadership and Change",
+      "shopify_id": "gid://shopify/Product/7957206958157",
+      "status": "DRAFT"
+    },
+    {
+      "n": 8,
+      "title": "The City That Needed More Power — A THYLORA Science Story",
+      "shopify_id": "gid://shopify/Product/7957206892621",
+      "status": "DRAFT"
+    },
+    {
+      "n": 9,
+      "title": "Trail Table No. 001 — Unkle Seezin's Rain-Side Beans",
+      "shopify_id": "gid://shopify/Product/7956697481293",
+      "status": "BLOCKED"
+    },
+    {
+      "n": 10,
+      "title": "C&W Vehicle Civilization — Engineering Notebook Vol. 1",
+      "shopify_id": "gid://shopify/Product/7985315577933",
+      "status": "BLOCKED"
+    },
+    {
+      "n": 11,
+      "title": "Eight Things Cars Still Get Wrong — A C&W Design Notebook",
+      "shopify_id": "gid://shopify/Product/7985698275405",
+      "status": "BLOCKED"
+    },
+    {
+      "n": 12,
+      "title": "THYLORA Value Current — Founding Reading",
+      "product_id": "THY-DIAG-PILOT-001",
+      "status": "BLOCKED"
+    },
+    {
+      "n": 13,
+      "title": "Question Quest — Family Pilot",
+      "product_id": "QQ-FAMILY-PILOT-001",
+      "status": "BLOCKED"
+    },
+    {
+      "n": 14,
+      "title": "THYLORA Anywhere Portrait",
+      "shopify_id": "gid://shopify/Product/7965307142221",
+      "status": "BLOCKED"
+    },
+    {
+      "n": 15,
+      "title": "Postcard From Anywhere",
+      "shopify_id": "gid://shopify/Product/7965990355021",
+      "status": "BLOCKED"
+    },
+    {
+      "n": 16,
+      "title": "Turn My Story Into Content",
+      "shopify_id": "gid://shopify/Product/7964844032077",
+      "status": "BLOCKED"
+    },
+    {
+      "n": 17,
+      "title": "HERB FILE 001 — ROSEMARY / EDEREAIRAH NAME PENDING",
+      "product_id": "HERB-FILE-001-NO-PROVIDER-OBJECT",
+      "status": "BLOCKED"
+    },
+    {
+      "n": 18,
+      "title": "7 Days Off-Screen - Family Adventure Pack",
+      "product_id": "THY-DIGITAL-FAMILY-OFFSCREEN-001",
+      "status": "DRAFT"
+    },
+    {
+      "n": 19,
+      "title": "The People Who Build the World — ErsatzReality Headquarters Coloring & Story Book",
+      "product_id": "ER-PRODUCT-HQ-PEOPLE-COLORING-001",
+      "status": "DRAFT"
+    },
+    {
+      "n": 20,
+      "title": "The Peete Crown Child Coloring Story",
+      "product_id": "THY-COLOR-PEETE-CROWN-CHILD-001",
+      "status": "BLOCKED"
+    },
+    {
+      "n": 21,
+      "title": "NSSM 200 product line",
+      "product_id": "THY-PRODUCT-NSSM200-*",
+      "status": "DRAFT"
+    },
+    {
+      "n": 22,
+      "title": "ErsatzReality planned catalogue",
+      "product_id": "ER-PRODUCT-* / ER-DIGITAL-* / ER-MERCH-* / KIT-STEAK-001",
+      "status": "DRAFT"
+    },
+    {
+      "n": 23,
+      "title": "Green Milk — A VYC Original",
+      "shopify_id": "gid://shopify/Product/7978983293005",
+      "status": "DRAFT"
+    },
+    {
+      "n": 24,
+      "title": "Deep-View concept set + Kylie/KYLEE Jane minis",
+      "status": "DRAFT"
+    },
+    {
+      "n": 25,
+      "title": "Memberships",
+      "status": "BLOCKED"
+    }
+  ],
+  "pilot_1_usd": {
+    "built": false,
+    "equation": {
+      "payment": 1.0,
+      "fees": 0.33,
+      "fees_basis": "Shopify Payments Basic US online 2.9%+$0.30 published rate; not witnessed from payout",
+      "taxes": "T (UNKNOWN; tax_ready=false)",
+      "delivery_cost": "~0.00 (UNMETERED/UNKNOWN)",
+      "available_amount": "0.67 - T"
+    },
+    "missing": [
+      "no $1 product with a published delivery artifact (only EDF is $1.99 Twelve Miles; repricing needs Chairman)",
+      "no sponsor-credit ledger or redemption code mechanism",
+      "no sponsor agreement, rates a/b/v/o/r unapproved, no partner"
+    ]
+  },
+  "drafts_prepared": {
+    "THY-DRAFT-609-A-FAMILY-CARD": {
+      "payment": 3,
+      "fees": 0.39,
+      "fees_basis": "Shopify Payments Basic US online 2.9%+$0.30 published rate; not witnessed from payout",
+      "taxes": "T (UNKNOWN; tax_ready=false)",
+      "delivery_cost": "~0.00 (UNMETERED/UNKNOWN)",
+      "available_amount": "2.61 - T"
+    },
+    "THY-DRAFT-609-B-HELP-ME-SELL": {
+      "payment": 10,
+      "fees": 0.59,
+      "fees_basis": "Shopify Payments Basic US online 2.9%+$0.30 published rate; not witnessed from payout",
+      "taxes": "T (UNKNOWN; tax_ready=false)",
+      "delivery_cost": "~0.00 (UNMETERED/UNKNOWN)",
+      "available_amount": "9.41 - T"
+    },
+    "THY-DRAFT-609-C-FINANCE-UNDERSTANDING": {
+      "payment": 15,
+      "fees": 0.74,
+      "fees_basis": "Shopify Payments Basic US online 2.9%+$0.30 published rate; not witnessed from payout",
+      "taxes": "T (UNKNOWN; tax_ready=false)",
+      "delivery_cost": "~0.00 (UNMETERED/UNKNOWN)",
+      "available_amount": "14.26 - T"
+    },
+    "THY-DRAFT-609-D-SCHOOL-QUESTIONS": {
+      "payment": 9,
+      "fees": 0.56,
+      "fees_basis": "Shopify Payments Basic US online 2.9%+$0.30 published rate; not witnessed from payout",
+      "taxes": "T (UNKNOWN; tax_ready=false)",
+      "delivery_cost": "~0.00 (UNMETERED/UNKNOWN)",
+      "available_amount": "8.44 - T"
+    },
+    "THY-DRAFT-609-E-HELP-NAVIGATION": {
+      "payment": 5,
+      "fees": 0.45,
+      "fees_basis": "Shopify Payments Basic US online 2.9%+$0.30 published rate; not witnessed from payout",
+      "taxes": "T (UNKNOWN; tax_ready=false)",
+      "delivery_cost": "~0.00 (UNMETERED/UNKNOWN)",
+      "available_amount": "4.55 - T"
+    },
+    "THY-DRAFT-609-F-SPONSOR-BUNDLE": {
+      "payment": 100,
+      "fees": 3.2,
+      "fees_basis": "Shopify Payments Basic US online 2.9%+$0.30 published rate; not witnessed from payout",
+      "taxes": "T (UNKNOWN; tax_ready=false)",
+      "delivery_cost": "~0.00 (UNMETERED/UNKNOWN)",
+      "available_amount": "96.80 - T"
+    }
+  },
+  "next_action": "Chairman publishes EDF packages for the three live products and witnesses one real $7 Gap Hunt phone purchase through re-open; otherwise return the three to DRAFT."
+}
