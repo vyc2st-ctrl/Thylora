@@ -1,0 +1,93 @@
+{
+  "record_id": "THY-SCENE-001-DOCTOR-LEDGER-619",
+  "record_type": "SCENE_STATE_LEDGER",
+  "transmission": "THY-TRANSMISSION-001-BEFORE-CALL-DOCTOR",
+  "frame_ref": "THY-EDMUND-ARRIVAL-616-F01",
+  "source_refs": ["THY-Q-20260925-JLYNN-RAIN-ARRIVAL-VISREF-616", "THY-Q-20260925-JLYNN-REPEAT-CONFIRM-617", "THY-Q-20260925-LIVING-CLOCK-PERSON-FIRST-618", "THY-EDMUND-ARRIVAL-616-F01-MANIFEST", "THY-TRANS-HELP-607.edmonds_household_616"],
+  "value_classes": {
+    "SOURCED": "stated by the Chairman or already in a backend record; ref given",
+    "PROPOSED_619": "design target proposed by this run with its basis; not canon until the Chairman approves it",
+    "UNKNOWN": "not known; must not be filled in to make a frame look complete"
+  },
+  "rule": "World state before camera state. The camera witnesses the world; it does not create it.",
+  "clocks": {
+    "world_clock": {"local_time": {"value": "about 21:30", "class": "SOURCED", "ref": "616"}, "date": "UNKNOWN", "edereairah_calendar": "UNKNOWN", "place": {"value": "EdereAirah Maryland/Baltimore mirror; native place name OPEN", "class": "SOURCED", "ref": "616"}},
+    "earth_clock": {"state": "NOT_ACTIVE", "reason": "Scene 001 frame has no Earth comparison on screen. It becomes active only in the Earth bridge segment of Transmission 001."},
+    "person_clocks": "see persons[].clock",
+    "scene_clock": {
+      "t0_definition": "Unit 07 comes to rest in the side arrival bay",
+      "beats": [
+        {"t": "before t0", "event": "Unit 07 picks up Dr. J Lynn Edmund because its route already leads toward the patient", "class": "SOURCED", "ref": "616", "unknown": ["pickup place", "pickup time", "who called the doctor", "when the call was made"]},
+        {"t": "t0", "event": "Unit 07 stops in the bay, nose facing the exit; driver stays seated", "class": "SOURCED", "ref": "616"},
+        {"t": "t0 to about t0+6 s", "event": "Doctor opens the door, steps out, opens the umbrella, takes the bag", "class": "PROPOSED_619", "basis": "ordinary exit-and-umbrella time; to be timed by the Chairman or a blocking rehearsal"},
+        {"t": "about t0+6 s to about t0+14 s", "event": "Doctor walks to the covered entrance", "class": "PROPOSED_619", "basis": "25 ft (7.6 m) at about 1.0 m/s on wet paving while carrying a bag and an umbrella"},
+        {"t": "UNKNOWN", "event": "Darryl Edmonds opens the door and holds it", "class": "SOURCED action, UNKNOWN timing", "open_question": "How did he know she had arrived: a call from the vehicle, a doorbell, a window, or a camera? This must be chosen, not assumed."},
+        {"t": "about t0+14 s", "event": "Doctor reaches the portico; Frame 02 begins here", "class": "PROPOSED_619"}
+      ]
+    },
+    "witness_clock": {
+      "witnesses": [
+        {"who": "Unit 07 driver", "identity": "UNNAMED SLOT: not invented", "sees": "the whole walk from the driver's seat"},
+        {"who": "Darryl Edmonds", "identity": "PROPOSED", "sees": "the approach from the doorway"},
+        {"who": "house entry camera", "exists": "UNKNOWN", "rule": "not drawn unless the Chairman sets it"},
+        {"who": "neighbors, neighbor cameras, animals", "exists": "UNKNOWN", "rule": "not added to make the frame busy"}
+      ],
+      "camera_pov_frame_01": "third-person exterior establishing view; no in-world person is holding this camera"
+    }
+  },
+  "persons": [
+    {"person_key": "THY-PERSON-J-LYNN-EDMUND", "name": "Dr. J Lynn Edmund", "class": "SOURCED", "ref": "616/617",
+     "known": {"sex": "woman", "role": "network family physician (EdereAirah); Earth partnership not claimed", "hair": "small natural Afro", "appearance_note": "light-skinned; Indigenous and/or African American heritage as sourced", "wardrobe": {"coat": "deep-green waterproof tailored coat with bronze trim", "trousers": "narrow dark trousers", "boots": "charcoal low-heel waterproof ankle boots with practical tread", "umbrella": "deep blue", "bag": "oxblood modular clinical bag"}},
+     "clock": {"prior_action": "riding in Unit 07 toward the patient", "current_action": "walking from Unit 07 to the covered entrance", "next_intended_action": "enter the house and meet the patient"},
+     "unknown": ["age", "height", "credentialing authority", "home", "how she was called", "her relationship to the household", "bag contents (not listed until clinically reviewed)"],
+     "flag": "The surname Edmund is one letter away from the household name Edmonds. Is she related, or is it a coincidence? The Chairman must answer. Do not merge the two names."},
+    {"person_key": "THY-PERSON-DARRYL-EDMONDS", "name": "Darryl Edmonds", "class": "PROPOSED", "ref": "616 manifest",
+     "known": {"sex": "man", "position": "father at the house (proposed)", "action": "holding the door, facing J Lynn"},
+     "privacy": "Former employer collapsed amid fraud and he lost his position (proposed). His knowledge, involvement, innocence and losses are UNKNOWN. He is never shown as guilty. This detail is household-private and stays out of the public caption.",
+     "unknown": ["age", "height", "clothing", "how he knew she arrived"]},
+    {"person_key": null, "name": "patient", "class": "PROPOSED", "candidate": "Malik Edmonds (adult son by the father's first wife; proposed)", "condition": "UNKNOWN: no diagnosis is invented; clinical reviewer required"},
+    {"person_key": null, "name": "Shana Edmonds", "class": "PROPOSED", "in_scene": "UNKNOWN"},
+    {"person_key": null, "name": "Unit 07 driver", "class": "UNNAMED SLOT", "note": "A person is needed in the seat. This person is not invented. The slot stays open until the care network's staffing is defined."}
+  ],
+  "vehicles": [
+    {"id": "UNIT 07", "type": "native EdereAirah clinical-response vehicle (not an ambulance)", "markings": "EDEREAIRAH CARE RESPONSE / UNIT 07", "position": "separate left-side bay, nose to exit", "class": "SOURCED",
+     "unknown": ["design lineage", "fleet owner and network name", "dimensions", "wheel, tire and rim spec", "spare", "equipment list", "energy source and state", "service and wash history", "authority/insurance state"]},
+    {"id": "family SUV", "position": "left garage bay", "class": "SOURCED", "unknown": ["make lineage", "owner", "dimensions"]},
+    {"id": "family compact", "position": "right garage bay", "class": "SOURCED", "unknown": ["make lineage", "owner", "dimensions"]}
+  ],
+  "geometry": {
+    "walk_distance": {"value": "about 25 ft (7.6 m)", "class": "SOURCED", "ref": "THY-TRANS-HELP-607 arrival.walk"},
+    "contradiction": "The 607 record calls this '25 covered feet', but frame 01 shows her walking under an umbrella in open rain to a covered entrance. Both cannot be right. Proposed fix: the walk is UNCOVERED up to the portico and covered after it. Chairman to confirm.",
+    "proposed_targets": {
+      "arrival_bay": {"value": "3.5 m wide x 7.5 m long", "class": "PROPOSED_619", "basis": "van-class response vehicle, with room to open the side door and walk past it"},
+      "garage_doors": {"value": "2 doors, each about 2.7 m (9 ft) wide", "class": "PROPOSED_619", "basis": "common residential single-bay door"},
+      "clear_lane_garage_to_exit": {"value": "at least 3.6 m wide, never crossed by Unit 07", "class": "PROPOSED_619", "basis": "the Chairman's rule that nobody is blocked (616)"},
+      "portico_depth": {"value": "at least 2.4 m", "class": "PROPOSED_619", "basis": "the doctor, the open door and Darryl stay dry at the same time"}
+    },
+    "orientation": "UNKNOWN (compass bearing, grade, street side, neighboring lots)",
+    "structure": "precast/post-tensioned concept with inspectable seams; wind rating and flood elevation UNKNOWN (616)"
+  },
+  "objects": {"lamps": "warm amber shielded sconces plus low path lights (SOURCED)", "drainage": "rain chains, overhangs, surface channels (SOURCED)", "medical_bag_lineage": "UNKNOWN (maker, contents)"},
+  "event": "A physician arrives at night in hard rain for a house call",
+  "consequence": "UNKNOWN until the patient's condition and the visit outcome are clinically reviewed",
+  "storyteller": "OPEN: no reporter or narrator is assigned. Person before story: a teller is chosen only after their person packet exists.",
+  "department": "EdereAirah care network (name OPEN)",
+  "connected_earth_question": "What should a doctor know before the call begins?",
+  "update_loop": "Each Chairman answer to an open item in this ledger updates the ledger first, then the manifest, then any frame. Frames never go first.",
+  "asset_integrity_alert": "The 616 frame file is recorded at /workspace/scratch/... in bucket 'workspace-generated-images'. That is an ephemeral workspace path. Only the SHA-256 hash (11822fd2...) is durable. The PNG must be re-homed to durable storage and its hash re-verified. Otherwise the Chairman preview can be lost.",
+  "render_contract": {
+    "status": "NOT_PASSED: NO RENDER",
+    "checks": [
+      {"check": "every visible person has a person packet", "result": "PARTIAL: doctor and father registered at 619; driver is an unnamed slot"},
+      {"check": "world clock and scene clock set", "result": "PARTIAL: time of day only; date and calendar UNKNOWN"},
+      {"check": "measured geometry approved", "result": "OPEN: proposed targets await the Chairman"},
+      {"check": "walk covered or uncovered resolved", "result": "OPEN: contradiction"},
+      {"check": "vehicle engineering for Unit 07", "result": "OPEN"},
+      {"check": "how Darryl knew to open the door", "result": "OPEN"},
+      {"check": "Edmund / Edmonds relationship", "result": "OPEN"},
+      {"check": "clinical reviewer for the medical content", "result": "OPEN"},
+      {"check": "style reference public-derivative rights", "result": "OPEN (internal use only)"},
+      {"check": "frame 01 Chairman approval", "result": "OPEN"}
+    ]
+  }
+}
