@@ -1,0 +1,1413 @@
+[
+ {
+  "src": "readiness",
+  "j": {
+   "blockers": [
+    "NOT BUYABLE: product status on Shopify is DRAFT, verified live via Admin API 2026-09-17. The earlier blocker claiming this product was \"LIVE AND PUBLICLY BUYABLE\" is withdrawn as stale - it no longer matches the storefront.",
+    "NO PUBLISHED EDF PACKAGE, so the in-browser reader cannot open this title. thylora_open_edf_v1 returns NO_PUBLISHED_EDF. EDF creation gates on thylora_is_chairman(); this session authenticates as postgres with auth.uid()=null. Chairman-credentialed, not routed around.",
+    "CHECKOUT NEVER EXERCISED for this SKU. No payment, no real entitlement, no storefront render witnessed. Twelve Miles evidence is NOT inherited.",
+    "ARTIFACT CLEARED 2026-09-19: WinAnsi 0x7F defect regenerated out; interior verified byte-for-byte. Remaining gate is Chairman-only (DRAFT status; activation withheld by directive)."
+   ],
+   "evidence": {
+    "price_usd": 12,
+    "visual_brief": "Physical/digital question cards in use by real EdereAirah people around a table, with one question opening multiple connected layers; no generic card mockup.",
+    "reconciled_at": "2026-09-02T23:15:04.920609+00:00",
+    "reconciliation": "Finished customer artifact found in THYLORA Library and Shopify featured media verified live; stale missing-artifact/media blockers removed.",
+    "shopify_handle": "thylora-question-deck-50-better-questions",
+    "delivery_asset_id": "THY-DELIVERY-0CE19B19BC288F59",
+    "delivery_resolves": "verified against thylora-protected-download resolution query",
+    "shopify_verified_at": "2026-09-02T16:25:22.322716+00:00",
+    "chairman_preview_url": "https://claude.ai/artifact/VP2vUggkYMXQXiaRA5FwWP",
+    "delivery_asset_state": "STAGED",
+    "listing_activated_on": "2026-09-16",
+    "coming_soon_stage_394": {
+     "badge": "Coming Soon / In Production",
+     "state": "COMING_SOON_STAGED_FOR_REVIEW",
+     "theme_id": "gid://shopify/OnlineStoreTheme/149121499213",
+     "staged_at": "2026-09-12T00:00:00Z",
+     "theme_role": "UNPUBLISHED",
+     "price_display": false,
+     "purchase_action": false,
+     "custody_query_id": "THY-Q-20260912-STOREFRONT-CONTINUOUS-EXECUTION-394"
+    },
+    "cover_approval_binding": {
+     "approved_by": "CHAIRMAN VYC",
+     "scope_limits": [
+      "DOES NOT authorize activation",
+      "DOES NOT authorize publication",
+      "DOES NOT authorize theme publication",
+      "DOES NOT authorize price changes"
+     ],
+     "approval_delta": "sequence 495 THY-Q-20260918-COVER-APPROVAL-MATH-STUDIO-495",
+     "pixel_dimensions": "1254x1254",
+     "verified_live_at": "2026-09-18",
+     "approved_file_url": "https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-question-deck-approved-cover.png?v=1789219265",
+     "approved_media_id": "gid://shopify/MediaImage/28674422112333",
+     "asset_version_date": "2026-09-12T13:21:03Z",
+     "external_product_id": "gid://shopify/Product/7957199913037",
+     "superseded_file_url": "https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-question-deck-50-cover.png?v=1788370745",
+     "verification_method": "Shopify Admin API featuredMedia read; media id, URL, createdAt and pixel dimensions all matched before binding. Filename similarity alone was NOT accepted as identity.",
+     "superseded_approval_at": "2026-09-08T11:08:51.414Z"
+    },
+    "preview_delivery_state": "PENDING_CHAIRMAN_DEVICE_WITNESS",
+    "cover_binding_written_at": "2026-09-18T21:06:04.283074+00:00",
+    "delivery_asset_active_on": "2026-09-16",
+    "delivery_binary_staged_at": "2026-09-12T19:12:34.60203+00:00",
+    "winansi_defect_cleared_at": "2026-09-19 11:06:24.094433+00",
+    "nameguard_canonicalized_at": "2026-09-19T17:41:42.54813+00:00",
+    "nameguard_canonicalized_by": "THY-WORK-DASHBOARD-RELEASE-FIX-538",
+    "shopify_featured_media_url": "https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-question-deck-approved-cover.png?v=1789219265",
+    "chairman_visual_approved_at": "2026-09-18T00:00:00Z",
+    "chairman_decision_2026_09_17": {
+     "activation": "HELD_PENDING_REDESIGNED_CUSTOMER_ARTIFACT_PREVIEW",
+     "approved_at": "2026-09-17T21:59:51.645334+00:00",
+     "visual_ruling": "CURRENT_PDF_INTERIOR_PRESENTATION_REJECTED_AS_TOO_PLAIN_WHITE_GENERIC",
+     "required_direction": "LIVED_IN_THYLORA_WORLD_DESIGN_WITH_PAGE_ARCHITECTURE_VISUAL_DEPTH_BARRIER_TREATMENT_CAUSAL_ART_AND_PRODUCT_SPECIFIC_LAYOUT",
+     "commercial_approval": "APPROVED_TITLE_PRICE_PRODUCT_DIRECTION",
+     "fresh_final_preview_required": true
+    },
+    "chairman_rights_confirmed_at": "2026-09-08T11:08:51.414Z",
+    "chairman_visual_approved_url": "https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-question-deck-50-cover.png?v=1788370745",
+    "THY-STORE-DELIVERY-REPAIR-001": {
+     "change": "thylora_customer_library_v1 upgraded to contract_version 2: emits entitlement_id, downloadable, download{url,filename,mime_type,size_bytes,content_sha256}, delivery_medium, customer_message. Purely additive; all prior keys preserved.",
+     "applied_at": "2026-09-17T15:09:50.468505+00:00",
+     "not_witnessed": "No real HTTP download was executed for these seven: that needs a signed-in buyer JWT, which this session does not hold. UNKNOWN REMAINS UNKNOWN.",
+     "witness_audit_gate": "thylora_product_download_audit insert succeeded for all seven ACTIVE assets, so the fail-closed audit gate in thylora-protected-download will not spuriously deny. Transaction rolled back.",
+     "witness_fail_closed": "REVOKED entitlement -> delivery_medium=NONE, download withheld. Product whose only asset is HELD -> download withheld. Transaction rolled back.",
+     "listing_copy_corrected": "Shopify description for all seven rewritten: the false sentence promising the file \"opens in the protected reader\" replaced with accurate download wording.",
+     "witness_download_control": "Synthetic ACTIVE entitlement per product returned delivery_medium=DOWNLOAD with a resolvable download URL and correct filename/byte count. Transaction rolled back."
+    },
+    "reconciliation_2026_09_16_1800": {
+     "edf_package": "NONE - no row in thylora_edf_packages for this external_product_id",
+     "reader_path": "BROKEN - NO_PUBLISHED_EDF",
+     "download_path": "WIRED - does not require an EDF package",
+     "reconciled_at": "2026-09-16T18:01Z",
+     "reconciled_by": "Claude Code connected session, Chairman-directed store reconciliation",
+     "shopify_status": "ACTIVE and published - verified by live Shopify Admin API read",
+     "publicly_buyable": true,
+     "library_ui_control": "UNKNOWN - library page not reachable from this session",
+     "delivery_asset_state": "ACTIVE with content_sha256 bound",
+     "checkout_path_verified": "FALSE and deliberately left false: no purchase has ever been made for this product. Twelve Miles evidence was NOT inherited.",
+     "store_level_mechanism_note": "The store-level payment, webhook, buyer-resolution and entitlement mechanism is proven by order #1004, but that proves the STORE mechanism, not this product deliverability."
+    },
+    "storefront_password_protection": "disabled (verified via Admin API)",
+    "chairman_visual_preview_pointer": "chairman_visual_preview_2026_09_17",
+    "fresh_slate_candidate_2026_09_18": {
+     "pass": "FRESH_STORE_SLATE",
+     "rank": 2,
+     "price": "12.00 SET",
+     "shelf": "RELEASE_AVAILABLE_SOON",
+     "activated": false,
+     "published": false,
+     "scheduled": false,
+     "workstream": "STORE_BACKEND",
+     "prepared_by": "CLAUDE",
+     "rights_state": "PASSED.",
+     "delivery_state": "CONNECTED.",
+     "remaining_work": "Chairman visual approval, then correct \"27-page\" to 19 in the description \u00e2\u0080\u0094 this one OVERSTATES if left as is. Then ingest v2 and decide publish.",
+     "store_priority": {
+      "scale": "1-5 each. READINESS 5 = artifact byte-verified AND rights passed AND delivery route proven AND only a decision or one bounded copy step remains. It never means \"activated\".",
+      "score": 1875,
+      "formula": "READINESS x DISTINCTIVENESS x CUSTOMER_VALUE x WORLD_CONNECTION x REUSE_POTENTIAL",
+      "readiness": 5,
+      "customer_value": 5,
+      "distinctiveness": 5,
+      "reuse_potential": 5,
+      "world_connection": 3,
+      "hard_failure_rule": "Any rights, delivery or artifact hard failure forces HOLD regardless of score."
+     },
+     "visual_requirement": "Cover bound (1254x1254). Five-class band coding in the card architecture is the reusable asset.",
+     "what_buyer_receives": "19-page printable PDF card deck \u00e2\u0080\u0094 print and cut, or use on screen.",
+     "time_to_release_class": "T0_DECISION_ONLY",
+     "cross_sell_connections": "Bundles with Build a World and Gap Hunt. Its card architecture is directly reused by The Four Registers deck.",
+     "show_story_relationship": "Method product, not a story. Feeds the reasoning/school lane.",
+     "expands_existing_ip_tree": "YES \u00e2\u0080\u0094 the card architecture is a reusable production asset, already specified as the base for The Four Registers.",
+     "exact_existing_asset_state": "v1 ACTIVE (THY-DELIVERY-0CE19B19BC288F59, 50,058 B, 27pp, sha 0ce19b19\u00e2\u0080\u00a6). Edition v2 BUILT and re-verified: 3,264,161 B, sha ab86a85efbe88e22\u00e2\u0080\u00a6, 19 pages counted from the bytes. Page count went DOWN 27 -> 19."
+    },
+    "chairman_cover_approval_2026_09_18": {
+     "scope": "2026-09-12 replacement covers",
+     "approved": true,
+     "approved_at": "2026-09-18T19:47:34.154786+00:00",
+     "activation_authorized": false,
+     "publication_authorized": false
+    },
+    "chairman_release_packet_2026_09_17": {
+     "sku": "THY-Q-DECK-050",
+     "currency": "USD",
+     "unknowns": [
+      "No row exists in thylora_visual_assets for this cover, although product_specific_visual_complete and visual_preflight_passed are both true on this row. The cover is bound and present on Shopify; what is missing is the registry entry recording its approval, rights and provenance. Evidence gap, not a contradiction of the gate.",
+      "No EDF package exists for this title, so the in-browser library reader returns NO_PUBLISHED_EDF. Not a delivery blocker: protected download is the delivery medium.",
+      "reaccess_verified, checkout_path_verified and mobile_preview_passed cannot be witnessed until the product is buyable. They are consequences of DRAFT, not independent defects."
+     ],
+     "variant_id": "gid://shopify/ProductVariant/43710114267213",
+     "workstream": "STORE_BACKEND",
+     "exact_cover": {
+      "url": "https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-question-deck-approved-cover.png?v=1789219265",
+      "pixels": "1254x1254",
+      "bound_on_shopify": true
+     },
+     "exact_title": "THYLORA Question Deck \u00e2\u0080\u0094 50 Better Questions",
+     "prepared_by": "CLAUDE",
+     "mobile_state": "NOT WITNESSED. mobile_preview_passed=false. Cannot be witnessed while the product is DRAFT and on zero sales channels.",
+     "rights_state": "PASSED. rights_passed=true on this row. Original THYLORA work; no third-party rights engaged.",
+     "checkout_state": "NEVER EXERCISED for this SKU. thylora_product_checkout_events=0 rows and thylora_product_download_audit=0 rows backend-wide. No evidence is inherited from Twelve Miles.",
+     "claude_did_not": "activate, publish, schedule, change price, change description, change cover, or modify any Shopify record",
+     "delivery_route": "Shopify checkout -> orders/paid webhook -> entitlement -> THYLORA library (thylora-library.vercel.app) sign-in with the checkout email -> thylora-protected-download serves the ACTIVE asset. No EDF reader for this title; download is the delivery medium.",
+     "packet_version": "RELEASE_PACKET_PASS_2026_09_17",
+     "product_handle": "thylora-question-deck-50-better-questions",
+     "artifact_preview": {
+      "bytes": 50058,
+      "sha256": "0ce19b19bc288f59d1dd448f60cba0f45ff1a2946e75f57982a58dba3a50e091",
+      "asset_id": "THY-DELIVERY-0CE19B19BC288F59",
+      "encrypted": false,
+      "pdf_header": "%PDF-1.4",
+      "page_objects": 27,
+      "verification": "Page count read directly from the stored bytes and matched to the page count promised in the listing.",
+      "release_state": "ACTIVE"
+     },
+     "storefront_state": {
+      "status": "DRAFT",
+      "online_store_url": null,
+      "sales_channel_publications": 0
+     },
+     "what_buyer_receives": "A 27-page printable PDF question deck, to print and cut into cards or use on screen. Listing claim \"27-page\" matches the artifact exactly.",
+     "all_fields_reread_live": true,
+     "exact_current_price_usd": "12.00",
+     "variant_config_verified": {
+      "finding": "Inventory is UNTRACKED, so quantity 0 is inert and cannot read as sold out. This is the identical variant configuration to Twelve Miles for Flour, which has already completed a real paid checkout at quantity -3.",
+      "inventory_policy": "DENY",
+      "inventory_tracked": false,
+      "requires_shipping": false,
+      "inventory_quantity": 0
+     },
+     "final_customer_description": {
+      "structure": "Hook / You receive / How you read it / It stays yours / origin line",
+      "promises_made": "Named page count; THYLORA library sign-in with the checkout email; PDF download; nothing physically ships; not sent as an email attachment; re-download free and non-expiring.",
+      "authoritative_source": "Shopify descriptionHtml on this product, re-read live 2026-09-17",
+      "verified_against_artifact": true
+     },
+     "exact_remaining_release_action": "ONE CHAIRMAN DECISION: publish this product to Online Store + Shop and set status ACTIVE. Every pre-sale gate on this row is already true and the artifact, cover, price, handle and variant configuration are verified correct. No further engineering step exists before activation."
+    },
+    "chairman_visual_preview_2026_09_17": {
+     "key": "question_deck",
+     "V_min": 1,
+     "build": "THY-ED2-20260917",
+     "bytes": 3264161,
+     "state": "PREVIEW_AWAITING_CHAIRMAN_VISUAL_APPROVAL",
+     "V_mean": 1.42,
+     "sha256": "ab86a85efbe88e2292697f28fb7d27f4859debb23903eebd23977df62ec736c3",
+     "edition": "Edition v2",
+     "imagery": "Deterministic vector components generated for this edition. No photography, no third-party source image, no stock element. Registered in thylora_visual_assets / thylora_visual_provenance as approval_state=proposed.",
+     "trim_mm": [
+      215.9,
+      279.4
+     ],
+     "page_map": [
+      [
+       1,
+       "Cover"
+      ],
+      [
+       2,
+       "Edition identity"
+      ],
+      [
+       3,
+       "How to use it"
+      ],
+      [
+       4,
+       "The five classes"
+      ],
+      [
+       5,
+       "Cards 01-04"
+      ],
+      [
+       6,
+       "Cards 05-08"
+      ],
+      [
+       7,
+       "Cards 09-12"
+      ],
+      [
+       8,
+       "Cards 13-16"
+      ],
+      [
+       9,
+       "Cards 17-20"
+      ],
+      [
+       10,
+       "Cards 21-24"
+      ],
+      [
+       11,
+       "Cards 25-28"
+      ],
+      [
+       12,
+       "Cards 29-32"
+      ],
+      [
+       13,
+       "Cards 33-36"
+      ],
+      [
+       14,
+       "Cards 37-40"
+      ],
+      [
+       15,
+       "Cards 41-44"
+      ],
+      [
+       16,
+       "Cards 45-48"
+      ],
+      [
+       17,
+       "Cards 49-50"
+      ],
+      [
+       18,
+       "Session record"
+      ],
+      [
+       19,
+       "Last card"
+      ]
+     ],
+     "pages_v1": 27,
+     "pages_v2": 19,
+     "directive": "THY-Q-20260917-SIX-PRODUCTS-APPROVED-REDESIGN-455",
+     "page_gate": "PASS (Pq = C x W x H x L x E, no page scores 0)",
+     "preserved": [
+      "content",
+      "meaning",
+      "price",
+      "rights",
+      "delivery route",
+      "product ID",
+      "Shopify handle",
+      "provenance"
+     ],
+     "components": 4,
+     "prepared_by": "CLAUDE CODE (claude-opus-5)",
+     "v1_artifact": "RETAINED UNCHANGED in thylora_delivery_assets; nothing was erased",
+     "clipped_pages": 0,
+     "claude_did_not": "activate, publish, schedule, change price, change description, change cover, or modify any Shopify record",
+     "artifact_location": {
+      "note": "Binaries are NOT in thylora_delivery_assets. file_bytes is NOT NULL and these editions are 2.5-4.5 MB each, so preview binaries are held in the repo at the commit above and identified by sha256. Ingest into thylora_delivery_assets on Chairman visual approval, not before.",
+      "path": "products/redesign/out/question_deck.v2.pdf",
+      "repo": "vyc2st-ctrl/Thylora",
+      "branch": "claude/thylora-backend-continuity-djn6ih",
+      "commit": "c203522"
+     },
+     "recorded_unknowns": [
+      "BRAND-THYLORA-MARK is UNKNOWN / NOT_APPROVED, so no graphic logo was invented; the editions carry a typographic wordmark only.",
+      "BRAND-FONT-FAMILY is UNKNOWN, so the families used are PROPOSED - NOT CANON.",
+      "BRAND-QR-DESTINATIONS has no verified destination, so no QR is printed."
+     ],
+     "blocker_before_activation": "PAGE COUNT CHANGED. The live Shopify description for this product promises a specific page count, which the redesign no longer matches. The listing copy must be corrected before activation or the listing becomes an untrue claim."
+    },
+    "delivery_medium_decision_2026_09_17": {
+     "basis": "No EDF package exists for this product and EDF authoring is Chairman-credentialed. thylora-protected-download does not require an EDF package: it verifies the entitlement is ACTIVE and owned by the caller, selects the ACTIVE delivery asset, writes a thylora_product_download_audit row, then serves the bytes.",
+     "delivery_medium": "DOWNLOAD",
+     "test_2026_09_17": "Synthetic entitlement + the function's exact query chain, run in a transaction and rolled back: audit row written, bytes servable, freshly computed sha256 digest equals the stored content_sha256, PDF magic bytes correct.",
+     "still_unwitnessed": "The HTTP/JWT layer of thylora-protected-download has never been exercised by a real signed-in browser. thylora_product_download_audit still holds 0 committed rows. DOWNLOAD is proven at the data layer, not yet at the transport layer.",
+     "repair_that_made_it_reachable": "thylora_customer_library_v1 rewritten to payload_version 2. It now emits entitlement_id, download_available, delivery_medium and a download block carrying asset_id, filename, byte count, sha256 and the protected-download endpoint. Before this the library payload carried no entitlement_id and no download field, so no client could construct the call."
+    }
+   },
+   "created_at": "2026-09-02T16:25:22.322716+00:00",
+   "updated_at": "2026-09-19T17:41:42.54813+00:00",
+   "sell_intent": true,
+   "readiness_id": "f7e82a47-6f76-45ab-adfc-aa43ab1dc933",
+   "product_state": "DRAFT",
+   "product_title": "THYLORA Question Deck \u00e2\u0080\u0094 50 Better Questions",
+   "rights_passed": true,
+   "active_allowed": false,
+   "source_complete": true,
+   "reaccess_verified": false,
+   "delivery_connected": true,
+   "external_product_id": "gid://shopify/Product/7957199913037",
+   "next_executable_work": "Chairman reviews rendered interior preview and returns RELEASE / REVISE / HOLD.",
+   "mobile_preview_passed": false,
+   "checkout_path_verified": false,
+   "final_artifact_complete": true,
+   "visual_preflight_passed": true,
+   "product_specific_visual_complete": true
+  }
+ },
+ {
+  "src": "readiness",
+  "j": {
+   "blockers": [],
+   "evidence": {
+    "price_usd": 1.99,
+    "cover_facts": {
+     "width": 1445,
+     "height": 1870,
+     "media_id": "gid://shopify/MediaImage/28487834402893",
+     "alt_text_present": true
+    },
+    "edf_binding": {
+     "edf_id": "e2f697a6-97fa-4e9e-a1eb-990cea4a048e",
+     "bound_at": "2026-09-06T05:14:17.56005+00:00",
+     "edf_code": "EDF-TWELVE-MILES-FOR-FLOUR-001",
+     "fidelity": "EXACT \u00e2\u0080\u0094 non-whitespace character count identical between extracted source and stored blocks",
+     "extractor": "pdfminer.six 20260107",
+     "text_blocks": 50,
+     "source_bytes": 32212,
+     "text_characters": 4627,
+     "source_sha256_match": true,
+     "source_sha256_verified": "7a5296b442f439fdc0048686a70966b4a8cb20be7a386c2bab2dcb81f110efc2",
+     "page_furniture_excluded": "repeated running footer and page numbers only; no story text removed",
+     "per_block_hash_integrity": true,
+     "nonspace_chars_source_and_stored": 3925
+    },
+    "payment_gate": "WITNESSED CLOSED by Chairman screenshot 2026-09-07 13:21 EDT: Shopify Payments accepting payments and receiving payouts, no action-required banner",
+    "publications": [
+     "Online Store",
+     "Shop",
+     "Microsoft Copilot"
+    ],
+    "visual_brief": "Unkle Seezin trail supply run: lived weather, distance, load, clothing wear, mud/dust, route context and what the community actually needs; exact canon required before generation.",
+    "reconciled_at": "2026-09-02T23:15:04.920609+00:00",
+    "canonical_name": "Unkle Seezin",
+    "copy_pushed_at": "2026-09-08T17:02:40.434849+00:00",
+    "reconciliation": "Finished customer artifact found in THYLORA Library and Shopify featured media verified live; stale missing-artifact/media blockers removed.",
+    "shipping_fixed": true,
+    "shopify_handle": "twelve-miles-for-flour-an-uncle-seezin-trail-story",
+    "rights_evidence": "thylora_edf_packages: age_classification=FAMILY, rights_download_allowed=true, rights_stream_allowed=true, rights_territories=[\"WORLDWIDE\"], rights_verified_by recorded",
+    "buyer_claim_path": {
+     "now": "unknown email holds a PENDING claim released only to a CONFIRMED address; a confirmed account with no alias is linked and granted directly",
+     "tested": "11 properties incl. customer cannot mint claims, stranger claims nothing, unconfirmed address claims nothing, second claim is a no-op, RLS shows a buyer only their own claim",
+     "defect_fixed": "webhook v3 answered any checkout email with no commerce alias with 409 and granted nothing; exactly one alias existed, so every buyer except the Chairman would have paid and received nothing permanently",
+     "webhook_version": 5
+    },
+    "copy_approved_by": "vyc2st@gmail.com",
+    "customer_library": {
+     "url": "https://thylora-library.vercel.app",
+     "verified_live": "HTTP 200, text/html, 9696 bytes, title \"Your THYLORA library\", fetched from Postgres via pg_net",
+     "first_attempt_failed": "Supabase Edge Functions force content-type text/plain and override CSP with default-src none; sandbox, so an edge function cannot serve a working customer page. Caught by fetching it rather than assuming.",
+     "ships_service_role_key": false
+    },
+    "edf_published_at": "2026-09-08T15:45:48.913407+00:00",
+    "online_store_url": "https://ersatzreality.myshopify.com/products/twelve-miles-for-flour-an-uncle-seezin-trail-story",
+    "rights_closed_by": "vyc2st@gmail.com",
+    "copy_version_live": 2,
+    "delivery_resolves": "verified against thylora-protected-download resolution query",
+    "reaccess_witnessed": {
+     "by": "FOUNDING PURCHASE #1 - CHAIRMAN VYC, not an external customer",
+     "state": "WITNESSED 2026-09-16",
+     "mechanism": "thylora_open_edf_v1 classified the second and third opens as REACCESS under an advisory lock, exactly as designed",
+     "reaccess_1": "2026-09-16T15:12:08.654Z",
+     "reaccess_2": "2026-09-16T15:12:15.793Z",
+     "first_access": "2026-09-16T15:01:22.523Z",
+     "read_back_at": "2026-09-16T18:02Z",
+     "entitlement_id": "674c77f8-ceac-4323-8e18-dddd19949bea"
+    },
+    "founding_purchase_1": {
+     "amount": "1.99 USD",
+     "order_gid": "gid://shopify/Order/6107908472909",
+     "order_name": "#1004",
+     "ordered_at": "2026-09-16T14:58:49Z",
+     "recorded_at": "2026-09-16T15:10Z",
+     "recorded_by": "Claude Code connected session, Chairman-directed",
+     "payment_proof": {
+      "kind": "SALE",
+      "status": "SUCCESS",
+      "gateway": "shopify_payments",
+      "captured_at": "2026-09-16T14:58:46Z",
+      "payment_details": "CardPaymentDetails",
+      "transaction_gid": "gid://shopify/OrderTransaction/8040770011213",
+      "capture_witness_row": "3600113c-2de1-4bce-92ec-16e58bcfd293"
+     },
+     "checkout_proof": {
+      "app": "Online Store",
+      "channel": "Online Store",
+      "source_name": "web",
+      "discount_codes": "none",
+      "order_test_flag": false,
+      "total_discounts": "0.0",
+      "transaction_test_flag": false,
+      "manual_payment_gateway": false,
+      "customer_journey_moments": 6,
+      "why_this_is_a_real_storefront_checkout": "sourceName=web through the Online Store channel with no discount code and manualPaymentGateway=false, unlike order #1002 which was a 100%-discount draft order marked as paid. This exercises the storefront checkout the gate requires."
+     },
+     "classification": "FOUNDING PURCHASE #1 - CHAIRMAN VYC",
+     "chain_witnessed": {
+      "close": "NO MECHANISM EXISTS - thylora_read_receipt_instrumentation records mechanism_state NONE on every surface. Close/read remains UNKNOWN.",
+      "webhook": "orders/paid received 2026-09-16T14:58:52.280Z, outcome ENTITLEMENT_GRANTED",
+      "reaccess": "NOT YET WITNESSED",
+      "entitlement": "674c77f8-ceac-4323-8e18-dddd19949bea ACTIVE granted 2026-09-16T14:58:52.280Z",
+      "first_access": "a387ad0a-ad17-4b5d-9c79-dbc4d45201cd FIRST_ACCESS 2026-09-16T15:01:22.523Z",
+      "download_audit": "NOT YET WITNESSED",
+      "buyer_resolution": "7466e84e-f3fb-4801-a3a3-768aca504638 via commerce alias vyc2st@gmail.com",
+      "delivery_attempt": "bf7fbe52-7e09-459e-bd0e-75cde15cba91 DELIVERED 2026-09-16T15:01:22.523Z"
+     },
+     "policy_position": "THY-FIRST-CUSTOMER-WITNESS-001 remains LOCKED and unmodified. This purchase was Chairman-directed and Chairman-classified; it was not solicited by the assistant. Mechanism verification and external-customer witness are kept distinct exactly as that policy requires.",
+     "financial_status": "PAID",
+     "checkout_gate_note": "checkout_path_verified set true on 2026-09-16 because a real buyer completed a real storefront checkout with real money. It is witnessed by the founding Chairman purchase, NOT by an external customer.",
+     "is_external_customer": false,
+     "external_customer_1_status": "RESERVED for the first genuine non-Chairman buyer"
+    },
+    "shopify_verified_at": "2026-09-02T16:25:22.322716+00:00",
+    "customer_1_preflight": {
+     "state": "PASS",
+     "library_url": "https://thylora-library.vercel.app/",
+     "verified_at": "2026-09-13T02:39:57.936805+00:00",
+     "delivery_medium": "PROTECTED_EDF_READER",
+     "product_library_link_public_readback": "PASS"
+    },
+    "deliverability_proof": {
+     "method": "rolled-back transaction against live tables",
+     "re_access": "delivered=true, access log FIRST_ACCESS=1 REACCESS=1",
+     "first_open": "delivered=true, 50 blocks, 4627 characters",
+     "entitlement": "ACTIVE",
+     "left_behind": "nothing - all counters returned to zero",
+     "delivery_attempt": "DELIVERED attempt 1, no failure"
+    },
+    "listing_activated_on": "2026-09-16",
+    "shopify_activated_at": "2026-09-08T17:10:58Z",
+    "shopify_policy_closeout": {
+     "reported_at": "2026-09-10T16:44:00-04:00",
+     "refund_policy": "CHAIRMAN_REPORTED_SAVED",
+     "terms_of_service": "CHAIRMAN_REPORTED_SAVED"
+    },
+    "delivery_asset_active_on": "2026-09-16",
+    "zero_cost_mechanism_test": {
+     "tags": [
+      "THYLORA-ZERO-COST-MECHANISM-TEST",
+      "NOT-A-REAL-SALE",
+      "NO-MONEY-CAPTURED"
+     ],
+     "order": "#1002 gid://shopify/Order/6096452517965",
+     "method": "Shopify draft order, 100% discount, total $0.00, completed with paymentPending false (marked as paid)",
+     "proved": "A live store-level orders/paid subscription exists, points at our endpoint, and its signing secret matches. Webhook v5 resolved the buyer, linked the alias, granted the entitlement and opened a delivery attempt.",
+     "created_at": "2026-09-08T17:50:33Z",
+     "money_moved": false,
+     "is_payment_proof": false,
+     "webhook_delivery": "46a0730b-88a0-48b8-92bf-9f76df8a9990 received 2026-09-08T17:50:37Z, signature VERIFIED, ACCEPTED",
+     "alias_linked_live": "vyc2st@gmail.com linked at 2026-09-08T17:50:36.838Z via the ACCOUNT_MATCHED_ALIAS_LINKED branch",
+     "seconds_from_order_to_webhook": 4
+    },
+    "checkout_email_constraint": "Only ersatzrealityenterprise@gmail.com has an active commerce alias",
+    "shopify_featured_media_url": "https://cdn.shopify.com/s/files/1/0697/7254/2029/files/uncle-seezin-twelve-miles-for-flour-cover.png?v=1788370703",
+    "chairman_visual_approved_at": "2026-09-08T11:08:51.414Z",
+    "chairman_rights_confirmed_at": "2026-09-08T11:08:51.414Z",
+    "chairman_visual_approved_url": "https://cdn.shopify.com/s/files/1/0697/7254/2029/files/uncle-seezin-twelve-miles-for-flour-cover.png?v=1788370703",
+    "first_customer_witness_policy": "THY-FIRST-CUSTOMER-WITNESS-001",
+    "provider_authority_discrepancy": "THY-COMMERCE-PROVIDER-AUTHORITY-001 records payment_provider=STRIPE; the live capture gateway is shopify_payments. Recorded as observed. Not reconciled by this session - the authority row is Chairman-owned.",
+    "storefront_password_protection": "disabled (verified via Admin API)",
+    "mobile_preview_chairman_witness": {
+     "note": "Chairman reported he already went in and looked at the storefront/show surfaces on iPad.",
+     "state": "CHAIRMAN_WITNESSED",
+     "source": "current THYLORA chat",
+     "reported_at": "2026-09-10T14:18:00-04:00"
+    },
+    "spine_forward_reconciliation_2026_09_16": {
+     "reason": "EDF reader re-access and protected file download are separate delivery paths; one can be proven while the other has zero audit rows.",
+     "reaccess_status": "VERIFIED_THROUGH_EDF_READER",
+     "external_customer_1": "NOT_YET_OCCURRED",
+     "download_audit_status": "NO_AUTHENTICATED_PDF_DOWNLOAD_WITNESSED",
+     "contradiction_resolved": true
+    }
+   },
+   "created_at": "2026-09-02T16:25:22.322716+00:00",
+   "updated_at": "2026-09-17T00:38:09.595516+00:00",
+   "sell_intent": true,
+   "readiness_id": "9bb67797-ef51-47c0-b78c-5e9c0a23ee6c",
+   "product_state": "ACTIVE",
+   "product_title": "Twelve Miles for Flour \u00e2\u0080\u0094 An Unkle Seezin Trail Story",
+   "rights_passed": true,
+   "active_allowed": true,
+   "source_complete": true,
+   "reaccess_verified": true,
+   "delivery_connected": true,
+   "external_product_id": "gid://shopify/Product/7957652275277",
+   "next_executable_work": "Keep Twelve Miles ACTIVE. Use it as the first traffic product. Re-access is already witnessed through thylora_open_edf_v1; an empty thylora_product_download_audit is not contradictory because no protected PDF download has been witnessed. Track download audit as optional technical evidence, not as a release blocker. Do not treat an external customer as already acquired.",
+   "mobile_preview_passed": true,
+   "checkout_path_verified": true,
+   "final_artifact_complete": true,
+   "visual_preflight_passed": true,
+   "product_specific_visual_complete": true
+  }
+ },
+ {
+  "src": "readiness",
+  "j": {
+   "blockers": [
+    "NOT BUYABLE: product status on Shopify is DRAFT, verified live via Admin API 2026-09-17. The earlier blocker claiming this product was \"LIVE AND PUBLICLY BUYABLE\" is withdrawn as stale - it no longer matches the storefront.",
+    "NO PUBLISHED EDF PACKAGE, so the in-browser reader cannot open this title. thylora_open_edf_v1 returns NO_PUBLISHED_EDF. EDF creation gates on thylora_is_chairman(); this session authenticates as postgres with auth.uid()=null. Chairman-credentialed, not routed around.",
+    "CHECKOUT NEVER EXERCISED for this SKU. No payment, no real entitlement, no storefront render witnessed. Twelve Miles evidence is NOT inherited.",
+    "ARTIFACT CLEARED 2026-09-19: WinAnsi 0x7F defect regenerated out; interior verified byte-for-byte. Remaining gate is Chairman-only (DRAFT status; activation withheld by directive)."
+   ],
+   "evidence": {
+    "price_usd": 7,
+    "visual_brief": "A familiar world scene with hidden dependencies and overlooked gaps revealed through translucent evidence/context layers; playful but premium.",
+    "reconciled_at": "2026-09-02T23:15:04.920609+00:00",
+    "reconciliation": "Finished customer artifact found in THYLORA Library and Shopify featured media verified live; stale missing-artifact/media blockers removed.",
+    "shopify_handle": "thylora-gap-hunt-21-things-you-re-not-seeing",
+    "delivery_asset_id": "THY-DELIVERY-8658F16FFC521665",
+    "delivery_resolves": "verified against thylora-protected-download resolution query",
+    "shopify_verified_at": "2026-09-02T16:25:22.322716+00:00",
+    "chairman_preview_url": "https://claude.ai/artifact/VP2vUggkYMXQXiaRA5FwWP",
+    "delivery_asset_state": "STAGED",
+    "listing_activated_on": "2026-09-16",
+    "coming_soon_stage_394": {
+     "badge": "Coming Soon / In Production",
+     "state": "COMING_SOON_STAGED_FOR_REVIEW",
+     "theme_id": "gid://shopify/OnlineStoreTheme/149121499213",
+     "staged_at": "2026-09-12T00:00:00Z",
+     "theme_role": "UNPUBLISHED",
+     "price_display": false,
+     "purchase_action": false,
+     "custody_query_id": "THY-Q-20260912-STOREFRONT-CONTINUOUS-EXECUTION-394"
+    },
+    "cover_approval_binding": {
+     "approved_by": "CHAIRMAN VYC",
+     "scope_limits": [
+      "DOES NOT authorize activation",
+      "DOES NOT authorize publication",
+      "DOES NOT authorize theme publication",
+      "DOES NOT authorize price changes"
+     ],
+     "approval_delta": "sequence 495 THY-Q-20260918-COVER-APPROVAL-MATH-STUDIO-495",
+     "pixel_dimensions": "1254x1254",
+     "verified_live_at": "2026-09-18",
+     "approved_file_url": "https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-gap-hunt-approved-cover.png?v=1789219255",
+     "approved_media_id": "gid://shopify/MediaImage/28674418606157",
+     "asset_version_date": "2026-09-12T13:20:53Z",
+     "external_product_id": "gid://shopify/Product/7957199749197",
+     "superseded_file_url": "https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-gap-hunt-21-cover.png?v=1788370761",
+     "verification_method": "Shopify Admin API featuredMedia read; media id, URL, createdAt and pixel dimensions all matched before binding. Filename similarity alone was NOT accepted as identity.",
+     "superseded_approval_at": "2026-09-08T11:08:51.414Z"
+    },
+    "preview_delivery_state": "PENDING_CHAIRMAN_DEVICE_WITNESS",
+    "cover_binding_written_at": "2026-09-18T21:06:04.283074+00:00",
+    "delivery_asset_active_on": "2026-09-16",
+    "delivery_binary_staged_at": "2026-09-12T19:12:31.830522+00:00",
+    "winansi_defect_cleared_at": "2026-09-19 11:06:24.094433+00",
+    "shopify_featured_media_url": "https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-gap-hunt-approved-cover.png?v=1789219255",
+    "chairman_visual_approved_at": "2026-09-18T00:00:00Z",
+    "verification_run_2026_09_17": {
+     "sku": "THY-GAP-HUNT-021",
+     "price": "7.00",
+     "pdf_header": "%PDF-1.4 ReportLab, /Count 9 verified from stored bytes",
+     "artifact_bytes": 31963,
+     "artifact_pages": 9,
+     "shopify_status": "DRAFT",
+     "artifact_sha256": "8658f16ffc521665fc0d3950445452aba35b896ded655e219ff4e52b1150be6a",
+     "shopify_publications": 0,
+     "synthetic_entitlement": "ran in a transaction and rolled back; row counts before and after identical (ent=3, att=3, audit=0, acc=5)",
+     "artifact_release_state": "ACTIVE",
+     "download_audit_meaning": "thylora-protected-download inserts the audit row before serving bytes and fails closed if that insert fails, so zero rows means no protected download has ever been served for any product",
+     "synthetic_gap_hunt_open": "delivered=false, failure=NO_PUBLISHED_EDF, FAILED attempt row written",
+     "reaccess_evidence_location": "thylora_entitlement_access_log, not thylora_product_download_audit; the two surfaces are different and must not be merged",
+     "download_audit_rows_all_time": 0,
+     "positive_control_twelve_miles": "FIRST_ACCESS access_number=1 with 50 blocks, then REACCESS access_number=2; both returned committed access_id values"
+    },
+    "chairman_rights_confirmed_at": "2026-09-08T11:08:51.414Z",
+    "chairman_visual_approved_url": "https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-gap-hunt-21-cover.png?v=1788370761",
+    "THY-STORE-DELIVERY-REPAIR-001": {
+     "change": "thylora_customer_library_v1 upgraded to contract_version 2: emits entitlement_id, downloadable, download{url,filename,mime_type,size_bytes,content_sha256}, delivery_medium, customer_message. Purely additive; all prior keys preserved.",
+     "applied_at": "2026-09-17T15:09:50.468505+00:00",
+     "not_witnessed": "No real HTTP download was executed for these seven: that needs a signed-in buyer JWT, which this session does not hold. UNKNOWN REMAINS UNKNOWN.",
+     "witness_audit_gate": "thylora_product_download_audit insert succeeded for all seven ACTIVE assets, so the fail-closed audit gate in thylora-protected-download will not spuriously deny. Transaction rolled back.",
+     "witness_fail_closed": "REVOKED entitlement -> delivery_medium=NONE, download withheld. Product whose only asset is HELD -> download withheld. Transaction rolled back.",
+     "listing_copy_corrected": "Shopify description for all seven rewritten: the false sentence promising the file \"opens in the protected reader\" replaced with accurate download wording.",
+     "witness_download_control": "Synthetic ACTIVE entitlement per product returned delivery_medium=DOWNLOAD with a resolvable download URL and correct filename/byte count. Transaction rolled back."
+    },
+    "reconciliation_2026_09_16_1800": {
+     "edf_package": "NONE - no row in thylora_edf_packages for this external_product_id",
+     "reader_path": "BROKEN - NO_PUBLISHED_EDF",
+     "download_path": "WIRED - does not require an EDF package",
+     "reconciled_at": "2026-09-16T18:01Z",
+     "reconciled_by": "Claude Code connected session, Chairman-directed store reconciliation",
+     "shopify_status": "ACTIVE and published - verified by live Shopify Admin API read",
+     "publicly_buyable": true,
+     "library_ui_control": "UNKNOWN - library page not reachable from this session",
+     "delivery_asset_state": "ACTIVE with content_sha256 bound",
+     "checkout_path_verified": "FALSE and deliberately left false: no purchase has ever been made for this product. Twelve Miles evidence was NOT inherited.",
+     "store_level_mechanism_note": "The store-level payment, webhook, buyer-resolution and entitlement mechanism is proven by order #1004, but that proves the STORE mechanism, not this product deliverability."
+    },
+    "storefront_password_protection": "disabled (verified via Admin API)",
+    "fresh_slate_candidate_2026_09_18": {
+     "pass": "FRESH_STORE_SLATE",
+     "rank": 8,
+     "price": "7.00 SET (read live 2026-09-18). SKU THY-GAP-HUNT-021, variant gid://shopify/ProductVariant/43710112989261.",
+     "shelf": "RELEASE_DEVELOPMENT",
+     "activated": false,
+     "published": false,
+     "scheduled": false,
+     "workstream": "STORE_BACKEND",
+     "prepared_by": "CLAUDE",
+     "rights_state": "PASSED.",
+     "delivery_state": "CONNECTED.",
+     "readiness_note": "READINESS held at 4, not raised to 5, because the visual contradiction above is unresolved. If the visual lane confirms the cover is approved, this becomes T0_DECISION_ONLY and READINESS 5 (score 960), which would place it above The Handoff.",
+     "remaining_work": "Produce and bind a product-specific cover, pass visual preflight. Then it is in the same position as the six. Optionally redesign to Edition v2 first so the shelf is visually consistent.",
+     "store_priority": {
+      "scale": "1-5 each. READINESS 5 = artifact byte-verified AND rights passed AND delivery route proven AND only a decision or one bounded copy step remains. It never means \"activated\".",
+      "score": 768,
+      "formula": "READINESS x DISTINCTIVENESS x CUSTOMER_VALUE x WORLD_CONNECTION x REUSE_POTENTIAL",
+      "readiness": 4,
+      "customer_value": 4,
+      "distinctiveness": 4,
+      "reuse_potential": 4,
+      "world_connection": 3,
+      "hard_failure_rule": "Any rights, delivery or artifact hard failure forces HOLD regardless of score."
+     },
+     "visual_requirement": "CONTRADICTION \u00e2\u0080\u0094 DO NOT RESOLVE WITHOUT THE VISUAL LANE. A featured cover IS bound on Shopify: gid://shopify/MediaImage/28674418606157, thylora-gap-hunt-approved-cover.png, the same \"approved-cover\" naming convention as the four covers on products whose visual gates read TRUE. Yet this row carries product_specific_visual_complete=false and visual_preflight_passed=false. Either the flags are stale and this product is one decision from release, or the cover was bound without passing preflight and the filename overstates its status. Flags were NOT changed by this pass. This single question is worth resolving first because it decides whether Gap Hunt is T0 or T1.",
+     "contradiction_found": true,
+     "what_buyer_receives": "21 things you are not seeing \u00e2\u0080\u0094 a gap-finding workbook PDF.",
+     "time_to_release_class": "T1_BOUNDED_STEP",
+     "cross_sell_connections": "Completes the reasoning trio with Question Deck and Build a World. Its absence is why that trio currently reads as a pair.",
+     "show_story_relationship": "Method product feeding the ErsatzReality evidence lane; already assigned to ERSATZ_EVIDENCE shelf.",
+     "variant_config_verified": {
+      "note": "Same inert-inventory configuration as the six and as Twelve Miles. No checkout defect.",
+      "policy": "DENY",
+      "tracked": false,
+      "quantity": 0,
+      "requires_shipping": false
+     },
+     "expands_existing_ip_tree": "YES \u00e2\u0080\u0094 gap-finding method, same tree as Build a World and the C&W gap registry notebooks.",
+     "exact_existing_asset_state": "ARTIFACT ACTIVE and untouched by the v2 pass: THY-DELIVERY-8658F16FFC521665, 31,963 B, 21pp claimed, sha 8658f16f\u00e2\u0080\u00a6. Largest of the v1 story/method artifacts. NOT redesigned to Edition v2."
+    },
+    "chairman_cover_approval_2026_09_18": {
+     "scope": "2026-09-12 replacement covers",
+     "approved": true,
+     "approved_at": "2026-09-18T19:47:34.154786+00:00",
+     "activation_authorized": false,
+     "publication_authorized": false
+    },
+    "delivery_medium_decision_2026_09_17": {
+     "basis": "No EDF package exists for this product and EDF authoring is Chairman-credentialed. thylora-protected-download does not require an EDF package: it verifies the entitlement is ACTIVE and owned by the caller, selects the ACTIVE delivery asset, writes a thylora_product_download_audit row, then serves the bytes.",
+     "delivery_medium": "DOWNLOAD",
+     "test_2026_09_17": "Synthetic entitlement + the function's exact query chain, run in a transaction and rolled back: audit row written, bytes servable, freshly computed sha256 digest equals the stored content_sha256, PDF magic bytes correct.",
+     "still_unwitnessed": "The HTTP/JWT layer of thylora-protected-download has never been exercised by a real signed-in browser. thylora_product_download_audit still holds 0 committed rows. DOWNLOAD is proven at the data layer, not yet at the transport layer.",
+     "repair_that_made_it_reachable": "thylora_customer_library_v1 rewritten to payload_version 2. It now emits entitlement_id, download_available, delivery_medium and a download block carrying asset_id, filename, byte count, sha256 and the protected-download endpoint. Before this the library payload carried no entitlement_id and no download field, so no client could construct the call."
+    }
+   },
+   "created_at": "2026-09-02T16:25:22.322716+00:00",
+   "updated_at": "2026-09-19T11:18:08.128499+00:00",
+   "sell_intent": true,
+   "readiness_id": "e036c1ea-d57f-4218-b826-57891f2ab6dd",
+   "product_state": "DRAFT",
+   "product_title": "THYLORA Gap Hunt \u00e2\u0080\u0094 21 Things You\u00e2\u0080\u0099re Not Seeing",
+   "rights_passed": true,
+   "active_allowed": false,
+   "source_complete": true,
+   "reaccess_verified": false,
+   "delivery_connected": true,
+   "external_product_id": "gid://shopify/Product/7957199749197",
+   "next_executable_work": "Chairman reviews rendered interior preview and returns RELEASE / REVISE / HOLD.",
+   "mobile_preview_passed": false,
+   "checkout_path_verified": false,
+   "final_artifact_complete": true,
+   "visual_preflight_passed": true,
+   "product_specific_visual_complete": true
+  }
+ },
+ {
+  "src": "readiness",
+  "j": {
+   "blockers": [
+    "NOT BUYABLE: product status on Shopify is DRAFT, verified live via Admin API 2026-09-17. The earlier blocker claiming this product was \"LIVE AND PUBLICLY BUYABLE\" is withdrawn as stale - it no longer matches the storefront.",
+    "NO PUBLISHED EDF PACKAGE, so the in-browser reader cannot open this title. thylora_open_edf_v1 returns NO_PUBLISHED_EDF. EDF creation gates on thylora_is_chairman(); this session authenticates as postgres with auth.uid()=null. Chairman-credentialed, not routed around.",
+    "CHECKOUT NEVER EXERCISED for this SKU. No payment, no real entitlement, no storefront render witnessed. Twelve Miles evidence is NOT inherited.",
+    "ARTIFACT CLEARED 2026-09-19: WinAnsi 0x7F defect regenerated out; interior verified byte-for-byte. Remaining gate is Chairman-only (DRAFT status; activation withheld by directive)."
+   ],
+   "evidence": {
+    "price_usd": 19,
+    "visual_brief": "One small idea visibly unfolding into place, people, work, objects, systems, story and commerce; layered living-art world map aesthetic.",
+    "reconciled_at": "2026-09-02T23:15:04.920609+00:00",
+    "reconciliation": "Finished customer artifact found in THYLORA Library and Shopify featured media verified live; stale missing-artifact/media blockers removed.",
+    "shopify_handle": "build-a-world-from-one-idea-thylora-starter-kit",
+    "delivery_asset_id": "THY-DELIVERY-589D0EC598F737C1",
+    "delivery_resolves": "verified against thylora-protected-download resolution query",
+    "shopify_verified_at": "2026-09-02T16:25:22.322716+00:00",
+    "chairman_preview_url": "https://claude.ai/artifact/VP2vUggkYMXQXiaRA5FwWP",
+    "delivery_asset_state": "STAGED",
+    "listing_activated_on": "2026-09-16",
+    "coming_soon_stage_394": {
+     "badge": "Coming Soon / In Production",
+     "state": "COMING_SOON_STAGED_FOR_REVIEW",
+     "theme_id": "gid://shopify/OnlineStoreTheme/149121499213",
+     "staged_at": "2026-09-12T00:00:00Z",
+     "theme_role": "UNPUBLISHED",
+     "price_display": false,
+     "purchase_action": false,
+     "custody_query_id": "THY-Q-20260912-STOREFRONT-CONTINUOUS-EXECUTION-394"
+    },
+    "cover_approval_binding": {
+     "approved_by": "CHAIRMAN VYC",
+     "scope_limits": [
+      "DOES NOT authorize activation",
+      "DOES NOT authorize publication",
+      "DOES NOT authorize theme publication",
+      "DOES NOT authorize price changes"
+     ],
+     "approval_delta": "sequence 495 THY-Q-20260918-COVER-APPROVAL-MATH-STUDIO-495",
+     "pixel_dimensions": "1254x1254",
+     "verified_live_at": "2026-09-18",
+     "approved_file_url": "https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-build-a-world-approved-cover.png?v=1789219249",
+     "approved_media_id": "gid://shopify/MediaImage/28674417197133",
+     "asset_version_date": "2026-09-12T13:20:48Z",
+     "external_product_id": "gid://shopify/Product/7957200109645",
+     "superseded_file_url": "https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-build-a-world-starter-kit-cover.png?v=1788370731",
+     "verification_method": "Shopify Admin API featuredMedia read; media id, URL, createdAt and pixel dimensions all matched before binding. Filename similarity alone was NOT accepted as identity.",
+     "superseded_approval_at": "2026-09-08T11:08:51.414Z"
+    },
+    "preview_delivery_state": "PENDING_CHAIRMAN_DEVICE_WITNESS",
+    "cover_binding_written_at": "2026-09-18T21:06:04.283074+00:00",
+    "delivery_asset_active_on": "2026-09-16",
+    "delivery_binary_staged_at": "2026-09-12T19:12:26.055764+00:00",
+    "winansi_defect_cleared_at": "2026-09-19 11:06:24.094433+00",
+    "nameguard_canonicalized_at": "2026-09-19T17:41:42.54813+00:00",
+    "nameguard_canonicalized_by": "THY-WORK-DASHBOARD-RELEASE-FIX-538",
+    "shopify_featured_media_url": "https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-build-a-world-approved-cover.png?v=1789219249",
+    "chairman_visual_approved_at": "2026-09-18T00:00:00Z",
+    "chairman_decision_2026_09_17": {
+     "activation": "HELD_PENDING_REDESIGNED_CUSTOMER_ARTIFACT_PREVIEW",
+     "approved_at": "2026-09-17T21:59:51.645334+00:00",
+     "visual_ruling": "CURRENT_PDF_INTERIOR_PRESENTATION_REJECTED_AS_TOO_PLAIN_WHITE_GENERIC",
+     "required_direction": "LIVED_IN_THYLORA_WORLD_DESIGN_WITH_PAGE_ARCHITECTURE_VISUAL_DEPTH_BARRIER_TREATMENT_CAUSAL_ART_AND_PRODUCT_SPECIFIC_LAYOUT",
+     "commercial_approval": "APPROVED_TITLE_PRICE_PRODUCT_DIRECTION",
+     "fresh_final_preview_required": true
+    },
+    "chairman_rights_confirmed_at": "2026-09-08T11:08:51.414Z",
+    "chairman_visual_approved_url": "https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-build-a-world-starter-kit-cover.png?v=1788370731",
+    "THY-STORE-DELIVERY-REPAIR-001": {
+     "change": "thylora_customer_library_v1 upgraded to contract_version 2: emits entitlement_id, downloadable, download{url,filename,mime_type,size_bytes,content_sha256}, delivery_medium, customer_message. Purely additive; all prior keys preserved.",
+     "applied_at": "2026-09-17T15:09:50.468505+00:00",
+     "not_witnessed": "No real HTTP download was executed for these seven: that needs a signed-in buyer JWT, which this session does not hold. UNKNOWN REMAINS UNKNOWN.",
+     "witness_audit_gate": "thylora_product_download_audit insert succeeded for all seven ACTIVE assets, so the fail-closed audit gate in thylora-protected-download will not spuriously deny. Transaction rolled back.",
+     "witness_fail_closed": "REVOKED entitlement -> delivery_medium=NONE, download withheld. Product whose only asset is HELD -> download withheld. Transaction rolled back.",
+     "listing_copy_corrected": "Shopify description for all seven rewritten: the false sentence promising the file \"opens in the protected reader\" replaced with accurate download wording.",
+     "witness_download_control": "Synthetic ACTIVE entitlement per product returned delivery_medium=DOWNLOAD with a resolvable download URL and correct filename/byte count. Transaction rolled back."
+    },
+    "reconciliation_2026_09_16_1800": {
+     "edf_package": "NONE - no row in thylora_edf_packages for this external_product_id",
+     "reader_path": "BROKEN - NO_PUBLISHED_EDF",
+     "download_path": "WIRED - does not require an EDF package",
+     "reconciled_at": "2026-09-16T18:01Z",
+     "reconciled_by": "Claude Code connected session, Chairman-directed store reconciliation",
+     "shopify_status": "ACTIVE and published - verified by live Shopify Admin API read",
+     "publicly_buyable": true,
+     "library_ui_control": "UNKNOWN - library page not reachable from this session",
+     "delivery_asset_state": "ACTIVE with content_sha256 bound",
+     "checkout_path_verified": "FALSE and deliberately left false: no purchase has ever been made for this product. Twelve Miles evidence was NOT inherited.",
+     "store_level_mechanism_note": "The store-level payment, webhook, buyer-resolution and entitlement mechanism is proven by order #1004, but that proves the STORE mechanism, not this product deliverability."
+    },
+    "storefront_password_protection": "disabled (verified via Admin API)",
+    "chairman_visual_preview_pointer": "chairman_visual_preview_2026_09_17",
+    "fresh_slate_candidate_2026_09_18": {
+     "pass": "FRESH_STORE_SLATE",
+     "rank": 1,
+     "price": "19.00 SET",
+     "shelf": "RELEASE_AVAILABLE_SOON",
+     "activated": false,
+     "published": false,
+     "scheduled": false,
+     "workstream": "STORE_BACKEND",
+     "prepared_by": "CLAUDE",
+     "rights_state": "PASSED. Original THYLORA work, no third-party rights engaged.",
+     "delivery_state": "CONNECTED. Library sign-in -> thylora-protected-download. No EDF; download is the medium.",
+     "remaining_work": "Chairman visual approval of Edition v2, then correct the \"13-page\" claim in the Shopify description to 15, ingest the v2 binary as version 2, then the publish decision.",
+     "store_priority": {
+      "scale": "1-5 each. READINESS 5 = artifact byte-verified AND rights passed AND delivery route proven AND only a decision or one bounded copy step remains. It never means \"activated\".",
+      "score": 3125,
+      "formula": "READINESS x DISTINCTIVENESS x CUSTOMER_VALUE x WORLD_CONNECTION x REUSE_POTENTIAL",
+      "readiness": 5,
+      "customer_value": 5,
+      "distinctiveness": 5,
+      "reuse_potential": 5,
+      "world_connection": 5,
+      "hard_failure_rule": "Any rights, delivery or artifact hard failure forces HOLD regardless of score."
+     },
+     "visual_requirement": "Cover bound on Shopify CDN (1254x1254). v2 interior uses deterministic vector components, no photography or stock. No thylora_visual_assets registry row backs the cover.",
+     "what_buyer_receives": "15-page printable PDF workbook: the world-building sequence step by step with worksheet pages to fill in.",
+     "time_to_release_class": "T0_DECISION_ONLY",
+     "cross_sell_connections": "Anchor of the method ladder: pairs with Question Deck ($12) and Gap Hunt. Natural bundle head for every reasoning product.",
+     "show_story_relationship": "Not a story \u00e2\u0080\u0094 this is the engine that produces the stories. Teaches the method THYLORA uses on itself.",
+     "expands_existing_ip_tree": "YES \u00e2\u0080\u0094 the root of the world-building IP tree. Every EdereAirah product is downstream of this method.",
+     "exact_existing_asset_state": "v1 ACTIVE in thylora_delivery_assets (THY-DELIVERY-589D0EC598F737C1, 33,803 B, 13pp, sha 589d0ec5\u00e2\u0080\u00a6). Edition v2 BUILT and independently re-verified this pass: 2,559,819 B, sha 39185610c576b5e1\u00e2\u0080\u00a6, 15 pages counted from the bytes. Binary in repo branch claude/thylora-backend-continuity-djn6ih, NOT yet in thylora_delivery_assets."
+    },
+    "chairman_cover_approval_2026_09_18": {
+     "scope": "2026-09-12 replacement covers",
+     "approved": true,
+     "approved_at": "2026-09-18T19:47:34.154786+00:00",
+     "activation_authorized": false,
+     "publication_authorized": false
+    },
+    "chairman_release_packet_2026_09_17": {
+     "sku": "THY-WORLD-KIT-001",
+     "currency": "USD",
+     "unknowns": [
+      "No row exists in thylora_visual_assets for this cover, although product_specific_visual_complete and visual_preflight_passed are both true on this row. The cover is bound and present on Shopify; what is missing is the registry entry recording its approval, rights and provenance. Evidence gap, not a contradiction of the gate.",
+      "No EDF package exists for this title, so the in-browser library reader returns NO_PUBLISHED_EDF. Not a delivery blocker: protected download is the delivery medium.",
+      "reaccess_verified, checkout_path_verified and mobile_preview_passed cannot be witnessed until the product is buyable. They are consequences of DRAFT, not independent defects."
+     ],
+     "variant_id": "gid://shopify/ProductVariant/43710115184717",
+     "workstream": "STORE_BACKEND",
+     "exact_cover": {
+      "url": "https://cdn.shopify.com/s/files/1/0697/7254/2029/files/thylora-build-a-world-approved-cover.png?v=1789219249",
+      "pixels": "1254x1254",
+      "bound_on_shopify": true
+     },
+     "exact_title": "Build a World From One Idea \u00e2\u0080\u0094 THYLORA Starter Kit",
+     "prepared_by": "CLAUDE",
+     "mobile_state": "NOT WITNESSED. mobile_preview_passed=false. Cannot be witnessed while the product is DRAFT and on zero sales channels.",
+     "rights_state": "PASSED. rights_passed=true on this row. Original THYLORA work; no third-party rights engaged.",
+     "checkout_state": "NEVER EXERCISED for this SKU. thylora_product_checkout_events=0 rows and thylora_product_download_audit=0 rows backend-wide. No evidence is inherited from Twelve Miles.",
+     "claude_did_not": "activate, publish, schedule, change price, change description, change cover, or modify any Shopify record",
+     "delivery_route": "Shopify checkout -> orders/paid webhook -> entitlement -> THYLORA library (thylora-library.vercel.app) sign-in with the checkout email -> thylora-protected-download serves the ACTIVE asset. No EDF reader for this title; download is the delivery medium.",
+     "packet_version": "RELEASE_PACKET_PASS_2026_09_17",
+     "product_handle": "build-a-world-from-one-idea-thylora-starter-kit",
+     "artifact_preview": {
+      "bytes": 33803,
+      "sha256": "589d0ec598f737c1b8dbd3c7963ca1184be41d064e757e228be6e196b4b82a36",
+      "asset_id": "THY-DELIVERY-589D0EC598F737C1",
+      "encrypted": false,
+      "pdf_header": "%PDF-1.4",
+      "page_objects": 13,
+      "verification": "Page count read directly from the stored bytes and matched to the page count promised in the listing.",
+      "release_state": "ACTIVE"
+     },
+     "storefront_state": {
+      "status": "DRAFT",
+      "online_store_url": null,
+      "sales_channel_publications": 0
+     },
+     "what_buyer_receives": "A 13-page printable PDF workbook with the build sequence and worksheet pages. Listing claim \"13-page\" matches the artifact exactly.",
+     "all_fields_reread_live": true,
+     "exact_current_price_usd": "19.00",
+     "variant_config_verified": {
+      "finding": "Inventory is UNTRACKED, so quantity 0 is inert and cannot read as sold out. This is the identical variant configuration to Twelve Miles for Flour, which has already completed a real paid checkout at quantity -3.",
+      "inventory_policy": "DENY",
+      "inventory_tracked": false,
+      "requires_shipping": false,
+      "inventory_quantity": 0
+     },
+     "final_customer_description": {
+      "structure": "Hook / You receive / How you read it / It stays yours / origin line",
+      "promises_made": "Named page count; THYLORA library sign-in with the checkout email; PDF download; nothing physically ships; not sent as an email attachment; re-download free and non-expiring.",
+      "authoritative_source": "Shopify descriptionHtml on this product, re-read live 2026-09-17",
+      "verified_against_artifact": true
+     },
+     "exact_remaining_release_action": "ONE CHAIRMAN DECISION: publish this product to Online Store + Shop and set status ACTIVE. Every pre-sale gate on this row is already true and the artifact, cover, price, handle and variant configuration are verified correct. No further engineering step exists before activation."
+    },
+    "chairman_visual_preview_2026_09_17": {
+     "key": "build_a_world",
+     "V_min": 2,
+     "build": "THY-ED2-20260917",
+     "bytes": 2559819,
+     "state": "PREVIEW_AWAITING_CHAIRMAN_VISUAL_APPROVAL",
+     "V_mean": 2.87,
+     "sha256": "39185610c576b5e1da639122e8b7afe61c30a621011c321bba30f76981a4e1cc",
+     "edition": "Edition v2",
+     "imagery": "Deterministic vector components generated for this edition. No photography, no third-party source image, no stock element. Registered in thylora_visual_assets / thylora_visual_provenance as approval_state=proposed.",
+     "trim_mm": [
+      215.9,
+      279.4
+     ],
+     "page_map": [
+      [
+       1,
+       "Cover"
+      ],
+      [
+       2,
+       "Edition identity"
+      ],
+      [
+       3,
+       "The world test"
+      ],
+      [
+       4,
+       "1. The Spark"
+      ],
+      [
+       5,
+       "2. The Rule"
+      ],
+      [
+       6,
+       "3. The Place"
+      ],
+      [
+       7,
+       "4. The People"
+      ],
+      [
+       8,
+       "5. The Work"
+      ],
+      [
+       9,
+       "6. The Friction"
+      ],
+      [
+       10,
+       "7. The Memory"
+      ],
+      [
+       11,
+       "8. The System"
+      ],
+      [
+       12,
+       "9. The First Story"
+      ],
+      [
+       13,
+       "10. The Living Shelf"
+      ],
+      [
+       14,
+       "Release gate"
+      ],
+      [
+       15,
+       "Next action"
+      ]
+     ],
+     "pages_v1": 13,
+     "pages_v2": 15,
+     "directive": "THY-Q-20260917-SIX-PRODUCTS-APPROVED-REDESIGN-455",
+     "page_gate": "PASS (Pq = C x W x H x L x E, no page scores 0)",
+     "preserved": [
+      "content",
+      "meaning",
+      "price",
+      "rights",
+      "delivery route",
+      "product ID",
+      "Shopify handle",
+      "provenance"
+     ],
+     "components": 13,
+     "prepared_by": "CLAUDE CODE (claude-opus-5)",
+     "v1_artifact": "RETAINED UNCHANGED in thylora_delivery_assets; nothing was erased",
+     "clipped_pages": 0,
+     "claude_did_not": "activate, publish, schedule, change price, change description, change cover, or modify any Shopify record",
+     "artifact_location": {
+      "note": "Binaries are NOT in thylora_delivery_assets. file_bytes is NOT NULL and these editions are 2.5-4.5 MB each, so preview binaries are held in the repo at the commit above and identified by sha256. Ingest into thylora_delivery_assets on Chairman visual approval, not before.",
+      "path": "products/redesign/out/build_a_world.v2.pdf",
+      "repo": "vyc2st-ctrl/Thylora",
+      "branch": "claude/thylora-backend-continuity-djn6ih",
+      "commit": "c203522"
+     },
+     "recorded_unknowns": [
+      "BRAND-THYLORA-MARK is UNKNOWN / NOT_APPROVED, so no graphic logo was invented; the editions carry a typographic wordmark only.",
+      "BRAND-FONT-FAMILY is UNKNOWN, so the families used are PROPOSED - NOT CANON.",
+      "BRAND-QR-DESTINATIONS has no verified destination, so no QR is printed."
+     ],
+     "blocker_before_activation": "PAGE COUNT CHANGED. The live Shopify description for this product promises a specific page count, which the redesign no longer matches. The listing copy must be corrected before activation or the listing becomes an untrue claim."
+    },
+    "delivery_medium_decision_2026_09_17": {
+     "basis": "No EDF package exists for this product and EDF authoring is Chairman-credentialed. thylora-protected-download does not require an EDF package: it verifies the entitlement is ACTIVE and owned by the caller, selects the ACTIVE delivery asset, writes a thylora_product_download_audit row, then serves the bytes.",
+     "delivery_medium": "DOWNLOAD",
+     "test_2026_09_17": "Synthetic entitlement + the function's exact query chain, run in a transaction and rolled back: audit row written, bytes servable, freshly computed sha256 digest equals the stored content_sha256, PDF magic bytes correct.",
+     "still_unwitnessed": "The HTTP/JWT layer of thylora-protected-download has never been exercised by a real signed-in browser. thylora_product_download_audit still holds 0 committed rows. DOWNLOAD is proven at the data layer, not yet at the transport layer.",
+     "repair_that_made_it_reachable": "thylora_customer_library_v1 rewritten to payload_version 2. It now emits entitlement_id, download_available, delivery_medium and a download block carrying asset_id, filename, byte count, sha256 and the protected-download endpoint. Before this the library payload carried no entitlement_id and no download field, so no client could construct the call."
+    }
+   },
+   "created_at": "2026-09-02T16:25:22.322716+00:00",
+   "updated_at": "2026-09-19T17:41:42.54813+00:00",
+   "sell_intent": true,
+   "readiness_id": "b156a034-158f-4234-939e-04d6a8fe7096",
+   "product_state": "DRAFT",
+   "product_title": "Build a World From One Idea \u00e2\u0080\u0094 THYLORA Starter Kit",
+   "rights_passed": true,
+   "active_allowed": false,
+   "source_complete": true,
+   "reaccess_verified": false,
+   "delivery_connected": true,
+   "external_product_id": "gid://shopify/Product/7957200109645",
+   "next_executable_work": "Chairman reviews rendered interior preview and returns RELEASE / REVISE / HOLD.",
+   "mobile_preview_passed": false,
+   "checkout_path_verified": false,
+   "final_artifact_complete": true,
+   "visual_preflight_passed": true,
+   "product_specific_visual_complete": true
+  }
+ },
+ {
+  "src": "readiness",
+  "j": {
+   "blockers": [
+    "DELIVERY ASSET HELD: THY-DELIVERY-MONEY-PATH-CARD-001 (5963 bytes, sha256 6d1f2c4b...) registered HELD; protected download serves only ACTIVE.",
+    "NO COVER IMAGE: product has no featured media; no image generated or authorized.",
+    "CHECKOUT NEVER EXERCISED for this SKU; no payment claimed. Twelve Miles evidence is NOT inherited.",
+    "NOT PUBLISHED: Shopify DRAFT, zero sales channels. Activation is a Chairman decision.",
+    "SPLIT UNSET: N = B + C + A + O + R percentages not approved; card states blanks are blank on purpose."
+   ],
+   "evidence": {
+    "role": "ONE_DOLLAR_PILOT",
+    "built_by": "THY-CONTINUITY-SPINE-610 Phase 2 pass 2026-09-25",
+    "pdf_pages": 2,
+    "lakisha_pilot": "PENDING - invitation record not located in backend",
+    "shopify_variant": "gid://shopify/ProductVariant/50528743260237",
+    "requires_shipping": false,
+    "opening_page_blank": false
+   },
+   "created_at": "2026-09-25T15:33:41.499219+00:00",
+   "updated_at": "2026-09-25T15:33:41.499219+00:00",
+   "sell_intent": true,
+   "readiness_id": "a599086b-9640-4678-b639-2e545a5b3d99",
+   "product_state": "DRAFT",
+   "product_title": "Where Does One Dollar Go? \u00e2\u0080\u0094 THYLORA Money Path Card",
+   "rights_passed": true,
+   "active_allowed": false,
+   "source_complete": true,
+   "reaccess_verified": false,
+   "delivery_connected": false,
+   "external_product_id": "gid://shopify/Product/10319334309965",
+   "next_executable_work": "Chairman reviews the 2-page PDF (spine-610/one-dollar-pilot). If approved: attach a cover, flip asset HELD->ACTIVE, set Shopify ACTIVE on Online Store, run one real $1 checkout, confirm entitlement + library download + re-download, record N = 1.00 - 0.33 - T - 0.",
+   "mobile_preview_passed": false,
+   "checkout_path_verified": false,
+   "final_artifact_complete": true,
+   "visual_preflight_passed": false,
+   "product_specific_visual_complete": false
+  }
+ },
+ {
+  "src": "asset",
+  "j": {
+   "asset_id": "3dae3f75-057a-42e2-9425-de19b01d50b8",
+   "filename": "Uncle-Seezin-Twelve-Miles-for-Flour.pdf",
+   "mime_type": "application/pdf",
+   "created_at": "2026-09-16T13:03:53.546402+00:00",
+   "file_bytes": "\\x255044462d312e340a25e2e3cfd30a312030206f626a0a3c3c202f54797065202f436174616c6f67202f5061676573203220302052203e3e0a656e646f626a0a322030206f626a0a3c3c202f54797065202f5061676573202f436f756e742033202f4b696473205b33203020522034203020522035203020525d203e3e0a656e646f626a0a332030206f626a0a3c3c202f54797065202f50616765202f506172656e74203220302052202f4d65646961426f78205b30203020363132203739325d202f5265736f7572636573203c3c202f466f6e74203c3c202f4631203920302052202f463220313020302052203e3e203e3e202f436f6e74656e7473203620302052203e3e0a656e646f626a0a342030206f626a0a3c3c202f54797065202f50616765202f506172656e74203220302052202f4d65646961426f78205b30203020363132203739325d202f5265736f7572636573203c3c202f466f6e74203c3c202f4631203920302052202f463220313020302052203e3e203e3e202f436f6e74656e7473203720302052203e3e0a656e646f626a0a352030206f626a0a3c3c202f54797065202f50616765202f506172656e74203220302052202f4d65646961426f78205b30203020363132203739325d202f5265736f7572636573203c3c202f466f6e74203c3c202f4631203920302052202f463220313020302052203e3e203e3e202f436f6e74656e7473203820302052203e3e0a656e646f626a0a362030206f626a0a3c3c202f4c656e6774682031323933202f46696c746572202f466c6174654465636f6465203e3e0a73747265616d0a78da9556db6e1b37107def57cc630ba8acb4abeba3ed38a981a429641541fa4669475a56d4724b72adaa9f9118c8a7f5777a869415a768d02d6c18d27a399c33e7cc99b95ed1509593677ffc8e7e7839a2851ad26a4bc5b854e319cd8aa11ae24145dfde2eefaf56bf2e6faf5edfadded35fb4faf1fdebb7cbabef68f51bddaebeb9feaf80d3b92ae7341b8ed5629202be5ddebdbafbe9ea35ddafde2edf3f8f937ed2f102e7f2f9d16cae26139ace176a91135a1dd93e30bd3196036d9da797d675fedfe38c6834ca716685009a8ea7aac861ae1afaa5d958a67be63f4d43d16b632944e74fa4d7ae8b74641d6bf6036abda97840baa968ed4db3c32fadf5664fc75a476ad9b508a337b1d3d69ea861ae54cf748a5215b92a57b4358d09355754999d89da1257261ad728fa19974632714007edf7f8405d3b2020ef02cb37d750d878e6467dad9aa3b19a7cbe76321fabf25c05ba370749ffd67be0eb97f664b250c52c9dffa284419b8a5032d4d2b474d48162e6ea205c29bad196d754b3f6f9b5a63bacd9a7ba56bc418d2b4173600db4acc3a9671527e55495454ae7e31251283aba666be9c6bb104096a26ba18db6229401597d68c9193b40c236665e259db5ed985af0ca91de78e4fb02413459de420b26d6f252cf8cd03e652e50a85dbb676ed9abc77e87c78b991a6738b96016054169c0b264b97160ca5252ab357b080faa68a8752141842a34b50662f428b05bbbea449e7fef3844c8923eded1066f570eb1a0dd35e3404f50e3f948ac2181eadaff03688216ce80ce42b1ceed81080968da797da2c0fa80a7473219e451d2f550d4fe849c571a30efa02e5dab478180f41b1753a72142d3f9c007684ffef9cab9bedd371e176a9201e5e0a44df341da8915a53b6b73803a4eb53b7e0deb3f5b6b3c2cd534635d01c7d2e98a6e6ae702bc6ae55cbfc44a78de747809b2353e440ae68fdc47280ea8adc4a6205c48bacaea442183a80dcc5c7acd3bb48346c781fa33c63db75276d457431a476df7d4bbf1cb69a1a6d9af36356f84c32449490279d5dcf0031a3a316890dc91d1c9211a6b7b5252960b353b3b53a417c0f8ce89ba6fe06efbdca4f0e21d3ff5047cd1e1913b364002c5285a8243aa51f52dcc981b28fce4cefd9d4f4ad1b4f7e681fb828649cf32e8dc2e30a970c6dc17d670a8e6c3672ddd3a648efcbb36440fed43e4ef3875e6463c4b3a4332c6346a609c8f4fdc01e3462644c24a9bce5b40715dc62741563594d62fa70243609e61e56bb2ae1e4c306b58bad5412620efa5a9a042a8cd73e6522ef32ccfef1d99906971313a6470e9cdd6020cc8917870732367fa1a46311d5d86bddc0c2f13b20386729d1c4e6e74161c7b36bb3acab30a3e5e55c902cd65e2f4ebd9a2289e76932fc646bf6447b0eb45994f9ff2f43307960f62bc3af175e6d26389f0a2cfa8d1a5e75189affad8a429f5c6cbacef4c8c49c120258f2ccc292c1b690e897a31587ba606c75ecc33c5fa416a63e2a57eb58b6c9f7ca2c5ba5349171d70e9e98b4cda2e2d2538292b4f4fc18fb0210ccb8b83550e97ba9685c5d47fe0528b7b1c5377c32520a80afaf7fe24696adad4c69e7d4d6330c3e8e579abede1626de7da024fcf9cb0da0e7335047faaecc5159f45436bb334a275b1ee0b17f37e547e16ecd17f263821f910c0680313966a64d0693d7ae281507b71af7b29967948abd025496c4c187076fb293808ab3f5eacdca38c772b5176b2038441b6427cbc28218a4d9fbe8f354cf6b2cd46b071683f25b62a49e7848d2c3ed5e36ffd969b4c0a656e6473747265616d0a656e646f626a0a372030206f626a0a3c3c202f4c656e6774682031333231202f46696c746572202f466c6174654465636f6465203e3e0a73747265616d0a78da8d564d8fdb3610bdf757ccb1050cd6b22d6bdd1e8a6ed3a05b3439340e821e6989b21853a4405251dc9fd1cd0fee1b52ce6e83061016900f2b916fe67dccdc1f699dfefc99be7f59505188351d5baa3662bdc673cd3fc786be7da18c91ff043a9951d120eb8b8ad4c9868c6a23c54e5123af7452adf38a9c2549ad57fadc459ae4d959f11d1ddfd3afc76feeff73df868a9d289feedbdfe1fa32dd77c491eff853d2369dff6a6cfeff902f41efcbbd586f6e875ca975a36dd211090ac5c951af8d0aa464882ba0c57f3aa50c85d15e28baf46e379e04bdf0fa83f2f4878b512bfa5df6f82844e71a6ab45775d4f6bc10d30e8dac12a6d879a5a8571697bad44225eb8e1a55eb4635645d64089d921e0f2f169e5f54a2c835ff228d3ad1fbb11f705ae3262be8f19da25a5a1a4663e8ea46e646894fb7ba8c7317bc2be3539340b4b467a3f0ed5f78fff3c7fd95e447a316825a17a2c845cb41fa283e2dfbaeaceec42617f310a4961dc9c000a70e1003205aa5d02a607b6b8d9399dba4c38016aec8b012fd183a02f1a02f55c504af50142b36a2fdd430b75c105ab410d77e233633894af66860d257a301e5f8595eb5d1fd0968dd08edebd8f1efc92b79815816b2596e0f629b1b3053d401b84a85f674736236e10fa8a5d1b58688b50dd18f50a5b32155ca4a1f3a17ddd9cba10ba0ddf52c2af429c4af6aeb4b5396ebb5d8564fa6f4ce9ee94de77cacc7b8aca05d558a6df6f5cf919a315c28cbb4ee5c50080b2bbd771379dd9c15452fb511f4106970da46d4ddb91e527ce96009695abccffe5da11d1044ab4c24a32fe8bf0e8deb13170b19dd9507b1cbf96638ac2c38a230181d7147a320ad1afd777682e533c7283b7008749a1d33e74a6bdc88a6820f5817f927cf92b9c019272f6ddd2da47db7dd8b5df95cf7b51c3942194e986f315012ae465f724ea1577078ee6688d2275fbc703947a0147aa3d4df7865a1f776c55694b9238f47febcd37d32de4f9f50ce07a76b8e1263f89ab7b6366a3e9fbc6b5416581e06fec2501b6e28e81a8d4a6620d50ff14a67464d88cfb0b035db4325cadc9adf540acdd619e3a6ec09ce64df2f3daada89fdfa76548863a36fa73081cc69ea261cd6ca9a13f04fce189620e9901295dff68a05a1d986280bbfce9aeb67c14a26ed6b3dffd260db6d29f6b9b877ace8942af7de25eeef016a6161c55aec736acc9ca484782ed1ac1a3dc783b925cae99a2314c64638344c8e840f3dea16198de71985d76bd90f245b84c7324c9b039a9db3238cc380cca1573e889c61e40665677ccfd78a249493c383632f64e33dcfb15e4620c097bd0bf1c73412581290fc4254183055ee545018c44f913893ce3b47d01fe98a29bc54a29bb214552ef5216f2c35e62a3c68b163cc84f4d8384606ae2cb33bb3829d294f8816fb089d74a8471d03e91631f791e71ef7a376dee273337b7d21260c92bb5ce824350b93ef0ab5336c4c7183354f17b63a22cb4db8e4f14dd47e69686c8abdb8abe6d06005c30ec80844c6e36b07fa5cef52bcf3ea81c5e7c96d2b4c4b2573b7589629d2b183e5f8cbe31a729ce6c504442fdc01379859875cf8290f15976f81ab22d4e6a46f96565754953854cf76ab80d6e49c7d209eef6cd33829c3eb44da2bc193e565a41f0caf5973975153b342364368180a2aa573483de9d09b56fa19a05c5863817564de73cf4ec126af152fab11e4a653d3ba743b12c81866e3968652b1d9de36d6fb9b3697e13adcdd76789ef572b2ab274d9f20039bc6575a4e347609b8de86396626b89a57df0f3aad6d5046ee1d6c3986519a2c081d24a28447dd0ce85f402ccf670a656e6473747265616d0a656e646f626a0a382030206f626a0a3c3c202f4c656e67746820373538202f46696c746572202f466c6174654465636f6465203e3e0a73747265616d0a78da95554d6fda4010bdf757ccb195606b831dc829222db491a890c06994de167b802dcb2edd5d43dcbf9148f9bb9df50281430b150233f6ccec7b6f3e7c9b41547fcc1c3e0e628863164136834e8b4511fd46fe9215f07ec6ad43c33e40f613fad9bbdb7fc65d5d775894d6719fb8c429e4dc188105b805c24c18eb602db943701aee2c177cc1e0395b70b5844a97ec059e07dac076c1ddcdeebfd20e243a27d41c56081b6185abb34db5737ac55e2e04d68d591c083df754e5c40a2f0e4dbb2c0e9c46a5b3a2c0064c107f0b05e5ba2032819d2dd76b598114d631b845ef0733a94b03f4706b34912e508a0d1a2c0e0e469774ffe0909312737a7c21b0a4c55a81d32e5dd0fc908eb45b906e97a68baf592bf09c6892ba8eb50da82b372f0976031462417cb9cf8c060a5ec11467da20705871450c73e11d7c05bd2a152c78412e3925fc0b8c16c4094bdf60a4dd88b503ab8ccb2575ca1cfd61979148d394b53a75f483c7508862a78aa7b30402b246872a47905a2f09aa144b42ef4277deec4f89582785b79ff1177f85edfe94d6156bb7600569121dd91226e702e3e83430d83ef00cafa8760cbcaa9a56981fe07609bf4ab44e686541289a56925ccfc099ca0f0d4dda56a80b89259d98b53b6ff876f6796209e97e1218ecf3c492a4760cc444bea07a28b46075a9a8cf2c954d97f3056845b315a6aeb163de08856d006d89212d03416daf4b5980e5d52b57be09ab4b69c7572c392acbcebe803695e52430d8e703db74390edcd97bbd5872f8ee54eb1ecf48fb2af1def58c6c516e10be0949aad124c2a0de39afd05370af9612f7bb2a335c507aa74dc5a0ff79d0cc1efac3effde6b7bb617fd21c8cc6cdc170743f6e46510c9bf86458cfa1490fbbb53f9ef4b21fe37e6f78973dc213645f1f87a3718fc1c888b9505c820d00c6382d85a4a9337a452f09a595c8e929e102874f0ea652e74bfb5f28da1dd6098df4e815c8f5baa2d378e587c2bf5dcc1e0db5d8d4f080a2a9d7a8fc98d05b25d7d6d9fdd204df4185c6fa06e0d35a98c306fb036dfef53e0a656e6473747265616d0a656e646f626a0a392030206f626a0a3c3c202f54797065202f466f6e74202f53756274797065202f5479706531202f42617365466f6e74202f54696d65732d526f6d616e202f456e636f64696e67202f57696e416e7369456e636f64696e67203e3e0a656e646f626a0a31302030206f626a0a3c3c202f54797065202f466f6e74202f53756274797065202f5479706531202f42617365466f6e74202f54696d65732d426f6c64202f456e636f64696e67202f57696e416e7369456e636f64696e67203e3e0a656e646f626a0a31312030206f626a0a3c3c202f5469746c6520285477656c7665204d696c657320666f7220466c6f7572209720416e20556e6b6c65205365657a696e20547261696c2053746f727929202f50726f647563657220285448594c4f524120454446206275696c64657229203e3e0a656e646f626a0a787265660a302031320a303030303030303030302036353533352066200a30303030303030303135203030303030206e200a30303030303030303634203030303030206e200a30303030303030313333203030303030206e200a30303030303030323730203030303030206e200a30303030303030343037203030303030206e200a30303030303030353434203030303030206e200a30303030303031393130203030303030206e200a30303030303033333034203030303030206e200a30303030303034313334203030303030206e200a30303030303034323333203030303030206e200a30303030303034333332203030303030206e200a747261696c65720a3c3c202f53697a65203132202f526f6f74203120302052202f496e666f20313120302052203e3e0a7374617274787265660a343434380a2525454f460a",
+   "updated_at": "2026-09-16T13:03:53.546402+00:00",
+   "product_title": "Twelve Miles for Flour \u00e2\u0080\u0094 An Unkle Seezin Trail Story",
+   "release_state": "ACTIVE",
+   "content_sha256": "9be1fae6ad3f3548e58e239843b39d079d9319017ec2ca20bf5a72b5184feb5a",
+   "external_product_id": "gid://shopify/Product/7957652275277"
+  }
+ },
+ {
+  "src": "asset",
+  "j": {
+   "asset_id": "THY-DELIVERY-0CE19B19BC288F59",
+   "filename": "THYLORA-Question-Deck-50-Better-Questions-v2-winansi-repair.pdf",
+   "mime_type": "application/pdf",
+   "created_at": "2026-09-12T19:12:34.60203+00:00",
+   "file_bytes": "\\x255044462d312e340a25d3ebe9e10a312030206f626a0a3c3c0a2f4631203220302052202f46322033203020520a3e3e0a656e646f626a0a322030206f626a0a3c3c0a2f42617365466f6e74202f48656c766574696361202f456e636f64696e67202f57696e416e7369456e636f64696e67202f4e616d65202f4631202f53756274797065202f5479706531202f54797065202f466f6e740a3e3e0a656e646f626a0a332030206f626a0a3c3c0a2f42617365466f6e74202f48656c7665746963612d426f6c64202f456e636f64696e67202f57696e416e7369456e636f64696e67202f4e616d65202f4632202f53756274797065202f5479706531202f54797065202f466f6e740a3e3e0a656e646f626a0a342030206f626a0a3c3c0a2f436f6e74656e747320333420302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a352030206f626a0a3c3c0a2f436f6e74656e747320333520302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a362030206f626a0a3c3c0a2f436f6e74656e747320333620302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a372030206f626a0a3c3c0a2f436f6e74656e747320333720302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a382030206f626a0a3c3c0a2f436f6e74656e747320333820302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a392030206f626a0a3c3c0a2f436f6e74656e747320333920302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a31302030206f626a0a3c3c0a2f436f6e74656e747320343020302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a31312030206f626a0a3c3c0a2f436f6e74656e747320343120302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a31322030206f626a0a3c3c0a2f436f6e74656e747320343220302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a31332030206f626a0a3c3c0a2f436f6e74656e747320343320302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a31342030206f626a0a3c3c0a2f436f6e74656e747320343420302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a31352030206f626a0a3c3c0a2f436f6e74656e747320343520302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a31362030206f626a0a3c3c0a2f436f6e74656e747320343620302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a31372030206f626a0a3c3c0a2f436f6e74656e747320343720302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a31382030206f626a0a3c3c0a2f436f6e74656e747320343820302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a31392030206f626a0a3c3c0a2f436f6e74656e747320343920302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a32302030206f626a0a3c3c0a2f436f6e74656e747320353020302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a32312030206f626a0a3c3c0a2f436f6e74656e747320353120302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a32322030206f626a0a3c3c0a2f436f6e74656e747320353220302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a32332030206f626a0a3c3c0a2f436f6e74656e747320353320302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a32342030206f626a0a3c3c0a2f436f6e74656e747320353420302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a32352030206f626a0a3c3c0a2f436f6e74656e747320353520302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a32362030206f626a0a3c3c0a2f436f6e74656e747320353620302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a32372030206f626a0a3c3c0a2f436f6e74656e747320353720302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a32382030206f626a0a3c3c0a2f436f6e74656e747320353820302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a32392030206f626a0a3c3c0a2f436f6e74656e747320353920302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a33302030206f626a0a3c3c0a2f436f6e74656e747320363020302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420333320302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a33312030206f626a0a3c3c0a2f506167654d6f6465202f5573654e6f6e65202f506167657320333320302052202f54797065202f436174616c6f670a3e3e0a656e646f626a0a33322030206f626a0a3c3c0a2f417574686f7220285c28616e6f6e796d6f75735c2929202f4372656174696f6e446174652028443a32303236303930313233323032392b30332730302729202f43726561746f7220285c28756e7370656369666965645c2929202f4b6579776f726473202829202f4d6f64446174652028443a32303236303930313233323032392b30332730302729202f50726f647563657220285265706f72744c616220504446204c696272617279202d205c286f70656e736f757263655c2929200a20202f5375626a65637420285c28756e7370656369666965645c2929202f5469746c6520285448594c4f5241205175657374696f6e204465636b20353020426574746572205175657374696f6e732e70646629202f54726170706564202f46616c73650a3e3e0a656e646f626a0a33332030206f626a0a3c3c0a2f436f756e74203237202f4b696473205b20342030205220352030205220362030205220372030205220382030205220392030205220313020302052203131203020522031322030205220313320302052200a2020313420302052203135203020522031362030205220313720302052203138203020522031392030205220323020302052203231203020522032322030205220323320302052200a2020323420302052203235203020522032362030205220323720302052203238203020522032392030205220333020302052205d202f54797065202f50616765730a3e3e0a656e646f626a0a33342030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353734203e3e0a73747265616d0a78da8d54cb52db3014ddfb2bceb265829064c99697014c9b96364d621674d8781c251888436d67e0f37bfdc2492019c6635bd2bdd23d0f49029c1e517f9315701ee1ec4a4048440b08c514a26b8491f3cf61bed42a00d32e35349808a4d03ea6df9c0c9a53a26b98f0b082f604f3dade13660e5322f0b801738d7285a2bfd23c30c8974e5bcd67ba2a17b4b56854b4b0ea85a5660467852fe174368cfe4ec3e1f528bac59d2b7d44df6fafc7d321eea4e7e3e266168d7f85538497a36834fedd8c4a2ebdaf881e109decafae7da6dc7e7db1953621ca6f791ea1f088965224d2072115b4a183323564c596da54f0ec4a764acb8abbf014e381aa82f3636c3b98a73b136ad0dbd8a408c8081de81e1c0f389901c68d74b54b7f9f6b535b91d114e941f892199c522bb7589cd05ad5d35b25780f77574ca519e7ba3291949cdc84b3da81cbf0e2e796aa15b81ff43e1cd94e54ffa583b36a01c9662b6575ad6e90ef8cf13ea90befcd9eece9537ba77570c8562d3fa5dc8eaf5ee7ab3495506e7d7e84f069d3cbd657cd716ecbd2e6986c6c51a6ebace80dddce7c67688d4a19d3a33a7ab4dea122fbdcdabefaa4d1e9e6c4a40135c4731e27659ac44f48e27c8eb94d1eb158e728ac4db3255eeee312698132dfd8c15b6f951605450788b3793358ae315f23b3af25eb596d553a404a19663e7641b95e1bfa3c5fb7ba501ac6a6b95b9a1d4b3417699616f79608a6cbb424b6769e561e30fcc9d38c489503ace2fc911ad83c0f400a6c0a5bf5d6198a24b736633bd7c4c481f31f36f430a90a656e6473747265616d0a656e646f626a0a33352030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820373236203e3e0a73747265616d0a78dae5545d6fda30147de757dc4736b5aeedd8f9d8cbc45aba22b155a399a64e95a690989295c4cc7660fdf7bb0901dab51deac6cb369070fcc13de75c9f130614bfacf94d0b8037311c9d32601ce209304104c443e8c79d6f1d1270292220d2c3070984459cc900466f3b25488a07bd90301f0a903e237e3b9bc145870816f93404e285c263024721691482b9eeb4680191355cd462e12a6b693585b92448a7806e7f74d18b3f8ffabde120be842b8f07109f5d0ecf473db8e27e00c71f2fe2f377fd11f44f06f1e0fcfd6a9553eebf80f82bc42f7fae2e0322bc6d7d7ee7d80794bc39e7238b8031420536a9ee058d288a024243ee490fc780ca702d896d7a2aebb247a71c38ab0572bf56d83dd34b701a2aab2077f7201f80fa7ef86c504e498b8bf74857ad65b21e11fb78aa35e2ea528151c90c6ceeaac4e5ba84a4cc9ae5343119815e6997cac0c4e802d422cf54992a02c7ba98cf9453e0a60a92b4f9df584db4519099649997d76b39dda4d478c8b4e506581fae8daee6078005b0a432b73057c636c80d565ba82e3dd355a6ac8385ce5385249242d966c3685d901d2d13c1b665bfb4deb665deb66361db30be6a576f740294ad8cd41a6f073c17bf6f13e635d86183fd699a38c8342c15dc946899b14a93da33385fe6ae54d6aa0c0d74c57980bdde6c5b5da8b1ce6ef17ee7dab8e6cceb1d9c2923b2e5fc90d8da3b0dc1d64f4f2b83ee50eb1bc0ab7cd580de756117c9552655f600d94e9345aecd016489ab17525d5af5adaa7d86b322b716ddb43200ce351aa9b20ea599c3456ef3f14cc11ccd30d96106196ccdf0e7ca4ef4639a962677ab44e9b15566713f4eebf01c22ddac4a6b51a5faeea0d00bb58bbc108f935ff12e5a93de71edd37e87ee973d7c1abe4dbcf756ed69f5defa7dfb708b45fb8e387f46c445e4ef2de2793a05ab4a575b04728bcfa9516e768bfe81c4daaa98d76eda915f1178ff687e8588fedefc0ae6ffc7f915d4dbe4173a3f00a614b5670a656e6473747265616d0a656e646f626a0a33362030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353434203e3e0a73747265616d0a78dae5535d6fd330147dcfaf388f056dc676ec7cf082ca5a6052a0220d424393509aba6d5813b324cde0dfe37ca81d745d85e80b9028717ceddc73cef53d0cd4dcac7d2719f032c2b3570c8c235a80092210051847d6ad455c2e850f226df3214198cf997411beb672486a36da1e610e32488711a79fad31b58860be433d10db133613661492fa1e8aa5d5a3b94436707e8f65a2aca7d526e692183a1906e3703a8c3e85e36170195de1dae62ea23757c1241ce29a3b2e2e3e4ca3c9db7188f1e832ba9cbceba29c72e709a22f889efe9a5dba44d8bbfcf6bd6def8de4ed3ec7b030aa0915a6484d2d1e95c4b635b51b6159abd1eb3436850d30b818862350bb23d80bfa097c1f9ef21d3cf5a92100423d6e4bdb8c2e95de3e7c0fcec1ec16db6bb13faee20ac92ace976a8e4c97150a95a8bc5a7f7ff13805c7f589ec29ece330d9280c3a3cdaa93d4c148340eb1b2c74f1bc056d9baeff6b80526f8a44956798a9555ca7ba38c33cae9a40a2f352dd6e54de2e676959a6f912b54edbb92e906cca4a67aa38afd3329dad15be165a2fc811657277b67fae6ca41fd27457a49582cecd332b5551c755aa73c4f9bc8da93a9d37a2ce0dddf9266944e5ea5b65cea756c7c873fe30f98e77d6f7dcbd263cdcbe187c3ec1d5f26d089f2edb61f5d4efd5ef2d49df3db563c56f3856bae2948e4d4bd3caaa3446c56c5321d715ee7471633ae5886da564ffa86d2577ff5edb0a5ffcc7b6151edbda16d60f90842a4a0a656e6473747265616d0a656e646f626a0a33372030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353436203e3e0a73747265616d0a78dae5935d6fd3301486effb2bdecb8236633b763eb841652d50a9509106a1a149284ddc2eac89b77c8d9f8ff3a176d07515a23740a2c4c9b1e3f77d4ece61a0e664ed3d4a81d7015ebc61601cc10a4c108160864930b81b10874be18148cb3c4810e671261df86f071924350b2d97301b29a4cd88ddbf6db01810c13c9bba20962b2c26cc2824f55ce4eb41afe610d9c879bd9689b2de56bb3197c4d849319cf88b51f0c59f8c66d3e01257167710bcbb9ccdfd11aeb8ede0e2d32298bf9ff8988ca7c174fea18b72caed6708be2178feebeed221c2daed2f1e2cfb6890b7eb6ce3c250132a4c929a5c3c89c4b639b51ab0b465743bc626b1330c2f46fe185476067ba09fc4f7e529dfc9538f1a0320d4e596b4cce850e9eecbf7e21ccc6ab5dd56fbf37558e25ee737057416292cab12519865bac4522157b72a2c55fcea693bb6e311d9dbd9d764b2a19d75dab4233f6c1ac399d63758e9fc652bda1660ffd51085aef2481567c6dc7558273a3f436c0c9a40a4b342dd552a6ba7d3a428926c8d5a27edbbce115545a953959fd749912c370ab7b9d62b72844ceefef39f938df5634cf779522a937d732d0b95d76199e80c6116b73155277103756eecc655d44065ea7b8954d7ea9879ce1f37dff94efbfa7b5090874b19c3af27385abf8de1d3ed76989e7a3dfdde94f49c5377affd1bdd2b1d71daeead367153cdb542559872d2d9fa48c34ac9fed18695dcf97b1b5678e23f6e58e1b26dc362f00379072c480a656e6473747265616d0a656e646f626a0a33382030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353439203e3e0a73747265616d0a78dae5935d6fd3301885eff32bce65419bb11d3b1fdca0b21698d4519106a1a149286dddd5d0c45d9206f8f7381f6a075d57217a03244a9cd88ecf79def830507bb2e63e4b8197319ebd62601cf1024c1081788461ecdc39c4e7528420d2b50f1284859c491fd16b2783a476a21b10e62185f418f1bab715260e112cf46800e206c265c2b642d230407eeb746a3e91b55cd869d95ed6d96a16e692583b297ac368d28f3f46c3fee832bec68dcb7dc46fae47e3a88f1beef9b8783f89c757c308c3c1657c397edbf672cabd27883f237efaebead227c2ddad2fef4d7b6791b7f33cebc252132a6c91ea5a3c8ac4b635756bb0b4610c5ac6bab023f42efad100d46f0d76403f89efcb53be93a721b5064068c05de9dad6a732d897efc43998db68078df687a529142a9517da64d005525d143abb7df1b801cf0f89ec0cecab3059f38d5a35dab21eb689dec8982f5898fc7923da6cb9eeab1e0ab3c967aa38c3542d934a9bfc0cf3a4ac3b66262bd4dd4665cd70e71b95d1cdbbc931db14a549557e5ee9424f570aebdc9805394226777ff6cfc906e621a6afb92e154c66af69a1f22a29ebe227d9bce953959ed750e7d6ee7c33aba132f5ad446a2a75cc3ce70f9b6f7da7dd8ebbb7050f6f5ef43e9de068fcd6864fb7da617a1a76f47b4332f44f9dd7e037f22a7d71b2bc262596c97aadb2023a4dd55cdb34acbedb78d80029944b8545a2579b5c1d89b094ec1f8db0e4fedf1b61118aff38c22260db08c3f901a6802e540a656e6473747265616d0a656e646f626a0a33392030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353539203e3e0a73747265616d0a78dae5935d6fd3301885effb2bce65419bb11d3b1fdca0b216a8d431d106a1a149284ddcd5d0d85d3e3a7e3e4e1aad83ae9b10bd0112254e6cc7e73cce7b18a83b597b4f73e0758c176f181847bc001344209e6014f76e7a24e0524420d2730f1284459cc900d3b73d0349dd442f24cc470ee933e2776f2bcc7a44b0c8a72188170a8f09d70a49a310c575af530b886ce4a24ecbf5b2ce56bb3097c4d9c9d11f4d6783f8f37434988ce34b5c793c40fcee7272311de08afb01ce3ecee28bf3d114a3e1381e5fbcdff672cafd6788bf227efeebea3220c2dbad7f7fda07877c37cf772e1c35a1c26d52b3178f22b1bb3df51ab0bc650cb78ccdc64ed03f1b4c87a0d1d66007f493f8be3ce53b791a5167008486dc939e6b032ac37df94e9c8379ad76d86a7f5a261596c97aad4c896451a902b70a69b25a41575868a3cba5ca5e3d6ec70f22223b3bfb9a4c36b493ad36dd921f368dfec4da6f58d8e2652bda1660f7551fa5ad8b54952798ab65b2d1b6384196544d476a4da96e6a65dae15c97a536d7d858ddbedb02695d563657c5e946977abe525817d62ec8136472f79fff9c6c681f62ba2d74a5608dbbe6a52a3649a5ad4162b2b64f6d74d6409d3abb599d3650467daf90db8d7aca3ce70f9bdffacebbfabb5790874b19fd2f47385abf8de1e3ad76989e461dfdde908c8223a797d1df48af0cc4d1d2abd3254c9dcf9bdcda7a95215d26e6da95525d2053a92b756b9e48af94ec1f4dafe4c1df9b5e1189ff38bd226477e945ef07d50631000a656e6473747265616d0a656e646f626a0a34302030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353537203e3e0a73747265616d0a78dae593ef8fd2301cc6dff3573c2fd170b5eddafdf08d41e09404258e1973e61203ac1c53b6eeb681fadfdb75cb71ca71c4c81b75cbd6adedfa7c9eeefb305073327b5fa6c0cb08cf2e191847b4021344209a6014756e3bc4e3520420d2310f1284059c490fe1ab4e0649cd44c727cc450ae932e2b66f1bcc3a44b0c0a53e88e30b8709d30a49031fc54da755f388ace58256cbf4b216cb2ecc25313829baa370d68f3e86a3fe641c5de1dae11ea2d7579369d8c735773d0cdecfa2e99b5188d1701c8da76f9b5e4eb9fb04d167444f7f5d5d7a4438fbf5bd7bd3de19cb77f35c43615c132acc26d57bf1a82576b7a74e6d2cb51efdc663bdb1137407fd7008c61ac0cb703ca8717f523fd4a77caf4f036a0840a8cf1de998d6a3d23fd46fd5399863c57d2bfe61ad0a8558ab12a54ed542c7dfb19eef142a8d79f9052b5d60ad36f98bc7815c2f20b2053a5465b2363c69d46963fe3836ba13adadf2732b6a6bb0fdaa6b28b7c552953d2c94e14c74d1433cafea8ea5ce4a75bb55991d4e93b24cb21bec7462df8d8fe5b6ac8cc7e2629794c962a390175aafc8096772ffabffdcd9503fe4e96b91540a3a33d7a254c56e5e253ac33c8b6d9fda25716deac2e0c6db656d2a53df2aa47aa74ec173fe307cc39db62578af268f5733ba9fce7058de1af87cab1d774f83d6fdc1900cbc730798ff4e80a527ce1c60e44ae7a6a64d89e73d6c94c9b02dfa5c97556ecae84480a564ff688025f7fede008b40fcc701163ebb0b303a3f00f4ff32740a656e6473747265616d0a656e646f626a0a34312030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353530203e3e0a73747265616d0a78dae5535d6fd330147defaf388f056dc676ec7cf082cad641a58e8934080d4d425deaad8625664e9af1f3b193a82b745b85e80b9028717ceddc73cef53d0cd4ddac7de705f03ac38b1306c6915d810922904d31ce06b703127129121019b80f09c212ce6484f4cda084a46e63101316a2800c1909fbd90d6603225812d218248845c0841b85a4490c7b3de8d122223d5cd263b928eb69b589b9248e4e81e1389d8db24fe978349d64e7b8087884ecedf9f42c1de18287118e3eccb2b3d3718af1f1249b9cbdeba29cf2f019b22fc89eff9a5d464404f7f9e38d6def9de4f5bed0b170aa0915ae48be164f4a62eb9a065e58d16a8c3b8dbeb0530c8f46e93158d0113c4927479eee4fe8dbf894dfe3d3843a062034e6810cdc1851196fe3f7e8dc4379f0b805ffb89cd72856558d4b0555d6caaa05ea3b9dab574f5308a384c89ec2360e935ee2b4c3a39ddcc789623835e62bae8c7dd982b65dd7ff354465563657d58163b89c37dad8032ce6b50fe4a6acd4ed4a95ed72a1ab4a97d7688c6ee7c62277c24ca1ec61a32b7d79a3f0cd1a7345762893f787fbe7ca8ecd439aeeacae154ce99ecb4ad9665e6b53625e2eda986af4c28b3a747417abdc8b2ad577774ea651bbc873fe30f98e77d137dd46173edebf187edec3d5f2f584f797ed71f534e9d56f2dc924dab765c5ef585646626f96d5f912f9d2b73996ae532ad738d0d6aa46d9aecd378cb1c3c652b27fd4c692477faf8d4522fe631b8b98ad6d8cc10ff977306c0a656e6473747265616d0a656e646f626a0a34322030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353730203e3e0a73747265616d0a78dae5935d6fd3301486eff32bce65419bb11d3b1fdca0d2765029509106a1a149284ddd24d0d89bf3b1f1ef713ed40ebaad42f40668d4263e76fc3eefa95f02d85ca4fb4d0a80d711bcb8204028441b200c3188029845d68d855cca990f88dbe68103223e25dc85f08d258163b3d0f61071a000ee10e40ca32d2c2dc488ef600f90ed319b3073671cfb1ee8d41ad45cc45b397fd032553260751b538e0c4e01a359b81c479fc3d93898479770655317a2b797c1221cc315755c987c5c468b77b31066d379345fbcefab1453e719445f217afeebeedc45ccdeefefdf5bf6c158dead730c85718d30334d6a7bf1a425b2eba9dd1a2b3a8f5eefb16d6c00a3c9389c02e13de045389fb4b83fa91fea63bad7c73e360480b0476d6e9bbb8bb977a83fa853207627ee75e29fb2b882b5122554990071772d7405a510666826dada4aa4b9944243124ba9aa574f9339ae8ff84076284f78eb3ce83170df85c7f9611428f50d364abfec44bbc338bc358252d53a11e59901cce22657fa0cd671d51612254b71530bd94d177959e6328546e5dd5819277559a942e8f3262ff3d556c0b5566a838e38e3fbfffccf9d4dd5439e6e755e0950d27c57a5d04d5ce54a422cd75d4d34f9ba35756e70d775d29a92e2ae824235e2183ca50fc3f7dcc57016ef1dcec78f358cbe9ce0d3f1b6c0a7dbed71f7d81fdc1f4c71df3d75929ddf493277d9c9922cb4d847791bcbb48e530149669e0464f176731b7f37735ad5697624c69c937f34c69cba7f6f8c99cffee318338fec620cd60f234e389b0a656e6473747265616d0a656e646f626a0a34332030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353538203e3e0a73747265616d0a78dae5535d6fd330147defaf388f056dc676e27cf0824adb41a58e8a34080d4d4269eaac81c6de9234b07f8ff3a176d07515a22f40a2c4f1b573cf39d7f7305073b3e61d67c0eb102f2e1818479880d9c44638c538ecddf588cb85ed8308cb7c0810e673265c046f7a0a829a8d964798830cc261c4e9666bcc7bc466be433d10cbb32d669bd116d4f790dff43a3497881aceefb04c9475b49ac45c104327437f1ccc07e1a7603c984ec22b5c5bdc45f8f66a3a0b06b8e68e8be1877938bb1c07188f26e164f6ae8d72ca9d6708bf207cfe6b766111eeecf233fa60df7ba379bbd131348c6c426d53a5ba184f6a62dba25ab5b2ac11e9b522ebca4ed11f0e821198db32bc0826c39aef4fe8fbf894eff0a94f0d0310ea714b586674a9f0f6f13b740e6635e05e03fe7115952853758f48297d1fa9582297b7322a0b64ba28a19352aa574fd3715c9f888ece3e2613b5dc698b4d5be98749a33fd5fa2b129dbf6c409b16ecfeeaa3d09b3c96c51916721555a9cecfb08cca3a106b55c8bb8d54cd72961645aa6e50e9b499eb1cf1a6287526f3f32a2dd2c55ae236d73a21479489dd41ffb9b2917e4cd3b73c2d25b432cfa290791595a956e638964d4c56e9b216756ee82e37712d4ac9efa5399c4a1e23cff9e3e45bde59d7800f3af2702fa3fff90457c3b7267cba6c87d553bf53bfb7247cf7d4f6f57ec7bec2b54f66df345e61659a452709d6ba90055265cc93355d74c4b742b07fd4b782bb7faf6f6ddffe8f7d6b7b6ceb5bf47e00e06e2fee0a656e6473747265616d0a656e646f626a0a34342030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353538203e3e0a73747265616d0a78dae5935d6fd3301885eff32bce65419bb19d381fdca0d27650a9509106a1a149284d9c2dd0c42c5fc0bfc7f9a01d745d85e80d902875ecba3ecf79fb1e06aa6fd67d4619f03cc0930b06c611246016b1102c300b8c5b83385c581e8830f58b00611e67c281ffc2c821a8de68ba84d9c8206c46ec61b6c1ca2016f36cea8298ae65324b8f96a09e8be2da18d41c225a396fd0d2ab6cc0ea0ee682689c0ca399bf1a07effdd978310f2e71657207c1cbcbc5d21fe38adb0e266f57c1f2d5ccc76c3a0fe6cbd7fd2aa7dc7e84e02382c7bf9e2e4cc2edddf98cddd9f7467bde6eb43586b64da8a5abd416e3414f6c5b54b375967526ddde645bd9054693b13f05f37ac20b7f3e69797f52dfd7a77ca74f3daa0940a8cb4d61ead1a1c2ddd71fd43998d989bb9df8bb9bb0425a224e93248dea4d05956fbe612da3b02e25548252ded6328fe4b387916cc7236240dad765a2b5bce8f5696fff3038460ba53e2151c5d34eb46bc3e1572394aa2e22599e69c89bb04955718638acda8548e53f68f52c4bcb32cdafd1a8b49bab02515d562a93c5799396e97a23f1b9502a21479c89dd9ffde7cea6ea3e4f5f8ab4d2d5cef5b32e65d18455aa728479dcadc9268d5b53e71a37aea3d6542ebf56c854238fc1737e3f7ccf9d0d4d78a72b0ff733461f4e7075bc2df0e94e3bec9e7a83fbbdaf84e79c38c29cfe4e8485639d32c2b19225aa1bb96d71e86c48540a85cc64b696c591fc0ac1fed1fc0aeefcbdf9b53ceb3fceafe5b26d7e617c07f4b533a80a656e6473747265616d0a656e646f626a0a34352030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353536203e3e0a73747265616d0a78dae5935b6fd3301cc5dffb29ce63419bb19d38175e505903540a54a4196868124a53770d3431cb6df4dbe35cd40ebaae48f40548948b2ff139bf7f7c18a83e597b8f53e0658867af181847b804338989d087170e6e07c4e6c2744184a15f04087339133682d7830c82ea898643988514c262c4ea5b6bcc06c464ae451d10c3310d66eaa729a8eb20bf19f46a36118d9cdb6be95ed6db6a17e682683b29865e301b859f026fe44fc22b5c1bdc46f8e6ca9f06235c73cbc6c5e52c9cbef50278e3493899beeb7a39e5d613845f103efd757561106eedd667fcdebcf79a793bd1d2363436a1a6ae52538c4799d8b6a8464396b6904e07d954d6c7f062148cc159e7f0c3c8bff47e92de17a77c274e5daae541a8c30d61e8a74d85b32fde4b7330a355765ae58faba8442e8b6a5d222950ae24e2aa28552a7344715945ebf506f36a9364372f1ef764d92e11bda77d61261a60bf33403bf8c3ce31f495fa8aa5ca9fb7a2ed26ecbf1aa250551ecbe20c73b98aea44e567584465d311abac90b795ccdae134290aed1bb54adab6cab76ce7755224f3b5c4b75ca92539422676bffacfc9c6ea21a6bb3c292554a6af7921f33a2a139521ca166d9fac93450375aeed2eaab881cae4f712a9aae531f39c3f6cbef39df65bf0de9e3cbc9b31fc7c82a3f5db183edd6a87e9a9dbd3ef0d09d73e7580f96f0758d8e629031c475913dd0daa42e22e2957896ecb4c2720ab74308e245708f68f265770fbef4daee99aff71724d876d938bc10fa47431830a656e6473747265616d0a656e646f626a0a34362030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353631203e3e0a73747265616d0a78dae5935d6fd3301885effb2bce65419bb11d3b1fdca0b216a814a84833d0d02494b6ee6ad6c42c4953f8f73869d40ebaae48f406489438b11d9ff338ef61a0f664cd7d9a022f633c7bc5c038e239982002718841dcb9eb108f4b118048c73e48101670263d44af3b1924b5131d9f301729a4cb88dbbe2d31ee10c10297fa208e2f1c266c2b240d7ce4379d56cd23b2960b5a2ddbcb5a5bcdc25c126b274577108d7bf1a768d00b87f115ae1dee217e73158ea21eaeb9ebe1e2721c8fde0e220cfac378387ab7e9e594bb4f107f41fcf4d7d5a543b8bb5b9f39f7e6bdb7ccdb89aeb561b109157697eacd7894896d37d5a9c9d206d2df40d63b1ba27bd18bfae0cec6e1875e7839f8497a5f9cf29d380da89507a13e77a4635b8f4a7f5fbc95e6604ea3ec37ca1f174989b5592d672817ea3b525d14d073e8125592e962a1ec80494d9e9bf58bc74db95e40646b6a5f99c99a38dc38a01bfac3d6d10d8db9c5dce4cf1bd1a60adbafba28cc2a9faae20c13b5482a6df233cc92b2ee989aac50772b9535c3358cce6e5019ddbc9b1cd3556171547e5ee9424f960a5f7363e6e40899dcfdeb3f27eb9b8798d6b92e154c66af49a1f22a29b5c99064b3a64f557a56439d5bbbb3d5b486cad4b712a9a9d431f39c3f6c7ee33b6d6bf05e511e2e67743f9fe068fcd6864fb7da617a1ab4f47b4332f04e9d60f1db09969e386582a7a628974d7acbe45661665461f3ac0b5bdeaa52597924ba52b27f34ba927b7f6f744520fee3e80a9f6da38bce0fd86232700a656e6473747265616d0a656e646f626a0a34372030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353633203e3e0a73747265616d0a78dae5935d6fd3301885effb2bdecb8236633b763eb841650d5029a322cd404393509a3a6d5813333b4df9f9d849b40ebaae48f406489438b11d9ff338ef2180cd49da7b5602bc4ee0c51b02844292036188411241980cee06c8a39c0580b8631e38201250c23d88df0e2ae0d84c747c445c2881bb04b9fddb1a6603c448e0621f90e3338730d3328e031fd472d0ab79885bb9a0d732bda4b7d52e4c3932764a1886f16c947c8ec3513449aee1c6a11e24efaea3693c821bea7a7071354ba697610ce178924ca6efbb5e8aa9fb0c92af903cff7575ee20eaeed627ecc1bc0f86f97ea26b6c186c8499d925bb194f3291fb4d752c59d942fa1da4ddd9088617a3786c843b871f47d155f893f4be38a63b711c60230f08fbd4e18e693dccfd7df15e9a02715a65bf55feb44a6b988b4c964283487521d419e4a9ae6dabd3dc365241b616a912ead5d3b65c2f40bcb7b5af4db8658e3a0fb8e33f6c1e869194b7904bf5b2156debb0ff6a085a6e5426f499b1be4a9b421a978bb4b61d99acb4b8db88aa1d2e0bad8b6a098d2cda778bb2d1b5a155e74da18bf95ac03725658e8e90f1dddffe73b2b17c8c69ab8a5a80accc35d74235695dc80ad26ad1f689a65858a8736377b1c92c5425bed750ca461c334fe9e3e63bdf655f850fcaf27041c3f0cb098ed6af357cbad50ed3e3a0a7df1be28177ea0cbbbf9d61eeb1936558c252d41aea953081a8445ed46ddd6ccdc0428a6e602bd5ed91fc724efed1fc72eafdbdf96501fb8ff3cb7c729f5f18fc004aa633650a656e6473747265616d0a656e646f626a0a34382030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353730203e3e0a73747265616d0a78dae5535d6fd330147defaf388f056dc676e27cf082ca566052a0a2cd404395509ab89b2189b738e9e0dfe3a45137e8ba22d1172051e2e45ee79e736eee61a0f664dd3d2d8097319ebd62601cf112cc252ee208e3787033203e176e08221cfb204058c899f0317d3d2821a8dde804847928203c46bcfe2dc76c405c167a34007102d761ae5d5d41c300d5e5a047f38968e1c21ecb46594fab2bcc05b1740a0cc7d3d928fe341d8fa2b3f8027387fb88df5c4493e90873eef938399fc593b7e329c6a767f1d9e4dd3aca29f79e20fe82f8e9afd58543b877579f897bfbde5bcd9b8d9ea5616513eada2eb5cd785413db34d56995159dc8602db2ed6c84e1c9687a0acbbf63f861149d8f7f82de06a7fc0e9c86d4c283d0803bc2b1ab4f45b00dde437330a7430e3ae48f57490d65505f499822c973696a5c272a43254d93d72f1e27e2f921113d916d34265a95d11a95ae15efa68b61a4f5572c75f5bc03ed26afff6a08a39b2a95e6080b7995ac94ae8e9025751b487569e44d23cb2e5d28635479899556ddbbae9036a6d685ac8e57caa8452e715d69bd247b9489bbfffbe7ca4ef5439a6e2b554be8d25e0b23ab55522b5d2229b32e26572a6b451d5bba5993b6a24af9ad46a157721f79ce1f26bfe65df473776f10778f30869f0f70747c5bc287abb65b3d0d7bf55b2911fa87766df0dbae15be7b48d7661ab712aa4cf32693d61669d218d986723b2050f59c73bfd4f526632dfedd4e90cc6c6e8fad8560ffa8ad05f7ff5e5bbba1fb1fdbda0dd8c6d618fc006fcf36cb0a656e6473747265616d0a656e646f626a0a34392030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353639203e3e0a73747265616d0a78dae5535d6fd330147defaf388f056dc676e27cf082ca5a605260a2cb404393509a7aad59137771d202bf1ec78dba41f781445f804489e36be79e73aeef61a0f666ee9d17c0cb14cf5e31308ef412cc273ed204a3b477dd2321177e0c223cfb214058cc9908317edd2b21a8dde845840528200246826eb6c0698ff82c0e6804e245bec77c3bfa82c611aa59af430b8968e1e20ecb465947cb25e682583a05faa3f1e920fd341e0d92e3f41c171e0f91be394f4ec6035cf020c4d1d9697af27634c668789c1e9fbcdb4439e5c113a45f903efd35bbf0080f6ef2b3dbfbde5bcddb8d81a5616513eadb2ab5c5785013db16d56b95154e64b411d9563641ff68301e82c71b861f06c9d9e827e85d70ca6fc0694c2d3c088db8273c3b865444bbe01d3407f31c72e4903fceb31a4576250deab932a864ae67a5fa9e4d16dfa09bcabc78984910c644744c76e1986865261b58ba917c3f5ff413adaf70a9abe70ed4b55ef7571fc6b2c9a539c044ceb395d2d501a659dd06725d1a79ddc8d22d17ca1855ceb0d2cacd7585bc31b52e6475b852464d1612cb4aeb4bf288327173c07fae6ca8efd2b4ae542da14bfb4c8cac5659ad7489ac9cba985ca9692bead0d29d36792baa945fed71e9957c8c3ce77793dff02ebac6bbd589f7f730fa9ff77039be2de1fd65bb5f3d8d3bf53b4b220ef76c5b8ffeb66d45e8efd3b6ae8b916725d61266aed758ab7aae1b67e8b65bec4a539a66b9d4552da7c817992a1ef1b310ec1ff5b3e0e1dfeb673ff6ff633ffb11dbfa19bd1fffca36340a656e6473747265616d0a656e646f626a0a35302030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353536203e3e0a73747265616d0a78dae5535d6fd330147defaf388f056dc676e27cf082ca1a605246471b848626a1b671d740136f769ab27f8f9346eda0eb8a445f804489e3eb1b9f73aeef61a0f666cd7b9a03af13bc78c3c0389219984b5c2431a2a473d7213e176e08221cfb214058c899f0317cdb2920a84d7402c23ce4101e235e3b5b60d4212e0b3d1a803881eb30d78eaea061007dd369d17c226ab8b0c5b251d6d26a36e682583a39bad170d44b3e0fa35e7c9e5ce1dae13e927757f160d8c335f77c9c7d1c25838b6888a87f9e9c0fdeafa39c72ef1992af489effbabb7008f7b6fb33ff41de07ab7993e8591a5636a1aead525d8c2735b14d519d5a59de880cd622ebcac6e89ef5867d386ccdf0321a5cc6d14fd8bbe8946fd169482d3e080db8231c3bfa5404bbe82d3607731ae8a081fe341f9758a9e5224539cf0c6ea536aa8019df232b6c48661a6a55d8149d9a574fb3f2fc908896d52e3413b5e6784d81aef5efe78e6eacd437cc947ed980367dd8fed585514b3d95e60413391f5799d22748c7651d98aac2c8bba52c9ae53c33262b6e50a9ac992b8de9d2942a97fab4ca4c365948dc6aa566e48032b13ded3f57d6578f695ae9ac9450857d2646ea6a5c66f620c645dac46495a5b5a8534b375d4e6b5185fc5e2257953c449ef3c7c9af79e76d173e68cbfd0d8dee97235c0ddf9af0f176dbaf9e86adfa9d2511fac7f630ff7d0f0bdf3da6875355bbf51e5ace9646a2543672c0af42b07fd4af82fb7faf5fddd0fd8ffdea066ce357747e00c6672e110a656e6473747265616d0a656e646f626a0a35312030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353439203e3e0a73747265616d0a78dae5535d6fd330147dcfafb88f056dc69ff9e005953540a540476a848626a13471d7b025664e9ac1bfc7f9503be8ba22d117205162fbdab9e79c9b7b08607b93ee9d16002f253c7b458050904b201c71901184d2b9759047050f0009662702100928111ec4af9d1204b607998f880b050897207758ddc0dc419c042ef601319f33c2edc8050e7c3057ce80e621d1c20503968d92815697980a64e914300ae3f9587e8ac37134951770c9a807f2cd45348bc770495d0fce3ecce5ec6d18433899cae9ec5d1fa598ba4f407e01f9f4d7ec8221ea6ef313ffdeb9f756f3e6a06b6958d908735ba5b6188f6a229ba2b25659d189f47b916d6523189d8de30930d6333c0f67e751f813f62e3aa65b741c608b0f08fb940966470f0b7f177dc0a6405807ed77d01f57490d895150afd477f86a74add23a2faf5e3c4ec0f502240602bb2844b4f2a21e0df752f7d38451a4f5352cb579de81762d377c35824aaf4daaaa1358a855d2e4da9c4096d46d20d565a56ed7aaecb68bbcaa2c6f6874deadb581745dd5ba50e6b4c9ab7c71a35a797a890e2813db1ffbe7ca26fa214d7726af15e8d23e8b4a9926a9735d4252665d4c3579d68a3ab574b375da8a2ad5b71a0adda843e4297d987ccfbb181aee5e07eeef5d187d3ec2d5f16d091f2fdb7ef53818d4ef6c89c03bb65df9efdb5578fc9876cd74efd6eb52dfd9998d68bb3615accb4c1955d579611d72c0c142907fd4c1827a7faf8379c0ff6307739f6c1c0cce0f91982dc90a656e6473747265616d0a656e646f626a0a35322030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353434203e3e0a73747265616d0a78dae5935d8f93401885eff915e7b29add716660f8f0c6d42d6a13b42bc598359b184aa72d5a181728f5e73b7ca45ded766b626f54080ccc0c73ce33bc8781ea93b5f724035e4678f68a8171440b308b588802f891716710870bcb0311a67e1020cce34c38085f1b3904d5134d97301b1984cd88ddbfad313588c53c9bba20a66b99ccd2ad25a8e7a2581abd9a434423e7f55aba97f5b6da85b920da4e86811f4e87d1a7d01f06e3e806b7267710bdb90926e110b7dc7670f5611a4ddefa21fcd1381a4fde75bd9c72fb09a22f889efebaba3009b7f7eb33efdebcf79a7937d1d6363436a196dea566331e6562bb4d351bb2ac85743bc86667030cae86e108a6e81c5efb93ebc0ff49fb509df2bd3af5a8d607a12e3785a95b870af750bdd7e660662bedb6d21f5771856415e74b5962bb9239aa625356484bacd5f6c5e3366cc723a2b771a8c5440319749ab4033e6e168340a9af58a8e2792bda165effd500a5da14892c2f3093abb84e557181795c351d89ca4b79b791793b9ca56599e64bd42a6ddf558144e3a84c1697755aa6b3b5c4b742a905394126f6bff7cfc946ea21a66d9156122ad7d7ac94451d57a9ca11e7f3b64fd6e9bc81bad476e79ba481cae5f70a99aae529f39c3f6cbef39df56577af0e8f5730069fcf70b47e1bc3e75bed383df57afa8321e139e70eadfdfba1158e75b6d0aa5276959fb7512d7402d242ce4fe45508f68fe65570e7efcdabe559ff715e2d97edf20ae307679929150a656e6473747265616d0a656e646f626a0a35332030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353732203e3e0a73747265616d0a78dae5535d6fd330147defaf388f056dc676e27cf082ca1a605246471b848626a1b475db40636f4e9ab17f8f9346eda0eb8a445f804489e36be79e73aeef61a0f666cd7b9203af13bc78c3c0389219984b5c2431a2a473db213e176e08221cfb214058c899f0317cdb5110d46e7402c23ce4101e235e3b5b62d4212e0b3d1a803881eb30d78eaea0610033efb4683e11355cd862d9286b693589b920964e8e6e341cf592cfc3a8179f2757b876b88fe4dd553c18f670cd3d1f671f47c9e0221a22ea9f27e783f7eb28a7dc7b86e42b92e7bf66170ee1de363fa70ff67db09a371b3d4bc3ca26d4b555aa8bf1a426b629aa532bcb1b91c15a645dd918ddb3deb00fc75f33bc8c069771f413f62e3ae55b741a528b0f4203ee08c78e3e15c12e7a8bcdc19c063a68a03f2d34e6b22cb0484d2ea718dfa35c484cb4aaa4caa42a514953645abd7a9a91e78744b48c766199a8f5c66b78bad6be9f37bab1d6df30d3e66503daf460fb5717855e99892c4e30968bb4cab439c1342deb80255dc8db9554cd729e1545a6e6a874d6ccb5c16455943a97e6b4ca8a6cbc94b8315acfc80165627bd27faeacaf1fd37467b252422bfb8c0b69aab4b41547aaa64d4c56d9b416756ae94e57935a9492df4be4ba9287c873fe38f935efbcedc0072db9bf99d1fd7284abe15b133e5eb6fdea69d8aadf5912a17f6cff06bfef5fe1bb47f36f5a5aefdedc4855e06e2195f5472ec77a7a0f23cb95b1d174564a83a5b46651f303361682fda33616dcff7b6dec86ee7f6c6337601b1ba3f3031b5f36140a656e6473747265616d0a656e646f626a0a35342030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353730203e3e0a73747265616d0a78dae5535d6fd330147defaf388f056dc676ec7cf082ca1aa052a0a30d42439550dab86ba089b724ede0dfe3b8513be8ba22d1172051e2f8dab9e71cdf7b18a8b9997dcf72e0658c67af1818473c071344208e10c69ddb0ef1b814018874cc8704610167d2c3e875a780a466a3e313e62287741971dbd912e30e112c70a90fe2f8c261c28c42d2c04779dd69d13c221bb8a0c53251d6d2b289b924864e8e6e381af7e24fa3b0170de22b4c1cee217e73150d473d4cb8ebe1e2c3381ebe0d4708fb8378307cb78972cadd2788bf207efa6b76e910eeeef273766fdf7ba379bbd135348c6c428539a5e6301ed5c4b687ea34ca722bd2df886c4e3642f7a237eac309360c2fc3e16514fe84bd8f4ef90e9d06d4e083509f3bd231a347a5bf8fde627330c742fb16fae322a9a1725d67ba40b5d0ab658a7aa150a86f35aa5adda054e96aa65e3c4ec8f502225b42fba84c3672a30d3add483f4c1bdd48ebaf98ebf2b905b52dd8fed545a557e54c556798aa45b2ce74798634a99bc04c1795ba5da9c22ee7595565c535d63ab3735d62b6aa6a9dabf27c9d55d974a970536a3d274794c95da1ff5c595f3fa4e9aecc6a055d98675aa9729dd86a24456a636a9da58da87343d794a21165ab93ebb53a469ef387c96f78e76d03deebc8c3bd8ceee7135c966f43f874d90eaba741ab7e6f4906de89ed2be8efdb577ae294f6bdb3ae9d2bb5449ea4aa714ee3e17cc2b95768d328aa54cbef48b25ca530fb9bb5237e9692fda37e96dcfb7bfd2c02f11ffb59f86ceb67747e00e90537b30a656e6473747265616d0a656e646f626a0a35352030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353535203e3e0a73747265616d0a78dae5535d6fd330147dcfafb88f056dc676ec7cf0824a5ba052a0220d424393509ab8aba189b7244dc7bfc7764237e8ba22d1172051e2f8daf139e7de7b08607d13fbce0a8097093c7b4580504896401862904430499c1b07f994b3101077f5070744424ab80ff16ba7048ef5463740c48302b84790d7cfd630771023a18703406ec05cc2f4c8380e03a8ae9c1ecd47dcc0853d968e929e963d9872a4e9143098c4f361f2299e0ca3697201972ef521797311cde2215c52cf87d18779327b3b8961329e26d3d9bb2e4a31f59e40f20592a7bf9ece5d44bdbbf329bdb7efbdd6bcdbe8691a5a36c24c67c924e3514d649754d7282bacc8a01369321bc160348cc7c048c77038326c7fc2de47c7f40e1d8758e303c20175b9ab471ff3601fbdc7a6405c0b1d58e88fabb48152dc3690668d54255c572adf64a206d1ca5c949978f13815cf0f11efa9ece3116e84461d2eee441f260c8348a9afb054d5730b6a9bafff6b00b5da549ad8192cc42a6da5aace204f1b13c854598b9b8d61ab6785ac6b595e41aba49dab0ab24ddda84254e7adace5622d8c4ab5444794f1bb12ffb9b2b17a48d3b6928d0055ea67518baa4d6d0dd232b7b11f2538ef8a6244d95215aa15c7c853fa30f98e77d1b7debd5e3cdcc530f87c82cbf235844f77da61f538ecd5ef2df1d03fb571e9ef1b97fbec94c6cdd252bb41f77f71bd168dc8612b9b156ccd52baae449a7f03712beba63e6262cec93f6a624efdbfd7c42c64ffb1895940762606e73bec3732440a656e6473747265616d0a656e646f626a0a35362030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353635203e3e0a73747265616d0a78dae553db8ed330107dcf57cc6341bbc6d75c7841a52d50a94b451a8416ad84d2d4690d4dbc1b2701fe1ee7a276a1db2d127d01122576c6ce9c73c67308607b93f69d64002f2378f68a00a110a54038e210cd601239770ef2a8e00120c1ec4400220125c283f0b59383c07623f311712103e112e4f65f5b58388893c0c53e20e67346b81db9c0810fc5dae9d13c241ab8a0c7b251d2d36a1353812c9d0c069370318c3e8693e16c1a5dc30da31e446fae67f3700837d4f560f47e11cdaf26214cc6d3683a7fdb4529a6ee13883e43f4f4d7ec8221eaeef353766fdf3bab79b7d1b534ac6c84b9ad52538c4735915d5159a32c6b45fa9dc8a6b233188c86e11838eb180e470ddb9fb00fd131dda3e3005b7c40d8a74c303b7a58f887e83d3605c25a68bf85feb0894bc82a53c252425954d28ea92eec7ca30cacb534705b2db72a79f13823d70b90e8191dc212d1e89d75f0b8d37e9c370c665a7f014be3790bdaf660ffd7008cae8a449a0b4b7413d74a1717b08acb2690e8dcc8bb4ae6ed72a68c51f91a6aadda6f5d406275ea4c1697b5326ab995705b689da213cac4fea4ff5cd9583fa4e96ba14a093ab7cfd2c8a28e4ba57388f3551b93b55a35a22e2ddd559534a272f9cd1e9baee529f2943e4cbee39df51d78af258f37330c3e9de16af93684cf97edb87a1cf4ea0f9644e09ddbbffcf7fd2b3c7e4eff26710e264ee5f67be3e22cceab78dbd8c79a5842aa0aebee54d572d7ffe684998520ffa89905f5fe5e33f380ffc766e63ed999199c1fa836373e0a656e6473747265616d0a656e646f626a0a35372030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353732203e3e0a73747265616d0a78dae5535d6fd330147dcfafb88f056dc676ec7cf0824a5ba052a1220d424393509ab86da08937c7c9e0df6327513be8ba22d11720dfbed7f139e7fa1e02d89ca47da605c0cb189ebd224028c42b200c31886730899d5b07f994b3101077cd070744424ab80fd16ba7048ecd443740c48302b84790d78fb6b0701023a18703406ec05cc2cc9b711c06a0d64e8fe6236ee1c21ecb44494fab5d987264e8143098448b61fc299a0c67d3f80aae5dea43fce66a368f86704d3d1f461f16f1fced2482c9781a4fe7efba28c5d47b02f117889ffeba3a7711f5f6eb53766fde7ba37937d133348c6c8499a9922dc6a39ac8aea8ae5556b422834ea4adec0c06a3613406c63b86c39165fb13f6213aa67b741c62830f0807d4e5ae79fb980787e83d3605e2b6d0410bfd7193684894803b7325b9cecb35c812b40de71594d264535d27dbed7750e2b6ce95c85e3c4ecef343c47b72870c08b7d2671d13dc95e1b80418cca4fc0a2ba99eb7a06d3bf67f0da092b54a4575014bb1499a5caa0bc8126d03a92c2bc356946dbac8abca0a6b64de8ea582b4aeb42c84ba6cf22a5f6e05dc282957e88432bedff43f5736960f69ba53b916660bccbdac846a129d9bfd48caac8d8926cfaca84b4337ab532baa14df3414b211a7c853fa30f98e77d137e3bdee3cded730f87c86a3e56b099f6fb5e3ea71d8ab3f48f1d03fb795bddfb732f7d939ad6c3cab3702d28d486e44a541b70f9b4965bdcd4c2229d7a6b76a655c519eb232e7e41fb532a7fedf6b6516b2ffd8ca2c203b2b83f303816b3a790a656e6473747265616d0a656e646f626a0a35382030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353539203e3e0a73747265616d0a78dae5535d6fd330147dcfaf388f0575c676ec7cf0824a5b6052a0220d424393509bb86b5813b3246de1dfe37ca81d745d91e80b9028717ceddc73cef53d0cd4dcac79c719f032c2b3570c8c235a80092210051847d69d455c2e850f226df3214198cf997411beb672486a36da1e610e32488711a79bad30b58860be433d10db133613661492fa1e8a1bab437389ace1fc0ecb445947ab49cc25317432f4c6e174107d0ac783e032bac2b5cd5d446fae824938c035775c0c3f4ca3c9db7188f1e832ba9cbc6ba39c72e709a22f889efe9a5dda843bfbfc5cdedbf7de68de6d740c0d239b5061aa5417e3514d6c5754bb56963522bd56645dd900bde1201c41b82dc3c1b066fb13f6213ae57b74ea53830f423d6e4bdb8c2e95de217a87cdc1ec06da6ba03f2e35f4362f512d1572f5ad42a637aa8f599e60fe1ddba5ca5f3ccec5717d223b2e87804cd64a831698b6aa8f33462fd0fa160b5d3c6f409beeebfeeaa1d4eb2256651f73b59c6d525df491ccaa3a10ebbc54776b9537cb595a96697e838d4e9bb92e10afcb4a67aab8d8a4653a5f297c2db45e9013cae4fe8cff5cd9483fa4695ba49582cecd332f55b19955a9ce9bead731b549935ad485a19bace35ad4ee8c4e91e7fc61f22defacebbd7bcd78bc8dd1fb7c86abe15b133e5fb6e3eaa9dfa93f5892be7b6ee77abfef5ce98ab33977661ac1f4b5b1030a15eb225189f18871725a62ab8b5b9831d71556baac4e98584af68f9a5872f7ef35b1f0c57f6c62e1b19d8961fd00a9b0318e0a656e6473747265616d0a656e646f626a0a35392030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353730203e3e0a73747265616d0a78dae5935d6fd3301885eff32bce65419db19d381fdca0d216a894519106a1a149a86ddc35ac89b77cb4f0efb1d3a865745d91e80d9048f9b01d9ff3bc790f03d5276baef30c781de3c51b06c6112fc01ce2200e318cad7b8b785c380188b0f58300610167c243f4d6ca21a85e68fb84b9c8205c46dcf66d8589451c16b8d407b17dc7668ebe3b82063e8a1bab55f388307241aba547596babd9980ba2ed64e80ca3492ffe1c0d7be128bec2b5cd3dc4efaec271d4c335773df43f4ee2f1e530c270308a47e3f7db514eb9fb0cf157c4cf7fdd5dd884bbfbfd1facfba099770b5d6d436313eae82a99623cc9c47645b50d59d640fa5b4853d9109d7e2f1a4097b371d8eb1bb70fb40fd529dfabd3806a7d10ea735bd8faee51e11faab7da1ccc6ea4fd46fad3725a2151b2d4975c62a5d42d56e9ad44a5502d25e67559a94c16af9e36e47a0111ada14355260c6eb855a75bf4e3b6d1098d8b852a5e36a24d0bb65f7550aaba98cbb28b995c4ed7a92aba48a6951998abbc94f7b5cc9be92c2dcb34bfc15aa5cdbb2a762c17ebb44c672b89bb42a905394126f63ffacfc906ea31a64d915612a6fe6a56ca623dad5295639a27cd985ca78981bad076937a6ea072f9ad42a6d6f29479ce1f37bff59db50df853471eef6574be9ce168fc1ac3e7dbed383d0d5afa83291178678eafa0bf1f5fe139678aef68818d44b94cefeee4b65baaa2ae968b7aa5d36b3aa552c9f47b171b13f38daa5709d24a47e7449c8560ff689c05f7fede383b81f31fc7d9f1d92eceb07e00f85437510a656e6473747265616d0a656e646f626a0a36302030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820343337203e3e0a73747265616d0a78daed944b6fd3401485f7fe15671950359919cfcbec02b8102934ad33a86a5509997880426d0bdb28fc7cae9da4f4a92c9a55555bf28cadd1fdee39e7ca029c6e313c9725f0d6637c282024fc3708c514fc0ca98f7e47cc4aad12301dd3468389440a6d917d882a684e0763c78441096d04339bb72b2c22a64462b8038b9d8a85a255699e3834dfa30dcd32dde3920d8bbe8a4d5b4361a919b5536294668b893fcfd2c96ceacf70114b0bfff16c36cf26b890c6e2dde7859f7f4a33a4efa77e3a3f5a7f955c9a57f03fe15fdfadae6326cdfffad2de3877429aaf0f1a6ac30ac1b822977a3378c24915187732d631ad966bb7d524ae4dd57dddf1a18414bd428291c4d122b4ed655da109cbba296e31ef518dbb41d5da384334b17690dabe0b545b2019dd27e806e071537fbd0a25ea0645585ef6f0373bb0e4fc167b0b20341b44f513321bd273ebf41e8f19a32f7bb8867efb86f757ed71f5523dddf4d31f798755c0afaa5e618cbc6dff94a1a05d1568e96a74a1ed76c4a0957e3806133f9f185eaaed797cb5489e3ebe47e16f877cd9d1bfe200f5aa0acd01f2aa40917761c7d42a6b1e9e5a695fa676579688fe016faa19d20a656e6473747265616d0a656e646f626a0a787265660a302036310a303030303030303030302036353533352066200a30303030303030303135203030303030206e200a30303030303030303536203030303030206e200a30303030303030313633203030303030206e200a30303030303030323735203030303030206e200a30303030303030333935203030303030206e200a30303030303030353135203030303030206e200a30303030303030363335203030303030206e200a30303030303030373535203030303030206e200a30303030303030383735203030303030206e200a30303030303030393935203030303030206e200a30303030303031313136203030303030206e200a30303030303031323337203030303030206e200a30303030303031333538203030303030206e200a30303030303031343739203030303030206e200a30303030303031363030203030303030206e200a30303030303031373231203030303030206e200a30303030303031383432203030303030206e200a30303030303031393633203030303030206e200a30303030303032303834203030303030206e200a30303030303032323035203030303030206e200a30303030303032333236203030303030206e200a30303030303032343437203030303030206e200a30303030303032353638203030303030206e200a30303030303032363839203030303030206e200a30303030303032383130203030303030206e200a30303030303032393331203030303030206e200a30303030303033303532203030303030206e200a30303030303033313733203030303030206e200a30303030303033323934203030303030206e200a30303030303033343135203030303030206e200a30303030303033353336203030303030206e200a30303030303033363036203030303030206e200a30303030303033393139203030303030206e200a30303030303034313633203030303030206e200a30303030303034383130203030303030206e200a30303030303035363039203030303030206e200a30303030303036323236203030303030206e200a30303030303036383435203030303030206e200a30303030303037343637203030303030206e200a30303030303038303939203030303030206e200a30303030303038373239203030303030206e200a30303030303039333532203030303030206e200a30303030303039393935203030303030206e200a30303030303130363236203030303030206e200a30303030303131323537203030303030206e200a30303030303131383836203030303030206e200a30303030303132353230203030303030206e200a30303030303133313536203030303030206e200a30303030303133373939203030303030206e200a30303030303134343431203030303030206e200a30303030303135303730203030303030206e200a30303030303135363932203030303030206e200a30303030303136333039203030303030206e200a30303030303136393534203030303030206e200a30303030303137353937203030303030206e200a30303030303138323235203030303030206e200a30303030303138383633203030303030206e200a30303030303139353038203030303030206e200a30303030303230313430203030303030206e200a30303030303230373833203030303030206e200a747261696c65720a3c3c202f53697a65203631202f526f6f7420333120302052202f496e666f20333220302052203e3e0a7374617274787265660a32313239330a2525454f460a",
+   "updated_at": "2026-09-19T10:47:52.094318+00:00",
+   "product_title": "THYLORA Question Deck \u00e2\u0080\u0094 50 Better Questions",
+   "release_state": "ACTIVE",
+   "content_sha256": "64add6c793ab9cb3d338220e4577d7a1ea31471b39ad9a9c144bc9d2e7c1c8f6",
+   "external_product_id": "gid://shopify/Product/7957199913037"
+  }
+ },
+ {
+  "src": "asset",
+  "j": {
+   "asset_id": "THY-DELIVERY-MONEY-PATH-CARD-001",
+   "filename": "THYLORA-Money-Path-Card-001.pdf",
+   "mime_type": "application/pdf",
+   "created_at": "2026-09-25T15:33:18.927314+00:00",
+   "file_bytes": "\\x255044462d312e340a25938c8b9e205265706f72744c61622047656e6572617465642050444620646f63756d656e7420286f70656e736f75726365290a312030206f626a0a3c3c0a2f4631203220302052202f4632203320302052202f4633203420302052202f46342035203020520a3e3e0a656e646f626a0a322030206f626a0a3c3c0a2f42617365466f6e74202f48656c766574696361202f456e636f64696e67202f57696e416e7369456e636f64696e67202f4e616d65202f4631202f53756274797065202f5479706531202f54797065202f466f6e740a3e3e0a656e646f626a0a332030206f626a0a3c3c0a2f42617365466f6e74202f48656c7665746963612d426f6c64202f456e636f64696e67202f57696e416e7369456e636f64696e67202f4e616d65202f4632202f53756274797065202f5479706531202f54797065202f466f6e740a3e3e0a656e646f626a0a342030206f626a0a3c3c0a2f42617365466f6e74202f436f75726965722d426f6c64202f456e636f64696e67202f57696e416e7369456e636f64696e67202f4e616d65202f4633202f53756274797065202f5479706531202f54797065202f466f6e740a3e3e0a656e646f626a0a352030206f626a0a3c3c0a2f42617365466f6e74202f53796d626f6c202f4e616d65202f4634202f53756274797065202f5479706531202f54797065202f466f6e740a3e3e0a656e646f626a0a362030206f626a0a3c3c0a2f436f6e74656e747320313120302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420313020302052202f5265736f7572636573203c3c0a2f466f6e74203120302052202f50726f63536574205b202f504446202f54657874202f496d61676542202f496d61676543202f496d61676549205d0a3e3e202f526f746174652030202f5472616e73203c3c0a0a3e3e200a20202f54797065202f506167650a3e3e0a656e646f626a0a372030206f626a0a3c3c0a2f436f6e74656e747320313220302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420313020302052202f5265736f7572636573203c3c0a2f466f6e74203120302052202f50726f63536574205b202f504446202f54657874202f496d61676542202f496d61676543202f496d61676549205d0a3e3e202f526f746174652030202f5472616e73203c3c0a0a3e3e200a20202f54797065202f506167650a3e3e0a656e646f626a0a382030206f626a0a3c3c0a2f506167654d6f6465202f5573654e6f6e65202f506167657320313020302052202f54797065202f436174616c6f670a3e3e0a656e646f626a0a392030206f626a0a3c3c0a2f417574686f72202845727361747a5265616c69747920456e7465727072697365202f205448594c4f524129202f4372656174696f6e446174652028443a32303236303932353135333230382b30302730302729202f43726561746f7220285c28756e7370656369666965645c2929202f4b6579776f726473202829202f4d6f64446174652028443a32303236303932353135333230382b30302730302729202f50726f647563657220285265706f72744c616220504446204c696272617279202d205c286f70656e736f757263655c2929200a20202f5375626a65637420285448592d4d4f4e45592d504154482d434152442d30303129202f5469746c652028576865726520446f6573204f6e6520446f6c6c617220476f3f202d205448594c4f5241204d6f6e65792050617468204361726429202f54726170706564202f46616c73650a3e3e0a656e646f626a0a31302030206f626a0a3c3c0a2f436f756e742032202f4b696473205b203620302052203720302052205d202f54797065202f50616765730a3e3e0a656e646f626a0a31312030206f626a0a3c3c0a2f46696c746572205b202f415343494938354465636f6465202f466c6174654465636f6465205d202f4c656e67746820323039340a3e3e0a73747265616d0a476175484d3d603c2561263a58415752226c475221665122696d6841344c65393969675b3165365a69352e2d5f4540213f3a383b313b4c3b3146222c514137294e4e60256269266f4e48395338326422526b5921594a2167345a3439702a455f512d3c364e2766512a416645585d66354d3d6e653924626d4953324f3c503645526b682e4a704a2230444c31406673616245753954216d5936354a68485c6846686b2c566b4c3b30403f63412f3a3d69314050253e585969535a50386c2e6b285159334e323021525b3d5761602c4f5d6923663d2e4e5d6c4d5825432d313923295e6742412529385f5e63643f67264f5829213d2d49386750664c313c25255c523d28465a5135396f71366e392f2a423f6a504c2d6f7572396b664732304d30673260545a3e6270742b60686d2e723345485538524f275463335839253d694d3f5c4d526a326f253f3471675e6d6d313e34233625623224443e266e335a5e316a405c5b3d756b552834323521512f23564b294754342c5973364b4430265c7056226c2c755e382e712726675b2943254d2d53652868326751353d634d2b253d6b6832752d58236b5552424e37704d316839463562522361625e5f576d502b6350353f2247473a3d4a5731425a5b2364752426592e643d223b2c4c3330757343712764712f3130492e51414e412e2c3d69614e3c3143382e235e6f47647035576e50733c253c396042423d3634326265756d29626638283a5e32545a5c4130635926545a245b4c232c276d362841214a504a68322e6d31626a3147704b285c4e2e67247355575337633a57702851274a26343a3e716c4f675049475d452a376f426430454e3c4a28692b6c70643d696a5856495746442a3435505254346a26266237646728563659445941536b70604c5a2b216254594272632d685f4737226a47542d3722395f494e6f3e34285e2829412967715e2c5f2a6a63756c30282364234b342e4c3235214f53402c505173606d51595836336f236d405f6f523e636870335b296b504f25545f217057293e444e31406d3e39663e5a456065253e384a285e492b31215a2d434a275046316e44725c54523e5849632a314f2a42362d405b736445592a523e5327344f38433b454f3e303a6b4c6454334c3d5b5d325f216e423866374139235127317425372b2167267050485d543e40722e5b2a3949526b715837713870292f255165674451455260655a3d385c68282a532d632560627354252952296d3a49274d3555496f466a604d5044394f2b733473522f5166745f4a6f36725c6b62647550646c62262e64494f7042593b752a32514d6b576a63675b255927595934464b7131753536672f4b48285e6b66304a606b696e3e386b2b3e625947742f3351482330574c266b3f5f39322c4764366b582441684a21564a483f40505b51566d56402c61323e5f4a54345f2c4c2d7225213747247070383e44313e54547474626c2a5356523c6338572d46503342593252364155653b4e3c516a6d625e3b5f75693d4f312165214136505041722175243b56326b294b6d4b3b353f676e552858626c4f6c606756512b34374845494f56704d3c6d486327262f573c6721275c546d4c72576043332e6871485b256d5a43744b2f3b64522f27564d656a2c633e57486751216a23605a3672384c6d3c4a24436a56473062583259217222383d4b633b6a6a234c5e23603923293f484b384b662f40284125614c6e423346422b655529322d522f606c3e31586b6670216534306945454b32684828463248495a504e2f724e633b573e424d3226354e6a69462a4a503b28635e5d476e4c31746822595a4822344f71723d2a51494b7255564d343b2d62543f575e4f4e24494a2573392f3058494828743f52595d6b31623e5d5622244e2a27296f396a32484c356c406f2d38494323482b6473386e71334e242e60223b61393a6a6e6c69255b594c422f57595b3745636a2e735833622d4c5e514346535722363a3c2e5f4b52434d4d33252d4d585365233a262b4a6f484c623072714159363a2d4d292d356d64386e6532555d6b60693c755062703b444b6c43362b4b6240224c36434b3e4951283e2f2b5a403b6a2646536228495d416e706c58333c3c6e2b593029212c5874492e4a51255d54242b3f515523606c4472323a49283d2a44366b28503524313a4c6944485737212f5a263f43405b3a70567368546d3b45366a656b254b2a4b2a4662754b563d33612b61316334464433514d283f3c4938217337706d622f3465436c2675526664652c592c666354234b556d6d3b4526696e3f3a652d4354565c3f314c5f484d6f435068556f356955554e75535a692d6f375659593252394a373f72675069476e6f6449756e673a5f67634e4d573138692536722b594b363f406522386e59283f5c4b3b5927456b404445483543433a3b742d4c2c49445e4c572c253e3e6575477062526f2b376e6f5e4540525a6469322640223c6258546c5c532b3b2c372b255c256536382867413a2b39372650226f474364444366454e2e2d3b5e462e59725d726f435b4a496d674822294d4b5b5e3e41652f254f553d21744b372e264a422c4d38306a5d3c31316e652b6327622a494d4d3b31302f57646c2667255027274d732d664e4430506c296f6b2a4746505b476b7329454c67726a4860335a4e4f426c3d5833544f6a50414b556275395d2e6e67696e3c6b726c373a40255e4c4e6045222134625f25214d283348494874416e752d75347324274664724a5e473d29542f366e47566f5436605d5b30592f2f31424b4d47342344523532483946283d6245412943756d30362c715f6c655d52504a4d3b5c2f2f6d6432635f47535d593c48252e5b253f6f5e404d595a373b60723f24216a285e4446704745727e3e656e6473747265616d0a656e646f626a0a31322030206f626a0a3c3c0a2f46696c746572205b202f415343494938354465636f6465202f466c6174654465636f6465205d202f4c656e67746820313831320a3e3e0a73747265616d0a4761746d3c442f5c2f65264838382e45462f704753594d24665a2f635a66515f5f614f585c494d433553352c28357462695e4e405f296f2a37742f5e342d47614f6b3d264e2e33482e42572e2c4b22552b212d4a54402b2d344873355045403b243d5929313131535b2458665266363163336e553a6f2c212e21296f2b3e2f26366e3b5b3321223130242133472636253c4c59632e4d49575461556e445743296a51625b60403c3f5b334921474a5c5e70592b6334343d3129502e5c6e2a242f4d5f62483155262f48272824295c39386e60493c503b5f6970744759594259725f4a36373f6e2168756b305d693967256d3c296135323f5a6347362739465f34695728263d4970314e35326725476b3b294b493a296231723d23623e75575f216f572e62266b552941486a5d5446484d3a6c69603d594f386e5859732456404b26385c743469342d753f676f59404d667342255323662f40752a2b357243354c6f622e24716b37684b476e3e742d3b60624c5e344c4a53545b28276329553d725836307144474e656123652541733e3c6b302c7256406b2e7325293f6c6a375e2d684172644b2a57225f57275b4b5869452b2c5b34482d52615f405a662846635e34714a592d6d6a644463484025654c53642f7529535a29372e49386d715a3d4959543043276f714f2a384461674f3f3f524a346f5170354a716872307170542c4a472a53314e483052532542494a4e2674277549503f43542f5052374b4e4f2653292750222a4b2c3f7460423b71246e2766324d5362653f52722358683255516b43582d74676861483e3b2336383f4a4e485357543473554b313335322f4355325751242f24256d23516c584f29702c5a716029744f256b387442644a63296d3b6a564746514a384e57346f465139233c36235d745d6b594b392f245251652a6d5e3f46565d5c5b684a50436855722322376d694e246c4e7033686a4469486b562b63594256544b626b622429313a4b2c35354d253835626e222d25673e4d655b3248375955532a49673051734b2465726426213926512b2c5257426461315d2b292f6942684f73643137446d49234c2337324660622d55613a694a3c5c433328333847537550443f3e3e2f5f565156453b67662c524473602b2f7033507432464e506a2b54742e353139373e6827493e602f6238713d6d412e7331675f2564602f6a2f3c6b6756462d5e2c2656462c6a27733746636a75722c6f4c63265051235067477428613a3b493f3e562d3d3e6154715d6b2a4a5140224348333746335d6d2355483d4351753b416655272a4d50743d2c69516a5550416b3c2d4a50295c2d715c5e6624436b325459546a5c3d56664f5b3c6f6e56456e6f274e6f2b2e6e35214d31524057623c25624e2d6d616362644e224860373d486a6b6432702f397326255839252f366c292225285f663b237272315744493b5b36215774666649552c6335713534506f3f343c70553e516e5a613738303c72604a4c6853516c495f422d3928675e5a35243055554460634d673f506d454e3b47356c5d47256b7538434468633c6a5b5d4e29213e4c59224b236b402d6c332e3c534d4b64556a2d404c2f433b66573548235171646642602c6534613f494d4743743e4c693236443f3d6c71413d6359555753234a6b6e532d67415449666c2e6e4f44263d2b292a31515a23365b5d6b725d334b27385824576d324c3b5a4a3558545b5a405343303c3544475b345d68296b3831446a3c645a3e342b4937465f7021354a2d382e356e335064455965473c4a223250463f3f485f3643526a6f553c49213b5f424d4a5a5646233157676c3a5d296e3f2b5c265e376c392457275c286836595261712d2d553f703432413b416533624e216b365e744624545f355923346049215065253927304268496342492d5c473b47462f3e5726285d5d3c4c27304757685059374772254535702e343222572b6d5a57602926254f57285429254c5f5572414d646373422962746c386242523c2d6d3a3d583a42452731734b594f6c39333a35546b724c3a3a70532b474c5d2b4f2558385439595c6c5236493f5a662f4a504a266b5d3467642a626c72593555506e2e523f51426322594335553f2c4d5a2d4543356226413350244f3e683c3a66543b2d236a405f6526632b6426495e6d2846534058266c4e3c4e305e416233635a604e2b5072364e244a4a4c244f50436862696271565a4a2357384461522d356a4a2d294f6d4629744c2d21736a316869273d2e376244294e655338464f223d3e6a2c59246e243a64746d573336234c224540456f36656855486a336c444475755b3f3f66525a2b266a4a413d6870355e6b2843443c39744361314d413e3e25466e2b213668326a705c452829223e3e692f63393c264f633b2b2b374d345159274d5657706645544e2e74396b74274c494e384c5b4055273731236f5f2f5c684b393f4551514625385452466834285d265c2d4660463d2a67303c6b3128296d5248597e3e656e6473747265616d0a656e646f626a0a787265660a302031330a303030303030303030302036353533352066200a30303030303030303631203030303030206e200a30303030303030313232203030303030206e200a30303030303030323239203030303030206e200a30303030303030333431203030303030206e200a30303030303030343531203030303030206e200a30303030303030353238203030303030206e200a30303030303030373233203030303030206e200a30303030303030393138203030303030206e200a30303030303030393837203030303030206e200a30303030303031333334203030303030206e200a30303030303031343030203030303030206e200a30303030303033353836203030303030206e200a747261696c65720a3c3c0a2f4944200a5b3c35376237616134303731326362653361663733363661663833666533336335663e3c35376237616134303731326362653361663733363661663833666533336335663e5d0a25205265706f72744c61622067656e6572617465642050444620646f63756d656e74202d2d2064696765737420286f70656e736f75726365290a0a2f496e666f2039203020520a2f526f6f742038203020520a2f53697a652031330a3e3e0a7374617274787265660a353439300a2525454f460a",
+   "updated_at": "2026-09-25T15:33:18.927314+00:00",
+   "product_title": "Where Does One Dollar Go? \u00e2\u0080\u0094 THYLORA Money Path Card",
+   "release_state": "HELD",
+   "content_sha256": "6d1f2c4b04a4d4e66d8895459aefb53b955ab9194fd59a917022273414dacde4",
+   "external_product_id": "gid://shopify/Product/10319334309965"
+  }
+ },
+ {
+  "src": "asset",
+  "j": {
+   "asset_id": "THY-DELIVERY-8658F16FFC521665",
+   "filename": "THYLORA-Gap-Hunt-21-v2-winansi-repair.pdf",
+   "mime_type": "application/pdf",
+   "created_at": "2026-09-12T19:12:31.830522+00:00",
+   "file_bytes": "\\x255044462d312e340a25d3ebe9e10a312030206f626a0a3c3c0a2f4631203220302052202f46322033203020520a3e3e0a656e646f626a0a322030206f626a0a3c3c0a2f42617365466f6e74202f48656c766574696361202f456e636f64696e67202f57696e416e7369456e636f64696e67202f4e616d65202f4631202f53756274797065202f5479706531202f54797065202f466f6e740a3e3e0a656e646f626a0a332030206f626a0a3c3c0a2f42617365466f6e74202f48656c7665746963612d426f6c64202f456e636f64696e67202f57696e416e7369456e636f64696e67202f4e616d65202f4632202f53756274797065202f5479706531202f54797065202f466f6e740a3e3e0a656e646f626a0a342030206f626a0a3c3c0a2f436f6e74656e747320313620302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420313520302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a352030206f626a0a3c3c0a2f436f6e74656e747320313720302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420313520302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a362030206f626a0a3c3c0a2f436f6e74656e747320313820302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420313520302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a372030206f626a0a3c3c0a2f436f6e74656e747320313920302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420313520302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a382030206f626a0a3c3c0a2f436f6e74656e747320323020302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420313520302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a392030206f626a0a3c3c0a2f436f6e74656e747320323120302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420313520302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a31302030206f626a0a3c3c0a2f436f6e74656e747320323220302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420313520302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a31312030206f626a0a3c3c0a2f436f6e74656e747320323320302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420313520302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a31322030206f626a0a3c3c0a2f436f6e74656e747320323420302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420313520302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a31332030206f626a0a3c3c0a2f506167654d6f6465202f5573654e6f6e65202f506167657320313520302052202f54797065202f436174616c6f670a3e3e0a656e646f626a0a31342030206f626a0a3c3c0a2f417574686f7220285c28616e6f6e796d6f75735c2929202f4372656174696f6e446174652028443a32303236303930313233323032392b30332730302729202f43726561746f7220285c28756e7370656369666965645c2929202f4b6579776f726473202829202f4d6f64446174652028443a32303236303930313233323032392b30332730302729202f50726f647563657220285265706f72744c616220504446204c696272617279202d205c286f70656e736f757263655c2929200a20202f5375626a65637420285c28756e7370656369666965645c2929202f5469746c6520285448594c4f5241204761702048756e742032312e70646629202f54726170706564202f46616c73650a3e3e0a656e646f626a0a31352030206f626a0a3c3c0a2f436f756e742039202f4b696473205b203420302052203520302052203620302052203720302052203820302052203920302052203130203020522031312030205220313220302052205d202f54797065202f50616765730a3e3e0a656e646f626a0a31362030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353631203e3e0a73747265616d0a78da8d544b53db3010befb577c47ca10a1b7e5634acda3130818f74027974c62c094c8d471dae9bfeffa119c04c8301edbf2aeb4fb3d240b70ba44f39c2d80af298e4f0584447a0fa199463a429c06bf03164aa32330a36860c044248509919c051e86d344e598b058c058c16cf7f58cdb80691159eec094d34a687a6bc32387f221e8ba85ccd4eda2ae17454507ab292c0d23380b1cc4c9ed30fd99c4c3d1457a87899221d2f3bbd1381962226d88931fb7e9f8324e107fbb482fc6576d547269bf207d427ab85bdd844cabbebed8987643945fe75942618996d624d23b291d75a90f656ac98a0db5a9e1f1a95c2b2d6beec26ac6235d27e7fbd8ae610eb61634a037b14911911126323d381e7132038c3ba98ca277c88d6bacf0b4445a88503287018dca0cf78754abbe7aab04efe16e8b292d13a2f690849462709d8c2faf539c9c0f47a3f8ea2cde90b646f89deea73d7b8a40fc5d635a74a864bb9f7cd3701de45b31de4f5aa77756dfec88d418684cf491b7467e4abe2d73edda5ce96ab554738884b3e4466bedd9f405e72b5ff546f6c937363630b4733d8cbd07ea0d0c324d35a635e72b544c3ad1e19002d563ee1f96f857ac26524a32dd1715965946510a84d5aaf4d91cb9af0a647ff279e66719a67e8ee9acca0bcf5e196cd6fd808276ccbd2fb256b64b7d9e9daa7f1a2d3fd7fe3fda5d7930c47deef3e523c19ee70f79357d4636cf1bb4b82e8909f2ea088b69f98b0658bd1ca128b15a66f557e1b19c9559d613ebb820f80f0b0f26d60a656e6473747265616d0a656e646f626a0a31372030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820373935203e3e0a73747265616d0a78dae5555d6fdb36147df7afb88fee10b024454af25e06a773d70049b33a0a8a0e010659622c2e16a99254b2fefb5d4a769a7e64c2d66c2fb5004926887bce3d3c3a9701c58b0df7aa05382ee0f94b068c43710d4c1001c529ac8ad9fb19c9b8140b2032c11709842d389319ac7f991990143726396129b4205346d2fdbf1d5ccc88608b94e640925c244ce05348bac8c16d677bb48cc808b7d863e12adbd31a0a7349904e0bf3d5fa6259fcb65e2d4f4f8a777095f00c8a57ef4ecfd74bb8e269062f2e2f8af3b3d51a563f9f1427e7afc7554e79fa0c8a3fa0f8e1f3ea322322f9589f3fd8f6065bbedf97228b8c3142058a14b5a00b8a4d01a1394f6482cf8ccafcd012bbd754c6b2cf5f72e02c36c8d3d8e17cdd1b088d82a637e113c42f30d334ffc7989c923d2c1e231d9565323e11fad22bb0468153e50e3a672be5fd517ca9fb2ae0cbae3447e0ac6df1ae7665d0d6f8467747601dd4aad21e17085c74cad470ad6f15b4daf441792c0aaaac9aa12772686abe56957535dc3565800fb607bbf1caddaa2bce3363c3b8ee1bdbef6a68ca0eab92093dc483339032cd53d4818d76c233fc5c0a71901f5d1755c8070d5e5dbe2e80b2d11c27e6169bdaec141cabad36469bed040596fe7b1bb0e4018fb3b2837067c107d579d8a86bebd4e08bdef7783a3e942e201de8ac464de16d142b38bddd2aa7ea61e39d75373ffd3d5db94888dcd3fd92d3c11703b7bd571e6f0ae6c72e12da94d5cd8f03ec438fcd6109a66c23b591249468126f7b57a989639529fd3ac9915f3bc4d1e98096ef493e9a2930fffd097e03dfc1c24f56edf1ee1371dffd379a9a8fa63ed3dec783fa55396fcd043a5d7c44ff263fbf6d2ca83f3be5b432982b83432bcc0ff5be8f0bb0e903680f2566800970ed6c3b6c39c4ca8491459edd7f77ffb591cf4d0cb65143ecc777aa0a1876132e16527c9de177e162c1f3a78ae66474f19b5eab004beffbb68b8368029f264f94cb2fb4ab76631257bb52b760ecc6d61fa06a547583f1b65155d9e31cd521a69ba97109c7297e68258e91098f2439fd1fe31807338e8c3837aa61c6d6dae3a8bf8dd4a7788aec7b4a6498fd0571a5db6b0a656e6473747265616d0a656e646f626a0a31382030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820363732203e3e0a73747265616d0a78dae5956d4fdb301080bff757dcc76e62c68eedbceccb045b3b900add4ad0c48434a58d433d929839a6857fcfe5650506289b86f8422bb56ee4dc3d777d7c6140f1cd9acf4501b01bc3f69801f320ce800922209ec0281efc1a90c093220222392e241016794c0630fb3c284152dcc843c27c2840fa8cf8ddaf1c8e0644b0c8a721101e0ace047e0b49a310ecd9a0cb161059a78bba5c789575584d604f12c42960389a1dedc4df67a39dc97e7c02a7dc0b20de3b994c673b70eaf9017c3c3e8aa707a3198c3eedc7fbd3c3f6aa473dff0dc43f217efb67741910c16fe3f33bdbbe62c99b7d3e52042c22546093ea5e48e9873ec726b4a5e0fd6d356cd34e5147dc1e7bd8c4a695615ddc70eff830068cd2807db1caa93285b12e75b5bc97fb41763ff06fb3d388624b81d0d0e31229684065183e40f0f88681df61189b3c376b704b056b63cf21c99cb248e4f1d4948ae042c0b765e2a0b8ac1ccc15a42ad72b6555ba0556990b55b62b77699b95b1bfd187eaea224f345efdd0538de44476d5dc4396353193b50f93969cb66e3c5d330c77ad2ecf609e2ccedf37691b81bbfb8610639d0bacc414cabe5be94acf730559d372d243e9d1c7295bc0a2392593265dd8513ea93a0c7f3cc3abe16d3afd6cd19eac5e466253fd7ffa2e5bdf77ad395725ec25656ab2ac27bb1fdd66ff4bdfe5a3ba1f24e8b8427fafc1d9a4ac32947daedc5a21ca05ea9cab2d70c6e4d5168abed20b55d54a43b5d499ab7a0c9122d89cca97f038d3168fa476aa80dce00a3917cba43c53691f288e72fa6a551661f85ca3db6f553e508541a1e2e4aa27b3cfff796c3faef144e3ffbdaec77285936c6ed2eb763e5b55a8628e4eafb55b9a4b07094e3bd5a38310f4c5e6efb45435a42e53842ccc4aa5a04b679ae74f755da1cb7db034784d63180637b274751d0a656e6473747265616d0a656e646f626a0a31392030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820363135203e3e0a73747265616d0a78dae5955b4fdc301085dff7579cc76d55193bb113a72fd5529616690b6d08aaa890aa90183665136f7381f2ef3bb968a1059407b67d21917275e67c333e9e0870da45774c726037c2cebe8070105d404826112d308f263f27cc77940cc0944b170a4c048e503ec20f93028ad3405733e12187f204f386bb158e274c8ac0e31accd5d21592ce52f140a3bc9c0c6a3e53ad5c3068d153316075811dc50827c7741e1ecfa26fe17cb638884e71e63a3ea28fa78ba3708633c7f3f1fee4383afa340f31df3b880e8e0efba70e77bc57887e207afd7774e533e9dec597f7867da19437e33ca2f045c0b8a422b5b550cad39e4b45e853a1effb6cc4a69cb28db8b3ef5011bb52ea36b9e9c793c308dcefc1f69af52a4be2dafc21fb40d80be49d300f3855138c6bc75504c07daeb47ea0ae36eaee3df5fdac48911517b6cce33ab305eadbb549df20b1ebac3ddb12e6d77a1567854991dbd2a05ec6056c911836c2e80ba606c6872042b513bce881783fd94f6782e96e991597388f93abb79d6ce7c8e1bb2966a8e8f5caa0b24d9918d80bd465532fc710c9918f22f67479e7f945a7a507c4278d8be9f72d6c1d6f0bbcbd684f672f9c4df6cf74afeedd1b9a2a6946acabb47fa7fa2ceb8626b1650a736dca5bd4596e40c624b39ab246155f9b8aac6ab02e6d62aa6ac409ca539b05f5afcd1a11d5324b5353e0aab0372b935e1a9c9b65bb126d615076551c03769dc7815f847515f7b6d57883deba0b4b33f6396eaa11fb4a2db6d479bf2e0d75d3d40e3ebdb1e51575b11a4d51db265952bb5d1193a9ea7723444affb73e3b5fc5eb8ac886d5969257e3ca16235e95f4377d416d1693df43af59830a656e6473747265616d0a656e646f626a0a32302030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820363535203e3e0a73747265616d0a78dae5955d4fdb301486effb2bdecb6eea4c9cc4f9d8cd5458d9900ad54a1062429a42e234198dd3d929887fbf930f15363e7a41b71b5aa94d1cfbbcef397e7cc261d197b7bf4909ec47d83be4e036a20cdc652ea22926d1e0d780f9b6704330e1d08500e3a1cd858ff9978182b068a21330eea184f038f3fabb254e07cce5a16705604ee03adca57f57586100bd18f46a3e138d5cd86bd128ef6db5816dc1c84e89e1647e3a8ebecf27e3e95174814bc7f6117dbd98cee6635cda9e8f83b3d368763c9963f2f9283a9a9d74a3b6657bef10fd44f4feefe8c267ae731f5f3c98f68d52deccf3c885cf4366b954a4a616427881e75011ba54687d970ddf94d36d22ee1dda54c4b6944193dcf0ebd9094db23a63e7ba520b9c573afd43f791b217baf7ca56685139c1acc0760439b07c4b04c12379b191771ec89fe7524ba415eadb0a2b59ad96126b43234596d1135543c5a534c82a8d3a9730744717855a7cda62d1e74cf4161ffbe0a2d9e069e7c7ea36fbf94430dcd7a488ab38b9fed8cab644f6eb8698293296c75aa648d6a6ae4aa93f6471d22ca9a52ed916a704e6934e3b93658bfeb4950c7aa7cff28be18f1d7c5abf8de1dd457b3e7b6e6fb27f25c4bc83f8b830a629fd5c26d58dd4772feb8bc0bfd77f25ca718d3c5eada4328833da79c4280b53c7d772845457f48400a99492495d546a84dbf6b8257955243483085f56a646562ce516b8852736e7ef5fc33da63397496859afb5c22aaef32d3c0bc77edadc9be05958deae9ab2ddf17ca68c940a07c4c6cbd26ec077d695a919c7770685425d9404a7a9b53466045d98eb11ca4ac9bb96d8642963b55e6dfa33e17d2355d134ee549a62a1b690ec8ae0bfb5e9a8797fe4059dcc14576b9d4ab5856497dec36fa83363f01b4e3b6dbc0a656e6473747265616d0a656e646f626a0a32312030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820363139203e3e0a73747265616d0a78dae5954b6f9b4010c7effe1473747bd8b0b0cba397ca49edc69213ab3651952a52b55eb6861a5867591ce5db7778c8499b870f757b09483c56c3fc7f33fc192838b8d3f6280b80d3184e2614a80bf10fa08c308867308e07b70312b89c4540b887171c088d5cca03587c1e94c01d0cf442427d2880fb94f8fd5d0ecb016134f29d108817328f323c33ee442198f5a0570b086fe4a25e0b57698fd5267639419c0286e3c572147f5b8c47b3697c0d379e1b407c7e3d9b2f4670e3fa019c5d2de3f9c57801e34fd3783abfec565dc7f5df41fc13e2f77f66e70161de43fec7615fb0e47d9c8f14018d88c3b0494d2f38f743dfc32674a5e0f35d3574df4ed6643c99b8d8c4b6956153dcf0fcea1283bc0e6c22360ace529d49f59bf013693f620fd24ee4603f8138a1eb714470028787e1137dbed7f71ee97f4d339982deda4c979055b035aa52a55509880ad46d2d7258d516a4302653150848b32451256c5529727bfff100674009ef399fc250debce65907e574affce56a60786ab2720d2b21371f5ad9d697fd734318c12eabb255ae40eab24274554a450ef0a1299fe5ebd08ad6f6b35628ecf95ef42e0cbf1f616b791be0e3657bb97aeaeeabff4b03b3cec0e3626befe1425993c9d7b579183c681fc1c1655dac94815ceb4d056bad13b8cb6caad1ba5ba3778d6f645d595d60cc4ee4b53a605ceef3fd07f6ef8d6bd436175215f8e101224bc43c605ceeb9cff3bd09e372c73fd6e4e59d719756e0e0884d6dd3d7a559488f367985853b9cb21ae714ce2c6394b4edb02dc43da462878ba928d72a39e055c6c3ff38642b5d1be4156582784a6ef04f91087bc8af0c7fa96f68d0c2e01774cd5b730a656e6473747265616d0a656e646f626a0a32322030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820363136203e3e0a73747265616d0a78dae5955b4fdb401085dff32bce635ac1e25defdaebbe5401c2454aa14d4c2b2aa4ca384be292acd3b501f1ef3bb1ad8416223f90f68558892f999df3cdf878cce1d1c6abdf740eecc7d83be2e002f10db86412f100fdb8f3abc342a16404a67c3a50603c125c85181e772c944781be663cc01c2ae02c68ce66187598e451e069305f4b9f4bda4be5451a6ed269d442a6967251a3455779835525168a11ce1cddfe70d48bbf0ffbbdc1697c892b5f84884f2e07e7c31eae4410e2e062149f7fea0fd13f3c8d4fcfcfeaabc213c13bc43f11bfff3bbb0a99f4d7f9c327615fa8e4555c4014218f9827a949cb5e2815e8c0a726d4a5d0faba1abe6aa75c66dc3b12d4c4aa957a595cf7e4e28c82821aecb371f3ac28b2dce23859fca1fd4c3d88e45add8b3c6a2998a785af88c20b3da5f53304b542f09f207c9be69826059234354581ebbb12362f91dc95d3dc65e5e3951061eed6e7eb886ac1c716ce9033d5703e87e16a79a707359457dff5cdd5a0bbef323bc17592de7ea8642b6b36ebba88a7066393665507f3076b1c6b812353be085773cd2bdb0f2a15ddc06df42eba3fb6f0a97897c0dbcbb6b97a2e56d5bfd2c0616de0af79969a76ef2a1dae855febddc2e02177e3823c7c6f706d8cc5cd2c294b63cd18992d734ce8d0652966899ddc2513d3e25815a8d593f5ef1deb8cc162ea92c214448b726a328734191b9b9a16f72a5fbc0cfa26dcabbc605be357d7ee3d34b3ecdeb8c776034bcdb7347c0f128b8426eaa37170263504b0837c61ec0e6e8d59ec20b163fa63b719ce640ffa92a35a3c2c95fe6f53b76761ec78b7cc77698787acb444da625d49afd8373478d1f90d45195fb30a656e6473747265616d0a656e646f626a0a32332030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820363234203e3e0a73747265616d0a78dae5955d6f9b301486eff32bce65366dae6d6c30bb99d22dfd90d2564ba8a64e9526429cc29a00b54da2fefb1d3e94766b2b2e9aeda620196399f3bee7f0706040f164cd98ac010e23383862c038444b6082088826308e0677031270294220d2c38904c242ce6400d3e3410e92e2464f11e6c31aa4cf88dfddad60362082853e55403c253c26f02a240d15989b41a7161059cb859d16aeb2ce5613984b8276d6301c4f67a3e8c7743c9a9c465770edf100a293abc9c57404d7dc0fe0cbe52cba381b4f61fcf5343abd386f5739e5fe3b887e41f4feefe83220c27b88af1e6dfb8629eff6f9e8226021a1028b54d7424a5ff91e16a14d059f6fb361bb728a3ae2c111c72236a5547572c393cb73dc14b6c666555916c6c1715cfe21fc44da0fc583340d29d6130855dc93688106542af5445feef4bd47fadfd3d8c15da5adcb8a1c6263b28db6b0c411d6595e39bc89974e1b282b93a4b1d59f7b9c058cc8ced9537926eb173b696dd0f625bfec1f868726cb6f601e27b79f1ad986c4eeb9218cd0706eb7686eae9785d190a43ab92d2a477a3c228acf7a6cedad1bd8278d98ea3cbe482c0c7feee168fcd686f717ede5ec19df65ff3a6c396db19d6a5799bc9f5aa98207e5d7539bc665a9730bdb54e7608bb59e178b7b4870621b64601523b83dbc4a5feebea47fce2b94dad8cc3a9d3b303a29cc02015ee0f423ae18f45ee91e74a5c79fb7fb26d095d4df53c7e5ac453732954bfbc9158aedaddf66498a64cef50a6c7c8fdd3571d86c3fd4dc962bed7066e3258e05b65c536c10ed6de6526c6aa037d942e7495f071652fdbf0e8cb60d92ecf402ac8b5d651ba08b6dae4d0fc9027fb26fa809c3e0378de3625b0a656e6473747265616d0a656e646f626a0a32342030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820343230203e3e0a73747265616d0a78daed525b6fd330147ecfaff81e0b1aae8f6f711e0ba4a352a122350f439350d46625a8b92ce9c6dfc74ebbb28d4d7b1812429a23d9b175f45dcef908dc7f34ecab0a78eb309e1248c05d8014537073a42eba8c582cb44ac0b4f43f1a8c12413a46761ad5d0dc174acbc8a08236c4cce1b6c532628a12c32d98b44a92f2a7d23cb1e836d1812d663ad025072eff4a075903b0d0cccba9304ab3e5c47dcdd2c97ce6ce702e450cf7e16cbec826381726c6bb2f4bb7f8986648dfcfdc6cf169ff2ab830afe07ec0bdbe8fae63a6e46ffce456d9676ff95867bc8a988871e59b147ac113ee4d81712ba496fe8cb9b63796e8d8531d60c7530141c1a030c1e1e8346f51e5ed1db23fe88cbd45a7b5b1c6d3d0be735eee7d2675c3e41b1c26670726d7b4d87def8a029bbced91d76bac9aba2f2eaf8a7a55f44f28e0e2a8e00e97916c301642321f0668f7037c7cd2187dfb0b6bd01b04bfa0fd6bb44753a363f3fcdc4ecbaedfa1b82ed721a76fdaae595fadca7a83aab92e4ed0fcac8bee04eb7ce72f21d46ddef7e38bbcdca22f3775be7d42224f1e0eb6a69760ffcf5144f40bd264f3300a656e6473747265616d0a656e646f626a0a787265660a302032350a303030303030303030302036353533352066200a30303030303030303135203030303030206e200a30303030303030303536203030303030206e200a30303030303030313633203030303030206e200a30303030303030323735203030303030206e200a30303030303030333935203030303030206e200a30303030303030353135203030303030206e200a30303030303030363335203030303030206e200a30303030303030373535203030303030206e200a30303030303030383735203030303030206e200a30303030303030393935203030303030206e200a30303030303031313136203030303030206e200a30303030303031323337203030303030206e200a30303030303031333538203030303030206e200a30303030303031343238203030303030206e200a30303030303031373139203030303030206e200a30303030303031383330203030303030206e200a30303030303032343634203030303030206e200a30303030303033333332203030303030206e200a30303030303034303737203030303030206e200a30303030303034373635203030303030206e200a30303030303035343933203030303030206e200a30303030303036313835203030303030206e200a30303030303036383734203030303030206e200a30303030303037353731203030303030206e200a747261696c65720a3c3c202f53697a65203235202f526f6f7420313320302052202f496e666f20313420302052203e3e0a7374617274787265660a383036340a2525454f460a",
+   "updated_at": "2026-09-19T10:43:17.93315+00:00",
+   "product_title": "THYLORA Gap Hunt \u00e2\u0080\u0094 21 Things You\u00e2\u0080\u0099re Not Seeing",
+   "release_state": "ACTIVE",
+   "content_sha256": "926a35f1d839af3fce156f90caeb2925c2e50158b8c2aeb9578b6a8a62a7c3bb",
+   "external_product_id": "gid://shopify/Product/7957199749197"
+  }
+ },
+ {
+  "src": "asset",
+  "j": {
+   "asset_id": "THY-DELIVERY-589D0EC598F737C1",
+   "filename": "THYLORA-Build-a-World-Starter-Kit-v2-winansi-repair.pdf",
+   "mime_type": "application/pdf",
+   "created_at": "2026-09-12T19:12:26.055764+00:00",
+   "file_bytes": "\\x255044462d312e340a25d3ebe9e10a312030206f626a0a3c3c0a2f4631203220302052202f4632203320302052202f4633203136203020520a3e3e0a656e646f626a0a322030206f626a0a3c3c0a2f42617365466f6e74202f48656c766574696361202f456e636f64696e67202f57696e416e7369456e636f64696e67202f4e616d65202f4631202f53756274797065202f5479706531202f54797065202f466f6e740a3e3e0a656e646f626a0a332030206f626a0a3c3c0a2f42617365466f6e74202f48656c7665746963612d426f6c64202f456e636f64696e67202f57696e416e7369456e636f64696e67202f4e616d65202f4632202f53756274797065202f5479706531202f54797065202f466f6e740a3e3e0a656e646f626a0a342030206f626a0a3c3c0a2f436f6e74656e747320323120302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420323020302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a352030206f626a0a3c3c0a2f436f6e74656e747320323220302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420323020302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a362030206f626a0a3c3c0a2f436f6e74656e747320323320302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420323020302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a372030206f626a0a3c3c0a2f436f6e74656e747320323420302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420323020302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a382030206f626a0a3c3c0a2f436f6e74656e747320323520302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420323020302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a392030206f626a0a3c3c0a2f436f6e74656e747320323620302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420323020302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a31302030206f626a0a3c3c0a2f436f6e74656e747320323720302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420323020302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a31312030206f626a0a3c3c0a2f436f6e74656e747320323820302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420323020302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a31322030206f626a0a3c3c0a2f436f6e74656e747320323920302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420323020302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a31332030206f626a0a3c3c0a2f436f6e74656e747320333020302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420323020302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a31342030206f626a0a3c3c0a2f436f6e74656e747320333120302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420323020302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a31352030206f626a0a3c3c0a2f436f6e74656e747320333220302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420323020302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a31362030206f626a0a3c3c0a2f42617365466f6e74202f5a61706644696e6762617473202f4e616d65202f4633202f53756274797065202f5479706531202f54797065202f466f6e740a3e3e0a656e646f626a0a31372030206f626a0a3c3c0a2f436f6e74656e747320333320302052202f4d65646961426f78205b203020302036313220373932205d202f506172656e7420323020302052202f5265736f7572636573203c3c0a2f466f6e74203120302052203e3e202f54797065202f506167650a3e3e0a656e646f626a0a31382030206f626a0a3c3c0a2f506167654d6f6465202f5573654e6f6e65202f506167657320323020302052202f54797065202f436174616c6f670a3e3e0a656e646f626a0a31392030206f626a0a3c3c0a2f417574686f7220285c28616e6f6e796d6f75735c2929202f4372656174696f6e446174652028443a32303236303930313233323032392b30332730302729202f43726561746f7220285c28756e7370656369666965645c2929202f4b6579776f726473202829202f4d6f64446174652028443a32303236303930313233323032392b30332730302729202f50726f647563657220285265706f72744c616220504446204c696272617279202d205c286f70656e736f757263655c2929200a20202f5375626a65637420285c28756e7370656369666965645c2929202f5469746c6520285448594c4f5241204275696c64206120576f726c642053746172746572204b69742e70646629202f54726170706564202f46616c73650a3e3e0a656e646f626a0a32302030206f626a0a3c3c0a2f436f756e74203133202f4b696473205b20342030205220352030205220362030205220372030205220382030205220392030205220313020302052203131203020522031322030205220313320302052200a20203134203020522031352030205220313720302052205d202f54797065202f50616765730a3e3e0a656e646f626a0a32312030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820353838203e3e0a73747265616d0a78da8d54db52db30107df7579c47ca0421c9922d3f2625d09414976086a1c34b2616d4349183ed0cbfdfb563e384db301a5b975d69cf9eb39200a7269aff62058c121c9f0a0889e41e423185648a71e23d792c945a4560daa781061391143ac4eccc73d09c1c7dc3448015742058d0ce96b8f2981251c00d986f942f14f54af3c8a078f0da6821d375b8a88d45aba285d51c2c3523382b1c8c6757c3e4cf6c3c9c4e925bdcf93244f2e3761acf86b8934188efd75749fc6b3cc3f864924ce28bedaae432f886e411c9e1ebd375c894df9f2f76dc2e29e517bf80500494965244d23b2615b5a60f69da262b76d8a680c7a7b2635ad6b98b40311ea9da987e966d07f3686f43037a179b141109a123dd83e3112731c0b891bef6a90fb9368d148eb6c8002294cce0884685c5fd219d55b75e2ac17bb8fb640ac942536b4844dec4b3e9c9e87a323d995c9c8166e7a3383edf61b706f993bec74fca8a703c77b0562d30b92d29d7c4ec16f9de1aef9d3af3abdd97af786a34d43afa485e2dbfc4e09ebe41a7af3435617e738fea72d3adbaa34db64c31c74d5e507f5ae42bc4ce6292daf98bbc3bfe6fc46d9029637a649f5eb337c84830bf91b2b97574d3fd28ecb0259bc2212734e57a5efc43e6aa1c6b9baf977680f572beb0e5008bdc95f669635d332babbcc8eac1dca5b8cf5c56feb529d6459e6e1655c9fa82dd8df3414eca30f3be10ca0f5ad3d7d3f5ebb7659bb0d93e33dbe23d18f638d3ec21abe64bd834abb2dc31fc2e286764d500ab86800a9bf50079814d69eb59ee502e0a6b1ddb7b312e3d78ff01579c35880a656e6473747265616d0a656e646f626a0a32322030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820343637203e3e0a73747265616d0a78dae5935f6fd33014c5dff329ce634195673bb1e33c16e8a052a1a2350f45935068bdd590d85de26ddab7c749b3ee0fda10126f24526e62dddc73cfefda0c34deac7f6e6ae08dc6c92903e3d0e76019c9a0e798eae432213917590122d2f8224058c199c8b17c9f38081a13534598440d211991c357855542325648aa405295a52c8b3113b450682e92412d27a2932b06adb8ca86b6fac25c90d84e8dd174b99ae8afcbe9643ed36b9ca53c87feb09e2f96139c7199e3ed97955e7c9c2e317d37d3b3c5a7c32aa75cbe82fe01fdfa697591932cbdafcf1fa47d8e968f793276913346681621752c6841a32910aa782ad218732ad49d2576642abab227a71c9c7506b9ec1c8ef4cee0c637d516c1b4e191e66faa52aabf56e5940cc27190f4c096892e46f1092a7b6dddc5d0816de17c4089bdad0cfc392adf188259c0c6bb505ad7626bdb60dd26606ffcbe32e3eecf9fb8b161d7e5b4e6f2cab88d69c7686fdb60ea1661571e5d8d1a539bfabb69c628dd165bef9b36aa5ddbd606df60533a18174c43fe80217b005f08a964b4cf0efb280eef2981ec8e7bdc6e9d79d55b5ffbab06de19d8ad295fd6134a1ef51e554e8b03dbee80cc7bc2ea00f8f95d8ed1b77f70f5fdf644ff8b6af79341f20b7cf33d5d0a656e6473747265616d0a656e646f626a0a32332030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820343138203e3e0a73747265616d0a78daed544d6fd34014bcfb57cc31e5b0ddb7df3ea1002e440a44388b50ab4a95956e1b436283ed40fbef59bb215050db033954a25ec9eb5d3dcdcc7b333281c745c37bb1065e781c1e1148c05f801453f053643ef99a302bb44ac1b48c1f1a8c5241da227f9d54d03c164ac7c8600d6d8899ed698579c214a5863b30e994241577a579ead05c265b36cb744f976eb9e22d6d650dc042b328678d5196cfc7fe24cfc6d3893fc6a91416fecdf174968f712a8cc5cb0f733f7b9be5c85e4dfc64f6eee65670610ee03fc13ffb135d5ba6e42f7cf95bd9fbd8f2aece44159688711587d4cf82a73c3605c69d905ac6dd72ed7eb644bb99ea1ef6f0484050dfa0307d872362f0cb80f997a2f97c8bf12f4ee3fe8193e4e0a11b383f366517d045daf23c14282bd455401baa2e548bc01e9021cc4ec62d2e99b281ae8fcb74b0d2dd5879b7e7189dede119f4f682ff0fb4bb9de1725f01595e63bd69bb9891b2c5f7ba599d235c956df7fc7e055ab9a76c3cca6ce8f85fdb57368a0e1721accaea12edb2dec46c14f856b665573758144d738d7af3505294e54f49791c4941f203d8013b510a656e6473747265616d0a656e646f626a0a32342030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820343238203e3e0a73747265616d0a78daed544d6fd34010bdfb57bc63e0b0dd6faf4f550017228546385b55ad2a2187ac49686c83edaaeabf67ec86d082da1ec8a112b525ef7a347aefcdccd308707ac5f0fd52026f3c0e8e0484842f2034d3f053a43efa11b1581a9d80194517032612294c8cec7d54c1704a548e098b12c60a66b77f1bcc23a64562b903534e2ba1e9d486270ecdd768cb1633d3d3255b2e8a8aadac01581a46724a8cd26c3ef6e7593a9e4efc192e948ce13f9c4d67d91817d2c6787b32f7b38f6986f4ddc44f66c7b751c9a57d05ff0dfef59fe826665afdc6d777d23e51c9bb3c4b2a622118d7d4a4be173ce15414187752194567cc8dfb5592d8f5d4f4b007471252f4054adb5738920c7e15905d6dc23dc2bf28adfb074aa18611ba81f2382f03ea2aa0215274abbc43995f8696aeeb16d775b35962b92e8ad084aa634fa89276a7ea1eb54ad8c0de9b673a0cd6dd0ef6610760f4790fcfa0b717fc7fa03d3c19aef6e497d3558d45a842b1ee5ae4d512d714f89edfb4878f2b30dabd78e3597ac3d096db9737687b2c9a905fd2e658850a6d5d8645bdbc41138aab9696caba7bc2263ae62f36791e3641f413eeaf3f520a656e6473747265616d0a656e646f626a0a32352030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820343235203e3e0a73747265616d0a78daed945f6fd33014c5dff329ce63e1c1f37f3b4fa8400695cabaa546d3d02414056fe9689b900455fbf6b3b3ae30d0b607fa3089c5521c5b57f777eebd4761a061b1e15dae80b70e07870c8cc35d804922e1a6c85cf22321862b998228113e14084b395306f987640d4543a0b08469aca034237a7b5a629e10c9524d2d88b052301976a9686ad15e265b9a212ae2d22d2bdcb2adac21315724c8596194e5f3b1fb9267e3e9c49de15c7003f7f16c3acbc738e7dae0dde7b99b7dca7264ef276e323bbabde594eb57705770afffccae0c91e2577ef55bd849287917a7830ac318a1323429f682a6341405422d174a84dd5065ef4a62bb9eaa98f6e09083b35820d7b1c291207095c7f1b228fd3de25f4c6dff81c9c430433b308f8a95471fa8178bb6ebd144361a5f374b8fb258a35994fdcfd69327f470bdd3730f2a523270a36fa6c34ceded4c1f1e3e465ff7f00c7aa3e0ff23dbc393a1624f4e39ad8a1e9bbafd8eaa681abfeea26d5affe671be92f6c519cfd2192afcdef6e58c4559a10b96a8db6b7cf37db158a2abea4d874d5507bb7468ea8d6f9fb08a34f4c52acfc32a486e0028be3e5b0a656e6473747265616d0a656e646f626a0a32362030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820343533203e3e0a73747265616d0a78daed944f6fd34010c5effe14ef1850b4ddff5e1f43714ba440c059848a2a21cbd96023c70e8e43d46fdfb563020555399043256a4bdef56a34efcdcc4fcb40fdcbfa6fb6065e595c5c31300ebb029344c2ce10dbe07b4042ae6404a284df28101671a64224d74105457da0308469aca134237af82bb108886491a60644182998f4ab54343268be06835a485427170d5afe940db6fac45c116f678d519c2c26f673124f66537b835bc143d83737b37932c12dd7212e3f2eecfc6d9c207e3db5d3f9bbc329a75cbf80fd06fbf2cfec2a2452fccaff7bd8075ff2314e7b172163844adfa4ae1734a2be28106ab850c2af2155e66749ecd853d5a5bdb8e2e0ac2b90ebaec29124b0b9c37b576f4af740f22f516dfe4194897e88a617bd6c5cda3ab479e31c36bd34f6798d7d5ab55816ab956b9cdfd5bb36abd76e4b4ef8e2fae8eb81b88848afdf0134eb876b0ec37d9c028cbe9ce1e9fd7686ff8f6c8f4f868a3311735dfc7070699623856762e35a57656e8c4d53b72e6b8bba1aa371abdd362dc73ea06a9b74590ce769b5445e6fdc098c9434cf183d498c94bf14cf83d1a7a638de3b6551b92deaaabc3b80b5af77e512dbf4ee042732a4cf9c3c0d4e10dc03caa650f80a656e6473747265616d0a656e646f626a0a32372030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820343234203e3e0a73747265616d0a78daed545d6fd340107cf7af98c780d0f5f6befd8402b8102910e15c551555426e7089a953878bd38a7fcfd90929055579200f95a82d79cfa7d5ceecce68093cbed47f670be095c7d1318104fc254831053f46e693ef09b342ab144ccb78d060940ad216f9dbe41a9ac744e918192ca00d31b3fdab314d98a2d47007269d92a462549aa70ee16bb245b34c7770e9162bded296565f586816e92c30c8f2e9d07fcab3e178e4cf702e85857f77369ee4439c0b63f1fa64ea27efb31cd99b911f4d3e6c6e0517e619fc37f8e77f56d796297957dffe96f631b6bccb33918525625cc52175b3e0298f4d817127a496315aaeddaf96683753dd953d3a1610d435284cd7e14033f87989d3265cdd03fc0bd2b87f8024d94be87ac8d379d1e2aa2c972bb4117a5917b312455ddd94f85254f58f977b8808b323720f4da6ac07ecfc32eeb5741b2d1f161d83cf07787abe1de1ffa3dac3ca7079308b345896e1b2098b15aaeb9b6a555dd425eae2a2097beca1957bb2c7a3b4878ebbed801ba46d9afa0542d5ae8b189b80d5bc09ed6cdd7687dbcd6e99adeb761dca3d9651963f59e6715806c94f6b5840620a656e6473747265616d0a656e646f626a0a32382030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820343234203e3e0a73747265616d0a78daed545d6fd330147dcfaf388f8507cfdf769e500729542a54a44668d3a429a4860435c9e67448fcfb3959290c34f5617d98c4122976acabf371ef9119687cd9f82d1be0d4e164c6c038dc57304924dc02994bae1362b89229881271a34058ca9932c8df262d148d85c212a6d1406946f4ee6f835542244b35b520c24ac1645ca5a2a945f896ecd80c51035dbae38aa76c276b04e68a44390d2659be9abaf33c9b2ee6ee0c17821bb877678b653ec505d706af3faddcf27d96237b3377f3e587bb534eb97e01f71deee5dfe8ca10297ee3db3fca3e46cbfb3a1d5518c60895b149432f684aa329106ab95022ae862afbcb12dbf7540db027330ece06835c0f0e279ac0551eb35097dbba6bef91fe43abed23689918c76847dacf55b14517d6755b849fb80add978d6f10fc0f5f6c7a9455118a72ebc3ab037ab8deebb9472a5232f20ed1598c63b577637d78fe985c1ee119f50e82ff0fb4872743c53193b2ee7c0f5f9415ae7ce8bb164ddddfb4ebb8df16edfa404a94b4cf2979922951f1b63b564aea188eb2eaead2a32a7a1428bbb6f7d737be2dfd818048439f03f2340282e4163eb8410f0a656e6473747265616d0a656e646f626a0a32392030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820343136203e3e0a73747265616d0a78daed544d4fdb4010bdfb57bc63ca61d9d96f9faad01a1a2934c2d9aa022121276c48501ca74b2efcfbae4d9a9656280772402ab6e459af46f3de9b791a024f2f75df690d9c781c9f1248c0cf408a29f8210a9ffdc898155ae5605aa68306a35c90b628cfb215344f89d23132a8a10d31b3fd5b629c3145b9e10e4c3a2549a5a834cf1de25db645b34cb770f9162bddd2965657586896e8d4e815e5b8efafcaa23f1cf84b5c4b61e1bf5c0e47651fd7c2587cfa36f6a3f3a244f179e007a3af4fb7820bf301fe1efee8efeada32257fd7cfff48bb4892777926b1b0448cabd4a4b6173ce749141877426a99a2e5dafd9244bb9eeab6ecf1a980a056a030adc29e65f0f380f35037f1f119e43fa0c6bd0294643744d7817e9f571bccabf53aacc22d2661d6c480757517d0acc2c73d2c84d9b178062573d6a1b5761976a3744fa37c79e6e8dd1ce0e9f8b684ff8f6a2f4f86cb83f9a3410c75a827213e60b1c1ed62360b31ac36cbc73df6d0cabddbe34dda43a7d576c0f5d14ceec3348588f5b29a064cab1817e1019bb4cdea6e9bed718ab2fcdd296fc329c87e0288593cac0a656e6473747265616d0a656e646f626a0a33302030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820343530203e3e0a73747265616d0a78daed545d6fd330147dcfaf388f05559ebfe33ca1021954eaa8488dd0d0241465de5ac8d79c7413ff1e272b8581c61ee8c3249648767c7375cf39f71e998186978d6b51012f2d8e8e191887bd009344c22e90dae82a223157320151227c28109670a662646fa21a8a86446108d3a8a034237a772ab18a886489a606441829980cbb543431f097d10e2d266a804b765821ca76b4c6c25c9140a7c224cd5633fb294b678bb93dc599e031ecdbd3c5329be18ceb18af3eacecf224cd90be9edbf9f2dd6d9453ae9fc17e817dfe7b752508d73feb33fa4bdefba0799fa8038d98314265e8d2d00c9ad0a00a841a2e94087b4c95f9a189ed9baa86ba47c71c9c0d0a03589038310476edb0fad6f5aeba03f907a836ff00cac4384533829ee42d5ad7b4a59ba22df3c27553dc34feeb147e5b0e07efba66ebc778d1d49dbbdababa08c9797d1efeb5f9c69307b872bde77a879048c8c86970d5629cb8b99df8fdd6c0e4f3019e91ef40f8ffa876ff64a838908b3eae9d77386f5c874d7dd1f82aef374d8ddee7d7ae7cf177164a9a277f3c4a7fa870051eca1f798f629dd797c121aeecdccd6898b0d6686a8736f73daae6da750f9845c6f4c92c8fc32c88be03e7124c200a656e6473747265616d0a656e646f626a0a33312030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820343337203e3e0a73747265616d0a78daed944f6fd34010c5effe14ef18386cf7bfd7c7141c886488709643ab4a2824db6421b1cdda55c5b767eda6815255399043256a4b5eef6a34efcdcc4fcb40e3cb86ef72079c5b9c4d181887bd069344c216c86df22321295732035122fe28109671a65294ef920a8ac6406108d3d8416946f47eb7c53c2192659a1a1061a46032ae52d1cc20ac93bd5a4a542f97edb5e229dbdb1a127345a29d1d4679391fdbcb321f17537b812bc153d8f717c5ac1ce38aeb146f3ecfedec435e227f3bb5d3d9c7bb534eb97e05fb0df6f5dfd995205cffcecfd81f719f62cd87401d6da48c112a6397fa66d08cc6aa40a8e14289b8a65499fb9ad8a1a9aacf7b36e1e0acaf308ac512471981dd384c7c683bccbb3afc7ca0fb48599b7f50666218a51994cfddda57b8f5dd060b342eb4758555edab356eebf09d1cb1c1f5c1c6032d919141aea7a618266aee26faf4e831fa728267f0db1bfe3fb23d3d192a4e0448e1ba4846dbb8a5bff64b34a1feba753bf8aa7321dc341d427dd3f9ca1d414549f382cab34445c5dbee34a8e4d5eafe26596e16d5daad10dc76d1f9ba6a37be411db08a18b5717f841699d2175a9e072d487e01362a44e50a656e6473747265616d0a656e646f626a0a33322030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820343834203e3e0a73747265616d0a78daed944b6bdb401485f7fa1567e916319987468feedcc4690d6e4ce5e92225508434b2a758923b9243fdef33925d3769095ed48b40a301cd83cb3de7cefd1806ea061bfe7905bc57b8b866601caa040b480035c344793f3c127119242052b885046109673242fac1ab21a90b143161212ac89091f0b05b63e1918025218d41441c0816b8399034896197de412d22b2974b0e5aee941d6c0d89b924ce4e85d1245d8cd5d774329e4dd52dee048fa03edecee6e918773c8c70f965a1e69f2629265753359ddfec4f39e5e11ba8ef506fffcc2e05e1e1effc8c3f8afbec6a3e0686ce46c418a181bba5fe3268425d552034e6420a374754c6bf6a62c74b957dde8b6b0ecefa0a9d982b71c428815a69ccccbda99758acf4ba7ca2fc977618ff8336134333e341fb72d534ad46e7e44b63db0e6563ab7768bbc6ee7ce4992d7c589d9b8df6916d0bd3a0cd75ed3655b6f1d1586479e76c773b72c2310f8f8e9fd81209199cf588cd86f6c7fbf63fcf0946dfcef00d7e7bc3ff47b6e73b43c59958bad2a5a93532db99d261e163634dee50b166b9ea5a1f855e9b7bdd7395d505daed66d3d8ee043732885fb97991dc48f74e9e879b9bacdabf40b5fed939689a629b7768eaf50e59d969fbe87532ad5bd4a65de9e2043841445fc17919e0c07b009a925c3d0a656e6473747265616d0a656e646f626a0a33332030206f626a0a3c3c202f46696c746572202f466c6174654465636f6465202f4c656e67746820343436203e3e0a73747265616d0a78daa5924b739b301485f7fc8ab3743b53450fc463e9bab8f58c1bb7585da4930d21b251c3231590b4ffbe02633749a78b8c870181b8face395762a0ee62e333af80f70a174b06c6a176603ef1a1d64894f7d32321977e0c22857b91202ce64c86483f7a3524758522222c40051930124c5f25b61ef1591cd0084444be60be1b7d49e30876ef4d6a2191835c3c69b95936d91ac15c1267a7c22c49b773f53d4de6eb95bac2b5e021d4a7abf5269de39a072116dfb66af33949917c58a9d5e6f230cb290fde40fd807afb922e05e1c15f3e134feabebacca7c2c0d9081923d4775d1a9a4163ea5281d0880b29dc1852191d33b15353e5c0bd587270362474622ee22cd5a5ce5a8d7dd6e9678aff68069c1139693e03bb5c8ecce4d0b9f561cbe8a18bffb7e6cac4a9ecb874568f0e9e124ebfb034b5690b7d8bcc766697e51d3056cfa6f1d5c0d4ec8bae455ee8fcce61cfa42dfab66b2a6d916735acceb579d030ddb862e8e970bfdea27e97e5b96e5b3c36f6ae3dd7e3176b728d07d39a9b529f0bdbf6f7f78ded70d3f4f56d667f1fb9e7255e9499a95ab7c71a9dedbb62d797e71abdd4bf3ab72383bda64691397a8de6b1d6f6c57987f707cbd50d7e0a656e6473747265616d0a656e646f626a0a787265660a302033340a303030303030303030302036353533352066200a30303030303030303135203030303030206e200a30303030303030303637203030303030206e200a30303030303030313734203030303030206e200a30303030303030323836203030303030206e200a30303030303030343036203030303030206e200a30303030303030353236203030303030206e200a30303030303030363436203030303030206e200a30303030303030373636203030303030206e200a30303030303030383836203030303030206e200a30303030303031303036203030303030206e200a30303030303031313237203030303030206e200a30303030303031323438203030303030206e200a30303030303031333639203030303030206e200a30303030303031343930203030303030206e200a30303030303031363131203030303030206e200a30303030303031373332203030303030206e200a30303030303031383136203030303030206e200a30303030303031393337203030303030206e200a30303030303032303037203030303030206e200a30303030303032333132203030303030206e200a30303030303032343535203030303030206e200a30303030303033313136203030303030206e200a30303030303033363536203030303030206e200a30303030303034313437203030303030206e200a30303030303034363438203030303030206e200a30303030303035313436203030303030206e200a30303030303035363732203030303030206e200a30303030303036313639203030303030206e200a30303030303036363636203030303030206e200a30303030303037313535203030303030206e200a30303030303037363738203030303030206e200a30303030303038313838203030303030206e200a30303030303038373435203030303030206e200a747261696c65720a3c3c202f53697a65203334202f526f6f7420313820302052202f496e666f20313920302052203e3e0a7374617274787265660a393236340a2525454f460a",
+   "updated_at": "2026-09-19T10:35:31.356337+00:00",
+   "product_title": "Build a World From One Idea \u00e2\u0080\u0094 THYLORA Starter Kit",
+   "release_state": "ACTIVE",
+   "content_sha256": "4a0c96e1a514258b9f2e8b72a0a782a518ec45ef1c200f895cf39fd7b59a521a",
+   "external_product_id": "gid://shopify/Product/7957200109645"
+  }
+ },
+ {
+  "src": "entitlement",
+  "j": {
+   "state": "ACTIVE",
+   "user_id": "7466e84e-f3fb-4801-a3a3-768aca504638",
+   "metadata": {
+    "financial_status": "paid",
+    "granted_by_event": "431bff2d-40e0-585f-a2e4-99b32f2f657d:14895260827725"
+   },
+   "granted_at": "2026-09-08T17:50:37.069073+00:00",
+   "revoked_at": null,
+   "entitlement_id": "db0c12f7-5fa1-4375-8a82-6e232f3cf981",
+   "source_provider": "SHOPIFY",
+   "source_reference": "gid://shopify/Order/6096452517965",
+   "external_product_id": "gid://shopify/Product/7957652275277"
+  }
+ },
+ {
+  "src": "entitlement",
+  "j": {
+   "state": "ACTIVE",
+   "user_id": "510c33e4-4f4d-4bd6-998a-8ce7847b027e",
+   "metadata": {
+    "claim_id": "2f25d77b-137c-4425-8b29-fa6ff5adbb2b",
+    "granted_via": "BUYER_CLAIM",
+    "financial_status": "paid",
+    "granted_by_event": "bec36de8-2b80-52ce-9ec5-84566337bb2f:14895405727821"
+   },
+   "granted_at": "2026-09-08T19:43:49.376716+00:00",
+   "revoked_at": null,
+   "entitlement_id": "9102f7cb-1339-4494-a828-1f1587a021ef",
+   "source_provider": "SHOPIFY",
+   "source_reference": "gid://shopify/Order/6096522444877",
+   "external_product_id": "gid://shopify/Product/7957652275277"
+  }
+ },
+ {
+  "src": "entitlement",
+  "j": {
+   "state": "ACTIVE",
+   "user_id": "7466e84e-f3fb-4801-a3a3-768aca504638",
+   "metadata": {
+    "financial_status": "paid",
+    "granted_by_event": "a35e51ee-4db3-59c4-973f-bc6dfa483be5:14921124479053"
+   },
+   "granted_at": "2026-09-16T14:58:52.280327+00:00",
+   "revoked_at": null,
+   "entitlement_id": "674c77f8-ceac-4323-8e18-dddd19949bea",
+   "source_provider": "SHOPIFY",
+   "source_reference": "gid://shopify/Order/6107908472909",
+   "external_product_id": "gid://shopify/Product/7957652275277"
+  }
+ },
+ {
+  "src": "access_log",
+  "j": {
+   "user_id": "510c33e4-4f4d-4bd6-998a-8ce7847b027e",
+   "edf_code": "EDF-TWELVE-MILES-FOR-FLOUR-001",
+   "access_id": "3714e16d-854a-468d-94ea-25b85a98ac39",
+   "access_kind": "FIRST_ACCESS",
+   "accessed_at": "2026-09-08T19:43:55.948407+00:00",
+   "entitlement_id": "9102f7cb-1339-4494-a828-1f1587a021ef",
+   "external_product_id": "gid://shopify/Product/7957652275277"
+  }
+ },
+ {
+  "src": "access_log",
+  "j": {
+   "user_id": "7466e84e-f3fb-4801-a3a3-768aca504638",
+   "edf_code": "EDF-TWELVE-MILES-FOR-FLOUR-001",
+   "access_id": "79f71187-6d47-42e7-b66c-a2f63eea73c8",
+   "access_kind": "FIRST_ACCESS",
+   "accessed_at": "2026-09-08T20:02:12.035182+00:00",
+   "entitlement_id": "db0c12f7-5fa1-4375-8a82-6e232f3cf981",
+   "external_product_id": "gid://shopify/Product/7957652275277"
+  }
+ },
+ {
+  "src": "access_log",
+  "j": {
+   "user_id": "7466e84e-f3fb-4801-a3a3-768aca504638",
+   "edf_code": "EDF-TWELVE-MILES-FOR-FLOUR-001",
+   "access_id": "a387ad0a-ad17-4b5d-9c79-dbc4d45201cd",
+   "access_kind": "FIRST_ACCESS",
+   "accessed_at": "2026-09-16T15:01:22.523552+00:00",
+   "entitlement_id": "674c77f8-ceac-4323-8e18-dddd19949bea",
+   "external_product_id": "gid://shopify/Product/7957652275277"
+  }
+ },
+ {
+  "src": "access_log",
+  "j": {
+   "user_id": "7466e84e-f3fb-4801-a3a3-768aca504638",
+   "edf_code": "EDF-TWELVE-MILES-FOR-FLOUR-001",
+   "access_id": "520f7d79-3029-40d7-86e0-c225fb33ecc9",
+   "access_kind": "REACCESS",
+   "accessed_at": "2026-09-16T15:12:08.654307+00:00",
+   "entitlement_id": "674c77f8-ceac-4323-8e18-dddd19949bea",
+   "external_product_id": "gid://shopify/Product/7957652275277"
+  }
+ },
+ {
+  "src": "access_log",
+  "j": {
+   "user_id": "7466e84e-f3fb-4801-a3a3-768aca504638",
+   "edf_code": "EDF-TWELVE-MILES-FOR-FLOUR-001",
+   "access_id": "f9178216-cf64-4981-bc48-1a11c68b375b",
+   "access_kind": "REACCESS",
+   "accessed_at": "2026-09-16T15:12:15.793478+00:00",
+   "entitlement_id": "674c77f8-ceac-4323-8e18-dddd19949bea",
+   "external_product_id": "gid://shopify/Product/7957652275277"
+  }
+ },
+ {
+  "src": "access_log",
+  "j": {
+   "user_id": "7466e84e-f3fb-4801-a3a3-768aca504638",
+   "edf_code": "EDF-TWELVE-MILES-FOR-FLOUR-001",
+   "access_id": "b7d6c874-94bd-47ea-ae96-8220b7c37a32",
+   "access_kind": "REACCESS",
+   "accessed_at": "2026-09-19T17:23:04.473075+00:00",
+   "entitlement_id": "674c77f8-ceac-4323-8e18-dddd19949bea",
+   "external_product_id": "gid://shopify/Product/7957652275277"
+  }
+ },
+ {
+  "src": "fulfil_recon",
+  "j": {
+   "state": "ALREADY_FULFILLED",
+   "reason": "Order #1004 was reconciled by hand earlier this session before the mechanism existed. Recorded here so the mechanism will never attempt it again. This row is the idempotency test: the candidate view still lists the order, and the mechanism must decline it.",
+   "evidence": {
+    "test_role": "IDEMPOTENCY_GUARD_PROVEN",
+    "amount_usd": 1.99,
+    "order_name": "#1004",
+    "shopify_status_at_record": "FULFILLED"
+   },
+   "created_at": "2026-09-18T21:13:36.280049+00:00",
+   "updated_at": "2026-09-18T21:13:36.280049+00:00",
+   "delivered_at": "2026-09-16T15:01:22.523552+00:00",
+   "entitlement_id": "674c77f8-ceac-4323-8e18-dddd19949bea",
+   "notify_customer": false,
+   "order_reference": "gid://shopify/Order/6107908472909",
+   "reconciliation_id": "b94fe557-4f9c-43af-92d8-afe2b1a3afef",
+   "delivery_attempt_id": "bf7fbe52-7e09-459e-bd0e-75cde15cba91",
+   "external_product_id": "gid://shopify/Product/7957652275277",
+   "shopify_fulfillment_id": "gid://shopify/Fulfillment/5585802854477"
+  }
+ },
+ {
+  "src": "fulfil_recon",
+  "j": {
+   "state": "RECONCILED",
+   "reason": "Delivered 2026-09-08T20:02:12Z through the entitlement path; Shopify still read UNFULFILLED ten days later. Bookkeeping corrected. notifyCustomer=false: no delivery occurred now, so no customer was told one had.",
+   "evidence": {
+    "test_role": "FIRST_PRODUCTION_TEST",
+    "amount_usd": 0,
+    "order_name": "#1002",
+    "fulfillment_order": "gid://shopify/FulfillmentOrder/7209666248781",
+    "requires_shipping": false
+   },
+   "created_at": "2026-09-18T21:13:36.280049+00:00",
+   "updated_at": "2026-09-18T21:13:36.280049+00:00",
+   "delivered_at": "2026-09-08T20:02:12.035182+00:00",
+   "entitlement_id": "db0c12f7-5fa1-4375-8a82-6e232f3cf981",
+   "notify_customer": false,
+   "order_reference": "gid://shopify/Order/6096452517965",
+   "reconciliation_id": "6eaa8471-dfa6-4782-b4c1-35d9c70b163b",
+   "delivery_attempt_id": "f7096d11-0cb5-4c0b-a9ca-eebe1f66faec",
+   "external_product_id": "gid://shopify/Product/7957652275277",
+   "shopify_fulfillment_id": "gid://shopify/Fulfillment/5586006999117"
+  }
+ },
+ {
+  "src": "fulfil_recon",
+  "j": {
+   "state": "RECONCILED",
+   "reason": "Delivered 2026-09-08T19:43:55Z via BUYER_CLAIM through the entitlement path; Shopify still read UNFULFILLED. Bookkeeping corrected, no notification sent.",
+   "evidence": {
+    "test_role": "SECOND_PRODUCTION_TEST",
+    "amount_usd": 0,
+    "order_name": "#1003",
+    "granted_via": "BUYER_CLAIM",
+    "fulfillment_order": "gid://shopify/FulfillmentOrder/7209741647949"
+   },
+   "created_at": "2026-09-18T21:13:36.280049+00:00",
+   "updated_at": "2026-09-18T21:13:36.280049+00:00",
+   "delivered_at": "2026-09-08T19:43:55.948407+00:00",
+   "entitlement_id": "9102f7cb-1339-4494-a828-1f1587a021ef",
+   "notify_customer": false,
+   "order_reference": "gid://shopify/Order/6096522444877",
+   "reconciliation_id": "63b4b3d6-59fc-495f-91bd-48e67f1ecbe6",
+   "delivery_attempt_id": "0ca887c3-8cf2-4bd1-b91c-076fff2adcca",
+   "external_product_id": "gid://shopify/Product/7957652275277",
+   "shopify_fulfillment_id": "gid://shopify/Fulfillment/5586007064653"
+  }
+ },
+ {
+  "src": "pending_claim",
+  "j": {
+   "state": "CLAIMED",
+   "payload": {
+    "topic": "orders/paid",
+    "quantity": 1,
+    "webhook_id": "bec36de8-2b80-52ce-9ec5-84566337bb2f",
+    "shop_domain": "sracnp-zg.myshopify.com",
+    "line_item_id": 14895405727821
+   },
+   "claim_id": "2f25d77b-137c-4425-8b29-fa6ff5adbb2b",
+   "provider": "SHOPIFY",
+   "claimed_at": "2026-09-08T19:43:49.376716+00:00",
+   "created_at": "2026-09-08T18:48:14.493754+00:00",
+   "checkout_email": "vyc2st+library@gmail.com",
+   "order_reference": "gid://shopify/Order/6096522444877",
+   "financial_status": "paid",
+   "provider_event_id": "bec36de8-2b80-52ce-9ec5-84566337bb2f:14895405727821",
+   "claimed_by_user_id": "510c33e4-4f4d-4bd6-998a-8ce7847b027e",
+   "external_product_id": "gid://shopify/Product/7957652275277"
+  }
+ },
+ {
+  "src": "delivery_attempt",
+  "j": {
+   "state": "DELIVERED",
+   "attempt_id": "0ca887c3-8cf2-4bd1-b91c-076fff2adcca",
+   "attempt_no": 1,
+   "created_at": "2026-09-08T19:43:49.376716+00:00",
+   "updated_at": "2026-09-08T19:43:55.948407+00:00",
+   "entitlement_id": "9102f7cb-1339-4494-a828-1f1587a021ef",
+   "failure_reason": null,
+   "external_product_id": "gid://shopify/Product/7957652275277"
+  }
+ },
+ {
+  "src": "delivery_attempt",
+  "j": {
+   "state": "DELIVERED",
+   "attempt_id": "f7096d11-0cb5-4c0b-a9ca-eebe1f66faec",
+   "attempt_no": 1,
+   "created_at": "2026-09-08T17:50:37.069073+00:00",
+   "updated_at": "2026-09-08T20:02:12.035182+00:00",
+   "entitlement_id": "db0c12f7-5fa1-4375-8a82-6e232f3cf981",
+   "failure_reason": null,
+   "external_product_id": "gid://shopify/Product/7957652275277"
+  }
+ },
+ {
+  "src": "delivery_attempt",
+  "j": {
+   "state": "DELIVERED",
+   "attempt_id": "bf7fbe52-7e09-459e-bd0e-75cde15cba91",
+   "attempt_no": 1,
+   "created_at": "2026-09-16T14:58:52.280327+00:00",
+   "updated_at": "2026-09-16T15:01:22.523552+00:00",
+   "entitlement_id": "674c77f8-ceac-4323-8e18-dddd19949bea",
+   "failure_reason": null,
+   "external_product_id": "gid://shopify/Product/7957652275277"
+  }
+ }
+]

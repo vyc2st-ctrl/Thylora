@@ -1,0 +1,2198 @@
+[
+ {
+  "src": "post",
+  "j": {
+   "id": "190bf762-beec-4c01-adf1-50874adf038b",
+   "state": "REJECTED_VISUAL_PRE_RENDER_GATE",
+   "title": "Need help? Tell us where the next step breaks.",
+   "created_at": "2026-09-25T12:53:45.207407+00:00",
+   "updated_at": "2026-09-25T15:59:25.921399+00:00",
+   "channel_code": "UNASSIGNED",
+   "content_code": "THY-GLOBAL-HELP-FIRST-POST-608",
+   "content_type": "TEXT_POST_DRAFT",
+   "published_at": null,
+   "rights_state": "ORIGINAL_COPY_OFFICIAL_LINKS",
+   "archive_state": "DRAFT",
+   "scheduled_for": null,
+   "publish_evidence": {
+    "caption": "NEED HELP? TELL US WHERE THE NEXT STEP BREAKS.\n\nEmail ersatzrealityenterprise@gmail.com. Send your country, city or region, preferred language, what you need, and whether a deadline is close. If you cannot call, write “email only.” If someone you know needs help, ask them to write to us or get their permission before sharing their story.\n\nNo U.S. hotline works everywhere. We will look for the relevant service *where you are*, show you the source and date, and help you form the next question. Then tell us what happened. If that door did not open, we keep looking for another route with you.\n\nNeed to post or sell something? Tell us what you make and where your post stalls. We can review the message and explore a digital product or store partnership together. No listing or money split happens until ownership, consent, price, costs and exactly who gets paid are agreed in writing.\n\nPlease do not send medical records, ID numbers, account details, court papers, or your exact sleeping location in the first email. We review messages manually; this is not an emergency service and no response time is guaranteed. If you need help right now, seek an established local emergency or aid service.\n\nNaya Aven is the Director of Access and Follow-Through in our *EdereAirah simulation*. She shows how the question keeps moving. Earth replies come from us, with sources you can check—not from an imaginary caseworker. What should we look at with you first?",
+    "is_published": false,
+    "source_query": "THY-Q-20260925-GLOBAL-HELP-QUESTION-EXCHANGE-608",
+    "world_character": "Naya Aven simulated; not Earth caseworker",
+    "first_page_design_613": {
+     "review_gap": "Image depicts one city, though caption explicitly serves multiple countries; visual must not imply an operational global staffed office.",
+     "publication": "NOT_PUBLISHED",
+     "preview_path": "/workspace/scratch/7bb1fe5138f0/generated_images/exec-ad755f4e-661c-4567-a9ab-11f0f8effd9f.png",
+     "visible_math": "Money received − costs = amount we can direct to help",
+     "visual_state": "CHAIRMAN_PREVIEW_PAINTED_NOT_PUBLISHED",
+     "caption_state": "keep existing 608 caption until Chairman finalizes visual and channel",
+     "visible_email": "ersatzrealityenterprise@gmail.com",
+     "exact_headline": "NEED HELP? TELL US WHERE THE NEXT STEP BREAKS.",
+     "visual_observations": "Painted city doorway with adults speaking and one wheelchair user; many branching walkways; warm cream text bands; no QR code or logo"
+    },
+    "chairman_rejection_614": {
+     "rule": "No new image generation before pre-render scene contract is presented and Chairman approves people/place/roles/actions/badge/serial/math/caption.",
+     "reason": [
+      "Generated people had no identified roles, biographies, or permission",
+      "Unidentified building/city and ambiguous world-versus-Earth location",
+      "Read as generic Jehovah's Witness-style campaign or commercial",
+      "No EdereAirah transmission author, named department, badge, serial, subject-specific math",
+      "Money line misleadingly implies the organization would give money despite no funded program",
+      "Generated before Chairman approved exact scene, cast, gazes, geometry and purpose"
+     ],
+     "status": "REJECTED_BY_CHAIRMAN_2026_09_25",
+     "preserve": "Rejected art retained as evidence, not a usable asset; no silent replacement.",
+     "continuity": "597 doctor first post never validly superseded by 603 BMW; 605-608 help-first extends assistance; 613 generic image rejected. Main post sequencing must be decided from 597 and 605-608 before artwork."
+    },
+    "no_global_coverage_claim": true,
+    "supersedes_for_first_post": [
+     "THY-HELP-BILL-HOUSING-606"
+    ]
+   },
+   "chairman_approval_state": "REJECTED_REDESIGN_REQUIRED",
+   "production_canonical_id": "THY-TRANS-HELP-607"
+  }
+ },
+ {
+  "src": "program",
+  "j": {
+   "id": "06fc4268-989a-4da7-806d-9caf8887b5a2",
+   "scope": {
+    "assignments": [
+     {
+      "people": [
+       "Nick",
+       "Vernita"
+      ],
+      "status": "INVITATION_DESIGN",
+      "assignment": "Shipping / fulfillment / logistics company"
+     },
+     {
+      "people": [
+       "Victoria",
+       "Diamond"
+      ],
+      "status": "INVITATION_DESIGN",
+      "assignment": "Japan-based profitable company supporting film/creative operations; exact business model OPEN"
+     },
+     {
+      "people": [
+       "Keziah"
+      ],
+      "status": "INVITATION_DESIGN",
+      "assignment": "Ethical modeling agency / talent representation"
+     },
+     {
+      "people": [
+       "Diamond"
+      ],
+      "status": "INVITATION_DESIGN",
+      "assignment": "Multi-location real-food restaurant operations; also linked to Victoria Japan company"
+     },
+     {
+      "people": [
+       "Kisha"
+      ],
+      "status": "INVITATION_DESIGN",
+      "assignment": "Baltimore-area salon operating track with limited decision scope"
+     },
+     {
+      "people": [
+       "Mike Childers"
+      ],
+      "status": "INVITATION_DESIGN",
+      "assignment": "Chairman right-hand operating role + football coaching/understanding track; exact executive title OPEN"
+     },
+     {
+      "people": [
+       "Chubby"
+      ],
+      "status": "INVITATION_DESIGN",
+      "assignment": "Earth-intent security lead subject to real appointment; EdereAirah senior companion/operations track + exclusive residence-restaurant concept"
+     },
+     {
+      "people": [
+       "Terry",
+       "Nick"
+      ],
+      "status": "INVITATION_DESIGN",
+      "assignment": "Transportation infrastructure, rigs, routes, shipping collaboration"
+     },
+     {
+      "people": [
+       "Hattie"
+      ],
+      "status": "INVITATION_DESIGN",
+      "assignment": "Hotel/hospitality operating track"
+     },
+     {
+      "people": [
+       "Susie"
+      ],
+      "status": "INVITATION_DESIGN",
+      "assignment": "Family archivist + real-estate track"
+     },
+     {
+      "people": [
+       "Robert Hamilton"
+      ],
+      "status": "INVITATION_DESIGN",
+      "assignment": "Family real-estate acquisition/upkeep/deal track"
+     },
+     {
+      "people": [
+       "Joanne Martin"
+      ],
+      "status": "INVITATION_DESIGN",
+      "assignment": "My Dateline producer training track, bottom-to-top"
+     },
+     {
+      "people": [
+       "Emory Bowie"
+      ],
+      "status": "INVITATION_DESIGN",
+      "assignment": "EdereAirah government/royal-visit security logistics concept; exact office OPEN"
+     },
+     {
+      "people": [
+       "Alicia",
+       "Keisha (Candy's daughter; spelling to verify)"
+      ],
+      "status": "INVITATION_DESIGN",
+      "assignment": "Natural/herbal medicine research support under clinical/evidence gates; no medical advice"
+     }
+    ],
+    "family_invite": {
+     "voluntary": true,
+     "earth_money_state": "NO_EARTH_PAYOUT_UNTIL_EVIDENCED_REVENUE_AND_LAWFUL_PAYOUT_READINESS",
+     "adult_response_window_days": 30,
+     "minor_authorization_required": true,
+     "image_upload_optional_subject_to_rights_and_privacy": true
+    },
+    "dashboard_logic": {
+     "industry_peer_links": true,
+     "private_time_required": true,
+     "ideas_can_be_submitted": true,
+     "business_meetings_and_advisors": true,
+     "mirror_day_night_activity_view": true,
+     "training_account_before_control": true
+    }
+   },
+   "title": "Family Business + Mirror Dashboard Network",
+   "status": "DESIGN_ACTIVE",
+   "category": "FAMILY_BUSINESS",
+   "metadata": {
+    "source": "Chairman current query 2026-08-26"
+   },
+   "authority": "Chairman Vyctor Peete",
+   "objective": "Create opt-in world-layer businesses, bottom-up training accounts, mirror dashboards, industry-linked collaboration, and monetization pathways without claiming Earth employment or payouts before revenue exists.",
+   "created_at": "2026-08-26T23:19:23.750418+00:00",
+   "unresolved": {
+    "exact titles": "OPEN",
+    "Earth contracts": "NOT YET EXECUTED",
+    "unknown family preferences": "ASK EACH INVITEE"
+   },
+   "updated_at": "2026-08-26T23:19:23.750418+00:00",
+   "next_action": "Draft family invitation/authorization packet and business preference intake; attach industry-linked dashboard design; keep all roles invitations until accepted.",
+   "protections": {
+    "no_fake_pay": true,
+    "no_fake_jobs": true,
+    "minor_privacy": true,
+    "medical_claim_gate": true,
+    "earth_legal_review_before_contracts": true
+   },
+   "world_layer": "CROSS_LAYER",
+   "dependencies": [
+    "THY-FAMILY-HELP-SIX-001",
+    "THY-SIX-DASH-002"
+   ],
+   "program_code": "THY-FAMILY-BUSINESS-MIRROR-001"
+  }
+ },
+ {
+  "src": "program",
+  "j": {
+   "id": "6d681f23-f81f-4e77-b1df-c112faf2c119",
+   "scope": {
+    "office_rule": "Verneda, Victoria and Keziah receive office-presence records across established family office locations, including New York HQ and Japan where an office exists; office presence does not itself grant system authority.",
+    "current_order": [
+     "Verneda Elizabeth",
+     "Victoria Ashley Peete",
+     "Keziah Elana Peete",
+     "Jordyn",
+     "Cali",
+     "Kennedy",
+     "Daniel",
+     "Mateo"
+    ],
+    "entry_experience": "Successor opens the public recovery/onboarding entry, identifies herself, completes identity verification, receives role-appropriate continuity orientation, then is granted only the dashboard/system scopes actually authorized for her.",
+    "held_out_currently": [
+     "Nick",
+     "Dia",
+     "Key"
+    ],
+    "orientation_payload": [
+     "what THYLORA is",
+     "how to read continuity",
+     "how to use dashboard",
+     "how to ask THYLORA for current state",
+     "authority boundaries",
+     "privacy and Six protections",
+     "money/commerce boundaries",
+     "how to recover after device/account loss",
+     "how to escalate an UNKNOWN"
+    ]
+   },
+   "title": "THYLORA Legacy Succession Access & Recovery",
+   "status": "IMPLEMENTATION_ACTIVE",
+   "category": "IDENTITY_ACCESS",
+   "metadata": {
+    "not_a_password": "Any recovery code is an identifier/locator only, never sufficient authentication.",
+    "primary_legacy": "Verneda Elizabeth",
+    "chairman_directive_date": "2026-08-28",
+    "succession_correction_20260828": "After Keziah: Jordyn, Cali, Kennedy, Daniel, Mateo; thereafter next-born direct descendant continues. Nick, Diamond/Dia, and Lakisha/Key are not in this ownership succession line at this time.",
+    "succession_order_is_current_chairman_directive": true
+   },
+   "authority": "Chairman Vyctor Peete",
+   "objective": "Provide authorized legacy successors a safe, understandable path to recover operational understanding and access appropriate THYLORA surfaces without relying on a shared secret phrase or granting authority merely because someone knows a code.",
+   "created_at": "2026-08-28T14:34:53.944752+00:00",
+   "unresolved": [
+    "Exact authenticated onboarding implementation is not yet wired.",
+    "Verneda/Victoria/Keziah verified account identities must be linked before privileged access.",
+    "Jordyn age/capacity protections must govern any present access; succession position does not create current executive authority.",
+    "Exact family succession/legal authority must remain separate from dashboard access unless formally locked."
+   ],
+   "updated_at": "2026-08-28T15:00:55.463159+00:00",
+   "next_action": "Build successor onboarding flow and permission matrix; resolve/link verified accounts for adult successors; create read/orientation access first, then privileged scopes only after independent verification and Chairman-authorized role mapping; create recovery kit that contains no reusable authentication secret.",
+   "protections": {
+    "audited": true,
+    "revocable": true,
+    "least_privilege": true,
+    "minor_protection": true,
+    "no_secret_in_chat": true,
+    "access_not_authority": true,
+    "no_silent_succession_override": true,
+    "independent_identity_verification": true,
+    "mfa_required_for_privileged_access": true,
+    "knowledge_of_phrase_is_not_identity": true,
+    "no_shared_comp_code_as_authentication": true,
+    "no_parent_manipulation_of_descendant_assets": true,
+    "successor_training_before_privileged_mutation": true,
+    "descendant_assets_require_independent_protection": true,
+    "trust_vehicle_operator_must_be_authorized_descendant_or_assigned_employee": true,
+    "service_personnel_may_not_road_drive_trust_vehicle_without_documented_authority_and_insurance": true
+   },
+   "world_layer": "DUAL",
+   "dependencies": [
+    "ROYAL-OFFICE-002",
+    "THY-DEFENSIVE-LOGIC-SECURITY-001",
+    "THY-GRAPH-BEFORE-EXECUTE-001",
+    "THY-WORLD-HQ-BUILD-001"
+   ],
+   "program_code": "THY-SUCCESSION-ACCESS-001"
+  }
+ },
+ {
+  "src": "program",
+  "j": {
+   "id": "8aae79b8-7397-4991-ad1b-e4c149dc11e4",
+   "scope": {
+    "ELRT": {
+     "name": "Emergency Legacy Response Team",
+     "core_seats": [
+      "Senior Trustee",
+      "CFO",
+      "Executive Operations Manager",
+      "Oversight Officer"
+     ],
+     "underage_rule": "preserve successor place; use qualified adult beneficiary mentor/representative for duties where lawful; senior trustee absorbs defined emergency duties if no eligible family representative; legal capacity remains jurisdiction-gated",
+     "authority_boundary": "design does not itself create Earth legal power",
+     "outside_governance_control_prohibited": true
+    },
+    "name_origin": {
+     "Key": "Lakisha",
+     "Vyc": "Chairman family form derived from V-Y-C",
+     "pronunciation": "Vicky",
+     "combined_display": "VycKey"
+    },
+    "role_age_design": {
+     "cfo_min": 30,
+     "eom_min": 18,
+     "trustee_min": 21,
+     "oversight_min": 30,
+     "mentor_guardian_preferred": 30,
+     "protection_maintenance_min": 21,
+     "trustee_board_oversight_until": 25
+    },
+    "training_design": {
+     "evaluation": true,
+     "initial_hours": 30,
+     "annual_refresh": true,
+     "education_fund": true,
+     "trust_orientation": true,
+     "completion_window_days": 90,
+     "future_role_holders_require_demonstrated_knowledge": true
+    },
+    "derivative_modes": [
+     "WATCH",
+     "STORY",
+     "PLAY",
+     "LEARN",
+     "TRAIN",
+     "CREATE",
+     "JOIN",
+     "BUY"
+    ],
+    "governance_modules": [
+     "trustee/beneficiary role separation",
+     "conflict recusal and decision logging",
+     "periodic governance review",
+     "trust-owned vehicle policy",
+     "role absence/incapacity continuity",
+     "joint operations leadership/training",
+     "age-aware role eligibility",
+     "Emergency Legacy Response Team",
+     "training and annual refresher requirements",
+     "salary plus beneficiary-benefit separation",
+     "mandatory vacation",
+     "employee health/retirement/severance design",
+     "annual audit and Legacy Report",
+     "asset/property reserve",
+     "philanthropic cycle",
+     "Generational Legacy Capsule",
+     "founder authority design",
+     "benefit-pause/escrow concept",
+     "beneficiary-selected Trustee Overseer: 3-candidate slate or incumbent retention; blood-relative eligibility; 30-day selection clock; 3-year terms; two consecutive-term cap; removal/suspension due process"
+    ],
+    "compensation_design": {
+     "raise_rule": "Board may raise",
+     "reduction_rule": "only verified financial distress/emergency with heightened review; temporary",
+     "founders_salary": "none by Chairman directive",
+     "employee_beneficiary_rule": "role salary and beneficiary entitlement are separate",
+     "founders_medical_support_intent": true,
+     "historical_joint_eom_salary_each_usd": 120000
+    },
+    "family_source_notes": {
+     "Dee": "Tashara",
+     "Nickali": "preferred family form for Dominic; legal identity separate",
+     "Little Miss": "Diamond Justice Smith",
+     "wife_spelling": "Lakisha",
+     "niece_spelling": "Lakeisha",
+     "oldest_sister_nickname": "Suzy"
+    },
+    "employment_care_design": {
+     "historical_severance": {
+      "3_to_7_years": "4 months salary",
+      "over_7_years": "6 months salary + $5,000 bonus",
+      "under_3_years": "2 months salary"
+     },
+     "health_coverage_after_days": 60,
+     "minimum_annual_vacation_days": 7,
+     "historical_retirement_bonus_usd": 25000,
+     "employee_paid_vacation_after_days": 30,
+     "post_service_medical_years_design": 5,
+     "retirement_support_eligibility_years": 7,
+     "beneficiary_vacation_entitlement_from_birth": true,
+     "long_service_years_for_post_service_medical": 10
+    },
+    "continuity_timing_design": {
+     "formal_review": "day 10 design trigger",
+     "inactive_status": "day 3 design trigger",
+     "absence_includes": [
+      "unreachable/inactive",
+      "unconscious",
+      "hospitalized and unable to perform",
+      "cognitive incapacity",
+      "coma",
+      "otherwise unable to perform role"
+     ],
+     "temporary_coverage_target": "within 48 hours for critical roles",
+     "permanent_replacement_review": "day 30 design trigger"
+    },
+    "overseer_selection_design": {
+     "term_years": 3,
+     "legal_effect": "PROPOSED",
+     "candidate_pool": 3,
+     "consecutive_term_cap": 2,
+     "selection_window_days": 30,
+     "blood_relative_required": true,
+     "incumbent_retention_allowed": true
+    },
+    "historical_thread_succession_source": {
+     "state": "PRESERVED_NOT_CURRENT_CANON",
+     "source_claim": "Older thread placed Dominic first into a vacant trustee seat and used a two-person EOM training ladder.",
+     "reason_not_promoted": "Newer backend succession and August 29 operating-leadership records supersede this older structure for current THYLORA continuity unless Chairman issues a new explicit change after reviewing the conflict."
+    }
+   },
+   "title": "VycKey Legacy — Family Governance, Care & Continuity Operating System",
+   "status": "DESIGN_ACTIVE",
+   "category": "FAMILY_GOVERNANCE_CONTINUITY",
+   "metadata": {
+    "capture_type": "RESULT_RECONCILIATION_WITH_SOURCE_PRESERVATION",
+    "source_thread": "current ChatGPT trust-development thread",
+    "cross_format_thesis": "the trust is a governance knowledge engine, not merely a document",
+    "current_backend_wins": true,
+    "no_legal_effect_claim": true
+   },
+   "authority": "Chairman Vyc",
+   "objective": "Convert the VycKey trust-development thread into a source-preserving family governance and understanding system whose rules can feed legal drafting, private family operations, succession training, emergency continuity, workforce care, family archive, media, games, learning, training and membership experiences without granting unevidenced Earth legal authority.",
+   "created_at": "2026-09-01T10:45:45.511206+00:00",
+   "unresolved": [
+    "Earth governing jurisdiction and executed trust instrument remain unresolved in this lane.",
+    "Exact current Earth legal trustee/officer appointments are not created by this record.",
+    "Older Dominic-first succession conflicts with newer backend succession; preserved as historical source, not current canon.",
+    "Exact legal design for underage fiduciary participation/mentor representation requires counsel.",
+    "Actual benefit plan, insurer, payroll, tax, ERISA/ACA applicability, severance enforceability and funding remain unverified.",
+    "Public/media rights for private family stories remain permission-gated.",
+    "Overseer voting quorum, eligible-voter definition, tie/runoff rule, interim vacancy authority, emergency suspension procedure and exact blood-relative degree require final Chairman/counsel resolution."
+   ],
+   "updated_at": "2026-09-01T10:46:54.766326+00:00",
+   "next_action": "Attorney-review Property Stewardship + Family Unity + Overseer Selection language; define delegated authority, voting/quorum/tie/interim rules, Property/Readiness Passports, Family Unity Graph, Legacy Academy and Overseer Election simulator; pilot through existing membership entitlements without granting legal authority.",
+   "protections": {
+    "access_not_authority": true,
+    "no_silent_canon_change": true,
+    "unknown_remains_unknown": true,
+    "family_private_by_default": true,
+    "no_outsider_governance_control": true,
+    "minor_capacity_requires_applicable_law": true,
+    "legal_effect_requires_counsel_and_executed_instrument": true,
+    "money_values_are_design_directives_not_payment_evidence": true,
+    "employment_benefits_require_jurisdiction_budget_tax_and_benefits_review": true
+   },
+   "world_layer": "DUAL",
+   "dependencies": [
+    "THY-CONTINUITY-BOOT-002",
+    "THY-EXP-SPINE-001",
+    "THY-MEDIA-XDOMAIN-FRONTDOOR-001",
+    "THY-TRUST-REPAIR-NO-STOP-001",
+    "THY-TRUSTEE-OPS-CORRECTION-20260829-001",
+    "WORKFORCE-CARE-001",
+    "WORKFORCE-CARE-002",
+    "THY-SUCCESSION-VERNEDA-001"
+   ],
+   "program_code": "THY-VYCKEY-FAMILY-OPERATING-SYSTEM-001"
+  }
+ },
+ {
+  "src": "vis_gate",
+  "j": {
+   "state": "LOCKED",
+   "gate_code": "THY-KENNEDY-VISUAL-PRIVACY-001",
+   "applies_to": {
+    "scope": [
+     "comics",
+     "shows",
+     "marketing",
+     "covers",
+     "social",
+     "generated imagery"
+    ],
+    "subject": "Kennedy"
+   },
+   "created_at": "2026-09-11T10:52:00.784396+00:00",
+   "readability_rules": {
+    "blur_rule": "Any child-face region that could identify Kennedy must remain blurred/obscured after enlargement.",
+    "distance_rule": "If face appears at distance, facial identity must remain intentionally non-recoverable on crop/zoom."
+   },
+   "verification_steps": [
+    "review full image",
+    "review 2x crop of face region",
+    "review thumbnail",
+    "confirm no identifying facial detail survives"
+   ],
+   "stock_default_prohibited": true,
+   "required_identity_elements": {
+    "allowed": [
+     "back of head",
+     "side profile without identifiable facial detail",
+     "hair silhouette/features",
+     "distant figure"
+    ],
+    "prohibited": [
+     "clear close facial likeness",
+     "zoom-recoverable facial detail",
+     "unblurred identifiable face"
+    ]
+   }
+  }
+ },
+ {
+  "src": "vis_gate",
+  "j": {
+   "state": "LOCKED",
+   "gate_code": "THY-APPROVAL-MUST-BE-VIEWABLE-001",
+   "applies_to": [
+    "ALL_CHAIRMAN_APPROVAL_REQUESTS",
+    "PRODUCT_PREVIEWS",
+    "SOCIAL_PREVIEWS",
+    "PDF_PREVIEWS",
+    "EDF_PREVIEWS",
+    "VISUAL_ASSETS",
+    "DASHBOARD_PREVIEWS",
+    "APP_PREVIEWS"
+   ],
+   "created_at": "2026-09-17T23:51:32.90328+00:00",
+   "readability_rules": {
+    "prohibited": "Approval request with only a title, status, hash, or verbal description and no way to see the exact item.",
+    "presentation_order": [
+     "WHAT_IT_IS",
+     "VIEW_IT",
+     "WHAT_APPROVAL_DOES",
+     "APPROVE_REVISE_HOLD"
+    ]
+   },
+   "verification_steps": [
+    "verify preview opens",
+    "verify preview version/hash matches backend candidate",
+    "verify Chairman can inspect before approval",
+    "verify approval wording names exact item/version",
+    "if preview unavailable, do not present approval as pending Chairman action"
+   ],
+   "stock_default_prohibited": false,
+   "required_identity_elements": {
+    "rule": "Never ask Chairman to approve an item unless the same response provides a direct view surface for the exact item/version being approved.",
+    "version_binding": "Preview must be bound to exact asset/version/hash being approved.",
+    "approval_actions": [
+     "APPROVE",
+     "REVISE",
+     "HOLD"
+    ],
+    "required_surface": "One of: rendered inline preview, working direct URL, downloadable file link, or exact accessible preview packet.",
+    "no_surface_behavior": "If no view surface exists, do not ask for approval. Mark PREVIEW_SURFACE_MISSING and route work to create/expose the preview first."
+   }
+  }
+ },
+ {
+  "src": "vis_gate",
+  "j": {
+   "state": "LOCKED",
+   "gate_code": "THY-IMAGE-GENERATION-CHAIRMAN-EXPLICIT-001",
+   "applies_to": [
+    "ALL_IMAGE_GENERATION",
+    "ALL_IMAGE_EDITING",
+    "ALL_VISUAL_RENDERS"
+   ],
+   "created_at": "2026-09-18T01:52:38.864625+00:00",
+   "readability_rules": {
+    "default_state": "HOLD_NO_GENERATION",
+    "required_before_generation": "scene geometry, movement logic, cast/age lock, period technology lock, branding/serial lock, barrier rule, current-turn explicit Chairman generation direction"
+   },
+   "verification_steps": [
+    "verify current-turn explicit generation/edit direction",
+    "verify no unresolved geometry contradiction",
+    "verify cast/ages/representation rules",
+    "verify Vyc2st mark placement included",
+    "verify serial/provenance planned",
+    "verify barrier gate applies"
+   ],
+   "stock_default_prohibited": false,
+   "required_identity_elements": {
+    "rule": "No image generation or image editing unless Chairman explicitly directs generation/editing in the current turn after scene logic has been reviewed.",
+    "discussion_not_authority": true,
+    "scene_lock_not_authority": true,
+    "preview_brief_not_authority": true,
+    "explicit_current_turn_generation_required": true
+   }
+  }
+ },
+ {
+  "src": "vis_gate",
+  "j": {
+   "state": "LOCKED",
+   "gate_code": "THY-WORLD-CONTINUITY-FLOOR-001",
+   "applies_to": [
+    "ALL_WORLD_BUILDING",
+    "ALL_ARCHITECTURE",
+    "ALL_LAND",
+    "ALL_PEOPLE",
+    "ALL_VEHICLES",
+    "ALL_INTERIORS",
+    "ALL_IMAGES",
+    "ALL_FILM_SCENES",
+    "ALL_PRODUCTS_WITH_WORLD_VISUALS"
+   ],
+   "created_at": "2026-09-18T05:01:21.695622+00:00",
+   "readability_rules": {
+    "floor_name": "NO-BACKWARD WORLD FLOOR",
+    "prohibited": "random people, impossible stairs/roads, free-floating windows/doors, resized architecture without propagation, unlabeled assets, unregistered new technology, decorative branding replacing world logic",
+    "minimum_before_visual": "survey/coordinates + architecture topology + movement access + cast identities + period tech + branding/serial + barrier + provenance"
+   },
+   "verification_steps": [
+    "verify scene coordinate frame",
+    "verify every visible structure/object has registered dimensions or deterministic procedural spec",
+    "verify every visible person resolves to persistent identity or approved crowd-system identity",
+    "verify doors/windows/rooms connect in topology",
+    "verify vehicles can physically traverse depicted routes",
+    "verify period technology gate",
+    "verify Vyc2st + serial + provenance",
+    "verify barrier rule",
+    "compare against prior floor and reject regression",
+    "write readback evidence"
+   ],
+   "stock_default_prohibited": true,
+   "required_identity_elements": {
+    "time_rule": "Technology and material culture are constrained to the active time-period state for the scene.",
+    "zero_rule": "Any hard factor = 0 => HOLD. No generation/build/release.",
+    "brick_rule": "Brick/block/stone may be explicit instances OR deterministic procedural instances; each must be reproducible from seed/spec and attributable to build phase/crew record.",
+    "scene_rule": "Every scene derives from registered land + structures + people + objects + current time state; visual generation cannot invent contradictory topology.",
+    "person_rule": "Every visible person must have a persistent unique identity and reason-for-presence; no anonymous random filler people.",
+    "person_state": "Body dimensions, height, mass, age, appearance, simulated biological profile, cognition/personality profile, memory ledger, relationships, occupation, home, schedule, wardrobe, skills, history and scene state. These are fictional/simulated character records, not claims of real consciousness.",
+    "hard_equation": "Wq = G * A * O * P * T * C * H * I * B * R * V",
+    "dimension_rule": "Every constructed element must have deterministic dimensions, material, orientation, tolerance, parent assembly, version and placement.",
+    "coordinate_rule": "Every physical entity must resolve to a world coordinate frame + local parent coordinate frame + timestamp.",
+    "factor_definitions": {
+     "A": "architecture/dimensions/materials/structural topology",
+     "B": "branding/serial/Vyc2st barrier/asset identity",
+     "C": "causal and movement logic",
+     "G": "geospatial land/survey state",
+     "H": "history/lived-state continuity",
+     "I": "identity/relationship/role continuity",
+     "O": "object registry with exact dimensions/material/location/owner",
+     "P": "persistent person/character state",
+     "R": "rights/privacy/provenance",
+     "T": "time/period technology state",
+     "V": "verification/readback"
+    },
+    "non_regression_equation": "F_(n+1) >= F_n elementwise unless explicit Chairman supersession"
+   }
+  }
+ },
+ {
+  "src": "vis_gate",
+  "j": {
+   "state": "SUPERSEDED_BY_LOCKED_CANON_PENDING_RECONCILIATION",
+   "gate_code": "THY-VPR-IMPLEMENTATION-LAYER-001",
+   "applies_to": [
+    "NEWSPAPER_FRONTS",
+    "SOCIAL_STILLS",
+    "PRODUCT_VISUALS",
+    "PDF",
+    "EDF",
+    "DASHBOARD_VISUALS",
+    "APP_VISUALS",
+    "WIREFRAMES_AND_PREVIEWS"
+   ],
+   "created_at": "2026-09-18T13:34:35.473068+00:00",
+   "readability_rules": {
+    "print": "max 280 percent total ink; greyscale test mandatory; 60 percent-scale evidence legibility; 3mm bleed, no evidence within 6mm of trim",
+    "mobile": "authored 1080x1350; survives 1080x1080 centre crop; body >= 28px at 1080 width; formula and its meaning never separate across a fold; no text within 48px of an edge",
+    "OPEN_CONFLICT": "THY-INTERWORLD-BARRIER-GLOBAL-001 orders SUBJECT first; THY-VISUAL-OUTPUT-IDENTITY-001 evidence_document_floor orders words first. Scope resolution proposed (image rule governs the plate, document rule governs the page) but NOT Chairman-confirmed. Instance of open ledger item LR-20260918-BARRIER-CONFLICT.",
+    "accessibility": "body contrast >= 4.5:1, display >= 3:1; no meaning by colour alone; stored text alternative per plate; source reading order matches visual path; equation also in linear plain text",
+    "page_attention_order": "EDITORIAL > EVIDENCE > SUBJECT > NAVIGATION > WORLD > PROVENANCE > MEMBRANE",
+    "plate_attention_order": "SUBJECT > WORLD > DEPTH > BARRIER"
+   },
+   "verification_steps": [
+    "read backend head, controlling anchor and newer deltas",
+    "re-read every LOCKED gate fresh",
+    "name subject/world/time/style/use exactly",
+    "confirm identity lock and rights for everyone depicted",
+    "confirm every factual claim is in the claim ledger with class and source",
+    "assemble the written brief - brief is not authority",
+    "run contradiction and regression check",
+    "score D Lv C E I P against floors with reasons",
+    "evaluate the twelve hard gates PASS/FAIL/N-A",
+    "compute R; if R = 0 stop and report what is short",
+    "produce a VIEWABLE preview bound to the exact version",
+    "obtain explicit current-turn Chairman generation direction - HARD STOP",
+    "post-generation compare against brief; revise only the failed region",
+    "write serial, hash, version, rights, approval to backend and read back"
+   ],
+   "stock_default_prohibited": true,
+   "required_identity_elements": {
+    "gauge": "VPR = D x Lv x C x E x I x P",
+    "zero_rule": "Any hard factor = 0 => HOLD (inherited from THY-WORLD-CONTINUITY-FLOOR-001).",
+    "band_scale": "0 absent/violated, 1 broken, 2 amateur floor, 3 competent, 4 professional, 5 distinguishing",
+    "symbol_note": "Lv not L. L is bound in P_solve = L x M x S where it means language access. Strata are always written in full (VISUAL_LAYER_3), never L3.",
+    "release_gate": "R = 1 if and only if every factor meets its floor AND every applicable hard gate passes. R = 0 otherwise. R has no middle value.",
+    "factor_floors": {
+     "C": 4,
+     "D": 3,
+     "E": 4,
+     "I": 5,
+     "P": 4,
+     "Lv": 5
+    },
+    "visual_layers": [
+     {
+      "id": "VISUAL_LAYER_0",
+      "name": "VIEWER MEMBRANE",
+      "contains": "fixed interworld plane, dB/dt = 0, relative weight 0.18-0.28"
+     },
+     {
+      "id": "VISUAL_LAYER_1",
+      "name": "PROVENANCE STRATUM",
+      "contains": "Vyc2st mark, serial, version, SHA-256, rights, corrections"
+     },
+     {
+      "id": "VISUAL_LAYER_2",
+      "name": "NAVIGATION STRATUM",
+      "contains": "masthead, rules, section labels, folio, date, edition number"
+     },
+     {
+      "id": "VISUAL_LAYER_3",
+      "name": "EDITORIAL STRATUM",
+      "contains": "headline, deck, byline, body columns, pull quotes"
+     },
+     {
+      "id": "VISUAL_LAYER_4",
+      "name": "EVIDENCE STRATUM",
+      "contains": "equation block, claim table, sources, DOCUMENTED/INFERENCE/UNKNOWN tags"
+     },
+     {
+      "id": "VISUAL_LAYER_5",
+      "name": "SUBJECT STRATUM",
+      "contains": "lead image or primary illustration"
+     },
+     {
+      "id": "VISUAL_LAYER_6",
+      "name": "WORLD DEPTH STRATUM",
+      "contains": "background, period ground, material wear, atmosphere, light falloff"
+     }
+    ],
+    "canon_of_record": "thylora_prompt_totality_policy.THY-VICTORPEETE-REALITY-VISUAL-SYSTEM-001 (LOCKED)",
+    "factor_definitions": {
+     "C": "COMPOSITIONAL LEGIBILITY - contrast, hierarchy, whitespace, reading path",
+     "D": "DEPTH - separation between viewer plane, subject and world",
+     "E": "EVIDENCE DOMINANCE - words, numbers and sources dominate; no decoration obscures a caveat",
+     "I": "IDENTITY AND PROVENANCE - Vyc2st mark, serial, version, SHA-256, rights, correction state",
+     "P": "PLATFORM AND PRINT SURVIVAL - phone crop, greyscale, ink load, accessibility",
+     "Lv": "LAYER INTEGRITY - all seven VISUAL_LAYER_0..6 strata present, ordered, none collapsed"
+    },
+    "product_is_not_the_gate": "A product threshold is gameable: one 5 must never buy a defect elsewhere. Product is tracked, floors decide.",
+    "CONTINUITY_DRIFT_CORRECTION": "This row was written on 2026-09-18 under the code THY-VICTORPEETE-REALITY-VISUAL-SYSTEM-001, on the mistaken finding that no captured definition existed because carryforward 475 carries assistant_message = PENDING_RESPONSE_PAYLOAD. The definition WAS captured, in thylora_prompt_totality_policy, state LOCKED, created 2026-09-18 13:04:30. The duplicate code is withdrawn and this row is renamed to an implementation layer subordinate to that LOCKED canon.",
+    "no_free_floating_annotation": "Every mark on the surface belongs to exactly one stratum and has a stated job. Unassignable marks are removed, not shrunk.",
+    "what_this_layer_still_contributes": [
+     "per-factor floors instead of a bare product threshold, which the LOCKED zero_rule alone does not provide",
+     "explicit band definitions 0-5",
+     "twelve enumerated hard gates mapped to existing LOCKED gate records",
+     "N/A is not PASS",
+     "mobile, print, accessibility, serial and preflight specifics"
+    ],
+    "divergences_requiring_chairman_ruling": [
+     {
+      "field": "core_formula",
+      "reason": "477 hardening said the L symbol collides with cognitive L in P_solve and directed VISUAL_LAYER_0..6 naming. Renaming a symbol inside a LOCKED record is a Chairman act, not mine.",
+      "this_layer": "VPR = D x Lv x C x E x I x P",
+      "locked_canon": "VPR = D x L x C x E x I x P"
+     },
+     {
+      "field": "variable C",
+      "reason": "DIVERGENT MEANING. The LOCKED meaning is Continuity and it governs.",
+      "this_layer": "Compositional legibility",
+      "locked_canon": "Continuity: exact world/person/object state persists across outputs"
+     },
+     {
+      "field": "variable P",
+      "reason": "NARROWER THAN CANON. Canon Polish includes typography and restraint, which this layer scored under C.",
+      "this_layer": "Platform and print survival",
+      "locked_canon": "Polish: professional typography, spacing, hierarchy, restraint, print/mobile readiness"
+     },
+     {
+      "field": "variable L",
+      "reason": "Related but not identical; canon L is the layer SET, this layer scored its completeness.",
+      "this_layer": "Lv = layer integrity",
+      "locked_canon": "Layering: evidence, story, people, objects, environment, interface/print surface"
+     },
+     {
+      "field": "layer_model_order",
+      "reason": "THE ORDER IS REVERSED. Canon puts the barrier LAST at L6; this layer put the membrane FIRST at 0. Canon governs until the Chairman rules.",
+      "this_layer": "VISUAL_LAYER_0 viewer membrane -> VISUAL_LAYER_6 world depth",
+      "locked_canon": "L0 substrate/frame/physical medium -> L6 viewer barrier/finishing treatment"
+     },
+     {
+      "field": "front_page_structure",
+      "reason": "The turn-6 prompt asked for fourteen; the LOCKED record specifies eleven. Unreconciled.",
+      "this_layer": "fourteen items in four weighted tiers",
+      "locked_canon": "THY-ERSATZREALITY-NEWSPAPER-FRONT-001 LOCKED, eleven items"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "src": "vis_gate",
+  "j": {
+   "state": "LOCKED",
+   "gate_code": "THY-INTERWORLD-OLDFILM-BARRIER-001",
+   "applies_to": [
+    "THYLORA imagery",
+    "ErsatzReality imagery",
+    "EdereAirah historical and story imagery",
+    "Twelve Miles for Flour"
+   ],
+   "created_at": "2026-09-12T19:33:04.267833+00:00",
+   "readability_rules": [
+    "The interworld barrier is a thin variable atmospheric screen, not an object.",
+    "Most of the world remains clear and readable.",
+    "Color is selective and intentional, not spread everywhere.",
+    "Old-film grain and sketch character may age the image without obscuring faces, geometry, evidence or story action.",
+    "No glitter, sparkles, glowing webs, fantasy portals, excessive smoke, Saturn/orbit rings, neon or generic sci-fi."
+   ],
+   "verification_steps": [
+    "confirm primary subject is identifiable",
+    "confirm scene geometry and period mechanics remain coherent",
+    "confirm selective color only",
+    "confirm barrier is faint, irregular and non-object-like",
+    "confirm no prohibited visual motifs",
+    "confirm storefront crop remains readable"
+   ],
+   "stock_default_prohibited": true,
+   "required_identity_elements": [
+    "cinematic living-world depth",
+    "tactile period materials",
+    "human story and legible character hierarchy",
+    "old-film charcoal/graphite character where historically appropriate",
+    "restrained sepia/charcoal/umber/cream palette",
+    "selective precisely placed low-saturation color",
+    "faint variable refractive interworld film"
+   ]
+  }
+ },
+ {
+  "src": "vis_gate",
+  "j": {
+   "state": "LOCKED",
+   "gate_code": "THY-VYC2ST-MARK-GLOBAL-001",
+   "applies_to": [
+    "ALL_THYLORA_IMAGES",
+    "ALL_ERSATZREALITY_IMAGES",
+    "ALL_EDEREAIRAH_IMAGES",
+    "ALL_PRODUCT_VISUALS",
+    "ALL_NEWS_VISUALS",
+    "ALL_SOCIAL_VISUALS"
+   ],
+   "created_at": "2026-09-18T01:52:38.864625+00:00",
+   "readability_rules": {
+    "placement": "context-dependent; corner, in-world plate, footer, badge, cart mark, document stamp, or other logical placement",
+    "prohibited": "missing mark, oversized cliché branding, random decorative repetition"
+   },
+   "verification_steps": [
+    "verify Vyc2st present",
+    "verify serial present",
+    "verify mark does not block subject",
+    "verify exact asset/version can be traced"
+   ],
+   "stock_default_prohibited": false,
+   "required_identity_elements": {
+    "size_rule": "No fixed size; must be visible, legible, compositionally integrated, and not obscure key evidence.",
+    "required_mark": "Vyc2st",
+    "reference_file": "IMG_7689.png",
+    "serial_required": true,
+    "provenance_required": true
+   }
+  }
+ },
+ {
+  "src": "vis_gate",
+  "j": {
+   "state": "LOCKED",
+   "gate_code": "THY-INTERWORLD-BARRIER-GLOBAL-001",
+   "applies_to": [
+    "ALL_THYLORA_IMAGES",
+    "ALL_EDEREAIRAH_IMAGES",
+    "ALL_ERSATZREALITY_VISUALS",
+    "PDF_IMAGE_COMPONENTS",
+    "EDF_IMAGE_COMPONENTS",
+    "SOCIAL_STILLS",
+    "NEWS_VISUALS",
+    "STORY_ART",
+    "PRODUCT_ART",
+    "APP_VISUALS",
+    "DASHBOARD_VISUALS"
+   ],
+   "created_at": "2026-09-17T23:46:18.606141+00:00",
+   "readability_rules": {
+    "priority": "SUBJECT > WORLD > DEPTH > BARRIER",
+    "required": "quiet fixed plane, faint material texture, restrained scratches/gate wear, slight density variation, fixed edge/frame behavior",
+    "prohibited": "swirls, rainbow rings, smoke-like haze, atmospheric drift, magic portal, lens-flare dominance, decorative interference",
+    "barrier_intensity_target": "subtle but unmistakable; approximately 0.18-0.28 relative visual weight"
+   },
+   "verification_steps": [
+    "verify barrier reads as viewer-side separation plane, not atmosphere",
+    "verify barrier remains spatially fixed while subject/world motion changes",
+    "verify subject remains dominant and readable",
+    "verify no swirl/smoke/ring artifact is introduced",
+    "verify barrier is present by default on every THYLORA image unless Chairman explicitly exempts a specific asset"
+   ],
+   "stock_default_prohibited": true,
+   "required_identity_elements": {
+    "equation": "I_seen(x,y,t)=T(x,y)*W(x,y,t)+B(x,y)",
+    "ordering": "g1>g2>g3>g4",
+    "swirl_term": "0",
+    "description": "Fixed viewer-plane membrane separating viewer from world; world moves behind it while barrier remains fixed.",
+    "world_motion": "dW(x,y,t)/dt may be nonzero",
+    "smoke_like_term": "0",
+    "barrier_components": "B=g1F+g2S+g3E+g4D",
+    "barrier_stationarity": "dB(x,y)/dt = 0"
+   }
+  }
+ },
+ {
+  "src": "vis_gate",
+  "j": {
+   "state": "LOCKED",
+   "gate_code": "THY-VISUAL-OUTPUT-IDENTITY-001",
+   "applies_to": [
+    "PDF",
+    "EDF",
+    "report",
+    "proposal",
+    "email brief",
+    "presentation",
+    "book/reference work",
+    "public handout",
+    "invoice/estimate where branding appropriate",
+    "museum/education packet"
+   ],
+   "created_at": "2026-08-30T14:19:45.638801+00:00",
+   "readability_rules": [
+    "Visual identity cannot reduce comprehension.",
+    "No decorative element may obscure evidence, caveats, numbers, tables, legal qualifiers or accessibility.",
+    "Earth-source material must remain credited and visually separable from EdereAirah/in-world design/canon.",
+    {
+     "print_floor": "Print outputs must be judged after physical-print constraints: ink load, paper opacity, dry time, smudge risk, contrast, and legibility.",
+     "story_product_floor": "Approved world imagery should be used as a real visual entry layer rather than a generic blank-page default when suitable imagery exists.",
+     "evidence_document_floor": "Words and evidence dominate. Imagery carries atmosphere, place, weather, time, event and identity without competing with the evidence."
+    }
+   ],
+   "verification_steps": [
+    "verify all applicable system gates",
+    "verify content/evidence gates",
+    "verify rights/privacy",
+    "verify numerical/status claims",
+    "render every page",
+    "inspect for clipping, stock-template appearance and broken glyphs",
+    "confirm version and recipient",
+    "permit send/release only after pass"
+   ],
+   "stock_default_prohibited": true,
+   "required_identity_elements": [
+    "THYLORA-specific cover/header system",
+    "document class and version",
+    "audience and purpose",
+    "visual hierarchy",
+    "world/Earth truth boundary where relevant",
+    "section navigation",
+    "data/evidence callouts",
+    "status/provenance marks",
+    "approved imagery/diagrams when useful",
+    "consistent footer/page identity",
+    "accessibility and print-safe rendering"
+   ]
+  }
+ },
+ {
+  "src": "vis_gate",
+  "j": {
+   "state": "LOCKED",
+   "gate_code": "THY-VYC-VISUAL-GRAMMAR-002",
+   "applies_to": [
+    "Twelve Miles",
+    "western and old-film media",
+    "birds and field dossiers",
+    "historical portraits",
+    "city restoration environments",
+    "world media"
+   ],
+   "created_at": "2026-09-12T19:56:27.527149+00:00",
+   "readability_rules": [
+    "No generic Saturn, orbit, corporate-stock or default-AI imagery",
+    "No excessive sparkle, fantasy glitter, uniform blur or smoke veil",
+    "Color is selective and structurally placed; do not color-wash the entire sketch",
+    "Do not copy reference identities, layouts or protected artwork; use references only to define visual attributes",
+    "Do not publish numeric EdereAirah time until CANON_RECOVERY_REQUIRED is resolved"
+   ],
+   "verification_steps": [
+    "Confirm subject and character roles before binding",
+    "Confirm medium reads as painterly/etched at card and product-page scale",
+    "Confirm membrane reads as a viewer-side boundary rather than weather",
+    "Confirm mobile crop preserves faces, story action and Coming Soon or Buy Now truth",
+    "Confirm rights and provenance independently from aesthetic approval"
+   ],
+   "stock_default_prohibited": true,
+   "required_identity_elements": [
+    "FORMULA: THYLORA image = real observable detail × authored painterly/etched medium × world depth × human imperfection × variable interworld membrane − photographic-default − generic-AI gloss − sparkle-noise − internal fog",
+    "Image 2 is the primary western/old-movie art-language reference: richly detailed, painterly or etched, visibly authored, never a plain photograph",
+    "Image 1 governs environmental depth, period atmosphere, architecture, weather, material wear and spatial coherence",
+    "People retain real anatomy, age, skin, cloth, dirt and small imperfections while remaining visibly within an art form",
+    "The interworld membrane is viewer-side and spatially variable: a thin moving film or shield seen only in selected areas; it must not be smoke, haze or atmosphere inside the world",
+    "Bird dossier language is dark black/teal/gold, archival, tactile and information-dense; rendered labels and numeric times are not automatically canon",
+    "Geometry, stairs, vehicles, tools and materials must remain physically coherent",
+    "ENURFRYM is canonical; Deep View is historical only"
+   ]
+  }
+ },
+ {
+  "src": "vis_gate",
+  "j": {
+   "state": "LOCKED",
+   "gate_code": "THY-SUBSTRATE-LOCKED-VISUAL-ARCHITECTURE-001",
+   "applies_to": {
+    "scope": [
+     "still images",
+     "motion",
+     "storefront media",
+     "world simulation"
+    ],
+    "equation": "O_t = R(S_t,M,P | I_lock,G_lock,T_lock,L_causal,C_continuity,R_rights,U_unknowns,A_agency,P_provenance)",
+    "principle": "Reference model or image is the structural substrate; controlled generation may change only authorized regions and degrees of freedom.",
+    "external_principle_reference": "Veras uses source sketch/image/model, geometry-override control, selection edits, and same-seed consistency; THYLORA extends this with durable identity, causality, rights, time, and provenance."
+   },
+   "created_at": "2026-09-13T00:50:50.494882+00:00",
+   "readability_rules": {
+    "badge_rule": "Visible micro-marks are discovery clues; the backend ID and hash are the authority because visible marks can be copied.",
+    "black_level": "Blacks may be deep but must preserve intentional shadow information.",
+    "period_image": "Old-film character comes from tonal separation, restrained grain, halation, gate weave, lens response, and motivated light—not gray wash.",
+    "exact_text_rule": "Exact identifiers and logos must be applied or verified deterministically; generative text alone cannot pass."
+   },
+   "verification_steps": [
+    "Compare every recurring face/body to approved references at full frame and close crop.",
+    "Verify geometry and route of movement.",
+    "Verify sun/practical-light direction and shadow causality.",
+    "Verify scene time and prior-state continuity.",
+    "Verify VYC2ST, ERSATZ REALITY, and asset code exactly when required.",
+    "Verify SHA-256, version, rights, approval, and provenance readback.",
+    "Reject drift; revise only the failed region."
+   ],
+   "stock_default_prohibited": true,
+   "required_identity_elements": {
+    "agency": "The system may offer schedules, opportunities, or guidance; it may not silently force established characters to act against recorded agency.",
+    "unknowns": "Unknown height, weight, shoe size, body measurements, intimate garments, biography, and names remain UNKNOWN until sourced or Chairman-authored.",
+    "time_lock": "Earth time may be live and zoned. Numeric EdereAirah time is prohibited while CANON_RECOVERY_REQUIRED. Future story events may be prepared privately but not presented as already happened before their authorized world time.",
+    "provenance": "Each final asset requires an immutable asset ID, SHA-256, version, approval and rights state, plus discoverable in-world VYC2ST and ERSATZ REALITY marks when composition permits.",
+    "causal_light": "Record sun or practical source direction, occlusion, bounce, falloff, exposure priority, and readable shadow detail.",
+    "geometry_lock": "Stairs, vehicles, tools, buildings, bodies, tack, wagons, and designed objects must remain buildable and spatially coherent.",
+    "identity_lock": "Each recurring person receives a stable character ID and approved reference set. Same seed supports but does not establish identity.",
+    "viewer_membrane": "A thin variable glass or picture-tube separation may appear locally between viewer and world; it cannot become smoke, haze, glitter, blur, or a universal overlay.",
+    "scene_state_lock": "Location, wardrobe, props, injuries, weather, direction of travel, and story state persist unless a recorded event changes them."
+   }
+  }
+ },
+ {
+  "src": "vis_gate",
+  "j": {
+   "state": "ACTIVE",
+   "gate_code": "THY-GATE-VISUAL-IMAGERY-LOCK-570",
+   "applies_to": {
+    "scope": "AI Authority post plus next two public posts",
+    "posts_remaining_after_current": 2
+   },
+   "created_at": "2026-09-20T23:21:59.8796+00:00",
+   "readability_rules": {
+    "qr": "only when destination matches; full quiet zone",
+    "safe_margins": "social crop safe"
+   },
+   "verification_steps": {
+    "preview": "fail closed if any required identity element is missing",
+    "preflight": "load gate before generation",
+    "brand_preflight": "FAIL CLOSED if ERSATZREALITY, THYLORA globe-O, VYC2ST, and serial/provenance plan are not present before preview.",
+    "brand_graph_check": "Before preview, verify every embedded brand has an explicit in-world relation and traceable lineage.",
+    "mirror_name_check": "Do not publish ERC name as primary when EdereAirah native name is required and still OPEN."
+   },
+   "stock_default_prohibited": true,
+   "required_identity_elements": {
+    "serial": "visible serial required",
+    "vyc2st": "future images require VYC2ST embedded subtly on an in-world object/surface",
+    "density": "one primary logic area; avoid redundant boxes/columns",
+    "embedded_marks": "future images require one natural in-world THYLORA/ErsatzReality/serial mark",
+    "visual_grammar": "antique/etched EdereAirah illustrative grammar",
+    "human_rendering": "no ordinary Earth-stock photoreal human look",
+    "native_then_erc": "EdereAirah native name is primary; ERC mirror name is shown second as the comparison/reference label.",
+    "selective_color": "restrained color accents required; never drain to flat monochrome",
+    "vyc2st_embedded": "VYC2ST must appear embedded naturally inside every public image on an in-world object/surface.",
+    "thylora_embedded": "THYLORA must appear embedded naturally inside every public image when THYLORA is part of the publication identity; use the locked globe/world O treatment.",
+    "thylora_wordmark": "locked THYLORA globe/world O treatment",
+    "ersatzreality_embedded": "ERSATZREALITY must appear embedded naturally inside every public THYLORA/ErsatzReality/EdereAirah image, not only as external header/footer chrome.",
+    "embedded_brand_semantics": "Embedded ERSATZREALITY / THYLORA / VYC2ST marks are literal in-world company, maker, supplier, publisher, owner, employer, or product-lineage relationships as appropriate to the marked object or garment. They are not decorative placeholders. Every embedded mark must have a graph relationship explaining why it exists there.",
+    "three_embedded_marks_rule": "Future generated public images require ERSATZREALITY + THYLORA + VYC2ST to each be discoverable in-world; serial/provenance remains separately required."
+   }
+  }
+ },
+ {
+  "src": "vis_preflight",
+  "j": {
+   "state": "LOCKED",
+   "gate_code": "THY-VISUAL-PREFLIGHT-LOCK-001",
+   "applies_to": [
+    "image generation",
+    "image editing",
+    "PDF imagery",
+    "EDF imagery",
+    "app imagery",
+    "vehicle render",
+    "character render",
+    "world scene",
+    "marketing visual",
+    "film/show concept visual"
+   ],
+   "created_at": "2026-09-01T11:40:52.889742+00:00",
+   "style_floor": {
+    "prohibited": "generic stock, shallow AI concept art, unapproved Earth-looking crown/wheels/vehicles, random generated specifications",
+    "primary_style": "deep detailed beautiful living art / art-real hybrid anchored to Chairman-approved references",
+    "minimum_output": "approved THYLORA designed-document/scene density and finish or better",
+    "secondary_style": "same living-art family with alternate tonal treatment"
+   },
+   "rejection_rule": "Bypassed, conflicting, generic-Earth/stock, identity-mismatched, or invented-spec assets are REJECTED_NONCANON and barred from propagation.",
+   "required_sequence": [
+    "retrieve backend visual canon and approved assets",
+    "identify exact subject/world/time/style/use",
+    "check identity/person lock and rights/privacy",
+    "check engineering specification for designed objects",
+    "check provenance and prior approved reference",
+    "assemble explicit visual brief",
+    "run contradiction/regression check",
+    "obtain required Chairman approval",
+    "only then generate/edit",
+    "post-generation compare against brief",
+    "reject mismatch; never silently propagate"
+   ],
+   "generation_allowed_rule": "No visual generation/editing may occur merely because discussion mentions a visual. Where Chairman imagery approval is required, generation is prohibited until approval exists. Engineered-object renders cannot outrun engineering specification or invent canon."
+  }
+ },
+ {
+  "src": "vis_preflight",
+  "j": {
+   "state": "LOCKED",
+   "gate_code": "THY-VISUAL-PREFLIGHT-LOCK-002",
+   "applies_to": [
+    "all still images",
+    "all image edits",
+    "all moving pictures",
+    "all film/series frames",
+    "all character renders",
+    "all motion packs",
+    "all historical/evidence visuals",
+    "all EdereAirah world scenes",
+    "all store/product art",
+    "all social visuals",
+    "all app/dashboard imagery"
+   ],
+   "created_at": "2026-09-24T03:12:54.743739+00:00",
+   "style_floor": {
+    "format_rule": "Aspect ratio is a delivery lock, not a generator default.",
+    "scene_contract": {
+     "required": [
+      "compass orientation",
+      "north wall",
+      "south wall",
+      "east wall",
+      "west wall",
+      "floor",
+      "ceiling",
+      "connected rooms",
+      "camera",
+      "foreground/desk/table",
+      "character positions/facing",
+      "object inventory",
+      "fixed-vs-variable map"
+     ],
+     "no_generator_invention": true
+    },
+    "brand_embedding": "When active scene lock requires world-embedded provenance, marks must be plausible in-world marks with provenance; no placeholder footer/banner substitute.",
+    "motion_contract": {
+     "formula": "Motion = Angles + Timing + Intent",
+     "required": [
+      "start pose",
+      "joint/body angles",
+      "head/eye lead",
+      "weight shift",
+      "timing/rhythm",
+      "path",
+      "contact/interaction",
+      "recovery/reset"
+     ],
+     "one_delta_rule": "change one controlled movement at a time while identity, lighting, camera, proportions and style remain locked"
+    },
+    "global_visual_dna": {
+     "principle": "image must speak before explanation: define what it says and what visible evidence makes it say that",
+     "authorship": [
+      "visible authored hand",
+      "painterly or illustrated surface",
+      "dimensional depth",
+      "believable anatomy/materials",
+      "purposeful restrained color",
+      "selective sketch/etched structure when appropriate"
+     ],
+     "prohibited": [
+      "generic stock photography",
+      "generic Earth defaults",
+      "glossy AI realism",
+      "unrequested photorealism",
+      "Disney/cartoon drift",
+      "random fantasy decoration",
+      "unexplained crowns",
+      "unexplained heraldry",
+      "floating logos when in-world marks are required",
+      "glowing AI eyes",
+      "Saturn/orbit rings",
+      "portals unless canon"
+     ],
+     "default_tone": [
+      "warm",
+      "inviting",
+      "encouraging",
+      "entertaining",
+      "non-aggressive",
+      "evidence-first"
+     ]
+    },
+    "alistair_crowe_lock": {
+     "name": "Alistair Crowe",
+     "period": 1898,
+     "identity": {
+      "jaw": "narrow",
+      "brow": "low",
+      "chin": "rounded",
+      "eyes": "narrow, one-eye spacing",
+      "hair": "occipital wrap",
+      "lips": "30/70 ratio",
+      "nose": "34% face height",
+      "cheeks": "flat",
+      "glasses": "fixed",
+      "forehead": "45%",
+      "head_ratio": "1.36:1",
+      "crown_thinning": "~38%"
+     },
+     "wardrobe": [
+      "wool fabrics",
+      "high-waist trousers",
+      "structured five-button waistcoat",
+      "proper collar and tie",
+      "rounded-toe leather shoes",
+      "pocket watch only"
+     ],
+     "prohibited": [
+      "reinterpretation",
+      "realism drift",
+      "modern influence",
+      "facial change"
+     ]
+    },
+    "identity_and_period": {
+     "rule": "character themselves first; stylization second; expression third; style never rewrites identity",
+     "continuity": "same-day wardrobe/body/face locks persist unless canon changes",
+     "period_rule": "remove modern signals unless period requires them"
+    },
+    "evidence_truth_model": {
+     "sequence": [
+      "what was taught",
+      "what source/evidence actually shows",
+      "documented",
+      "inference",
+      "unknown",
+      "how to verify"
+     ],
+     "visual_rule": "evidence objects and source markers do the proving; narration explains but never substitutes for evidence",
+     "audience_rule": "young viewers must be able to locate markers and independently ask where the claim is shown",
+     "historical_people": "appearance, clothing, setting and artifacts evidence-grounded; uncertainty stays visible"
+    },
+    "approved_style_families": {
+     "ALISTAIR_1898": "Victorian oil-painting realism; hand-painted texture; visible canvas grain; soft diffusion; muted sepia-warm tones; no cinematic lighting, HDR or digital sharpness",
+     "ER_ILLUSTRATED_DOCUMENTARY": "soft stylized animated realism; expressive but grounded; warm textured tones; recognizable consistent likeness; natural proportions; not hyper-realistic; not exaggerated cartoon"
+    }
+   },
+   "rejection_rule": "REJECT_NONCANON if output becomes generic Earth/stock/photoreal when a painted/illustrated family is locked; adds unexplained crowns, heraldry, symbols, props, furniture or modern signals; changes identity, complexion, proportions, wardrobe continuity, camera, room geometry, clue/evidence position or chronology; presents reconstruction as documentary evidence; uses floating branding where in-world embedding is locked; or moves to motion before the still scene is locked. Preserve the last approved scene and repair only the failed delta.",
+   "required_sequence": [
+    "retrieve current backend HEAD and relevant visual canon before any visual work",
+    "declare phase: SCENE, MOTION, EXECUTION, or STRATEGY",
+    "state what the image is saying and what visible evidence/object/action makes it say that",
+    "define room orientation and all four walls when a room is visible",
+    "define floor and ceiling",
+    "define connected-room geometry and lighting continuity",
+    "define camera position/height/facing/frame/aspect ratio/distortion rule",
+    "define every character identity, position, facing, rotation limits, period clothing and chronology",
+    "define foreground/desk/table and every visible object",
+    "assign every visible object provenance, position, size, cause/history and FIXED or VARIABLE state",
+    "select approved visual treatment family; treatment cannot rewrite identity, geometry, chronology or evidence",
+    "for historical/evidence images separate documented evidence, reconstruction, inference and unknown",
+    "for motion decompose action into biomechanical units: angles, timing, weight shift, lead/follow, intent and recovery",
+    "run active visual and whole-scene multiplicative gates; any zero blocks generation",
+    "run contradiction, modern-contamination, generic-Earth, random-symbol and provenance checks",
+    "obtain Chairman approval where required",
+    "generate/edit only after pass",
+    "inspect rendered pixels against locks; reject drift rather than propagate it"
+   ],
+   "generation_allowed_rule": "GENERATION_ALLOWED only when the visible-scope scene contract is complete, every visible element has provenance or is an explicitly authorized variable texture, the approved treatment family is named, evidence/reconstruction boundaries are explicit, and all applicable multiplicative gates are nonzero. Interior scenes require wall/floor/ceiling/camera/connected-space definition. Motion requires a locked still identity/scene plus biomechanical motion units. Backend rules do not prove pixel compliance; rendered output must be inspected again before approval/publication."
+  }
+ },
+ {
+  "src": "social_acct",
+  "j": {
+   "id": "d76acffd-47b2-4751-b0df-a6e7b128859e",
+   "state": "DEFINED",
+   "platform": "YouTube",
+   "created_at": "2026-08-15T01:55:05.98393+00:00",
+   "updated_at": "2026-08-15T01:55:05.98393+00:00",
+   "account_label": "Primary public-facing account",
+   "intended_role": "PUBLICATION_IDENTITY",
+   "strategy_code": "SOC-STRAT-YT-PRIMARY-001",
+   "comments_policy": "DEFAULT_COMMENTS_OFF_OR_HELD_PER_POST",
+   "follower_policy": "FOLLOW/SUBSCRIBE_ALLOWED",
+   "conversion_action": "Bio/description routes to ErsatzReality shop and channels after Chairman approval",
+   "direct_contact_policy": "NO_DIRECT_CONTACT_AS_OPERATING_GOAL",
+   "external_action_required": true
+  }
+ },
+ {
+  "src": "social_acct",
+  "j": {
+   "id": "86c477c8-c646-4999-84d3-087118678435",
+   "state": "DEFINED",
+   "platform": "YouTube",
+   "created_at": "2026-08-15T01:55:05.98393+00:00",
+   "updated_at": "2026-08-15T01:55:05.98393+00:00",
+   "account_label": "Secondary YouTube account",
+   "intended_role": "BRAND_CHANNEL",
+   "strategy_code": "SOC-STRAT-YT-CHANNEL-002",
+   "comments_policy": "COMMENTS_OFF_OR_MANAGED",
+   "follower_policy": "FOLLOW/SUBSCRIBE_ALLOWED",
+   "conversion_action": "Channel-specific content and shop route",
+   "direct_contact_policy": "NO_DIRECT_CONTACT_AS_OPERATING_GOAL",
+   "external_action_required": true
+  }
+ },
+ {
+  "src": "social_acct",
+  "j": {
+   "id": "2541b3f9-80fd-4434-ac57-1f17eb2c9254",
+   "state": "DEFINED",
+   "platform": "TikTok",
+   "created_at": "2026-08-15T01:55:05.98393+00:00",
+   "updated_at": "2026-08-15T01:55:05.98393+00:00",
+   "account_label": "Existing TikTok account",
+   "intended_role": "PUBLICATION_CHANNEL",
+   "strategy_code": "SOC-STRAT-TIKTOK-001",
+   "comments_policy": "COMMENTS_OFF_BY_DEFAULT",
+   "follower_policy": "FOLLOW_ALLOWED",
+   "conversion_action": "Profile/bio routes to ErsatzReality shop",
+   "direct_contact_policy": "MESSAGE_REQUESTS_RESTRICTED_OR_DONT_RECEIVE_WHERE_AVAILABLE",
+   "external_action_required": true
+  }
+ },
+ {
+  "src": "social_acct",
+  "j": {
+   "id": "0ac3e3a2-6c28-4c14-9ae6-129ef57ca93c",
+   "state": "CONNECTED_VERIFIED",
+   "platform": "Facebook",
+   "created_at": "2026-08-15T01:55:05.98393+00:00",
+   "updated_at": "2026-09-10T07:58:17.23259+00:00",
+   "account_label": "Existing Facebook presence",
+   "intended_role": "PUBLICATION_PAGE",
+   "strategy_code": "SOC-STRAT-FB-001",
+   "comments_policy": "COMMENTS_OFF_OR_HEAVILY_MODERATED_BY_POST",
+   "follower_policy": "FOLLOW_ALLOWED",
+   "conversion_action": "Page routes to ErsatzReality shop",
+   "direct_contact_policy": "PAGE_MESSAGING_OFF",
+   "external_action_required": true
+  }
+ },
+ {
+  "src": "social_acct",
+  "j": {
+   "id": "c19b1a3c-9cec-4ca4-9364-c42093b870f6",
+   "state": "CONNECTED_VERIFIED",
+   "platform": "Instagram",
+   "created_at": "2026-08-15T01:55:05.98393+00:00",
+   "updated_at": "2026-09-10T07:58:17.23259+00:00",
+   "account_label": "Existing Instagram account",
+   "intended_role": "PUBLICATION_CHANNEL",
+   "strategy_code": "SOC-STRAT-IG-001",
+   "comments_policy": "HIDDEN_WORDS_AND_COMMENT_RESTRICTION",
+   "follower_policy": "FOLLOW_ALLOWED",
+   "conversion_action": "Bio routes to ErsatzReality shop",
+   "direct_contact_policy": "MESSAGE_REQUESTS_FILTERED_RESTRICTED",
+   "external_action_required": true
+  }
+ },
+ {
+  "src": "channel",
+  "j": {
+   "id": "73b4116d-0b80-4a83-8290-a7694721bb75",
+   "purpose": "Primary enterprise public channel",
+   "metadata": {
+    "workflow": "production -> rights -> Chairman review -> publish -> archive evidence"
+   },
+   "platform": null,
+   "created_at": "2026-08-15T00:37:42.608796+00:00",
+   "public_url": null,
+   "updated_at": "2026-08-15T00:37:42.608796+00:00",
+   "channel_code": "SOC-ERSATZ-ENTERPRISE",
+   "channel_name": "ErsatzReality Enterprise",
+   "automation_state": "NOT_CONNECTED",
+   "approval_required": true,
+   "publication_state": "DESIGN_ACTIVE"
+  }
+ },
+ {
+  "src": "channel",
+  "j": {
+   "id": "3bb017cf-473a-4c88-81d0-85da13cd7490",
+   "purpose": "History and understanding content",
+   "metadata": {},
+   "platform": null,
+   "created_at": "2026-08-15T00:37:42.608796+00:00",
+   "public_url": null,
+   "updated_at": "2026-08-15T00:37:42.608796+00:00",
+   "channel_code": "SOC-THYLORA-HISTORY",
+   "channel_name": "THYLORA History",
+   "automation_state": "NOT_CONNECTED",
+   "approval_required": true,
+   "publication_state": "DESIGN_ACTIVE"
+  }
+ },
+ {
+  "src": "channel",
+  "j": {
+   "id": "8aebd87e-7770-4412-a5e9-a8d736f1133b",
+   "purpose": "Earth mirror history content",
+   "metadata": {},
+   "platform": null,
+   "created_at": "2026-08-15T00:37:42.608796+00:00",
+   "public_url": null,
+   "updated_at": "2026-08-15T00:37:42.608796+00:00",
+   "channel_code": "SOC-MIRROR-HISTORY",
+   "channel_name": "Mirror History",
+   "automation_state": "NOT_CONNECTED",
+   "approval_required": true,
+   "publication_state": "DESIGN_ACTIVE"
+  }
+ },
+ {
+  "src": "channel",
+  "j": {
+   "id": "55b2d1a6-f7a6-4f34-9fbf-3767b12ea975",
+   "purpose": "Cinema/history channel",
+   "metadata": {},
+   "platform": null,
+   "created_at": "2026-08-15T00:37:42.608796+00:00",
+   "public_url": null,
+   "updated_at": "2026-08-15T00:37:42.608796+00:00",
+   "channel_code": "SOC-CLASSIC-CINEMA",
+   "channel_name": "Classic Cinema",
+   "automation_state": "NOT_CONNECTED",
+   "approval_required": true,
+   "publication_state": "DESIGN_ACTIVE"
+  }
+ },
+ {
+  "src": "channel",
+  "j": {
+   "id": "94b78943-52b4-4791-b382-4cf89d70d517",
+   "purpose": "Family-safe GanGan content",
+   "metadata": {},
+   "platform": null,
+   "created_at": "2026-08-15T00:37:42.608796+00:00",
+   "public_url": null,
+   "updated_at": "2026-08-15T00:37:42.608796+00:00",
+   "channel_code": "SOC-GANGAN",
+   "channel_name": "GanGan Network",
+   "automation_state": "NOT_CONNECTED",
+   "approval_required": true,
+   "publication_state": "DESIGN_ACTIVE"
+  }
+ },
+ {
+  "src": "channel",
+  "j": {
+   "id": "dc3d31a9-ab16-4fb8-9bd8-bb4a3cfaf2c2",
+   "purpose": "Understanding-first public content",
+   "metadata": {},
+   "platform": null,
+   "created_at": "2026-08-15T00:37:42.608796+00:00",
+   "public_url": null,
+   "updated_at": "2026-08-15T00:37:42.608796+00:00",
+   "channel_code": "SOC-UNDERSTANDING",
+   "channel_name": "Understanding Network",
+   "automation_state": "NOT_CONNECTED",
+   "approval_required": true,
+   "publication_state": "DESIGN_ACTIVE"
+  }
+ },
+ {
+  "src": "channel",
+  "j": {
+   "id": "a351c721-a57c-4819-98b2-fa3c72865123",
+   "purpose": "THYLORIAN and language understanding content",
+   "metadata": {},
+   "platform": null,
+   "created_at": "2026-08-15T00:37:42.608796+00:00",
+   "public_url": null,
+   "updated_at": "2026-08-15T00:37:42.608796+00:00",
+   "channel_code": "SOC-LANGUAGE",
+   "channel_name": "Language Network",
+   "automation_state": "NOT_CONNECTED",
+   "approval_required": true,
+   "publication_state": "DESIGN_ACTIVE"
+  }
+ },
+ {
+  "src": "channel",
+  "j": {
+   "id": "b5878c6f-8af8-49c9-aea2-630e06c26639",
+   "purpose": "Approved family legacy content",
+   "metadata": {
+    "privacy_gate": "required"
+   },
+   "platform": null,
+   "created_at": "2026-08-15T00:37:42.608796+00:00",
+   "public_url": null,
+   "updated_at": "2026-08-15T00:37:42.608796+00:00",
+   "channel_code": "SOC-FAMILY-LEGACY",
+   "channel_name": "Family Legacy Network",
+   "automation_state": "NOT_CONNECTED",
+   "approval_required": true,
+   "publication_state": "DESIGN_ACTIVE"
+  }
+ },
+ {
+  "src": "channel",
+  "j": {
+   "id": "44e1d33e-c498-43d5-9b3e-71e508c6ab5d",
+   "purpose": "Earth-facing global story distribution",
+   "metadata": {
+    "login_access_state": "NOT_WITNESSED",
+    "posting_access_state": "NOT_WITNESSED",
+    "connection_claim_rule": "LOGIN_AND_POSTING_ACCESS_MUST_BE_WITNESSED",
+    "global_arrival_platform_code": "MOJ"
+   },
+   "platform": "moj",
+   "created_at": "2026-09-14T21:09:17.614724+00:00",
+   "public_url": null,
+   "updated_at": "2026-09-14T21:09:17.614724+00:00",
+   "channel_code": "SOC-MOJ-ERSATZ-001",
+   "channel_name": "ErsatzReality Enterprise",
+   "automation_state": "NOT_CONNECTED",
+   "approval_required": true,
+   "publication_state": "NOT_CONNECTED"
+  }
+ },
+ {
+  "src": "channel",
+  "j": {
+   "id": "1e90dc89-6823-416f-adc1-2248b05aea45",
+   "purpose": "Earth-facing global story distribution",
+   "metadata": {
+    "login_access_state": "NOT_WITNESSED",
+    "posting_access_state": "NOT_WITNESSED",
+    "connection_claim_rule": "LOGIN_AND_POSTING_ACCESS_MUST_BE_WITNESSED",
+    "global_arrival_platform_code": "WHATSAPP"
+   },
+   "platform": "whatsapp business / channels",
+   "created_at": "2026-09-14T21:09:17.614724+00:00",
+   "public_url": null,
+   "updated_at": "2026-09-14T21:09:17.614724+00:00",
+   "channel_code": "SOC-WHATSAPP-ERSATZ-001",
+   "channel_name": "ErsatzReality Enterprise",
+   "automation_state": "NOT_CONNECTED",
+   "approval_required": true,
+   "publication_state": "NOT_CONNECTED"
+  }
+ },
+ {
+  "src": "channel",
+  "j": {
+   "id": "41d53bfe-16ad-42ae-83dc-a3e927a99c2e",
+   "purpose": "Earth-facing global story distribution",
+   "metadata": {
+    "login_access_state": "NOT_WITNESSED",
+    "posting_access_state": "NOT_WITNESSED",
+    "connection_claim_rule": "LOGIN_AND_POSTING_ACCESS_MUST_BE_WITNESSED",
+    "global_arrival_platform_code": "WECHAT"
+   },
+   "platform": "wechat / weixin official account",
+   "created_at": "2026-09-14T21:09:17.614724+00:00",
+   "public_url": null,
+   "updated_at": "2026-09-14T21:09:17.614724+00:00",
+   "channel_code": "SOC-WECHAT-ERSATZ-001",
+   "channel_name": "ErsatzReality Enterprise",
+   "automation_state": "NOT_CONNECTED",
+   "approval_required": true,
+   "publication_state": "NOT_CONNECTED"
+  }
+ },
+ {
+  "src": "channel",
+  "j": {
+   "id": "32e712f9-d242-4e0f-b3fc-f2747145f68c",
+   "purpose": "Earth-facing global story distribution",
+   "metadata": {
+    "login_access_state": "NOT_WITNESSED",
+    "posting_access_state": "NOT_WITNESSED",
+    "connection_claim_rule": "LOGIN_AND_POSTING_ACCESS_MUST_BE_WITNESSED",
+    "global_arrival_platform_code": "WEIBO"
+   },
+   "platform": "weibo",
+   "created_at": "2026-09-14T21:09:17.614724+00:00",
+   "public_url": null,
+   "updated_at": "2026-09-14T21:09:17.614724+00:00",
+   "channel_code": "SOC-WEIBO-ERSATZ-001",
+   "channel_name": "ErsatzReality Enterprise",
+   "automation_state": "NOT_CONNECTED",
+   "approval_required": true,
+   "publication_state": "NOT_CONNECTED"
+  }
+ },
+ {
+  "src": "channel",
+  "j": {
+   "id": "a993c734-b24b-4a43-a2d4-23440811431b",
+   "purpose": "Earth-facing global story distribution",
+   "metadata": {
+    "login_access_state": "NOT_WITNESSED",
+    "posting_access_state": "NOT_WITNESSED",
+    "connection_claim_rule": "LOGIN_AND_POSTING_ACCESS_MUST_BE_WITNESSED",
+    "global_arrival_platform_code": "BILIBILI"
+   },
+   "platform": "bilibili",
+   "created_at": "2026-09-14T21:09:17.614724+00:00",
+   "public_url": null,
+   "updated_at": "2026-09-14T21:09:17.614724+00:00",
+   "channel_code": "SOC-BILIBILI-ERSATZ-001",
+   "channel_name": "ErsatzReality Enterprise",
+   "automation_state": "NOT_CONNECTED",
+   "approval_required": true,
+   "publication_state": "NOT_CONNECTED"
+  }
+ },
+ {
+  "src": "channel",
+  "j": {
+   "id": "5e20dfb9-6740-42d4-afec-dc8aec311b2a",
+   "purpose": "Earth-facing global story distribution",
+   "metadata": {
+    "login_access_state": "NOT_WITNESSED",
+    "posting_access_state": "NOT_WITNESSED",
+    "connection_claim_rule": "LOGIN_AND_POSTING_ACCESS_MUST_BE_WITNESSED",
+    "global_arrival_platform_code": "DOUYIN"
+   },
+   "platform": "douyin",
+   "created_at": "2026-09-14T21:09:17.614724+00:00",
+   "public_url": null,
+   "updated_at": "2026-09-14T21:09:17.614724+00:00",
+   "channel_code": "SOC-DOUYIN-ERSATZ-001",
+   "channel_name": "ErsatzReality Enterprise",
+   "automation_state": "NOT_CONNECTED",
+   "approval_required": true,
+   "publication_state": "NOT_CONNECTED"
+  }
+ },
+ {
+  "src": "channel",
+  "j": {
+   "id": "650c2f93-6bcb-422f-a9ea-fea55f4032ac",
+   "purpose": "Earth-facing global story distribution",
+   "metadata": {
+    "login_access_state": "NOT_WITNESSED",
+    "posting_access_state": "NOT_WITNESSED",
+    "connection_claim_rule": "LOGIN_AND_POSTING_ACCESS_MUST_BE_WITNESSED",
+    "global_arrival_platform_code": "VK"
+   },
+   "platform": "vk",
+   "created_at": "2026-09-14T21:09:17.614724+00:00",
+   "public_url": null,
+   "updated_at": "2026-09-14T21:09:17.614724+00:00",
+   "channel_code": "SOC-VK-ERSATZ-001",
+   "channel_name": "ErsatzReality Enterprise",
+   "automation_state": "NOT_CONNECTED",
+   "approval_required": true,
+   "publication_state": "NOT_CONNECTED"
+  }
+ },
+ {
+  "src": "channel",
+  "j": {
+   "id": "305d35b1-cd2c-4e32-a632-d54148ed4f01",
+   "purpose": "Earth-facing global story distribution",
+   "metadata": {
+    "login_access_state": "NOT_WITNESSED",
+    "posting_access_state": "NOT_WITNESSED",
+    "connection_claim_rule": "LOGIN_AND_POSTING_ACCESS_MUST_BE_WITNESSED",
+    "global_arrival_platform_code": "TELEGRAM"
+   },
+   "platform": "telegram channel",
+   "created_at": "2026-09-14T21:09:17.614724+00:00",
+   "public_url": null,
+   "updated_at": "2026-09-14T21:09:17.614724+00:00",
+   "channel_code": "SOC-TELEGRAM-ERSATZ-001",
+   "channel_name": "ErsatzReality Enterprise",
+   "automation_state": "NOT_CONNECTED",
+   "approval_required": true,
+   "publication_state": "NOT_CONNECTED"
+  }
+ },
+ {
+  "src": "channel",
+  "j": {
+   "id": "702d00b8-ab03-4ee8-9879-75a6613780f7",
+   "purpose": "Earth-facing global story distribution",
+   "metadata": {
+    "language_priority": [
+     "Hindi",
+     "English",
+     "other supported Indian languages"
+    ],
+    "login_access_state": "USER_REPORTED_NOT_YET_WITNESSED",
+    "posting_access_state": "NOT_WITNESSED",
+    "connection_claim_rule": "LOGIN_AND_POSTING_ACCESS_MUST_BE_WITNESSED",
+    "next_required_witness": "exact account/profile + create-post access",
+    "user_reported_connected_at": "2026-09-18T21:20:31.19805+00:00",
+    "global_arrival_platform_code": "SHARECHAT"
+   },
+   "platform": "sharechat",
+   "created_at": "2026-09-14T21:09:17.614724+00:00",
+   "public_url": null,
+   "updated_at": "2026-09-18T21:20:31.19805+00:00",
+   "channel_code": "SOC-SHARECHAT-ERSATZ-001",
+   "channel_name": "ErsatzReality Enterprise",
+   "automation_state": "USER_REPORTED_CONNECTED_PENDING_WITNESS",
+   "approval_required": true,
+   "publication_state": "PRODUCTION_THAW_PUBLISHING_LOCKED"
+  }
+ },
+ {
+  "src": "channel",
+  "j": {
+   "id": "40ebb8bd-9113-44bd-93fd-90484d026586",
+   "purpose": "Our World news, reports, public briefings and verified Earth-mirror reporting.",
+   "metadata": {
+    "department": "SOCIAL_MEDIA_AND_CHANNELS",
+    "world_layer": "EDEREAIRAH_CANON_WITH_EARTH_MIRROR_WHEN_EXPLICIT",
+    "publish_rule": "Chairman review unless a later approved automation supersedes",
+    "working_name": true
+   },
+   "platform": null,
+   "created_at": "2026-08-23T20:28:29.964978+00:00",
+   "public_url": null,
+   "updated_at": "2026-08-23T20:28:29.964978+00:00",
+   "channel_code": "SOC-THYLORA-NEWS",
+   "channel_name": "THYLORA News",
+   "automation_state": "NOT_CONNECTED",
+   "approval_required": true,
+   "publication_state": "DESIGN_ACTIVE"
+  }
+ },
+ {
+  "src": "channel",
+  "j": {
+   "id": "bb99bd15-6a9b-472f-8647-e74001f8af8c",
+   "purpose": "Football, basketball, leagues, teams, game-day, interviews, highlights and sports-world programming.",
+   "metadata": {
+    "department": "SOCIAL_MEDIA_AND_CHANNELS",
+    "world_layer": "EDEREAIRAH_CANON",
+    "publish_rule": "Chairman review unless a later approved automation supersedes",
+    "working_name": true,
+    "sports_department": "SPORTS_FRONT_OFFICE"
+   },
+   "platform": null,
+   "created_at": "2026-08-23T20:28:29.964978+00:00",
+   "public_url": null,
+   "updated_at": "2026-08-23T20:28:29.964978+00:00",
+   "channel_code": "SOC-THYLORA-SPORTS",
+   "channel_name": "THYLORA Sports",
+   "automation_state": "NOT_CONNECTED",
+   "approval_required": true,
+   "publication_state": "DESIGN_ACTIVE"
+  }
+ },
+ {
+  "src": "channel",
+  "j": {
+   "id": "3912b972-231e-4df0-bf0e-c70080cca68f",
+   "purpose": "Primary Ersatz Reality / EdereAirah visual social channel",
+   "metadata": {
+    "workflow_state": "PRODUCTION_THAW",
+    "publication_lock": "PUBLISHING_LOCKED",
+    "witness_route_542": {
+     "state": "NO_WITNESS_CHANNEL_IN_SESSION",
+     "run_at": "2026-09-19T18:20:00Z",
+     "unblock": "Connect Metricool once at https://mcp.zapier.com/api/v1/connect-auth/MetricoolCLIAPI?accountId=28481066 — this makes post state readable for every channel on brand 6877123."
+    },
+    "metricool_brand_id": 6877123,
+    "prohibited_actions": [
+     "publishing",
+     "scheduling",
+     "auto-publishing",
+     "reposting retired assets",
+     "unrelated news imagery",
+     "bypassing Chairman approval"
+    ],
+    "connection_verified_at": "2026-09-07T18:18:17.586065+00:00",
+    "transition_recorded_at": "2026-09-16T23:40:00Z",
+    "chairman_publish_freeze": {
+     "rule": "NO NEW POST OR SCHEDULE WITHOUT CHAIRMAN PREVIEW AND EXPLICIT APPROVAL",
+     "state": "ACTIVE",
+     "effective_at": "2026-09-16T17:30:00-04:00",
+     "readback_superseded_by": "THY-Q-20260918-GLOBAL-Q-POSTED-499 reports two posts scheduled 2026-09-18 (Metricool 378377543, 378377556) under Chairman approval. The 2026-09-16 readback stating no future scheduled posts is therefore out of date. Claude did not witness the Metricool state directly - no Metricool tool exists in this session. The freeze rule itself is NOT lifted: it requires Chairman preview and explicit approval, which sequence 499 records as given for these two posts and for no others.",
+     "external_scheduler_readback": "Metricool returned no future scheduled posts after 2026-09-16 15:00 America/New_York"
+    },
+    "allowed_prepublication_work": [
+     "draft creation",
+     "image packaging",
+     "captions",
+     "translations",
+     "serial assignment",
+     "QR preparation",
+     "URL testing",
+     "Chairman previews",
+     "duplicate detection",
+     "audit preparation"
+    ]
+   },
+   "platform": "instagram",
+   "created_at": "2026-09-07T18:18:17.586065+00:00",
+   "public_url": null,
+   "updated_at": "2026-09-18T22:04:51.77849+00:00",
+   "channel_code": "SOC-IG-ERSATZ-001",
+   "channel_name": "ersatz.reality",
+   "automation_state": "CONNECTED_METRICOOL_PRODUCTION_THAW_PUBLICATION_LOCKED",
+   "approval_required": true,
+   "publication_state": "PRODUCTION_THAW_PUBLISHING_LOCKED"
+  }
+ },
+ {
+  "src": "channel",
+  "j": {
+   "id": "bb2e57dc-6c74-4cfb-8dd7-5fa2b8adc085",
+   "purpose": "Short-form video / creator channel",
+   "metadata": {
+    "workflow_state": "PRODUCTION_THAW",
+    "publication_lock": "PUBLISHING_LOCKED",
+    "witness_route_542": {
+     "state": "NO_WITNESS_CHANNEL_IN_SESSION",
+     "run_at": "2026-09-19T18:20:00Z",
+     "unblock": "Connect Metricool once at https://mcp.zapier.com/api/v1/connect-auth/MetricoolCLIAPI?accountId=28481066 — this makes post state readable for every channel on brand 6877123."
+    },
+    "metricool_brand_id": 6877123,
+    "prohibited_actions": [
+     "publishing",
+     "scheduling",
+     "auto-publishing",
+     "reposting retired assets",
+     "unrelated news imagery",
+     "bypassing Chairman approval"
+    ],
+    "connection_verified_at": "2026-09-07T18:18:17.586065+00:00",
+    "transition_recorded_at": "2026-09-16T23:40:00Z",
+    "chairman_publish_freeze": {
+     "rule": "NO NEW POST OR SCHEDULE WITHOUT CHAIRMAN PREVIEW AND EXPLICIT APPROVAL",
+     "state": "ACTIVE",
+     "effective_at": "2026-09-16T17:30:00-04:00",
+     "external_scheduler_readback": "Metricool returned no future scheduled posts after 2026-09-16 15:00 America/New_York"
+    },
+    "allowed_prepublication_work": [
+     "draft creation",
+     "image packaging",
+     "captions",
+     "translations",
+     "serial assignment",
+     "QR preparation",
+     "URL testing",
+     "Chairman previews",
+     "duplicate detection",
+     "audit preparation"
+    ]
+   },
+   "platform": "tiktok",
+   "created_at": "2026-09-07T18:18:17.586065+00:00",
+   "public_url": null,
+   "updated_at": "2026-09-16T23:52:40.454879+00:00",
+   "channel_code": "SOC-TT-VICTOR-001",
+   "channel_name": "victor.peete",
+   "automation_state": "CONNECTED_METRICOOL_PRODUCTION_THAW_PUBLICATION_LOCKED",
+   "approval_required": true,
+   "publication_state": "PRODUCTION_THAW_PUBLISHING_LOCKED"
+  }
+ },
+ {
+  "src": "channel",
+  "j": {
+   "id": "c6419f86-e571-4c9e-9e97-ef5c31f4e5ec",
+   "purpose": "Long-form and short-form video distribution",
+   "metadata": {
+    "channel_id": "UCkIWnpuRly29yyRq43dX3LA",
+    "workflow_state": "PRODUCTION_THAW",
+    "publication_lock": "PUBLISHING_LOCKED",
+    "witness_route_542": {
+     "state": "NO_WITNESS_CHANNEL_IN_SESSION",
+     "run_at": "2026-09-19T18:20:00Z",
+     "unblock": "Connect Metricool once at https://mcp.zapier.com/api/v1/connect-auth/MetricoolCLIAPI?accountId=28481066 — this makes post state readable for every channel on brand 6877123."
+    },
+    "metricool_brand_id": 6877123,
+    "prohibited_actions": [
+     "publishing",
+     "scheduling",
+     "auto-publishing",
+     "reposting retired assets",
+     "unrelated news imagery",
+     "bypassing Chairman approval"
+    ],
+    "short_readiness_539": {
+     "run_at": "2026-09-19T17:54:00Z",
+     "run_by": "Sequence 539 THYLORA HEAD SPINE FORWARD",
+     "verdict": "NO_READY_VIDEO_ASSET",
+     "channel_id": "UCkIWnpuRly29yyRq43dX3LA",
+     "rule_applied": "Existing approved video assets only. No video generation, no new render.",
+     "why_none_qualify": [
+      "Every media_assets video is rights_state=unverified and marked ARCHIVE_TEMPLATE_ONLY or VISUAL_REFERENCE, publishing_state=not_published. Archive template is not a release state.",
+      "THY-REF-OLDFILM-VIDEO-20260912-001 is approved but rights_state=restricted and is a Chairman-supplied style reference with an explicit do-not-copy note. It is not publishable material.",
+      "THY-THOUGHT-WATER-SRC-VIDEO-001 is approval_state=proposed, rights restricted, and carries unverified product claims."
+     ],
+     "inventory_examined": {
+      "media_assets_video": 18,
+      "thylora_visual_assets_video": 2,
+      "thylora_delivery_assets_video": 0
+     },
+     "publication_action": "NONE. No video created, no upload, no schedule.",
+     "single_best_source_after_authorization": {
+      "label": "Original ErsatzReality Studios intro",
+      "sha256": "48f6d880c17af0e471e71b08b6814dc952f9720213811c16175d5ec4e973c453",
+      "storage": "gdrive:1vmSynHJB4M4QJ8OZlkCTHaO-tlPCiUA9",
+      "media_id": "EARLYVID-018",
+      "why_this_one": "It is first-party ErsatzReality material, it is about the house rather than about a product, and at 108 seconds a Short can be cut from it without generating a single new frame. Its own record already calls for removing the congratulations segment in a new edit, so the intended cut is already described.",
+      "duration_seconds": 108.3,
+      "what_it_would_take": [
+       "Chairman authorizes the cut. Trimming is an edit and is not assumed.",
+       "Close rights_state on EARLYVID-018: it is unverified today. Own material still needs the origin stated once.",
+       "Reframe to 9:16 and cap at 60 seconds.",
+       "Issue a visual serial against the resulting bytes."
+      ],
+      "rejected_alternatives": "EARLYVID-006 (27.8s) and EARLYVID-010 (30.8s) are already Short length, but neither carries a subject label and both are rights-unverified. Short length is not a reason to publish something nobody has described."
+     }
+    },
+    "connection_verified_at": "2026-09-07T18:18:17.586065+00:00",
+    "transition_recorded_at": "2026-09-16T23:40:00Z",
+    "chairman_publish_freeze": {
+     "rule": "NO NEW POST OR SCHEDULE WITHOUT CHAIRMAN PREVIEW AND EXPLICIT APPROVAL",
+     "state": "ACTIVE",
+     "effective_at": "2026-09-16T17:30:00-04:00",
+     "external_scheduler_readback": "Metricool returned no future scheduled posts after 2026-09-16 15:00 America/New_York"
+    },
+    "allowed_prepublication_work": [
+     "draft creation",
+     "image packaging",
+     "captions",
+     "translations",
+     "serial assignment",
+     "QR preparation",
+     "URL testing",
+     "Chairman previews",
+     "duplicate detection",
+     "audit preparation"
+    ]
+   },
+   "platform": "youtube",
+   "created_at": "2026-09-07T18:18:17.586065+00:00",
+   "public_url": null,
+   "updated_at": "2026-09-19T17:51:14.411436+00:00",
+   "channel_code": "SOC-YT-001",
+   "channel_name": "YouTube Channel",
+   "automation_state": "CONNECTED_METRICOOL_PRODUCTION_THAW_PUBLICATION_LOCKED",
+   "approval_required": true,
+   "publication_state": "PRODUCTION_THAW_PUBLISHING_LOCKED"
+  }
+ },
+ {
+  "src": "channel",
+  "j": {
+   "id": "1421ea62-4feb-433e-8348-dada68ebb2b2",
+   "purpose": "Dedicated ErsatzReality Enterprise Facebook Page",
+   "metadata": {
+    "blocker": "Page ID, Page URL, admin access, and posting access must be witnessed",
+    "page_id": null,
+    "page_url": null,
+    "workflow_state": "PRODUCTION_THAW",
+    "publication_lock": "PUBLISHING_LOCKED",
+    "required_evidence": [
+     "exact Page name",
+     "Page ID or URL",
+     "admin access screenshot",
+     "Create post access"
+    ],
+    "login_access_state": "NOT_WITNESSED",
+    "metricool_brand_id": 6877123,
+    "identity_witness_539": {
+     "run_at": "2026-09-19T17:50:00Z",
+     "run_by": "Sequence 539 THYLORA HEAD SPINE FORWARD",
+     "page_url": "UNKNOWN_NOT_WITNESSED",
+     "classification": "PARTIAL",
+     "exact_page_name": "UNKNOWN_NOT_WITNESSED",
+     "object_conflict": {
+      "finding": "Two different Facebook objects are now in play. Metricool reports object 1218971981309965 for this Enterprise row. The Facebook post THYLORA actually published on 2026-09-17 (THY-LOGIC-POST-20260916-A) is owned by object 122095730127479264. Until the Chairman states whether these are one Page or two, the Enterprise destination is not proven and the published post cannot be assumed to live on the Enterprise Page.",
+      "published_post_url": "https://facebook.com/122095730127479264/posts/122100071199479264",
+      "published_post_owner_object": "122095730127479264"
+     },
+     "admin_access_state": "NOT_WITNESSED",
+     "duplicate_page_rule": "DO NOT CREATE A SECOND FACEBOOK PAGE. No new Page was created in this pass.",
+     "metricool_object_id": "1218971981309965",
+     "posting_access_state": "NOT_WITNESSED",
+     "instagram_page_linkage": "NOT_WITNESSED",
+     "metricool_page_linkage": "OBJECT_PRESENT_IN_BRAND_6877123_PAGE_IDENTITY_UNPROVEN",
+     "required_to_reach_VERIFIED": [
+      "Exact Page name as printed at the top of the Page.",
+      "Page URL copied from the browser address bar.",
+      "Admin access: Chairman can open the Page Professional dashboard / Page settings.",
+      "Posting access: the Create post composer opens while acting as the Page.",
+      "State whether 1218971981309965 and 122095730127479264 are the same Page or two different Pages.",
+      "State whether Instagram ersatz.reality is linked to this Page."
+     ],
+     "metricool_object_witnessed_by": "Chairman, in the Metricool connection list, 2026-09-19T17:35Z",
+     "witness_attempts_this_session": [
+      "Metricool: no Metricool tool exists in this session. Not witnessed.",
+      "Supermetrics Facebook Insights (ds_id FB): accounts_discovery returned no connected Facebook account. Not witnessed.",
+      "Direct read of facebook.com/1218971981309965: refused by the network egress proxy (EGRESS_BLOCKED). Not witnessed."
+     ]
+    },
+    "identity_witness_542": {
+     "run_at": "2026-09-19T18:20:00Z",
+     "run_by": "Sequence 542 THY-WORK-CHANNEL-WITNESS-542",
+     "page_id": "UNKNOWN_NOT_WITNESSED",
+     "page_url": "UNKNOWN_NOT_WITNESSED",
+     "classification": "PARTIAL",
+     "exact_page_name": "UNKNOWN_NOT_WITNESSED",
+     "new_finding_542": "The witness gap is a missing connection, not a missing capability. Metricool is reachable through Zapier (MetricoolCLIAPI, 8 read actions) but has zero connected accounts. One Chairman authorization at the URL below makes every future Metricool read self-serve and closes this class of block permanently.",
+     "instagram_linkage": "NOT_WITNESSED",
+     "metricool_linkage": "OBJECT_1218971981309965_PRESENT_IN_BRAND_6877123_PAGE_IDENTITY_UNPROVEN",
+     "admin_access_state": "NOT_WITNESSED",
+     "duplicate_page_rule": "DO NOT CREATE A SECOND FACEBOOK PAGE. No Page was created in this pass.",
+     "posting_access_state": "NOT_WITNESSED",
+     "witness_attempts_542": [
+      "Metricool MCP tool: does not exist in this session.",
+      "Zapier: Metricool app found, zero connected accounts, auth URL obtained.",
+      "Windsor.ai get_connectors: empty.",
+      "Supermetrics accounts_discovery: no Facebook account connected.",
+      "Direct HTTPS to facebook.com/1218971981309965: proxy answered 403 to CONNECT (policy denial)."
+     ],
+     "metricool_connect_url": "https://mcp.zapier.com/api/v1/connect-auth/MetricoolCLIAPI?accountId=28481066",
+     "object_conflict_state": "UNRESOLVED",
+     "object_conflict_detail": "Metricool object 1218971981309965 versus published-post owner object 122095730127479264. Nothing in this session could prove whether these are one Page or two.",
+     "required_to_reach_VERIFIED": [
+      "Exact Page name as printed at the top of the Page.",
+      "Page URL copied from the browser address bar.",
+      "Admin access: Chairman can open the Page Professional dashboard or Page settings.",
+      "Posting access: the Create post composer opens while acting as the Page.",
+      "State whether 1218971981309965 and 122095730127479264 are the same Page or two different Pages.",
+      "State whether Instagram ersatz.reality is linked to this Page."
+     ],
+     "classification_unchanged_from_539": true
+    },
+    "metricool_network_id": "1218971981309965",
+    "posting_access_state": "NOT_WITNESSED",
+    "reported_description": "the enterprise one, the one we got just for Facebook",
+    "metricool_witnessed_at": "2026-09-19T17:35:00Z",
+    "chairman_publish_freeze": {
+     "rule": "NO NEW POST OR SCHEDULE WITHOUT CHAIRMAN PREVIEW AND EXPLICIT APPROVAL",
+     "state": "ACTIVE",
+     "effective_at": "2026-09-16T17:30:00-04:00",
+     "readback_superseded_by": "THY-Q-20260918-GLOBAL-Q-POSTED-499 reports two posts scheduled 2026-09-18 (Metricool 378377543, 378377556) under Chairman approval. The 2026-09-16 readback stating no future scheduled posts is therefore out of date. Claude did not witness the Metricool state directly - no Metricool tool exists in this session. The freeze rule itself is NOT lifted: it requires Chairman preview and explicit approval, which sequence 499 records as given for these two posts and for no others.",
+     "external_scheduler_readback": "Metricool returned no future scheduled posts after 2026-09-16 15:00 America/New_York"
+    },
+    "page_makeover_preview_539": {
+     "rule": "Nothing on the Page is changed until the Chairman approves this packet AND the Page identity reaches VERIFIED.",
+     "state": "PREPARED_NOT_APPLIED",
+     "bio_about": {
+      "state": "WRITTEN_PENDING_CHAIRMAN_APPROVAL",
+      "tone_lock": "BRAND-EDITORIAL-TONE: technical, evidence-led, question-driven. Generic inspirational copy is prohibited.",
+      "about_long": "ErsatzReality Enterprise is the publishing house for EdereAirah, an authored world kept with its own history, its own trades and its own record. We publish short trail stories, field and question work, and the evidence behind them. Everything carries a price, a source and a date. Nothing here is filler.",
+      "name_locks": [
+       "EdereAirah",
+       "ErsatzReality Enterprise",
+       "Unkle Seezin"
+      ],
+      "short_description": "ErsatzReality Enterprise builds EdereAirah: an authored world with its own history, trades and record. New stories, files and question work are published here first."
+     },
+     "button_cta": {
+      "state": "READY_PENDING_CHAIRMAN_APPROVAL",
+      "button": "Shop now",
+      "destination": "https://ersatzreality.myshopify.com/products/twelve-miles-for-flour-an-uncle-seezin-trail-story",
+      "prohibited_button": "Send message. Standing strategy SOC-STRAT-FB-001 sets PAGE_MESSAGING_OFF, so a messaging CTA would contradict it.",
+      "destination_reason": "Only one product is ACTIVE store-wide today, so Shop now must land on the one thing a reader can actually buy, not on an empty collection."
+     },
+     "cover_image": {
+      "state": "READY_PENDING_CHAIRMAN_PICK",
+      "alternate": "THY-VIS-COVER-GAP-HUNT-20260912 (approved, cleared) — reads as a product cover, weaker as a banner.",
+      "crop_rule": "No text baked onto the cover. Facebook crops the centre band; the figure must sit off-centre so the mobile crop does not cut the head.",
+      "open_fact": "Pixel dimensions of the recommended file are not recorded in the backend and the Shopify CDN is unreachable from this session, so the crop was reasoned, not measured.",
+      "recommended": "THY-VIS-TWELVE-MILES-WESTERN-ILLUSTRATION-V3",
+      "recommended_file": "https://cdn.shopify.com/s/files/1/0697/7254/2029/files/twelve-miles-for-flour-unkle-seezin-old-film-v2_090b4690-85a3-4d01-8514-0b9a4f0359b4.png?v=1789242696",
+      "recommended_reason": "It is an approved, rights-cleared painterly trail scene rather than a book cover, so it survives the wide Facebook crop and reads as the world rather than as a product."
+     },
+     "packet_code": "THY-FB-LOOK-539",
+     "pinned_post": {
+      "state": "CONDITIONAL_ON_IDENTITY",
+      "do_not_pin": "THY-SOC-TMF-CAROUSEL-20260916 — Chairman rejected that treatment post-publication, no reuse.",
+      "if_same_page": "Pin the published Twelve Miles traffic post https://facebook.com/122095730127479264/posts/122100071199479264 (THY-LOGIC-POST-20260916-A, approved, QR device-tested). It is the only published post that passed the full gate.",
+      "if_different_page": "Nothing is pinnable. The Enterprise Page has no published post of its own, and the first one must be approved and published before anything can be pinned."
+     },
+     "profile_image": {
+      "state": "BLOCKED_ON_ASSET",
+      "blocker": "The mark is approved as direction only. There is no registered image file for it in thylora_visual_assets, and BRAND-THYLORA-MARK is NOT_APPROVED. A profile image cannot be set from an existing file because no such file is registered.",
+      "prohibited": "No generic AI company graphic. No stock globe, no abstract swoosh, no lettermark that is not the approved mark.",
+      "intended_mark": "BRAND-ER-MARK-GLASS-HAT — the approved ErsatzReality magnifying-glass-and-hat mark (source ER-NEWS-001, CHAIRMAN_APPROVED).",
+      "two_ways_forward": [
+       "A. Chairman supplies the existing mark file; it is registered with a SHA256 and used unmodified. No generation.",
+       "B. Chairman authorizes one render of the approved mark direction at 1:1, flat, no scene, no text. This is an image-generation authorization and is not assumed."
+      ]
+     },
+     "apply_attempt_542": {
+      "reason": "The packet gate requires Chairman approval AND identity VERIFIED. Identity is PARTIAL at 542, so no component was applied. Applying any component to an unproven Page is worse than waiting.",
+      "run_at": "2026-09-19T18:20:00Z",
+      "decision": "NOT_APPLIED",
+      "packet_unchanged": true,
+      "blocked_component": "profile_image — no registered mark file exists and BRAND-THYLORA-MARK is NOT_APPROVED. Needs the Chairman file (A) or one render authorization (B).",
+      "components_blocked": 1,
+      "components_ready_if_approved_and_verified": 5
+     },
+     "identity_dependency": "All six items below are held behind identity_witness_539. Applying any of them to the wrong Page is worse than waiting.",
+     "store_link_placement": {
+      "rule": "One destination in all three slots. Three different links teaches the reader nothing.",
+      "slots": [
+       "About -> Website field: the store product URL.",
+       "Action button: Shop now, same URL.",
+       "Pinned post first line: the same URL written out, so it is readable where the button is not shown."
+      ],
+      "state": "READY_PENDING_CHAIRMAN_APPROVAL"
+     }
+    },
+    "metricool_connection_state": "CONNECTED_OBJECT_ID_WITNESSED_PAGE_IDENTITY_NOT_YET_WITNESSED"
+   },
+   "platform": "facebook",
+   "created_at": "2026-09-15T00:49:06.392866+00:00",
+   "public_url": null,
+   "updated_at": "2026-09-19T17:50:18.585388+00:00",
+   "channel_code": "SOC-FB-ENTERPRISE-001",
+   "channel_name": "ErsatzReality Enterprise",
+   "automation_state": "METRICOOL_CONNECTED_OBJECT_ID_WITNESSED_PAGE_IDENTITY_PENDING",
+   "approval_required": true,
+   "publication_state": "PRODUCTION_THAW_PUBLISHING_LOCKED_BLOCKED"
+  }
+ },
+ {
+  "src": "publication",
+  "j": {
+   "id": "f38977a5-5318-4dba-916f-64763d1df830",
+   "entity_id": "baa45e29-c71f-4650-9b3c-388b202f3eec",
+   "record_id": "PUB-ER-COOKING-STEAK-NOODLES-001",
+   "created_at": "2026-08-07T21:59:12.904527+00:00",
+   "updated_at": "2026-08-07T21:59:12.904527+00:00",
+   "entity_type": "product",
+   "published_at": null,
+   "evidence_state": "missing",
+   "publication_state": "not_published"
+  }
+ },
+ {
+  "src": "publication",
+  "j": {
+   "id": "b945f507-9f31-40bf-a770-6d8dffe95a65",
+   "entity_id": "b988be33-464e-4ff5-8102-5eae88c06eda",
+   "record_id": "PUB-THY-TRAIL-TABLE-001-ED1",
+   "created_at": "2026-09-17T13:39:44.868582+00:00",
+   "updated_at": "2026-09-17T14:22:39.538858+00:00",
+   "entity_type": "product",
+   "published_at": null,
+   "evidence_state": "partial",
+   "publication_state": "scheduled"
+  }
+ }
+]

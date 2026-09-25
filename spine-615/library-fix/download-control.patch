@@ -1,0 +1,73 @@
+--- index.repo-source-0804770.html	2026-09-25 16:33:07.869182527 +0000
++++ index.html	2026-09-25 16:33:39.041671866 +0000
+@@ -135,9 +135,17 @@
+     }
+ 
+     $('items').innerHTML = items.map(function(it){
+-      const control = it.openable
+-        ? '<button class="primary" data-open="' + esc(it.external_product_id) + '">Read it</button>'
+-        : '<span class="meta">' + esc(it.not_openable_reason || 'Not available to open yet.') + '</span>';
++      // Two independent delivery surfaces. thylora_customer_library_v1 reports both:
++      // the reader (openable, needs a PUBLISHED EDF) and the protected download
++      // (download_available, needs an ACTIVE delivery asset). A product with only a
++      // PDF used to show "No EDF package exists" and no way to get the file it was
++      // sold as. Show every control that is actually available.
++      const controls = [];
++      if (it.openable) controls.push('<button class="primary" data-open="' + esc(it.external_product_id) + '">Read it</button>');
++      if (it.download_available && it.entitlement_id) controls.push('<button' + (it.openable ? '' : ' class="primary"') + ' data-download="' + esc(it.entitlement_id) + '" data-filename="' + esc((it.download && it.download.filename) || '') + '">Download PDF</button>');
++      const control = controls.length
++        ? controls.join('')
++        : '<span class="meta">' + esc(it.not_downloadable_reason || it.not_openable_reason || 'Not available to open yet.') + '</span>';
+       return '<div class="item"><h3>' + esc(it.title || it.edf_code || 'Untitled') + '</h3><div class="meta">' + esc(it.edf_code || '') + '</div><div class="row">' + control + '</div></div>';
+     }).join('');
+ 
+@@ -145,6 +153,10 @@
+     for (let i = 0; i < btns.length; i++){
+       btns[i].onclick = (function(b){ return function(){ openItem(b); }; })(btns[i]);
+     }
++    const dls = document.querySelectorAll('[data-download]');
++    for (let i = 0; i < dls.length; i++){
++      dls[i].onclick = (function(b){ return function(){ downloadItem(b); }; })(dls[i]);
++    }
+   } finally { inFlight = false; }
+ }
+ 
+@@ -164,6 +176,38 @@
+   return 'Opened';
+ }
+ 
++// The protected download checks the signed-in session against the entitlement and
++// serves only an ACTIVE delivery asset; every successful call writes one row to
++// thylora_product_download_audit. The file arrives as bytes, so it is handed to the
++// browser as a same-origin blob rather than a link anyone could reuse.
++async function downloadItem(btn){
++  const entitlementId = btn.getAttribute('data-download');
++  const label = btn.textContent;
++  btn.disabled = true; btn.textContent = 'Preparing…';
++  try {
++    const sess = await sb.auth.getSession();
++    const token = sess.data.session && sess.data.session.access_token;
++    if (!token) return say($('claimMsg'), 'Your sign-in expired. Sign in again with the address you bought with.', 'err');
++    const res = await fetch('https://jvsdxhrfhtlgaknhjxlz.supabase.co/functions/v1/thylora-protected-download?entitlement_id=' + encodeURIComponent(entitlementId), {
++      headers: { Authorization: 'Bearer ' + token, apikey: 'sb_publishable_ta33XJ9rtS8VljoUYw-GuA_Pi4OycpQ' }
++    });
++    if (!res.ok){
++      let reason = 'HTTP ' + res.status;
++      try { const j = await res.json(); if (j && j.error) reason = j.error; } catch (_) {}
++      return say($('claimMsg'), 'The download did not start (' + reason + '). Your purchase is still recorded. Write to ersatzrealityenterprise@gmail.com and we will fix it.', 'err');
++    }
++    const blob = await res.blob();
++    const url = URL.createObjectURL(blob);
++    const a = document.createElement('a');
++    a.href = url; a.download = btn.getAttribute('data-filename') || 'thylora-download.pdf';
++    document.body.appendChild(a); a.click(); a.remove();
++    setTimeout(function(){ URL.revokeObjectURL(url); }, 60000);
++    say($('claimMsg'), 'Your download has started. You can come back and download it again at any time.', 'ok');
++  } catch (e) {
++    say($('claimMsg'), 'The download did not start: ' + (e && e.message ? e.message : String(e)), 'err');
++  } finally { btn.disabled = false; btn.textContent = label; }
++}
++
+ async function openItem(btn){
+   const productId = btn.getAttribute('data-open');
+   btn.disabled = true; btn.textContent = 'Opening…';
