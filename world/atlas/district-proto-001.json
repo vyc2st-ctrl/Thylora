@@ -1,0 +1,30 @@
+{
+  "district_id": "DISTRICT-PROTO-001",
+  "canonical_name": null,
+  "name_state": "OPEN",
+  "measurement_state": "PROPOSED",
+  "frame": { "units": "m", "origin": "district south-west corner", "axes": "+x east, +y north, +z up", "parent_frame": "OPEN" },
+  "extent_m": [1600, 1200],
+  "time_profile": "THY-DUAL-TIME-EDEREAIRAH-003",
+  "places": [
+    { "place_id": "BLDG-HOME-NAHLA", "level": "BUILDING", "world_entity_ref": "HOME-NAHLA-MERCER-001", "ref_state": "DANGLING_NOT_IN_thylora_world_entities", "origin_m": [220, 310, 0], "footprint_m": [[0,0],[14,0],[14,11],[0,11]], "visibility_class": "PRIVATE", "interior_visibility": "PRIVATE" },
+    { "place_id": "BLDG-WORK-OPS", "level": "BUILDING", "world_entity_ref": "THY-HQ-NY-OPS-TRANSCRIPTION-001", "ref_state": "DANGLING_NOT_IN_thylora_world_entities", "origin_m": [1180, 760, 0], "footprint_m": [[0,0],[48,0],[48,32],[0,32]], "visibility_class": "PUBLIC", "interior_visibility": "AUTHORITY" },
+    { "place_id": "PLACE-FOOD-STOP-01", "level": "BUILDING", "world_entity_ref": null, "canonical_name": null, "origin_m": [900, 640, 0], "footprint_m": [[0,0],[12,0],[12,9],[0,9]], "visibility_class": "PUBLIC" },
+    { "place_id": "PLACE-SERVICE-POINT-01", "level": "BUILDING", "world_entity_ref": null, "canonical_name": null, "origin_m": [640, 420, 0], "footprint_m": [[0,0],[26,0],[26,18],[0,18]], "visibility_class": "PUBLIC" },
+    { "place_id": "ZONE-INTERSECTION-01", "level": "ZONE", "canonical_name": null, "origin_m": [760, 560, 0], "footprint_m": [[0,0],[24,0],[24,24],[0,24]], "visibility_class": "PUBLIC", "note": "blockable intersection used by Nahla's driving irritation map" }
+  ],
+  "people": [
+    { "entity": "nahla-mercer", "compute_tier": "FOCUS" },
+    { "entity": "OPEN:mother", "compute_tier": "PERSISTENT", "name_state": "OPEN" },
+    { "entity": "OPEN:younger_sibling", "compute_tier": "PERSISTENT", "name_state": "OPEN" },
+    { "entity": "OPEN:cousin", "compute_tier": "PERSISTENT", "name_state": "OPEN" },
+    { "entity": "CELL:commuters", "compute_tier": "BACKGROUND", "population": "OPEN" }
+  ],
+  "vehicles": [ { "vehicle_ref": "OPEN:nahla-liftback", "class": "compact five-seat liftback", "maker_model": "OPEN" } ],
+  "launch_points": [
+    { "place_id": "BLDG-WORK-OPS", "app_code": "THY-TALK-WHILE-WORKING-APP-001" },
+    { "place_id": "PLACE-SERVICE-POINT-01", "app_code": "THY-IDEA-SERVICE-CLUSTER-ENGINEERING-001", "note": "idea lane, no app record yet" },
+    { "place_id": "PLACE-FOOD-STOP-01", "app_code": "THY-KYNWRKS-APP-001" }
+  ],
+  "schedule_binding": "OPEN — exact shift, break and family-contact times must bind to the shift registry before the scheduled layer renders"
+}

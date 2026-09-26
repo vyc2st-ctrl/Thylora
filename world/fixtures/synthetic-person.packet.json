@@ -1,0 +1,24 @@
+{
+  "_note": "SYNTHETIC fixture shaped like thylora_person_life_registry. Not a real EdereAirah person. Real packets stay in the backend under their privacy_policy and are not copied into git.",
+  "canonical_entity_id": "fixture-person-001",
+  "public_name": "Fixture Person",
+  "lifecycle_state": "FIXTURE",
+  "continuity_policy": { "context_domains": ["home", "family", "work", "driving", "food"] },
+  "mind_profile": {
+    "anxieties": ["fixture anxiety"],
+    "irritation_map": { "work": ["handoff without location"], "driving": ["late unsignaled merge"] },
+    "current_irritations": { "today": "fixture today", "yesterday": "fixture yesterday" },
+    "rationalization_pattern": "fixture postpones a correction when tired"
+  },
+  "memory_profile": { "memory_style": "sequence", "anchor_method": "object + action + location + reason + time", "personal_history_triggers": ["fixture trigger"] },
+  "knowledge_profile": { "training": ["transcription"], "known_limits": ["not a mechanic"], "learning_style": "compare original vs reconstruction" },
+  "work_profile": {
+    "job_reasons": ["predictable shifts"],
+    "previous_work": "fixture dispatch",
+    "current_role": "operator",
+    "shift_state": "OPEN",
+    "transport": { "why_chosen": ["visibility"], "purchase_history": "fixture purchase history" },
+    "meal_plan": { "reason": "steady", "main_break": "grain bowl", "variation_rule": "follows load" }
+  },
+  "primary_relationship_network": [{ "relation": "sibling", "state": "alive_in_world", "detail": "fixture" }]
+}
