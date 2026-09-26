@@ -1,0 +1,104 @@
+{
+  "status": "PROPOSED_NOT_LIVE",
+  "rule": "No price here is approved. Moving any price to LIVE requires Chairman instruction and passes MONEY → STORE. UNKNOWN remains UNKNOWN.",
+  "fee_assumptions": {
+    "note": "Public list rates at time of writing, used only to model net per unit. Verify against the connected account before any decision. Taxes, currency conversion, international and payout fees are excluded.",
+    "STRIPE_US_STANDARD": {
+      "pct": 0.029,
+      "fixed": 0.3
+    },
+    "LEMON_SQUEEZY_STANDARD": {
+      "pct": 0.05,
+      "fixed": 0.5
+    }
+  },
+  "items": [
+    {
+      "lane": "SECOND-GEAR-DETECTIVE",
+      "sku": "Case File 001 direct",
+      "price_usd": 0.99,
+      "status": "PROPOSED",
+      "net_per_single_sale_usd": {
+        "STRIPE_US_STANDARD": 0.66,
+        "LEMON_SQUEEZY_STANDARD": 0.44
+      },
+      "note": "The fixed fee takes a large share of a single sale. Recommend selling inside bundles or a library, or as a free sample, rather than as a lone card charge."
+    },
+    {
+      "lane": "SECOND-GEAR-DETECTIVE",
+      "sku": "Kid-credit equivalent (future prepaid system)",
+      "price_usd": 0.1,
+      "status": "PROPOSED",
+      "net_per_single_sale_usd": null,
+      "note": "Not a card charge. It is a unit inside a prepaid credit system that does not exist yet. Stored value plus minors: MONEY and LEGAL ESCALATE."
+    },
+    {
+      "lane": "SECOND-GEAR-TEACHER",
+      "sku": "Teacher Pack pilot",
+      "price_usd": 4.99,
+      "status": "PROPOSED",
+      "net_per_single_sale_usd": {
+        "STRIPE_US_STANDARD": 4.55,
+        "LEMON_SQUEEZY_STANDARD": 4.24
+      }
+    },
+    {
+      "lane": "BUILD-YOUR-GATE",
+      "sku": "Mini",
+      "price_usd": 1.49,
+      "status": "PROPOSED",
+      "net_per_single_sale_usd": {
+        "STRIPE_US_STANDARD": 1.15,
+        "LEMON_SQUEEZY_STANDARD": 0.92
+      },
+      "note": "The fixed fee takes a large share of a single sale. Recommend selling inside bundles or a library, or as a free sample, rather than as a lone card charge."
+    },
+    {
+      "lane": "BUILD-YOUR-GATE",
+      "sku": "Expanded bundle",
+      "price_usd": 4.99,
+      "status": "PROPOSED",
+      "net_per_single_sale_usd": {
+        "STRIPE_US_STANDARD": 4.55,
+        "LEMON_SQUEEZY_STANDARD": 4.24
+      }
+    },
+    {
+      "lane": "TALK-WHILE-WORKING",
+      "sku": "Starter kit",
+      "price_usd": 2.99,
+      "status": "PROPOSED",
+      "net_per_single_sale_usd": {
+        "STRIPE_US_STANDARD": 2.6,
+        "LEMON_SQUEEZY_STANDARD": 2.34
+      }
+    },
+    {
+      "lane": "TALK-WHILE-WORKING",
+      "sku": "Team pilot",
+      "price_usd": 29,
+      "status": "PROPOSED",
+      "net_per_single_sale_usd": {
+        "STRIPE_US_STANDARD": 27.86,
+        "LEMON_SQUEEZY_STANDARD": 27.05
+      }
+    },
+    {
+      "lane": "TALK-WHILE-WORKING",
+      "sku": "Enterprise",
+      "price_usd": null,
+      "status": "UNKNOWN",
+      "net_per_single_sale_usd": null
+    },
+    {
+      "lane": "SCHOOL-ROOMS-VASHON-1986",
+      "sku": "Class of 86 founding supporter (per year)",
+      "price_usd": 8.6,
+      "status": "PROPOSED",
+      "net_per_single_sale_usd": {
+        "STRIPE_US_STANDARD": 8.05,
+        "LEMON_SQUEEZY_STANDARD": 7.67
+      }
+    }
+  ]
+}
