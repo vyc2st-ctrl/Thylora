@@ -1,0 +1,526 @@
+openapi: 3.1.0
+info:
+  title: THYLORA API
+  version: 1.0.0-candidate
+  summary: Minimum Usable Chairman Cut — provider-independent contract.
+  description: |
+    STATE: CANDIDATE. Frozen only when the Chairman approves (acceptance check C30).
+
+    Scope rule: v1 contains ONLY the resources the 15-item Minimum Usable Chairman Cut needs.
+    Anything else is v1.1+ and is listed under x-thylora-deferred.
+
+    Provider independence: callers see /v1 paths and the envelope below. The reference
+    implementation maps each path to the current backend (thylora-dash) — the mapping is
+    recorded per operation in x-thylora-source so it can be replaced without breaking callers.
+
+    Envelope: every 2xx body is { data, meta } and every error body is { error }.
+    meta.truth_class is copied from the source row where one exists, never inferred.
+
+    Writes in v1: exactly two (POST /v1/commands, POST /v1/departments/{code}/messages).
+    Both are routed to existing JWT-verified functions; neither writes a table directly.
+servers:
+  - url: https://{host}/v1
+    variables:
+      host:
+        default: api.thylora.invalid
+        description: Not deployed. Host is chosen at deployment (blocker B-C4).
+security:
+  - bearer: []
+tags:
+  - { name: auth, description: "Cut items 1–2" }
+  - { name: continuity, description: "Cut items 5–6" }
+  - { name: source, description: "Cut item 7" }
+  - { name: lanes, description: "Cut items 8–10" }
+  - { name: commands, description: "Cut item 4" }
+  - { name: departments, description: "Cut item 12" }
+  - { name: store, description: "Cut item 11" }
+  - { name: evidence, description: "Cut items 13 and 15" }
+  - { name: audit, description: "Cut item 14" }
+
+paths:
+  /health:
+    get:
+      tags: [evidence]
+      security: []
+      summary: Liveness plus backend reachability. No data.
+      x-thylora-source: "select 1 via service role"
+      responses:
+        '200': { description: OK, content: { application/json: { schema: { $ref: '#/components/schemas/Health' } } } }
+
+  /auth/session:
+    post:
+      tags: [auth]
+      security: []
+      summary: Sign in with email and password.
+      x-thylora-source: "POST /auth/v1/token?grant_type=password"
+      x-thylora-cut-item: 1
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [email, password], properties: { email: { type: string, format: email }, password: { type: string, minLength: 1 } } } } }
+      responses:
+        '200': { description: Signed in, content: { application/json: { schema: { $ref: '#/components/schemas/SessionEnvelope' } } } }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+    delete:
+      tags: [auth]
+      summary: Sign out (revokes refresh token).
+      x-thylora-source: "POST /auth/v1/logout"
+      responses:
+        '204': { description: Signed out }
+
+  /auth/refresh:
+    post:
+      tags: [auth]
+      security: []
+      summary: Exchange a refresh token for a new session. Fixes acceptance check C05.
+      x-thylora-source: "POST /auth/v1/token?grant_type=refresh_token"
+      x-thylora-cut-item: 2
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [refresh_token], properties: { refresh_token: { type: string } } } } }
+      responses:
+        '200': { description: Refreshed, content: { application/json: { schema: { $ref: '#/components/schemas/SessionEnvelope' } } } }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+
+  /auth/me:
+    get:
+      tags: [auth]
+      summary: Who is signed in and whether they hold the Chairman role.
+      x-thylora-source: "auth.uid() + thylora_user_roles + thylora_is_chairman()"
+      x-thylora-cut-item: 1
+      responses:
+        '200':
+          description: Identity
+          content: { application/json: { schema: { type: object, required: [data, meta], properties: { data: { type: object, required: [user_id, roles, is_chairman], properties: { user_id: { type: string, format: uuid }, roles: { type: array, items: { type: string } }, is_chairman: { type: boolean } } }, meta: { $ref: '#/components/schemas/Meta' } } } } }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+
+  /continuity/boot:
+    get:
+      tags: [continuity]
+      summary: The active continuity boot record and its retrieval order.
+      x-thylora-source: "thylora_continuity_boot_registry where status = ACTIVE"
+      x-thylora-cut-item: 5
+      responses:
+        '200': { description: Boot, content: { application/json: { schema: { $ref: '#/components/schemas/BootEnvelope' } } } }
+        '403': { $ref: '#/components/responses/NotChairman' }
+
+  /continuity/current:
+    get:
+      tags: [continuity]
+      summary: Current task/state — the most recent restart record.
+      x-thylora-source: "restart_records order by updated_at desc limit 1"
+      x-thylora-cut-item: 6
+      responses:
+        '200': { description: Current, content: { application/json: { schema: { $ref: '#/components/schemas/RestartEnvelope' } } } }
+        '403': { $ref: '#/components/responses/NotChairman' }
+
+  /source-atoms:
+    get:
+      tags: [source]
+      summary: Chairman source atoms (segments) with their coverage state.
+      x-thylora-source: "chairman_source_segments LEFT JOIN thylora_response_point_coverage"
+      x-thylora-cut-item: 7
+      parameters:
+        - { $ref: '#/components/parameters/QueryId' }
+        - { name: state, in: query, schema: { $ref: '#/components/schemas/AtomState' } }
+        - { $ref: '#/components/parameters/Limit' }
+        - { $ref: '#/components/parameters/Cursor' }
+      responses:
+        '200': { description: Atoms, content: { application/json: { schema: { $ref: '#/components/schemas/AtomPage' } } } }
+        '403': { $ref: '#/components/responses/NotChairman' }
+
+  /coverage:
+    get:
+      tags: [source]
+      summary: Every-Word coverage totals. A query is COMPLETE only when unaccounted = 0.
+      x-thylora-source: "thylora_response_point_coverage group by response_state (needs policy 0001)"
+      x-thylora-cut-item: 7
+      parameters: [ { $ref: '#/components/parameters/QueryId' } ]
+      responses:
+        '200': { description: Coverage, content: { application/json: { schema: { $ref: '#/components/schemas/CoverageEnvelope' } } } }
+
+  /lanes:
+    get:
+      tags: [lanes]
+      summary: All open lanes with blockers, next action and restart point.
+      x-thylora-source: "thylora_workroom_registry (needs policy 0001)"
+      x-thylora-cut-item: 8
+      parameters:
+        - { name: state, in: query, schema: { type: string } }
+      responses:
+        '200': { description: Lanes, content: { application/json: { schema: { $ref: '#/components/schemas/LaneList' } } } }
+
+  /tasks:
+    get:
+      tags: [lanes]
+      summary: Tasks within lanes.
+      x-thylora-source: "thylora_workroom_task_registry (needs policy 0001)"
+      x-thylora-cut-item: 8
+      parameters:
+        - { name: workroom, in: query, schema: { type: string } }
+        - { $ref: '#/components/parameters/Limit' }
+        - { $ref: '#/components/parameters/Cursor' }
+      responses:
+        '200': { description: Tasks, content: { application/json: { schema: { $ref: '#/components/schemas/GenericPage' } } } }
+
+  /dashboard/status:
+    get:
+      tags: [lanes]
+      summary: Module status rows — blockers and next actions. Newest evidence first; never replaced by an older summary.
+      x-thylora-source: "dashboard_status order by updated_at desc"
+      x-thylora-cut-item: [3, 9, 10]
+      responses:
+        '200': { description: Status, content: { application/json: { schema: { $ref: '#/components/schemas/StatusList' } } } }
+
+  /commands:
+    post:
+      tags: [commands]
+      summary: Send a Chairman command. Returns the command id immediately; poll GET /commands/{id}.
+      x-thylora-source: "edge function chairman-command (verify_jwt = true) → thylora_chairman_commands"
+      x-thylora-cut-item: 4
+      parameters:
+        - { name: Idempotency-Key, in: header, required: true, schema: { type: string, minLength: 8, maxLength: 128 } }
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [command], properties: { command: { type: string, minLength: 1, maxLength: 20000 } } } } }
+      responses:
+        '202': { description: Accepted, content: { application/json: { schema: { $ref: '#/components/schemas/CommandEnvelope' } } } }
+        '409': { description: Same Idempotency-Key with a different body, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+        '403': { $ref: '#/components/responses/NotChairman' }
+
+  /commands/{id}:
+    get:
+      tags: [commands]
+      summary: Command read-back — status, response, blocker.
+      x-thylora-source: "thylora_chairman_commands"
+      x-thylora-cut-item: 4
+      parameters: [ { name: id, in: path, required: true, schema: { type: string } } ]
+      responses:
+        '200': { description: Command, content: { application/json: { schema: { $ref: '#/components/schemas/CommandEnvelope' } } } }
+        '404': { $ref: '#/components/responses/NotFound' }
+
+  /departments:
+    get:
+      tags: [departments]
+      summary: Departments with current assignment and last activity.
+      x-thylora-source: "thylora_departments"
+      x-thylora-cut-item: 12
+      responses:
+        '200': { description: Departments, content: { application/json: { schema: { $ref: '#/components/schemas/GenericList' } } } }
+
+  /departments/{code}/conversations:
+    get:
+      tags: [departments]
+      summary: Recent department exchanges.
+      x-thylora-source: "thylora_department_conversations"
+      x-thylora-cut-item: 12
+      parameters: [ { name: code, in: path, required: true, schema: { type: string } }, { $ref: '#/components/parameters/Limit' } ]
+      responses:
+        '200': { description: Conversations, content: { application/json: { schema: { $ref: '#/components/schemas/GenericList' } } } }
+
+  /departments/{code}/messages:
+    post:
+      tags: [departments]
+      summary: Speak to a department.
+      x-thylora-source: "edge function thylora-department-talk (verify_jwt = true)"
+      x-thylora-cut-item: 12
+      parameters:
+        - { name: code, in: path, required: true, schema: { type: string } }
+        - { name: Idempotency-Key, in: header, required: true, schema: { type: string, minLength: 8, maxLength: 128 } }
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [message], properties: { message: { type: string, minLength: 1 }, module_key: { type: [string, 'null'] } } } } }
+      responses:
+        '202': { description: Accepted, content: { application/json: { schema: { $ref: '#/components/schemas/GenericEnvelope' } } } }
+
+  /store/status:
+    get:
+      tags: [store]
+      summary: One read of store truth — products by readiness, orders, payments, entitlements, checkout witness.
+      description: |
+        Read-only in v1. Product/price writes, checkout, downloads and entitlement grants are v1.1+.
+        Counts come from rows; a sale is "verified" only when a payment row carries provider evidence.
+      x-thylora-source: "products, prices, orders, payments, entitlements, thylora_store_product_readiness (needs policy 0001), dashboard_status THY-DS-CURRENT-STORE-*"
+      x-thylora-cut-item: 11
+      responses:
+        '200': { description: Store, content: { application/json: { schema: { $ref: '#/components/schemas/StoreEnvelope' } } } }
+
+  /evidence:
+    get:
+      tags: [evidence]
+      summary: Evidence rows for a subject (module, lane, product, command).
+      x-thylora-source: "connection_evidence ∪ thylora_dashboard_regression_evidence (needs policy 0001)"
+      x-thylora-cut-item: 13
+      parameters:
+        - { name: subject, in: query, required: true, schema: { type: string } }
+      responses:
+        '200': { description: Evidence, content: { application/json: { schema: { $ref: '#/components/schemas/EvidenceList' } } } }
+
+  /regression:
+    get:
+      tags: [evidence]
+      summary: Baseline capabilities vs latest regression evidence. Fails closed.
+      description: |
+        Returns every capability in dashboard-baseline.json with PRESENT / MISSING / UNVERIFIED.
+        overall = PASS only when every capability is PRESENT on the latest build's evidence.
+      x-thylora-source: "dashboard-baseline.json + thylora_dashboard_regression_evidence"
+      x-thylora-cut-item: 15
+      responses:
+        '200': { description: Regression, content: { application/json: { schema: { $ref: '#/components/schemas/RegressionEnvelope' } } } }
+
+  /audit:
+    get:
+      tags: [audit]
+      summary: Audit trail, newest first.
+      x-thylora-source: "audit_events ∪ audit_log"
+      x-thylora-cut-item: 14
+      parameters:
+        - { name: since, in: query, schema: { type: string, format: date-time } }
+        - { $ref: '#/components/parameters/Limit' }
+        - { $ref: '#/components/parameters/Cursor' }
+      responses:
+        '200': { description: Audit, content: { application/json: { schema: { $ref: '#/components/schemas/GenericPage' } } } }
+
+components:
+  securitySchemes:
+    bearer: { type: http, scheme: bearer, bearerFormat: JWT }
+
+  parameters:
+    QueryId: { name: query_id, in: query, schema: { type: string } }
+    Limit: { name: limit, in: query, schema: { type: integer, minimum: 1, maximum: 200, default: 50 } }
+    Cursor: { name: cursor, in: query, schema: { type: string }, description: Opaque. Never an offset. }
+
+  responses:
+    Unauthorized: { description: No or expired session, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+    NotChairman: { description: Signed in without the Chairman role, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+    NotFound: { description: Not found, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+
+  schemas:
+    Meta:
+      type: object
+      required: [read_at, source]
+      properties:
+        read_at: { type: string, format: date-time }
+        source: { type: string, description: "Backend object read. Informational; callers must not depend on it." }
+        truth_class: { type: [string, 'null'] }
+        next_cursor: { type: [string, 'null'] }
+    Error:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: object
+          required: [code, message]
+          properties:
+            code: { type: string, enum: [UNAUTHENTICATED, NOT_CHAIRMAN, NOT_FOUND, INVALID, CONFLICT, BACKEND_UNAVAILABLE, POLICY_BLOCKED] }
+            message: { type: string }
+            route: { type: string, description: "What the caller can do next." }
+    Health:
+      type: object
+      required: [status, backend]
+      properties:
+        status: { type: string, enum: [OK, DEGRADED] }
+        backend: { type: string, enum: [REACHABLE, UNREACHABLE] }
+    Session:
+      type: object
+      required: [access_token, refresh_token, expires_at, user_id]
+      properties:
+        access_token: { type: string }
+        refresh_token: { type: string }
+        expires_at: { type: integer, description: Unix seconds }
+        user_id: { type: string, format: uuid }
+    SessionEnvelope:
+      type: object
+      required: [data, meta]
+      properties: { data: { $ref: '#/components/schemas/Session' }, meta: { $ref: '#/components/schemas/Meta' } }
+    BootEnvelope:
+      type: object
+      required: [data, meta]
+      properties:
+        data:
+          type: object
+          required: [boot_code, version, status, retrieval_order]
+          properties:
+            boot_code: { type: string }
+            version: { type: integer }
+            status: { type: string }
+            retrieval_order: { type: array, items: { type: string } }
+            controlling_rules: {}
+        meta: { $ref: '#/components/schemas/Meta' }
+    RestartEnvelope:
+      type: object
+      required: [data, meta]
+      properties:
+        data:
+          type: object
+          required: [canonical_id, state, exact_restart_point, next_action, evidence_status, updated_at]
+          properties:
+            canonical_id: { type: string }
+            state: { type: string }
+            exact_restart_point: { type: [string, 'null'] }
+            next_action: { type: [string, 'null'] }
+            evidence_status: { type: [string, 'null'] }
+            updated_at: { type: string, format: date-time }
+        meta: { $ref: '#/components/schemas/Meta' }
+    AtomState:
+      type: string
+      enum: [ANSWERED, EXECUTED, ASSIGNED, BLOCKED, DEFERRED_WITH_DEFINED_DEPENDENCY, UNKNOWN, PRIVATE, NONACTIONABLE_CONTEXT, UNACCOUNTED]
+      description: The eight Every-Word states plus UNACCOUNTED, which must be 0 for a query to close.
+    Atom:
+      type: object
+      required: [atom_id, query_id, text, state]
+      properties:
+        atom_id: { type: string }
+        query_id: { type: string }
+        point_no: { type: [integer, 'null'] }
+        text: { type: string }
+        state: { $ref: '#/components/schemas/AtomState' }
+        response_ref: { type: [string, 'null'] }
+        omission_reason: { type: [string, 'null'] }
+    AtomPage:
+      type: object
+      required: [data, meta]
+      properties: { data: { type: array, items: { $ref: '#/components/schemas/Atom' } }, meta: { $ref: '#/components/schemas/Meta' } }
+    CoverageEnvelope:
+      type: object
+      required: [data, meta]
+      properties:
+        data:
+          type: object
+          required: [total, by_state, unaccounted, complete]
+          properties:
+            total: { type: integer }
+            by_state: { type: object, additionalProperties: { type: integer } }
+            unaccounted: { type: integer }
+            complete: { type: boolean, description: "true iff unaccounted = 0" }
+        meta: { $ref: '#/components/schemas/Meta' }
+    Lane:
+      type: object
+      required: [workroom_code, title, state, current_blockers, restart_point]
+      properties:
+        workroom_code: { type: string }
+        title: { type: string }
+        lane: { type: [string, 'null'] }
+        state: { type: string }
+        current_blockers: { type: array, items: {} }
+        completion_tests: { type: array, items: {} }
+        evidence: { type: array, items: {} }
+        restart_point: { type: [string, 'null'] }
+        updated_at: { type: string, format: date-time }
+    LaneList:
+      type: object
+      required: [data, meta]
+      properties: { data: { type: array, items: { $ref: '#/components/schemas/Lane' } }, meta: { $ref: '#/components/schemas/Meta' } }
+    Status:
+      type: object
+      required: [canonical_id, module_name, state, evidence_status]
+      properties:
+        canonical_id: { type: string }
+        module_name: { type: string }
+        title: { type: [string, 'null'] }
+        state: { type: string }
+        current_gate: { type: [string, 'null'] }
+        blocker: { type: [string, 'null'] }
+        evidence_status: { type: string }
+        next_action: { type: [string, 'null'] }
+        last_verified_at: { type: [string, 'null'], format: date-time }
+        updated_at: { type: string, format: date-time }
+    StatusList:
+      type: object
+      required: [data, meta]
+      properties: { data: { type: array, items: { $ref: '#/components/schemas/Status' } }, meta: { $ref: '#/components/schemas/Meta' } }
+    Command:
+      type: object
+      required: [id, status, created_at]
+      properties:
+        id: { type: string }
+        canonical_id: { type: [string, 'null'] }
+        status: { type: string, description: "e.g. ROUTED, COMPLETED" }
+        response: { type: [string, 'null'] }
+        assigned_department_code: { type: [string, 'null'] }
+        is_blocked: { type: boolean }
+        blocking_reason: { type: [string, 'null'] }
+        chairman_action_required: { type: [boolean, 'null'] }
+        created_at: { type: string, format: date-time }
+        updated_at: { type: string, format: date-time }
+    CommandEnvelope:
+      type: object
+      required: [data, meta]
+      properties: { data: { $ref: '#/components/schemas/Command' }, meta: { $ref: '#/components/schemas/Meta' } }
+    StoreEnvelope:
+      type: object
+      required: [data, meta]
+      properties:
+        data:
+          type: object
+          required: [products_total, products_purchasable, orders_total, verified_payments, entitlements_total, checkout_witness, blockers]
+          properties:
+            products_total: { type: integer }
+            products_purchasable: { type: integer }
+            readiness: { type: array, items: {} }
+            orders_total: { type: integer }
+            verified_payments: { type: integer }
+            gross_minor: { type: integer, description: "Integer minor units. Never a float." }
+            currency: { type: string }
+            entitlements_total: { type: integer }
+            checkout_witness: { type: string, enum: [NONE, TEST_ONLY, REAL_MONEY] }
+            blockers: { type: array, items: { type: string } }
+        meta: { $ref: '#/components/schemas/Meta' }
+    EvidenceItem:
+      type: object
+      required: [evidence_code, subject, state, recorded_at]
+      properties:
+        evidence_code: { type: string }
+        subject: { type: string }
+        check_name: { type: [string, 'null'] }
+        state: { type: string }
+        evidence: {}
+        blocker: { type: [string, 'null'] }
+        source_ref: { type: [string, 'null'] }
+        recorded_at: { type: string, format: date-time }
+    EvidenceList:
+      type: object
+      required: [data, meta]
+      properties: { data: { type: array, items: { $ref: '#/components/schemas/EvidenceItem' } }, meta: { $ref: '#/components/schemas/Meta' } }
+    RegressionEnvelope:
+      type: object
+      required: [data, meta]
+      properties:
+        data:
+          type: object
+          required: [baseline_id, overall, capabilities]
+          properties:
+            baseline_id: { type: string }
+            overall: { type: string, enum: [PASS, FAIL, UNVERIFIED] }
+            build_code: { type: [string, 'null'] }
+            capabilities:
+              type: array
+              items: { type: object, required: [name, state], properties: { name: { type: string }, state: { type: string, enum: [PRESENT, MISSING, UNVERIFIED] }, evidence_code: { type: [string, 'null'] } } }
+        meta: { $ref: '#/components/schemas/Meta' }
+    GenericEnvelope:
+      type: object
+      required: [data, meta]
+      properties: { data: { type: object }, meta: { $ref: '#/components/schemas/Meta' } }
+    GenericList:
+      type: object
+      required: [data, meta]
+      properties: { data: { type: array, items: { type: object } }, meta: { $ref: '#/components/schemas/Meta' } }
+    GenericPage:
+      type: object
+      required: [data, meta]
+      properties: { data: { type: array, items: { type: object } }, meta: { $ref: '#/components/schemas/Meta' } }
+
+x-thylora-deferred:
+  v1.1:
+    - "POST/PATCH /products, /prices — catalogue writes (today: Chairman-only table writes)"
+    - "POST /checkout — wraps p0-checkout / thylora-product-checkout"
+    - "GET /downloads/{id} — wraps thylora-protected-download"
+    - "POST /entitlements — grants (today: webhook-driven)"
+    - "GET /payments detail, refunds"
+    - "PATCH /tasks/{id}, POST /lanes — lane mutation from the dashboard"
+    - "POST /source-atoms/{id}/state — Chairman sets an atom's state by hand"
+    - "Preview tokens (chairman-preview), voice command spine"
+  v1.2_plus:
+    - "Mobile push notifications"
+    - "Public (anon) endpoints for the store and RAE Link"
+    - "Webhook fan-out to external systems"
+    - "Offline sync protocol (Lane H layer 2)"
