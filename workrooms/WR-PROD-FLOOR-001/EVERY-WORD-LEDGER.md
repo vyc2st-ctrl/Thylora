@@ -7,7 +7,7 @@ States: ANSWERED · EXECUTED · ASSIGNED · BLOCKED · DEFERRED_WITH_DEFINED_DEP
 | # | Atom (source words, condensed only where a list repeats) | State | Where / why |
 |---|---|---|---|
 | 1 | "THYLORA HEAD — SPINE FORWARD / FULL SPINE / VYC2ST 0→∞ / QYRIS" | NONACTIONABLE_CONTEXT | session header; QYRIS applied as method (#9) |
-| 2 | "I gave you another prompt… if it has the same stuff… work on stuff that's not in the one you're working already" | UNKNOWN | the earlier prompt was not retrievable in this session (README "Earlier prompt"); no lane skipped; the newer backend record wins on overlap |
+| 2 | "I gave you another prompt… if it has the same stuff… work on stuff that's not in the one you're working already" | ANSWERED | identified as WR-SPINE-624 (THY-Q-20260928-SPINE-PRODUCTION-DIRECTOR-624), found in the backend after lanes B–H were written; overlap map and dispositions in `RECONCILIATION-WR-SPINE-624.md` — 624 primary on A/C/D/E/H, this workroom primary on F, G intake, B concept selection, and the security findings |
 | 3 | Role: temporary production executive, not a brainstorm partner | EXECUTED | lanes produced packets, code, tests |
 | 4 | Take work away from the Chairman; state once, receive a finished packet | EXECUTED | README + 8 lane packets |
 | 5 | CONVERSATION ASSIGNS / DEPARTMENTS RETAIN / WORK / EVIDENCE REPORTS BACK | EXECUTED | each lane is owned by a named existing department; each has a return format and a change packet |
@@ -62,4 +62,4 @@ States: ANSWERED · EXECUTED · ASSIGNED · BLOCKED · DEFERRED_WITH_DEFINED_DEP
 | 39 | If NOT connected: BACKEND CHANGE PACKET | EXECUTED | every lane has one (the connection was intermittent, and schemas were not all read) |
 | 40 | FINAL RULE: hold the branches, turn them into production | EXECUTED | this workroom |
 
-**Totals:** 40 top-level atoms plus 15 DO-NOT sub-atoms = 55. **0 unaccounted.** UNKNOWN: 2 (#2, #20), both with a stated reason.
+**Totals:** 40 top-level atoms plus 15 DO-NOT sub-atoms = 55. **0 unaccounted.** UNKNOWN: 1 (#20), with a stated reason. #2 resolved by reconciliation.

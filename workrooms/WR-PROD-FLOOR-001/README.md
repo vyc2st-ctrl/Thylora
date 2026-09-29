@@ -3,7 +3,7 @@
 **Opened:** 2026-09-28 · **Source:** `SOURCE-DIRECTIVE.md` (Chairman VYC, verbatim)
 **Backend of record:** `thylora-dash` (`jvsdxhrfhtlgaknhjxlz`). Read live this session; **no production row, policy or schema was written.**
 **Authority:** `DASHBOARD_AUTHORITY.md` holds. Nothing here deploys the Chairman dashboard.
-**Earlier prompt:** the Chairman said an earlier prompt may overlap this one. That prompt was not retrievable here: `chairman_source_messages` was not read, and no earlier session work sits on this branch. No lane was skipped as a duplicate. If overlap is found, the newer backend record wins and the lane file here is superseded, not deleted.
+**Earlier prompt → reconciled.** The "other prompt" is the parallel run **WR-SPINE-624** (backend row written 2026-09-28 20:54 UTC). Per the Chairman's instruction, **624 is primary wherever the two overlap** (lanes A, C contract, D, E, H). This workroom stands alone on Lane F, the Lane G intake engine, Lane B Transmission 001 concept selection, and two security findings. Read `RECONCILIATION-WR-SPINE-624.md` first. ⚠ 624's recorded repo branch `claude/thylora-production-director-hyxdyx` is **not on origin**, so its code is not retrievable from the repo.
 
 ## Read order
 
