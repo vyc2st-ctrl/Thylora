@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kaelorps Measuring Tape</title>
+<meta name="description" content="THYLORA Kaelorps · Measuring — read a tape measure to the sixteenth of an inch, convert to millimetres, and check clearance. WR-SPINE-624 Lane M, idea THY-IDEA-KAELORPS-001.">
+<style>
+:root {
+  --bg: #f7f5ef;
+  --surface: #ffffff;
+  --surface-2: #f0ece1;
+  --ink: #1c1b18;
+  --ink-2: #4a4740;
+  --line: #d8d2c3;
+  --tape: #f3d34a;
+  --tape-edge: #b8961a;
+  --tick: #1c1b18;
+  --accent: #1f5fa8;
+  --ex-a: #c0392b;   /* 8 3/4  */
+  --ex-b: #1f7a4d;   /* 8 5/8  */
+  --ex-c: #7a3fb0;   /* 8 7/16 */
+  --sel: #1f5fa8;
+  --ok: #1f7a4d;
+  --bad: #b3261e;
+  --code-bg: #efeadc;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15161a;
+    --surface: #1e2026;
+    --surface-2: #262932;
+    --ink: #ecebe6;
+    --ink-2: #b7b4ab;
+    --line: #3a3d47;
+    --tape: #c9a92a;
+    --tape-edge: #8a7214;
+    --tick: #15130a;
+    --accent: #7fb2ee;
+    --ex-a: #ff7a6b;
+    --ex-b: #5fd39a;
+    --ex-c: #c79bff;
+    --sel: #7fb2ee;
+    --ok: #5fd39a;
+    --bad: #ff8a80;
+    --code-bg: #2a2d36;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #15161a; --surface: #1e2026; --surface-2: #262932; --ink: #ecebe6; --ink-2: #b7b4ab;
+  --line: #3a3d47; --tape: #c9a92a; --tape-edge: #8a7214; --tick: #15130a; --accent: #7fb2ee;
+  --ex-a: #ff7a6b; --ex-b: #5fd39a; --ex-c: #c79bff; --sel: #7fb2ee; --ok: #5fd39a; --bad: #ff8a80;
+  --code-bg: #2a2d36; color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 17px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+}
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px 64px; }
+header.top { padding: 24px 0 8px; }
+.eyebrow { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); margin: 0 0 4px; }
+h1 { font-size: clamp(26px, 6vw, 38px); line-height: 1.15; margin: 0 0 8px; }
+h2 { font-size: clamp(21px, 4.6vw, 27px); margin: 40px 0 10px; line-height: 1.25; }
+h3 { font-size: 18px; margin: 20px 0 6px; }
+p { margin: 0 0 12px; }
+.lede { color: var(--ink-2); max-width: 62ch; }
+a { color: var(--accent); }
+section { scroll-margin-top: 12px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin: 12px 0; }
+.kid { border-left: 4px solid var(--ex-b); padding: 8px 12px; background: var(--surface-2); border-radius: 0 8px 8px 0; margin: 10px 0; }
+.formal { border-left: 4px solid var(--accent); padding: 8px 12px; background: var(--surface-2); border-radius: 0 8px 8px 0; margin: 10px 0; }
+.kid b:first-child, .formal b:first-child { display: block; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-2); }
+nav.toc { display: flex; flex-wrap: wrap; gap: 6px 8px; margin: 12px 0 0; padding: 0; list-style: none; }
+nav.toc a { display: inline-block; padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; font-size: 14px; color: var(--ink); background: var(--surface); }
+code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+code { background: var(--code-bg); padding: 1px 5px; border-radius: 4px; font-size: .92em; }
+.tape-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); }
+.tape-scroll svg { display: block; }
+.hint { font-size: 14px; color: var(--ink-2); }
+.tape-scroll + .hint { margin-top: 8px; }
+.zoom svg { width: 100%; height: auto; display: block; }
+svg text { fill: var(--ink); font-family: system-ui, sans-serif; }
+svg .tick { stroke: var(--tick); }
+svg .tape-body { fill: var(--tape); stroke: var(--tape-edge); }
+svg .num { fill: var(--tick); font-weight: 700; }
+svg .hit { fill: transparent; cursor: pointer; }
+svg:focus { outline: 3px solid var(--sel); outline-offset: 2px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+button, input {
+  font: inherit; color: inherit;
+}
+button {
+  min-height: 44px; padding: 8px 14px; border-radius: 10px; border: 1px solid var(--line);
+  background: var(--surface-2); cursor: pointer;
+}
+button:hover { border-color: var(--accent); }
+button:focus-visible, input:focus-visible { outline: 3px solid var(--sel); outline-offset: 2px; }
+button.ex-a { border-color: var(--ex-a); }
+button.ex-b { border-color: var(--ex-b); }
+button.ex-c { border-color: var(--ex-c); }
+.swatch { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; margin-right: 4px; }
+label { display: block; font-size: 14px; color: var(--ink-2); margin-bottom: 4px; }
+input[type="text"] {
+  min-height: 44px; width: 100%; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--line);
+  background: var(--surface); color: var(--ink);
+}
+.field { flex: 1 1 160px; min-width: 0; }
+.readout { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; margin-top: 12px; }
+.readout div { background: var(--surface-2); border-radius: 10px; padding: 10px 12px; }
+.readout .k { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-2); }
+.readout .v { font-size: 22px; font-weight: 700; word-break: break-word; }
+.err { color: var(--bad); font-weight: 600; min-height: 1.5em; }
+.verdict { font-size: 20px; font-weight: 800; }
+.verdict.ok { color: var(--ok); }
+.verdict.bad { color: var(--bad); }
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { background: var(--surface-2); font-weight: 700; }
+dl.law { display: grid; grid-template-columns: minmax(110px, 30%) 1fr; gap: 0; margin: 0; }
+dl.law dt, dl.law dd { padding: 8px 10px; border-bottom: 1px solid var(--line); margin: 0; }
+dl.law dt { font-weight: 700; color: var(--ink-2); font-size: 14px; }
+@media (max-width: 520px) {
+  dl.law { grid-template-columns: 1fr; }
+  dl.law dt { border-bottom: 0; padding-bottom: 0; }
+}
+.formula { font-size: clamp(22px, 6vw, 30px); text-align: center; padding: 12px 8px; font-family: "Cambria Math", "STIX Two Math", Georgia, serif; }
+.formula sub { font-size: .6em; }
+.tag { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .05em; padding: 2px 8px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--line); }
+.lessons { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+.lessons .card { margin: 0; }
+.lessons h3 { margin-top: 0; }
+.verify { font-size: 13px; color: var(--ink-2); font-style: italic; }
+footer { margin-top: 48px; font-size: 14px; color: var(--ink-2); border-top: 1px solid var(--line); padding-top: 16px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <p class="eyebrow">THYLORA Kaelorps · Measuring</p>
+  <h1>Reading a tape measure, one half at a time</h1>
+  <p class="lede">A Kaelorps lesson (the schools THYLORA sponsors in-world, <code>THY-IDEA-KAELORPS-001</code>). Learn the marks on an inch tape, turn any reading into sixteenths and millimetres, and check whether a car fits through a garage door.</p>
+  <nav class="toc" aria-label="Sections">
+    <a href="#tape">The tape</a>
+    <a href="#marks">The marks</a>
+    <a href="#count">Count the marks</a>
+    <a href="#try">Try a reading</a>
+    <a href="#examples">Worked examples</a>
+    <a href="#notation">Notation</a>
+    <a href="#law">C = W<sub>g</sub> − W<sub>v</sub></a>
+    <a href="#calc">Clearance calculator</a>
+    <a href="#lessons">Where it's used</a>
+  </nav>
+</header>
+
+<main>
+
+<section id="tape" aria-labelledby="tape-h">
+  <h2 id="tape-h">The tape: 0 to 12 inches</h2>
+  <p>Tall lines are whole inches. Each shorter line is half the size of the step before it. Tap or click anywhere on the tape to read that spot. The coloured pins show the three worked examples.</p>
+  <div class="tape-scroll" id="tapeScroll">
+    <svg id="tapeSvg" role="slider" tabindex="0" aria-label="Tape measure from 0 to 12 inches. Use left and right arrow keys to move one sixteenth; hold Shift to move a whole inch." aria-valuemin="0" aria-valuemax="192" aria-valuenow="140" aria-valuetext="8 3/4 inches"></svg>
+  </div>
+  <p class="hint">On a phone, slide the tape sideways to see all 12 inches. Keyboard: focus the tape and use ← → (one sixteenth) or Shift + ← → (one inch).</p>
+
+  <h3 id="zoomTitle">Zoomed in: inch 8 to inch 9</h3>
+  <div class="card zoom">
+    <svg id="zoomSvg" viewBox="0 0 360 160" role="img" aria-labelledby="zoomTitle"></svg>
+    <p class="hint">Numbers under the tape count sixteenths from the last whole inch. Fractions above name the longer marks.</p>
+  </div>
+</section>
+
+<section id="marks" aria-labelledby="marks-h">
+  <h2 id="marks-h">Whole, 1/2, 1/4, 1/8, 1/16 — and why each is half</h2>
+  <div class="table-wrap">
+  <table>
+    <caption class="sr-only">Tick classes on an inch tape</caption>
+    <thead><tr><th scope="col">Mark</th><th scope="col">Line length</th><th scope="col">Size</th><th scope="col">In sixteenths</th><th scope="col">In mm (exact)</th></tr></thead>
+    <tbody>
+      <tr><td>Whole inch</td><td>Tallest</td><td>1 in</td><td>16/16</td><td>25.4 mm</td></tr>
+      <tr><td>Half</td><td>Next tallest</td><td>1/2 in</td><td>8/16</td><td>12.7 mm</td></tr>
+      <tr><td>Quarter</td><td>Middle</td><td>1/4 in</td><td>4/16</td><td>6.35 mm</td></tr>
+      <tr><td>Eighth</td><td>Short</td><td>1/8 in</td><td>2/16</td><td>3.175 mm</td></tr>
+      <tr><td>Sixteenth</td><td>Shortest</td><td>1/16 in</td><td>1/16</td><td>1.5875 mm</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="kid"><b>Kid version</b>Fold a strip of paper in half. Fold it in half again. And again. And again. Each fold cuts every piece into two equal pieces, so each piece is half as long as before. A tape measure does the same thing four times inside every inch: 1 → halves → quarters → eighths → sixteenths. The more folds a mark needed, the shorter its line.</div>
+  <div class="formal"><b>Formal version</b>The inch is divided by repeated bisection: the marks are at positions <span class="mono">k/2<sup>n</sup></span> in for <span class="mono">n = 0…4</span>. A position <span class="mono">s</span> (in sixteenths) belongs to the class of the largest step that divides it: 16 | s → whole, 8 | s → half, 4 | s → quarter, 2 | s → eighth, otherwise sixteenth. Step sizes 16, 8, 4, 2, 1 sixteenths form a geometric sequence with ratio 1/2, which is why every fraction on the tape reduces to a denominator of 1, 2, 4, 8 or 16 — never 3, 5 or 10.</div>
+</section>
+
+<section id="count" aria-labelledby="count-h">
+  <h2 id="count-h">Count the marks</h2>
+  <p>Between one whole inch and the next there are 15 small lines. Count them by kind:</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th scope="col">Kind</th><th scope="col">How many in one inch</th><th scope="col">Where (sixteenths after the inch)</th></tr></thead>
+    <tbody>
+      <tr><td>Half</td><td>1</td><td>8</td></tr>
+      <tr><td>Quarter</td><td>2</td><td>4, 12</td></tr>
+      <tr><td>Eighth</td><td>4</td><td>2, 6, 10, 14</td></tr>
+      <tr><td>Sixteenth</td><td>8</td><td>1, 3, 5, 7, 9, 11, 13, 15</td></tr>
+      <tr><th scope="row">Total</th><th>1 + 2 + 4 + 8 = 15</th><th>then the next whole inch is the 16th</th></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="kid"><b>Counting trick</b>To read a spot, count the little lines past the last big number. 8 inches and 12 little lines = 8 12/16. Then make it simpler: 12/16 = 6/8 = 3/4. So it is <b>8 3/4</b>.</div>
+</section>
+
+<section id="try" aria-labelledby="try-h">
+  <h2 id="try-h">Try a reading</h2>
+  <div class="card">
+    <form id="readForm" class="row" autocomplete="off" novalidate>
+      <div class="field">
+        <label for="readIn">Type a reading in inches (for example <code>8 3/4</code>, <code>3/16</code>, <code>11</code>)</label>
+        <input id="readIn" type="text" inputmode="text" value="8 3/4" aria-describedby="readErr">
+      </div>
+      <button type="submit">Show it</button>
+    </form>
+    <div class="row" style="margin-top:8px">
+      <button type="button" id="stepDown" aria-label="Move back one sixteenth">− 1/16</button>
+      <button type="button" id="stepUp" aria-label="Move forward one sixteenth">+ 1/16</button>
+    </div>
+    <p class="err" id="readErr" role="alert"></p>
+    <div class="readout" aria-live="polite" id="readout">
+      <div><span class="k">Reading</span><div class="v" id="rFrac">8 3/4 in</div></div>
+      <div><span class="k">In sixteenths</span><div class="v" id="rSix">140/16</div></div>
+      <div><span class="k">Millimetres</span><div class="v" id="rMm">222.3 mm</div><span class="hint" id="rMmExact">exact 222.25 mm</span></div>
+      <div><span class="k">Mark type</span><div class="v" id="rTick">Quarter</div></div>
+    </div>
+    <p class="hint">Millimetres use 1 in = 25.4 mm exactly. Shown to the nearest 0.1 mm, halves rounded away from zero; the exact value is underneath.</p>
+  </div>
+</section>
+
+<section id="examples" aria-labelledby="ex-h">
+  <h2 id="ex-h">Worked examples</h2>
+  <div class="row">
+    <button type="button" class="ex-a" data-ex="140"><span class="swatch" style="background:var(--ex-a)"></span>8 3/4</button>
+    <button type="button" class="ex-b" data-ex="138"><span class="swatch" style="background:var(--ex-b)"></span>8 5/8</button>
+    <button type="button" class="ex-c" data-ex="135"><span class="swatch" style="background:var(--ex-c)"></span>8 7/16</button>
+  </div>
+  <div class="table-wrap" style="margin-top:12px">
+  <table id="exTable">
+    <thead><tr><th scope="col">Reading</th><th scope="col">Count</th><th scope="col">Sixteenths</th><th scope="col">mm (exact → shown)</th><th scope="col">Mark</th></tr></thead>
+    <tbody>
+      <tr><td><span class="swatch" style="background:var(--ex-a)"></span><b>8 3/4</b></td><td>8 × 16 + 12</td><td>140/16</td><td>222.25 → 222.3</td><td>Quarter</td></tr>
+      <tr><td><span class="swatch" style="background:var(--ex-b)"></span><b>8 5/8</b></td><td>8 × 16 + 10</td><td>138/16</td><td>219.075 → 219.1</td><td>Eighth</td></tr>
+      <tr><td><span class="swatch" style="background:var(--ex-c)"></span><b>8 7/16</b></td><td>8 × 16 + 7</td><td>135/16</td><td>214.3125 → 214.3</td><td>Sixteenth</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><b>Which is longest?</b> Change them all to sixteenths and compare the top numbers: 135 &lt; 138 &lt; 140, so <b>8 7/16 &lt; 8 5/8 &lt; 8 3/4</b>. The gaps are 3/16 in (4.7625 mm) and 2/16 = 1/8 in (3.175 mm).</p>
+</section>
+
+<section id="notation" aria-labelledby="not-h">
+  <h2 id="not-h">Notation: easy words and formal symbols</h2>
+  <p>Both columns mean the same thing. Start with the easy one; the formal one is what engineers and textbooks write.</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th scope="col">Easy notation</th><th scope="col">Formal notation</th><th scope="col">Means</th><th scope="col">Units</th></tr></thead>
+    <tbody>
+      <tr><td><b>GW</b> = garage width</td><td><b>W<sub>g</sub></b></td><td>Garage-opening width (clear width of the door opening)</td><td>in and mm</td></tr>
+      <tr><td><b>VW</b> = vehicle width</td><td><b>W<sub>v</sub></b></td><td>Vehicle width at its widest point you must pass (say whether mirrors are folded)</td><td>in and mm</td></tr>
+      <tr><td><b>Room left</b> = GW − VW</td><td><b>C</b> = W<sub>g</sub> − W<sub>v</sub></td><td>Clearance, total of both sides</td><td>in and mm</td></tr>
+      <tr><td><b>Room each side</b> = room left ÷ 2</td><td><b>C / 2</b></td><td>Clearance per side, car centred</td><td>in and mm</td></tr>
+      <tr><td><b>Need each side</b></td><td><b>m</b></td><td>Stated minimum clearance per side</td><td>in and mm</td></tr>
+      <tr><td>“Fits” if room each side ≥ need each side</td><td>C / 2 ≥ m ⇔ C ≥ 2m</td><td>Fit test</td><td>unitless (true / false)</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section id="law" aria-labelledby="law-h">
+  <h2 id="law-h">Math Display Law block: clearance</h2>
+  <div class="card">
+    <div class="formula" aria-label="C equals W sub g minus W sub v">C = W<sub>g</sub> − W<sub>v</sub></div>
+    <p style="text-align:center"><span class="tag">ENGINEERING_CONSTRAINT</span> <span class="tag">PRODUCTION_PLANNED</span></p>
+    <dl class="law">
+      <dt>Symbols</dt><dd><b>C</b> clearance (total, both sides) · <b>W<sub>g</sub></b> garage-opening width (subscript g = garage) · <b>W<sub>v</sub></b> vehicle width (subscript v = vehicle) · <b>m</b> minimum clearance per side · operator <b>−</b> subtraction; per side is <b>C / 2</b></dd>
+      <dt>Units</dt><dd>All lengths in inches (in), held as whole sixteenths, and in millimetres (mm); 1 in = 25.4 mm exactly. The fit result is unitless (true/false).</dd>
+      <dt>Domain</dt><dd>W<sub>g</sub> ≥ 0, W<sub>v</sub> ≥ 0, m ≥ 0, each a tape reading to 1/16 in (1.5875 mm). C may be negative (car wider than opening).</dd>
+      <dt>Scale</dt><dd>Household doors and vehicles: roughly 60–216 in (1.5–5.5 m). Precision 1/16 in; per side is exact to 1/32 in.</dd>
+      <dt>Threshold</dt><dd>Fit when C / 2 ≥ m, tested as C ≥ 2m in whole sixteenths (no rounding). The calculator starts with m = 12 in (304.8 mm) per side as a teaching value — <i>typical planning comfort, not a code requirement; verify locally</i>.</dd>
+      <dt>Assumptions</dt><dd>Vehicle is centred and driven straight; W<sub>g</sub> is the clear opening (inside the jambs and door track, not the rough framing); W<sub>v</sub> includes whatever sticks out (mirrors unless folded); both are measured at the same height.</dd>
+      <dt>Failure condition</dt><dd>C &lt; 0 → vehicle wider than opening (cannot pass). 0 ≤ C &lt; 2m → passes only with less than the stated room per side (NO_FIT). Also fails if a reading is invalid (denominator not 1/2/4/8/16), if the car is not centred, or if a narrower obstacle (track, opener rail, shelving) sits inside the opening.</dd>
+      <dt>Plain meaning</dt><dd>Subtract the car's width from the door's width to get the spare room; split it in two for each side and compare it with the room you need.</dd>
+      <dt>Child meaning</dt><dd>How much space is left over when the car goes through the door? Take the door's size, take away the car's size, and share what's left between the two sides.</dd>
+      <dt>Worked example</dt><dd>W<sub>g</sub> = 108 in (2743.2 mm, a 9 ft door) · W<sub>v</sub> = 74 in (1879.6 mm) → C = 34 in (863.6 mm) → C / 2 = 17 in (431.8 mm) per side ≥ m = 12 in (304.8 mm) → <b>FIT</b>. Values are typical, verify locally.</dd>
+      <dt>Class</dt><dd><b>ENGINEERING_CONSTRAINT</b> — a geometric fit rule with a chosen threshold, not a physical law.</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="calc" aria-labelledby="calc-h">
+  <h2 id="calc-h">Clearance calculator</h2>
+  <div class="card">
+    <form id="calcForm" autocomplete="off" novalidate>
+      <div class="row" style="align-items:flex-end">
+        <div class="field"><label for="wg">GW · W<sub>g</sub> garage-opening width (in)</label><input id="wg" type="text" value="108"></div>
+        <div class="field"><label for="wv">VW · W<sub>v</sub> vehicle width (in)</label><input id="wv" type="text" value="74"></div>
+        <div class="field"><label for="mm">Need each side · m (in)</label><input id="mm" type="text" value="12"></div>
+      </div>
+      <div class="row" style="margin-top:10px"><button type="submit">Check fit</button></div>
+    </form>
+    <p class="hint">Readings in inches to the nearest 1/16, like <code>74 1/2</code>. Feet × 12 = inches (9 ft = 108 in).</p>
+    <p class="err" id="calcErr" role="alert"></p>
+    <div aria-live="polite">
+      <p class="verdict" id="cVerdict"></p>
+      <div class="readout">
+        <div><span class="k">C = W<sub>g</sub> − W<sub>v</sub></span><div class="v" id="cTotal"></div><span class="hint" id="cTotalMm"></span></div>
+        <div><span class="k">C / 2 per side</span><div class="v" id="cSide"></div><span class="hint" id="cSideMm"></span></div>
+        <div><span class="k">Need each side (m)</span><div class="v" id="cMin"></div><span class="hint" id="cMinMm"></span></div>
+      </div>
+      <p class="hint" id="cWork"></p>
+    </div>
+  </div>
+</section>
+
+<section id="lessons" aria-labelledby="les-h">
+  <h2 id="les-h">Where measuring shows up</h2>
+  <p class="verify">Every size below is a typical Earth value for practice — typical, verify locally (codes, rules and products vary).</p>
+  <div class="lessons">
+    <article class="card">
+      <h3>Garage design</h3>
+      <p>A typical single garage door is 9 ft wide (108 in, 2.74 m) and 7 ft tall (84 in, 2.13 m); a typical double is 16 ft (192 in, 4.88 m). With a 74 in (1.88 m) car, a 9 ft door leaves 17 in (431.8 mm) each side.</p>
+      <p class="hint">Try it: <button type="button" data-calc="108|74|12">9 ft door, 74 in car</button></p>
+    </article>
+    <article class="card">
+      <h3>Room design</h3>
+      <p>A queen mattress is typically 60 × 80 in (1524 × 2032 mm). In a 10 ft (120 in, 3.05 m) wide room, that leaves 60 in (1524 mm) — 30 in (762 mm) of walkway each side if centred. Same subtraction as the garage.</p>
+    </article>
+    <article class="card">
+      <h3>Animal enclosure</h3>
+      <p>Poultry runs are commonly wrapped in 1/2 in (12.7 mm) hardware cloth: small enough to keep many predators out. On the tape, 1/2 in is the half mark — 8/16. A typical 4 ft (48 in, 1.22 m) roll width sets the run's panel height.</p>
+      <p class="hint">In-world: the royal estate records poultry and horses at <code>ER-CASTLE-ROYAL-001</code>, but every headcount is still NULL — enclosure sizes there are UNKNOWN.</p>
+    </article>
+    <article class="card">
+      <h3>Sports court</h3>
+      <p>A basketball rim is set 10 ft (120 in, 3.048 m) above the floor. A full NBA court is 94 × 50 ft (28.65 × 15.24 m); school and park courts are often smaller. Measuring a 10 ft rim needs a tape to at least 120 in.</p>
+    </article>
+    <article class="card">
+      <h3>Vehicle fit</h3>
+      <p>A typical mid-size car is about 72–74 in (1.83–1.88 m) wide without mirrors; mirrors often add several inches in total. Decide whether W<sub>v</sub> includes mirrors before you subtract.</p>
+      <p class="hint">Try it: <button type="button" data-calc="96|80|12">8 ft door, 80 in with mirrors</button></p>
+    </article>
+    <article class="card">
+      <h3>Store shelving</h3>
+      <p>“3/4 in” plywood usually measures 23/32 in (18.3 mm) — a thirty-second, finer than this tape. A “2 × 4” board is actually 1 1/2 × 3 1/2 in (38.1 × 88.9 mm). Five 3 1/2 in faces side by side need 17 1/2 in (444.5 mm) of shelf.</p>
+    </article>
+    <article class="card">
+      <h3>World building</h3>
+      <p>Kaelorps students on EdereAirah will need their own length unit, but the native unit, day length and planetary gravity are <b>UNKNOWN</b> (not locked in canon). Until they are, this kit teaches with Earth inches and millimetres — an <span class="tag">EDEREAIRAH_PROPOSED</span> choice, not canon.</p>
+    </article>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>THYLORA Kaelorps · Measuring · run WR-SPINE-624, Lane M · idea THY-IDEA-KAELORPS-001 · truth class PRODUCTION_PLANNED. Math runs in <code>learn/lib/measure.js</code> using whole sixteenths only (no decimals for lengths).</p>
+</footer>
+</div>
+
+<script type="module">
+import {
+  parseReading, formatReading, tickClass, TICK_HEIGHT, toMm, clearance
+} from './lib/measure.js';
+
+const SVGNS = 'http://www.w3.org/2000/svg';
+const MAX = 192;
+const EXAMPLES = [
+  { s: 140, color: 'var(--ex-a)', label: '8 3/4' },
+  { s: 138, color: 'var(--ex-b)', label: '8 5/8' },
+  { s: 135, color: 'var(--ex-c)', label: '8 7/16' }
+];
+const NAMES = { WHOLE: 'Whole inch', HALF: 'Half', QUARTER: 'Quarter', EIGHTH: 'Eighth', SIXTEENTH: 'Sixteenth' };
+
+function el(name, attrs = {}, parent) {
+  const n = document.createElementNS(SVGNS, name);
+  for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
+  if (parent) parent.appendChild(n);
+  return n;
+}
+
+// ---------- full tape ----------
+const tape = document.getElementById('tapeSvg');
+const PX = 7;             // px per sixteenth
+const X0 = 22;
+const W = X0 * 2 + MAX * PX;
+const TOP = 34, TAPE_H = 86, TICK_MAX = 58;
+tape.setAttribute('viewBox', `0 0 ${W} 150`);
+tape.setAttribute('width', W);
+tape.setAttribute('height', 150);
+el('rect', { class: 'tape-body', x: 4, y: TOP, width: W - 8, height: TAPE_H, rx: 6 }, tape);
+for (let s = 0; s <= MAX; s++) {
+  const c = tickClass(s);
+  const x = X0 + s * PX;
+  const h = TICK_MAX * TICK_HEIGHT[c];
+  el('line', { class: 'tick', x1: x, x2: x, y1: TOP, y2: TOP + h, 'stroke-width': c === 'WHOLE' ? 2.2 : c === 'HALF' ? 1.8 : 1.3 }, tape);
+  if (c === 'WHOLE') {
+    const t = el('text', { class: 'num', x: x + (s === 0 ? 3 : s === MAX ? -3 : 0), y: TOP + TAPE_H - 8, 'font-size': 17, 'text-anchor': s === 0 ? 'start' : s === MAX ? 'end' : 'middle' }, tape);
+    t.textContent = String(s / 16);
+  }
+}
+// example pins
+for (const ex of EXAMPLES) {
+  const x = X0 + ex.s * PX;
+  el('path', { d: `M${x} ${TOP - 2} l-6 -10 h12 z`, fill: ex.color }, tape);
+}
+const exLabel = el('text', { x: X0 + 138 * PX, y: 14, 'font-size': 13, 'text-anchor': 'middle' }, tape);
+exLabel.textContent = 'examples';
+// selection marker
+const selLine = el('line', { x1: 0, x2: 0, y1: TOP - 4, y2: TOP + TAPE_H + 4, stroke: 'var(--sel)', 'stroke-width': 3 }, tape);
+const selText = el('text', { x: 0, y: TOP + TAPE_H + 24, 'font-size': 15, 'font-weight': 700, 'text-anchor': 'middle', fill: 'var(--sel)' }, tape);
+const hit = el('rect', { class: 'hit', x: 0, y: 0, width: W, height: 150 }, tape);
+
+function posFromEvent(evt, svg, x0, px, max, base = 0) {
+  const pt = svg.createSVGPoint();
+  pt.x = evt.clientX; pt.y = evt.clientY;
+  const p = pt.matrixTransform(svg.getScreenCTM().inverse());
+  const s = Math.round((p.x - x0) / px) + base;
+  return Math.max(0, Math.min(max, s));
+}
+hit.addEventListener('click', (e) => select(posFromEvent(e, tape, X0, PX, MAX)));
+
+// ---------- zoom (one inch) ----------
+const zoom = document.getElementById('zoomSvg');
+const ZX0 = 20, ZPX = 20, ZTOP = 44, ZTAPE = 80, ZTICK = 66;
+function drawZoom(inch) {
+  zoom.replaceChildren();
+  document.getElementById('zoomTitle').textContent = `Zoomed in: inch ${inch} to inch ${inch + 1}`;
+  el('rect', { class: 'tape-body', x: 4, y: ZTOP, width: 352, height: ZTAPE, rx: 6 }, zoom);
+  for (let k = 0; k <= 16; k++) {
+    const s = inch * 16 + k;
+    if (s > MAX) break;
+    const c = tickClass(s);
+    const x = ZX0 + k * ZPX;
+    el('line', { class: 'tick', x1: x, x2: x, y1: ZTOP, y2: ZTOP + ZTICK * TICK_HEIGHT[c], 'stroke-width': c === 'WHOLE' ? 3 : 2 }, zoom);
+    const n = el('text', { x, y: ZTOP + ZTAPE + 16, 'font-size': 11, 'text-anchor': 'middle' }, zoom);
+    n.textContent = String(k);
+    if (c === 'WHOLE') {
+      const t = el('text', { class: 'num', x: x + (k === 0 ? 4 : -4), y: ZTOP + ZTAPE - 6, 'font-size': 16, 'text-anchor': k === 0 ? 'start' : 'end' }, zoom);
+      t.textContent = String(s / 16);
+    } else if (c !== 'SIXTEENTH') {
+      const f = formatReading(k);
+      const t = el('text', { x, y: ZTOP - 6, 'font-size': 11, 'text-anchor': 'middle' }, zoom);
+      t.textContent = f;
+    }
+  }
+  for (const ex of EXAMPLES) {
+    if (Math.floor(ex.s / 16) !== inch) continue;
+    const x = ZX0 + (ex.s - inch * 16) * ZPX;
+    el('circle', { cx: x, cy: ZTOP + ZTAPE + 30, r: 6, fill: ex.color }, zoom);
+  }
+  const zs = el('line', { id: 'zSel', x1: 0, x2: 0, y1: ZTOP - 2, y2: ZTOP + ZTAPE + 2, stroke: 'var(--sel)', 'stroke-width': 3 }, zoom);
+  const zh = el('rect', { class: 'hit', x: 0, y: 0, width: 360, height: 160 }, zoom);
+  zh.addEventListener('click', (e) => select(posFromEvent(e, zoom, ZX0, ZPX, Math.min(16, MAX - inch * 16), 0) + inch * 16));
+  return zs;
+}
+let zoomInch = -1, zSel;
+
+// ---------- selection + readout ----------
+let current = 140;
+const $ = (id) => document.getElementById(id);
+function select(s, { fromInput = false } = {}) {
+  current = s;
+  const x = X0 + s * PX;
+  selLine.setAttribute('x1', x); selLine.setAttribute('x2', x);
+  const reading = formatReading(s);
+  selText.setAttribute('x', Math.max(30, Math.min(W - 30, x)));
+  selText.textContent = reading;
+  const inch = Math.min(11, Math.floor(s / 16));
+  if (inch !== zoomInch) { zSel = drawZoom(inch); zoomInch = inch; }
+  const zx = ZX0 + (s - inch * 16) * ZPX;
+  zSel.setAttribute('x1', zx); zSel.setAttribute('x2', zx);
+  const mm = toMm(s);
+  const c = tickClass(s);
+  $('rFrac').textContent = `${reading} in`;
+  $('rSix').textContent = `${s}/16`;
+  $('rMm').textContent = `${mm.rounded} mm`;
+  $('rMmExact').textContent = `exact ${mm.exact} mm`;
+  $('rTick').textContent = NAMES[c];
+  tape.setAttribute('aria-valuenow', s);
+  tape.setAttribute('aria-valuetext', `${reading} inches, ${mm.rounded} millimetres`);
+  if (!fromInput) { $('readIn').value = reading; $('readErr').textContent = ''; }
+  // keep selection visible in the scrollable tape
+  const sc = $('tapeScroll');
+  const scale = tape.getBoundingClientRect().width / W || 1;
+  const px = x * scale;
+  if (px < sc.scrollLeft + 30 || px > sc.scrollLeft + sc.clientWidth - 30) {
+    sc.scrollLeft = Math.max(0, px - sc.clientWidth / 2);
+  }
+}
+
+$('readForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  try {
+    const s = parseReading($('readIn').value);
+    if (s > MAX) throw new RangeError('this tape shows 0 to 12 inches; try a reading up to 12');
+    $('readErr').textContent = '';
+    select(s, { fromInput: true });
+  } catch (err) {
+    $('readErr').textContent = `Can't read that: ${err.message}.`;
+  }
+});
+$('stepDown').addEventListener('click', () => select(Math.max(0, current - 1)));
+$('stepUp').addEventListener('click', () => select(Math.min(MAX, current + 1)));
+tape.addEventListener('keydown', (e) => {
+  const step = e.shiftKey ? 16 : 1;
+  let s = current;
+  if (e.key === 'ArrowRight' || e.key === 'ArrowUp') s += step;
+  else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') s -= step;
+  else if (e.key === 'Home') s = 0;
+  else if (e.key === 'End') s = MAX;
+  else return;
+  e.preventDefault();
+  select(Math.max(0, Math.min(MAX, s)));
+});
+document.querySelectorAll('[data-ex]').forEach((b) => b.addEventListener('click', () => {
+  select(Number(b.dataset.ex));
+  $('tape').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}));
+
+// ---------- clearance calculator ----------
+function runCalc() {
+  try {
+    const r = clearance($('wg').value, $('wv').value, $('mm').value);
+    $('calcErr').textContent = '';
+    const v = $('cVerdict');
+    v.className = 'verdict ' + (r.verdict === 'FIT' ? 'ok' : 'bad');
+    v.textContent = r.verdict === 'FIT' ? 'FIT — meets the room you asked for on each side'
+      : r.reason === 'VEHICLE_WIDER_THAN_OPENING' ? 'NO FIT — the vehicle is wider than the opening'
+      : 'NO FIT — less room each side than you asked for';
+    $('cTotal').textContent = `${r.C.reading} in`;
+    $('cTotalMm').textContent = `${r.C.mm} mm`;
+    $('cSide').textContent = `${r.perSide.reading} in`;
+    $('cSideMm').textContent = `${r.perSide.mm} mm`;
+    $('cMin').textContent = `${r.minPerSide.reading} in`;
+    $('cMinMm').textContent = `${r.minPerSide.mm.rounded} mm`;
+    $('cWork').textContent = `Work: ${r.W_g.sixteenths}/16 − ${r.W_v.sixteenths}/16 = ${r.C.sixteenths}/16 in. `
+      + `Fit test C ≥ 2m: ${r.C.sixteenths} ≥ ${2 * r.minPerSide.sixteenths} → ${r.verdict === 'FIT' ? 'true' : 'false'}. `
+      + `W_g = ${r.W_g.mm.rounded} mm, W_v = ${r.W_v.mm.rounded} mm.`;
+  } catch (err) {
+    $('calcErr').textContent = `Check the inputs: ${err.message}.`;
+  }
+}
+$('calcForm').addEventListener('submit', (e) => { e.preventDefault(); runCalc(); });
+document.querySelectorAll('[data-calc]').forEach((b) => b.addEventListener('click', () => {
+  const [g, v, m] = b.dataset.calc.split('|');
+  $('wg').value = g; $('wv').value = v; $('mm').value = m;
+  runCalc();
+  $('calc').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}));
+
+select(140);
+runCalc();
+</script>
+</body>
+</html>

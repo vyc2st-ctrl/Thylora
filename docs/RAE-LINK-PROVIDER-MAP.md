@@ -25,7 +25,7 @@ Provider credentials are Chairman-supplied and live in backend secrets only.
 | virus_scan | Safety | — | **OPEN** | clamav-worker, vendor-scan-api | LOW |
 | search | Discovery | postgres-fts | ACTIVE | typesense, meilisearch, opensearch | LOW |
 | recommendation | Discovery | in-house-heuristic | PLANNED | in-house-model, vendor-ranking | LOW |
-| payments_digital | Money | lemonsqueezy | PLANNED | stripe, paddle | MEDIUM |
+| payments_digital | Money | stripe (THY-COMMERCE-PROVIDER-AUTHORITY-001, LOCKED) | PLANNED | lemonsqueezy, paddle | MEDIUM |
 | payments_physical | Money | shopify | PLANNED | stripe, woocommerce | MEDIUM |
 | creator_payouts | Money | — | **OPEN** | stripe-connect, wise, tipalti, manual-with-evidence | **HIGH** |
 | tax_calculation | Money | — | **OPEN** | processor-managed, avalara, in-house-table | MEDIUM |

@@ -1,0 +1,346 @@
+openapi: 3.1.0
+info:
+  title: THYLORA API
+  version: 1.0.0-frozen-624
+  summary: Smallest provider-independent contract for the Chairman dashboard, store and workrooms.
+  description: |
+    Frozen in run WR-SPINE-624 (2026-09-28). Every resource maps onto a table or RPC that already
+    exists in the backend of record `thylora-dash` (jvsdxhrfhtlgaknhjxlz); see x-backend on each path.
+    The contract names THYLORA concepts, never a vendor: Stripe, Shopify and Supabase sit behind
+    adapters and can be replaced without changing any path below.
+
+    Rules held by every endpoint:
+      - Money is integer minor units (`amount_minor`) with an ISO 4217 `currency`.
+      - Access is not authority: reads are row-level-security filtered; Chairman-only reads return
+        `{allowed:false, reason}` rather than an error so the dashboard can render an honest state.
+      - Nothing is deleted or overwritten. Corrections are new rows with a `supersedes` reference.
+      - Every write returns an `evidence` object naming the row it created.
+servers:
+  - url: https://api.thylora.example/v1
+    description: PLACEHOLDER host. The production host is not chosen (blocker API-B3).
+security:
+  - bearer: []
+components:
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+      description: Session token from /auth/session. Today issued by the identity adapter (Supabase Auth).
+  schemas:
+    Money:
+      type: object
+      required: [amount_minor, currency]
+      properties:
+        amount_minor: { type: integer, minimum: 0 }
+        currency: { type: string, pattern: '^[A-Z]{3}$' }
+    Evidence:
+      type: object
+      required: [table, id, written_at]
+      properties:
+        table: { type: string }
+        id: { type: string }
+        written_at: { type: string, format: date-time }
+        hash: { type: string, description: SHA-256 hex where the backend computes one }
+    Denied:
+      type: object
+      required: [allowed, reason]
+      properties:
+        allowed: { const: false }
+        reason: { type: string, examples: [CHAIRMAN_ONLY] }
+    Page:
+      type: object
+      properties:
+        next_cursor: { type: [string, 'null'] }
+    Session:
+      type: object
+      properties:
+        user_id: { type: string, format: uuid }
+        roles: { type: array, items: { type: string, examples: [chairman] } }
+        expires_at: { type: string, format: date-time }
+    ContinuityEntry:
+      type: object
+      properties:
+        id: { type: integer }
+        created_at: { type: string, format: date-time }
+        category: { type: string }
+        message: { type: string }
+    SourceMessage:
+      type: object
+      required: [thread_id, message_ordinal, exact_verbatim_text]
+      properties:
+        thread_id: { type: string }
+        message_ordinal: { type: integer }
+        exact_verbatim_text: { type: string }
+        source_hash: { type: string, readOnly: true }
+        previous_source_hash: { type: [string, 'null'], readOnly: true }
+    CoverageAtom:
+      type: object
+      required: [point_no, source_point, response_state]
+      properties:
+        point_no: { type: integer }
+        source_point: { type: string }
+        response_state:
+          type: string
+          enum: [ANSWERED, EXECUTED, ASSIGNED, BLOCKED, DEFERRED, UNKNOWN, PRIVATE, NONACTIONABLE_CONTEXT]
+        response_ref: { type: string }
+    Coverage:
+      type: object
+      properties:
+        query_id: { type: string }
+        total_atoms: { type: integer }
+        stated_atoms: { type: integer }
+        Cq: { type: number, minimum: 0, maximum: 1 }
+        by_state: { type: object, additionalProperties: { type: integer } }
+    Department:
+      type: object
+      properties:
+        department_code: { type: string }
+        name: { type: string }
+        purpose: { type: string }
+        status: { type: string }
+        workrooms: { type: array, items: { type: string } }
+    Workroom:
+      type: object
+      properties:
+        workroom_code: { type: string }
+        title: { type: string }
+        state: { type: string }
+        department_code: { type: string }
+        card: { type: object, description: '21-field workroom card (people, authority, budget, payroll, ... restart point); UNKNOWN is a legal value' }
+        restart_point: { type: string }
+    WorkItem:
+      type: object
+      required: [workroom_code, task_code, title, state]
+      properties:
+        workroom_code: { type: string }
+        task_code: { type: string }
+        title: { type: string }
+        state: { type: string, examples: [NOW, QUEUED_WITH_DEPENDENCY, HOLD_FOR_EVIDENCE, APPROVAL_REQUIRED, DONE] }
+        owner_lane: { type: string }
+        blocker: { type: [string, 'null'] }
+        release_condition: { type: [string, 'null'] }
+        next_action: { type: string }
+    Product:
+      type: object
+      properties:
+        product_id: { type: string }
+        title: { type: string }
+        availability: { type: string }
+        price_state: { type: string }
+        rights_state: { type: string }
+        release_evidence_state: { type: string }
+        passport_id: { type: [string, 'null'] }
+    Price:
+      type: object
+      properties:
+        id: { type: string }
+        product_id: { type: [string, 'null'] }
+        price: { $ref: '#/components/schemas/Money' }
+        price_state: { type: string }
+    CheckoutRequest:
+      type: object
+      required: [product_id, return_url]
+      properties:
+        product_id: { type: string }
+        quantity: { type: integer, minimum: 1, default: 1 }
+        campaign_id: { type: [string, 'null'], description: 'Back to Buy campaign (BTB-YYYY-XXXXXX), optional' }
+        return_url: { type: string, format: uri }
+    CheckoutSession:
+      type: object
+      properties:
+        checkout_id: { type: string }
+        redirect_url: { type: string, format: uri }
+        expires_at: { type: string, format: date-time }
+    Order:
+      type: object
+      properties:
+        id: { type: string }
+        order_reference: { type: string }
+        state: { type: string }
+        payment_state: { type: string }
+        total: { $ref: '#/components/schemas/Money' }
+        created_at: { type: string, format: date-time }
+    Payment:
+      type: object
+      properties:
+        id: { type: string }
+        order_id: { type: string }
+        provider: { type: string, description: 'adapter name, e.g. stripe, shopify_payments' }
+        provider_payment_reference: { type: string }
+        state: { type: string }
+        amount: { $ref: '#/components/schemas/Money' }
+    Entitlement:
+      type: object
+      properties:
+        id: { type: string }
+        entitlement_code: { type: string }
+        source_type: { type: string }
+        state: { type: string }
+        starts_at: { type: [string, 'null'], format: date-time }
+        ends_at: { type: [string, 'null'], format: date-time }
+    Download:
+      type: object
+      properties:
+        url: { type: string, format: uri, description: short-lived signed URL }
+        expires_at: { type: string, format: date-time }
+    AuditEvent:
+      type: object
+      properties:
+        id: { type: string }
+        event_type: { type: string }
+        entity_type: { type: string }
+        entity_id: { type: string }
+        previous_state: { type: [string, 'null'] }
+        requested_state: { type: [string, 'null'] }
+        payload_hash: { type: [string, 'null'] }
+        created_at: { type: string, format: date-time }
+paths:
+  /auth/session:
+    post:
+      summary: Exchange identity-provider credentials for a THYLORA session.
+      x-backend: 'adapter: Supabase Auth (email/password or magic link); session key thylora_app_auth_session shared by app/ and rae-link/'
+      responses:
+        '200': { description: OK, content: { application/json: { schema: { $ref: '#/components/schemas/Session' } } } }
+    get:
+      summary: Current session and roles.
+      x-backend: 'auth.getUser + table thylora_user_roles (1 row: chairman)'
+      responses:
+        '200': { description: OK, content: { application/json: { schema: { $ref: '#/components/schemas/Session' } } } }
+    delete:
+      summary: Sign out.
+      x-backend: 'adapter: Supabase Auth signOut'
+      responses: { '204': { description: Signed out } }
+  /dashboard:
+    get:
+      summary: Chairman current-state board (head, store gate, workrooms, QYRIS findings, approvals).
+      x-backend: 'rpc thylora_chairman_dash_v1() + rpc thylora_dashboard_completion_v1() (both SECURITY DEFINER, Chairman or trusted server only)'
+      responses:
+        '200':
+          description: Board, or an explicit denial for non-Chairman identities.
+          content: { application/json: { schema: { oneOf: [ { type: object }, { $ref: '#/components/schemas/Denied' } ] } } }
+  /dashboard/check-in:
+    post:
+      summary: Daily check-in. Records a visit and returns the previous one.
+      x-backend: 'rpc thylora_record_chairman_visit_v1() -> table thylora_chairman_visit_log'
+      responses: { '200': { description: '{allowed, previous_visit, recorded_at}' } }
+  /dashboard/check-out:
+    post:
+      summary: Daily check-out with an optional margin note. NOT IMPLEMENTED (blocker API-B4).
+      x-backend: 'planned: thylora_chairman_visit_log surface=CHECK_OUT + thylora_chairman_margin_notes'
+      responses: { '501': { description: Not implemented } }
+  /commands:
+    post:
+      summary: Chairman command / write. Routed to a department and returned with the work performed.
+      x-backend: 'rpc submit_thylora_chairman_command_v1(p_command_text) -> thylora_chairman_commands (114 rows)'
+      requestBody:
+        content: { application/json: { schema: { type: object, required: [text], properties: { text: { type: string } } } } }
+      responses: { '201': { description: Command recorded, content: { application/json: { schema: { $ref: '#/components/schemas/Evidence' } } } } }
+  /continuity:
+    get:
+      summary: Continuity log, newest first.
+      x-backend: 'table continuity_log (RLS on)'
+      parameters:
+        - { name: cursor, in: query, schema: { type: string } }
+        - { name: limit, in: query, schema: { type: integer, maximum: 200, default: 50 } }
+      responses: { '200': { description: OK, content: { application/json: { schema: { type: object, properties: { items: { type: array, items: { $ref: '#/components/schemas/ContinuityEntry' } }, page: { $ref: '#/components/schemas/Page' } } } } } } }
+  /continuity/head:
+    get:
+      summary: Current head (latest query custody sequence, continuity id, restart record).
+      x-backend: 'thylora_query_carryforward max(sequence_no) + continuity_log max(id) + restart_records latest'
+      responses: { '200': { description: OK } }
+  /sources:
+    post:
+      summary: Capture Chairman source verbatim (append-only, hash-chained per thread).
+      x-backend: 'table chairman_source_messages (trigger trg_hash_chairman_source computes SHA-256 and previous hash; immutable)'
+      requestBody: { content: { application/json: { schema: { $ref: '#/components/schemas/SourceMessage' } } } }
+      responses: { '201': { description: Captured, content: { application/json: { schema: { $ref: '#/components/schemas/Evidence' } } } } }
+  /sources/{query_id}/coverage:
+    get:
+      summary: Every-word coverage Cq for one source.
+      x-backend: 'rpc thylora_word_coverage_v1(p_query_id) over thylora_response_point_coverage (added in migration spine_624)'
+      parameters: [ { name: query_id, in: path, required: true, schema: { type: string } } ]
+      responses: { '200': { description: OK, content: { application/json: { schema: { $ref: '#/components/schemas/Coverage' } } } } }
+  /departments:
+    get:
+      summary: Departments with their workrooms.
+      x-backend: 'table thylora_departments (67) + view thylora_department_workroom_v1 (added in migration spine_624)'
+      responses: { '200': { description: OK, content: { application/json: { schema: { type: array, items: { $ref: '#/components/schemas/Department' } } } } } }
+  /departments/{code}/workrooms:
+    get:
+      summary: Workroom cards for a department.
+      x-backend: 'view thylora_department_workroom_v1'
+      parameters: [ { name: code, in: path, required: true, schema: { type: string } } ]
+      responses: { '200': { description: OK, content: { application/json: { schema: { type: array, items: { $ref: '#/components/schemas/Workroom' } } } } } }
+  /work-items:
+    get:
+      summary: Open work items across workrooms, filterable by state and owner.
+      x-backend: 'table thylora_workroom_task_registry (+ thylora_execution_work_registry for product work)'
+      parameters:
+        - { name: state, in: query, schema: { type: string } }
+        - { name: workroom_code, in: query, schema: { type: string } }
+      responses: { '200': { description: OK, content: { application/json: { schema: { type: array, items: { $ref: '#/components/schemas/WorkItem' } } } } } }
+    post:
+      summary: Register a work item. State must be one of the four no-naked-later classes or DONE.
+      x-backend: 'table thylora_workroom_task_registry (unique task_code; thy_name_guard trigger)'
+      requestBody: { content: { application/json: { schema: { $ref: '#/components/schemas/WorkItem' } } } }
+      responses: { '201': { description: Created, content: { application/json: { schema: { $ref: '#/components/schemas/Evidence' } } } } }
+  /products:
+    get:
+      summary: Products with release gates. Only RELEASED products carry a purchase path.
+      x-backend: 'table products (28) joined thylora_store_product_readiness'
+      responses: { '200': { description: OK, content: { application/json: { schema: { type: array, items: { $ref: '#/components/schemas/Product' } } } } } }
+  /products/{product_id}/prices:
+    get:
+      summary: Approved prices for a product.
+      x-backend: 'table prices (7)'
+      parameters: [ { name: product_id, in: path, required: true, schema: { type: string } } ]
+      responses: { '200': { description: OK, content: { application/json: { schema: { type: array, items: { $ref: '#/components/schemas/Price' } } } } } }
+  /checkout:
+    post:
+      summary: Start checkout for a released product. Refused for any product that is not RELEASED.
+      x-backend: 'adapter: payment provider session (today Stripe per THY-COMMERCE-PROVIDER-AUTHORITY-001) -> thylora_product_checkout_events'
+      requestBody: { content: { application/json: { schema: { $ref: '#/components/schemas/CheckoutRequest' } } } }
+      responses:
+        '201': { description: Session created, content: { application/json: { schema: { $ref: '#/components/schemas/CheckoutSession' } } } }
+        '409': { description: 'PRODUCT_NOT_RELEASED with the list of unmet gates' }
+  /webhooks/payments/{adapter}:
+    post:
+      summary: Provider webhook. Signature-verified by the named adapter, idempotent on provider event id.
+      security: []
+      x-backend: 'adapter verifies signature -> stripe_webhook_events / thylora_commerce_webhook_events -> orders, payments, entitlements'
+      parameters: [ { name: adapter, in: path, required: true, schema: { type: string, enum: [stripe, shopify] } } ]
+      responses: { '200': { description: Accepted or already processed } }
+  /orders:
+    get:
+      summary: The caller's orders (Chairman sees all).
+      x-backend: 'table orders (1 row: $1.00 test) + order_items'
+      responses: { '200': { description: OK, content: { application/json: { schema: { type: array, items: { $ref: '#/components/schemas/Order' } } } } } }
+  /orders/{id}/payments:
+    get:
+      summary: Payments for an order.
+      x-backend: 'table payments (1 row: lemon_squeezy_test)'
+      parameters: [ { name: id, in: path, required: true, schema: { type: string } } ]
+      responses: { '200': { description: OK, content: { application/json: { schema: { type: array, items: { $ref: '#/components/schemas/Payment' } } } } } }
+  /entitlements:
+    get:
+      summary: The caller's entitlements.
+      x-backend: 'table entitlements (1) + thylora_product_entitlements (3)'
+      responses: { '200': { description: OK, content: { application/json: { schema: { type: array, items: { $ref: '#/components/schemas/Entitlement' } } } } } }
+  /downloads/{entitlement_id}:
+    post:
+      summary: Mint a short-lived download URL for an ACTIVE entitlement; writes a download audit row.
+      x-backend: 'entitlement check -> storage signed URL adapter -> downloads + thylora_product_download_audit (0 rows today)'
+      parameters: [ { name: entitlement_id, in: path, required: true, schema: { type: string } } ]
+      responses:
+        '200': { description: OK, content: { application/json: { schema: { $ref: '#/components/schemas/Download' } } } }
+        '403': { description: 'ENTITLEMENT_NOT_ACTIVE' }
+  /audit:
+    get:
+      summary: Audit events (Chairman / trusted server).
+      x-backend: 'table audit_events (331)'
+      responses: { '200': { description: OK, content: { application/json: { schema: { type: array, items: { $ref: '#/components/schemas/AuditEvent' } } } } } }
+  /evidence:
+    get:
+      summary: Connection and build evidence (what was checked, when, result).
+      x-backend: 'table connection_evidence (10) + thylora_build_evidence'
+      responses: { '200': { description: OK } }

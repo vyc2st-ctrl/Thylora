@@ -1,0 +1,805 @@
+{
+  "meta": {
+    "file": "E-BIOME-001",
+    "run": "WR-SPINE-624",
+    "sequence": 624,
+    "truth_class_default": "EDEREAIRAH_PROPOSED",
+    "backend_written": false,
+    "notes": "All population numbers are model estimates, not census"
+  },
+  "biome": {
+    "id": "BIOME-DELTA-MOSAIC-A",
+    "fills_shell": "THY-HABITAT-0001",
+    "run": "WR-SPINE-624",
+    "truth_class": "EDEREAIRAH_PROPOSED",
+    "description": "Warm river-delta savanna / floodplain / gallery-forest / mangrove mosaic with basalt escarpment and coastal upwelling shelf",
+    "zones": {
+      "savanna_km2": 7000,
+      "floodplain_km2": 2500,
+      "gallery_forest_km2": 800,
+      "escarpment_uplands_km2": 1500,
+      "mangrove_estuary_km2": 200,
+      "upwelling_shelf_km2": 6000
+    },
+    "parameters": {
+      "orbit": {
+        "value": 507,
+        "unit_metric": "Earth-read days",
+        "value_us": 507,
+        "unit_us": "Earth-read days",
+        "truth_class": "EDEREAIRAH_CANON",
+        "note": "THY-IDEA-TIME-CANON-RESTORE-003"
+      },
+      "day_length": {
+        "value": 86400,
+        "unit_metric": "s",
+        "value_us": 24,
+        "unit_us": "h",
+        "truth_class": "EDEREAIRAH_PROPOSED",
+        "note": "Placeholder: Earth SI day; native day UNKNOWN"
+      },
+      "gravity": {
+        "value": 9.81,
+        "unit_metric": "m/s^2",
+        "value_us": 32.17,
+        "unit_us": "ft/s^2",
+        "truth_class": "EDEREAIRAH_PROPOSED",
+        "note": "Earth-baseline placeholder pending Chairman lock"
+      },
+      "surface_pressure": {
+        "value": 101.3,
+        "unit_metric": "kPa",
+        "value_us": 14.69,
+        "unit_us": "psi",
+        "truth_class": "EDEREAIRAH_PROPOSED",
+        "note": "Earth-baseline placeholder"
+      },
+      "o2_fraction": {
+        "value": 0.21,
+        "unit_metric": "mole fraction",
+        "value_us": 0.21,
+        "unit_us": "mole fraction",
+        "truth_class": "EDEREAIRAH_PROPOSED",
+        "note": "allowed 0.19-0.23"
+      },
+      "n2_fraction": {
+        "value": 0.78,
+        "unit_metric": "mole fraction",
+        "value_us": 0.78,
+        "unit_us": "mole fraction",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "co2": {
+        "value": 500,
+        "unit_metric": "ppm",
+        "value_us": 500,
+        "unit_us": "ppm",
+        "truth_class": "EDEREAIRAH_PROPOSED",
+        "note": "allowed 400-600; above Earth pre-industrial by design"
+      },
+      "h2o_vapor": {
+        "value": "1-4",
+        "unit_metric": "% by volume",
+        "value_us": "1-4",
+        "unit_us": "% by volume",
+        "truth_class": "EDEREAIRAH_PROPOSED",
+        "note": "RH 35% dry midday to 95% wet night"
+      },
+      "temp_wet_mean": {
+        "value": 27,
+        "unit_metric": "degC",
+        "value_us": 80.6,
+        "unit_us": "degF",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "temp_dry_day_max": {
+        "value": 34,
+        "unit_metric": "degC",
+        "value_us": 93.2,
+        "unit_us": "degF",
+        "truth_class": "EDEREAIRAH_PROPOSED",
+        "note": "extreme 38 C / 100.4 F"
+      },
+      "temp_dry_night_min": {
+        "value": 16,
+        "unit_metric": "degC",
+        "value_us": 60.8,
+        "unit_us": "degF",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "sst_upwelling": {
+        "value": "17-22",
+        "unit_metric": "degC",
+        "value_us": "62.6-71.6",
+        "unit_us": "degF",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "rainfall_savanna": {
+        "value": 1100,
+        "unit_metric": "mm/orbit",
+        "value_us": 43.3,
+        "unit_us": "in/orbit",
+        "truth_class": "EDEREAIRAH_PROPOSED",
+        "note": "85% in wet season 0.00-0.42"
+      },
+      "rainfall_floodplain": {
+        "value": 1300,
+        "unit_metric": "mm/orbit",
+        "value_us": 51.2,
+        "unit_us": "in/orbit",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "rainfall_uplands": {
+        "value": 800,
+        "unit_metric": "mm/orbit",
+        "value_us": 31.5,
+        "unit_us": "in/orbit",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "freshwater_ph": {
+        "value": "6.8-7.6",
+        "unit_metric": "pH",
+        "value_us": "6.8-7.6",
+        "unit_us": "pH",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "freshwater_salinity": {
+        "value": "<0.5",
+        "unit_metric": "PSU",
+        "value_us": "<0.5",
+        "unit_us": "PSU",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "freshwater_do": {
+        "value": "6-8",
+        "unit_metric": "mg/L",
+        "value_us": "6-8",
+        "unit_us": "ppm",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "marine_ph": {
+        "value": "8.0-8.1",
+        "unit_metric": "pH",
+        "value_us": "8.0-8.1",
+        "unit_us": "pH",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "marine_salinity": {
+        "value": "34-35",
+        "unit_metric": "PSU",
+        "value_us": 4.7,
+        "unit_us": "oz salt per US gal",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "marine_do": {
+        "value": "5-7 surface; 2-4 upwelled",
+        "unit_metric": "mg/L",
+        "value_us": "5-7; 2-4",
+        "unit_us": "ppm",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "marine_nitrate": {
+        "value": "10-20",
+        "unit_metric": "umol/L",
+        "value_us": "10-20",
+        "unit_us": "umol/L",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "soils": {
+        "value": "vertisol floodplain; laterite savanna (P-poor); basalt-derived P/Na-rich escarpment foot; saline mangrove mud",
+        "unit_metric": "class",
+        "value_us": "same",
+        "unit_us": "class",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "star_type": {
+        "value": "G-type ~5700-5800 K",
+        "unit_metric": "spectral class",
+        "value_us": "same",
+        "unit_us": "spectral class",
+        "truth_class": "EDEREAIRAH_PROPOSED",
+        "note": "Hester System star UNKNOWN; assumption"
+      },
+      "par_noon": {
+        "value": 2000,
+        "unit_metric": "umol/m^2/s",
+        "value_us": 2000,
+        "unit_us": "umol/m^2/s",
+        "truth_class": "EDEREAIRAH_PROPOSED",
+        "note": "no US customary unit for photon flux"
+      },
+      "irradiance_noon": {
+        "value": 1000,
+        "unit_metric": "W/m^2",
+        "value_us": 317,
+        "unit_us": "BTU/(h*ft^2)",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "daily_light_integral": {
+        "value": "25-50",
+        "unit_metric": "mol/m^2/day",
+        "value_us": "25-50",
+        "unit_us": "mol/m^2/day",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "wind_sea_breeze": {
+        "value": "4-8",
+        "unit_metric": "m/s",
+        "value_us": "9-18",
+        "unit_us": "mph",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "wind_trade_upwelling": {
+        "value": "6-10",
+        "unit_metric": "m/s",
+        "value_us": "13-22",
+        "unit_us": "mph",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "elevation": {
+        "value": "0-600",
+        "unit_metric": "m",
+        "value_us": "0-1969",
+        "unit_us": "ft",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "geology": {
+        "value": "passive margin sedimentary delta basin; basalt escarpment 60 km inland",
+        "unit_metric": "class",
+        "value_us": "37 mi inland",
+        "unit_us": "class",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "wood_density_canopy": {
+        "value": 0.72,
+        "unit_metric": "g/cm^3",
+        "value_us": 44.9,
+        "unit_us": "lb/ft^3",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "wood_density_thorn": {
+        "value": 0.95,
+        "unit_metric": "g/cm^3",
+        "value_us": 59.3,
+        "unit_us": "lb/ft^3",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "lignin_wood": {
+        "value": "20-30",
+        "unit_metric": "% dry mass",
+        "value_us": "20-30",
+        "unit_us": "% dry mass",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "cellulose_wood": {
+        "value": "40-45",
+        "unit_metric": "% dry mass",
+        "value_us": "40-45",
+        "unit_us": "% dry mass",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "grass_silica": {
+        "value": "2-5",
+        "unit_metric": "% dry mass",
+        "value_us": "2-5",
+        "unit_us": "% dry mass",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "browse_tannin": {
+        "value": "2-10 (10-15 induced)",
+        "unit_metric": "% dry mass",
+        "value_us": "same",
+        "unit_us": "% dry mass",
+        "truth_class": "EDEREAIRAH_PROPOSED"
+      },
+      "seasons": {
+        "wet": [
+          0,
+          0.42
+        ],
+        "early_dry": [
+          0.42,
+          0.7
+        ],
+        "late_dry": [
+          0.7,
+          1
+        ],
+        "upwelling": [
+          0.45,
+          0.95
+        ],
+        "truth_class": "EDEREAIRAH_PROPOSED",
+        "note": "rain/wind-driven; axial tilt UNKNOWN"
+      }
+    }
+  },
+  "species": [
+    {
+      "working_name": "Varuun",
+      "pronunciation": "vah-ROON",
+      "name_status": "PROPOSED",
+      "truth_class": "EDEREAIRAH_PROPOSED",
+      "class_role": "canopy emergent tree (gallery forest)",
+      "mass_kg": 15000,
+      "mass_lb": 33069.3,
+      "diet": "photosynthesis (C3)",
+      "trophic_level": 1,
+      "lifespan_orbits": 300,
+      "lifespan_earth_days": 152100,
+      "population_estimate": 1600000,
+      "carrying_capacity": null,
+      "population_trend": "UNKNOWN",
+      "constraints": [
+        "E1 water column 42 m = 412 kPa gravity head -> riparian groundwater only",
+        "CO2 500 ppm favors tall C3 trees",
+        "mast every 2 orbits (1014 d)",
+        "E13 height-age curve Hmax 42 m"
+      ],
+      "height_m": 42,
+      "height_ft": 138
+    },
+    {
+      "working_name": "Pellith",
+      "pronunciation": "PEL-ith",
+      "name_status": "PROPOSED",
+      "truth_class": "EDEREAIRAH_PROPOSED",
+      "class_role": "flat-crowned savanna browse tree",
+      "mass_kg": 900,
+      "mass_lb": 1984.158,
+      "diet": "photosynthesis (C3), N-fixing",
+      "trophic_level": 1,
+      "lifespan_orbits": 80,
+      "lifespan_earth_days": 40560,
+      "population_estimate": 28000000,
+      "carrying_capacity": null,
+      "population_trend": "UNKNOWN",
+      "constraints": [
+        "browsing -> thorns + induced tannin 10-15%",
+        "crown 5.0-5.5 m sets tall-browser reach",
+        "dense wood 0.95 g/cm3 resists fire"
+      ],
+      "height_m": 7,
+      "height_ft": 23
+    },
+    {
+      "working_name": "Mellip",
+      "pronunciation": "MEL-ip",
+      "name_status": "PROPOSED",
+      "truth_class": "EDEREAIRAH_PROPOSED",
+      "class_role": "small slug analogue (gallery-forest litter)",
+      "mass_kg": 0.003,
+      "mass_lb": 0.007,
+      "diet": "fungal films on litter",
+      "trophic_level": 2,
+      "lifespan_orbits": 1.2,
+      "lifespan_earth_days": 608,
+      "population_estimate": 1000000000,
+      "carrying_capacity": null,
+      "population_trend": "UNKNOWN",
+      "constraints": [
+        "E10 desiccation 7.2 h at 60% RH, 3.6 h at 35% RH -> wet-season night activity only",
+        "dormant 294 d dry season",
+        "E11 osmotic gradient 843 kPa excludes estuary",
+        "mucus cost limits foraging to ~2 m of refuge",
+        "fluke-class intermediate host"
+      ]
+    },
+    {
+      "working_name": "Glimmet",
+      "pronunciation": "GLIM-it",
+      "name_status": "PROPOSED",
+      "truth_class": "EDEREAIRAH_PROPOSED",
+      "class_role": "swarm crustacean analogue (upwelling shelf)",
+      "mass_kg": 0.0015,
+      "mass_lb": 0.003,
+      "diet": "diatom-like phytoplankton",
+      "trophic_level": 2,
+      "lifespan_orbits": 2,
+      "lifespan_earth_days": 1014,
+      "population_estimate": 2000000000000,
+      "carrying_capacity": null,
+      "population_trend": "UNKNOWN",
+      "constraints": [
+        "feeding locked to 253.5 d upwelling window",
+        "diel vertical migration",
+        "E9 production 1111 t/km2/orbit"
+      ]
+    },
+    {
+      "working_name": "Scurrin",
+      "pronunciation": "SKUR-in",
+      "name_status": "PROPOSED",
+      "truth_class": "EDEREAIRAH_PROPOSED",
+      "class_role": "burrowing seed-eater (small animal)",
+      "mass_kg": 0.12,
+      "mass_lb": 0.265,
+      "diet": "Dunmeh seed, insects, occasional Mellip",
+      "trophic_level": 2,
+      "lifespan_orbits": 1.5,
+      "lifespan_earth_days": 761,
+      "population_estimate": 5000000,
+      "carrying_capacity": 14000000,
+      "population_trend": "UNKNOWN",
+      "constraints": [
+        "294 d dry season -> seed caching",
+        "burrow at 0.5 m thermal refuge 24-26 C",
+        "boom-bust with seed set"
+      ]
+    },
+    {
+      "working_name": "Veskel",
+      "pronunciation": "VES-kel",
+      "name_status": "PROPOSED",
+      "truth_class": "EDEREAIRAH_PROPOSED",
+      "class_role": "migratory herd grazer",
+      "mass_kg": 180,
+      "mass_lb": 396.832,
+      "diet": "Dunmeh grass, 3.45 kg DM/day",
+      "trophic_level": 2,
+      "lifespan_orbits": 14,
+      "lifespan_earth_days": 7098,
+      "population_estimate": 110000,
+      "carrying_capacity": 147900,
+      "population_trend": "UNKNOWN",
+      "constraints": [
+        "silica grass -> high-crowned teeth",
+        "P/Na gradient pulls wet-season range to escarpment foot",
+        "E5 dry-season floodplain bottleneck K 147,900",
+        "gestation 0.50 orbit -> one synchronized birth per orbit",
+        "450 km loop per orbit"
+      ]
+    },
+    {
+      "working_name": "Tolvaar",
+      "pronunciation": "TOHL-var",
+      "name_status": "PROPOSED",
+      "truth_class": "EDEREAIRAH_PROPOSED",
+      "class_role": "tall browser (giraffe-role)",
+      "mass_kg": 950,
+      "mass_lb": 2094.389,
+      "diet": "Pellith browse, 11.0 kg DM/day",
+      "trophic_level": 2,
+      "lifespan_orbits": 18,
+      "lifespan_earth_days": 9126,
+      "population_estimate": 1200,
+      "carrying_capacity": 1742,
+      "population_trend": "UNKNOWN",
+      "constraints": [
+        "browse band 3.5-5.2 m set by Pellith crown and Thurrak reach",
+        "E1 dP head-heart 2.2 m = 170 mmHg; 3.8 m giraffe build = 294 mmHg fails ~300 mmHg threshold -> heart carried at 2.8 m, shorter neck",
+        "drinking head-down 3.0 m = 232 mmHg -> rete + venous valves",
+        "tannin-binding salivary proteins"
+      ]
+    },
+    {
+      "working_name": "Thurrak",
+      "pronunciation": "THUR-ak",
+      "name_status": "PROPOSED",
+      "truth_class": "EDEREAIRAH_PROPOSED",
+      "class_role": "very large herbivore (elephant-role)",
+      "mass_kg": 4500,
+      "mass_lb": 9920.79,
+      "diet": "mixed grass/browse/bark, 53.0 kg DM/day",
+      "trophic_level": 2,
+      "lifespan_orbits": 45,
+      "lifespan_earth_days": 22815,
+      "population_estimate": 3500,
+      "carrying_capacity": 4789,
+      "population_trend": "UNKNOWN",
+      "constraints": [
+        "E2 10x mass -> area 4.64x, bone stress 2.15x -> columnar legs",
+        "E2+E3 heat per skin area 1.21x -> night foraging, wallowing, vascular ear flaps",
+        "E3 BMR 160.9 MJ/day; FMR 321.8 MJ/day",
+        "Na-limited -> salt licks"
+      ]
+    },
+    {
+      "working_name": "Lirri",
+      "pronunciation": "LEER-ee",
+      "name_status": "PROPOSED",
+      "truth_class": "EDEREAIRAH_PROPOSED",
+      "class_role": "arboreal primate analogue",
+      "mass_kg": 7,
+      "mass_lb": 15.432,
+      "diet": "Varuun fruit, leaf fallback, ~0.5 kg fruit/day",
+      "trophic_level": 2,
+      "lifespan_orbits": 16,
+      "lifespan_earth_days": 8112,
+      "population_estimate": 8000,
+      "carrying_capacity": 9300,
+      "population_trend": "UNKNOWN",
+      "constraints": [
+        "linear gallery strip 0.2-0.8 km, canopy gaps 2-4 m -> leaping, grasping digits, balancing tail",
+        "terminal branch load ~8-10 kg caps mass",
+        "E15 group ceiling ~14",
+        "mast every 2 orbits -> leaf-fermenting fallback gut"
+      ]
+    },
+    {
+      "working_name": "Kavrenn",
+      "pronunciation": "KAV-ren",
+      "name_status": "PROPOSED",
+      "truth_class": "EDEREAIRAH_PROPOSED",
+      "class_role": "social apex predator (lion-role)",
+      "mass_kg": 180,
+      "mass_lb": 396.832,
+      "diet": "Veskel mainly; 5.7 kg meat/day",
+      "trophic_level": 3,
+      "lifespan_orbits": 11,
+      "lifespan_earth_days": 5577,
+      "population_estimate": 420,
+      "carrying_capacity": 532,
+      "population_trend": "UNKNOWN",
+      "constraints": [
+        "prey-mass ratio >21.5 kg rule -> prey ~ own mass -> cooperative hunting",
+        "E6 density 0.0560/km2",
+        "E7 pride-of-10 territory 179 km2 wet; ~600 km2 dry -> semi-nomadic",
+        "294 d dry-season prey absence"
+      ]
+    },
+    {
+      "working_name": "Morrasq",
+      "pronunciation": "mor-ASK",
+      "name_status": "PROPOSED",
+      "truth_class": "EDEREAIRAH_PROPOSED",
+      "class_role": "soaring scavenger",
+      "mass_kg": 7.5,
+      "mass_lb": 16.535,
+      "diet": "carrion ~0.5 kg/day averaged",
+      "trophic_level": 3,
+      "lifespan_orbits": 22,
+      "lifespan_earth_days": 11154,
+      "population_estimate": 1500,
+      "carrying_capacity": 1901,
+      "population_trend": "UNKNOWN",
+      "constraints": [
+        "E14 wing loading 73.6 N/m2 -> thermal soaring",
+        "carrion 1,205 t/orbit",
+        "follows Veskel migration; coastal fog-strip updrafts in upwelling season",
+        "cliff nesting on escarpment"
+      ],
+      "wingspan_m": 2.5,
+      "wingspan_ft": 8.2
+    },
+    {
+      "working_name": "Ommaru",
+      "pronunciation": "oh-MAH-roo",
+      "name_status": "PROPOSED",
+      "truth_class": "EDEREAIRAH_PROPOSED",
+      "class_role": "filter-feeding marine mammal analogue (whale-role)",
+      "mass_kg": 25000,
+      "mass_lb": 55115.5,
+      "diet": "Glimmet, 856 kg/day in 253.5 d feeding window (217 t per orbit)",
+      "trophic_level": 3,
+      "lifespan_orbits": 55,
+      "lifespan_earth_days": 27885,
+      "population_estimate": 1000,
+      "carrying_capacity": 1536,
+      "population_trend": "UNKNOWN",
+      "constraints": [
+        "E8 net weight -49 kgf in seawater -> no skeletal support limit",
+        "estuary/fresh water -365/-657 kgf + osmotic stress -> estuary exclusion, stranding risk",
+        "E3/E4 FMR 1456 MJ/day",
+        "E9 5% of 6.67 Mt Glimmet production -> K 1536",
+        "calving grounds UNKNOWN"
+      ]
+    }
+  ],
+  "food_web_edges": [
+    [
+      "Dunmeh",
+      "Sunlight"
+    ],
+    [
+      "Pellith",
+      "Sunlight"
+    ],
+    [
+      "Varuun",
+      "Sunlight"
+    ],
+    [
+      "Phytoplankton",
+      "Sunlight"
+    ],
+    [
+      "Phytoplankton",
+      "Upwelled nutrients"
+    ],
+    [
+      "Litter fungi",
+      "Varuun litter"
+    ],
+    [
+      "Mellip",
+      "Litter fungi"
+    ],
+    [
+      "Scurrin",
+      "Dunmeh"
+    ],
+    [
+      "Scurrin",
+      "Mellip"
+    ],
+    [
+      "Veskel",
+      "Dunmeh"
+    ],
+    [
+      "Thurrak",
+      "Dunmeh"
+    ],
+    [
+      "Thurrak",
+      "Pellith"
+    ],
+    [
+      "Thurrak",
+      "Varuun"
+    ],
+    [
+      "Tolvaar",
+      "Pellith"
+    ],
+    [
+      "Lirri",
+      "Varuun"
+    ],
+    [
+      "Glimmet",
+      "Phytoplankton"
+    ],
+    [
+      "Ommaru",
+      "Glimmet"
+    ],
+    [
+      "Kavrenn",
+      "Veskel"
+    ],
+    [
+      "Kavrenn",
+      "Tolvaar"
+    ],
+    [
+      "Kavrenn",
+      "Scurrin"
+    ],
+    [
+      "Kavrenn",
+      "Lirri"
+    ],
+    [
+      "Kavrenn",
+      "Thurrak"
+    ],
+    [
+      "Morrasq",
+      "Veskel"
+    ],
+    [
+      "Morrasq",
+      "Thurrak"
+    ],
+    [
+      "Morrasq",
+      "Tolvaar"
+    ],
+    [
+      "Morrasq",
+      "Ommaru"
+    ],
+    [
+      "Morrasq",
+      "Kavrenn"
+    ],
+    [
+      "Decomposer microbes",
+      "Morrasq"
+    ],
+    [
+      "Decomposer microbes",
+      "Kavrenn"
+    ],
+    [
+      "Decomposer microbes",
+      "Thurrak dung"
+    ]
+  ],
+  "special_edges": [
+    {
+      "from": "Mellip",
+      "to": "Veskel",
+      "type": "parasite transmission (fluke-class), not predation"
+    },
+    {
+      "from": "Kavrenn",
+      "to": "Thurrak",
+      "type": "calves only, rare"
+    }
+  ],
+  "equations": [
+    {
+      "id": "MATH-BIOME-01-624",
+      "summary": "E1 dP=rho*g*h PHYSICAL_LAW"
+    },
+    {
+      "id": "MATH-BIOME-02-624",
+      "summary": "E2 square-cube ENGINEERING_CONSTRAINT"
+    },
+    {
+      "id": "MATH-BIOME-03-624",
+      "summary": "E3 Kleiber B=70*M^0.75 EMPIRICAL_MODEL"
+    },
+    {
+      "id": "MATH-BIOME-04-624",
+      "summary": "E4 I=FMR/(GE*d*q) ENGINEERING_CONSTRAINT"
+    },
+    {
+      "id": "MATH-BIOME-05-624",
+      "summary": "E5 K=(A*P*u*s)/(I*T) HEURISTIC"
+    },
+    {
+      "id": "MATH-BIOME-06-624",
+      "summary": "E6 Nc=111*Mc^-1.16*Bp/10000 EMPIRICAL_MODEL"
+    },
+    {
+      "id": "MATH-BIOME-07-624",
+      "summary": "E7 At=G/Nc HEURISTIC"
+    },
+    {
+      "id": "MATH-BIOME-08-624",
+      "summary": "E8 Fnet=(rho_w-rho_b)*V*g PHYSICAL_LAW"
+    },
+    {
+      "id": "MATH-BIOME-09-624",
+      "summary": "E9 Pn=P1*TE^(n-1) EMPIRICAL_MODEL"
+    },
+    {
+      "id": "MATH-BIOME-10-624",
+      "summary": "E10 t=f*W/(E*As) HEURISTIC"
+    },
+    {
+      "id": "MATH-BIOME-11-624",
+      "summary": "E11 pi=C*R*T PHYSICAL_LAW"
+    },
+    {
+      "id": "MATH-BIOME-12-624",
+      "summary": "E12 td=phi*507 FORMAL_SYSTEM_LAW"
+    },
+    {
+      "id": "MATH-BIOME-13-624",
+      "summary": "E13 H=Hmax*(1-e^-kt)^c EMPIRICAL_MODEL"
+    },
+    {
+      "id": "MATH-BIOME-14-624",
+      "summary": "E14 WL=m*g/S PHYSICAL_LAW"
+    },
+    {
+      "id": "MATH-BIOME-15-624",
+      "summary": "E15 Gmax=(np*Y*h)/q HEURISTIC"
+    }
+  ],
+  "unknowns": [
+    "planetary gravity (placeholder 9.81 m/s2)",
+    "surface pressure and atmosphere composition (placeholders)",
+    "water chemistry (placeholders)",
+    "star spectral type and irradiance",
+    "native day length",
+    "axial tilt and true season driver",
+    "calendar names",
+    "any census/headcount of any animal (all 7 estate groups NULL)",
+    "whether cattle/sheep/pig/poultry/dog are kept at ER-CASTLE-ROYAL-001",
+    "whether Earth-class livestock exist on EdereAirah given the No-Earth-animals arms rule",
+    "Skatylorh biology",
+    "Guardian Companion Species biology",
+    "population trends for every species",
+    "Ommaru calving grounds",
+    "open guilds: raptor, fish, seabird, snake, marine predator, second grazer",
+    "LIVING_WORLD_ATLAS department record existence in backend",
+    "name-frequency clearance for 13 proposed names",
+    "Earth reference coefficients (citations to verify)"
+  ]
+}

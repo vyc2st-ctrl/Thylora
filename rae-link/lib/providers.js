@@ -52,8 +52,8 @@ export const CAPABILITIES = Object.freeze({
   recommendation:     { group: 'Discovery',  active: 'in-house-heuristic', binding: 'PLANNED',
                         alternates: ['in-house-model', 'vendor-ranking'],
                         exit_cost: 'LOW — ranking inputs are our own analytics rollups.' },
-  payments_digital:   { group: 'Money',      active: 'lemonsqueezy', binding: 'PLANNED',
-                        alternates: ['stripe', 'paddle'],
+  payments_digital:   { group: 'Money',      active: 'stripe', binding: 'PLANNED',
+                        alternates: ['lemonsqueezy', 'paddle'],  // Stripe per THY-COMMERCE-PROVIDER-AUTHORITY-001 (LOCKED)
                         exit_cost: 'MEDIUM — subscriber migration is processor-dependent.' },
   payments_physical:  { group: 'Money',      active: 'shopify', binding: 'PLANNED',
                         alternates: ['stripe', 'woocommerce'],
