@@ -225,3 +225,50 @@ Every kid's dashboard is an **archive companion**. Each day they archive what th
 You're right: Red Lobster's CEO is **Damola Adamolekun**, a Nigerian-born executive who took over in 2024 as it came out of bankruptcy. **Your pitch:** intimate rooms, chef portions, natural herbs instead of packaged seasoning, "how do you want it?" tableside, small tasting samples, and capture each guest's story as content. *This could be a real outreach deck (labelled as a proposal, with credentials).*
 
 *Question: what would a guest pay for being asked how they want it?*
+
+---
+
+# Pass 2 · Gaps closed (2026-10-03, re-sent prompt, rule I13)
+
+The same prompt arrived a second time. The floor was verified first (branch pushed, 62/62 tests, store unchanged at 5/228 live, backend still blocked). Below is only what pass 1 missed or left thin.
+
+## 19 · The 3-D printer and the plant
+Read two ways, so both are kept: **(a) a 3-D printing plant (factory)**. Large printers already print house walls in concrete (3-D-printed homes are being built in the US today). That pairs with the construction company in §15: our licensed crews run the printers. **(b) printing for plants**: printed planter boxes and drip-irrigation parts for the street gardens. *Tell us which one you meant, or both.*
+
+## 20 · Comic books and car books
+Two product lines for the store: **world comics** (EdereAriah heroes, including the superhero who has to breathe in §8, with the oxygen-meter challenge on the back page) and **car books**. Two car books are **already drafted in Shopify**: *Eight Things Cars Still Get Wrong* ($9) and *C&W Engineering Notebook Vol. 1* ($29). They're in release batch 1, so this idea is closer to money than it looked.
+
+## 21 · Military vehicles: one thing you may not know
+Modern troop vehicles (**MRAPs**) survive roadside bombs mostly through **shape, not thickness**: a **V-shaped hull** pushes the blast out to the sides instead of up through the floor. Seats hang from the roof so the floor shock doesn't reach the spine. Your survivability idea for planes and boats follows the same lesson: **guide the force away from the people.**
+
+## 22 · Better ice cream serving
+No hand ever touches what the customer eats: **machine-portioned sealed cups** (exact size, no more, no less), a scoop rinsed in a dipper well between customers, a sneeze guard, and the "extra scoop" as a **logged gift button**, not a favor. Kids' line: little glass jars like the chips in §17.
+
+## 23 · Measuring understanding by enjoyment (your teaching metric)
+You said it: laughter and kids talking about the math means they get it; silence while the teacher talks means they don't. Research on classrooms points the same way: **how much the learners talk** tracks how much they're thinking. So every THYLORA lesson and report gets a measure: **U ≈ learner talk time ÷ total time** → *"Who is doing the thinking in this room?"* We also log the laughs, and the questions they ask back.
+
+## 24 · When you need a study, and when you don't (the pesticide thought)
+- **Observation finds the signal.** You hear people repeat the same answer; you don't need a study to know growth hasn't happened.
+- **A study measures the mechanism and the dose.** It's needed when harm is slow, hidden or small per day, like a chemical made to kill insects that may also affect people over years.
+- US pesticide approval is risk-based (EPA): a substance is allowed if the measured risk at expected doses is judged acceptable, and that judgment has been reversed before. **DDT** was banned in the US in **1972** after years of use. *Question: should the burden be on proving something is safe, or on proving it's harmful?*
+
+## 25 · Your assistant goes where your system goes
+Your THYLORA person follows **you**, not the device: you sign in with a passkey and it appears on any THYLORA system you're authorized on. Public systems can *talk* with people who choose to engage. **Recognizing faces in public is legally restricted in some places**, so ours identifies only people who opt in.
+
+## 26 · Home details pass 1 thinned
+- **Upstairs TV room:** a deep lounge sofa (like the reference room), made for stretching out under a blanket. Your own pictures go on the walls once you send them.
+- **Pillars:** wrap them in warm wood or plaster with hidden up-lighting so they read as part of the earthy design, not as structure.
+- **Movie note:** the Tom Cruise film is ***American Made*** (2017), about pilot **Barry Seal**. He flew for the **Medellín cartel**, which was **Colombian**, not Mexican.
+- **"Pop off, ground fast":** a staged vehicle that pre-starts when the evacuation protocol fires, with the system watching it. That's covered in §4, and now tied to the protocol trigger.
+
+## 27 · Kids build the better rocket and the better electric car
+Kit-and-challenge series: the oxygen meter (§8), a balloon-powered rocket car, a solar mini-EV. Each kit has a serial, a question card and an archive-companion entry. Best kid designs get a "licensed by THYLORA" passport like the builders in §9.
+
+## 28 · Tiny's birthday (belated post, if you want it)
+> Yesterday was Tiny's birthday. We're late, and we're saying it anyway.
+> In our world, a late "happy birthday" counts double, because it means we remembered after the moment passed.
+> Happy birthday, Tiny. 🎉
+*Only post it if Tiny is OK being named publicly.*
+
+## 29 · Still held, named so they don't vanish
+Yacht size ("night set"), the number of car companies, the football team, the ship and crew, deals and lawyers, the New Training judge document and the earlier Mercedes report. **All of them live in the backend this session can't reach (B1) or in files not shared yet (B4).**

@@ -48,7 +48,8 @@ export const LAYERS = Object.freeze([
       'I9 · Store first: every session reports live/draft product count and the next batch to release',
       'I10 · Gaps are measured before the jump: evidence source → independent second source → mechanism (what actually produced the result) → then conclusion',
       'I11 · Layout is decolonized by default: designed for a first-time reader to understand in one read, centered, titled, credentialed',
-      'I12 · Each prompt is broken into every-word intents and each one is answered, routed, or named as held; nothing silently falls off'
+      'I12 · Each prompt is broken into every-word intents and each one is answered, routed, or named as held; nothing silently falls off',
+      'I13 · A re-sent prompt is never redone from scratch: verify the floor still holds, then diff the prompt against the intent ledger and close only what was missed'
     ]
   }
 ]);

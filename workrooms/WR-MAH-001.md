@@ -170,6 +170,18 @@ State: **DONE** (evidence attached) · **ROUTED** (built or answered here) · **
 | 47 | Victoria (flipping-houses designer) Chicago style | Design | **PROPOSED** | Ideas ledger §4. Who exactly? Name needed to match the style |
 | 48 | How much have I saved doing this myself | Finance | **PROPOSED** | Method in ideas ledger §2 |
 | 49 | Monetize "we can help with every issue" | Money | **ROUTED** | Ideas ledger §2 |
+| 50 | 3-D printer / plant | Construction / R&D | **ROUTED** | Ideas ledger §19 (two readings; which one?) |
+| 51 | Comic books and car books | Studio / Store | **ROUTED** | §20: two car books already drafted |
+| 52 | Teach me something about military vehicles | Learning | **ROUTED** | §21 |
+| 53 | Better way to serve ice cream | Food | **ROUTED** | §22 |
+| 54 | Gauge understanding by enjoyment | Learning / QA | **ROUTED** | §23: U = learner talk ÷ total |
+| 55 | When a study is needed (pesticides) | Research | **ROUTED** | §24 |
+| 56 | My assistant works anywhere my system is; system talks in public | Systems | **PROPOSED** | §25 (opt-in only) |
+| 57 | Upstairs lounge sofa, pillars, the Tom Cruise movie | Design | **ROUTED** | §26 (*American Made*; cartel was Colombian) |
+| 58 | Kids build a better rocket / electric car | Learning | **ROUTED** | §27 |
+| 59 | Tiny's birthday post | Social | **PROPOSED** | §28 (needs Tiny's OK) |
+| 60 | Yacht size, car companies, team, ship, crew | Many | **HELD** | §29 (B1, B4) |
+| 61 | Same prompt re-sent | Continuity | **DONE** | Rule I13 added; floor verified before any work |
 
 ---
 
@@ -233,10 +245,10 @@ State: **DONE** (evidence attached) · **ROUTED** (built or answered here) · **
 | | |
 |---|---|
 | Workroom | **OPEN** |
-| Code | `MAH'` root · `MAHI'` current · letter I **PROPOSED** |
+| Code | `MAH'` root · `MAHI'` current · letter I **PROPOSED** · 13 rules (I13 added on pass 2) |
 | Schema | Written · validated on PostgreSQL 16 · idempotent · **not applied** (B1, B2) |
 | Store | Measured: 5 / 228 live. Batch 1 identified. **Awaiting your yes** (B3) |
-| Tests | 62 / 62 |
+| Tests | 62 / 62 (re-verified on pass 2) |
 | Baseline regression | **None** |
 
 NO LOSS. DO NOT GO BACKWARD. ONE SOURCE OF TRUTH. ACCESS ≠ AUTHORITY.

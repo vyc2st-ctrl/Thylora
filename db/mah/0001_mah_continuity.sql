@@ -79,7 +79,7 @@ alter table mah_artifacts enable row level security;
 alter table mah_prechecks enable row level security;
 
 insert into mah_layers (version, letter, meaning, rules, status, opened_on) values
-  (1, 'I', 'Invoke', '["I1 questions under every equation","I2 invoke an unasked question","I3 section-by-section preview before PDF","I4 serial + credentialed preparer","I5 officials identified","I6 ACTIVE only when witnessed","I7 ideas ledger in front","I8 Maryland anchor clock","I9 store first","I10 measure gaps before the jump","I11 decolonized first-read layout","I12 every-word intent ledger"]'::jsonb, 'PROPOSED', '2026-10-03')
+  (1, 'I', 'Invoke', '["I1 questions under every equation","I2 invoke an unasked question","I3 section-by-section preview before PDF","I4 serial + credentialed preparer","I5 officials identified","I6 ACTIVE only when witnessed","I7 ideas ledger in front","I8 Maryland anchor clock","I9 store first","I10 measure gaps before the jump","I11 decolonized first-read layout","I12 every-word intent ledger","I13 re-sent prompt: verify floor, diff, close only gaps"]'::jsonb, 'PROPOSED', '2026-10-03')
 on conflict (version) do nothing;
 
 insert into mah_prechecks (code, born_from, route) values
