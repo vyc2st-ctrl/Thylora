@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Equation — Key Edition</title>
+
+<link href="fonts/local.css" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBF7EF; --ink:#1B1712; --soft:#5C5346; --line:#E3D8C4;
+  --gold:#A87A22; --gold2:#D9A84A; --deep:#14110D; --green:#2F6B4A; --red:#A3402F; --blue:#2B5C8A;
+  --chip:#F2E8D5;
+}
+@page{size:8.5in 11in;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);color:var(--ink);font-family:Inter,"DejaVu Sans",sans-serif;font-size:10.4pt;line-height:1.48;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:8.5in;height:11in;padding:.62in .66in .7in;position:relative;overflow:hidden;page-break-after:always;break-after:page;background:var(--paper)}
+.page:last-child{page-break-after:auto;break-after:auto}
+.foot{position:absolute;left:.66in;right:.66in;bottom:.34in;display:flex;justify-content:space-between;font-size:7.6pt;letter-spacing:.14em;text-transform:uppercase;color:#9A8E7B;border-top:1px solid var(--line);padding-top:7px}
+.eyebrow{font-size:7.8pt;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+h1,h2,h3{font-family:Fraunces,"DejaVu Serif",serif;font-weight:800;letter-spacing:-.01em;line-height:1.08}
+h2{font-size:25pt;margin:6px 0 10px}
+h3{font-size:13pt;margin:0 0 4px}
+p{margin:0 0 8px}
+.lead{font-size:12pt;color:var(--soft);max-width:6.4in}
+.m{font-family:"STIX Two Text","DejaVu Serif",serif}
+.eq{font-family:"STIX Two Text","DejaVu Serif",serif;font-weight:600;letter-spacing:.01em;white-space:nowrap}
+.bigeq{font-family:"STIX Two Text","DejaVu Serif",serif;font-weight:600;font-size:46pt;line-height:1;text-align:center;margin:18px 0 6px;letter-spacing:.02em}
+.eqbox{border:1.5px solid var(--ink);border-radius:14px;padding:16px 18px;margin:10px 0 12px;background:#fff}
+.eqbox .eq{font-size:22pt;display:block;text-align:center}
+.cap{font-size:8pt;text-transform:uppercase;letter-spacing:.16em;color:var(--soft);text-align:center;margin-top:6px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.card{border:1px solid var(--line);border-radius:12px;padding:11px 13px;background:#fff}
+.card.dark{background:var(--deep);color:#F4ECDD;border-color:var(--deep)}
+.card.dark .eyebrow{color:var(--gold2)}
+.vars{width:100%;border-collapse:collapse;margin:6px 0 10px}
+.vars td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.vars td.sym{font-family:"STIX Two Text",serif;font-weight:600;font-size:17pt;width:.55in;text-align:center;color:var(--gold)}
+.vars td.name{font-weight:800;width:1.25in}
+.chip{display:inline-block;font-size:7pt;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:var(--chip);color:var(--gold);vertical-align:middle}
+.chip.v{background:#E3F0E7;color:var(--green)}
+.chip.d{background:#FBEBD3;color:#9A5B12}
+.chip.b{background:#F6E1DC;color:var(--red)}
+.chip.p{background:#E2ECF5;color:var(--blue)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0}
+.step{border-radius:12px;padding:11px;background:#fff;border:1px solid var(--line)}
+.step b{display:block;font-family:Fraunces,serif;font-size:22pt;color:var(--gold);line-height:1}
+.step strong{display:block;font-size:9.5pt;letter-spacing:.12em;text-transform:uppercase;margin:4px 0 3px}
+.step span{font-size:9pt;color:var(--soft)}
+.work{font-family:"STIX Two Text",serif;font-size:13.5pt;line-height:1.7;background:#fff;border-left:4px solid var(--gold);padding:8px 14px;border-radius:0 10px 10px 0;margin:6px 0 10px}
+.work .note{font-family:Inter,sans-serif;font-size:8.6pt;color:var(--soft)}
+.callout{background:var(--deep);color:#F4ECDD;border-radius:14px;padding:14px 16px;margin:10px 0}
+.callout .eq{color:var(--gold2)}
+.small{font-size:8.6pt;color:var(--soft)}
+.tiny{font-size:7.6pt;color:#8B7F6B}
+table.logic{width:100%;border-collapse:collapse;font-size:8.7pt}
+table.logic th{text-align:left;font-size:7.4pt;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);padding:5px 6px;border-bottom:1.5px solid var(--ink)}
+table.logic td{padding:5px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+table.logic td:first-child{font-weight:800;width:1.25in}
+table.logic td.f{font-family:"STIX Two Text",serif;font-size:10.5pt;width:1.75in}
+.bar{height:16px;border-radius:999px;background:#EDE3D0;overflow:hidden;position:relative;margin:4px 0}
+.bar i{display:block;height:100%;background:var(--gold)}
+.bar.red i{background:var(--red)}
+.write{border-bottom:1px solid #BFB29B;height:24px}
+/* cover */
+.cover{background:var(--deep);color:#F6EEDF;padding:.8in .8in}
+.cover .ring{position:absolute;border:1px solid rgba(217,168,74,.28);border-radius:50%}
+.cover h1{font-size:54pt;margin:18px 0 8px;color:#fff}
+.cover .bigeq{color:var(--gold2);font-size:52pt;text-align:left;margin:46px 0 10px;white-space:nowrap}
+.cover .who{position:absolute;left:.8in;right:.8in;bottom:.95in;display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid rgba(217,168,74,.4);padding-top:14px}
+.cover .who b{font-family:Fraunces,serif;font-size:17pt;display:block}
+.cover .who span{font-size:8.6pt;letter-spacing:.14em;text-transform:uppercase;color:#C9BBA2}
+.cover .foot{color:#8C7F69;border-color:rgba(217,168,74,.25)}
+/* shirts */
+.tee{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 10px 12px;text-align:center}
+.tee svg{width:100%;height:auto;display:block}
+.tee .lbl{font-size:7.2pt;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-top:4px}
+.tee .back{font-size:8.2pt;color:var(--soft);text-align:left;margin-top:6px;border-top:1px dashed var(--line);padding-top:6px}
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<section class="page cover">
+  <div class="ring" style="width:7.5in;height:7.5in;right:-2.6in;top:-1.6in"></div>
+  <div class="ring" style="width:5in;height:5in;right:-1.4in;top:-.4in"></div>
+  <div class="ring" style="width:2.6in;height:2.6in;right:-.2in;top:.8in;border-color:rgba(217,168,74,.5)"></div>
+  <p class="eyebrow" style="color:var(--gold2)">THYLORA · ERSATZREALITY · LEADERSHIP WORKBOOK</p>
+  <h1>The Equation.</h1>
+  <p class="lead" style="color:#D8CCB6;font-size:14pt">See it. Name it. Say it. Use it.<br>A working book on logic, questions, quality and control.</p>
+  <div class="bigeq">G = P × M × E × D</div>
+  <p style="color:#C9BBA2;font-size:10.5pt;max-width:5.6in">Five letters. One rule inside them: <b style="color:#fff">a zero anywhere is a zero everywhere.</b> By the last page you will read this line the way you read 2 × 2 = 4: at a glance, without anyone translating it for you.</p>
+  <div class="who">
+    <div><span>Prepared for</span><b>Keziah “Key” Elana Peete</b><span>Executive Leadership Trainee · Succession Track</span></div>
+    <div style="text-align:right"><span>From the desk of</span><b>Chairman Vyc</b><span>October 3, 2026</span></div>
+  </div>
+  <div class="foot"><span>The Equation — Key Edition</span><span>Lane A · Lane B · The Gap</span></div>
+</section>
+
+<!-- ============ HOW TO READ ============ -->
+<section class="page">
+  <p class="eyebrow">Before anything · The four-step lock</p>
+  <h2>How every THYLORA equation is taught.</h2>
+  <p class="lead">Words alone, you forget. Symbols alone, you can't read. You need both, and you need to move back and forth between them. Every equation in this book goes through the same four steps, in the same order.</p>
+  <div class="steps">
+    <div class="step"><b>1</b><strong>See it</strong><span>The full formula, written out as math. No shortcuts and nothing left out.</span></div>
+    <div class="step"><b>2</b><strong>Name it</strong><span>Every letter and symbol gets defined. Nothing stays a mystery.</span></div>
+    <div class="step"><b>3</b><strong>Say it</strong><span>The expression as one plain sentence you could say out loud.</span></div>
+    <div class="step"><b>4</b><strong>Use it</strong><span>Put real numbers in. Work it to the end. Then use it on a new problem.</span></div>
+  </div>
+
+  <div class="grid2" style="margin-top:12px">
+    <div class="card">
+      <p class="eyebrow">Why it works · The 2 × 2 test</p>
+      <div class="m" style="font-size:40pt;font-weight:600;text-align:center;line-height:1.2;margin:4px 0">2 × 2 = 4</div>
+      <p class="small">Nobody reads that as “two geese, times two more geese, equals four geese.” You <b>see</b> it and you <b>know</b> it. The shape carries the meaning, so the meaning can be anything: geese, dollars, hours.</p>
+      <p class="small" style="margin:0">That is the goal for every long equation in our system. After enough practice you look at <span class="eq">G = P × M × E × D</span> and think: <i>“every part has to be there, or nothing comes out.”</i></p>
+    </div>
+    <div class="card dark">
+      <p class="eyebrow">The rule behind the rule · on record</p>
+      <div class="eq" style="font-size:19pt;color:var(--gold2);text-align:center;margin:8px 0 8px">M<sub>c</sub> = W × F × V × Q × Q<sub>2</sub> × E × X</div>
+      <table style="width:100%;font-size:8.4pt;color:#E7DCC8;border-collapse:collapse">
+        <tr><td class="m" style="width:.42in;color:var(--gold2);font-weight:600">M<sub>c</sub></td><td>math communication is complete</td></tr>
+        <tr><td class="m" style="color:var(--gold2);font-weight:600">W</td><td>the words / plain meaning are there</td></tr>
+        <tr><td class="m" style="color:var(--gold2);font-weight:600">F</td><td>the full formula is visibly there</td></tr>
+        <tr><td class="m" style="color:var(--gold2);font-weight:600">V</td><td>every variable is defined</td></tr>
+        <tr><td class="m" style="color:var(--gold2);font-weight:600">Q</td><td>the direct question is stated</td></tr>
+        <tr><td class="m" style="color:var(--gold2);font-weight:600">Q<sub>2</sub></td><td>the deeper question behind it is stated</td></tr>
+        <tr><td class="m" style="color:var(--gold2);font-weight:600">E</td><td>the evidence it needs is stated</td></tr>
+        <tr><td class="m" style="color:var(--gold2);font-weight:600">X</td><td>a worked example is shown</td></tr>
+      </table>
+      <p class="tiny" style="color:#A99B83;margin-top:6px">THYLORA registry MATH-DISPLAY-CLOSURE-625. If the formula is missing, F = 0, so the whole explanation scores zero.</p>
+    </div>
+  </div>
+  <div class="callout" style="margin-top:12px">
+    <p style="margin:0;font-size:10.5pt">This book holds itself to that rule. <b>Every equation in it shows the formula, names every symbol, says it in words, and works an example.</b> If you ever find one that doesn't, that's a defect. Report it.</p>
+  </div>
+  <div class="foot"><span>The Equation — Key Edition</span><span>02</span></div>
+</section>
+
+<!-- ============ LANE A: G = PMED ============ -->
+<section class="page">
+  <p class="eyebrow">Lane A · The core equation</p>
+  <h2>G = P × M × E × D</h2>
+  <div class="eqbox"><span class="eq" style="font-size:34pt">G = P × M × E × D</span><div class="cap">Step 1 · See it</div></div>
+
+  <p class="eyebrow" style="margin-top:4px">Step 2 · Name it <span class="chip p">Proposed reading · Chairman confirms</span></p>
+  <table class="vars">
+    <tr><td class="sym">G</td><td class="name">Goal reached</td><td>How fully the result you wanted actually happened. This is the output.</td></tr>
+    <tr><td class="sym">P</td><td class="name">Purpose</td><td>A clear “why” and a clear target. If nobody can say what done looks like, P = 0.</td></tr>
+    <tr><td class="sym">M</td><td class="name">Method</td><td>A real way to do it: steps, tools, people, a path.</td></tr>
+    <tr><td class="sym">E</td><td class="name">Evidence</td><td>Proof that it's working: something measured, seen, or recorded, not just believed.</td></tr>
+    <tr><td class="sym">D</td><td class="name">Discipline</td><td>Doing it again tomorrow. Follow-through, consistency, finishing.</td></tr>
+    <tr><td class="sym">×</td><td class="name">Times</td><td>Multiply. Each part <b>scales</b> the others. It is not added on top.</td></tr>
+  </table>
+
+  <p class="eyebrow">Step 3 · Say it</p>
+  <div class="callout"><p style="margin:0;font-size:12pt;font-family:Fraunces,serif">“How far you get equals your <span style="color:var(--gold2)">purpose</span>, times your <span style="color:var(--gold2)">method</span>, times your <span style="color:var(--gold2)">evidence</span>, times your <span style="color:var(--gold2)">discipline</span>. If any one of them is zero, you get nowhere, no matter how strong the others are.”</p></div>
+
+  <div class="grid2">
+    <div class="card"><h3>Why multiply and not add?</h3><p class="small" style="margin:0">With adding, a missing piece gets hidden. With multiplying, it gets exposed. A great purpose, a great method and great discipline still produce <b>zero</b> if there's no evidence you're on target. That is how real work behaves, so the equation is written to behave that way too.</p></div>
+    <div class="card"><h3>How to score it</h3><p class="small" style="margin:0">Rate each factor from <span class="eq">0</span> to <span class="eq">5</span>.<br><span class="eq">0</span> = absent · <span class="eq">3</span> = usable · <span class="eq">5</span> = locked and proven.<br>Highest possible score: <span class="eq">5 × 5 × 5 × 5 = 5<sup>4</sup> = 625</span>.<br>Any single <span class="eq">0</span> means <b>HOLD</b>: fix that factor first.</p></div>
+  </div>
+  <div class="foot"><span>The Equation — Key Edition</span><span>03</span></div>
+</section>
+
+<section class="page">
+  <p class="eyebrow">Lane A · Step 4 · Use it</p>
+  <h2>Put it together.</h2>
+  <p class="lead">Example: a report you are getting ready for Monday. You have a strong purpose, a good method and steady habits, but nobody has checked the numbers yet.</p>
+
+  <div class="work">
+    G = P × M × E × D<br>
+    G = 5 × 4 × <b style="color:var(--red)">0</b> × 4<br>
+    G = <b style="color:var(--red)">0</b> &nbsp;<span class="note">out of 625. HOLD. The evidence is missing.</span>
+  </div>
+  <div class="bar red"><i style="width:0.6%"></i></div>
+  <p class="small">Now someone checks the numbers against the source, which brings E up to a 3:</p>
+  <div class="work">
+    G = 5 × 4 × <b style="color:var(--green)">3</b> × 4<br>
+    G = 20 × 3 × 4 = 60 × 4<br>
+    G = <b style="color:var(--green)">240</b> &nbsp;<span class="note">out of 625 = 38.4%. Moving. Next, raise the lowest factor.</span>
+  </div>
+  <div class="bar"><i style="width:38.4%"></i></div>
+
+  <div class="grid2" style="margin-top:10px">
+    <div class="card">
+      <p class="eyebrow">The trap addition sets</p>
+      <div class="work" style="margin:4px 0;font-size:12pt">5 + 4 + 0 + 4 = 13 &nbsp;<span class="note">of 20 = 65%</span></div>
+      <p class="small" style="margin:0">Adding the same scores reports 65%, which looks fine. It hides the zero. <b>That is how broken work gets labeled “almost done.”</b></p>
+    </div>
+    <div class="card">
+      <p class="eyebrow">Fix the smallest factor first</p>
+      <p class="small" style="margin:0">From 5 × 4 × 3 × 4: raising E from 3 to 4 adds <span class="eq">5×4×1×4 = 80</span>. Raising P from 5 to 6 isn't possible, since 5 is the top. <b>With multiplication, raising your weakest link is almost always the move that pays the most.</b></p>
+    </div>
+  </div>
+
+  <p class="eyebrow" style="margin-top:12px">Same shape, any meaning · swap the letters</p>
+  <div class="grid2">
+    <div class="card">
+      <div class="eq" style="font-size:16pt;text-align:center">Pancake = P × M × E × D</div>
+      <p class="small" style="margin:6px 0 0"><b>P</b> = pancake powder · <b>M</b> = milk · <b>E</b> = eggs · <b>D</b> = done-heat. No eggs, no pancake. A great pan doesn't save you. You already knew this. Now you can <i>see</i> it.</p>
+    </div>
+    <div class="card">
+      <div class="eq" style="font-size:16pt;text-align:center">Arrive = P × M × E × D</div>
+      <p class="small" style="margin:6px 0 0"><b>P</b> = plan / address · <b>M</b> = machine (the car) · <b>E</b> = energy (gas) · <b>D</b> = driver. Empty tank: E = 0, so Arrive = 0. Same equation, new problem. That is transfer.</p>
+    </div>
+  </div>
+  <div class="foot"><span>The Equation — Key Edition</span><span>04</span></div>
+</section>
+
+<!-- ============ QUALITY + CONTROL ============ -->
+<section class="page">
+  <p class="eyebrow">Lane A · What quality and control actually mean</p>
+  <h2>Quality is a distance.<br>Control is closing it.</h2>
+  <p class="lead">People say “quality control” like it's one word. It's two ideas, and each one has its own equation.</p>
+
+  <div class="grid2">
+    <div>
+      <div class="eqbox" style="margin-top:4px"><span class="eq" style="font-size:22pt">Q = 1 − |R − S| ÷ S</span><div class="cap">Quality</div></div>
+      <table class="vars">
+        <tr><td class="sym">Q</td><td class="name">Quality</td><td>1.00 = exactly on standard</td></tr>
+        <tr><td class="sym">R</td><td class="name">Result</td><td>what you actually got</td></tr>
+        <tr><td class="sym">S</td><td class="name">Standard</td><td>what it was supposed to be</td></tr>
+        <tr><td class="sym">| |</td><td class="name">Distance</td><td>how far off, ignoring over or under</td></tr>
+      </table>
+      <p class="small"><b>Say it:</b> “Quality is how close the result came to the standard.”</p>
+      <div class="work" style="font-size:12pt">S = 12 min bake · R = 15 min<br>Q = 1 − |15 − 12| ÷ 12 = 1 − 3 ÷ 12<br>Q = 1 − 0.25 = <b>0.75</b></div>
+    </div>
+    <div>
+      <div class="eqbox" style="margin-top:4px"><span class="eq" style="font-size:22pt">x<sub>n+1</sub> = x<sub>n</sub> + k(S − x<sub>n</sub>)</span><div class="cap">Control</div></div>
+      <table class="vars">
+        <tr><td class="sym">x<sub>n</sub></td><td class="name">Now</td><td>where it stands this round</td></tr>
+        <tr><td class="sym">x<sub>n+1</sub></td><td class="name">Next</td><td>where it stands after you correct</td></tr>
+        <tr><td class="sym">S − x<sub>n</sub></td><td class="name">The gap</td><td>distance left to the standard</td></tr>
+        <tr><td class="sym">k</td><td class="name">Correction</td><td>how much of the gap you close each time (0 to 1)</td></tr>
+      </table>
+      <p class="small"><b>Say it:</b> “Each round, measure the gap and close part of it.”</p>
+      <div class="work" style="font-size:12pt">S = 100 · x<sub>0</sub> = 80 · k = 0.5<br>x<sub>1</sub> = 80 + 0.5(20) = 90<br>x<sub>2</sub> = 90 + 0.5(10) = 95 → x<sub>3</sub> = 97.5</div>
+    </div>
+  </div>
+  <div class="callout">
+    <p class="eyebrow">The loop, in four words</p>
+    <p style="margin:0;font-size:13pt;font-family:Fraunces,serif">Measure → Compare → Correct → Record. <span style="color:#C9BBA2;font-size:10pt;font-family:Inter,sans-serif">Skip “record” and the next person starts over from zero. That's how a system forgets.</span></p>
+  </div>
+  <p class="small" style="margin-top:8px"><b>Chairman's version:</b> “Less distance between me and the snacks.” He's right, and it's the same equation. <span class="eq">S − x<sub>n</sub></span> is the distance. Control is making it smaller every round.</p>
+  <div class="foot"><span>The Equation — Key Edition</span><span>05</span></div>
+</section>
+
+<!-- ============ THE GAP: DEDUCTION vs CONCLUSION ============ -->
+<section class="page">
+  <p class="eyebrow">The Gap · Found by the Chairman</p>
+  <h2>Between deduction and conclusion, something leaks.</h2>
+  <p class="lead">A <b>deduction</b> is a chain: if these things are true, this must follow. A <b>conclusion</b> is what a person decides to believe and act on. People treat them as the same thing. They aren't, and the difference between them can be measured.</p>
+
+  <div class="eqbox">
+    <span class="eq" style="font-size:24pt">S = V × p<sub>1</sub> × p<sub>2</sub> × … × p<sub>n</sub> &nbsp;&nbsp;&nbsp; Δ = C − S</span>
+    <div class="cap">Supported certainty · and the gap</div>
+  </div>
+  <table class="vars">
+    <tr><td class="sym">S</td><td class="name">Supported</td><td>how sure the evidence actually lets you be (0 to 1)</td></tr>
+    <tr><td class="sym">V</td><td class="name">Valid form</td><td>1 if the conclusion really follows from the premises, 0 if the logic is broken</td></tr>
+    <tr><td class="sym">p<sub>i</sub></td><td class="name">Premise i</td><td>the chance that premise number <i>i</i> is actually true (0 to 1)</td></tr>
+    <tr><td class="sym">C</td><td class="name">Claimed</td><td>how sure the person sounds when they state the conclusion</td></tr>
+    <tr><td class="sym">Δ</td><td class="name">The gap</td><td>overconfidence: claimed certainty minus supported certainty</td></tr>
+  </table>
+  <p class="small"><b>Say it:</b> “Your conclusion can only be as strong as all of your premises together. Every premise you're unsure of weakens it.” <span class="tiny">(This multiplies when the premises are independent of each other. When they depend on each other, use their joint probability instead. The lesson is the same.)</span></p>
+
+  <div class="work">
+    Three premises, each 90% sure, with perfect logic. The person says it's “definitely true.”<br>
+    S = 1 × 0.9 × 0.9 × 0.9 = <b>0.729</b><br>
+    Δ = 1.00 − 0.729 = <b style="color:var(--red)">0.271</b> &nbsp;<span class="note">27% of the certainty was never earned.</span>
+  </div>
+  <div class="grid2" style="gap:8px">
+    <div><span class="small">Claimed, C = 1.00</span><div class="bar red"><i style="width:100%"></i></div></div>
+    <div><span class="small">Supported, S = 0.729</span><div class="bar"><i style="width:72.9%"></i></div></div>
+  </div>
+  <p class="small" style="margin-top:6px">With <b>10</b> premises at 90% each: <span class="eq">0.9<sup>10</sup> ≈ 0.35</span>. A long chain of “pretty sure” steps ends at “probably not.”</p>
+  <div class="foot"><span>The Equation — Key Edition</span><span>06</span></div>
+</section>
+
+<section class="page">
+  <p class="eyebrow">The Gap · Where it leaks</p>
+  <h2>Five places the conclusion outruns the proof.</h2>
+  <table class="logic" style="margin-top:6px">
+    <tr><th>Leak</th><th>What happens</th><th>Example</th><th>Ask this</th></tr>
+    <tr><td>False premise</td><td>The logic is fine but one of its starting points is wrong. Valid, but not sound.</td><td>“All our suppliers are reliable. Ace is our supplier. So Ace is reliable.” What if one supplier isn't?</td><td>Is each premise actually checked?</td></tr>
+    <tr><td>Hidden premise</td><td>A step nobody said out loud is carrying the whole argument.</td><td>“Sales fell, so the ad failed.” Hidden premise: nothing else changed.</td><td>What am I assuming without saying it?</td></tr>
+    <tr><td>Overreach</td><td>The conclusion claims more than the premises cover.</td><td>“Three customers loved it, so everyone will.”</td><td>Does the conclusion stay inside the evidence?</td></tr>
+    <tr><td>Backwards “if”</td><td>Affirming the consequent: “If A then B. B happened. So A.”</td><td>“If it rained, the street is wet. The street is wet. So it rained.” A hydrant could have done it.</td><td>What else could produce B?</td></tr>
+    <tr><td>Shifting word</td><td>A word quietly changes its meaning partway through the argument.</td><td>“Key is light on her feet. Light things float.”</td><td>Does every word mean the same thing in every step?</td></tr>
+  </table>
+
+  <div class="grid2" style="margin-top:14px">
+    <div class="card">
+      <p class="eyebrow">Famous mislabel</p>
+      <h3>Sherlock Holmes doesn't deduce.</h3>
+      <p class="small" style="margin:0">When Holmes looks at a tan and a posture and says “you've been in Afghanistan,” that isn't deduction. It's <b>abduction</b>: picking the best explanation. It can be wrong. It feels certain because it's fast. <b>Fast isn't the same as certain.</b></p>
+    </div>
+    <div class="card dark">
+      <p class="eyebrow">The Gap Rule · for every report</p>
+      <div class="eq" style="font-size:17pt;color:var(--gold2);margin:4px 0 6px">C ≤ S</div>
+      <p class="small" style="margin:0;color:#E7DCC8">Never state a conclusion more firmly than the evidence supports. When the evidence is 0.73, say “likely,” not “certain.” Then name the weakest premise. Strengthening that premise is your next job.</p>
+    </div>
+  </div>
+  <div class="callout" style="margin-top:12px">
+    <p class="eyebrow">Chairman's method, written as math</p>
+    <p style="margin:0">“What question must be answered before the next question is even useful?” In the equation, that question is <b>the lowest p<sub>i</sub></b>. Answer it first, and S rises the most for the least work. It's the same move as fixing the smallest factor in <span class="eq">G = P × M × E × D</span>.</p>
+  </div>
+  <div class="foot"><span>The Equation — Key Edition</span><span>07</span></div>
+</section>
+
+<!-- ============ LANE B: MANY LOGICS ============ -->
+<section class="page">
+  <p class="eyebrow">Lane B · Not just one way to think</p>
+  <h2>Eleven kinds of logic.</h2>
+  <p class="lead" style="margin-bottom:8px">Every culture reasons. They start from different places. Here are the main tools, each with its formula, what it's good for, and where it breaks.</p>
+  <table class="logic">
+    <tr><th>Logic</th><th>Shape</th><th>What it does</th><th>Where it breaks</th></tr>
+    <tr><td>Deductive</td><td class="f">A → B, A ⊢ B</td><td>Certain, if the premises are true.</td><td>Can't create new facts, and inherits any false premise.</td></tr>
+    <tr><td>Inductive</td><td class="f">x<sub>1</sub>…x<sub>n</sub> ⇒ ∀x</td><td>Learns a pattern from examples.</td><td>The next case can break the pattern.</td></tr>
+    <tr><td>Abductive</td><td class="f">B; A best explains B</td><td>Picks the best explanation. Detectives, doctors, mechanics.</td><td>The best story isn't always the true one.</td></tr>
+    <tr><td>Analogical</td><td class="f">A : B :: C : ?</td><td>Moves understanding from a known problem to a new one.</td><td>The two things may only look alike.</td></tr>
+    <tr><td>Bayesian</td><td class="f" style="white-space:nowrap;font-size:9.6pt">P(H|E) = P(E|H)·P(H) ÷ P(E)</td><td>Updates belief as evidence comes in.</td><td>A bad starting belief P(H) skews everything after it.</td></tr>
+    <tr><td>Fuzzy</td><td class="f">truth ∈ [0, 1]</td><td>Things can be partly true. Warm, not hot. (Zadeh, 1965)</td><td>The cutoffs are a judgment call.</td></tr>
+    <tr><td>Dialectical</td><td class="f">thesis ⇄ antithesis → synthesis</td><td>Puts two opposing views together to find something better.</td><td>Can turn into arguing for its own sake.</td></tr>
+    <tr><td>Four-cornered</td><td class="f">T, F, both, neither</td><td>Nāgārjuna (India, about 150 CE): allows answers outside yes/no.</td><td>Hard to act on without a decision rule.</td></tr>
+    <tr><td>Five-step Nyāya</td><td class="f">claim → reason → example → apply → conclude</td><td>Indian method that requires a real-world example in the middle of the argument.</td><td>Slower, which is the point.</td></tr>
+    <tr><td>Erotetic</td><td class="f">Q ⇒ Q′</td><td>The logic of <b>questions</b>: which questions validly lead to which other questions.</td><td>Most people never learn it exists.</td></tr>
+    <tr><td>Relational (Ubuntu)</td><td class="f">Self = f(Us)</td><td>Truth and identity are judged through relationships, not alone.</td><td>Can be ignored by systems built around a single individual.</td></tr>
+  </table>
+  <p class="small" style="margin-top:8px"><b>Erotetic</b> is the word you used, Chairman. It names your method: <i>a question produces the next question</i>. Your registry already writes it as <span class="eq">Q = f(K, E, C)</span>: the question you can ask is a function of Knowledge, Evidence and Connections.</p>
+  <div class="foot"><span>The Equation — Key Edition</span><span>08</span></div>
+</section>
+
+<section class="page">
+  <p class="eyebrow">Lane B · Different ways to ask</p>
+  <h2>Nine ways to ask a better question.</h2>
+  <p class="lead">You ask questions in a particular way. These are other ways. Each one is a tool. Pick the one that fits the problem.</p>
+  <div class="grid3">
+    <div class="card"><h3>Socratic</h3><p class="small">Keep asking “what do you mean by that?” until the definition holds up.</p><p class="eq" style="font-size:10pt">“What would make that false?”</p></div>
+    <div class="card"><h3>Five Whys</h3><p class="small">Toyota's method: ask “why?” five times and you get from the symptom to the cause.</p><p class="eq" style="font-size:10pt">why<sup>5</sup>(problem) → root</p></div>
+    <div class="card"><h3>Sankofa</h3><p class="small">Akan, from Ghana: go back and fetch what was left behind before you move forward.</p><p class="eq" style="font-size:10pt">“What did we already know?”</p></div>
+    <div class="card"><h3>Inversion</h3><p class="small">“Invert, always invert” (Jacobi). Ask how to guarantee failure, then avoid those things.</p><p class="eq" style="font-size:10pt">“How would this fail?”</p></div>
+    <div class="card"><h3>Pre-mortem</h3><p class="small">Pretend it's already a year from now and the project failed. Write down why.</p><p class="eq" style="font-size:10pt">“It failed. What killed it?”</p></div>
+    <div class="card"><h3>Steelman</h3><p class="small">State the other side's best case better than they can, then answer that.</p><p class="eq" style="font-size:10pt">“What's their strongest point?”</p></div>
+    <div class="card"><h3>First principles</h3><p class="small">Strip the problem down to what you know for certain, then build back up.</p><p class="eq" style="font-size:10pt">“What is true no matter what?”</p></div>
+    <div class="card"><h3>Counterfactual</h3><p class="small">Change one thing in your head and see what moves.</p><p class="eq" style="font-size:10pt">“If X were gone, what changes?”</p></div>
+    <div class="card dark"><h3 style="color:#fff">The Chairman's question</h3><p class="small" style="color:#E7DCC8">Look past the next gate. Verify backward, then move forward.</p><p class="eq" style="font-size:10pt;color:var(--gold2)">“What must be answered before this is useful?”</p></div>
+  </div>
+  <div class="callout" style="margin-top:12px">
+    <p class="eyebrow">How to choose</p>
+    <p style="margin:0">If you're stuck on a definition, go <b>Socratic</b>. If the same problem keeps coming back, use <b>Five Whys</b>. If you're about to launch something, run a <b>pre-mortem</b>. If you're in a disagreement, <b>steelman</b> the other side. If something got lost along the way, go back to it: <b>Sankofa</b>. If you don't know where to start, use the Chairman's question.</p>
+  </div>
+  <div class="foot"><span>The Equation — Key Edition</span><span>09</span></div>
+</section>
+
+<!-- ============ OUR PEOPLE ============ -->
+<section class="page">
+  <p class="eyebrow">Lane B · From our people</p>
+  <h2>Africa was writing equations 3,500 years ago.</h2>
+  <p class="lead">Not a slogan: the record. Each claim is with each claim marked <span class="chip v">Verified</span>, <span class="chip d">Debated</span>, or <span class="chip b">Bias on record</span>.</p>
+
+  <div class="card" style="margin-bottom:10px">
+    <p class="eyebrow">Egypt · Ahmes (Rhind) Papyrus · copied about 1550 BCE from an older text <span class="chip v">Verified</span></p>
+    <p class="small" style="margin:2px 0 4px"><b>Problem 24:</b> “A quantity and its seventh, added together, become 19. What is the quantity?” That is an algebra problem, written roughly 3,500 years ago. The scribe solved it with <b>false position</b>: guess, check, then scale.</p>
+    <div class="work" style="font-size:12pt;margin:4px 0">
+      x + x ÷ 7 = 19 &nbsp;<span class="note">See it</span><br>
+      Guess x = 7: &nbsp;7 + 1 = 8 &nbsp;<span class="note">wrong, but it shows the shape</span><br>
+      Scale: 19 ÷ 8 = 2⅜ &nbsp;→&nbsp; x = 7 × 2⅜ = <b>16⅝</b> &nbsp;<span class="note">Check: 16⅝ + 2⅜ = 19 ✓</span>
+    </div>
+    <p class="tiny" style="margin:0">The papyrus is held at the British Museum. Ahmes says he copied it from an earlier work, from about 1850 BCE.</p>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <p class="eyebrow">Yoruba · Ifá <span class="chip v">Verified</span></p>
+      <div class="eq" style="font-size:18pt;text-align:center">16 × 16 = 2<sup>8</sup> = 256</div>
+      <p class="small" style="margin:4px 0 0">Ifá divination reads marks that are either single or double. That's binary, two states. Eight marks give 256 <i>odù</i>, each tied to verses of knowledge. <span class="chip d">Debated</span> Ron Eglash argues this binary passed through Arab geomancy into Europe and on to Leibniz, the father of binary code. Leibniz himself credited the Chinese I Ching. The link is argued, not proven.</p>
+    </div>
+    <div class="card">
+      <p class="eyebrow">Egypt · Ma'at <span class="chip v">Verified</span></p>
+      <div class="eq" style="font-size:18pt;text-align:center">Heart ≤ Feather</div>
+      <p class="small" style="margin:4px 0 0">In the Book of the Dead (Spell 125), the heart is weighed against the feather of Ma'at: truth, balance, order. The soul speaks 42 declarations of what it did not do. Truth is shown as a <b>balance</b>, an equation held level. If the heart is heavier, you fail.</p>
+    </div>
+    <div class="card">
+      <p class="eyebrow">Congo · Ishango bone, about 20,000 years old <span class="chip v">Verified</span> <span class="chip d">Debated</span></p>
+      <p class="small" style="margin:0">One of the oldest counting objects we know of. One column is notched <span class="eq">11, 13, 17, 19</span>, which are all the prime numbers between 10 and 20. Whether that's deliberate math or coincidence is still argued. That it is deliberate counting is not.</p>
+    </div>
+    <div class="card">
+      <p class="eyebrow">Angola · Chokwe <i>sona</i> <span class="chip v">Verified</span></p>
+      <p class="small" style="margin:0">Sand drawings traced in a single continuous line around a grid of dots, without lifting the finger. That is the same problem Euler made famous in 1736 (the Königsberg bridges). Documented by mathematician Paulus Gerdes.</p>
+    </div>
+  </div>
+  <div class="foot"><span>The Equation — Key Edition</span><span>10</span></div>
+</section>
+
+<section class="page">
+  <p class="eyebrow">Lane B · The logic question, answered straight</p>
+  <h2>European logic and African logic.</h2>
+  <p class="lead">You asked this and it went unanswered. Here's the answer: <b>logic is not white or Black. Starting points differ.</b> And for a long time the record was written by people who claimed Africans had no logic at all.</p>
+
+  <div class="grid2">
+    <div class="card">
+      <p class="eyebrow">Two starting points</p>
+      <div class="eq" style="font-size:15pt;margin:4px 0">Self = f(Thought)</div>
+      <p class="small">Descartes, 1637: <i>“I think, therefore I am.”</i> You start alone, inside your own head.</p>
+      <div class="eq" style="font-size:15pt;margin:8px 0 4px">Self = f(Us)</div>
+      <p class="small" style="margin:0">John Mbiti, 1969, describing African thought: <i>“I am, because we are; and since we are, therefore I am.”</i> You start in relationship. Zulu: <i>Umuntu ngumuntu ngabantu</i>, a person is a person through other people.</p>
+    </div>
+    <div class="card" style="border-color:#E8C2B8">
+      <p class="eyebrow" style="color:var(--red)">Bias on record <span class="chip b">Verified quotes</span></p>
+      <p class="small" style="margin:0 0 5px"><b>Hume, 1753:</b> footnote, “I am apt to suspect the negroes … to be naturally inferior to the whites.”</p>
+      <p class="small" style="margin:0 0 5px"><b>Kant, 1764:</b> wrote that Africans have “by nature no feeling that rises above the trifling.”</p>
+      <p class="small" style="margin:0 0 5px"><b>Hegel, 1830s:</b> called Africa “no historical part of the World.”</p>
+      <p class="small" style="margin:0"><b>Lévy-Bruhl, 1910:</b> called non-European minds “prelogical.” He abandoned that idea in his own late notebooks, published in 1949. Most textbooks still quote the 1910 version.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:10px">
+    <p class="eyebrow">Hidden narrative · the strongest arguments on each side</p>
+    <table class="logic">
+      <tr><td>Greek debt to Egypt</td><td>Greek writers themselves (Herodotus; Plato in <i>Timaeus</i>) credit Egyptian priests. G.G.M. James, <i>Stolen Legacy</i> (1954), says Greek philosophy was taken from Egypt. Martin Bernal, <i>Black Athena</i> (1987), shows 19th-century scholars deliberately erased that credit. <span class="chip d">Debated</span> Mary Lefkowitz, <i>Not Out of Africa</i> (1996), disputes “stolen.” The influence is real. How much is still argued.</td></tr>
+      <tr><td>Who knew the land</td><td>Your point about <i>1923</i> has scholarship behind it. Judith Carney, <i>Black Rice</i> (2001): Carolina rice planting depended on West African knowledge brought by enslaved people. <span class="chip d">Debated</span> Eltis, Morgan &amp; Richardson (2007) argue planters drove the system. Both sides agree African labor and skill were central.</td></tr>
+      <tr><td>Ethiopia, 1667</td><td>Zera Yacob's <i>Hatata</i> argues for reasoning things out yourself instead of accepting authority, 170 years before Hegel. <span class="chip d">Debated</span> Some scholars say a 19th-century Italian monk wrote it. Others defend Zera Yacob as the author. It is still open.</td></tr>
+    </table>
+  </div>
+  <div class="callout" style="margin-top:10px"><p style="margin:0"><b>The equation for this whole page:</b> <span class="eq">Truth = Record − Bias</span>. Read the original document, name who wrote the commentary on it, and keep the parts that survive both.</p></div>
+  <div class="foot"><span>The Equation — Key Edition</span><span>11</span></div>
+</section>
+
+<!-- ============ SHIRTS ============ -->
+<section class="page">
+  <p class="eyebrow">The Line · Shirts that teach</p>
+  <h2>A saying. The equation. What it means.</h2>
+  <p class="lead">Most shirts print a quote that doesn't mean much. Ours print what we mean, then the math that proves it, then a short explanation on the back. Somebody reads it, understands it, and starts asking better questions.</p>
+
+  <div class="grid3" style="margin-top:6px">
+    <div class="tee">
+      <svg viewBox="0 0 200 200"><path d="M62 18 L38 26 L8 54 L26 80 L44 68 L44 188 L156 188 L156 68 L174 80 L192 54 L162 26 L138 18 Q100 44 62 18Z" fill="#14110D"/><text x="100" y="92" fill="#F4ECDD" font-family="Fraunces,serif" font-weight="800" font-size="9.4" text-anchor="middle">Zero anywhere is</text><text x="100" y="106" fill="#F4ECDD" font-family="Fraunces,serif" font-weight="800" font-size="9.4" text-anchor="middle">zero everywhere.</text><text x="100" y="134" fill="#D9A84A" font-family="STIX Two Text,serif" font-weight="600" font-size="11.5" text-anchor="middle">G = P × M × E × D</text></svg>
+      <div class="lbl">01 · Black / gold</div>
+      <div class="back"><b>Back:</b> Purpose, Method, Evidence, Discipline get multiplied, not added. Miss one and the goal is zero.</div>
+    </div>
+    <div class="tee">
+      <svg viewBox="0 0 200 200"><path d="M62 18 L38 26 L8 54 L26 80 L44 68 L44 188 L156 188 L156 68 L174 80 L192 54 L162 26 L138 18 Q100 44 62 18Z" fill="#F4ECDD" stroke="#1B1712" stroke-width="1.5"/><text x="100" y="94" fill="#1B1712" font-family="Fraunces,serif" font-weight="800" font-size="9.4" text-anchor="middle">Valid isn't true.</text><text x="100" y="126" fill="#A87A22" font-family="STIX Two Text,serif" font-weight="600" font-size="11.5" text-anchor="middle">S = V × p₁ × p₂ × p₃</text></svg>
+      <div class="lbl">02 · Cream / ink</div>
+      <div class="back"><b>Back:</b> Good logic built on weak premises gives a weak conclusion. Three 90% premises leave you 73% sure.</div>
+    </div>
+    <div class="tee">
+      <svg viewBox="0 0 200 200"><path d="M62 18 L38 26 L8 54 L26 80 L44 68 L44 188 L156 188 L156 68 L174 80 L192 54 L162 26 L138 18 Q100 44 62 18Z" fill="#2F4A3A"/><text x="100" y="94" fill="#F4ECDD" font-family="Fraunces,serif" font-weight="800" font-size="9.4" text-anchor="middle">I am because we are.</text><text x="100" y="126" fill="#E9C77B" font-family="STIX Two Text,serif" font-weight="600" font-size="11.5" text-anchor="middle">Self = f(Us)</text></svg>
+      <div class="lbl">03 · Forest / gold</div>
+      <div class="back"><b>Back:</b> Ubuntu. Who you are is a function of your people. Descartes started alone. We start together.</div>
+    </div>
+    <div class="tee">
+      <svg viewBox="0 0 200 200"><path d="M62 18 L38 26 L8 54 L26 80 L44 68 L44 188 L156 188 L156 68 L174 80 L192 54 L162 26 L138 18 Q100 44 62 18Z" fill="#E9DFCC" stroke="#1B1712" stroke-width="1.5"/><text x="100" y="94" fill="#1B1712" font-family="Fraunces,serif" font-weight="800" font-size="9.4" text-anchor="middle">Weigh it true.</text><text x="100" y="126" fill="#A3402F" font-family="STIX Two Text,serif" font-weight="600" font-size="11.5" text-anchor="middle">Heart ≤ Feather</text></svg>
+      <div class="lbl">04 · Sand / red</div>
+      <div class="back"><b>Back:</b> Ma'at, Egypt. Truth was pictured as a balance. Your heart cannot outweigh the truth.</div>
+    </div>
+    <div class="tee">
+      <svg viewBox="0 0 200 200"><path d="M62 18 L38 26 L8 54 L26 80 L44 68 L44 188 L156 188 L156 68 L174 80 L192 54 L162 26 L138 18 Q100 44 62 18Z" fill="#1E3550"/><text x="100" y="92" fill="#F4ECDD" font-family="Fraunces,serif" font-weight="800" font-size="9.4" text-anchor="middle">Better questions are</text><text x="100" y="106" fill="#F4ECDD" font-family="Fraunces,serif" font-weight="800" font-size="9.4" text-anchor="middle">built, not born.</text><text x="100" y="134" fill="#D9A84A" font-family="STIX Two Text,serif" font-weight="600" font-size="11.5" text-anchor="middle">Q = f(K, E, C)</text></svg>
+      <div class="lbl">05 · Navy / gold</div>
+      <div class="back"><b>Back:</b> The question you can ask grows with your Knowledge, your Evidence and your Connections.</div>
+    </div>
+    <div class="tee">
+      <svg viewBox="0 0 200 200"><path d="M62 18 L38 26 L8 54 L26 80 L44 68 L44 188 L156 188 L156 68 L174 80 L192 54 L162 26 L138 18 Q100 44 62 18Z" fill="#14110D"/><text x="100" y="92" fill="#F4ECDD" font-family="Fraunces,serif" font-weight="800" font-size="9.4" text-anchor="middle">They wrote algebra</text><text x="100" y="106" fill="#F4ECDD" font-family="Fraunces,serif" font-weight="800" font-size="9.4" text-anchor="middle">before Greece.</text><text x="100" y="134" fill="#D9A84A" font-family="STIX Two Text,serif" font-weight="600" font-size="11.5" text-anchor="middle">x + x ÷ 7 = 19</text></svg>
+      <div class="lbl">06 · Black / gold</div>
+      <div class="back"><b>Back:</b> Rhind Papyrus, Problem 24, Egypt, about 1550 BCE. x = 16⅝. Look it up.</div>
+    </div>
+  </div>
+  <p class="tiny" style="margin-top:8px">Production note: shirt 06's claim is accurate for written algebra problems. Babylonian algebra tablets are about as old, so the claim is “before Greece,” not “before everyone.” Before printing, each shirt goes through Famous Thought Verification, <span class="eq">F = S × A × C × T</span> (source, attribution, context, transfer).</p>
+  <div class="foot"><span>The Equation — Key Edition</span><span>12</span></div>
+</section>
+
+<!-- ============ PRACTICE ============ -->
+<section class="page">
+  <p class="eyebrow">Your turn, Key</p>
+  <h2>Three exercises. Pencil.</h2>
+
+  <div class="card" style="margin-bottom:10px">
+    <h3>1 · Score something real you're working on</h3>
+    <div class="eq" style="font-size:20pt;margin:6px 0">G = P × M × E × D = ___ × ___ × ___ × ___ = _______ / 625</div>
+    <p class="small">Which factor is lowest? ________________ &nbsp; What would raise it by 1 this week?</p>
+    <div class="write"></div><div class="write"></div>
+  </div>
+
+  <div class="card" style="margin-bottom:10px">
+    <h3>2 · Find the gap</h3>
+    <p class="small">“Our last two posts did well on Tuesday. Tuesday is our best day. We should post only on Tuesdays.”</p>
+    <p class="small">Premises: (1) ______________________ p₁ = ____ &nbsp; (2) ______________________ p₂ = ____</p>
+    <div class="eq" style="font-size:16pt;margin:4px 0">S = V × p₁ × p₂ = ________ &nbsp;&nbsp; Δ = C − S = ________</div>
+    <p class="small" style="margin:0">Which leak is this (page 7)? ______________________</p>
+  </div>
+
+  <div class="card" style="margin-bottom:10px">
+    <h3>3 · Ask the question before the question</h3>
+    <p class="small">Problem: “Why aren't the store products selling?”</p>
+    <p class="small">Before that question is useful, what must be answered first? Try two methods from page 9.</p>
+    <div class="write"></div><div class="write"></div><div class="write"></div>
+  </div>
+
+  <div class="callout">
+    <p class="eyebrow">A note from the Chairman's desk</p>
+    <p style="margin:0;font-family:Fraunces,serif;font-size:12pt">You used to see it fast and understand it fast. That speed is still in you. These equations don't replace your logic. They give it something to hold so it doesn't drift. See it. Name it. Say it. Use it.</p>
+  </div>
+  <p class="tiny" style="margin-top:8px">Answer key for 2: the main leak is <b>overreach</b> (two posts can't stand for every week), with a hidden premise (nothing else made those posts do well). If you rated the premises 0.6 and 0.5: S = 1 × 0.6 × 0.5 = 0.30. Stated as “we should,” C ≈ 0.9, so Δ ≈ 0.60.</p>
+  <div class="foot"><span>The Equation — Key Edition · THYLORA</span><span>13</span></div>
+</section>
+
+</body>
+</html>
