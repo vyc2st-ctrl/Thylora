@@ -1,0 +1,29 @@
+{
+  "registry_id": "THY-RECALL-001",
+  "opened": "2026-10-03",
+  "rule": "When current work touches any tag below, surface the item as a question, not an order. Never drop an item; mark it resolved only when the Chairman says so.",
+  "items": [
+    {"id": "RC-001", "title": "Printer evidence", "tags": ["printer", "hardware", "budget"], "state": "acknowledged-held", "note": "Acknowledged; not pursued now. Bring back when printing or hardware spend comes up."},
+    {"id": "RC-002", "title": "Status Key device", "tags": ["printer", "hardware", "key", "budget"], "state": "held", "note": "Not printing now. Bring back when buying hardware so it isn't displaced by another purchase."},
+    {"id": "RC-003", "title": "Key retrieval mechanism", "tags": ["key", "design", "hardware"], "state": "open-question", "note": "If the key slides in, how is it retrieved? Options: thin push slot reachable with a fingernail/pin inside the housing. Precedent: Chairman's self-made cable-terminator removal tool (screw glued into a latching tool, twist to release) — still in his tool bag since ~2007-08, Coatesville."},
+    {"id": "RC-004", "title": "Key measurements", "tags": ["key", "hardware"], "state": "waiting-chairman", "note": "Chairman to provide length, thickness, and any numbers on the key."},
+    {"id": "RC-005", "title": "Chairman tattoo", "tags": ["tattoo", "design", "language"], "state": "talk-before-image", "note": "V inside an open circle (outline), V large; expression candidate ΔQ = Qa − Qb on neck/ear side; our own word + meaning beneath. Photo → superimpose → stencil → Desmond proposal. No image until discussed."},
+    {"id": "RC-006", "title": "The world remembering itself", "tags": ["philosophy", "spine", "reports"], "state": "open-thought", "note": "Chairman saw something beyond 'every part of the world remembering itself' and lost it. Ask again when reports/spine/roots come up."},
+    {"id": "RC-007", "title": "The .3 question", "tags": ["math", "reports"], "state": "waiting-chairman", "note": "Chairman did not see why .3 mattered; source document unknown."},
+    {"id": "RC-008", "title": "Velvet Sky offer", "tags": ["studio", "talent", "music"], "state": "verify-identity", "note": "Confirm which performer; consent-first offer to enter the world as a real performer."},
+    {"id": "RC-009", "title": "Licence: The Apology I Owe Myself", "tags": ["studio", "music", "rights"], "state": "team-task", "note": "Find rights holder; request licence."},
+    {"id": "RC-010", "title": "Kisha Robinson (Rochester, NY)", "tags": ["people", "personal"], "state": "consent-routes-only", "note": "No people-search. Consent-based contact routes only."},
+    {"id": "RC-011", "title": "Old threads import", "tags": ["backend", "continuity"], "state": "waiting-chairman", "note": "Export ChatGPT/Claude data zips and drop into intake."},
+    {"id": "RC-012", "title": "iPad + recorder setup", "tags": ["hardware", "capture", "budget"], "state": "proposed", "note": "13-inch iPad Pro + Pencil; one-press phone recording; clip recorder."},
+    {"id": "RC-013", "title": "Plate canopy", "tags": ["product", "food", "design"], "state": "idea", "note": "Clear clip-on shield arcing over plate, open front for utensil."},
+    {"id": "RC-014", "title": "Suit stabilisation", "tags": ["product", "story", "tech"], "state": "idea", "note": "Self-balancing (like a self-standing motorcycle) + auto-wake/adrenaline response when wearer is unconscious. Story or product."},
+    {"id": "RC-015", "title": "Limitless logic critique", "tags": ["story", "logic", "movies"], "state": "idea", "note": "Hero gained power and helped no one — our movies show the help."},
+    {"id": "RC-016", "title": "Name of the Chairman's logic", "tags": ["logic", "continuity"], "state": "search-old-threads", "note": "Not adversarial operator, not economist. Candidates: Socratic, abductive, first-principles, lateral, dialectical."},
+    {"id": "RC-017", "title": "Honey that smells like syrup", "tags": ["food", "product", "truth"], "state": "check", "note": "Possible adulteration; buy from known beekeeper."},
+    {"id": "RC-018", "title": "Cali's lemonade", "tags": ["kids", "store", "food"], "state": "ready-for-store", "note": "1 whole lemon, 1 cup water, 1 tbsp sugar. Honey version next."},
+    {"id": "RC-019", "title": "Family photo albums", "tags": ["history", "store", "books"], "state": "idea", "note": "Our history is precious — show it in products and books, with the 'what did it smell/feel like then' questions."},
+    {"id": "RC-020", "title": "Thanksgiving drowsy-driving report", "tags": ["reports", "news", "food"], "state": "idea", "note": "News that saves lives, not entertains."},
+    {"id": "RC-021", "title": "Daniel Gerald Williams (McGill)", "tags": ["family", "companies"], "state": "assign-owner", "note": "Release disregarded; give him companies and work."},
+    {"id": "RC-022", "title": "Studio guardians list", "tags": ["studio", "family"], "state": "confirm", "note": "Tim, Jordan, Cali, DD(?), Mateo, Kennedy, Kylie(?) — Chairman to confirm."}
+  ]
+}
