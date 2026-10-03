@@ -1,0 +1,128 @@
+{
+  "registry_id": "THY-HERITAGE-LEXICON-001",
+  "workroom": "WR-HERITAGE-001",
+  "opened": "2026-10-03",
+  "rule": "Seed vocabulary only. No entry is final until its status moves to CONFIRMED by a named speaker, teacher, or published dictionary page. Pronunciation is never invented: Egyptian pronunciation is the modern Egyptological convention, not a recording of an ancient speaker.",
+  "statuses": ["SEED_PENDING_CONFIRMATION", "CONFIRMED", "DISPUTED", "RETIRED"],
+  "languages": {
+    "blackfoot": {
+      "self_name": "Niitsítapi",
+      "family": "Algonquian",
+      "living": true,
+      "confirm_with": [
+        "Blackfoot Online Dictionary (Frantz & Russell, University of Toronto / atlas-ling) — dictionary.blackfoot.atlas-ling.ca",
+        "Blackfeet Community College, Browning, Montana — Piegan Institute / Cuts Wood School immersion program",
+        "Red Crow Community College (Kainai), Alberta"
+      ]
+    },
+    "egyptian": {
+      "self_name": "mdw nṯr (medu netjer) for the script; rmṯ n kmt (remetj en Kemet) for the people",
+      "family": "Afroasiatic (own branch)",
+      "living": false,
+      "descendant": "Coptic, still used in Coptic Orthodox liturgy — the closest surviving guide to how the words sounded",
+      "confirm_with": [
+        "Faulkner, A Concise Dictionary of Middle Egyptian (1962)",
+        "Thesaurus Linguae Aegyptiae — thesaurus-linguae-aegyptiae.de (free, searchable)",
+        "Crum, A Coptic Dictionary (1939) for later pronunciation"
+      ]
+    },
+    "edo": {
+      "self_name": "Ẹ̀dó",
+      "family": "Niger-Congo · Volta-Niger · Edoid",
+      "living": true,
+      "confirm_with": [
+        "Agheyisi, An Edo-English Dictionary (1986)",
+        "Melzian, A Concise Dictionary of the Bini Language of Southern Nigeria (1937)",
+        "Institute for Benin Studies / native speakers in Benin City (tone must be confirmed by ear)"
+      ]
+    },
+    "hebrew": {
+      "self_name": "ʿIvrit (the language), ʿIvri (a Hebrew)",
+      "family": "Afroasiatic · Semitic",
+      "living": true,
+      "confirm_with": [
+        "Brown-Driver-Briggs Hebrew and English Lexicon (1906)",
+        "Strong's Concordance numbers for biblical usage",
+        "Modern Israeli Hebrew speakers for present pronunciation (differs from ancient)"
+      ]
+    }
+  },
+  "entries": [
+    {"id":"BLK-001","lang":"blackfoot","native":"Niitsítapi","gloss":"the real / original people — what the Blackfoot Confederacy calls itself","domain":"identity","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"BLK-002","lang":"blackfoot","native":"Siksiká","gloss":"black foot (siksi- black + -ka foot); one nation of the confederacy","domain":"identity","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"BLK-003","lang":"blackfoot","native":"Kainai","gloss":"many chiefs — the Blood Tribe","domain":"identity","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"BLK-004","lang":"blackfoot","native":"Aamsskáápipikani","gloss":"South Piegan — the Blackfeet Nation of Montana (USA)","domain":"identity","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"BLK-005","lang":"blackfoot","native":"Oki","gloss":"hello","domain":"greeting","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"BLK-006","lang":"blackfoot","native":"Kitatama'sino","gloss":"until we see each other again (used instead of goodbye)","domain":"greeting","confidence":"MEDIUM","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"BLK-007","lang":"blackfoot","native":"Naató'si","gloss":"sun (the root naató- also carries the sense holy)","domain":"world","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"BLK-008","lang":"blackfoot","native":"Ko'komíki'somm","gloss":"moon","domain":"world","confidence":"MEDIUM","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"BLK-009","lang":"blackfoot","native":"ponokáómitaa","gloss":"horse — literally elk-dog","domain":"animals","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"BLK-010","lang":"blackfoot","native":"imitáá","gloss":"dog","domain":"animals","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"BLK-011","lang":"blackfoot","native":"iiníí","gloss":"buffalo / bison","domain":"animals","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"BLK-012","lang":"blackfoot","native":"Ihtsipáítapiiyo'pa","gloss":"Source of Life — the Creator","domain":"spirit","confidence":"MEDIUM","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"BLK-013","lang":"blackfoot","native":"nitsiniiyi'taki","gloss":"I am thankful / I appreciate it","domain":"feeling","confidence":"MEDIUM","status":"SEED_PENDING_CONFIRMATION"},
+
+    {"id":"EGY-001","lang":"egyptian","native":"kmt","romanization":"Kemet","gloss":"the black land — Egypt's own name for itself","domain":"identity","confidence":"HIGH","status":"DISPUTED","note":"Wording is certain; meaning is debated. See WR-HERITAGE-001 §5 for the full breakdown: black Nile silt vs. black people."},
+    {"id":"EGY-002","lang":"egyptian","native":"dšrt","romanization":"Deshret","gloss":"the red land — the desert","domain":"world","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EGY-003","lang":"egyptian","native":"rmṯ","romanization":"remetj","gloss":"people, human beings","domain":"identity","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EGY-004","lang":"egyptian","native":"mdw nṯr","romanization":"medu netjer","gloss":"god's words — the hieroglyphic writing","domain":"language","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EGY-005","lang":"egyptian","native":"ꜥnḫ","romanization":"ankh","gloss":"life; to live","domain":"spirit","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EGY-006","lang":"egyptian","native":"mꜣꜥt","romanization":"maat","gloss":"truth, justice, right order","domain":"logic","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EGY-007","lang":"egyptian","native":"ḥtp","romanization":"hotep","gloss":"peace, satisfied, offering","domain":"feeling","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EGY-008","lang":"egyptian","native":"nfr","romanization":"nefer","gloss":"good, beautiful, complete","domain":"feeling","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EGY-009","lang":"egyptian","native":"mrỉ","romanization":"meri","gloss":"to love; beloved","domain":"feeling","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EGY-010","lang":"egyptian","native":"ỉb","romanization":"ib","gloss":"heart — seat of thought and will","domain":"mind","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EGY-011","lang":"egyptian","native":"kꜣ","romanization":"ka","gloss":"life-force, the double","domain":"spirit","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EGY-012","lang":"egyptian","native":"bꜣ","romanization":"ba","gloss":"personality / soul that can travel","domain":"spirit","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EGY-013","lang":"egyptian","native":"rn","romanization":"ren","gloss":"name — a person lives while the name is spoken","domain":"identity","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EGY-014","lang":"egyptian","native":"nṯr","romanization":"netjer","gloss":"god, the divine","domain":"spirit","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EGY-015","lang":"egyptian","native":"mwt","romanization":"mut","gloss":"mother","domain":"family","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EGY-016","lang":"egyptian","native":"ỉt","romanization":"it","gloss":"father","domain":"family","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EGY-017","lang":"egyptian","native":"sꜣ / sꜣt","romanization":"sa / sat","gloss":"son / daughter","domain":"family","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EGY-018","lang":"egyptian","native":"sn / snt","romanization":"sen / senet","gloss":"brother / sister","domain":"family","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EGY-019","lang":"egyptian","native":"pr-ꜥꜣ","romanization":"per-aa","gloss":"great house — the palace, later the word pharaoh","domain":"power","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EGY-020","lang":"egyptian","native":"ỉtrw","romanization":"iteru","gloss":"river — the Nile","domain":"world","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EGY-021","lang":"egyptian","native":"sḏm","romanization":"sedjem","gloss":"to hear, to listen, to obey","domain":"mind","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+
+    {"id":"EDO-001","lang":"edo","native":"Ẹ̀dó","gloss":"the people, the language, and Benin City itself","domain":"identity","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EDO-002","lang":"edo","native":"Igodomigodo","gloss":"early name of the kingdom in the Ogiso era","domain":"identity","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EDO-003","lang":"edo","native":"Ogiso","gloss":"ruler of the sky — the first dynasty","domain":"power","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EDO-004","lang":"edo","native":"Ọ̀bá","gloss":"king","domain":"power","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EDO-005","lang":"edo","native":"Iyọba","gloss":"Queen Mother","domain":"power","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EDO-006","lang":"edo","native":"Osanobua","gloss":"God, the Creator","domain":"spirit","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EDO-007","lang":"edo","native":"Ehi","gloss":"guardian spirit; the destined self","domain":"spirit","confidence":"MEDIUM","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EDO-008","lang":"edo","native":"Kóyo","gloss":"hello / greetings","domain":"greeting","confidence":"MEDIUM","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EDO-009","lang":"edo","native":"Obókhian","gloss":"welcome","domain":"greeting","confidence":"MEDIUM","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EDO-010","lang":"edo","native":"Ọ̀bá gha tọ̀ kpẹ̀ẹ̀, Isẹ̀","gloss":"Long live the king — so be it","domain":"power","confidence":"MEDIUM","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EDO-011","lang":"edo","native":"Isẹ̀","gloss":"amen, so be it","domain":"spirit","confidence":"MEDIUM","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EDO-012","lang":"edo","native":"erha","gloss":"father","domain":"family","confidence":"MEDIUM","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EDO-013","lang":"edo","native":"iyè","gloss":"mother","domain":"family","confidence":"MEDIUM","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EDO-014","lang":"edo","native":"ọmọ","gloss":"child","domain":"family","confidence":"MEDIUM","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EDO-015","lang":"edo","native":"amẹ","gloss":"water","domain":"world","confidence":"MEDIUM","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EDO-016","lang":"edo","native":"ọwa","gloss":"house, home","domain":"world","confidence":"MEDIUM","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EDO-017","lang":"edo","native":"Igue","gloss":"annual royal festival of renewal","domain":"ceremony","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"EDO-018","lang":"edo","native":"ọkpa · eva · eha · enẹ · isẹn","gloss":"one · two · three · four · five","domain":"number","confidence":"MEDIUM","status":"SEED_PENDING_CONFIRMATION"},
+
+    {"id":"HEB-001","lang":"hebrew","native":"עִבְרִי","romanization":"Ivri","gloss":"a Hebrew — traditionally one who crossed over","domain":"identity","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"HEB-002","lang":"hebrew","native":"עַם","romanization":"am","gloss":"a people, a nation","domain":"identity","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"HEB-003","lang":"hebrew","native":"מִשְׁפָּחָה","romanization":"mishpachah","gloss":"family, clan","domain":"family","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"HEB-004","lang":"hebrew","native":"תּוֹלְדוֹת","romanization":"toledot","gloss":"generations — the family line (how Genesis opens each genealogy)","domain":"family","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"HEB-005","lang":"hebrew","native":"שֵׁם","romanization":"shem","gloss":"name","domain":"identity","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"HEB-006","lang":"hebrew","native":"זָכַר","romanization":"zakhar","gloss":"to remember","domain":"mind","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"HEB-007","lang":"hebrew","native":"זִכָּרוֹן","romanization":"zikkaron","gloss":"memorial, memory","domain":"mind","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"HEB-008","lang":"hebrew","native":"שָׁלוֹם","romanization":"shalom","gloss":"peace, wholeness, nothing missing","domain":"feeling","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"HEB-009","lang":"hebrew","native":"אַהֲבָה","romanization":"ahavah","gloss":"love","domain":"feeling","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"HEB-010","lang":"hebrew","native":"אֱמֶת","romanization":"emet","gloss":"truth, firmness","domain":"logic","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"HEB-011","lang":"hebrew","native":"חֶסֶד","romanization":"chesed","gloss":"loyal, covenant love","domain":"feeling","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"HEB-012","lang":"hebrew","native":"לֵב","romanization":"lev","gloss":"heart — mind and will together","domain":"mind","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"HEB-013","lang":"hebrew","native":"נֶפֶשׁ","romanization":"nefesh","gloss":"living being, life, soul","domain":"spirit","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"HEB-014","lang":"hebrew","native":"רוּחַ","romanization":"ruach","gloss":"wind, breath, spirit","domain":"spirit","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"HEB-015","lang":"hebrew","native":"חַיִּים","romanization":"chayyim","gloss":"life","domain":"spirit","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"HEB-016","lang":"hebrew","native":"אָב / אֵם","romanization":"av / em","gloss":"father / mother","domain":"family","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"HEB-017","lang":"hebrew","native":"בֵּן / בַּת","romanization":"ben / bat","gloss":"son / daughter","domain":"family","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"HEB-018","lang":"hebrew","native":"אָח / אָחוֹת","romanization":"ach / achot","gloss":"brother / sister","domain":"family","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"HEB-019","lang":"hebrew","native":"מִצְרַיִם","romanization":"Mitsrayim","gloss":"Egypt","domain":"place","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"HEB-020","lang":"hebrew","native":"כּוּשׁ","romanization":"Kush","gloss":"Cush — the lands south of Egypt (Nubia, upper Nile)","domain":"place","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"},
+    {"id":"HEB-021","lang":"hebrew","native":"אֶרֶץ","romanization":"eretz","gloss":"land, earth","domain":"place","confidence":"HIGH","status":"SEED_PENDING_CONFIRMATION"}
+  ]
+}
