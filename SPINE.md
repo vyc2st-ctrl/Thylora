@@ -2,8 +2,8 @@
 **Checked in:** 2026-10-03 19:02 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
 
 ## Where we left off
-`f3ccb63` on `claude/root-house-lineage-full-thread` · 2026-10-03T14:25:56+00:00  
-Spine Forward check-in 2026-10-03T14:25Z
+`5ea829a` on `claude/root-house-lineage-full-thread` · 2026-10-03T19:02:02Z  
+World-layer precheck: Our World owns the economy; Earth = Chairman + merch/digital lane (backend 643)
 
 ## Who is working
 | Name | Desk | Status | On |
@@ -41,7 +41,7 @@ Research worker last ran 2026-10-03T11:14:10.963Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 7 |
+| commits last 7 days | 8 |
 | days since last commit | 0 |
 
 ## All lanes
