@@ -1,6 +1,8 @@
 // THY-APP-B7-WITNESS-HOTFIX-001
 // Additive production hotfix for Chairman-witnessed iPad/Safari defects.
 (function installThyloraBuild7WitnessHotfix(){
+  // Idempotent: this file may arrive both via a direct <script> tag and via sw.js concatenation.
+  if(window.__thyB7WitnessHotfix)return;window.__thyB7WitnessHotfix=true;
   const RATE_KEY='thylora_speech_rate';
   const DEFAULT_RATE='1.25';
 

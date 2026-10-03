@@ -1,4 +1,4 @@
-const CACHE='thylora-app-v9-witness-hotfix';
+const CACHE='thylora-app-v10-nav-reach-fix';
 const ASSETS=['/app/','/app/index.html','/app/styles.css','/app/app.js','/app/hotfix-build7-witness.js','/app/manifest.webmanifest','/app/time-run.html','/app/time-run.css','/app/time-run.js'];
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)))});
 self.addEventListener('activate',e=>e.waitUntil(Promise.all([self.clients.claim(),caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k))))])));
