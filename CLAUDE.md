@@ -33,6 +33,22 @@ before anything else**:
 3. Then do the work in the message, across every lane it touches (§1).
 4. Update `THREAD.md`, regenerate the spine, commit, push.
 
+## 0.5 · Precheck: which world? (permanent — THY-POLICY-WORLD-LAYER-ECONOMY-BOUNDARY-643)
+
+Before writing or reporting any company, worker, shop, place, price or sale:
+- It is **Our World (EdereAirah)** unless the Chairman says Earth in so many words.
+- **Earth = the Chairman only.** No Earth employees. Earth family records are
+  genealogy or invitations — never staff counts.
+- **Earth money comes from one lane:** shirts/merch and digital products sold to
+  Earth customers, to fund making everything else.
+- **Every good consumed in Our World traces back:** who raised or grew it, who
+  killed or harvested it, who sold each part (meat, skin, wool, milk), to whom,
+  for how much in REE, and where the money went next
+  (`thylora_world_value_chain`). Unknown people stay OPEN_IDENTITY; unknown
+  prices stay OPEN_AMOUNT. Never invent either.
+- Sequence numbers: re-read both heads right before every write; other
+  sessions write concurrently. The ledger guard refuses regression — obey it.
+
 ## 1 · Full-thread rule (the Chairman's top complaint)
 
 - **Do the work, then report it.** Never answer with a plan of what "we are

@@ -57,7 +57,7 @@ export function buildReport({ now = new Date(), git = {}, thread = '', family = 
     ...needsChairman.slice(0, 6).map(l => `${l.lane}: ${l.needs}?`),
     named === 0 ? 'Who are your parents and four grandparents (even first names)?' : null,
     (images.jobs ?? []).some(j => j.blocked_on) ? 'Can you attach the reference pictures for the first image?' : null,
-    econ.recorded_revenue_minor ? null : 'Which company makes the first recorded dollar, and what does it sell?'
+    econ.recorded_revenue_minor ? null : 'Earth lane: which shirt or digital product sells first? Our World: what is the REE smallest unit, and what does one hide sell for?'
   ].filter(Boolean);
 
   return {

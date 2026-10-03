@@ -1,37 +1,186 @@
 {
-  "_read_me": "The people, companies and economy of the THYLORA world. World characters are labelled; they are never presented as Earth people. Numbers in 'economy' are recorded facts only — nothing is estimated here.",
+  "_read_me": "MIRROR ONLY of thylora-dash (THY-POLICY-WORLD-LAYER-ECONOMY-BOUNDARY-643). Every company, worker, shop, place and price here is Our World (EdereAirah). Earth layer = the Chairman only, plus one revenue lane (shirts/merch + digital products sold to Earth customers to fund production). Backend tables are authoritative: thylora_department_personnel, thylora_world_market_companies, thylora_world_value_chain, thylora_economy_domain_registry.",
   "people": [
-    { "id": "odessa", "name": "Mother Odessa Vance", "company": "root-house", "kind": "WORLD_CHARACTER", "job": "Keeper of the Parlor · oral history" },
-    { "id": "dez", "name": "Desmond “Dez” Okafor", "company": "root-house", "kind": "WORLD_CHARACTER", "job": "Census tracker" },
-    { "id": "ines", "name": "Inès Baptiste", "company": "root-house", "kind": "WORLD_CHARACTER", "job": "Canada desk" },
-    { "id": "marcus", "name": "Marcus Hale", "company": "root-house", "kind": "WORLD_CHARACTER", "job": "Military desk" },
-    { "id": "amara", "name": "Amara Lewis", "company": "root-house", "kind": "WORLD_CHARACTER", "job": "Land and law desk" },
-    { "id": "theo", "name": "Theo Whitfield", "company": "root-house", "kind": "WORLD_CHARACTER", "job": "Newspaper desk" },
-    { "id": "june", "name": "June Holloway", "company": "root-house", "kind": "WORLD_CHARACTER", "job": "Church and cemetery desk" },
-    { "id": "kofi", "name": "Kofi Mensah", "company": "root-house", "kind": "WORLD_CHARACTER", "job": "DNA and migration desk" },
-    { "id": "rosa", "name": "Rosa Delgado-Pryor", "company": "root-house", "kind": "WORLD_CHARACTER", "job": "Before-1870 desk" },
-    { "id": "pip", "name": "Pip", "company": "root-house", "kind": "WORLD_CHARACTER", "job": "Junior runner" },
-    { "id": "bramble", "name": "Bramble", "company": "world-shows", "kind": "WORLD_CHARACTER", "job": "Lead · Bramble + Wick (1930s–40s)" },
-    { "id": "wick", "name": "Wick", "company": "world-shows", "kind": "WORLD_CHARACTER", "job": "Bramble's companion · Bramble + Wick" },
-    { "id": "dividend-circle", "name": "The Dividend Circle (six women, identities open)", "company": "world-shows", "kind": "WORLD_CHARACTER", "job": "Ensemble · St. Louis", "open": true },
-    { "id": "window-hosts", "name": "The Window hosts (not cast)", "company": "the-window", "kind": "OPEN_ROLE", "job": "Live hosts", "open": true }
+    {
+      "id": "odessa",
+      "name": "Mother Odessa Vance",
+      "company": "root-house",
+      "kind": "WORLD_CHARACTER",
+      "job": "Keeper of the Parlor · oral history"
+    },
+    {
+      "id": "dez",
+      "name": "Desmond “Dez” Okafor",
+      "company": "root-house",
+      "kind": "WORLD_CHARACTER",
+      "job": "Census tracker"
+    },
+    {
+      "id": "ines",
+      "name": "Inès Baptiste",
+      "company": "root-house",
+      "kind": "WORLD_CHARACTER",
+      "job": "Canada desk"
+    },
+    {
+      "id": "marcus",
+      "name": "Marcus Hale",
+      "company": "root-house",
+      "kind": "WORLD_CHARACTER",
+      "job": "Military desk"
+    },
+    {
+      "id": "amara",
+      "name": "Amara Lewis",
+      "company": "root-house",
+      "kind": "WORLD_CHARACTER",
+      "job": "Land and law desk"
+    },
+    {
+      "id": "theo",
+      "name": "Theo Whitfield",
+      "company": "root-house",
+      "kind": "WORLD_CHARACTER",
+      "job": "Newspaper desk"
+    },
+    {
+      "id": "june",
+      "name": "June Holloway",
+      "company": "root-house",
+      "kind": "WORLD_CHARACTER",
+      "job": "Church and cemetery desk"
+    },
+    {
+      "id": "kofi",
+      "name": "Kofi Mensah",
+      "company": "root-house",
+      "kind": "WORLD_CHARACTER",
+      "job": "DNA and migration desk"
+    },
+    {
+      "id": "rosa",
+      "name": "Rosa Delgado-Pryor",
+      "company": "root-house",
+      "kind": "WORLD_CHARACTER",
+      "job": "Before-1870 desk"
+    },
+    {
+      "id": "pip",
+      "name": "Pip",
+      "company": "root-house",
+      "kind": "WORLD_CHARACTER",
+      "job": "Junior runner"
+    },
+    {
+      "id": "bramble",
+      "name": "Bramble",
+      "company": "world-shows",
+      "kind": "WORLD_CHARACTER",
+      "job": "Lead · Bramble + Wick (1930s–40s)"
+    },
+    {
+      "id": "wick",
+      "name": "Wick",
+      "company": "world-shows",
+      "kind": "WORLD_CHARACTER",
+      "job": "Bramble's companion · Bramble + Wick"
+    },
+    {
+      "id": "dividend-circle",
+      "name": "The Dividend Circle (six women, identities open)",
+      "company": "world-shows",
+      "kind": "WORLD_CHARACTER",
+      "job": "Ensemble · St. Louis",
+      "open": true
+    },
+    {
+      "id": "window-hosts",
+      "name": "The Window hosts (not cast)",
+      "company": "the-window",
+      "kind": "OPEN_ROLE",
+      "job": "Live hosts",
+      "open": true
+    }
   ],
   "companies": [
-    { "id": "root-house", "name": "Root House", "lane": "Family lineage research", "status": "WORKING", "where": "/lineage" },
-    { "id": "rae-link", "name": "RAE Link", "lane": "Owned media network", "status": "BUILT_HELD", "where": "/rae-link" },
-    { "id": "the-window", "name": "The Window (RAE Link studio)", "lane": "Live countdown show", "status": "FORMAT_BUILT", "where": "/rae-link#window" },
-    { "id": "world-shows", "name": "World Shows / Story Studio", "lane": "Bramble + Wick, Dividend Circle, Green Milk", "status": "DEVELOPMENT", "where": "/app#shows" },
-    { "id": "store", "name": "THYLORA Store + Memberships", "lane": "Store", "status": "SURFACE_LIVE_CHECKOUT_GATED", "where": "/public-site/store.html" },
-    { "id": "game-bet", "name": "GAME-BET-001 Sportsbook + Casino", "lane": "Games", "status": "BUILT_HELD", "where": "/app/sports-betting.html" },
-    { "id": "time-run", "name": "Time Run", "lane": "Audio / reading", "status": "LIVE_IN_APP", "where": "/app/time-run.html" },
-    { "id": "departments", "name": "THYLORA departments (Finance, Legal, Sports, Studio, Wellness, Customer Help, Production, Systems …)", "lane": "Backend registry thylora_departments", "status": "LIVE_REGISTRY_READ_BY_APP", "where": "/app#departments" }
+    {
+      "id": "root-house",
+      "name": "Root House",
+      "lane": "Family lineage research",
+      "status": "WORKING",
+      "where": "/lineage",
+      "layer": "EDEREAIRAH"
+    },
+    {
+      "id": "rae-link",
+      "name": "RAE Link",
+      "lane": "Owned media network",
+      "status": "BUILT_HELD",
+      "where": "/rae-link",
+      "layer": "EDEREAIRAH"
+    },
+    {
+      "id": "the-window",
+      "name": "The Window (RAE Link studio)",
+      "lane": "Live countdown show",
+      "status": "FORMAT_BUILT",
+      "where": "/rae-link#window",
+      "layer": "EDEREAIRAH"
+    },
+    {
+      "id": "world-shows",
+      "name": "World Shows / Story Studio",
+      "lane": "Bramble + Wick, Dividend Circle, Green Milk",
+      "status": "DEVELOPMENT",
+      "where": "/app#shows",
+      "layer": "EDEREAIRAH"
+    },
+    {
+      "id": "game-bet",
+      "name": "GAME-BET-001 Sportsbook + Casino",
+      "lane": "Games",
+      "status": "BUILT_HELD",
+      "where": "/app/sports-betting.html",
+      "layer": "EDEREAIRAH"
+    },
+    {
+      "id": "time-run",
+      "name": "Time Run",
+      "lane": "Audio / reading",
+      "status": "LIVE_IN_APP",
+      "where": "/app/time-run.html",
+      "layer": "EDEREAIRAH"
+    },
+    {
+      "id": "departments",
+      "name": "THYLORA departments (Finance, Legal, Sports, Studio, Wellness, Customer Help, Production, Systems …)",
+      "lane": "Backend registry thylora_departments",
+      "status": "LIVE_REGISTRY_READ_BY_APP",
+      "where": "/app#departments",
+      "layer": "EDEREAIRAH"
+    }
   ],
   "economy": {
-    "currency": "USD",
-    "recorded_revenue_minor": 0,
-    "recorded_payouts_minor": 0,
-    "members": null,
-    "creators": null,
-    "note": "No sale, payout or member count has been recorded in this repository. Live figures live in the thylora-dash backend; the spine report reads them when it can reach it."
+    "layer": "EDEREAIRAH",
+    "currency": "REE",
+    "smallest_unit": "OPEN — Chairman ruling",
+    "value_chains": {
+      "table": "thylora_world_value_chain",
+      "first": "CHAIN-CATTLE-HIDE-001 · 10 steps · steer → meat, hide, tallow, bone → leather → boots/saddles",
+      "identities": "OPEN_IDENTITY (herder, butcher, tanner, chandler, cobbler not yet named)",
+      "prices": "OPEN_AMOUNT until REE smallest unit is set"
+    },
+    "note": "No price or person is invented. Live figures come from thylora-dash."
+  },
+  "earth_layer": {
+    "people": [
+      "The Chairman (only Earth person in the operation; no Earth employees)"
+    ],
+    "revenue_lane": {
+      "what": "Shirts/merch and digital products sold to Earth customers",
+      "why": "Earth money funds making the rest",
+      "surface": "/public-site/store.html",
+      "currency": "USD (Earth only)"
+    }
   }
 }

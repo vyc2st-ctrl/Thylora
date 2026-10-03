@@ -1,9 +1,9 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-10-03 14:25 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
+**Checked in:** 2026-10-03 19:02 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
 
 ## Where we left off
-`aca80d4` on `claude/root-house-lineage-full-thread` · 2026-10-03T14:25:40Z  
-Backend-first correction: thylora-dash is the source of truth (custody seq 641)
+`f3ccb63` on `claude/root-house-lineage-full-thread` · 2026-10-03T14:25:56+00:00  
+Spine Forward check-in 2026-10-03T14:25Z
 
 ## Who is working
 | Name | Desk | Status | On |
@@ -24,8 +24,8 @@ Research worker last ran 2026-10-03T11:14:10.963Z · 0 leads · 0 provider error
 ## Mathematics
 | Measure | Value |
 |---|---|
-| lanes total | 19 |
-| lanes waiting on chairman | 14 |
+| lanes total | 21 |
+| lanes waiting on chairman | 16 |
 | family seats named | 0 / 30 |
 | family percent named | 0 |
 | open research tasks | 30 |
@@ -37,11 +37,11 @@ Research worker last ran 2026-10-03T11:14:10.963Z · 0 leads · 0 provider error
 | migrations written | 12 |
 | migrations applied live | 0 |
 | world people | 14 |
-| world companies | 8 |
+| world companies | 7 |
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 6 |
+| commits last 7 days | 7 |
 | days since last commit | 0 |
 
 ## All lanes
@@ -63,8 +63,10 @@ Research worker last ran 2026-10-03T11:14:10.963Z · 0 leads · 0 provider error
 | 14 | Money (ledger, payouts, GAME-BET-001) | Built, held | Payout provider (highest-cost open decision) | Provider + legal |
 | 15 | Operating logic (ask the next question, preserve source, evidence trail, no frozen system) | Now written into every session | Keep enforcing | — |
 | 17 | Spine Forward check-in | BUILT | Script reads backend when secrets exist | GitHub Actions secrets (Chairman types them into GitHub, never into chat) |
-| 18 | World: people, companies, economy | SEEDED | Feed the spine from backend tables | — |
+| 18 | World: people, companies, economy (Our World only) | SEEDED | Feed the spine from backend tables | — |
 | 19 | First image | QUEUED | Produce once references arrive | The two reference pictures |
+| 20 | World value chains (raise → kill → sell meat + skin → tan → make → sell) | BUILT · 1 chain, 10 steps | Name herder/butcher/tanner; record first hide sale; mark ECON-COMMODITIES PARTIAL (update timed out twice) | REE smallest unit · what one hide sells for |
+| 21 | Earth family in staff table | HELD | Move to an Earth-invitations list if the Chairman says so | Keep as invitations, or move out? |
 | 16 | Dashboard | Not this repo | — | — |
 
 ## The world
@@ -73,7 +75,6 @@ Research worker last ran 2026-10-03T11:14:10.963Z · 0 leads · 0 provider error
 - **RAE Link** — Owned media network · BUILT_HELD
 - **The Window (RAE Link studio)** — Live countdown show · FORMAT_BUILT
 - **World Shows / Story Studio** — Bramble + Wick, Dividend Circle, Green Milk · DEVELOPMENT
-- **THYLORA Store + Memberships** — Store · SURFACE_LIVE_CHECKOUT_GATED
 - **GAME-BET-001 Sportsbook + Casino** — Games · BUILT_HELD
 - **Time Run** — Audio / reading · LIVE_IN_APP
 - **THYLORA departments (Finance, Legal, Sports, Studio, Wellness, Customer Help, Production, Systems …)** — Backend registry thylora_departments · LIVE_REGISTRY_READ_BY_APP
@@ -94,7 +95,7 @@ Research worker last ran 2026-10-03T11:14:10.963Z · 0 leads · 0 provider error
 - The Dividend Circle (six women, identities open) — Ensemble · St. Louis (world character)
 - The Window hosts (not cast) — Live hosts (open role)
 
-**Economy:** revenue recorded 0 · payouts recorded 0 · No sale, payout or member count has been recorded in this repository. Live figures live in the thylora-dash backend; the spine report reads them when it can reach it.
+**Economy:** revenue recorded 0 · payouts recorded 0 · No price or person is invented. Live figures come from thylora-dash.
 
 ## Waiting in the back (images)
 - **IMG-001 Root House — the first image** — QUEUED · blocked on: Chairman's two reference pictures (silhouette researchers) — not yet attached
@@ -108,4 +109,4 @@ Research worker last ran 2026-10-03T11:14:10.963Z · 0 leads · 0 provider error
 6. Monster Night: Age calls on R-rated picks?
 7. Who are your parents and four grandparents (even first names)?
 8. Can you attach the reference pictures for the first image?
-9. Which company makes the first recorded dollar, and what does it sell?
+9. Earth lane: which shirt or digital product sells first? Our World: what is the REE smallest unit, and what does one hide sell for?

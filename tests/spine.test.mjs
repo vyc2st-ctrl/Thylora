@@ -32,7 +32,7 @@ test('nothing is estimated: no backend, no revenue, said plainly', () => {
   const r = buildReport({ thread });
   assert.equal(r.live_backend.state, 'NOT_CHECKED');
   assert.equal(r.mathematics.revenue_recorded, 0);
-  assert.ok(r.questions.some(q => /first recorded dollar/.test(q)));
+  assert.ok(r.questions.some(q => /REE smallest unit/.test(q)));
   const md = toMarkdown(r);
   assert.ok(md.startsWith(`# ${HEADER}`));
   for (const h of ['Where we left off', 'Who is working', 'Mathematics', 'All lanes', 'The world', 'Questions']) assert.ok(md.includes(h), h);
