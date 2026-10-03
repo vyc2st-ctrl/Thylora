@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THYLORA Open Door · Court Packet v4</title>
+<style>
+  :root {
+    --ink: #111;
+    --muted: #444;
+    --rule: #999;
+    --sim: #b00012;          /* simulation red: everything from our world */
+    --sim-wash: #fff5f5;
+    --earth: #1d1d1d;        /* Earth source: black frame, no fill */
+    --paper: #fff;
+    --facade: #d9d9d9;       /* courthouse background: light enough to cost little toner */
+  }
+  @page { size: letter; margin: 0.45in 0.5in; }
+  * { box-sizing: border-box; }
+  html, body { background: var(--paper); color: var(--ink); margin: 0; }
+  body { font: 10pt/1.38 Georgia, "Times New Roman", serif; }
+  .page {
+    position: relative;
+    max-width: 7.4in;
+    margin: 0 auto;
+    padding: 0.2in 0.1in 0.3in;
+    page-break-after: always;
+    break-after: page;
+  }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+  /* Faint courthouse front behind every page. Line drawing, no solid fill. */
+  .facade {
+    position: absolute; inset: 0.6in 0 auto 0; margin: auto;
+    width: 100%; height: 6.5in; z-index: 0; pointer-events: none; opacity: .55;
+  }
+  .page > *:not(.facade) { position: relative; z-index: 1; }
+  h1, h2, h3 { font-family: "Palatino Linotype", Palatino, Georgia, serif; line-height: 1.2; }
+  h1 { font-size: 21pt; margin: .1in 0 .04in; letter-spacing: .01em; }
+  h2 { font-size: 13pt; margin: .14in 0 .05in; border-bottom: 1.5px solid var(--ink); padding-bottom: 3px; }
+  h3 { font-size: 11.5pt; margin: .14in 0 .04in; }
+  p { margin: .05in 0; }
+  .eyebrow { font: 700 8pt/1.2 Arial, Helvetica, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .lede { font-size: 11.5pt; }
+  .head { display: flex; gap: .2in; align-items: center; justify-content: space-between; border-bottom: 3px double var(--ink); padding-bottom: .08in; }
+  .head .seal { width: 1.05in; height: 1.05in; flex: none; }
+  table { width: 100%; border-collapse: collapse; margin: .05in 0; font-size: 9.5pt; }
+  th, td { text-align: left; vertical-align: top; padding: 3px 6px; border: 1px solid var(--rule); }
+  th { font: 700 8.5pt Arial, Helvetica, sans-serif; letter-spacing: .04em; background: #f1f1f1; }
+
+  /* Earth source box: black frame, labeled EARTH */
+  .earth { border: 2px solid var(--earth); padding: .1in .14in; margin: .1in 0; background: rgba(255,255,255,.92); }
+  .earth .tag { font: 700 8pt Arial, Helvetica, sans-serif; letter-spacing: .12em; display: inline-block; border: 1.5px solid var(--earth); padding: 1px 6px; margin-bottom: 4px; }
+
+  /* Simulation box: red frame, red label, our seal */
+  .sim { border: 2.5px solid var(--sim); padding: .1in .14in; margin: .1in 0; background: var(--sim-wash); display: grid; grid-template-columns: 1fr .8in; gap: .12in; align-items: start; }
+  .sim .tag { font: 700 8pt Arial, Helvetica, sans-serif; letter-spacing: .12em; color: #fff; background: var(--sim); display: inline-block; padding: 2px 7px; margin-bottom: 4px; }
+  .sim .seal { width: .8in; height: .8in; }
+  .sim.wide { grid-template-columns: 1fr; }
+  .sim.wide .seal { position: absolute; top: .08in; right: .12in; width: .6in; height: .6in; }
+  .sim.wide { position: relative; }
+  .sim.wide table { margin-top: .32in; }
+  .sim strong.r { color: var(--sim); }
+
+  /* Classroom board: expression stands alone, key sits apart from it */
+  .board { border: 1.5px solid var(--ink); margin: .08in 0; background: rgba(255,255,255,.95); break-inside: avoid; }
+  .board .title { font: 700 8.5pt Arial, Helvetica, sans-serif; letter-spacing: .1em; text-transform: uppercase; padding: 5px 10px; border-bottom: 1px solid var(--ink); }
+  .board .expr { font: 400 19pt/1.15 "Cambria Math", Cambria, "Times New Roman", serif; text-align: center; padding: .09in .1in .07in; letter-spacing: .02em; }
+  .board .expr i { font-style: italic; }
+  .board .expr sub { font-size: 12pt; }
+  .board .key { display: grid; grid-template-columns: auto 1fr; gap: 1px 12px; padding: 4px 14px 5px; border-top: 1px dashed var(--rule); font-size: 9pt; }
+  .board .key > b { font: italic 700 12pt "Cambria Math", Cambria, serif; text-align: right; }
+  .board .ask { padding: 4px 14px; border-top: 1px solid var(--ink); font-size: 10.5pt; }
+  .board .ask span { font: 700 8pt Arial, Helvetica, sans-serif; letter-spacing: .1em; text-transform: uppercase; display: block; color: var(--muted); }
+  .board .work { padding: 4px 14px 6px; border-top: 1px dashed var(--rule); font-size: 10pt; }
+  .board .work code { font: 11pt "Cambria Math", Cambria, serif; }
+
+  .before-after { display: grid; grid-template-columns: 1fr 1fr; gap: .12in; }
+  .before-after > div { border: 1px solid var(--rule); padding: .07in .1in; background: rgba(255,255,255,.95); font-size: 10pt; }
+  .before-after .lbl { font: 700 8pt Arial, Helvetica, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+  .bad { text-decoration: line-through; color: #555; }
+  .confirm { font: 700 8pt Arial, Helvetica, sans-serif; color: #fff; background: #333; padding: 0 4px; letter-spacing: .05em; white-space: nowrap; }
+  .foot { font: 8pt Arial, Helvetica, sans-serif; color: var(--muted); border-top: 1px solid var(--rule); margin-top: .18in; padding-top: 4px; display: flex; justify-content: space-between; }
+  ul, ol { margin: .04in 0 .04in .2in; padding: 0; }
+  li { margin: .02in 0; }
+
+  @media screen {
+    body { background: #e8e8e8; padding: 16px; }
+    .page { background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,.18); margin-bottom: 18px; padding: .45in .5in; }
+  }
+  @media screen and (max-width: 640px) {
+    body { padding: 0; }
+    .page { padding: 16px; }
+    .sim { grid-template-columns: 1fr; }
+    .sim .seal { display: none; }
+    .before-after { grid-template-columns: 1fr; }
+    .board .expr { font-size: 17pt; }
+  }
+  @media print {
+    .sim, .sim .tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Shared drawings, defined once and reused on every page -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- Generic courthouse front: pediment, eight columns, steps. Original line art.
+         Deliberately NOT the seal or likeness of any real Maryland building. -->
+    <symbol id="facade" viewBox="0 0 800 560">
+      <g fill="none" stroke="var(--facade)" stroke-width="3">
+        <path d="M60 170 L400 40 L740 170 Z"/>
+        <path d="M110 160 L400 62 L690 160"/>
+        <circle cx="400" cy="120" r="26"/>
+        <rect x="50" y="170" width="700" height="28"/>
+        <rect x="70" y="198" width="660" height="14"/>
+        <g id="col"><rect x="92" y="212" width="40" height="18"/><path d="M98 230 V450 M126 230 V450 M106 230 V450 M118 230 V450"/><rect x="88" y="450" width="48" height="16"/></g>
+        <use href="#col" x="78"/><use href="#col" x="156"/><use href="#col" x="234"/>
+        <use href="#col" x="342"/><use href="#col" x="420"/><use href="#col" x="498"/><use href="#col" x="576"/>
+        <path d="M352 300 h96 v166 h-96 Z M400 300 v166"/>
+        <rect x="40" y="466" width="720" height="16"/>
+        <rect x="20" y="482" width="760" height="18"/>
+        <rect x="0" y="500" width="800" height="20"/>
+      </g>
+    </symbol>
+
+    <!-- THYLORA simulated-world seal. Fictional. Printed only on simulation material. -->
+    <symbol id="seal" viewBox="0 0 200 200">
+      <g fill="none" stroke="var(--sim)">
+        <circle cx="100" cy="100" r="95" stroke-width="5"/>
+        <circle cx="100" cy="100" r="80" stroke-width="1.5"/>
+        <circle cx="100" cy="100" r="52" stroke-width="2"/>
+      </g>
+      <path id="sealArcTop" d="M30 100 A70 70 0 0 1 170 100" fill="none"/>
+      <path id="sealArcBot" d="M28 106 A72 72 0 0 0 172 106" fill="none"/>
+      <text font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="15" letter-spacing="2" fill="var(--sim)">
+        <textPath href="#sealArcTop" startOffset="50%" text-anchor="middle">THYLORA · SIMULATED WORLD</textPath>
+      </text>
+      <text font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="11" letter-spacing="1.5" fill="var(--sim)">
+        <textPath href="#sealArcBot" startOffset="50%" text-anchor="middle">NOT AN EARTH GOVERNMENT SEAL</textPath>
+      </text>
+      <!-- The THYLORA mark: question mark with a V where the dot would be -->
+      <path d="M84 78 a17 17 0 1 1 26 14 c-7 4 -10 8 -10 15 v4" fill="none" stroke="var(--sim)" stroke-width="7" stroke-linecap="round"/>
+      <path d="M90 121 L100 138 L110 121" fill="none" stroke="var(--sim)" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ================================================================ PAGE 1 -->
+<section class="page">
+  <svg class="facade" aria-hidden="true"><use href="#facade"/></svg>
+
+  <div class="head">
+    <div>
+      <p class="eyebrow">THYLORA · Open Door Packet · Version 4 · Prepared 3 October 2026</p>
+      <h1>We built a clearer courtroom record.<br>We would like to show you how.</h1>
+    </div>
+    <svg class="seal" role="img" aria-label="THYLORA simulated-world seal"><use href="#seal"/></svg>
+  </div>
+
+  <h2>Who we are</h2>
+  <p class="lede"><b>THYLORA</b> is a company that builds a complete simulated world. That world has its own government, its own courts, its own court officers and its own records. We run real courtroom workflows inside it so we can find the places where a record breaks <i>before</i> the same break happens in a real courtroom.</p>
+  <p>We are writing to you as a counterpart. Your office runs a real court. We run a simulated one. The problems are the same: a ruling is spoken, a clerk has to capture it, and every person who reads the record later has to understand it the same way.</p>
+
+  <h2>How to read this packet</h2>
+  <p>Every item in this packet comes from one of two places, and the frame around it tells you which:</p>
+  <div class="earth">
+    <span class="tag">EARTH SOURCE</span>
+    <p><b>Black frame, no seal.</b> This material comes from the real world: a real court, a real document or a real person. We quote it. We do not change it.</p>
+  </div>
+  <div class="sim">
+    <div>
+      <span class="tag">THYLORA SIMULATION</span>
+      <p><b>Red frame, red seal.</b> This material comes from our simulated world. The people named inside a red box are officers of our world, not of any Earth government. The red seal is our world's seal. It is <b>not</b> a seal of the State of Maryland or of any Earth government.</p>
+    </div>
+    <svg class="seal" role="img" aria-label="THYLORA simulated-world seal"><use href="#seal"/></svg>
+  </div>
+
+  <h2>Why we write this way</h2>
+  <p>When a word can be read two ways, people pick one. The next person inherits that reading and passes it on. After three handoffs, the office is running on a guess that nobody remembers making. We call this <b>interpretation drift</b>.</p>
+  <p>So we do not aim for <i>simple</i>. We aim for <b>clear and complete</b>: every time, every date, every person and every "who tells whom" is written out, so the record explains itself and everyone who reads it gets the same meaning the first time.</p>
+
+  <h2>What we are asking</h2>
+  <p><b>30 minutes with your courtroom clerks.</b> We will take one real entry from your court, with names removed, and rewrite it with them using the method in this packet. If it does not save time or prevent a single question, you have lost 30 minutes. Contact: <span class="confirm">ADD CONTACT</span></p>
+
+  <div class="foot"><span>THYLORA Open Door Packet v4</span><span>Page 1 of 5</span></div>
+</section>
+
+<!-- ================================================================ PAGE 2 -->
+<section class="page">
+  <svg class="facade" aria-hidden="true"><use href="#facade"/></svg>
+
+  <p class="eyebrow">Part 1 · Where this packet came from</p>
+  <h2>The Earth source we started from</h2>
+  <div class="earth">
+    <span class="tag">EARTH SOURCE · QUOTED, NOT CHANGED</span>
+    <table>
+      <tr><th style="width:30%">Document</th><td><i>Courtroom Clerk Feedback for New Judges: What to Do and What Not to Do</i> (3 pages, a survey)</td></tr>
+      <tr><th>Survey coordinators</th><td>Judge <span class="confirm">CONFIRM NAME</span> Barry and Judge Lisa <span class="confirm">CONFIRM SPELLING</span> Bobroten</td></tr>
+      <tr><th>What they did</th><td>They coordinated a survey that asked courtroom clerks what new judges should and should not do.</td></tr>
+      <tr><th>What they did not do</th><td>They did not prepare, review or approve this packet. We cite their survey as our starting point. Nothing here speaks for them.</td></tr>
+    </table>
+  </div>
+
+  <h2>Who prepared this packet</h2>
+  <table>
+    <tr><th style="width:30%">Prepared by</th><td>THYLORA, Office of the Chairman</td></tr>
+    <tr><th>Prepared for</th><td>The court office receiving this packet</td></tr>
+    <tr><th>Date</th><td>3 October 2026</td></tr>
+    <tr><th>What it is</th><td>A proposal. It shows a method for writing courtroom records that do not need to be explained. It is not legal advice and it is not a Maryland Rule.</td></tr>
+  </table>
+
+  <h2>The officers of our world who appear in this packet</h2>
+  <div class="sim wide">
+    <div>
+      <span class="tag">THYLORA SIMULATION · OFFICERS OF OUR WORLD</span>
+      <table>
+        <tr><th style="width:24%">Name</th><th style="width:27%">Title in our world</th><th style="width:19%">Earth equivalent</th><th>What this officer did in this packet</th></tr>
+        <tr><td><strong class="r">Eddie Riviera</strong></td><td><b>Law Steward</b> <span class="confirm">CHAIRMAN TO CONFIRM TITLE</span></td><td>Judge</td><td>Presided over the simulated proceedings that the examples on pages 3 and 4 come from.</td></tr>
+        <tr><td><strong class="r">Darius Cole</strong></td><td><b>Keeper of the Record</b> <span class="confirm">CHAIRMAN TO CONFIRM TITLE</span></td><td>Records custodian</td><td>Held custody of the simulated hearing record: who wrote each version, when it changed, and that no version was lost.</td></tr>
+        <tr><td><strong class="r">Courtroom clerks of our world</strong></td><td>Clerk of the Session</td><td>Courtroom clerk</td><td>Made the clerk observations quoted in this packet. Names listed in the attached roster <span class="confirm">ADD ROSTER</span>.</td></tr>
+      </table>
+      <p style="font-size:9.5pt"><b>Why "Law Steward" and not "Judge":</b> in our world the title means a person who understands the law, keeps learning it, and applies it without prejudice. Their faith, background and life experience are who they are, and they may shape the compassion shown <i>after</i> a decision. They do not decide the outcome. The law and the evidence decide it.</p>
+    </div>
+    <svg class="seal" role="img" aria-label="THYLORA simulated-world seal"><use href="#seal"/></svg>
+  </div>
+
+  <div class="foot"><span>THYLORA Open Door Packet v4</span><span>Page 2 of 5</span></div>
+</section>
+
+<!-- ================================================================ PAGE 3 -->
+<section class="page">
+  <svg class="facade" aria-hidden="true"><use href="#facade"/></svg>
+
+  <p class="eyebrow">Part 2 · What this office can try on Monday before court</p>
+  <h2>One clerk entry, rewritten so it explains itself</h2>
+  <p>The left side shows a typical entry. Each phrase on the left can be read more than one way. The right side shows the same entry with every possible reading closed off.</p>
+
+  <div class="before-after">
+    <div>
+      <p class="lbl">Typical entry (can be read many ways)</p>
+      <p><span class="bad">Recess. Back in 10 minutes. Will update if anything changes. Disposition: per bench.</span></p>
+      <ul>
+        <li>"Recess": for what purpose? Who called it?</li>
+        <li>"Back in 10 minutes": 10 minutes from when? Is the recess 10 minutes long, or does court return after the 10th minute?</li>
+        <li>"Will update": who updates, and whom do they tell?</li>
+        <li>"Per bench": what exactly was ordered?</li>
+      </ul>
+    </div>
+    <div>
+      <p class="lbl">Clear entry (one reading only)</p>
+      <table>
+        <tr><th>Recess called by</th><td>The presiding judge</td></tr>
+        <tr><th>Purpose</th><td>The judge is reviewing the exhibit submitted by defense counsel</td></tr>
+        <tr><th>Recess began</th><td>10:30 AM (clerk reads courtroom clock)</td></tr>
+        <tr><th>Stated return time</th><td>10:40 AM, stated by the judge on the record</td></tr>
+        <tr><th>If the return time changes</th><td>The courtroom clerk announces the new clock time in the courtroom to counsel and to the parties present, and records the new time and the reason</td></tr>
+        <tr><th>Disposition</th><td>Written out in full: sentence, conditions, date, and form numbers</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <h3>The rule behind it: what the clerk captures, every time</h3>
+  <table>
+    <tr><th style="width:26%">Field</th><th>What "clear" means for this field</th></tr>
+    <tr><td>The ruling</td><td>The words of the ruling as spoken, and who spoke them.</td></tr>
+    <tr><td>Purpose</td><td>One concrete reason in plain words ("to review Exhibit 4"). "Purpose" means different things to different people, so the clerk writes the reason itself, not a label.</td></tr>
+    <tr><td>Times</td><td>Clock times (10:40 AM), never durations alone ("10 minutes"). If a duration is spoken, the clerk records both: "10 minutes, return at 10:40 AM".</td></tr>
+    <tr><td>Who tells whom</td><td>Every update names the person giving it and the people receiving it.</td></tr>
+    <tr><td>Required disposition</td><td>Sentence, conditions, effective date and form numbers, each on its own line.</td></tr>
+  </table>
+
+  <h3>How we teach ambiguity without being ambiguous</h3>
+  <p>We show trainees an unclear entry, ask them to write down what they think it means, and compare their answers. The answers always differ. Then we show the clear version and the single direction we want. The lesson is not "be careful". The lesson is "write it so there is only one way to read it."</p>
+
+  <div class="foot"><span>THYLORA Open Door Packet v4</span><span>Page 3 of 5</span></div>
+</section>
+
+<!-- ================================================================ PAGE 4 -->
+<section class="page">
+  <svg class="facade" aria-hidden="true"><use href="#facade"/></svg>
+
+  <p class="eyebrow">Part 3 · The measurements, written the way they would appear on a classroom board</p>
+  <p>Each measurement is shown four ways: the expression by itself, a key to every letter, the question the expression asks, and a worked example.</p>
+
+  <div class="board">
+    <div class="title">1 · How to measure change without turning people into scores</div>
+    <div class="expr"><i>ΔQ</i> = <i>Q</i><sub>after</sub> − <i>Q</i><sub>before</sub></div>
+    <div class="key">
+      <b>Δ</b><span>"Delta", the Greek letter for <i>change</i>.</span>
+      <b>Q</b><span>The quantity measured: one process number, never a person's score. Example: minutes from a spoken ruling to the finished clerk entry.</span>
+      <b>Q<sub>before</sub></b><span>The average of that number over the 20 court days <b>before</b> the new method starts.</span>
+      <b>Q<sub>after</sub></b><span>The average of the same number, measured the same way, over the 20 court days <b>after</b> the new method starts.</span>
+    </div>
+    <div class="ask"><span>The question this expression asks</span>How far did the measured quantity move between the 20 court days before the change and the 20 court days after it?</div>
+    <div class="work">Example: <code>ΔQ = 6 − 14 = −8</code>. Entries finished 8 minutes faster. For a time measurement, a negative ΔQ means improvement.</div>
+  </div>
+
+  <div class="board">
+    <div class="title">2 · Is the record worth relying on?</div>
+    <div class="expr"><i>PV</i> = <i>A</i> × <i>T</i> × <i>U</i> × <i>R</i></div>
+    <div class="key">
+      <b>PV</b><span>Practical value of one record, from 0 (worthless) to 1 (fully reliable).</span>
+      <b>A</b><span>Accurate: matches what was said and ordered (0 to 1).</span>
+      <b>T</b><span>Timely: finished within the time the office requires (0 to 1).</span>
+      <b>U</b><span>Usable: the next person can act on it without asking (0 to 1).</span>
+      <b>R</b><span>Relied on: the people who receive it trust it enough to act on it (0 to 1).</span>
+    </div>
+    <div class="ask"><span>The question this expression asks</span>Is the record accurate, timely, usable and trusted, all at the same time?</div>
+    <div class="work">Why multiply instead of add: a record that is perfect in three ways and inaccurate in one is not 75% useful. If any factor is 0, PV is 0. Example: <code>1 × 1 × 1 × 0 = 0</code>.</div>
+  </div>
+
+  <div class="board">
+    <div class="title">3 · Why the same letter Y sometimes carries a t and sometimes an x</div>
+    <div class="expr"><i>Y</i><sub><i>t</i></sub> &nbsp;&nbsp;and&nbsp;&nbsp; <i>Y</i><sub><i>x</i></sub></div>
+    <div class="key">
+      <b>Y</b><span>The outcome being measured, for example entries finished the same day.</span>
+      <b>t</b><span>Answers <b>when</b>. Y<sub>t</sub> is the outcome on day t (Y<sub>1</sub> is day 1, Y<sub>2</sub> is day 2).</span>
+      <b>x</b><span>Answers <b>under which condition</b>. Y<sub>x</sub> is the outcome when condition x is used (x = old entry form, or x = new entry form).</span>
+    </div>
+    <div class="ask"><span>The question this notation asks</span>Are we comparing the same thing across <b>time</b> (t), or across <b>conditions</b> (x)? Mixing the two makes it look as if a change caused a result when time alone did.</div>
+  </div>
+
+  <div class="foot"><span>THYLORA Open Door Packet v4</span><span>Page 4 of 5</span></div>
+</section>
+
+<!-- ================================================================ PAGE 5 -->
+<section class="page">
+  <svg class="facade" aria-hidden="true"><use href="#facade"/></svg>
+
+  <div class="board">
+    <div class="title">4 · The court relationship as one measurement</div>
+    <div class="expr"><i>C</i> = <i>H</i> × <i>Q</i> × <i>K</i></div>
+    <div class="key">
+      <b>C</b><span>Court quality: how well one handoff in the courtroom works (0 to 1). In our notes, a capital C always means <b>court</b>.</span>
+      <b>H</b><span>Handoff: the information reached the next person whole (0 to 1).</span>
+      <b>Q</b><span>Question quality: the questions asked closed the gaps instead of opening new ones (0 to 1).</span>
+      <b>K</b><span>Clarity: the record has exactly one reading (0 to 1).</span>
+    </div>
+    <div class="ask"><span>The question this expression asks</span>When information moves from the bench to the clerk to the next office, does it arrive complete, answered and with only one meaning?</div>
+    <div class="work"><span class="confirm">CONFIRM LETTERS</span> This expression was rebuilt from the Chairman's description because the version 3 file was not available. Confirm the letters before printing.</div>
+  </div>
+
+  <h2>Survey-ready answers: what that means</h2>
+  <p>A <b>survey-ready answer</b> is an answer written so that a clerk who takes the same survey could repeat it word for word and the coordinators could count it without interpreting it. Each answer names what was observed, who observed it and when.</p>
+  <p>Every survey question matters. Earlier versions of this packet featured two questions (numbers 3 and 9). That made those two look like the only ones that counted. They were featured because they concern timing and handoffs, which this packet measures. The full set of questions is answered in the attached sheet <span class="confirm">ATTACH SHEET</span>.</p>
+
+  <div class="sim">
+    <div>
+      <span class="tag">THYLORA SIMULATION · CLERK OBSERVATIONS</span>
+      <table>
+        <tr><th style="width:30%">Observed by</th><td>Clerk of the Session, simulated court of Law Steward Eddie Riviera <span class="confirm">ADD CLERK NAME</span></td></tr>
+        <tr><th>Observed</th><td>Punctuality: the time the session was set to start compared with the time it actually started, recorded by clock time on each session day.</td></tr>
+        <tr><th>Held by</th><td>Keeper of the Record Darius Cole, with a full version history</td></tr>
+      </table>
+    </div>
+    <svg class="seal" role="img" aria-label="THYLORA simulated-world seal"><use href="#seal"/></svg>
+  </div>
+
+  <h2>One more idea: decide the facts before seeing the faces</h2>
+  <p>A decision about <i>what happened</i> should not depend on who the people are. In our simulated courts we test a two-pass review:</p>
+  <ol>
+    <li><b>Pass one: facts only.</b> The reviewer sees "Person 1" and "Person 2". Names, faces, skin color, neighborhood and vehicle are removed. The reviewer decides who acted first and what the evidence shows.</li>
+    <li><b>Pass two: context.</b> Identity and circumstances are restored, for example fear for one's life or why something was taken. Context shapes understanding and compassion. It does not reverse a fact finding made on the evidence.</li>
+  </ol>
+  <p>This idea already exists on Earth. California Penal Code section 741 (from Assembly Bill 2778, signed in 2022) requires prosecutors to do an initial race-blind charging review, starting 1 January 2025. Offices that adopted it reported real costs for redaction software and staff. We would study that cost before recommending the same step anywhere.</p>
+
+  <div class="foot"><span>THYLORA Open Door Packet v4 · Proposal only, not legal advice, not a Maryland Rule</span><span>Page 5 of 5</span></div>
+</section>
+
+</body>
+</html>

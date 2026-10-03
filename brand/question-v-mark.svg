@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 200" role="img" aria-label="THYLORA question mark with a V in place of the dot">
+  <title>THYLORA ?V mark</title>
+  <!-- Hook of the question mark. One continuous stroke, round ends. -->
+  <path d="M22 62 A38 38 0 1 1 82 92 C68 101 60 110 60 126 V134"
+        fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- The V stands where the period would be. Its point sits on the baseline. -->
+  <path d="M42 156 L60 188 L78 156"
+        fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
