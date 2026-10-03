@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<title>Root House — THYLORA</title>
+<meta name="description" content="Root House: THYLORA's family research building. Four lines, one floor each, a credited research team, a vault of record sources, and a parlor where the family's own stories come in.">
+<link rel="stylesheet" href="../rae-link/styles.css">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="brand"><span class="mark" aria-hidden="true">⌂</span>
+    <div><p class="eyebrow">THYLORA · WR-LINEAGE-001</p><h1>Root House</h1></div></div>
+  <div class="top-actions">
+    <a class="chip" href="../app/">App</a><a class="chip" href="../rae-link/">RAE Link</a>
+    <span class="chip warn" id="privacyChip">LIVING PEOPLE · PRIVATE</span>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Root House rooms">
+  <button class="active" data-view="house">The House</button>
+  <button data-view="lines">Four Lines</button>
+  <button data-view="parlor">Parlor · Tea Table</button>
+  <button data-view="canada">Canada Desk</button>
+  <button data-view="vault">The Vault</button>
+  <button data-view="worker">Worker</button>
+  <button data-view="credits">Credits</button>
+</nav>
+
+<main id="main">
+
+<section id="house" class="view active-view">
+  <div class="hero">
+    <p class="eyebrow">RECONSTRUCT THE PEOPLE FIRST</p>
+    <h2>Four lines. Four floors. Nobody starts in Memphis.</h2>
+    <p>Every ancestor gets a numbered seat. Every fact about them is a claim with a grade. Family memory comes in through the Parlor, gets credited, and stays — records raise the grade, they never erase the telling.</p>
+  </div>
+  <div class="building" id="building" aria-label="Root House cross-section"></div>
+  <p class="muted small" id="worldNote"></p>
+</section>
+
+<section id="lines" class="view">
+  <p class="eyebrow">FOUR LINES</p><h2>Father’s father · Father’s mother · Mother’s father · Mother’s mother</h2>
+  <p class="muted">Seat numbers never change: 1 is you, 2 your father, 3 your mother, 4–7 grandparents, 8–15 great-grandparents. Entries save on this device only until the backend is applied.</p>
+  <div class="line-grid" id="lineGrid"></div>
+  <details class="card"><summary>Add or edit a person</summary>
+    <form id="personForm" class="form-grid">
+      <label>Seat<select id="pSeat"></select></label>
+      <label>First name<input id="pGiven" autocomplete="off"></label>
+      <label>Surname (as known)<input id="pSurname" autocomplete="off"></label>
+      <label>Maiden name<input id="pMaiden" autocomplete="off"></label>
+      <label>Birth year<input id="pBirth" inputmode="numeric"></label>
+      <label>Birth place<input id="pBirthPlace" autocomplete="off"></label>
+      <label>Death year<input id="pDeath" inputmode="numeric"></label>
+      <label>Who told us<input id="pTeller" autocomplete="off"></label>
+      <button type="submit">Save to seat</button>
+    </form>
+  </details>
+</section>
+
+<section id="parlor" class="view">
+  <p class="eyebrow">THE PARLOR · STEEPED</p>
+  <h2>Grandmother’s tea set. Everybody gets poured for.</h2>
+  <p class="muted">Whoever is poured for answers their card, then pours for the next person. Every third night one card is an Elder card — carry it to a grandparent. Their answer comes back here as a family-told story, credited to whoever asked.</p>
+  <form id="playersForm" class="searchbar"><label class="sr-only" for="players">Players</label>
+    <input id="players" value="Mom, Key, Jordan, Cali" aria-label="Players, comma separated"><button type="submit">Pour tonight</button></form>
+  <div id="nightCards" class="feed"></div>
+  <h3>Elder answer</h3>
+  <form id="elderForm" class="form-grid">
+    <label>Asked by<input id="eAsker"></label><label>Told by<input id="eTeller"></label>
+    <label class="wide">Question<input id="eQuestion"></label>
+    <label class="wide">What they said (exact words)<textarea id="eAnswer" rows="3"></textarea></label>
+    <button type="submit">Bring it to the House</button>
+  </form>
+  <div id="storyList" class="feed"></div>
+  <h3>Monster Night</h3>
+  <div id="monsterList" class="feed"></div>
+  <p class="muted small" id="snackList"></p>
+</section>
+
+<section id="canada" class="view">
+  <p class="eyebrow">ROOF · CANADA DESK</p>
+  <h2>“My great-grandmother came out of Canada.”</h2>
+  <p>That sentence is the first clue in the House. It is graded <b>FAMILY_TOLD</b>: kept exactly as said, credited to your mother, and turned into tests a record can pass or fail.</p>
+  <div id="canadaTests" class="feed"></div>
+  <article class="card"><h3>What the history says — and what it usually leaves out</h3>
+    <p>Full breakdown with evidence and counterarguments: <a href="../docs/LINEAGE-CANADA-MEMPHIS.md">LINEAGE-CANADA-MEMPHIS</a>.</p>
+    <ul>
+      <li>Tens of thousands of freedom seekers reached Canada West (Ontario) before 1865; estimates run from roughly 15,000 to 40,000 and are argued over.</li>
+      <li>After the Civil War many families went back south to find relatives. A Canada-to-Tennessee path is a known pattern, not a strange one.</li>
+      <li>The “Canada was a safe haven” story leaves out that slavery was legal in Canada until 1834, and Ontario and Nova Scotia kept segregated schools well into the 20th century.</li>
+      <li>Black Nova Scotia is a separate root: Black Loyalists (1783) and Black Refugees of the War of 1812.</li>
+    </ul></article>
+</section>
+
+<section id="vault" class="view">
+  <p class="eyebrow">THE VAULT</p><h2>Where the records live</h2>
+  <p class="muted" id="vaultCount"></p>
+  <form id="vaultForm" class="searchbar" role="search"><label class="sr-only" for="vaultQ">Search sources</label>
+    <input id="vaultQ" type="search" placeholder="Memphis, Canada, census, Freedmen, DNA…"><button type="submit">Search</button></form>
+  <div class="chips" id="deskChips"></div>
+  <div id="vaultList" class="source-list"></div>
+</section>
+
+<section id="worker" class="view">
+  <p class="eyebrow">BACKEND WORKER</p><h2>The House works when you’re not looking.</h2>
+  <p>Every morning a scheduled job reads the family file, searches open archives for every named ancestor, and writes leads for the desks to review. Leads are never facts.</p>
+  <div id="workerReport" class="feed"><p class="muted">Loading the latest worker report…</p></div>
+</section>
+
+<section id="credits" class="view">
+  <p class="eyebrow">CREDITS</p><h2>Every find names who found it and who kept it.</h2>
+  <div id="creditList" class="feed"></div>
+</section>
+</main>
+<script type="module" src="./app.js"></script>
+</body>
+</html>

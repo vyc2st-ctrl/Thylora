@@ -1,0 +1,29 @@
+{
+  "_read_me": "Root House seed. Fill names as you learn them. Seat numbers: 1 you, 2 father, 3 mother, 4 father's father, 5 father's mother, 6 mother's father, 7 mother's mother, 8-15 great-grandparents (8,9 = parents of 4; 10,11 = parents of 5; 12,13 = parents of 6; 14,15 = parents of 7). Living people stay private: the worker only searches people you add, and the public page never shows living people.",
+  "people": {},
+  "stories": [
+    {
+      "id": "STORY-001",
+      "seat": null,
+      "teller": "Chairman's mother",
+      "text": "My great-grandmother came out of Canada.",
+      "told_to": "Chairman",
+      "grade": "FAMILY_TOLD",
+      "migration": "Canada -> Memphis, Tennessee",
+      "open_questions": [
+        "Whose great-grandmother: the mother's (seat 12-15 of the mother's lines) or the Chairman's (seat 8-15)?",
+        "Which side: mother's father line or mother's mother line?",
+        "Her first name, married surname and maiden surname",
+        "Roughly when she came and who came with her"
+      ]
+    },
+    {
+      "id": "STORY-002",
+      "seat": null,
+      "teller": "Chairman",
+      "text": "I am sure the family did not start in Memphis.",
+      "grade": "FAMILY_TOLD",
+      "migration": null
+    }
+  ]
+}

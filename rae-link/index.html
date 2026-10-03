@@ -26,6 +26,7 @@
 <nav class="tabs" aria-label="RAE Link sections">
   <button class="active" data-view="watch">Watch</button>
   <button data-view="search">Search</button>
+  <button data-view="window">The Window</button>
   <button data-view="following">Following</button>
   <button data-view="studio">Creator Studio</button>
   <button data-view="earnings">Earnings</button>
@@ -47,6 +48,18 @@
   <div class="notice" id="watchNotice" hidden></div>
   <div class="row-head"><h3>Latest published</h3><button class="ghost" id="refreshFeed" type="button">Refresh</button></div>
   <div class="feed" id="feedGrid"><p class="muted">Loading the published feed…</p></div>
+</section>
+
+<!-- THE WINDOW ------------------------------------------------------------>
+<section id="window" class="view">
+  <div class="hero">
+    <p class="eyebrow">LIVE FROM THE LINK · DOWNTOWN · STREET-LEVEL GLASS</p>
+    <h2>The Window. Our people. Your requests. Counted down live.</h2>
+    <p>A daily countdown show from a glass studio downtown. Members request and vote; the Ten is counted down on air. Only rights-cleared, published work can chart, and world channels always carry their label.</p>
+  </div>
+  <div class="feed" id="windowSegments"></div>
+  <div class="row-head"><h3>Today’s Ten</h3></div>
+  <div class="feed" id="windowTen"><p class="muted">Voting opens when the backend is applied. No placeholder chart is shown.</p></div>
 </section>
 
 <!-- SEARCH ------------------------------------------------------------------>

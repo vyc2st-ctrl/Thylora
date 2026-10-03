@@ -1,0 +1,310 @@
+{
+  "run_at": "2026-10-03T11:08:03.519Z",
+  "named_people": 0,
+  "leads": [],
+  "tasks": [
+    {
+      "seat": 2,
+      "line": null,
+      "need": "NAME",
+      "ask": "Name of Father",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 3,
+      "line": null,
+      "need": "NAME",
+      "ask": "Name of Mother",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 4,
+      "line": "FF",
+      "need": "NAME",
+      "ask": "Name of Father's father",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 8,
+      "line": "FF",
+      "need": "NAME",
+      "ask": "Name of Great-grandfather (FF line)",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 9,
+      "line": "FF",
+      "need": "NAME",
+      "ask": "Name of Great-grandmother (FF line)",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 16,
+      "line": "FF",
+      "need": "NAME",
+      "ask": "Name of 2× great-grandfather (FF line)",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 17,
+      "line": "FF",
+      "need": "NAME",
+      "ask": "Name of 2× great-grandmother (FF line)",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 18,
+      "line": "FF",
+      "need": "NAME",
+      "ask": "Name of 2× great-grandfather (FF line)",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 19,
+      "line": "FF",
+      "need": "NAME",
+      "ask": "Name of 2× great-grandmother (FF line)",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 5,
+      "line": "FM",
+      "need": "NAME",
+      "ask": "Name of Father's mother",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 10,
+      "line": "FM",
+      "need": "NAME",
+      "ask": "Name of Great-grandfather (FM line)",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 11,
+      "line": "FM",
+      "need": "NAME",
+      "ask": "Name of Great-grandmother (FM line)",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 20,
+      "line": "FM",
+      "need": "NAME",
+      "ask": "Name of 2× great-grandfather (FM line)",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 21,
+      "line": "FM",
+      "need": "NAME",
+      "ask": "Name of 2× great-grandmother (FM line)",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 22,
+      "line": "FM",
+      "need": "NAME",
+      "ask": "Name of 2× great-grandfather (FM line)",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 23,
+      "line": "FM",
+      "need": "NAME",
+      "ask": "Name of 2× great-grandmother (FM line)",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 6,
+      "line": "MF",
+      "need": "NAME",
+      "ask": "Name of Mother's father",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 12,
+      "line": "MF",
+      "need": "NAME",
+      "ask": "Name of Great-grandfather (MF line)",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 13,
+      "line": "MF",
+      "need": "NAME",
+      "ask": "Name of Great-grandmother (MF line)",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 24,
+      "line": "MF",
+      "need": "NAME",
+      "ask": "Name of 2× great-grandfather (MF line)",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 25,
+      "line": "MF",
+      "need": "NAME",
+      "ask": "Name of 2× great-grandmother (MF line)",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 26,
+      "line": "MF",
+      "need": "NAME",
+      "ask": "Name of 2× great-grandfather (MF line)",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 27,
+      "line": "MF",
+      "need": "NAME",
+      "ask": "Name of 2× great-grandmother (MF line)",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 7,
+      "line": "MM",
+      "need": "NAME",
+      "ask": "Name of Mother's mother",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 14,
+      "line": "MM",
+      "need": "NAME",
+      "ask": "Name of Great-grandfather (MM line)",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 15,
+      "line": "MM",
+      "need": "NAME",
+      "ask": "Name of Great-grandmother (MM line)",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 28,
+      "line": "MM",
+      "need": "NAME",
+      "ask": "Name of 2× great-grandfather (MM line)",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 29,
+      "line": "MM",
+      "need": "NAME",
+      "ask": "Name of 2× great-grandmother (MM line)",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 30,
+      "line": "MM",
+      "need": "NAME",
+      "ask": "Name of 2× great-grandfather (MM line)",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    },
+    {
+      "seat": 31,
+      "line": "MM",
+      "need": "NAME",
+      "ask": "Name of 2× great-grandmother (MM line)",
+      "desk": "ORAL_HISTORY",
+      "route": "Parlor · ask the eldest living relative on this line",
+      "assigned": "odessa"
+    }
+  ],
+  "migration_checks": [
+    {
+      "seat": null,
+      "story": "My great-grandmother came out of Canada.",
+      "tests": [
+        {
+          "test": "US census birthplace",
+          "look": "1880–1950 US census: person or a parent born \"Canada\", \"Can Eng\", \"Can Fr\", \"Ontario\", \"Nova Scotia\""
+        },
+        {
+          "test": "Border crossing",
+          "look": "Canada → US border crossings 1895–1956 (NARA St. Albans lists and port manifests)"
+        },
+        {
+          "test": "Canadian census",
+          "look": "LAC census 1851–1931: surname in Kent, Essex, Lincoln, Grey counties ON or Halifax, Annapolis counties NS"
+        },
+        {
+          "test": "Death certificate",
+          "look": "Tennessee death certificate fields: birthplace, father’s and mother’s birthplaces"
+        },
+        {
+          "test": "Refugee settlement",
+          "look": "Elgin/Buxton, Chatham, Windsor, Amherstburg, St. Catharines, Owen Sound, Toronto, Halifax records"
+        },
+        {
+          "test": "Place-name check",
+          "look": "Confirm \"Canada\" means the country — not a nickname, a US community, or a church/lodge name"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

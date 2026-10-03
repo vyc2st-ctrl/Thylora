@@ -20,6 +20,18 @@
     {
       "source": "/rae-link/",
       "destination": "/rae-link/index.html"
+    },
+    {
+      "source": "/lineage",
+      "destination": "/lineage/index.html"
+    },
+    {
+      "source": "/lineage/",
+      "destination": "/lineage/index.html"
+    },
+    {
+      "source": "/root-house",
+      "destination": "/lineage/index.html"
     }
   ]
 }

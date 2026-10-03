@@ -14,6 +14,7 @@ import { publishGate, STAGES } from './lib/pipeline.js';
 import { evaluateRightsGate, validatePartnership, validateChannelTruth, PARTNERSHIP_PROHIBITIONS }
   from './lib/rights.js';
 import { CAPABILITIES, resolve, lockInRisk } from './lib/providers.js';
+import { SEGMENTS, MAX_VOTES, COUNTDOWN_SIZE } from './lib/countdown.js';
 
 const $ = id => document.getElementById(id);
 const esc = (value = '') => String(value).replace(/[&<>'"]/g,
@@ -580,3 +581,10 @@ function populateLanes() {
   showView((location.hash || '#watch').slice(1));
   checkBackend().then(loadFeed);
 })();
+
+/* --------------------------------------------------------------- THE WINDOW */
+{
+  const seg = document.getElementById('windowSegments');
+  if (seg) seg.innerHTML = SEGMENTS.map(x => `<article class="card"><p class="eyebrow">${esc(x.code.replace(/_/g, ' '))}</p><h3>${esc(x.label)}</h3><p class="muted">${esc(x.detail)}</p></article>`).join('') +
+    `<article class="card"><p class="eyebrow">RULES</p><h3>${COUNTDOWN_SIZE} spots · ${MAX_VOTES} votes a day</h3><p class="muted">One vote per work per member per day. Ties go to whoever got there first.</p></article>`;
+}

@@ -1,0 +1,45 @@
+# THYLORA — standing instructions for every Claude session
+
+This file loads automatically at the start of every Claude Code session in this
+repository. It is how a fix **stays** fixed: chat memory does not carry over,
+this file does.
+
+## 1 · Full-thread rule (the Chairman's top complaint)
+
+- **Do the work, then report it.** Never answer with a plan of what "we are
+  doing" when the work can be done in this session.
+- **Never collapse to one topic.** Read every item in the message. Every item
+  gets an action or a named blocker in the same reply. A long message is a
+  multi-lane brief, not one request.
+- **End every reply with the Lanes Board** from `THREAD.md`: every open lane,
+  its status, and what moved this session. Update `THREAD.md` in the same commit.
+- If something cannot be done (no names yet, a held Chairman action, a blocked
+  host), say exactly what is needed, then keep moving on every other lane.
+
+## 2 · Prime Directive on Relevance
+
+Anything that touches these core interests is a **primary subject**, never a
+side note, and gets a full breakdown — evidence, counterarguments, context — in
+the same reply:
+
+- the history and lineage of African people;
+- hidden or suppressed historical narratives;
+- alternative theories on ancestry and heritage, including European and
+  biblical figures;
+- known biases in mainstream reporting of these subjects.
+
+Breakdown format: **Claim · Evidence for · Evidence against · What the
+mainstream version leaves out · Grade** (FAMILY_TOLD / LEAD / POSSIBLE /
+PROBABLE / PROVEN / CONTESTED, same scale as the Root House).
+
+## 3 · House rules already in force
+
+- `DASHBOARD_AUTHORITY.md`: this repo is not the Chairman dashboard authority.
+  Do not touch `dashboard-current-head.html` or `dashboard-baseline.json`.
+- Changes to existing surfaces are additive. Production DDL is a held
+  Chairman action: write it, validate it locally, do not apply it.
+- World characters (EdereAriah, Root House researchers) are always labelled
+  and never presented as Earth people.
+- Living people are private. Family memory is preserved word for word and
+  credited; records raise its grade, they never erase it.
+- `npm test` must pass before every push.

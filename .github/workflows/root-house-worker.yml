@@ -1,0 +1,36 @@
+name: ROOT HOUSE — lineage research worker
+
+# The backend works the family lines without anyone at the screen:
+# every morning it reads lineage/family.json, searches open archives for every
+# named ancestor, and commits new leads to lineage/leads/ for desk review.
+
+on:
+  schedule:
+    - cron: '17 11 * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'lineage/family.json'
+
+permissions:
+  contents: write
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Tests
+        run: npm test
+      - name: Run worker
+        run: node scripts/lineage-worker.mjs
+      - name: Commit leads
+        run: |
+          git config user.name "root-house-worker"
+          git config user.email "root-house-worker@users.noreply.github.com"
+          git add lineage/leads
+          git diff --cached --quiet || git commit -m "Root House worker: leads $(date -u +%F)"
+          git push

@@ -1,0 +1,48 @@
+/* ROOT HOUSE · WR-LINEAGE-001 · builds on the RAE Link floor styles */
+.small{font-size:.85rem}
+.card{border:1px solid var(--line);background:var(--panel);border-radius:var(--radius);padding:16px;margin:14px 0}
+.feed{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));margin:12px 0}
+.feed article{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:14px}
+.searchbar{display:flex;gap:8px;margin:12px 0}
+.searchbar input{flex:1;min-width:0}
+input,select,textarea{background:#0b1119;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px;font:inherit;width:100%}
+button{background:var(--gold-deep);border:1px solid #a0792d;color:#fff;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer}
+.form-grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));margin-top:12px}
+.form-grid label{display:grid;gap:4px;font-size:.85rem;color:var(--muted)}
+.form-grid .wide{grid-column:1/-1}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.chip-btn{background:#131a25;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:.8rem}
+.chip-btn.active{background:var(--gold-deep)}
+
+.building{display:grid;gap:6px;margin:8px 0 12px}
+.floor{display:grid;grid-template-columns:minmax(120px,190px) 1fr;gap:12px;align-items:end;
+  border:1px solid var(--line);border-radius:14px;padding:10px 14px;background:linear-gradient(180deg,#121a26,#0c121a)}
+.floor.roof{border-color:#4a3a1c;background:linear-gradient(180deg,#1b150c,#0c121a)}
+.floor.base{border-color:#203a2c}
+.floor h3{margin:0;font-size:1rem}
+.floor p{margin:0;color:var(--muted);font-size:.82rem}
+.crew{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-end;min-height:110px}
+.person{display:grid;justify-items:center;gap:2px;font-size:.72rem;color:var(--muted);text-align:center;max-width:96px}
+.person svg{color:#d9c29a}
+.person.p-odessa svg{color:#c99b6a}.person.p-dez svg{color:#9fc6d9}.person.p-ines svg{color:#d9a3c6}
+.person.p-marcus svg{color:#a8c99b}.person.p-amara svg{color:#e0b35b}.person.p-theo svg{color:#c6c6c6}
+.person.p-june svg{color:#d98f8f}.person.p-kofi svg{color:#8fb3d9}.person.p-rosa svg{color:#d9cf8f}.person.p-pip svg{color:#f0a860}
+
+.line-grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.line-card{border:1px solid var(--line);border-radius:14px;padding:12px;background:var(--panel)}
+.seat{display:flex;justify-content:space-between;gap:8px;border-top:1px dashed var(--line);padding:6px 0;font-size:.88rem}
+.grade{font-size:.68rem;font-weight:800;letter-spacing:.06em;border-radius:999px;padding:2px 8px;border:1px solid var(--line);white-space:nowrap}
+.g-UNKNOWN{color:var(--muted)}.g-FAMILY_TOLD{color:#e0b35b;border-color:#6b5a2f}.g-LEAD{color:#9fc6d9}
+.g-POSSIBLE,.g-PROBABLE{color:#a8c99b}.g-PROVEN{color:var(--good);border-color:#2f6b46}.g-CONTESTED{color:var(--bad)}
+
+.source-list{display:grid;gap:8px}
+.source{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--panel)}
+.source b a{color:var(--text)}
+.source .meta{font-size:.75rem;color:var(--muted)}
+.cardline{font-size:.75rem;font-weight:800;letter-spacing:.08em;color:var(--gold)}
+
+@media (max-width:560px){
+  .floor{grid-template-columns:1fr}
+  .crew{min-height:0}
+  .hero h2{font-size:1.5rem}
+}
