@@ -1,12 +1,12 @@
 # THYLORA — the whole thread (Lanes Board)
 
 Updated every session, in the same commit as the work (see `CLAUDE.md` §1).
-Last update: 2026-10-03 (session 2) · branch `claude/root-house-lineage-full-thread`
+Last update: 2026-10-03 14:25 UTC (session 3 · backend custody seq 641) · branch `claude/root-house-lineage-full-thread`
 
 | # | Lane | Where it lives | Status | Moved this session | Next action | Needs from Chairman |
 |---|---|---|---|---|---|---|
-| 1 | **Family lines (4)** — FF, FM, MF, MM | `lineage/` · `/lineage` | **BUILT, waiting on names** | Root House: 30 seats, grades, tasks, private living rule | Enter names → worker starts searching | Names for seats 2–7 (parents + 4 grandparents) |
-| 2 | **Canada → Memphis clue** | `docs/LINEAGE-CANADA-MEMPHIS.md` · Canada Desk | **FAMILY_TOLD, 6 tests ready** | Full breakdown + counterarguments | Run Test 1 (census birthplace) once one name exists | Which side; her name or her child's name |
+| 1 | **Family lines (4)** — FF, FM, MF, MM | `lineage/` · `/lineage` | **BUILT · names already in backend** | Correction: names live in `genealogy_research_intake` (FAMILY_RESTRICTED): father, mother, both maternal grandparents, possible paternal grandparents + 1 obituary source (2026-10-03) | Point Root House + worker at the backend table, not repo `family.json` | GitHub secrets so the scheduled worker can read the backend |
+| 2 | **Canada → Memphis clue** | `docs/LINEAGE-CANADA-MEMPHIS.md` · Canada Desk | **FAMILY_TOLD, 6 tests ready** | Full breakdown + counterarguments | Run Test 1 on the maternal Wright/Harris line (Covington · Memphis · Mississippi) | Whose great-grandmother: the Chairman's or Eddie Ree's? |
 | 3 | **Research building + people** | `lineage/lib/researchers.js` | **BUILT** | 10 researchers, all different silhouettes, credited, labelled world characters | Upgrade art from the Chairman's two reference images | Re-attach the two pictures (not received this session) |
 | 4 | **Sources ("millions")** | `lineage/lib/sources.js` · The Vault | **127 collections** | US, Canada, Tennessee/Memphis, pre-1870, church, DNA | Keep adding; each holds thousands–billions of records | — |
 | 5 | **Backend worker** | `.github/workflows/root-house-worker.yml` | **BUILT, runs daily after merge** | Searches Library of Congress + Internet Archive for every named person; writes leads | Merge to main so the schedule runs | Merge approval |
@@ -20,8 +20,8 @@ Last update: 2026-10-03 (session 2) · branch `claude/root-house-lineage-full-th
 | 13 | **Shows** (Bramble + Wick, Dividend Circle, Green Milk) | `app/` World Shows, Story Studio | Development | — | Character bibles → pilots | Casting decisions |
 | 14 | **Money** (ledger, payouts, GAME-BET-001) | `rae-link/lib/ledger.js`, `app/sports-betting.*` | Built, held | — | Payout provider (highest-cost open decision) | Provider + legal |
 | 15 | **Operating logic** (ask the next question, preserve source, evidence trail, no frozen system) | `app/` Continuity, `CLAUDE.md` | **Now written into every session** | `CLAUDE.md` full-thread rule + Prime Directive | Keep enforcing | — |
-| 17 | **Spine Forward check-in** | `SPINE.md` · `/spine` · `scripts/spine-forward.mjs` | **BUILT** | Time, left-off, who's working, mathematics, world, questions — every run | Add live backend secrets | `THYLORA_SUPABASE_URL` + read key as GitHub secrets |
-| 18 | **World: people, companies, economy** | `world/registry.json` | **SEEDED** | 14 people/roles, 8 companies, economy at 0 recorded | Cast open roles; first recorded sale | Which company earns first |
+| 17 | **Spine Forward check-in** | `SPINE.md` · `/spine` · `scripts/spine-forward.mjs` | **BUILT** | Correction: repo spine must mirror backend custody/ledger heads (641/640), not stand alone; Claude Code now reads backend directly | Script reads backend when secrets exist | GitHub Actions secrets (Chairman types them into GitHub, never into chat) |
+| 18 | **World: people, companies, economy** | `world/registry.json` | **SEEDED** | Backend already holds 118 active personnel, 67 departments, 6 market companies, 326 master-ledger rows — repo registry is a small mirror | Feed the spine from backend tables | — |
 | 19 | **First image** | `world/image-queue.json` IMG-001 | **QUEUED** | Brief written, waiting in the back | Produce once references arrive | The two reference pictures |
 | 16 | **Dashboard** | `thylora-executive-dashboard` (other repo) | Not this repo | — | — | — |
 

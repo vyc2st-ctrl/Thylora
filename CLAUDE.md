@@ -9,8 +9,18 @@ this file does.
 When a message starts with this header — in any words after it — **check in
 before anything else**:
 
-1. Run `node scripts/spine-forward.mjs` (regenerates `SPINE.md` and
-   `spine/spine.json`). If it cannot run, read the committed `SPINE.md`.
+1. **Backend first.** The backend `thylora-dash` (`jvsdxhrfhtlgaknhjxlz`) is the
+   single source of truth; this repo is a mirror. Through the Supabase connector,
+   read: the ACTIVE row of `thylora_continuity_boot_registry` (follow its
+   `retrieval_order`), the head of `thylora_query_carryforward` (custody) and of
+   `thy_sequence_ledger` (they can differ — never regress to the lower one),
+   `thylora_department_personnel`, `thylora_master_ledger`,
+   `thylora_world_market_companies`, and `genealogy_research_intake` for family.
+   Capture the Chairman's turn verbatim into `thylora_query_carryforward` as the
+   next `sequence_no` before replying (policy THY-BACKEND-BEFORE-REPLY-001).
+   Then run `node scripts/spine-forward.mjs` for the repo mirror. If the backend
+   is unreachable, say so first and read the committed `SPINE.md`.
+   Family names are FAMILY_RESTRICTED: never copy them into repo files.
 2. Open the reply with the **Check-in block**, in this order:
    - **Time** — the check-in timestamp, and the live-backend state.
    - **Where we left off** — last commit, branch, message.

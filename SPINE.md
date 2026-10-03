@@ -1,9 +1,9 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-10-03 11:21 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
+**Checked in:** 2026-10-03 14:25 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
 
 ## Where we left off
-`6c239dc` on `claude/root-house-lineage-full-thread` · 2026-10-03T11:21:19Z  
-Spine Forward check-in after worker run
+`8271502` on `claude/root-house-lineage-full-thread` · 2026-10-03T11:21:34+00:00  
+Spine Forward check-in 2026-10-03T11:21Z
 
 ## Who is working
 | Name | Desk | Status | On |
@@ -25,7 +25,7 @@ Research worker last ran 2026-10-03T11:14:10.963Z · 0 leads · 0 provider error
 | Measure | Value |
 |---|---|
 | lanes total | 19 |
-| lanes waiting on chairman | 15 |
+| lanes waiting on chairman | 14 |
 | family seats named | 0 / 30 |
 | family percent named | 0 |
 | open research tasks | 30 |
@@ -41,14 +41,14 @@ Research worker last ran 2026-10-03T11:14:10.963Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 4 |
+| commits last 7 days | 5 |
 | days since last commit | 0 |
 
 ## All lanes
 | # | Lane | Status | Next | Needs from Chairman |
 |---|---|---|---|---|
-| 1 | Family lines (4) — FF, FM, MF, MM | BUILT, waiting on names | Enter names → worker starts searching | Names for seats 2–7 (parents + 4 grandparents) |
-| 2 | Canada → Memphis clue | FAMILY_TOLD, 6 tests ready | Run Test 1 (census birthplace) once one name exists | Which side; her name or her child's name |
+| 1 | Family lines (4) — FF, FM, MF, MM | BUILT · names already in backend | Point Root House + worker at the backend table, not repo `family.json` | GitHub secrets so the scheduled worker can read the backend |
+| 2 | Canada → Memphis clue | FAMILY_TOLD, 6 tests ready | Run Test 1 on the maternal Wright/Harris line (Covington · Memphis · Mississippi) | Whose great-grandmother: the Chairman's or Eddie Ree's? |
 | 3 | Research building + people | BUILT | Upgrade art from the Chairman's two reference images | Re-attach the two pictures (not received this session) |
 | 4 | Sources ("millions") | 127 collections | Keep adding; each holds thousands–billions of records | — |
 | 5 | Backend worker | BUILT, runs daily after merge | Merge to main so the schedule runs | Merge approval |
@@ -62,8 +62,8 @@ Research worker last ran 2026-10-03T11:14:10.963Z · 0 leads · 0 provider error
 | 13 | Shows (Bramble + Wick, Dividend Circle, Green Milk) | Development | Character bibles → pilots | Casting decisions |
 | 14 | Money (ledger, payouts, GAME-BET-001) | Built, held | Payout provider (highest-cost open decision) | Provider + legal |
 | 15 | Operating logic (ask the next question, preserve source, evidence trail, no frozen system) | Now written into every session | Keep enforcing | — |
-| 17 | Spine Forward check-in | BUILT | Add live backend secrets | `THYLORA_SUPABASE_URL` + read key as GitHub secrets |
-| 18 | World: people, companies, economy | SEEDED | Cast open roles; first recorded sale | Which company earns first |
+| 17 | Spine Forward check-in | BUILT | Script reads backend when secrets exist | GitHub Actions secrets (Chairman types them into GitHub, never into chat) |
+| 18 | World: people, companies, economy | SEEDED | Feed the spine from backend tables | — |
 | 19 | First image | QUEUED | Produce once references arrive | The two reference pictures |
 | 16 | Dashboard | Not this repo | — | — |
 
@@ -100,8 +100,8 @@ Research worker last ran 2026-10-03T11:14:10.963Z · 0 leads · 0 provider error
 - **IMG-001 Root House — the first image** — QUEUED · blocked on: Chairman's two reference pictures (silhouette researchers) — not yet attached
 
 ## Questions for the Chairman
-1. Family lines (4) — FF, FM, MF, MM: Names for seats 2–7 (parents + 4 grandparents)?
-2. Canada → Memphis clue: Which side; her name or her child's name?
+1. Family lines (4) — FF, FM, MF, MM: GitHub secrets so the scheduled worker can read the backend?
+2. Canada → Memphis clue: Whose great-grandmother: the Chairman's or Eddie Ree's??
 3. Research building + people: Re-attach the two pictures (not received this session)?
 4. Backend worker: Merge approval?
 5. Backend database: Held Chairman action?
