@@ -2,8 +2,8 @@
 **Checked in:** 2026-10-03 14:25 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
 
 ## Where we left off
-`8271502` on `claude/root-house-lineage-full-thread` · 2026-10-03T11:21:34+00:00  
-Spine Forward check-in 2026-10-03T11:21Z
+`aca80d4` on `claude/root-house-lineage-full-thread` · 2026-10-03T14:25:40Z  
+Backend-first correction: thylora-dash is the source of truth (custody seq 641)
 
 ## Who is working
 | Name | Desk | Status | On |
@@ -41,7 +41,7 @@ Research worker last ran 2026-10-03T11:14:10.963Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 5 |
+| commits last 7 days | 6 |
 | days since last commit | 0 |
 
 ## All lanes
