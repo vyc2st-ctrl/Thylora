@@ -1,6 +1,8 @@
 # MAH 2026-10-03 · Backend Readback + Gap Report
 
-**Backend read:** `thylora-dash` (`jvsdxhrfhtlgaknhjxlz`), live, read-only. Nothing was written or changed.
+**Backend read:** `thylora-dash` (`jvsdxhrfhtlgaknhjxlz`), live.
+
+**Source captured (2026-10-03 15:43 UTC):** `chairman_source_messages` · thread `CLAUDE-CODE-HEAD-SPINE-FORWARD-20261003` · ordinal 1 · id `b911ce2c-5ba9-4b63-9c18-fda98ab29871` · 39,616 chars · SHA-256 `6474b01f45232f98a7079144a752b99ccf67f1b2b9e1986d94b5a813c2251344` · `EXACT_VERBATIM`. That is the only backend write so far; nothing else was changed.
 **Rule followed:** read what is there, don't change it, name the gaps.
 
 ---
@@ -104,7 +106,7 @@ Chairman instructions: don't box them in; show functioning departments to Earth 
 
 ## 5 · Next 5 moves (smallest steps that ship)
 
-1. **Capture this MAH verbatim** in `chairman_source_messages`, the same pattern as the 2026-09-28 capture. Needs the Chairman's OK.
+1. ~~Capture this MAH verbatim~~ **DONE** (see header).
 2. **Insert the family departments** above as `chairman_review_required` (the same status as `THY-WORLD-DOUBT-REMOVER-607`), name and idea only.
 3. **Name the 10 CNW vehicles** and give each its base dimensions.
 4. **Put one real product on sale** end to end (Cali QuickTurn printable is closest) to prove the store path.
