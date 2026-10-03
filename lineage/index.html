@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<title>The Root House — THYLORA lineage research</title>
+<meta name="description" content="The Root House: THYLORA's lineage research building. Four family lines, real record sources, named researchers, and credit for every finding.">
+<link rel="stylesheet" href="../rae-link/styles.css">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="mark" aria-hidden="true">⌂</span>
+    <div><p class="eyebrow">THYLORA</p><h1>The Root House</h1></div>
+  </div>
+  <div class="top-actions">
+    <span class="chip" id="saveChip">SAVED ON THIS DEVICE</span>
+    <a class="chip" href="../app/">Member app</a>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Root House sections">
+  <button class="active" data-view="building">The Building</button>
+  <button data-view="tree">Four Lines</button>
+  <button data-view="plans">Research Plans</button>
+  <button data-view="canada">The Canada Question</button>
+  <button data-view="sources">Record Sources</button>
+  <button data-view="credits">Credit Wall</button>
+</nav>
+
+<main id="main">
+
+<section id="building" class="view active-view">
+  <p class="eyebrow">PEOPLE FIRST</p>
+  <h2>Nine desks, nine different people, one family.</h2>
+  <p class="muted">Each floor works one part of the tree. The researchers are THYLORA world staff and are labelled as such. Every real person who helps — an archivist, a volunteer indexer, a cousin, a grandmother who remembered — is named on the Credit Wall next to what they found.</p>
+  <div class="tower" id="tower"></div>
+</section>
+
+<section id="tree" class="view">
+  <p class="eyebrow">FATHER'S FATHER · FATHER'S MOTHER · MOTHER'S FATHER · MOTHER'S MOTHER</p>
+  <h2>Put down what the family already knows.</h2>
+  <p class="muted">A first name, a nickname, a town, a church, "came out of Canada" — every clue counts. Leave a slot empty and it becomes a research task, not a blank.</p>
+  <div class="coverage" id="coverage"></div>
+  <div class="lines" id="lineForms"></div>
+  <div class="actions">
+    <button id="exportBtn" type="button">Download the tree (JSON)</button>
+    <label class="ghost-btn">Load a saved tree<input id="importInput" type="file" accept="application/json" hidden></label>
+  </div>
+</section>
+
+<section id="plans" class="view">
+  <p class="eyebrow">WHAT TO PULL, IN WHAT ORDER</p>
+  <h2>Research plans</h2>
+  <p class="muted">Work from each person's death backwards. Newer records name the parents; each answer unlocks the next older record.</p>
+  <div id="planList"></div>
+</section>
+
+<section id="canada" class="view">
+  <p class="eyebrow">GREAT-GRANDMOTHER · "CAME OUT OF CANADA"</p>
+  <h2>The Canada Question</h2>
+  <div id="canadaBrief"></div>
+</section>
+
+<section id="sources" class="view">
+  <p class="eyebrow">REAL COLLECTIONS · REAL HOLDERS</p>
+  <h2>Record sources</h2>
+  <div class="chips" id="sourceFilters"></div>
+  <div class="source-grid" id="sourceGrid"></div>
+</section>
+
+<section id="credits" class="view">
+  <p class="eyebrow">WHOEVER FINDS IT GETS NAMED ON IT</p>
+  <h2>Credit Wall</h2>
+  <form class="card form" id="findingForm">
+    <label>Who is this about<select name="slot" id="findingSlot"></select></label>
+    <label>What was found<input name="fact" required placeholder="Born 1891, Chatham, Ontario"></label>
+    <label>Record source<select name="source" id="findingSource"></select></label>
+    <label>Found by<input name="foundBy" required placeholder="Desmond Aubin, or Cali, or a cousin's name"></label>
+    <label>Remembered / confirmed by (optional)<input name="rememberedBy" placeholder="Grandma at tea night"></label>
+    <button type="submit">Add to the wall</button>
+    <p class="status" id="findingStatus"></p>
+  </form>
+  <div id="creditWall"></div>
+</section>
+
+</main>
+<script type="module" src="./app.js"></script>
+</body>
+</html>

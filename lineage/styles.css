@@ -1,0 +1,39 @@
+/* THE ROOT HOUSE · additions on top of the RAE Link floor styles */
+.small{font-size:.86rem}
+.tower{display:flex;flex-direction:column;gap:6px;max-width:980px;
+  border:1px solid var(--line);border-radius:var(--radius);padding:10px;
+  background:linear-gradient(180deg,#121a26,#0b1018)}
+.floor{display:flex;gap:10px;border:1px solid var(--line);border-radius:12px;background:var(--panel-2);padding:10px}
+.floor-no{flex:0 0 38px;height:38px;border-radius:10px;display:grid;place-items:center;
+  font-weight:800;color:var(--gold);border:1px solid var(--gold-deep)}
+.floor-body{flex:1;min-width:0}
+.staff{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px}
+.person{margin:0;display:flex;gap:10px;align-items:flex-end;max-width:360px;color:#e8d9b8}
+.person svg{flex:0 0 auto;filter:drop-shadow(0 0 6px rgba(224,179,91,.25))}
+.person figcaption{display:flex;flex-direction:column;font-size:.85rem;color:var(--text)}
+.person figcaption span{color:var(--muted)}
+.coverage{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.cov{border:1px solid var(--line);border-radius:999px;padding:6px 12px;display:flex;gap:8px;font-size:.85rem}
+.cov b{color:var(--gold)}
+.lines{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px}
+.line-card{border:1px solid var(--line);border-radius:var(--radius);padding:12px;background:var(--panel)}
+.line-FF{border-top:3px solid #6aa7ff}.line-FM{border-top:3px solid #c48cff}
+.line-MF{border-top:3px solid #6fd3b0}.line-MM{border-top:3px solid #e0b35b}
+.pslot{border:1px solid var(--line);border-radius:12px;margin:0 0 10px;padding:10px;display:flex;flex-direction:column;gap:6px}
+.pslot legend{font-weight:800;padding:0 4px}
+.pslot legend small{color:var(--muted);font-weight:600}
+.pslot label{display:flex;flex-direction:column;font-size:.82rem;color:var(--muted);gap:3px}
+.pslot input,.pslot textarea,.pslot select{background:#0a1119;color:var(--text);border:1px solid var(--line);
+  border-radius:10px;padding:9px;font:inherit;font-size:16px;width:100%}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.actions button,.ghost-btn,#findingForm button{border:1px solid var(--gold-deep);background:#1a1609;color:var(--gold);
+  border-radius:999px;padding:10px 16px;font-weight:700;cursor:pointer;font-size:.92rem}
+.plan summary{cursor:pointer;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.steps{padding-left:20px}.steps li{margin-bottom:8px}
+.source-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+.src{display:flex;flex-direction:column;gap:4px}
+#creditWall{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin-top:12px}
+.credit .tag{display:inline-block;margin:2px 0}
+#canadaBrief .card{margin-bottom:10px}
+@media (max-width:520px){.person{max-width:100%}.two{grid-template-columns:1fr}}
