@@ -1,0 +1,14 @@
+{
+  "_read_me": "Image jobs waiting in the back. A job moves QUEUED → BRIEFED → IN_PRODUCTION → REVIEW → ACCEPTED. Nothing is generated without the Chairman's reference when one is named.",
+  "jobs": [
+    {
+      "id": "IMG-001",
+      "title": "Root House — the first image",
+      "status": "QUEUED",
+      "blocked_on": "Chairman's two reference pictures (silhouette researchers) — not yet attached",
+      "brief": "Cross-section of a four-floor research house plus roof desk, parlor and basement vault. Each floor: one line of the family. Ten researchers working, every silhouette clearly a different person (height, build, hair, age, tools, one wheelchair user, one child runner). Warm lamp light, archive boxes, census ledgers, a tea set in the parlor. Labelled as THYLORA world characters.",
+      "owner": "world-shows",
+      "queued_at": "2026-10-03"
+    }
+  ]
+}

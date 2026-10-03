@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<title>Spine Forward — THYLORA</title>
+<link rel="stylesheet" href="../rae-link/styles.css">
+<link rel="stylesheet" href="../lineage/styles.css">
+<style>table{width:100%;border-collapse:collapse;font-size:.9rem}td,th{border-top:1px solid var(--line);padding:6px;text-align:left;vertical-align:top}td{min-width:90px}.feed{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}.big{font-size:1.6rem;font-weight:800;color:var(--gold)}</style>
+</head>
+<body>
+<header class="topbar"><div class="brand"><span class="mark" aria-hidden="true">▲</span><div><p class="eyebrow">THYLORA HEAD</p><h1>Spine Forward</h1></div></div>
+<div class="top-actions"><span class="chip" id="when">CHECKING IN…</span><span class="chip" id="live">BACKEND · ?</span></div></header>
+<main id="main">
+  <section class="card"><p class="eyebrow">WHERE WE LEFT OFF</p><p id="left">—</p></section>
+  <h3>Mathematics</h3><div class="feed" id="math"></div>
+  <h3>Who is working</h3><div class="feed" id="working"></div>
+  <h3>All lanes</h3><div class="card" style="overflow-x:auto"><table id="lanes"></table></div>
+  <h3>Companies</h3><div class="feed" id="companies"></div>
+  <h3>People of the world</h3><div class="feed" id="people"></div>
+  <h3>Waiting in the back</h3><div class="feed" id="images"></div>
+  <h3>Questions for the Chairman</h3><ol class="card" id="questions"></ol>
+</main>
+<script type="module">
+const $ = id => document.getElementById(id);
+const esc = (v = '') => String(v ?? '—').replace(/[&<>'"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[c]));
+try {
+  const r = await (await fetch('./spine.json', { cache: 'no-store' })).json();
+  $('when').textContent = `CHECKED IN · ${r.checked_in_at.slice(0, 16).replace('T', ' ')} UTC`;
+  $('live').textContent = `BACKEND · ${r.live_backend.state.replace('_', ' ')}`;
+  $('left').innerHTML = `<b>${esc(r.left_off.message)}</b><br><span class="muted small">${esc(r.left_off.commit)} · ${esc(r.left_off.branch)} · ${esc(r.left_off.at)}</span>`;
+  $('math').innerHTML = Object.entries(r.mathematics).map(([k, v]) => `<article><div class="big">${esc(v)}</div><p class="muted small">${esc(k.replace(/_/g, ' '))}</p></article>`).join('');
+  $('working').innerHTML = r.working.map(w => `<article><p class="cardline">${esc(w.status)}${w.queue ? ` · ${w.queue}` : ''}</p><h3>${esc(w.name)}</h3><p class="muted small">${esc(w.desk.replace(/_/g, ' ').toLowerCase())} desk · world character</p><p class="small">${esc(w.on)}</p></article>`).join('');
+  $('lanes').innerHTML = '<tr><th>#</th><th>Lane</th><th>Status</th><th>Next</th><th>Needs you</th></tr>' + r.lanes.map(l => `<tr><td>${l.n}</td><td>${esc(l.lane)}</td><td>${esc(l.status)}</td><td>${esc(l.next)}</td><td>${esc(l.needs)}</td></tr>`).join('');
+  $('companies').innerHTML = r.world.companies.map(c => `<article><p class="cardline">${esc(c.status.replace(/_/g, ' '))}</p><h3>${esc(c.name)}</h3><p class="small">${esc(c.lane)}</p></article>`).join('');
+  $('people').innerHTML = r.world.people.map(p => `<article><h3>${esc(p.name)}</h3><p class="small">${esc(p.job)}</p></article>`).join('');
+  $('images').innerHTML = r.images.map(j => `<article><p class="cardline">${esc(j.status)}</p><h3>${esc(j.id)} · ${esc(j.title)}</h3><p class="small">${esc(j.blocked_on ? 'Blocked on: ' + j.blocked_on : j.brief)}</p></article>`).join('');
+  $('questions').innerHTML = r.questions.map(q => `<li>${esc(q)}</li>`).join('');
+} catch (e) { $('left').textContent = `No spine report published yet (${e.message}).`; }
+</script>
+</body>
+</html>

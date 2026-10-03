@@ -1,0 +1,477 @@
+{
+  "header": "THYLORA HEAD - SPINE FORWARD",
+  "checked_in_at": "2026-10-03T11:21:10.688Z",
+  "left_off": {
+    "commit": "57a6b01",
+    "message": "Root House: four-line family research, backend worker, The Window, full-thread rule",
+    "at": "2026-10-03T11:13:57+00:00",
+    "branch": "claude/root-house-lineage-full-thread"
+  },
+  "live_backend": {
+    "state": "NOT_CONFIGURED",
+    "detail": "add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers"
+  },
+  "mathematics": {
+    "lanes_total": 19,
+    "lanes_waiting_on_chairman": 15,
+    "family_seats_named": "0 / 30",
+    "family_percent_named": 0,
+    "open_research_tasks": 30,
+    "researchers_working": 1,
+    "researchers_total": 10,
+    "worker_leads_waiting_review": 0,
+    "record_collections": 127,
+    "tests_defined": 70,
+    "migrations_written": 12,
+    "migrations_applied_live": 0,
+    "world_people": 14,
+    "world_companies": 8,
+    "revenue_recorded": 0,
+    "payouts_recorded": 0,
+    "images_queued": 1,
+    "commits_last_7_days": 1,
+    "days_since_last_commit": 0
+  },
+  "working": [
+    {
+      "name": "Mother Odessa Vance",
+      "desk": "ORAL_HISTORY",
+      "status": "WORKING",
+      "on": "Name of Father",
+      "queue": 30
+    },
+    {
+      "name": "Desmond “Dez” Okafor",
+      "desk": "CENSUS",
+      "status": "STANDING BY",
+      "on": null,
+      "queue": 0
+    },
+    {
+      "name": "Inès Baptiste",
+      "desk": "CANADA",
+      "status": "STANDING BY",
+      "on": null,
+      "queue": 0
+    },
+    {
+      "name": "Marcus Hale",
+      "desk": "MILITARY",
+      "status": "STANDING BY",
+      "on": null,
+      "queue": 0
+    },
+    {
+      "name": "Amara Lewis",
+      "desk": "LAND",
+      "status": "STANDING BY",
+      "on": null,
+      "queue": 0
+    },
+    {
+      "name": "Theo Whitfield",
+      "desk": "NEWSPAPERS",
+      "status": "STANDING BY",
+      "on": null,
+      "queue": 0
+    },
+    {
+      "name": "June Holloway",
+      "desk": "CHURCH_CEMETERY",
+      "status": "STANDING BY",
+      "on": null,
+      "queue": 0
+    },
+    {
+      "name": "Kofi Mensah",
+      "desk": "DNA",
+      "status": "STANDING BY",
+      "on": null,
+      "queue": 0
+    },
+    {
+      "name": "Rosa Delgado-Pryor",
+      "desk": "ENSLAVEMENT_ERA",
+      "status": "STANDING BY",
+      "on": null,
+      "queue": 0
+    },
+    {
+      "name": "Pip",
+      "desk": "RUNNER",
+      "status": "STANDING BY",
+      "on": null,
+      "queue": 0
+    }
+  ],
+  "worker": {
+    "last_run": "2026-10-03T11:08:03.519Z",
+    "leads": 0,
+    "errors": 0
+  },
+  "lanes": [
+    {
+      "n": 1,
+      "lane": "Family lines (4) — FF, FM, MF, MM",
+      "where": "`lineage/` · `/lineage`",
+      "status": "BUILT, waiting on names",
+      "moved": "Root House: 30 seats, grades, tasks, private living rule",
+      "next": "Enter names → worker starts searching",
+      "needs": "Names for seats 2–7 (parents + 4 grandparents)"
+    },
+    {
+      "n": 2,
+      "lane": "Canada → Memphis clue",
+      "where": "`docs/LINEAGE-CANADA-MEMPHIS.md` · Canada Desk",
+      "status": "FAMILY_TOLD, 6 tests ready",
+      "moved": "Full breakdown + counterarguments",
+      "next": "Run Test 1 (census birthplace) once one name exists",
+      "needs": "Which side; her name or her child's name"
+    },
+    {
+      "n": 3,
+      "lane": "Research building + people",
+      "where": "`lineage/lib/researchers.js`",
+      "status": "BUILT",
+      "moved": "10 researchers, all different silhouettes, credited, labelled world characters",
+      "next": "Upgrade art from the Chairman's two reference images",
+      "needs": "Re-attach the two pictures (not received this session)"
+    },
+    {
+      "n": 4,
+      "lane": "Sources (\"millions\")",
+      "where": "`lineage/lib/sources.js` · The Vault",
+      "status": "127 collections",
+      "moved": "US, Canada, Tennessee/Memphis, pre-1870, church, DNA",
+      "next": "Keep adding; each holds thousands–billions of records",
+      "needs": "—"
+    },
+    {
+      "n": 5,
+      "lane": "Backend worker",
+      "where": "`.github/workflows/root-house-worker.yml`",
+      "status": "BUILT, runs daily after merge",
+      "moved": "Searches Library of Congress + Internet Archive for every named person; writes leads",
+      "next": "Merge to main so the schedule runs",
+      "needs": "Merge approval"
+    },
+    {
+      "n": 6,
+      "lane": "Backend database",
+      "where": "`db/lineage/0001–0002`",
+      "status": "VALIDATED locally, not applied",
+      "moved": "10 tables, RLS on all, grade guard, append-only credits",
+      "next": "Apply to `thylora-dash`",
+      "needs": "Held Chairman action"
+    },
+    {
+      "n": 7,
+      "lane": "Tea Table (STEEPED)",
+      "where": "Root House · Parlor",
+      "status": "BUILT",
+      "moved": "Nightly game, Elder cards feed the family lines",
+      "next": "Play it; bring back the first Elder answer",
+      "needs": "—"
+    },
+    {
+      "n": 8,
+      "lane": "Monster Night",
+      "where": "Parlor",
+      "status": "LISTED",
+      "moved": "Dracula, Frankenstein, Bride, Conjuring 2 + Black horror lineage",
+      "next": "—",
+      "needs": "Age calls on R-rated picks"
+    },
+    {
+      "n": 9,
+      "lane": "The Window (our TRL)",
+      "where": "`rae-link/lib/countdown.js` · RAE Link tab",
+      "status": "FORMAT + RULES BUILT",
+      "moved": "Show clock, 6 segments, vote rules, tests",
+      "next": "`rael_votes` migration",
+      "needs": "Pick the name; studio, hosts"
+    },
+    {
+      "n": 10,
+      "lane": "First post",
+      "where": "`docs/FIRST-POSTS.md`",
+      "status": "3 drafts",
+      "moved": "Rebuilt around \"people first\"",
+      "next": "Pick A, B or C",
+      "needs": "Pick one"
+    },
+    {
+      "n": 11,
+      "lane": "RAE Link media network",
+      "where": "`rae-link/` · WR-RAELINK-001",
+      "status": "Built, held",
+      "moved": "—",
+      "next": "Apply backend; choose providers",
+      "needs": "B1–B7 in WR-RAELINK-001"
+    },
+    {
+      "n": 12,
+      "lane": "Store + memberships",
+      "where": "`public-site/store.html`",
+      "status": "Live surface, purchase buttons gated",
+      "moved": "—",
+      "next": "Connect checkout",
+      "needs": "Payment provider"
+    },
+    {
+      "n": 13,
+      "lane": "Shows (Bramble + Wick, Dividend Circle, Green Milk)",
+      "where": "`app/` World Shows, Story Studio",
+      "status": "Development",
+      "moved": "—",
+      "next": "Character bibles → pilots",
+      "needs": "Casting decisions"
+    },
+    {
+      "n": 14,
+      "lane": "Money (ledger, payouts, GAME-BET-001)",
+      "where": "`rae-link/lib/ledger.js`, `app/sports-betting.*`",
+      "status": "Built, held",
+      "moved": "—",
+      "next": "Payout provider (highest-cost open decision)",
+      "needs": "Provider + legal"
+    },
+    {
+      "n": 15,
+      "lane": "Operating logic (ask the next question, preserve source, evidence trail, no frozen system)",
+      "where": "`app/` Continuity, `CLAUDE.md`",
+      "status": "Now written into every session",
+      "moved": "`CLAUDE.md` full-thread rule + Prime Directive",
+      "next": "Keep enforcing",
+      "needs": "—"
+    },
+    {
+      "n": 17,
+      "lane": "Spine Forward check-in",
+      "where": "`SPINE.md` · `/spine` · `scripts/spine-forward.mjs`",
+      "status": "BUILT",
+      "moved": "Time, left-off, who's working, mathematics, world, questions — every run",
+      "next": "Add live backend secrets",
+      "needs": "`THYLORA_SUPABASE_URL` + read key as GitHub secrets"
+    },
+    {
+      "n": 18,
+      "lane": "World: people, companies, economy",
+      "where": "`world/registry.json`",
+      "status": "SEEDED",
+      "moved": "14 people/roles, 8 companies, economy at 0 recorded",
+      "next": "Cast open roles; first recorded sale",
+      "needs": "Which company earns first"
+    },
+    {
+      "n": 19,
+      "lane": "First image",
+      "where": "`world/image-queue.json` IMG-001",
+      "status": "QUEUED",
+      "moved": "Brief written, waiting in the back",
+      "next": "Produce once references arrive",
+      "needs": "The two reference pictures"
+    },
+    {
+      "n": 16,
+      "lane": "Dashboard",
+      "where": "`thylora-executive-dashboard` (other repo)",
+      "status": "Not this repo",
+      "moved": "—",
+      "next": "—",
+      "needs": "—"
+    }
+  ],
+  "world": {
+    "people": [
+      {
+        "id": "odessa",
+        "name": "Mother Odessa Vance",
+        "company": "root-house",
+        "kind": "WORLD_CHARACTER",
+        "job": "Keeper of the Parlor · oral history"
+      },
+      {
+        "id": "dez",
+        "name": "Desmond “Dez” Okafor",
+        "company": "root-house",
+        "kind": "WORLD_CHARACTER",
+        "job": "Census tracker"
+      },
+      {
+        "id": "ines",
+        "name": "Inès Baptiste",
+        "company": "root-house",
+        "kind": "WORLD_CHARACTER",
+        "job": "Canada desk"
+      },
+      {
+        "id": "marcus",
+        "name": "Marcus Hale",
+        "company": "root-house",
+        "kind": "WORLD_CHARACTER",
+        "job": "Military desk"
+      },
+      {
+        "id": "amara",
+        "name": "Amara Lewis",
+        "company": "root-house",
+        "kind": "WORLD_CHARACTER",
+        "job": "Land and law desk"
+      },
+      {
+        "id": "theo",
+        "name": "Theo Whitfield",
+        "company": "root-house",
+        "kind": "WORLD_CHARACTER",
+        "job": "Newspaper desk"
+      },
+      {
+        "id": "june",
+        "name": "June Holloway",
+        "company": "root-house",
+        "kind": "WORLD_CHARACTER",
+        "job": "Church and cemetery desk"
+      },
+      {
+        "id": "kofi",
+        "name": "Kofi Mensah",
+        "company": "root-house",
+        "kind": "WORLD_CHARACTER",
+        "job": "DNA and migration desk"
+      },
+      {
+        "id": "rosa",
+        "name": "Rosa Delgado-Pryor",
+        "company": "root-house",
+        "kind": "WORLD_CHARACTER",
+        "job": "Before-1870 desk"
+      },
+      {
+        "id": "pip",
+        "name": "Pip",
+        "company": "root-house",
+        "kind": "WORLD_CHARACTER",
+        "job": "Junior runner"
+      },
+      {
+        "id": "bramble",
+        "name": "Bramble",
+        "company": "world-shows",
+        "kind": "WORLD_CHARACTER",
+        "job": "Lead · Bramble + Wick (1930s–40s)"
+      },
+      {
+        "id": "wick",
+        "name": "Wick",
+        "company": "world-shows",
+        "kind": "WORLD_CHARACTER",
+        "job": "Bramble's companion · Bramble + Wick"
+      },
+      {
+        "id": "dividend-circle",
+        "name": "The Dividend Circle (six women, identities open)",
+        "company": "world-shows",
+        "kind": "WORLD_CHARACTER",
+        "job": "Ensemble · St. Louis",
+        "open": true
+      },
+      {
+        "id": "window-hosts",
+        "name": "The Window hosts (not cast)",
+        "company": "the-window",
+        "kind": "OPEN_ROLE",
+        "job": "Live hosts",
+        "open": true
+      }
+    ],
+    "companies": [
+      {
+        "id": "root-house",
+        "name": "Root House",
+        "lane": "Family lineage research",
+        "status": "WORKING",
+        "where": "/lineage"
+      },
+      {
+        "id": "rae-link",
+        "name": "RAE Link",
+        "lane": "Owned media network",
+        "status": "BUILT_HELD",
+        "where": "/rae-link"
+      },
+      {
+        "id": "the-window",
+        "name": "The Window (RAE Link studio)",
+        "lane": "Live countdown show",
+        "status": "FORMAT_BUILT",
+        "where": "/rae-link#window"
+      },
+      {
+        "id": "world-shows",
+        "name": "World Shows / Story Studio",
+        "lane": "Bramble + Wick, Dividend Circle, Green Milk",
+        "status": "DEVELOPMENT",
+        "where": "/app#shows"
+      },
+      {
+        "id": "store",
+        "name": "THYLORA Store + Memberships",
+        "lane": "Store",
+        "status": "SURFACE_LIVE_CHECKOUT_GATED",
+        "where": "/public-site/store.html"
+      },
+      {
+        "id": "game-bet",
+        "name": "GAME-BET-001 Sportsbook + Casino",
+        "lane": "Games",
+        "status": "BUILT_HELD",
+        "where": "/app/sports-betting.html"
+      },
+      {
+        "id": "time-run",
+        "name": "Time Run",
+        "lane": "Audio / reading",
+        "status": "LIVE_IN_APP",
+        "where": "/app/time-run.html"
+      },
+      {
+        "id": "departments",
+        "name": "THYLORA departments (Finance, Legal, Sports, Studio, Wellness, Customer Help, Production, Systems …)",
+        "lane": "Backend registry thylora_departments",
+        "status": "LIVE_REGISTRY_READ_BY_APP",
+        "where": "/app#departments"
+      }
+    ],
+    "economy": {
+      "currency": "USD",
+      "recorded_revenue_minor": 0,
+      "recorded_payouts_minor": 0,
+      "members": null,
+      "creators": null,
+      "note": "No sale, payout or member count has been recorded in this repository. Live figures live in the thylora-dash backend; the spine report reads them when it can reach it."
+    }
+  },
+  "images": [
+    {
+      "id": "IMG-001",
+      "title": "Root House — the first image",
+      "status": "QUEUED",
+      "blocked_on": "Chairman's two reference pictures (silhouette researchers) — not yet attached",
+      "brief": "Cross-section of a four-floor research house plus roof desk, parlor and basement vault. Each floor: one line of the family. Ten researchers working, every silhouette clearly a different person (height, build, hair, age, tools, one wheelchair user, one child runner). Warm lamp light, archive boxes, census ledgers, a tea set in the parlor. Labelled as THYLORA world characters.",
+      "owner": "world-shows",
+      "queued_at": "2026-10-03"
+    }
+  ],
+  "questions": [
+    "Family lines (4) — FF, FM, MF, MM: Names for seats 2–7 (parents + 4 grandparents)?",
+    "Canada → Memphis clue: Which side; her name or her child's name?",
+    "Research building + people: Re-attach the two pictures (not received this session)?",
+    "Backend worker: Merge approval?",
+    "Backend database: Held Chairman action?",
+    "Monster Night: Age calls on R-rated picks?",
+    "Who are your parents and four grandparents (even first names)?",
+    "Can you attach the reference pictures for the first image?",
+    "Which company makes the first recorded dollar, and what does it sell?"
+  ]
+}

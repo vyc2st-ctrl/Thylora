@@ -1,7 +1,7 @@
 # THYLORA — the whole thread (Lanes Board)
 
 Updated every session, in the same commit as the work (see `CLAUDE.md` §1).
-Last update: 2026-10-03 · branch `claude/root-house-lineage-full-thread`
+Last update: 2026-10-03 (session 2) · branch `claude/root-house-lineage-full-thread`
 
 | # | Lane | Where it lives | Status | Moved this session | Next action | Needs from Chairman |
 |---|---|---|---|---|---|---|
@@ -20,6 +20,9 @@ Last update: 2026-10-03 · branch `claude/root-house-lineage-full-thread`
 | 13 | **Shows** (Bramble + Wick, Dividend Circle, Green Milk) | `app/` World Shows, Story Studio | Development | — | Character bibles → pilots | Casting decisions |
 | 14 | **Money** (ledger, payouts, GAME-BET-001) | `rae-link/lib/ledger.js`, `app/sports-betting.*` | Built, held | — | Payout provider (highest-cost open decision) | Provider + legal |
 | 15 | **Operating logic** (ask the next question, preserve source, evidence trail, no frozen system) | `app/` Continuity, `CLAUDE.md` | **Now written into every session** | `CLAUDE.md` full-thread rule + Prime Directive | Keep enforcing | — |
+| 17 | **Spine Forward check-in** | `SPINE.md` · `/spine` · `scripts/spine-forward.mjs` | **BUILT** | Time, left-off, who's working, mathematics, world, questions — every run | Add live backend secrets | `THYLORA_SUPABASE_URL` + read key as GitHub secrets |
+| 18 | **World: people, companies, economy** | `world/registry.json` | **SEEDED** | 14 people/roles, 8 companies, economy at 0 recorded | Cast open roles; first recorded sale | Which company earns first |
+| 19 | **First image** | `world/image-queue.json` IMG-001 | **QUEUED** | Brief written, waiting in the back | Produce once references arrive | The two reference pictures |
 | 16 | **Dashboard** | `thylora-executive-dashboard` (other repo) | Not this repo | — | — | — |
 
 ## Why the "one topic" problem kept coming back — and the fix

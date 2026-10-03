@@ -4,6 +4,25 @@ This file loads automatically at the start of every Claude Code session in this
 repository. It is how a fix **stays** fixed: chat memory does not carry over,
 this file does.
 
+## 0 · `THYLORA HEAD - SPINE FORWARD` (the header)
+
+When a message starts with this header — in any words after it — **check in
+before anything else**:
+
+1. Run `node scripts/spine-forward.mjs` (regenerates `SPINE.md` and
+   `spine/spine.json`). If it cannot run, read the committed `SPINE.md`.
+2. Open the reply with the **Check-in block**, in this order:
+   - **Time** — the check-in timestamp, and the live-backend state.
+   - **Where we left off** — last commit, branch, message.
+   - **Who is working** — every name, desk, status, current task.
+   - **Mathematics** — every number in the report, unchanged. Never
+     estimate; a number not in the report is shown as "—".
+   - **World** — people, companies, economy.
+   - **Waiting in the back** — queued images and held actions.
+   - **Questions** — the report's questions plus any new ones the message raises.
+3. Then do the work in the message, across every lane it touches (§1).
+4. Update `THREAD.md`, regenerate the spine, commit, push.
+
 ## 1 · Full-thread rule (the Chairman's top complaint)
 
 - **Do the work, then report it.** Never answer with a plan of what "we are

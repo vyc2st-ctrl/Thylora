@@ -32,6 +32,14 @@
     {
       "source": "/root-house",
       "destination": "/lineage/index.html"
+    },
+    {
+      "source": "/spine",
+      "destination": "/spine/index.html"
+    },
+    {
+      "source": "/spine/",
+      "destination": "/spine/index.html"
     }
   ]
 }

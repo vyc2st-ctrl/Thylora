@@ -1,0 +1,43 @@
+name: THYLORA HEAD — Spine Forward check-in report
+
+# Rebuilds SPINE.md and spine/spine.json from the backend's current state:
+# on every push, every 6 hours, and on demand.
+
+on:
+  push:
+    paths-ignore:
+      - 'SPINE.md'
+      - 'spine/spine.json'
+  schedule:
+    - cron: '7 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: spine-forward-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 50
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build the check-in
+        env:
+          THYLORA_SUPABASE_URL: ${{ secrets.THYLORA_SUPABASE_URL }}
+          THYLORA_SUPABASE_KEY: ${{ secrets.THYLORA_SUPABASE_KEY }}
+        run: node scripts/spine-forward.mjs
+      - name: Commit the report
+        run: |
+          git config user.name "spine-forward"
+          git config user.email "spine-forward@users.noreply.github.com"
+          git add SPINE.md spine/spine.json
+          git diff --cached --quiet || git commit -m "Spine Forward check-in $(date -u +%FT%H:%MZ)"
+          git pull --rebase origin "${GITHUB_REF_NAME}" && git push
