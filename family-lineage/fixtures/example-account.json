@@ -1,0 +1,49 @@
+{
+  "account_code": "FL-ACCT-EXAMPLE",
+  "told_on": "2026-01-01",
+  "capture_mode": "DICTATION",
+  "visibility": "PRIVATE",
+  "note": "Invented family for tests. Real accounts live in family-lineage/accounts/, which git ignores because this repository is public.",
+  "persons": [
+    { "key": "teller", "display": "Teller", "is_teller": true },
+    { "key": "father", "display": "Father", "living": "DECEASED" },
+    { "key": "grandfather", "display": "Grandfather" },
+    { "key": "grandmother", "display": "Grandmother" },
+    { "key": "other-mother", "display": "Second mother (name unknown)" },
+    { "key": "half-uncle", "display": "Uncle A" },
+    { "key": "aunt", "display": "Aunt B" },
+    { "key": "cousin-1", "display": "Cousin 1" },
+    { "key": "cousin-2", "display": "Cousin 2" },
+    { "key": "peer", "display": "Peer" }
+  ],
+  "parentage": [
+    { "child": "father", "parent": "grandfather", "role": "FATHER" },
+    { "child": "father", "parent": "grandmother", "role": "MOTHER" },
+    { "child": "half-uncle", "parent": "grandfather", "role": "FATHER" },
+    { "child": "half-uncle", "parent": "other-mother", "role": "MOTHER" },
+    { "child": "teller", "parent": "father", "role": "FATHER" },
+    { "child": "cousin-1", "parent": "aunt", "role": "MOTHER" },
+    { "child": "cousin-2", "parent": "aunt", "role": "MOTHER" }
+  ],
+  "beliefs": [
+    { "subject": "half-uncle", "believed": "Family friend called Uncle.", "learned": "Grandfather's son by another mother.", "learned_when": "later" }
+  ],
+  "age_anchors": [
+    { "person": "cousin-1", "anchor": "peer", "comparison": "ABOUT_SAME" },
+    { "person": "cousin-2", "anchor": "cousin-1", "comparison": "A_LITTLE_OLDER" }
+  ],
+  "testimonies": [
+    {
+      "code": "FL-T-EXAMPLE-01",
+      "scene": "Leaving the house",
+      "teller": "teller",
+      "verbatim": "he already told her to come out come on that's how we all communicate",
+      "corrections": [
+        { "type": "REMOVE_PHRASE", "target": "your out here", "applies_to": ["PDF", "PAGE", "AUDIO"], "reason": "Teller unsure he meant it; the line ends at come on." },
+        { "type": "REMOVE_PHRASE", "target": "you're out here", "applies_to": ["PDF", "PAGE", "AUDIO"], "reason": "Same correction, other spelling." }
+      ]
+    }
+  ],
+  "open_questions": [ { "q": "How is Aunt B kin?", "why": "Decides the side of the tree.", "about": ["aunt"] } ],
+  "record_tasks": [ { "person": "half-uncle", "source": "SS-5 application", "hint": "by name and city", "proves": "Names both parents." } ]
+}
