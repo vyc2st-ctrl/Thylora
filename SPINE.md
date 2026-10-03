@@ -2,8 +2,8 @@
 **Checked in:** 2026-10-03 11:21 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
 
 ## Where we left off
-`57a6b01` on `claude/root-house-lineage-full-thread` · 2026-10-03T11:13:57+00:00  
-Root House: four-line family research, backend worker, The Window, full-thread rule
+`7afb8d1` on `claude/root-house-lineage-full-thread` · 2026-10-03T11:21:16+00:00  
+THYLORA HEAD - SPINE FORWARD: backend check-in report
 
 ## Who is working
 | Name | Desk | Status | On |
@@ -19,7 +19,7 @@ Root House: four-line family research, backend worker, The Window, full-thread r
 | Rosa Delgado-Pryor | enslavement era | STANDING BY | — |
 | Pip | runner | STANDING BY | — |
 
-Research worker last ran 2026-10-03T11:08:03.519Z · 0 leads · 0 provider errors.
+Research worker last ran 2026-10-03T11:14:10.963Z · 0 leads · 0 provider errors.
 
 ## Mathematics
 | Measure | Value |
@@ -41,7 +41,7 @@ Research worker last ran 2026-10-03T11:08:03.519Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 1 |
+| commits last 7 days | 3 |
 | days since last commit | 0 |
 
 ## All lanes

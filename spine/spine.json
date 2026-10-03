@@ -1,10 +1,10 @@
 {
   "header": "THYLORA HEAD - SPINE FORWARD",
-  "checked_in_at": "2026-10-03T11:21:10.688Z",
+  "checked_in_at": "2026-10-03T11:21:19.872Z",
   "left_off": {
-    "commit": "57a6b01",
-    "message": "Root House: four-line family research, backend worker, The Window, full-thread rule",
-    "at": "2026-10-03T11:13:57+00:00",
+    "commit": "7afb8d1",
+    "message": "THYLORA HEAD - SPINE FORWARD: backend check-in report",
+    "at": "2026-10-03T11:21:16+00:00",
     "branch": "claude/root-house-lineage-full-thread"
   },
   "live_backend": {
@@ -29,7 +29,7 @@
     "revenue_recorded": 0,
     "payouts_recorded": 0,
     "images_queued": 1,
-    "commits_last_7_days": 1,
+    "commits_last_7_days": 3,
     "days_since_last_commit": 0
   },
   "working": [
@@ -105,7 +105,7 @@
     }
   ],
   "worker": {
-    "last_run": "2026-10-03T11:08:03.519Z",
+    "last_run": "2026-10-03T11:14:10.963Z",
     "leads": 0,
     "errors": 0
   },
