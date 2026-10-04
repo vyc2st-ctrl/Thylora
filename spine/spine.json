@@ -1,10 +1,10 @@
 {
   "header": "THYLORA HEAD - SPINE FORWARD",
-  "checked_in_at": "2026-10-04T21:16:58.545Z",
+  "checked_in_at": "2026-10-04T23:26:11.164Z",
   "left_off": {
-    "commit": "2351953",
-    "message": "Root House worker: leads 2026-10-04",
-    "at": "2026-10-04T15:49:22Z",
+    "commit": "0a61bda",
+    "message": "Spine Forward check-in 2026-10-04T21:16Z",
+    "at": "2026-10-04T21:16:58+00:00",
     "branch": "main"
   },
   "live_backend": {
@@ -12,8 +12,8 @@
     "detail": "add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers"
   },
   "mathematics": {
-    "lanes_total": 21,
-    "lanes_waiting_on_chairman": 16,
+    "lanes_total": 24,
+    "lanes_waiting_on_chairman": 18,
     "family_seats_named": "0 / 30",
     "family_percent_named": 0,
     "open_research_tasks": 30,
@@ -29,7 +29,7 @@
     "revenue_recorded": 0,
     "payouts_recorded": 0,
     "images_queued": 1,
-    "commits_last_7_days": 13,
+    "commits_last_7_days": 14,
     "days_since_last_commit": 0
   },
   "working": [
@@ -289,6 +289,33 @@
       "moved": "Untouched; excluded from worker counts",
       "next": "Move to an Earth-invitations list if the Chairman says so",
       "needs": "Keep as invitations, or move out?"
+    },
+    {
+      "n": 22,
+      "lane": "REE value + Ma Sweet banknote",
+      "where": "backend `currency_visual_registry` REE-VALUE-ANCHOR-PROPOSAL-654",
+      "status": "PROPOSED",
+      "moved": "1 REE ≈ 1 EUR buying power; 100 minor units; name idea \"sweet\"; blue note, her portrait and clothes, her people on the back",
+      "next": "Chairman confirms anchor + unit + that her note IS the REE note",
+      "needs": "Yes/no on all three"
+    },
+    {
+      "n": 23,
+      "lane": "Ma Sweet (great-grandmother, came out of Canada)",
+      "where": "backend `genealogy_research_intake` GEN-MAT-MASWEET-001 (FAMILY_RESTRICTED)",
+      "status": "FAMILY_TOLD · photo received",
+      "moved": "Recorded; nation UNVERIFIED",
+      "next": "Census + Tennessee death-certificate tests once side and name are known",
+      "needs": "Kid Wright's mother or Hester Harris's? Her given name?"
+    },
+    {
+      "n": 24,
+      "lane": "Thread sync",
+      "where": "backend `thylora_thread_handoff_bus` THY-HANDOFF-654-MASWEET-REE-SYNC",
+      "status": "POSTED",
+      "moved": "Rule: read both heads before writes · obey ledger guard · claim lanes on the bus · proposals stay PROPOSED",
+      "next": "Every thread reads the bus first",
+      "needs": "—"
     },
     {
       "n": 16,

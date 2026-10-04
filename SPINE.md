@@ -1,9 +1,9 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-10-04 21:16 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
+**Checked in:** 2026-10-04 23:26 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
 
 ## Where we left off
-`2351953` on `main` · 2026-10-04T15:49:22Z  
-Root House worker: leads 2026-10-04
+`0a61bda` on `main` · 2026-10-04T21:16:58+00:00  
+Spine Forward check-in 2026-10-04T21:16Z
 
 ## Who is working
 | Name | Desk | Status | On |
@@ -24,8 +24,8 @@ Research worker last ran 2026-10-04T15:49:21.958Z · 0 leads · 0 provider error
 ## Mathematics
 | Measure | Value |
 |---|---|
-| lanes total | 21 |
-| lanes waiting on chairman | 16 |
+| lanes total | 24 |
+| lanes waiting on chairman | 18 |
 | family seats named | 0 / 30 |
 | family percent named | 0 |
 | open research tasks | 30 |
@@ -41,7 +41,7 @@ Research worker last ran 2026-10-04T15:49:21.958Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 13 |
+| commits last 7 days | 14 |
 | days since last commit | 0 |
 
 ## All lanes
@@ -67,6 +67,9 @@ Research worker last ran 2026-10-04T15:49:21.958Z · 0 leads · 0 provider error
 | 19 | First image | QUEUED | Produce once references arrive | The two reference pictures |
 | 20 | World value chains (raise → kill → sell meat + skin → tan → make → sell) | BUILT · 1 chain, 10 steps | Name herder/butcher/tanner; record first hide sale; mark ECON-COMMODITIES PARTIAL (update timed out twice) | REE smallest unit · what one hide sells for |
 | 21 | Earth family in staff table | HELD | Move to an Earth-invitations list if the Chairman says so | Keep as invitations, or move out? |
+| 22 | REE value + Ma Sweet banknote | PROPOSED | Chairman confirms anchor + unit + that her note IS the REE note | Yes/no on all three |
+| 23 | Ma Sweet (great-grandmother, came out of Canada) | FAMILY_TOLD · photo received | Census + Tennessee death-certificate tests once side and name are known | Kid Wright's mother or Hester Harris's? Her given name? |
+| 24 | Thread sync | POSTED | Every thread reads the bus first | — |
 | 16 | Dashboard | Not this repo | — | — |
 
 ## The world

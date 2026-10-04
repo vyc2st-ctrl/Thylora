@@ -1,7 +1,7 @@
 # THYLORA — the whole thread (Lanes Board)
 
 Updated every session, in the same commit as the work (see `CLAUDE.md` §1).
-Last update: 2026-10-03 14:25 UTC (session 3 · backend custody 648 / ledger 648; this session wrote 643) · branch `claude/root-house-lineage-full-thread`
+Last update: 2026-10-04 19:26 ET · backend custody 654 / ledger 654 (this session) · branch merged to main
 
 | # | Lane | Where it lives | Status | Moved this session | Next action | Needs from Chairman |
 |---|---|---|---|---|---|---|
@@ -25,6 +25,9 @@ Last update: 2026-10-03 14:25 UTC (session 3 · backend custody 648 / ledger 648
 | 19 | **First image** | `world/image-queue.json` IMG-001 | **QUEUED** | Brief written, waiting in the back | Produce once references arrive | The two reference pictures |
 | 20 | **World value chains** (raise → kill → sell meat + skin → tan → make → sell) | backend `thylora_world_value_chain` | **BUILT · 1 chain, 10 steps** | Policy THY-POLICY-WORLD-LAYER-ECONOMY-BOUNDARY-643 LOCKED; CHAIN-CATTLE-HIDE-001 seeded, all OPEN | Name herder/butcher/tanner; record first hide sale; mark ECON-COMMODITIES PARTIAL (update timed out twice) | REE smallest unit · what one hide sells for |
 | 21 | **Earth family in staff table** | backend `thylora_department_personnel` (7 rows, INVITED_NOT_ACCEPTED) | **HELD** | Untouched; excluded from worker counts | Move to an Earth-invitations list if the Chairman says so | Keep as invitations, or move out? |
+| 22 | **REE value + Ma Sweet banknote** | backend `currency_visual_registry` REE-VALUE-ANCHOR-PROPOSAL-654 | **PROPOSED** | 1 REE ≈ 1 EUR buying power; 100 minor units; name idea "sweet"; blue note, her portrait and clothes, her people on the back | Chairman confirms anchor + unit + that her note IS the REE note | Yes/no on all three |
+| 23 | **Ma Sweet (great-grandmother, came out of Canada)** | backend `genealogy_research_intake` GEN-MAT-MASWEET-001 (FAMILY_RESTRICTED) | **FAMILY_TOLD · photo received** | Recorded; nation UNVERIFIED | Census + Tennessee death-certificate tests once side and name are known | Kid Wright's mother or Hester Harris's? Her given name? |
+| 24 | **Thread sync** | backend `thylora_thread_handoff_bus` THY-HANDOFF-654-MASWEET-REE-SYNC | **POSTED** | Rule: read both heads before writes · obey ledger guard · claim lanes on the bus · proposals stay PROPOSED | Every thread reads the bus first | — |
 | 16 | **Dashboard** | `thylora-executive-dashboard` (other repo) | Not this repo | — | — | — |
 
 ## Why the "one topic" problem kept coming back — and the fix
