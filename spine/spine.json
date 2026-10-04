@@ -1,11 +1,11 @@
 {
   "header": "THYLORA HEAD - SPINE FORWARD",
-  "checked_in_at": "2026-10-03T19:02:15.357Z",
+  "checked_in_at": "2026-10-04T05:43:42.276Z",
   "left_off": {
-    "commit": "5ea829a",
-    "message": "World-layer precheck: Our World owns the economy; Earth = Chairman + merch/digital lane (backend 643)",
-    "at": "2026-10-03T19:02:02Z",
-    "branch": "claude/root-house-lineage-full-thread"
+    "commit": "0b6aaca",
+    "message": "Root House worker: leads 2026-10-03",
+    "at": "2026-10-03T23:19:59Z",
+    "branch": "main"
   },
   "live_backend": {
     "state": "NOT_CONFIGURED",
@@ -29,7 +29,7 @@
     "revenue_recorded": 0,
     "payouts_recorded": 0,
     "images_queued": 1,
-    "commits_last_7_days": 8,
+    "commits_last_7_days": 10,
     "days_since_last_commit": 0
   },
   "working": [
@@ -105,7 +105,7 @@
     }
   ],
   "worker": {
-    "last_run": "2026-10-03T11:14:10.963Z",
+    "last_run": "2026-10-03T23:19:59.710Z",
     "leads": 0,
     "errors": 0
   },
