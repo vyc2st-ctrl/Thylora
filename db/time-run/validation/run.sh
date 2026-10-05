@@ -12,5 +12,7 @@ for f in "${HERE}"/0*.sql; do
 done
 echo "re-apply for idempotence"
 for f in "${HERE}"/0*.sql; do psql -v ON_ERROR_STOP=1 -q -d "${DB}" -f "$f" >/dev/null; done
-echo "behaviour"
+echo "behaviour (581)"
 psql -q -d "${DB}" -f "${HERE}/validation/behaviour.sql"
+echo "behaviour (667 reconciliation)"
+psql -q -d "${DB}" -f "${HERE}/validation/behaviour-667.sql"

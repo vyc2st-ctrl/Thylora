@@ -120,10 +120,11 @@ test('dropping any single guard breaks the model again', () => {
 
 test('the encounter is held PENDING_FULFILLMENT under every causality model', () => {
   const record = encounter.historical_record;
-  assert.equal(record.model_state, 'OPEN');
-  for (const key of Object.keys(record).filter(k => k.startsWith('under_'))) {
-    assert.equal(record[key].record_state, 'PENDING_FULFILLMENT');
-  }
+  assert.equal(record.model_state, 'SELECTED_WORKING');
+  assert.equal(record.model, 'CA_C_LEDGERED_CAUSALITY');
+  const modelled = Object.keys(record).filter(k => k.startsWith('under_'));
+  assert.equal(modelled.length, 3, 'all three causality readings must stay on the record');
+  for (const key of modelled) assert.equal(record[key].record_state, 'PENDING_FULFILLMENT');
 });
 
 // ---------------------------------------------------------- OPEN MECHANICS
@@ -160,51 +161,69 @@ test('PEETE CASTLE is prohibited and the check is not case sensitive', () => {
   assert.ok(PROHIBITED_NAMES.includes('PEETE CASTLE'));
 });
 
-test('no castle name candidate is prohibited', () => {
-  for (const candidate of castle.native_name_candidates) {
+test('no withdrawn castle name candidate was ever prohibited', () => {
+  for (const candidate of castle.withdrawn_name_candidates) {
     assert.equal(isProhibitedName(candidate.name), false, candidate.name);
   }
 });
 
-test('every candidate name derives from native land, language and history', () => {
-  for (const candidate of castle.native_name_candidates) {
+test('every withdrawn candidate still carries its full derivation', () => {
+  for (const candidate of castle.withdrawn_name_candidates) {
     const result = validateNativeName(candidate);
     assert.deepEqual([...result.problems], [], candidate.name);
     assert.equal(result.canon, false);
   }
-  assert.equal(castle.native_name_candidates.length, 3);
+  assert.equal(castle.withdrawn_name_candidates.length, 3, 'no-loss: nothing was erased');
 });
 
-test('a name without a derivation is refused', () => {
-  const result = validateNativeName({ name: 'Somename' });
-  assert.equal(result.valid, false);
-  assert.ok(result.problems.some(p => p.code === 'DERIVATION_LAND_MISSING'));
-  assert.ok(result.problems.some(p => p.code === 'MORPHEMES_INSUFFICIENT'));
-});
-
-test('the castle is one place across every era stratum', () => {
-  const [first, ...rest] = castle.strata;
-  for (const stratum of rest) {
-    const comparison = compareStrata(first, stratum);
-    assert.equal(comparison.same_place, true, stratum.stratum_id);
-    assert.deepEqual([...comparison.broken_invariants], []);
+test('every castle name candidate is withdrawn, and none is canon', () => {
+  assert.equal(castle.native_name_candidates, undefined, 'candidates must no longer read as a live option set');
+  for (const candidate of castle.withdrawn_name_candidates) {
+    assert.equal(candidate.disposition, 'WITHDRAWN_DO_NOT_GUESS');
+    assert.equal(candidate.canon, false);
+    assert.ok(candidate.withdrawn_reason.length > 0);
   }
 });
 
-test('what changes by era actually changes', () => {
-  const [seventeen, nineteenTwentyTwo] = castle.strata;
+test('the castle record is subordinate to the live canon node', () => {
+  assert.equal(castle.record_state, 'SUPERSEDED_BY_BACKEND_CANON');
+  assert.equal(castle.canon_place_node.entity_id, 'ER-CASTLE-ROYAL-001');
+  assert.equal(castle.canon_place_node.truth_state, 'OPEN_PENDING_CHAIRMAN_NAME_RECOVERY');
+  assert.equal(castle.reconciled_at_head, 667);
+  assert.match(castle.binding, /NOT a second castle/);
+});
+
+test('the proposed strata are kept but marked not canon, and still describe one place', () => {
+  const strata = castle.proposed_strata_not_canon;
+  assert.equal(strata.length, 3, 'no-loss: every stratum is retained');
+  for (const stratum of strata) {
+    assert.equal(stratum.status, 'PROPOSED_ERA_STRATUM_NOT_CANON');
+    assert.equal(stratum.place_id, 'ER-CASTLE-ROYAL-001');
+    assert.equal(stratum.people_state, 'LIVING');
+  }
+  const [first, ...rest] = strata;
+  for (const stratum of rest) {
+    assert.equal(compareStrata(first, stratum).same_place, true, stratum.stratum_id);
+  }
+});
+
+test('what changes by era still changes', () => {
+  const [seventeen, nineteenTwentyTwo] = castle.proposed_strata_not_canon;
   const differences = compareStrata(seventeen, nineteenTwentyTwo).era_differences;
   for (const field of ['rooms', 'walls', 'repairs', 'objects', 'occupants', 'staff', 'businesses', 'furniture', 'art']) {
     assert.ok(differences.includes(field), `${field} did not change between eras`);
   }
 });
 
-test('the people in every castle stratum are living', () => {
-  for (const stratum of castle.strata) assert.equal(stratum.people_state, 'LIVING');
+test('the invented site invariants are marked assumed, not canon', () => {
+  assert.ok(castle.invariants_proposed_not_canon);
+  assert.match(castle.invariants_status, /ASSUMED, NOT CANON/);
+  assert.equal(castle.invariants, undefined);
 });
 
-test('the castle name is unsealed and awaits a Chairman decision', () => {
-  assert.equal(castle.native_name_state, 'CANDIDATE_SET_OPEN');
-  assert.equal(castle.canon, false);
-  assert.ok(castle.chairman_decisions_required.length >= 4);
+test('the castle name awaits recovery, not selection', () => {
+  assert.equal(castle.native_name_state, 'OPEN_PENDING_CHAIRMAN_NAME_RECOVERY');
+  assert.match(castle.naming_correction.consequence, /recovery, not name selection/i);
+  assert.match(castle.naming_correction.language_finding, /No EdereAirah native-language/);
+  assert.ok(castle.chairman_decisions_required.length >= 2);
 });

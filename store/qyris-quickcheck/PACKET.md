@@ -110,8 +110,7 @@ One page, seven rows, twenty-two writable fields, four decision choices.
 Delivery rides the existing THYLORA store and entitlement rails. No new backend,
 no new identity system, no account required to use the product after delivery.
 
-**A4 note:** the page box is Letter. An A4 variant is a one-line `@page` change
-and is **not cut** for Rev A — it is listed as an open item, not silently claimed.
+**A4 note:** the page box is Letter, and **Letter remains Rev A** by Chairman decision at head 667. A4 ships as a later **additive revision/format**, never as a silent edit to Rev A.
 
 ## 8 · Mobile plan
 
@@ -151,15 +150,47 @@ percentages, outcome promises, urgency, scarcity, "transform your life".
 
 | Tier | Price | What it is | Reasoning |
 |---|---|---|---|
-| **Preview** | Free | Pages 1–4 | Shows the method and the visual grammar; the sheet, the rule table and the worked example are what is bought. |
+| **Preview** | Free | Pages 1–3 | Shows the promise, what it is and is not, and the twelve minutes. The visual grammar, the five moves, the rule table, the worked example and the sheet are what is bought. **Chairman decision at head 667: pages 1–3.** |
 | **Single** | **$14** | Full 14 pages, PDF + interactive + blank sheet, one person | Priced against one small decision, not against a course. The worked example alone identifies a $180 check on a $4,200 decision. |
 | **Working set** | **$34** | Same, licensed for a household or a team of up to eight | Under two and a half singles; the product is more useful when a second person runs it with you, and page 3 says so. |
 
-**Recommended:** open at **$14 / $34** with the free preview. No launch discount,
-no strike-through pricing, no countdown.
+**Recommended:** open at **$14 / $34** with the free preview (pages 1–3). No launch
+discount, no strike-through pricing, no countdown.
+
+> **These prices are a PROPOSAL and carry no willingness-to-pay evidence.**
+> No sale, survey, waitlist or price test has been run for this product. The
+> numbers are reasoned from what the instrument saves on one decision; that is an
+> argument, not evidence. `store/lib/revenue-path.js` carries the price with
+> `state: PROPOSAL`, `market_validated: false` and `willingness_to_pay_evidence:
+> UNKNOWN`, and a test refuses any claim otherwise. What would validate it: one
+> real sale at the asked price; a price test across two prices with the same
+> offer; a waitlist that converts.
 
 **What must not happen to the price:** it must not be presented as a discount
 from a higher number that was never charged.
+
+## 10a · Release order under MATH-REVENUE-PATH-PRIORITY-662
+
+The live backend carries `MATH-REVENUE-PATH-PRIORITY-662`:
+`R_p = (N × F × W × E) / (C × T)` — *do first what people need often, will pay for,
+and we can finish fast and cheap.*
+
+`store/lib/revenue-path.js` applies it and **refuses to compute `R_p` at all**,
+because `N`, `F`, `W` and `E` are all `UNKNOWN` for all three instruments: no
+sale, survey, waitlist or price test exists for any of them. Only `C` and `T`
+— our own completion cost and time — are observed.
+
+So the ranking it returns is labelled **`COMPLETION_RANKED`, not
+`MARKET_EVIDENCED`**, and `market_validated` is `false`:
+
+| Rank | Product | Why it ranks here |
+|---|---|---|
+| 1 | **QYRIS QuickCheck** | Lowest C and T. The work is done; only Chairman preview remains. |
+| 2 | **Before You Buy** | Mechanism and wait table fully specified; design and implementation remain. |
+| 3 | **Stuck Loop Reset** | Design and implementation remain, and the fourth readout state needs care. |
+
+That order independently reproduces the Chairman's release order at head 667.
+**It is a statement about what we can finish, not about what anyone will pay.**
 
 ## 11 · Chairman preview packet
 
@@ -175,12 +206,12 @@ from a higher number that was never charged.
 
 | # | Decision | Default if silent |
 |---|---|---|
-| 1 | Price: $14 / $34, or other | Held, not published |
+| 1 | Price: $14 / $34 — **a PROPOSAL, not willingness-to-pay evidence** | Held, not published |
 | 2 | Rights wording as written in §6 | Held |
-| 3 | Whether R4 is correct — should a hard-to-undo decision with *observed* evidence really require a safeguard? | Stays as written |
-| 4 | Whether an A4 page box ships in Rev A | Letter only |
-| 5 | Whether the free preview is pages 1–4 or pages 1–3 | Pages 1–4 |
-| 6 | Release order against Stuck Loop Reset and Before You Buy | QuickCheck first |
+| 3 | ~~Is R4 correct?~~ | **DECIDED at head 667: R4 KEPT.** A hard-to-reverse decision requires a safeguard even when the evidence is observed. |
+| 4 | ~~A4 in Rev A~~ | **DECIDED at head 667: Letter remains Rev A. A4 is a later additive revision.** |
+| 5 | ~~Free preview extent~~ | **DECIDED at head 667: pages 1–3** |
+| 6 | ~~Release order~~ | **DECIDED at head 667: QuickCheck → Before You Buy → Stuck Loop Reset** |
 
 **What is complete:** all 14 pages, the verdict engine, 19 tests, the worked
 example, the fillable sheet, the mobile and print behaviour, rights, serial,

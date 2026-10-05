@@ -58,7 +58,7 @@ select expect_reject('prohibited castle name refused',
 
 select expect_reject('name candidate without derivation refused',
   $q$insert into trun_place_name_candidates (candidate_id,place_id,name,native_land,language,history,morphemes,reading)
-     values ('NAME-X','THY-PLACE-CASTLE-001','Somename','EdereAriah','native tongue','because','[{"form":"x","gloss":"y"}]'::jsonb,'r')$q$);
+     values ('NAME-X','THY-PLACE-CASTLE-001','Somename','EdereAirah','native tongue','because','[{"form":"x","gloss":"y"}]'::jsonb,'r')$q$);
 
 select expect_reject('sealed place without a name refused',
   $q$insert into trun_places (place_id,kind,native_name_state,site_ground,orientation,approach,water_relation,footprint_origin)

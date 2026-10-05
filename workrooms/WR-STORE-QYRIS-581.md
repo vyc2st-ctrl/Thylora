@@ -1,5 +1,21 @@
 # WR-STORE-QYRIS-581 · Store — utility fastbuild
 
+> ## ⚠ UPDATED — read `WR-RECONCILE-667.md` first
+>
+> Written against sequence 581 without backend access; the live head is now **667**.
+>
+> Decisions applied since: **R4 KEPT**; free preview is **pages 1–3**; **Letter remains
+> Rev A** (A4 is a later additive revision); release order is **QuickCheck → Before You Buy
+> → Stuck Loop Reset**; and the **$14 / $34 price is a PROPOSAL carrying no
+> willingness-to-pay evidence** — `MATH-REVENUE-PATH-PRIORITY-662` is applied in
+> `store/lib/revenue-path.js`, which refuses to compute `R_p` and returns a
+> `COMPLETION_RANKED` order instead. Publication remains **NOT AUTHORIZED**.
+>
+> Gap found in the live backend: `THY-QYRIS-QUICKCHECK-001` has **no row** in
+> `thylora_store_product_readiness` or `thylora_store_release_gate`. Registering it is a
+> backend write and is held.
+
+
 **Lane:** Store utility instruments · QYRIS QuickCheck first, the other two in parallel
 **Directive:** THY-WORK-STORE-UTILITY-FASTBUILD-581
 **Source repository:** `vyc2st-ctrl/Thylora`, branch `claude/time-run-binding-correction-4undjy`

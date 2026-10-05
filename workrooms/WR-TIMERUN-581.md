@@ -1,5 +1,25 @@
 # WR-TIMERUN-581 · Time Run — binding correction
 
+> ## ⚠ SUPERSEDED IN PART — read `WR-RECONCILE-667.md` first
+>
+> This workroom was written **without backend access**, against sequence 581. The live
+> custody head on the day it was written was already **582**, and is now **667**.
+> **581 is this lane's historical origin, not backend authority.**
+>
+> Corrected by `WR-RECONCILE-667`: the castle is `ER-CASTLE-ROYAL-001` (this workroom
+> created a duplicate); all three castle name candidates are **withdrawn** (the live record
+> says DO NOT GUESS); Inés Morales's role was already **CHAIRMAN_LOCKED** as Royal Cook
+> (`ER-ROYAL-COOK-001`); arrival time must use the EdereAirah clock (MATH-EA-TIME-660, a
+> 26-hour day); the spelling is **EdereAirah**; and the six mechanics now carry working
+> selections. The Time Run laws themselves were found to **match canon already live** in
+> `THY-TIME-RUN-001` v4.
+>
+> Under MATH-CROSS-AGENT-PATROL-653 this workroom's commit `97b534c` scores
+> **P = 0 (ALERT CHAIRMAN)**: H=0, N=1, L=0, X=0.
+>
+> Nothing below is deleted. Read it as the origin record.
+
+
 **Lane:** Time Run live traversal · living eras · encounter contracts · stable places
 **Directive:** THY-WORK-TIME-RUN-LIVE-TRAVERSAL-581
 **Backend of record:** `thylora-dash` (`jvsdxhrfhtlgaknhjxlz`)
@@ -107,7 +127,7 @@ Repository total **113 tests, all passing**.
 
 - **No causality model is selected.** Six mechanics remain open.
 - **No castle name is sealed.** Three candidates; the native language of
-  EdereAriah is still unnamed, so every derivation rests on an unnamed source.
+  EdereAirah is still unnamed, so every derivation rests on an unnamed source.
 - **Inés Morales's role in the era is UNSEALED**, with three candidates.
 - **The 1700s exact year is UNSEALED**, per the released rule that event years
   stay open until a run is sealed.
@@ -116,7 +136,7 @@ Repository total **113 tests, all passing**.
 - **The open question under CA-A is open**: what prevents an action that would
   stop the departure. Named `CONSISTENCY_PRESSURE`. Not canonized.
 - **Spelling note:** the directive wrote EDEREAIRAH; the backend of record uses
-  **EdereAriah**, and that spelling is kept. Flagged rather than silently changed.
+  **EdereAirah**, and that spelling is kept. Flagged rather than silently changed.
 
 ## 6 · Chairman decisions required
 
@@ -129,8 +149,8 @@ Repository total **113 tests, all passing**.
 | 5 | CAUSALITY model — CA-A, CA-B or CA-C. If CA-A, all four guards adopt with it. |
 | 6 | INFORMATION TRANSFER model — IT-A, IT-B or IT-C |
 | 7 | Castle native name — NAME-A Ederehald, NAME-B Ariahdura, NAME-C Torvaenah, or reject all three |
-| 8 | Name the native language of EdereAriah |
+| 8 | Name the native language of EdereAirah |
 | 9 | Inés Morales's role in the 1700s, or leave UNSEALED |
 | 10 | Whether the castle is a Time Run threshold site *(binds decision 1)* |
 | 11 | Whether `db/time-run/*.sql` may be applied to `thylora-dash` |
-| 12 | EDEREAIRAH vs EdereAriah — confirm the backend spelling stands |
+| 12 | EDEREAIRAH vs EdereAirah — confirm the backend spelling stands |

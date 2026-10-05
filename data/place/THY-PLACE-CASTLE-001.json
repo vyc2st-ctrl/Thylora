@@ -1,27 +1,48 @@
 {
   "place_id": "THY-PLACE-CASTLE-001",
-  "kind": "CASTLE",
-  "world": "EdereAriah",
-  "record_kind": "STABLE_PLACE_IDENTITY_WITH_ERA_STRATA",
-  "canon": false,
-
-  "prohibited_names": ["PEETE CASTLE"],
-  "prohibition_reason": "Chairman directive. The castle is named from the land, not from a family.",
-
-  "native_name_state": "CANDIDATE_SET_OPEN",
-  "naming_law": "NATIVE LAND + LANGUAGE + HISTORY. A name with no derivation is an assignment, and assignments are refused.",
-
-  "native_name_candidates": [
+  "record_state": "SUPERSEDED_BY_BACKEND_CANON",
+  "reconciled_at_head": 667,
+  "reconciliation_workroom": "WR-RECONCILE-667",
+  "canon_place_node": {
+    "entity_id": "ER-CASTLE-ROYAL-001",
+    "canonical_name": "ROYAL CASTLE — CANONICAL NAME OPEN (DO NOT GUESS)",
+    "entity_type": "PERSON/PLACE registry: PERSON table lists it as CASTLE",
+    "truth_state": "OPEN_PENDING_CHAIRMAN_NAME_RECOVERY",
+    "geometry_serial": "THY-SPC-CASTLE-001",
+    "geometry_source_ref": "THY-WORK-CASTLE-DIMENSIONAL-TWIN-572",
+    "erc_name": "Windsor Castle",
+    "erc_source_ref": "RCT_OFFICIAL_WINDSOR_MIRROR",
+    "layer": "EdereAirah",
+    "measurement_state": "UNKNOWN",
+    "public_disclosure_state": "PRIVATE_EXACT_PUBLIC_ABSTRACT",
+    "read_live": "thylora_world_entities + thylora_castle_space_geometry, thylora-dash, 2026-10-05"
+  },
+  "binding": "THY-PLACE-CASTLE-001 is NOT a second castle. The castle already exists in live canon as ER-CASTLE-ROYAL-001. This record is subordinate to it and carries only the Time Run era-binding question. Any Time Run surface must reference ER-CASTLE-ROYAL-001.",
+  "naming_correction": {
+    "finding": "The live backend names this place \"ROYAL CASTLE — CANONICAL NAME OPEN (DO NOT GUESS)\" with truth_state OPEN_PENDING_CHAIRMAN_NAME_RECOVERY.",
+    "consequence": "The task is name RECOVERY, not name selection. The Chairman already has a name for this castle; it is to be recovered, not proposed.",
+    "gate": "THY-NAME-PROVENANCE-001 (LOCKED) prohibits silently replacing canon names with assistant-invented fantasy names, and requires every name to carry a source class.",
+    "precedent": "At sequence 660 the Chairman answered \"no\" to a proposed derived name (Sayreth House) and it was withdrawn; names stay OPEN_WORD until he gives them.",
+    "action": "All three candidate names proposed in WR-TIMERUN-581 are WITHDRAWN. They are retained below with their derivations and the reason for withdrawal. None was ever canon.",
+    "language_finding": "No EdereAirah native-language, lexicon or morpheme registry exists in the live backend. Searched all 919 public tables for language/lexicon/morpheme/tongue columns on 2026-10-05: the only match is er_vehicle_brand_language_registry (vehicle brands). The morphemes used in the withdrawn candidates therefore had no canonical source and could not have had one."
+  },
+  "withdrawn_name_candidates": [
     {
       "candidate_id": "NAME-A",
       "name": "Ederehald",
       "derivation": {
-        "native_land": "EdereAriah",
-        "language": "Native tongue of EdereAriah (CANDIDATE — the language itself is unnamed in the backend)",
+        "native_land": "EdereAirah",
+        "language": "Native tongue of EdereAirah (CANDIDATE — the language itself is unnamed in the backend)",
         "history": "The structure remained while its occupants, its trades and its families changed. It is named for what it did, not for who held it.",
         "morphemes": [
-          { "form": "edere", "gloss": "that which remains, that which endures — the root the land name itself carries" },
-          { "form": "hald", "gloss": "a holding, a keep, a thing kept" }
+          {
+            "form": "edere",
+            "gloss": "that which remains, that which endures — the root the land name itself carries"
+          },
+          {
+            "form": "hald",
+            "gloss": "a holding, a keep, a thing kept"
+          }
         ],
         "reading": "The enduring hold."
       },
@@ -31,18 +52,28 @@
         "ERA_CURRENT": "Ederehald"
       },
       "strength": "Ties the castle directly to the land name and to the one fact true in every era: it is still standing.",
-      "weakness": "Says nothing about the site itself. Any enduring building in EdereAriah could carry it."
+      "weakness": "Says nothing about the site itself. Any enduring building in EdereAirah could carry it.",
+      "disposition": "WITHDRAWN_DO_NOT_GUESS",
+      "withdrawn_reason": "Live canon marks this place DO NOT GUESS and the state is name RECOVERY. The derivation rested on an EdereAirah language that does not exist in any backend registry.",
+      "canon": false,
+      "retained_as": "record of what was proposed and why it was withdrawn"
     },
     {
       "candidate_id": "NAME-B",
       "name": "Ariahdura",
       "derivation": {
-        "native_land": "EdereAriah",
-        "language": "Native tongue of EdereAriah (CANDIDATE)",
+        "native_land": "EdereAirah",
+        "language": "Native tongue of EdereAirah (CANDIDATE)",
         "history": "The site has always been the point at which people enter the land and leave it — gate, customs house, receiving hall, and under Time Run, threshold between living eras.",
         "morphemes": [
-          { "form": "ariah", "gloss": "given ground, the land, that which was granted" },
-          { "form": "dura", "gloss": "threshold, doorway, the place of crossing" }
+          {
+            "form": "ariah",
+            "gloss": "given ground, the land, that which was granted"
+          },
+          {
+            "form": "dura",
+            "gloss": "threshold, doorway, the place of crossing"
+          }
         ],
         "reading": "The land's threshold."
       },
@@ -52,19 +83,32 @@
         "ERA_CURRENT": "Ariahdura"
       },
       "strength": "Earns its name from the site's function and pre-carries the Time Run threshold role without needing Time Run to justify it.",
-      "weakness": "If ENTRY_EXIT does not resolve to threshold sites, the name points at a mechanic that was not chosen."
+      "weakness": "If ENTRY_EXIT does not resolve to threshold sites, the name points at a mechanic that was not chosen.",
+      "disposition": "WITHDRAWN_DO_NOT_GUESS",
+      "withdrawn_reason": "Live canon marks this place DO NOT GUESS and the state is name RECOVERY. The derivation rested on an EdereAirah language that does not exist in any backend registry.",
+      "canon": false,
+      "retained_as": "record of what was proposed and why it was withdrawn"
     },
     {
       "candidate_id": "NAME-C",
       "name": "Torvaenah",
       "derivation": {
-        "native_land": "EdereAriah",
-        "language": "Native tongue of EdereAriah (CANDIDATE)",
+        "native_land": "EdereAirah",
+        "language": "Native tongue of EdereAirah (CANDIDATE)",
         "history": "Named for how it was first sighted from the water: high stone standing toward the approach, visible before anything else on the shore.",
         "morphemes": [
-          { "form": "tor", "gloss": "high stone, raised rock" },
-          { "form": "vaen", "gloss": "facing the water, turned toward the approach" },
-          { "form": "-ah", "gloss": "place suffix" }
+          {
+            "form": "tor",
+            "gloss": "high stone, raised rock"
+          },
+          {
+            "form": "vaen",
+            "gloss": "facing the water, turned toward the approach"
+          },
+          {
+            "form": "-ah",
+            "gloss": "place suffix"
+          }
         ],
         "reading": "The high stone that faces the water."
       },
@@ -74,11 +118,20 @@
         "ERA_CURRENT": "Torvaenah"
       },
       "strength": "Purely geographic. True in every era regardless of who holds the castle or which mechanics are selected.",
-      "weakness": "Requires the water relation to be fixed as an invariant before the name can be sealed."
+      "weakness": "Requires the water relation to be fixed as an invariant before the name can be sealed.",
+      "disposition": "WITHDRAWN_DO_NOT_GUESS",
+      "withdrawn_reason": "Live canon marks this place DO NOT GUESS and the state is name RECOVERY. The derivation rested on an EdereAirah language that does not exist in any backend registry.",
+      "canon": false,
+      "retained_as": "record of what was proposed and why it was withdrawn"
     }
   ],
-
-  "invariants": {
+  "native_name_state": "OPEN_PENDING_CHAIRMAN_NAME_RECOVERY",
+  "naming_law": "NATIVE LAND + LANGUAGE + HISTORY still holds as the derivation law, but it cannot be exercised here: the language is UNKNOWN and the name is to be recovered, not derived.",
+  "prohibited_names": [
+    "PEETE CASTLE"
+  ],
+  "prohibition_reason": "Chairman directive. The castle is named from the land, not from a family.",
+  "invariants_proposed_not_canon": {
     "place_id": "THY-PLACE-CASTLE-001",
     "native_name": "UNSEALED_PENDING_CHAIRMAN",
     "site_ground": "Raised stone shelf above the approach",
@@ -87,17 +140,25 @@
     "water_relation": "Overlooks the water approach; does not stand in it",
     "footprint_origin": "Original keep footprint, never relocated"
   },
-
+  "invariants_status": "ASSUMED, NOT CANON. These site facts were written in WR-TIMERUN-581 without a canon source. The live geometry record carries measurement_state UNKNOWN and an Earth mirror of Windsor Castle, so site ground, orientation, approach and water relation must be derived from the dimensional twin work (THY-WORK-CASTLE-DIMENSIONAL-TWIN-572), not from this record. Flagged for continuity inspection before any of it is used.",
   "era_variable_fields": [
-    "rooms", "walls", "repairs", "objects", "occupants", "staff",
-    "businesses", "furniture", "art", "family_relationships", "name_rendering"
+    "rooms",
+    "walls",
+    "repairs",
+    "objects",
+    "occupants",
+    "staff",
+    "businesses",
+    "furniture",
+    "art",
+    "family_relationships",
+    "name_rendering"
   ],
-
-  "strata": [
+  "proposed_strata_not_canon": [
     {
       "stratum_id": "THY-PLACE-CASTLE-001/ERA_1700S",
       "era_id": "ERA_1700S",
-      "place_id": "THY-PLACE-CASTLE-001",
+      "place_id": "ER-CASTLE-ROYAL-001",
       "native_name": "UNSEALED_PENDING_CHAIRMAN",
       "site_ground": "Raised stone shelf above the approach",
       "orientation": "Principal face toward the water approach",
@@ -116,12 +177,14 @@
       "art": "Portraits of the era's household, woven hangings",
       "family_relationships": "UNSEALED",
       "capability_ceiling": 30,
-      "people_state": "LIVING"
+      "people_state": "LIVING",
+      "status": "PROPOSED_ERA_STRATUM_NOT_CANON",
+      "note": "Era-variable detail proposed in WR-TIMERUN-581. Not read from canon. Exact geometry is PRIVATE_EXACT_PUBLIC_ABSTRACT in the live record."
     },
     {
       "stratum_id": "THY-PLACE-CASTLE-001/ERA_1922",
       "era_id": "ERA_1922",
-      "place_id": "THY-PLACE-CASTLE-001",
+      "place_id": "ER-CASTLE-ROYAL-001",
       "native_name": "UNSEALED_PENDING_CHAIRMAN",
       "site_ground": "Raised stone shelf above the approach",
       "orientation": "Principal face toward the water approach",
@@ -140,12 +203,14 @@
       "art": "Earlier portraits retained and re-hung; photographs added",
       "family_relationships": "UNSEALED",
       "capability_ceiling": 55,
-      "people_state": "LIVING"
+      "people_state": "LIVING",
+      "status": "PROPOSED_ERA_STRATUM_NOT_CANON",
+      "note": "Era-variable detail proposed in WR-TIMERUN-581. Not read from canon. Exact geometry is PRIVATE_EXACT_PUBLIC_ABSTRACT in the live record."
     },
     {
       "stratum_id": "THY-PLACE-CASTLE-001/ERA_CURRENT",
       "era_id": "ERA_CURRENT",
-      "place_id": "THY-PLACE-CASTLE-001",
+      "place_id": "ER-CASTLE-ROYAL-001",
       "native_name": "UNSEALED_PENDING_CHAIRMAN",
       "site_ground": "Raised stone shelf above the approach",
       "orientation": "Principal face toward the water approach",
@@ -164,23 +229,33 @@
       "art": "Full retained sequence from earlier strata, catalogued",
       "family_relationships": "UNSEALED",
       "capability_ceiling": 80,
-      "people_state": "LIVING"
+      "people_state": "LIVING",
+      "status": "PROPOSED_ERA_STRATUM_NOT_CANON",
+      "note": "Era-variable detail proposed in WR-TIMERUN-581. Not read from canon. Exact geometry is PRIVATE_EXACT_PUBLIC_ABSTRACT in the live record."
     }
   ],
-
+  "time_run_threshold": {
+    "working_direction": "YES — the Royal Castle is a Time Run threshold site under EE-A.",
+    "state": "WORKING_SUBJECT_TO_CONTINUITY_INSPECTION",
+    "inspection_required": "Against thylora_castle_space_geometry, thylora_castle_space_connections, thylora_castle_object_state_registry and the dimensional twin work 572 before canonization."
+  },
+  "known_occupant_canon": {
+    "ER-ROYAL-COOK-001": "Inés Morales — Royal Cook. truth_state CHAIRMAN_LOCKED.",
+    "THY-CASTLE-ROYAL-KITCHEN-001": "Royal Kitchen — canonical_name set, native_name_state OPEN."
+  },
   "provenance": {
     "serial": "THY-PLACE-CASTLE-001",
+    "superseded_by": "ER-CASTLE-ROYAL-001 (live canon)",
     "recorded_by": "THYLORA backend of record",
-    "workroom": "WR-TIMERUN-581",
-    "directive": "THY-WORK-TIME-RUN-LIVE-TRAVERSAL-581",
+    "workroom": "WR-RECONCILE-667",
+    "origin_workroom": "WR-TIMERUN-581",
+    "record_state": "SUPERSEDED_BY_BACKEND_CANON",
     "authored": "2026-09-21",
-    "record_state": "PENDING_FULFILLMENT"
+    "reconciled": "2026-10-05",
+    "canon": false
   },
-
   "chairman_decisions_required": [
-    "Select NAME-A, NAME-B or NAME-C, or reject all three and restate the derivation",
-    "Name the native language of EdereAriah so the derivation has a named source",
-    "Seal or leave open the 1700s household, staff and family relationships",
-    "Confirm whether the castle is a Time Run threshold site (binds ENTRY_EXIT)"
+    "Recover the Royal Castle name — what do you already call it? (The backend says DO NOT GUESS; no name will be proposed.)",
+    "Name the EdereAirah native language, or confirm there is none and names come from Earth/hybrid source classes only."
   ]
 }

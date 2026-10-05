@@ -55,7 +55,7 @@ on conflict (era_id) do nothing;
 create table if not exists trun_places (
   place_id          text primary key,
   kind              text not null,
-  world             text not null default 'EdereAriah',
+  world             text not null default 'EdereAirah',
   native_name       text,
   native_name_state text not null default 'CANDIDATE_SET_OPEN',
   site_ground       text not null,
