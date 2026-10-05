@@ -1,10 +1,10 @@
 {
   "header": "THYLORA HEAD - SPINE FORWARD",
-  "checked_in_at": "2026-10-05T07:35:26.206Z",
+  "checked_in_at": "2026-10-05T07:35:51.719Z",
   "left_off": {
-    "commit": "769c429",
+    "commit": "a859c43",
     "message": "Merge remote-tracking branch 'origin/claude/root-house-lineage' into claude/root-house-lineage",
-    "at": "2026-10-05T07:35:13Z",
+    "at": "2026-10-05T07:35:37Z",
     "branch": "claude/root-house-lineage"
   },
   "live_backend": {
@@ -29,7 +29,7 @@
     "revenue_recorded": 0,
     "payouts_recorded": 0,
     "images_queued": 1,
-    "commits_last_7_days": 19,
+    "commits_last_7_days": 23,
     "days_since_last_commit": 0
   },
   "working": [
@@ -105,7 +105,7 @@
     }
   ],
   "worker": {
-    "last_run": "2026-10-04T15:49:21.958Z",
+    "last_run": "2026-10-05T07:35:28.736Z",
     "leads": 0,
     "errors": 0
   },

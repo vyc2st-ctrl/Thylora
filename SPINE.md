@@ -2,7 +2,7 @@
 **Checked in:** 2026-10-05 07:35 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
 
 ## Where we left off
-`769c429` on `claude/root-house-lineage` · 2026-10-05T07:35:13Z  
+`a859c43` on `claude/root-house-lineage` · 2026-10-05T07:35:37Z  
 Merge remote-tracking branch 'origin/claude/root-house-lineage' into claude/root-house-lineage
 
 ## Who is working
@@ -19,7 +19,7 @@ Merge remote-tracking branch 'origin/claude/root-house-lineage' into claude/root
 | Rosa Delgado-Pryor | enslavement era | STANDING BY | — |
 | Pip | runner | STANDING BY | — |
 
-Research worker last ran 2026-10-04T15:49:21.958Z · 0 leads · 0 provider errors.
+Research worker last ran 2026-10-05T07:35:28.736Z · 0 leads · 0 provider errors.
 
 ## Mathematics
 | Measure | Value |
@@ -41,7 +41,7 @@ Research worker last ran 2026-10-04T15:49:21.958Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 19 |
+| commits last 7 days | 23 |
 | days since last commit | 0 |
 
 ## All lanes
