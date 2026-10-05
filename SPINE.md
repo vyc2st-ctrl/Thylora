@@ -1,9 +1,9 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-10-05 05:28 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
+**Checked in:** 2026-10-05 13:19 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
 
 ## Where we left off
-`52c461b` on `main` · 2026-10-04T23:26:23Z  
-Spine Forward check-in 2026-10-04T23:26Z
+`4c1fb3f` on `claude/verify-chatgpt-enforcement-663` · 2026-10-05T13:19:30Z  
+Verify ChatGPT enforcement 658/660: 11 of 15 attacks pass; held fix 0663
 
 ## Who is working
 | Name | Desk | Status | On |
@@ -24,8 +24,8 @@ Research worker last ran 2026-10-04T15:49:21.958Z · 0 leads · 0 provider error
 ## Mathematics
 | Measure | Value |
 |---|---|
-| lanes total | 24 |
-| lanes waiting on chairman | 18 |
+| lanes total | 29 |
+| lanes waiting on chairman | 22 |
 | family seats named | 0 / 30 |
 | family percent named | 0 |
 | open research tasks | 30 |
@@ -41,7 +41,7 @@ Research worker last ran 2026-10-04T15:49:21.958Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 16 |
+| commits last 7 days | 18 |
 | days since last commit | 0 |
 
 ## All lanes
@@ -70,6 +70,11 @@ Research worker last ran 2026-10-04T15:49:21.958Z · 0 leads · 0 provider error
 | 22 | REE value + Ma Sweet banknote | PROPOSED | Chairman confirms anchor + unit + that her note IS the REE note | Yes/no on all three |
 | 23 | Ma Sweet (great-grandmother, came out of Canada) | FAMILY_TOLD · photo received | Census + Tennessee death-certificate tests once side and name are known | Kid Wright's mother or Hester Harris's? Her given name? |
 | 24 | Thread sync | POSTED | Every thread reads the bus first | — |
+| 25 | Enforcement boundary (verify ChatGPT 658/660) | 11 of 15 attacks got through ChatGPT's triggers; fix WRITTEN, HELD | ChatGPT re-runs `validation/0663_tests.sql` on a Supabase branch | Apply 0663? · close reveng_* public write? |
+| 26 | World words | 10 terms | Usage rows as terms are used | Kelum or Keal-lum? · month and weekday names |
+| 27 | EdereAirah clock | ENGINE LIVE (other thread) | Dashboard read policy (in 0663) | Confirm the planet model is approved (row says ACTIVE) |
+| 28 | Velvet video | PACKET ONLY | Wait for photos | Reference photos · song title · rights |
+| 29 | Commerce Ω_h | EQUATION STORED, NOT SCORED | Per-product scoring view | — |
 | 16 | Dashboard | Not this repo | — | — |
 
 ## The world

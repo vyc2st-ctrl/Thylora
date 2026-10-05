@@ -1,19 +1,19 @@
 {
   "header": "THYLORA HEAD - SPINE FORWARD",
-  "checked_in_at": "2026-10-05T05:28:21.791Z",
+  "checked_in_at": "2026-10-05T13:19:47.402Z",
   "left_off": {
-    "commit": "52c461b",
-    "message": "Spine Forward check-in 2026-10-04T23:26Z",
-    "at": "2026-10-04T23:26:23Z",
-    "branch": "main"
+    "commit": "4c1fb3f",
+    "message": "Verify ChatGPT enforcement 658/660: 11 of 15 attacks pass; held fix 0663",
+    "at": "2026-10-05T13:19:30Z",
+    "branch": "claude/verify-chatgpt-enforcement-663"
   },
   "live_backend": {
     "state": "NOT_CONFIGURED",
     "detail": "add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers"
   },
   "mathematics": {
-    "lanes_total": 24,
-    "lanes_waiting_on_chairman": 18,
+    "lanes_total": 29,
+    "lanes_waiting_on_chairman": 22,
     "family_seats_named": "0 / 30",
     "family_percent_named": 0,
     "open_research_tasks": 30,
@@ -29,7 +29,7 @@
     "revenue_recorded": 0,
     "payouts_recorded": 0,
     "images_queued": 1,
-    "commits_last_7_days": 16,
+    "commits_last_7_days": 18,
     "days_since_last_commit": 0
   },
   "working": [
@@ -315,6 +315,51 @@
       "status": "POSTED",
       "moved": "Rule: read both heads before writes · obey ledger guard · claim lanes on the bus · proposals stay PROPOSED",
       "next": "Every thread reads the bus first",
+      "needs": "—"
+    },
+    {
+      "n": 25,
+      "lane": "Enforcement boundary (verify ChatGPT 658/660)",
+      "where": "`docs/VERIFY-CHATGPT-ENFORCEMENT-663.md` · `db/enforcement/0663_*`",
+      "status": "11 of 15 attacks got through ChatGPT's triggers; fix WRITTEN, HELD",
+      "moved": "Live tests: 4 PASS / 11 FAIL; side-table bypass + 98 unchecked active rows found; held migration 0663 + 23-case harness; classifier checked on 40 live states",
+      "next": "ChatGPT re-runs `validation/0663_tests.sql` on a Supabase branch",
+      "needs": "Apply 0663? · close reveng_* public write?"
+    },
+    {
+      "n": 26,
+      "lane": "World words",
+      "where": "backend `thylora_world_word_registry`",
+      "status": "10 terms",
+      "moved": "+6 recovered from `thylora_world_term_registry` (Edereaireum, Kelum, INTERFRAME, RUDABAKAH, Value Current, month names OPEN)",
+      "next": "Usage rows as terms are used",
+      "needs": "Kelum or Keal-lum? · month and weekday names"
+    },
+    {
+      "n": 27,
+      "lane": "EdereAirah clock",
+      "where": "backend `thylora_edereairah_time()` · EA-PLANET-1.0.0",
+      "status": "ENGINE LIVE (other thread)",
+      "moved": "Verified: EARTH ANCHOR TIME 2026-10-05 11:03Z = EA 2026 · Month 10 · Day 5 · 03:03 PMT",
+      "next": "Dashboard read policy (in 0663)",
+      "needs": "Confirm the planet model is approved (row says ACTIVE)"
+    },
+    {
+      "n": 28,
+      "lane": "Velvet video",
+      "where": "`docs/VERIFY-CHATGPT-ENFORCEMENT-663.md` §9",
+      "status": "PACKET ONLY",
+      "moved": "6 proposed EdereAirah women (2 teens, 2 younger, 2 mature), full sheet each",
+      "next": "Wait for photos",
+      "needs": "Reference photos · song title · rights"
+    },
+    {
+      "n": 29,
+      "lane": "Commerce Ω_h",
+      "where": "backend MATH-HELP-COMMERCE-CURRENT-622",
+      "status": "EQUATION STORED, NOT SCORED",
+      "moved": "Plain-speech table; gap shown (R=0 until sellable is proven)",
+      "next": "Per-product scoring view",
       "needs": "—"
     },
     {
