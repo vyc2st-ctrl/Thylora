@@ -2,8 +2,8 @@
 **Checked in:** 2026-10-05 12:39 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
 
 ## Where we left off
-`2579ae2` on `claude/thread-checkin-checkout-662` · 2026-10-05T05:28:21+00:00  
-Spine Forward check-in 2026-10-05T05:28Z
+`cf1f0de` on `claude/thread-checkin-checkout-662` · 2026-10-05T12:39:29Z  
+Thread check-in/check-out rule in CLAUDE.md; lanes 25-31 (backend custody 662 / ledger 668)
 
 ## Who is working
 | Name | Desk | Status | On |
@@ -41,7 +41,7 @@ Research worker last ran 2026-10-04T15:49:21.958Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 17 |
+| commits last 7 days | 18 |
 | days since last commit | 0 |
 
 ## All lanes
