@@ -13,6 +13,16 @@ const S = (id, name, holder, region, era, access, desk, url, why) =>
   Object.freeze({ id, name, holder, region, era, access, desk, url, why });
 
 export const SOURCES = Object.freeze([
+  // ── Indigenous membership and reclassification (added 2026-10-05, gate 656) ──
+  S('lac-indig', 'Indigenous heritage records (Indian Affairs RG10: band lists, treaty annuity paylists)', 'Library and Archives Canada', 'Canada', '1850–1990', 'FREE', 'CANADA', 'https://library-archives.canada.ca', 'Treaty paylists name each family paid per year, by band — incl. Treaty 7 (Blackfoot Confederacy nations).'),
+  S('lac-metis', 'Métis scrip applications', 'Library and Archives Canada', 'Canada (Prairies)', '1870–1924', 'FREE', 'CANADA', 'https://library-archives.canada.ca', 'Sworn applications naming the applicant, parents and birthplace.'),
+  S('isc-register', 'Indian Register (Status) and genealogy requests', 'Indigenous Services Canada', 'Canada', '1951–present (older band lists behind it)', 'REQUEST', 'CANADA', 'https://www.sac-isc.gc.ca', 'A descendant can request registration and genealogy research back through band lists.'),
+  S('hbca', 'Hudson’s Bay Company Archives', 'Archives of Manitoba', 'Canada', '1670–1900s', 'FREE', 'CANADA', 'https://www.gov.mb.ca/chc/archives/hbca/', 'Employee, post and family records for Indigenous and Métis families across the fur-trade country.'),
+  S('nara-indian-census', 'Indian Census Rolls 1885–1940 (M595, incl. Blackfeet)', 'NARA', 'US', '1885–1940', 'FREE', 'CENSUS', 'https://www.archives.gov/research/census/native-americans/1885-1940.html', 'Annual rolls by agency: name, age, relation — the US side of the border.'),
+  S('guion-miller', 'Guion Miller Roll — Eastern Cherokee applications', 'NARA', 'US Southeast', '1906–1909', 'FREE', 'CENSUS', 'https://www.archives.gov', 'Tens of thousands of applications with family histories, many from people the census listed as colored.'),
+  S('census-race-series', 'Race column, census by census (US 1850–1950, Canada 1901–1921)', 'NARA · LAC · FamilySearch', 'US, Canada', '1850–1950', 'FREE_ACCOUNT', 'CENSUS', 'https://www.familysearch.org/search', 'Read the race/colour/origin entry for the same person every year; a change is evidence of reclassification.'),
+  S('racial-integrity-1924', 'Virginia Racial Integrity Act 1924 records (documented reclassification of Native families)', 'Library of Virginia', 'Virginia', '1912–1946', 'FREE', 'CENSUS', 'https://www.lva.virginia.gov', 'Documented case of officials rewriting Native people as colored — the pattern the gate checks for.'),
+
   // ── Big indexes: start here, every line ─────────────────────────────────
   S('fs', 'FamilySearch historical records + Family Tree', 'FamilySearch International', 'World', '1500–present', 'FREE_ACCOUNT', 'CENSUS', 'https://www.familysearch.org/search', 'Largest free index. Census, vital records, Freedmen’s Bureau, Tennessee deaths, Ontario records.'),
   S('fs-catalog', 'FamilySearch Catalog + Full-Text search', 'FamilySearch International', 'World', 'all', 'FREE_ACCOUNT', 'LAND', 'https://www.familysearch.org/search/catalog', 'Unindexed deeds, probate and court books. Full-text search reads handwriting.'),

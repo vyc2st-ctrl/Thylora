@@ -1,27 +1,27 @@
 {
   "header": "THYLORA HEAD - SPINE FORWARD",
-  "checked_in_at": "2026-10-04T23:26:23.167Z",
+  "checked_in_at": "2026-10-05T07:35:06.281Z",
   "left_off": {
-    "commit": "3ce2cd1",
-    "message": "Lanes: REE value proposal, Ma Sweet, thread-sync rule (backend 654)",
-    "at": "2026-10-04T23:26:11Z",
-    "branch": "main"
+    "commit": "52c461b",
+    "message": "Spine Forward check-in 2026-10-04T23:26Z",
+    "at": "2026-10-04T23:26:23+00:00",
+    "branch": "claude/root-house-lineage"
   },
   "live_backend": {
     "state": "NOT_CONFIGURED",
     "detail": "add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers"
   },
   "mathematics": {
-    "lanes_total": 24,
-    "lanes_waiting_on_chairman": 18,
+    "lanes_total": 32,
+    "lanes_waiting_on_chairman": 25,
     "family_seats_named": "0 / 30",
     "family_percent_named": 0,
     "open_research_tasks": 30,
     "researchers_working": 1,
     "researchers_total": 10,
     "worker_leads_waiting_review": 0,
-    "record_collections": 127,
-    "tests_defined": 70,
+    "record_collections": 135,
+    "tests_defined": 81,
     "migrations_written": 12,
     "migrations_applied_live": 0,
     "world_people": 14,
@@ -29,7 +29,7 @@
     "revenue_recorded": 0,
     "payouts_recorded": 0,
     "images_queued": 1,
-    "commits_last_7_days": 15,
+    "commits_last_7_days": 16,
     "days_since_last_commit": 0
   },
   "working": [
@@ -186,7 +186,7 @@
       "n": 9,
       "lane": "The Window (our TRL)",
       "where": "`rae-link/lib/countdown.js` · RAE Link tab",
-      "status": "FORMAT + RULES BUILT",
+      "status": "FORMAT + RULES BUILT · world-licensed",
       "moved": "Show clock, 6 segments, vote rules, tests",
       "next": "`rael_votes` migration",
       "needs": "Pick the name; studio, hosts"
@@ -316,6 +316,78 @@
       "moved": "Rule: read both heads before writes · obey ledger guard · claim lanes on the bus · proposals stay PROPOSED",
       "next": "Every thread reads the bus first",
       "needs": "—"
+    },
+    {
+      "n": 25,
+      "lane": "Lineage Hypothesis Gate",
+      "where": "`lineage/lib/gate.js` · backend MATH-LINEAGE-HYPOTHESIS-GATE-656 (PROPOSED)",
+      "status": "BUILT",
+      "moved": "No default story; family word holds (\"enslaved\" = 0); 5 origin hypotheses at 20% each; word gate blocks unproven claims; race-change detector; Canada tests rewritten (Indigenous records + race column)",
+      "next": "Run census race series on the maternal line",
+      "needs": "Ma Sweet: grandfather's or grandmother's mother? Her given name?"
+    },
+    {
+      "n": 26,
+      "lane": "Public-record trace (both sides)",
+      "where": "backend `genealogy_research_intake` +3 rows `GEN-EVID-*-656` (FAMILY_RESTRICTED)",
+      "status": "MOVED",
+      "moved": "Maternal grandparents proven as a couple by 2 obituaries; household in Mississippi 1929–1947; father's parents named in a Social Security index (INDICATED); Covington memory belongs to the father's side",
+      "next": "1930/1940/1950 census for the maternal household → grandmother's parents (Ma Sweet test)",
+      "needs": "Order a Tennessee/Mississippi death certificate if wanted"
+    },
+    {
+      "n": 27,
+      "lane": "DNA route",
+      "where": "`docs/LINEAGE-CANADA-MEMPHIS.md` §7",
+      "status": "WRITTEN",
+      "moved": "AncestryDNA raw file → FamilyTreeDNA, MyHeritage, GEDmatch (free); mtDNA answers Ma Sweet directly if she is the grandmother's mother",
+      "next": "Chairman downloads raw file",
+      "needs": "Upload when ready"
+    },
+    {
+      "n": 28,
+      "lane": "Import any family tree",
+      "where": "`lineage/lib/gedcom.js`",
+      "status": "BUILT",
+      "moved": "GEDCOM import from Ancestry/FamilySearch/MyHeritage, seated by Ahnentafel",
+      "next": "Wire upload button",
+      "needs": "Export tree from Ancestry if one exists"
+    },
+    {
+      "n": 29,
+      "lane": "RAE Link creator payouts (RAE-PAY-1)",
+      "where": "`rae-link/lib/payouts.js` · backend THY-RAELINK-PAYOUT-PLAN-656",
+      "status": "PROPOSED · tested",
+      "moved": "Beats best Earth share on every lane (ads 75% vs 55%; subs 95%; tips 100% + fee paid; media 92%; affiliate 80%); weekly pay, no threshold; founding half-fee; Window Top-10 bonus",
+      "next": "Chairman picks",
+      "needs": "YES to RAE-PAY-1, or change any lane"
+    },
+    {
+      "n": 30,
+      "lane": "Our World is licensed",
+      "where": "backend THY-POLICY-WORLD-LICENSED-656 (OPERATIONAL)",
+      "status": "LOCKED",
+      "moved": "No Earth restrictions inside Our World; Earth gate only when real Earth money/people cross",
+      "next": "—",
+      "needs": "—"
+    },
+    {
+      "n": 31,
+      "lane": "Family Archive Department oversight",
+      "where": "backend THY-DEPT-FAMILY-ARCHIVE-OVERSIGHT-656",
+      "status": "REGISTERED",
+      "moved": "Princess MaryAnn oversees the Root House; no prior record existed",
+      "next": "Add her as a world person",
+      "needs": "Her exact title"
+    },
+    {
+      "n": 32,
+      "lane": "Film 1923 · Tamara · REE · Bell Crossing · Dashboard seats",
+      "where": "backend packets from seq 651",
+      "status": "EXISTING — not rebuilt",
+      "moved": "Read, not duplicated",
+      "next": "Waiting on Chairman decisions listed at 651",
+      "needs": "Film premise + Nation; Tamara go/amounts by Oct 8 (auction Oct 11); REE smallest unit; Bell Crossing era"
     },
     {
       "n": 16,

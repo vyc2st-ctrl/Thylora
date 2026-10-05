@@ -1,47 +1,83 @@
-# Canada → Memphis: full breakdown
+# Ma Sweet · "came out of Canada" — the open case
 
-Root House · Canada Desk · WR-LINEAGE-001
-Trigger: *"My great-grandmother came out of Canada"* (told by the Chairman's mother). Core-interest item under the Prime Directive — treated as a primary subject.
+Root House · Canada Desk · WR-LINEAGE-001 · gate MATH-LINEAGE-HYPOTHESIS-GATE-656
+Family names are FAMILY_RESTRICTED and live only in the backend
+(`genealogy_research_intake`). This file uses relations, not names.
 
 ---
 
-## 1 · The claim, graded
+## 1 · What the family says (kept word for word, graded FAMILY_TOLD)
 
-| | |
-|---|---|
-| **Claim** | A great-grandmother on the Chairman's mother's side came from Canada, and the family did not start in Memphis. |
-| **Grade** | **FAMILY_TOLD** — preserved word for word, credited to the Chairman's mother. No record yet tested. |
-| **Open** | Whose great-grandmother (the Chairman's or the mother's), which line (mother's father or mother's mother), her names, rough date. |
+- The maternal great-grandmother, known as **Ma Sweet**, came out of Canada.
+- The family came out of Canada **before slavery** — she was **never enslaved**
+  (her own words, passed down).
+- She is the mother of one of the Chairman's maternal grandparents. Which one is
+  still open.
 
-## 2 · Why this is plausible — the evidence
+## 2 · Correction (2026-10-05)
 
-1. **Black migration to Canada was large and documented.** Freedom seekers reached Upper Canada / Canada West (Ontario) from the 1790s, and in large numbers after the US Fugitive Slave Act of 1850. Settlements: Elgin/Buxton, Chatham, Dawn (Dresden), Windsor/Sandwich, Amherstburg, St. Catharines, Owen Sound, Toronto, and the Queen's Bush.
-2. **Many came back.** After 1865 a large share of Black Canadians returned to the US — to find family sold away, to claim land, to teach in Freedmen's schools, or for work. Some Buxton families went straight to the post-war South. A Canada-to-Tennessee path matches a known pattern.
-3. **Memphis pulled people in.** After the war Memphis had a large freedpeople population, a Freedmen's Bureau office, a Freedman's Savings Bank branch, USCT regiments at Fort Pickering, and later the Delta's biggest Black city economy: COGIC's headquarters, Beale Street, Black-owned insurers and funeral homes.
-4. **Black Nova Scotia is a second, older root.** About 3,000 Black Loyalists were evacuated from New York in 1783 (the *Book of Negroes*); about 1,200 left Nova Scotia for Sierra Leone in 1792. Jamaican Maroons arrived in 1796 and most went on to Sierra Leone in 1800. About 2,000 Black Refugees came after the War of 1812. Later movement from Nova Scotia to New England and beyond is documented.
-5. **Twentieth-century movement went both ways.** Canada's Black railway porters (many US-born), the No. 2 Construction Battalion in WWI (which recruited US-born men), and work migration through Detroit and Chicago all moved families across the border.
+Earlier versions of this file and the Canada page led with freedom seekers,
+the Underground Railroad and a return south. That told a story the family never
+told and that no record about her supports. It has been removed. From now on the
+system runs on the gate below: no story is the default, and the family's word is
+a hard input.
 
-## 3 · Counterarguments — what could make the story wrong or different
+## 3 · The gate (backend `thylora_math_equation_registry`)
 
-- **The numbers are argued over.** Abolitionist-era claims put Canada West's Black population at 30,000–40,000 or more. Historian Michael Wayne's reading of the 1861 census manuscript found far fewer (around 17,000–23,000), and that many were free-born, not refugees. So "came out of Canada" does not automatically mean a freedom seeker.
-- **Oral history compresses.** "Came out of Canada" can belong to a different generation than the one remembered, or to a sibling's line.
-- **Place names drift.** The word can name a nickname, a church, a lodge, or a small US community rather than the country. One record test (Test 6) exists only to rule this out.
-- **Direction can flip.** A family can be US-born, live in Canada for a while, then return. Censuses will show children born in Canada between US-born siblings — that pattern is itself the proof.
+```
+prior        π_h = (1 − F_neg(h)·(1 − R_direct(h))) / Z
+posterior    P(h|E) = π_h · Π λ_i(h) / Σ_g π_g · Π λ_i(g)
+claim        C(h) = 1[P ≥ 0.95] · 1[≥ 2 independent sources] · 1[a direct record about her]
+word gate    a sentence that states h as fact is blocked while C(h) = 0
+reclass      Δ = 1 when her race/origin changes between two records;
+             Indigenous ↔ Black/colored/mulatto shifts are findings, never "clerical noise"
+```
 
-## 4 · What the mainstream version usually leaves out
+- **F_neg = 1 for "enslaved".** That hypothesis is at zero. Only a primary
+  record naming her directly could reopen it, and none exists.
+- Words blocked until a hypothesis passes: enslaved, slave, fugitive, runaway,
+  freedom seeker, Underground Railroad, Great Migration — and also "was
+  Indigenous / First Nations / Métis", because the same rule protects every story.
 
-- **Slavery was legal in Canada.** Enslavement existed in New France and British North America. Upper Canada's 1793 Act only limited it gradually; it ended with the British Imperial abolition that took effect on 1 August 1834.
-- **"Safe haven" is half the story.** Ontario's Common Schools Act of 1850 allowed separate schools for Black children; the last one in Ontario closed in 1965. Nova Scotia's last segregated school closed in 1983. Black Canadians faced exclusion from hotels, jobs and juries, and in 1911 the federal government approved an order-in-council to bar Black immigrants for a year (never brought into force, but Black American settlers on the Prairies were actively discouraged).
-- **Return migration is under-told.** The Underground Railroad story usually stops at the border. The return south — the reason a Memphis family can carry a Canada memory — is rarely told.
-- **Black Canadian records are scattered by design.** Censuses mixed "colour" and "racial origin" columns inconsistently, and church records split between the BME, AME, Baptist and Anglican churches.
+## 4 · Open hypotheses — all start equal (20% each)
 
-## 5 · The six tests (run by the Canada Desk)
+| Code | Hypothesis | What would prove it |
+|---|---|---|
+| FIRST_NATIONS | Indigenous, nation open (an unverified family note says Blackfoot; Blackfoot Confederacy land spans Alberta and Montana) | Her name on an Indian Register, band list or treaty paylist (Treaty 7 covers the Blackfoot nations) |
+| INDIGENOUS_AND_AFRICAN | Both | Indigenous record plus a US record classing her or her child as colored/negro |
+| METIS | Métis | Métis scrip application (Library and Archives Canada) |
+| BLACK_CANADIAN_FREEBORN | Free-born Black Canadian | Canadian census, colour or origin column, plus a Canadian birth record |
+| OTHER_OR_UNKNOWN | Something not yet named | — |
 
-1. **US census birthplace** — 1880–1950: does she, or a parent of hers, show "Canada", "Can Eng", "Can Fr", "Ontario" or "Nova Scotia"? Fastest test; free on FamilySearch.
-2. **Border crossing** — Canada→US crossings 1895–1956.
-3. **Canadian census** — LAC 1851–1931 by surname in Kent, Essex, Lincoln, Grey (ON) or Halifax, Annapolis (NS).
-4. **Tennessee death certificate** (1908–1970) — her birthplace and her parents' birthplaces.
-5. **Settlement records** — Buxton, Chatham-Kent, Amherstburg, Dresden, Nova Scotia archives.
-6. **Place-name check** — confirm "Canada" means the country.
+## 5 · Erased heritage is a documented pattern, and the system looks for it
 
-**What the desk needs to start:** her first name and any surname, or the name of her child (the Chairman's grandparent) — one name opens the 1940 and 1950 censuses, which point back to everything else.
+Officials did rewrite Indigenous people into other categories on paper. The
+best-documented case is Virginia's 1924 Racial Integrity Act, under which the
+state registrar, Walter Plecker, ordered Native families recorded as "colored".
+US census enumerators also chose the race entry themselves, and could record the
+same person differently from one census to the next. So the Root House reads the
+race column **in every record, year by year**, and treats a change as evidence.
+
+## 6 · Tests (Canada Desk)
+
+1. US census 1880–1950: her birthplace, her parents' birthplaces, and her race as written each year.
+2. Border crossings 1895–1956: birthplace, "race or people", last Canadian address.
+3. Census of Canada 1851–1931, all provinces: "colour" and "racial or tribal origin" (1901–1921).
+4. Indigenous records: Indian Register and band lists, treaty annuity paylists, Métis scrip, Hudson's Bay Company Archives.
+5. Tennessee or Mississippi death certificate for her or her child: race, birthplace, her parents.
+6. Place-name check: confirm that "Canada" means the country.
+
+## 7 · DNA — the Chairman already has AncestryDNA
+
+1. Download the raw DNA file from Ancestry (Settings → DNA → Download).
+2. Upload it free to **FamilyTreeDNA**, **MyHeritage** and **GEDmatch**. That means
+   more cousin matches, and GEDmatch has admixture tools that can be checked
+   against Indigenous American reference groups.
+3. **If Ma Sweet is the grandmother's mother**, she is on the Chairman's
+   mother's-mother line, and **the Chairman carries her mitochondrial DNA**. An
+   mtDNA full-sequence test (FamilyTreeDNA mtFull) answers her maternal origin
+   directly. The Indigenous American maternal haplogroups are A, B, C, D and X.
+4. **If she is the grandfather's mother**, the mtDNA has to come from a child of
+   one of her daughters, through an unbroken female line.
+5. Ethnicity percentages are estimates and can under-report small Indigenous
+   segments. Matches and haplogroups are the stronger evidence.

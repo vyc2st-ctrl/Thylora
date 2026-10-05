@@ -3,6 +3,7 @@
 import { LINES, seatsForLine, relationName, gradeClaim, isProtectedLiving, migrationTests, openTasks } from './lib/lineage.js';
 import { RESEARCHERS, WORLD_DISCLOSURE, silhouette } from './lib/researchers.js';
 import { SOURCES, ACCESS_LABEL, sourcesFor } from './lib/sources.js';
+import { hypothesisBoard, ORIGIN_HYPOTHESES } from './lib/gate.js';
 import { dealNight, elderAnswer, MONSTER_NIGHT, SNACKS } from './lib/teatable.js';
 
 const $ = id => document.getElementById(id);
@@ -95,6 +96,7 @@ $('monsterList').innerHTML = MONSTER_NIGHT.map(m => `<article><h3>${esc(m.title)
 $('snackList').textContent = `Snacks: ${SNACKS.join(' · ')}`;
 
 /* canada */
+$('hypBoard').innerHTML = hypothesisBoard({ familySays: { never: ['ENSLAVED'] } }).map(h => `<article><p class="cardline">${esc(h.hypothesis.replace(/_/g, ' '))}</p><h3>${Math.round(h.p * 100)}%</h3><p>${esc(h.label)}</p><p class="muted small">${h.gate.pass ? 'PROVEN' : 'OPEN — needs records'}</p></article>`).join('');
 $('canadaTests').innerHTML = migrationTests('Canada').map((t, i) => `<article><p class="cardline">TEST ${i + 1}</p><h3>${esc(t.test)}</h3><p>${esc(t.look)}</p></article>`).join('');
 
 /* vault */

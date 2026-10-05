@@ -129,11 +129,11 @@ export function migrationTests(place) {
   const p = String(place ?? '').toLowerCase();
   if (!p.includes('canada')) return [];
   return [
-    { test: 'US census birthplace', look: '1880–1950 US census: person or a parent born "Canada", "Can Eng", "Can Fr", "Ontario", "Nova Scotia"' },
-    { test: 'Border crossing', look: 'Canada → US border crossings 1895–1956 (NARA St. Albans lists and port manifests)' },
-    { test: 'Canadian census', look: 'LAC census 1851–1931: surname in Kent, Essex, Lincoln, Grey counties ON or Halifax, Annapolis counties NS' },
-    { test: 'Death certificate', look: 'Tennessee death certificate fields: birthplace, father’s and mother’s birthplaces' },
-    { test: 'Refugee settlement', look: 'Elgin/Buxton, Chatham, Windsor, Amherstburg, St. Catharines, Owen Sound, Toronto, Halifax records' },
+    { test: 'US census race + birthplace, every year', look: '1880–1950 US census: birthplace and parents\' birthplaces ("Canada", "Can Eng", "Can Fr", a province), AND the race column exactly as written each year — a change (e.g. "In"/"Indian" to "Neg"/"Mu"/"B") is itself a finding' },
+    { test: 'Border crossing', look: 'Canada → US border crossings 1895–1956 (NARA St. Albans lists and port manifests): birthplace, "race or people", last Canadian address, relative left behind' },
+    { test: 'Canadian census, all provinces', look: 'LAC census 1851–1931 in every province; 1901–1921 record "colour" and "racial or tribal origin" — read both columns for her household' },
+    { test: 'Indigenous records', look: 'Indian Register and band lists, treaty annuity paylists (e.g. Treaty 7), Métis scrip, Hudson\'s Bay Company Archives — a name here settles Indigenous membership directly' },
+    { test: 'Death certificate', look: 'Tennessee death certificate (1908–1970) for her or her child: race as recorded, birthplace, her parents\' names and birthplaces' },
     { test: 'Place-name check', look: 'Confirm "Canada" means the country — not a nickname, a US community, or a church/lodge name' }
   ];
 }

@@ -49,6 +49,21 @@ Before writing or reporting any company, worker, shop, place, price or sale:
 - Sequence numbers: re-read both heads right before every write; other
   sessions write concurrently. The ledger guard refuses regression — obey it.
 
+## 0.6 · Lineage gate (permanent — MATH-LINEAGE-HYPOTHESIS-GATE-656)
+
+- Never assume an ancestor was enslaved, a freedom seeker, or part of the Great
+  Migration. Every origin hypothesis starts equal; only records and DNA move it.
+- The family's own word is a hard input (Ma Sweet: never enslaved). Only a
+  primary record about that exact person can reopen a ruled-out hypothesis.
+- Indigenous heritage and its erasure on paper (race reclassified to
+  "colored") are live hypotheses: read the race column in every record.
+- Run sentences about ancestors through `wordGate` in `lineage/lib/gate.js`.
+
+## 0.7 · Our World is licensed (permanent — THY-POLICY-WORLD-LICENSED-656)
+
+Do not apply Earth restrictions inside Our World. Never mix Earth and Our World.
+The Earth gate applies only when real Earth money or real Earth people cross over.
+
 ## 1 · Full-thread rule (the Chairman's top complaint)
 
 - **Do the work, then report it.** Never answer with a plan of what "we are

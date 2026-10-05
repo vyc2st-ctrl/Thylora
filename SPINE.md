@@ -1,9 +1,9 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-10-04 23:26 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
+**Checked in:** 2026-10-05 07:35 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
 
 ## Where we left off
-`3ce2cd1` on `main` · 2026-10-04T23:26:11Z  
-Lanes: REE value proposal, Ma Sweet, thread-sync rule (backend 654)
+`52c461b` on `claude/root-house-lineage` · 2026-10-04T23:26:23+00:00  
+Spine Forward check-in 2026-10-04T23:26Z
 
 ## Who is working
 | Name | Desk | Status | On |
@@ -24,16 +24,16 @@ Research worker last ran 2026-10-04T15:49:21.958Z · 0 leads · 0 provider error
 ## Mathematics
 | Measure | Value |
 |---|---|
-| lanes total | 24 |
-| lanes waiting on chairman | 18 |
+| lanes total | 32 |
+| lanes waiting on chairman | 25 |
 | family seats named | 0 / 30 |
 | family percent named | 0 |
 | open research tasks | 30 |
 | researchers working | 1 |
 | researchers total | 10 |
 | worker leads waiting review | 0 |
-| record collections | 127 |
-| tests defined | 70 |
+| record collections | 135 |
+| tests defined | 81 |
 | migrations written | 12 |
 | migrations applied live | 0 |
 | world people | 14 |
@@ -41,7 +41,7 @@ Research worker last ran 2026-10-04T15:49:21.958Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 15 |
+| commits last 7 days | 16 |
 | days since last commit | 0 |
 
 ## All lanes
@@ -55,7 +55,7 @@ Research worker last ran 2026-10-04T15:49:21.958Z · 0 leads · 0 provider error
 | 6 | Backend database | VALIDATED locally, not applied | Apply to `thylora-dash` | Held Chairman action |
 | 7 | Tea Table (STEEPED) | BUILT | Play it; bring back the first Elder answer | — |
 | 8 | Monster Night | LISTED | — | Age calls on R-rated picks |
-| 9 | The Window (our TRL) | FORMAT + RULES BUILT | `rael_votes` migration | Pick the name; studio, hosts |
+| 9 | The Window (our TRL) | FORMAT + RULES BUILT · world-licensed | `rael_votes` migration | Pick the name; studio, hosts |
 | 10 | First post | 3 drafts | Pick A, B or C | Pick one |
 | 11 | RAE Link media network | Built, held | Apply backend; choose providers | B1–B7 in WR-RAELINK-001 |
 | 12 | Store + memberships | Live surface, purchase buttons gated | Connect checkout | Payment provider |
@@ -70,6 +70,14 @@ Research worker last ran 2026-10-04T15:49:21.958Z · 0 leads · 0 provider error
 | 22 | REE value + Ma Sweet banknote | PROPOSED | Chairman confirms anchor + unit + that her note IS the REE note | Yes/no on all three |
 | 23 | Ma Sweet (great-grandmother, came out of Canada) | FAMILY_TOLD · photo received | Census + Tennessee death-certificate tests once side and name are known | Kid Wright's mother or Hester Harris's? Her given name? |
 | 24 | Thread sync | POSTED | Every thread reads the bus first | — |
+| 25 | Lineage Hypothesis Gate | BUILT | Run census race series on the maternal line | Ma Sweet: grandfather's or grandmother's mother? Her given name? |
+| 26 | Public-record trace (both sides) | MOVED | 1930/1940/1950 census for the maternal household → grandmother's parents (Ma Sweet test) | Order a Tennessee/Mississippi death certificate if wanted |
+| 27 | DNA route | WRITTEN | Chairman downloads raw file | Upload when ready |
+| 28 | Import any family tree | BUILT | Wire upload button | Export tree from Ancestry if one exists |
+| 29 | RAE Link creator payouts (RAE-PAY-1) | PROPOSED · tested | Chairman picks | YES to RAE-PAY-1, or change any lane |
+| 30 | Our World is licensed | LOCKED | — | — |
+| 31 | Family Archive Department oversight | REGISTERED | Add her as a world person | Her exact title |
+| 32 | Film 1923 · Tamara · REE · Bell Crossing · Dashboard seats | EXISTING — not rebuilt | Waiting on Chairman decisions listed at 651 | Film premise + Nation; Tamara go/amounts by Oct 8 (auction Oct 11); REE smallest unit; Bell Crossing era |
 | 16 | Dashboard | Not this repo | — | — |
 
 ## The world
