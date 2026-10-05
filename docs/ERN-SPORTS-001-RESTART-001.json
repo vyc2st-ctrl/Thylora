@@ -1,0 +1,136 @@
+{
+  "restart_id": "ERN-SPORTS-001-RESTART-001",
+  "thread": "claude/ern-sports-lock-render-packet-vg4gx2",
+  "umbrella": "STUDIO",
+  "state": "CLOSEOUT_READY",
+  "written_at": "2026-10-05",
+  "heads_read": {
+    "live_spine": "claude/verify-chatgpt-enforcement-663@4c1fb3f (2026-10-05T13:19:47Z)",
+    "prior_spine": "claude/thread-checkin-checkout-662@cf1f0de (2026-10-05T12:39:45Z)",
+    "backend_custody": "667",
+    "backend_ledger": "668",
+    "this_thread": "1df0afa",
+    "live_backend": "NOT_CONFIGURED - missing THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY"
+  },
+  "governing_lock": "ERN-SPORTS-LOCK-003",
+  "supersedes": [
+    "ERN-SPORTS-LOCK-002",
+    "ERN-SPORTS-LOCK-001"
+  ],
+  "prior_locks_unedited": true,
+  "packet": "ERN-SPORTS-001-RENDER-PACKET-001 revision 003",
+  "acceptance_criteria": 38,
+  "exclusions": 49,
+  "references": {
+    "present": [
+      "REF-01",
+      "REF-02",
+      "REF-03",
+      "REF-04",
+      "REF-05"
+    ],
+    "missing_non_blocking": [
+      "REF-06"
+    ],
+    "blocking_outstanding": []
+  },
+  "render": "NOT_GENERATED",
+  "publication": "NOT_PUBLISHED",
+  "preview_rail": "CHAIRMAN PREVIEW — NOT FOR PUBLICATION",
+  "patrol": {
+    "id": "MATH-CROSS-AGENT-PATROL-653",
+    "self_tests": "8/8 pass",
+    "writes": 4,
+    "alerts": 4,
+    "drift": {
+      "H": 1.0,
+      "N": 0.0,
+      "L": 1.0,
+      "X": 1.0
+    },
+    "worst_gap": "H",
+    "scored": [
+      "4662093",
+      "ecf2f5c",
+      "496ece6",
+      "1df0afa"
+    ]
+  },
+  "gates": {
+    "MATH-EXECUTABLE-GATE-671": "NOT_FOUND",
+    "enforced": [],
+    "declared_not_enforced": [
+      "38 acceptance criteria",
+      "49 exclusions",
+      "reference registration gate"
+    ],
+    "note": "Rule 9 binds: no gate passes, no bypass negatively tested, nothing is ENFORCED."
+  },
+  "qyris": {
+    "resolves_to": "THY-QYRIS-QUICKCHECK-001",
+    "kind": "store utility product",
+    "applicable_to_this_thread": false,
+    "state": "no readiness or release-gate row; registration HELD; publication NOT AUTHORIZED"
+  },
+  "local_only_blockers": [
+    {
+      "id": "LOB-01",
+      "item": "all owed backend writes",
+      "where": "not written",
+      "why": "backend NOT_CONFIGURED"
+    },
+    {
+      "id": "LOB-02",
+      "item": "X cross-check on 4 writes",
+      "where": "unset",
+      "why": "author cannot self-certify X"
+    },
+    {
+      "id": "LOB-03",
+      "item": "scratchpad crops and scoring script",
+      "where": "session scratchpad",
+      "why": "derivable working files, deliberately not committed"
+    },
+    {
+      "id": "LOB-04",
+      "item": "rendered preview image",
+      "where": "does not exist",
+      "why": "never generated"
+    }
+  ],
+  "chairman_decisions_outstanding": [
+    {
+      "id": "OR-01",
+      "q": "Is the mark system two lockups, or is one geometry the single mark?"
+    },
+    {
+      "id": "OR-02b",
+      "q": "Which lockup applies at cup Side A?"
+    },
+    {
+      "id": "OI-01",
+      "q": "Confirm the EXPLORE ERSATZREALITY QR destination; plate QRs carry no payload."
+    }
+  ],
+  "closed_without_chairman": [
+    {
+      "id": "OR-02a",
+      "q": "Masthead lockup",
+      "answer": "FREE MARK, derived from REF-01 at 6x"
+    }
+  ],
+  "next": [
+    "Chairman rules OR-01",
+    "Chairman names cup Side A and QR destination",
+    "Second agent sets X on the four writes",
+    "Rebase onto live spine head and claim the lane on thylora_thread_handoff_bus",
+    "Visual workroom renders under LOCK-003 with AM-06 folded in"
+  ],
+  "prohibited": [
+    "publish",
+    "deploy",
+    "migrate",
+    "delete",
+    "edit a prior lock in place"
+  ]
+}
