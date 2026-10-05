@@ -1,19 +1,19 @@
 {
   "header": "THYLORA HEAD - SPINE FORWARD",
-  "checked_in_at": "2026-10-05T05:28:21.791Z",
+  "checked_in_at": "2026-10-05T12:39:18.822Z",
   "left_off": {
-    "commit": "52c461b",
-    "message": "Spine Forward check-in 2026-10-04T23:26Z",
-    "at": "2026-10-04T23:26:23Z",
-    "branch": "main"
+    "commit": "2579ae2",
+    "message": "Spine Forward check-in 2026-10-05T05:28Z",
+    "at": "2026-10-05T05:28:21+00:00",
+    "branch": "claude/thread-checkin-checkout-662"
   },
   "live_backend": {
     "state": "NOT_CONFIGURED",
     "detail": "add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers"
   },
   "mathematics": {
-    "lanes_total": 24,
-    "lanes_waiting_on_chairman": 18,
+    "lanes_total": 31,
+    "lanes_waiting_on_chairman": 23,
     "family_seats_named": "0 / 30",
     "family_percent_named": 0,
     "open_research_tasks": 30,
@@ -29,7 +29,7 @@
     "revenue_recorded": 0,
     "payouts_recorded": 0,
     "images_queued": 1,
-    "commits_last_7_days": 16,
+    "commits_last_7_days": 17,
     "days_since_last_commit": 0
   },
   "working": [
@@ -316,6 +316,69 @@
       "moved": "Rule: read both heads before writes · obey ledger guard · claim lanes on the bus · proposals stay PROPOSED",
       "next": "Every thread reads the bus first",
       "needs": "—"
+    },
+    {
+      "n": 25,
+      "lane": "Personal gift cup (inscription; giver and recipient in backend, FAMILY_RESTRICTED)",
+      "where": "backend `household_object_provenance` (custody 662 row)",
+      "status": "REGISTERED · photo not received",
+      "moved": "Registered as personal provenance, not merch; gift date UNKNOWN",
+      "next": "Attach the photo; link the giver to the family record once confirmed",
+      "needs": "Re-attach the photo; say which family member gave it"
+    },
+    {
+      "n": 26,
+      "lane": "Collaboration lead (woman in video)",
+      "where": "backend WDR-COLLAB-LEAD-WOMAN-VIDEO-662",
+      "status": "HELD · identity UNKNOWN",
+      "moved": "No prior record found; no duplicate; no face-only identification",
+      "next": "Draft invitation once the handle is known",
+      "needs": "Post URL or account handle; what you like about how she talks"
+    },
+    {
+      "n": 27,
+      "lane": "ErsatzReality site + brand",
+      "where": "backend WDR-ERSATZREALITY-WEB-BRAND-SYSTEM-662",
+      "status": "VERIFIED: ersatzreality.com is a live Shopify store",
+      "moved": "One-site plan; the 10-section map fits Shopify pages; seal + Facebook-cover spec (lion removed)",
+      "next": "Build the missing pages in Shopify once approved",
+      "needs": "Approve ersatzreality.com as the one public site; send banner + seal files"
+    },
+    {
+      "n": 28,
+      "lane": "Rapid money conveyor (R_p)",
+      "where": "backend WDR-RAPID-MONEY-CONVEYOR-RP-662 · MATH-REVENUE-PATH-PRIORITY-662",
+      "status": "RANKED",
+      "moved": "No outside buyer yet for any product, so finish what's built: 7 products are only missing the checkout check",
+      "next": "Store lane checks checkout on those 7",
+      "needs": "—"
+    },
+    {
+      "n": 29,
+      "lane": "Show: HOW DID THAT WORD GET HERE?",
+      "where": "backend WDR-SHOW-HOW-DID-THAT-WORD-GET-HERE-662",
+      "status": "PILOT STRUCTURE",
+      "moved": "9-step method; child, history and adult layers",
+      "next": "Source ledger for the pilot",
+      "needs": "Speaker's handle (no contact yet)"
+    },
+    {
+      "n": 30,
+      "lane": "Show: Nature before the name (Newton)",
+      "where": "backend WDR-SHOW-NATURE-BEFORE-THE-NAME-662",
+      "status": "PILOT STRUCTURE",
+      "moved": "Phenomenon ≠ observer ≠ discoverer ≠ formalizer ≠ namer",
+      "next": "Source ledger for the pilot",
+      "needs": "—"
+    },
+    {
+      "n": 31,
+      "lane": "Jerusalem, Utah 1925 claim",
+      "where": "backend WDR-PROD-JERUSALEM-UTAH-1925-CLAIM-662 · MATH-CLAIM-PROVENANCE-662",
+      "status": "RESEARCH",
+      "moved": "Claim traced to Facebook/Instagram reposts (Sept 2026); original archive UNKNOWN; Utah location DISPUTED",
+      "next": "Match the frames to Library of Congress collections",
+      "needs": "Re-attach the video"
     },
     {
       "n": 16,

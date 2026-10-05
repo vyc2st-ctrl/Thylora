@@ -1,9 +1,9 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-10-05 05:28 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
+**Checked in:** 2026-10-05 12:39 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
 
 ## Where we left off
-`52c461b` on `main` · 2026-10-04T23:26:23Z  
-Spine Forward check-in 2026-10-04T23:26Z
+`2579ae2` on `claude/thread-checkin-checkout-662` · 2026-10-05T05:28:21+00:00  
+Spine Forward check-in 2026-10-05T05:28Z
 
 ## Who is working
 | Name | Desk | Status | On |
@@ -24,8 +24,8 @@ Research worker last ran 2026-10-04T15:49:21.958Z · 0 leads · 0 provider error
 ## Mathematics
 | Measure | Value |
 |---|---|
-| lanes total | 24 |
-| lanes waiting on chairman | 18 |
+| lanes total | 31 |
+| lanes waiting on chairman | 23 |
 | family seats named | 0 / 30 |
 | family percent named | 0 |
 | open research tasks | 30 |
@@ -41,7 +41,7 @@ Research worker last ran 2026-10-04T15:49:21.958Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 16 |
+| commits last 7 days | 17 |
 | days since last commit | 0 |
 
 ## All lanes
@@ -70,6 +70,13 @@ Research worker last ran 2026-10-04T15:49:21.958Z · 0 leads · 0 provider error
 | 22 | REE value + Ma Sweet banknote | PROPOSED | Chairman confirms anchor + unit + that her note IS the REE note | Yes/no on all three |
 | 23 | Ma Sweet (great-grandmother, came out of Canada) | FAMILY_TOLD · photo received | Census + Tennessee death-certificate tests once side and name are known | Kid Wright's mother or Hester Harris's? Her given name? |
 | 24 | Thread sync | POSTED | Every thread reads the bus first | — |
+| 25 | Personal gift cup (inscription; giver and recipient in backend, FAMILY_RESTRICTED) | REGISTERED · photo not received | Attach the photo; link the giver to the family record once confirmed | Re-attach the photo; say which family member gave it |
+| 26 | Collaboration lead (woman in video) | HELD · identity UNKNOWN | Draft invitation once the handle is known | Post URL or account handle; what you like about how she talks |
+| 27 | ErsatzReality site + brand | VERIFIED: ersatzreality.com is a live Shopify store | Build the missing pages in Shopify once approved | Approve ersatzreality.com as the one public site; send banner + seal files |
+| 28 | Rapid money conveyor (R_p) | RANKED | Store lane checks checkout on those 7 | — |
+| 29 | Show: HOW DID THAT WORD GET HERE? | PILOT STRUCTURE | Source ledger for the pilot | Speaker's handle (no contact yet) |
+| 30 | Show: Nature before the name (Newton) | PILOT STRUCTURE | Source ledger for the pilot | — |
+| 31 | Jerusalem, Utah 1925 claim | RESEARCH | Match the frames to Library of Congress collections | Re-attach the video |
 | 16 | Dashboard | Not this repo | — | — |
 
 ## The world

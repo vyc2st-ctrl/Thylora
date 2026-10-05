@@ -1,7 +1,7 @@
 # THYLORA — the whole thread (Lanes Board)
 
 Updated every session, in the same commit as the work (see `CLAUDE.md` §1).
-Last update: 2026-10-04 19:26 ET · backend custody 654 / ledger 654 (this session) · branch merged to main
+Last update: 2026-10-05 ET · backend custody 662 / ledger 668 (this session; heads were 667/667 before its ledger write) · branch `claude/thread-checkin-checkout-662`
 
 | # | Lane | Where it lives | Status | Moved this session | Next action | Needs from Chairman |
 |---|---|---|---|---|---|---|
@@ -28,6 +28,13 @@ Last update: 2026-10-04 19:26 ET · backend custody 654 / ledger 654 (this sessi
 | 22 | **REE value + Ma Sweet banknote** | backend `currency_visual_registry` REE-VALUE-ANCHOR-PROPOSAL-654 | **PROPOSED** | 1 REE ≈ 1 EUR buying power; 100 minor units; name idea "sweet"; blue note, her portrait and clothes, her people on the back | Chairman confirms anchor + unit + that her note IS the REE note | Yes/no on all three |
 | 23 | **Ma Sweet (great-grandmother, came out of Canada)** | backend `genealogy_research_intake` GEN-MAT-MASWEET-001 (FAMILY_RESTRICTED) | **FAMILY_TOLD · photo received** | Recorded; nation UNVERIFIED | Census + Tennessee death-certificate tests once side and name are known | Kid Wright's mother or Hester Harris's? Her given name? |
 | 24 | **Thread sync** | backend `thylora_thread_handoff_bus` THY-HANDOFF-654-MASWEET-REE-SYNC | **POSTED** | Rule: read both heads before writes · obey ledger guard · claim lanes on the bus · proposals stay PROPOSED | Every thread reads the bus first | — |
+| 25 | **Personal gift cup** (inscription; giver and recipient in backend, FAMILY_RESTRICTED) | backend `household_object_provenance` (custody 662 row) | **REGISTERED · photo not received** | Registered as personal provenance, not merch; gift date UNKNOWN | Attach the photo; link the giver to the family record once confirmed | Re-attach the photo; say which family member gave it |
+| 26 | **Collaboration lead (woman in video)** | backend WDR-COLLAB-LEAD-WOMAN-VIDEO-662 | **HELD · identity UNKNOWN** | No prior record found; no duplicate; no face-only identification | Draft invitation once the handle is known | Post URL or account handle; what you like about how she talks |
+| 27 | **ErsatzReality site + brand** | backend WDR-ERSATZREALITY-WEB-BRAND-SYSTEM-662 | **VERIFIED: ersatzreality.com is a live Shopify store** | One-site plan; the 10-section map fits Shopify pages; seal + Facebook-cover spec (lion removed) | Build the missing pages in Shopify once approved | Approve ersatzreality.com as the one public site; send banner + seal files |
+| 28 | **Rapid money conveyor (R_p)** | backend WDR-RAPID-MONEY-CONVEYOR-RP-662 · MATH-REVENUE-PATH-PRIORITY-662 | **RANKED** | No outside buyer yet for any product, so finish what's built: 7 products are only missing the checkout check | Store lane checks checkout on those 7 | — |
+| 29 | **Show: HOW DID THAT WORD GET HERE?** | backend WDR-SHOW-HOW-DID-THAT-WORD-GET-HERE-662 | **PILOT STRUCTURE** | 9-step method; child, history and adult layers | Source ledger for the pilot | Speaker's handle (no contact yet) |
+| 30 | **Show: Nature before the name (Newton)** | backend WDR-SHOW-NATURE-BEFORE-THE-NAME-662 | **PILOT STRUCTURE** | Phenomenon ≠ observer ≠ discoverer ≠ formalizer ≠ namer | Source ledger for the pilot | — |
+| 31 | **Jerusalem, Utah 1925 claim** | backend WDR-PROD-JERUSALEM-UTAH-1925-CLAIM-662 · MATH-CLAIM-PROVENANCE-662 | **RESEARCH** | Claim traced to Facebook/Instagram reposts (Sept 2026); original archive UNKNOWN; Utah location DISPUTED | Match the frames to Library of Congress collections | Re-attach the video |
 | 16 | **Dashboard** | `thylora-executive-dashboard` (other repo) | Not this repo | — | — | — |
 
 ## Why the "one topic" problem kept coming back — and the fix

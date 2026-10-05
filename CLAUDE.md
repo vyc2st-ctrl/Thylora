@@ -61,6 +61,32 @@ Before writing or reporting any company, worker, shop, place, price or sale:
 - If something cannot be done (no names yet, a held Chairman action, a blocked
   host), say exactly what is needed, then keep moving on every other lane.
 
+## 1.5 · Thread check-in / check-out (permanent — THY-POLICY-THREAD-CHECKIN-CHECKOUT-650)
+
+Many threads (Claude and ChatGPT) write the backend at the same time. In one
+session on 2026-10-05 the heads moved six times while a single turn was being
+worked. So:
+
+- **Check in:** read both heads, the ACTIVE boot, the newest restart and the
+  handoff bus. Name your thread and your lanes. Never assume you own the head.
+- **Take sequence numbers at write time,** inside the insert
+  (`max(sequence_no)+1`), never from a number read minutes earlier.
+- **If a head moved while you worked:** re-read, keep the other thread's work,
+  write yours on top. Never overwrite another thread to keep your plan clean.
+- **Ledger guard:** `previous_sequence_no` must equal the live ledger head. If
+  your custody number was passed, record your delta at the next ledger number
+  and say which custody number it belongs to (`source_ref = custody:N`).
+- **A write that times out is UNKNOWN,** not done and not failed. Read back
+  before retrying.
+- **ACTIVE means movement:** `A_m = D × A × E × X × R`. Any factor 0 → BLOCKED,
+  WAITING, DEFERRED or UNKNOWN, with the reason.
+- **Every work item carries custody:** `W_(k+1) = F(W_k, P_k, A_k, T_k, E_k, B_k, N_k)`
+  — state before, who, action, time, evidence, blocker, next owner, next action.
+- **Check out:** `H_t = C_i × L_r × X_m × C_o × R_b`. If any factor is 0 the
+  thread does not check out as complete. Report: heads at start and after,
+  exact delta, what was verified, what is still unknown, blockers, next owner,
+  exact restart.
+
 ## 2 · Prime Directive on Relevance
 
 Anything that touches these core interests is a **primary subject**, never a
