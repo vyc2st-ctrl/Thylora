@@ -64,6 +64,48 @@ export class Custody {
 
   // ---- backend tier --------------------------------------------------------
 
+  /**
+   * Call a backend function (PostgREST RPC).
+   *
+   * Used for the DERIVED views — the money truth and the Chairman action queue.
+   * Those are functions, not tables, precisely so there is no second place for
+   * the truth to live and drift. The same honesty rules as post() apply: a
+   * missing function reads FUNCTION_NOT_PRESENT and is reported, not swallowed.
+   */
+  async rpc(fn, args = {}) {
+    const token = this.token();
+    if (!token) {
+      this.backendReachable = false;
+      return { ok: false, reason: 'NOT_SIGNED_IN' };
+    }
+    try {
+      const response = await fetch(`${this.url}/rest/v1/rpc/${fn}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          apikey: this.key,
+          Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify(args)
+      });
+      if (!response.ok) {
+        const text = await response.text().catch(() => '');
+        this.backendReachable = response.status < 500;
+        const missing = response.status === 404 || /does not exist|schema cache/i.test(text);
+        return {
+          ok: false,
+          reason: missing ? 'FUNCTION_NOT_PRESENT' : `HTTP_${response.status}`,
+          detail: text.slice(0, 300)
+        };
+      }
+      this.backendReachable = true;
+      return { ok: true, rows: await response.json().catch(() => []) };
+    } catch (err) {
+      this.backendReachable = false;
+      return { ok: false, reason: 'NETWORK', detail: String(err?.message || err) };
+    }
+  }
+
   async post(table, rows) {
     const token = this.token();
     if (!token) {

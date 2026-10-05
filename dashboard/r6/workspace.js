@@ -32,6 +32,7 @@ import { measureStore, portfolioDistance, readingsFromRows, MONEY_GATES, GATE_ST
 import { buildMatrix, summarise, proofGap, ARRIVAL_LANES, ARRIVAL_STATES } from './lib/arrival-matrix.js';
 import { Custody } from './custody.js';
 import { buildMediaRouterRoom } from './media-router-room.js';
+import { buildActionQueueRoom } from './action-queue-room.js';
 
 const RELEASE = 'THY-DASH-R6-WORKSPACE-001';
 
@@ -96,7 +97,8 @@ export function mountChairmanWorkspace(options = {}) {
     roomButton('PREVIEW', 'Preview room'),
     roomButton('COVERAGE', 'Coverage ledger'),
     roomButton('ARRIVAL', 'Arrival matrix'),
-    roomButton('MEDIA', 'Media router')
+    roomButton('MEDIA', 'Media router'),
+    roomButton('ACTIONS', 'Needs you')
   ]);
 
   ui.shell = el('div', { class: 'thy-r6 thy-r6-shell', id: 'thyR6Shell', role: 'dialog', 'aria-label': 'Chairman workspace' }, [
@@ -365,7 +367,13 @@ export function mountChairmanWorkspace(options = {}) {
   const mediaRouter = buildMediaRouterRoom({ custody, onStatus: (m, k) => state.say(m, k) });
   ui.mediaRoom = mediaRouter.node;
 
-  ui.body.append(ui.workspaceRoom, ui.previewRoom, ui.coverageRoom, ui.arrivalRoom, ui.mediaRoom);
+  // The Action Queue is the Chairman prompt: it derives, from the live backend,
+  // every gate that is waiting on him. It reads two backend FUNCTIONS and holds
+  // no truth of its own.
+  const actionQueue = buildActionQueueRoom({ custody, onStatus: (m, k) => state.say(m, k) });
+  ui.actionsRoom = actionQueue.node;
+
+  ui.body.append(ui.workspaceRoom, ui.previewRoom, ui.coverageRoom, ui.arrivalRoom, ui.mediaRoom, ui.actionsRoom);
   host.append(ui.launch, ui.shell);
 
   function btn(primary = false) {
@@ -999,9 +1007,12 @@ export function mountChairmanWorkspace(options = {}) {
 
   function showRoom(code) {
     state.room = code;
-    const map = { WORKSPACE: ui.workspaceRoom, PREVIEW: ui.previewRoom, COVERAGE: ui.coverageRoom, ARRIVAL: ui.arrivalRoom, MEDIA: ui.mediaRoom };
+    const map = { WORKSPACE: ui.workspaceRoom, PREVIEW: ui.previewRoom, COVERAGE: ui.coverageRoom, ARRIVAL: ui.arrivalRoom, MEDIA: ui.mediaRoom, ACTIONS: ui.actionsRoom };
     for (const [key, node] of Object.entries(map)) node.classList.toggle('active', key === code);
     ui.rooms.querySelectorAll('button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.room === code)));
+    // Opening "Needs you" reads the backend once, so the Chairman never looks at
+    // a stale queue. A failed read reports itself inside the room.
+    if (code === 'ACTIONS' && !actionQueue.state.lastRead) actionQueue.read().catch(() => {});
     // Canvases sized while hidden measure zero; re-measure on reveal.
     requestAnimationFrame(() => { canvas.resize(); previewCanvas.resize(); });
   }
@@ -1027,7 +1038,7 @@ export function mountChairmanWorkspace(options = {}) {
   if (options.autoOpen) open();
 
   return {
-    open, close, showRoom, loadResponse, engine, canvas, previewCanvas, mic, custody, mediaRouter,
+    open, close, showRoom, loadResponse, engine, canvas, previewCanvas, mic, custody, mediaRouter, actionQueue,
     get notes() { return state.notes; },
     get ledger() { return state.ledger; },
     buildNextPrompt: doBuildNextPrompt,

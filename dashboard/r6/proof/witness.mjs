@@ -98,9 +98,34 @@ const record = (name, ok, detail) => {
   console.log(`${ok ? 'PASS' : 'FAIL'}  ${name}${detail ? ' — ' + detail : ''}`);
 };
 
+// Which Chromium to drive.
+//
+// THY_CHROMIUM wins when set. Otherwise prefer a Chromium already present in
+// this container: the pre-installed build and the pinned playwright package do
+// not always agree on a version, and `playwright install` is not available
+// here, so a bundled-browser lookup can fail on a machine that has a perfectly
+// good browser sitting on disk. Falling back to undefined lets playwright use
+// its own bundled browser wherever that does resolve.
+const CHROMIUM = (() => {
+  if (process.env.THY_CHROMIUM) return process.env.THY_CHROMIUM;
+  const roots = [process.env.PLAYWRIGHT_BROWSERS_PATH, '/opt/pw-browsers'].filter(Boolean);
+  for (const root of roots) {
+    let entries = [];
+    try { entries = fs.readdirSync(root); } catch { continue; }
+    const builds = entries
+      .filter(n => /^chromium-\d+$/.test(n))
+      .sort((a, b) => Number(b.split('-')[1]) - Number(a.split('-')[1]));
+    for (const build of builds) {
+      const exe = path.join(root, build, 'chrome-linux', 'chrome');
+      if (fs.existsSync(exe)) return exe;
+    }
+  }
+  return undefined;
+})();
+
 async function run(label, contextOptions, shotPrefix) {
   console.log(`\n===== ${label} =====`);
-  const browser = await chromium.launch({ ...(process.env.THY_CHROMIUM ? { executablePath: process.env.THY_CHROMIUM } : {}) });
+  const browser = await chromium.launch({ ...(CHROMIUM ? { executablePath: CHROMIUM } : {}) });
   const context = await browser.newContext(contextOptions);
   await context.addInitScript(FAKE_SYNTH);
   const page = await context.newPage();
@@ -527,6 +552,46 @@ async function run(label, contextOptions, shotPrefix) {
     `${moneyDistance.line} (${moneyDistance.closed} closed, ${moneyDistance.open} open)`);
 
   await page.screenshot({ path: `${OUT}/${shotPrefix}-6-media.png` });
+
+  // ---- 15. action queue: the Chairman prompt ------------------------------
+  // This browser is NOT signed in. The contract under test is that an
+  // unauthenticated read is reported as such and NEVER rendered as an empty
+  // queue, because an empty queue reads as "nothing needs you" — the exact lie
+  // this room exists to prevent.
+  await page.click('button[data-room="ACTIONS"]');
+  await page.waitForTimeout(400);
+
+  const queue = await page.evaluate(() => ({
+    status: document.getElementById('thyR6QueueStatus')?.textContent || '',
+    rows: document.querySelectorAll('#thyR6RoomActionQueue .thy-r6-stack .thy-r6-card').length,
+    reason: window.thyR6?.actionQueue?.state?.reason || null,
+    lastRead: window.thyR6?.actionQueue?.state?.lastRead || null,
+    hasRefresh: !!document.getElementById('thyR6QueueRefresh')
+  }));
+
+  record(`${label}: the action queue exposes a re-read control`,
+    queue.hasRefresh, 'thyR6QueueRefresh present');
+
+  record(`${label}: an unauthenticated queue read is reported, not rendered as empty`,
+    /NOT SIGNED IN|not present|refused/i.test(queue.status),
+    queue.status.replace(/\s+/g, ' ').slice(0, 150));
+
+  record(`${label}: a failed queue read renders no action rows`,
+    queue.rows === 0,
+    `${queue.rows} row(s) rendered while the read was ${queue.reason || 'unresolved'}`);
+
+  record(`${label}: a failed read is not recorded as a successful read`,
+    queue.lastRead === null,
+    `lastRead = ${queue.lastRead === null ? 'null (correct)' : queue.lastRead}`);
+
+  // No button in this room may claim to close a gate. Evidence closes gates.
+  const noMarkDone = await page.evaluate(() =>
+    [...document.querySelectorAll('#thyR6RoomActionQueue button')]
+      .every(b => !/mark.*(done|complete)|resolve|close gate/i.test(b.innerText)));
+  record(`${label}: the action queue offers no "mark as done" control`,
+    noMarkDone, 'no button in the room claims to close a gate');
+
+  await page.screenshot({ path: `${OUT}/${shotPrefix}-7-actions.png` });
 
   // ---- 15. persistence across reload --------------------------------------
   await page.reload();
