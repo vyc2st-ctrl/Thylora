@@ -1,7 +1,7 @@
 # THYLORA — the whole thread (Lanes Board)
 
 Updated every session, in the same commit as the work (see `CLAUDE.md` §1).
-Last update: 2026-10-04 19:26 ET · backend custody 654 / ledger 654 (this session) · branch merged to main
+Last update: 2026-10-05 ET · backend custody 667 / ledger 668 at last read · this session captured custody 663 (Claude verifies ChatGPT)
 
 | # | Lane | Where it lives | Status | Moved this session | Next action | Needs from Chairman |
 |---|---|---|---|---|---|---|
@@ -28,6 +28,11 @@ Last update: 2026-10-04 19:26 ET · backend custody 654 / ledger 654 (this sessi
 | 22 | **REE value + Ma Sweet banknote** | backend `currency_visual_registry` REE-VALUE-ANCHOR-PROPOSAL-654 | **PROPOSED** | 1 REE ≈ 1 EUR buying power; 100 minor units; name idea "sweet"; blue note, her portrait and clothes, her people on the back | Chairman confirms anchor + unit + that her note IS the REE note | Yes/no on all three |
 | 23 | **Ma Sweet (great-grandmother, came out of Canada)** | backend `genealogy_research_intake` GEN-MAT-MASWEET-001 (FAMILY_RESTRICTED) | **FAMILY_TOLD · photo received** | Recorded; nation UNVERIFIED | Census + Tennessee death-certificate tests once side and name are known | Kid Wright's mother or Hester Harris's? Her given name? |
 | 24 | **Thread sync** | backend `thylora_thread_handoff_bus` THY-HANDOFF-654-MASWEET-REE-SYNC | **POSTED** | Rule: read both heads before writes · obey ledger guard · claim lanes on the bus · proposals stay PROPOSED | Every thread reads the bus first | — |
+| 25 | **Enforcement boundary (verify ChatGPT 658/660)** | `docs/VERIFY-CHATGPT-ENFORCEMENT-663.md` · `db/enforcement/0663_*` | **11 of 15 attacks got through ChatGPT's triggers; fix WRITTEN, HELD** | Live tests: 4 PASS / 11 FAIL; side-table bypass + 98 unchecked active rows found; held migration 0663 + 23-case harness; classifier checked on 40 live states | ChatGPT re-runs `validation/0663_tests.sql` on a Supabase branch | Apply 0663? · close reveng_* public write? |
+| 26 | **World words** | backend `thylora_world_word_registry` | **10 terms** | +6 recovered from `thylora_world_term_registry` (Edereaireum, Kelum, INTERFRAME, RUDABAKAH, Value Current, month names OPEN) | Usage rows as terms are used | Kelum or Keal-lum? · month and weekday names |
+| 27 | **EdereAirah clock** | backend `thylora_edereairah_time()` · EA-PLANET-1.0.0 | **ENGINE LIVE (other thread)** | Verified: EARTH ANCHOR TIME 2026-10-05 11:03Z = EA 2026 · Month 10 · Day 5 · 03:03 PMT | Dashboard read policy (in 0663) | Confirm the planet model is approved (row says ACTIVE) |
+| 28 | **Velvet video** | `docs/VERIFY-CHATGPT-ENFORCEMENT-663.md` §9 | **PACKET ONLY** | 6 proposed EdereAirah women (2 teens, 2 younger, 2 mature), full sheet each | Wait for photos | Reference photos · song title · rights |
+| 29 | **Commerce Ω_h** | backend MATH-HELP-COMMERCE-CURRENT-622 | **EQUATION STORED, NOT SCORED** | Plain-speech table; gap shown (R=0 until sellable is proven) | Per-product scoring view | — |
 | 16 | **Dashboard** | `thylora-executive-dashboard` (other repo) | Not this repo | — | — | — |
 
 ## Why the "one topic" problem kept coming back — and the fix
