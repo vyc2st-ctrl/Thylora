@@ -2,8 +2,8 @@
 **Checked in:** 2026-10-05 07:35 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
 
 ## Where we left off
-`52c461b` on `claude/root-house-lineage` · 2026-10-04T23:26:23+00:00  
-Spine Forward check-in 2026-10-04T23:26Z
+`769c429` on `claude/root-house-lineage` · 2026-10-05T07:35:13Z  
+Merge remote-tracking branch 'origin/claude/root-house-lineage' into claude/root-house-lineage
 
 ## Who is working
 | Name | Desk | Status | On |
@@ -41,7 +41,7 @@ Research worker last ran 2026-10-04T15:49:21.958Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 16 |
+| commits last 7 days | 19 |
 | days since last commit | 0 |
 
 ## All lanes
