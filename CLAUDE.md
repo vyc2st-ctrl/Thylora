@@ -64,6 +64,26 @@ Before writing or reporting any company, worker, shop, place, price or sale:
 Do not apply Earth restrictions inside Our World. Never mix Earth and Our World.
 The Earth gate applies only when real Earth money or real Earth people cross over.
 
+## 0.8 · Agent precheck before any Chairman question (permanent — THY-POLICY-AGENT-PRECHECK-670)
+
+- Never ask the Chairman something because this thread lacks context. First read the
+  backend: heads, custody, restart, supersession, `thylora_person_name_canon`,
+  `thylora_voice_name_aliases`, `transcription_alias_registry`, the lane's records,
+  active math and locks, and other workrooms' results.
+- An answer already in the backend beats an open question from an older thread.
+- A fact the Chairman told us to DISCOVER is a research target. Never make it a
+  Chairman input until the evidence is exhausted.
+- Voice variants never rename a canonical person. UNKNOWN never changes a record.
+- Label every gate **DECLARED** (words exist), **STORED** (backend state exists) or
+  **ENFORCED** (execution cannot bypass it), and name the enforcing mechanism.
+  Never call DECLARED or STORED "enforced".
+- Claude builds and tests; ChatGPT cross-checks. Neither self-certifies.
+- One queue only: `thylora_chairman_attention_queue`, deduplicated against the backend.
+  Its enforcement trigger is `db/governance/0001_chairman_queue_gate.sql` (held for apply).
+- First post and every release: the ingredient rule. No release while any essential
+  ingredient is unresolved. Start from proven Earth methods, find their gaps, then improve.
+- Return to the Chairman only the choices he actually has to make.
+
 ## 1 · Full-thread rule (the Chairman's top complaint)
 
 - **Do the work, then report it.** Never answer with a plan of what "we are

@@ -1,9 +1,9 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-10-05 07:35 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
+**Checked in:** 2026-10-05 12:47 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
 
 ## Where we left off
-`a859c43` on `claude/root-house-lineage` · 2026-10-05T07:35:37Z  
-Merge remote-tracking branch 'origin/claude/root-house-lineage' into claude/root-house-lineage
+`2473842` on `claude/root-house-lineage` · 2026-10-05T07:35:51+00:00  
+Spine Forward check-in 2026-10-05T07:35Z
 
 ## Who is working
 | Name | Desk | Status | On |
@@ -24,8 +24,8 @@ Research worker last ran 2026-10-05T07:35:28.736Z · 0 leads · 0 provider error
 ## Mathematics
 | Measure | Value |
 |---|---|
-| lanes total | 32 |
-| lanes waiting on chairman | 25 |
+| lanes total | 36 |
+| lanes waiting on chairman | 28 |
 | family seats named | 0 / 30 |
 | family percent named | 0 |
 | open research tasks | 30 |
@@ -41,7 +41,7 @@ Research worker last ran 2026-10-05T07:35:28.736Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 23 |
+| commits last 7 days | 24 |
 | days since last commit | 0 |
 
 ## All lanes
@@ -78,6 +78,10 @@ Research worker last ran 2026-10-05T07:35:28.736Z · 0 leads · 0 provider error
 | 30 | Our World is licensed | LOCKED | — | — |
 | 31 | Family Archive Department oversight | REGISTERED | Add her as a world person | Her exact title |
 | 32 | Film 1923 · Tamara · REE · Bell Crossing · Dashboard seats | EXISTING — not rebuilt | Waiting on Chairman decisions listed at 651 | Film premise + Nation; Tamara go/amounts by Oct 8 (auction Oct 11); REE smallest unit; Bell Crossing era |
+| 33 | Agent precheck (670) | DECLARED + STORED · enforcement written, held | Apply `db/governance/0001_chairman_queue_gate.sql` | Held DDL apply |
+| 34 | Chairman queue dedupe | DONE | — | Only the open queue items |
+| 35 | Post 001 ingredient ledger | BLOCKED (by rule) | Pre-visual brief, caption, brand-mark check (internal) | Cast review (existing HELD item); public-site approval (existing) |
+| 36 | Corrections pending merge | STORED | Merge when UPDATEs stop timing out | — |
 | 16 | Dashboard | Not this repo | — | — |
 
 ## The world

@@ -1,7 +1,7 @@
 # THYLORA — the whole thread (Lanes Board)
 
 Updated every session, in the same commit as the work (see `CLAUDE.md` §1).
-Last update: 2026-10-05 ET · backend custody 656 / ledger 656 (ledger 655 has no custody row — gap preserved) · branch `claude/root-house-lineage`
+Last update: 2026-10-05 ET · backend custody 670 / ledger 668 (ledger 662–664, 669–670 not yet written by their owners) · branch `claude/root-house-lineage`
 
 | # | Lane | Where it lives | Status | Moved this session | Next action | Needs from Chairman |
 |---|---|---|---|---|---|---|
@@ -36,6 +36,10 @@ Last update: 2026-10-05 ET · backend custody 656 / ledger 656 (ledger 655 has n
 | 30 | **Our World is licensed** | backend THY-POLICY-WORLD-LICENSED-656 (OPERATIONAL) | **LOCKED** | No Earth restrictions inside Our World; Earth gate only when real Earth money/people cross | — | — |
 | 31 | **Family Archive Department oversight** | backend THY-DEPT-FAMILY-ARCHIVE-OVERSIGHT-656 | **REGISTERED** | Princess MaryAnn oversees the Root House; no prior record existed | Add her as a world person | Her exact title |
 | 32 | **Film 1923 · Tamara · REE · Bell Crossing · Dashboard seats** | backend packets from seq 651 | **EXISTING — not rebuilt** | Read, not duplicated | Waiting on Chairman decisions listed at 651 | Film premise + Nation; Tamara go/amounts by Oct 8 (auction Oct 11); REE smallest unit; Bell Crossing era |
+| 33 | **Agent precheck (670)** | backend THY-POLICY-AGENT-PRECHECK-670 · `CLAUDE.md` §0.8 | **DECLARED + STORED · enforcement written, held** | Queue gate trigger validated locally: rejects missing source, duplicate open question, already-answered question | Apply `db/governance/0001_chairman_queue_gate.sql` | Held DDL apply |
+| 34 | **Chairman queue dedupe** | backend `thylora_chairman_attention_queue` | **DONE** | Kylee + Bell era already answered; Ma Sweet's side, name and nation are research targets; REE values are set by world people (665); payout plan added as code 14 | — | Only the open queue items |
+| 35 | **Post 001 ingredient ledger** | backend WDR-POST-001-INGREDIENTS-670 | **BLOCKED (by rule)** | 9 ingredients graded; 5 essential unresolved | Pre-visual brief, caption, brand-mark check (internal) | Cast review (existing HELD item); public-site approval (existing) |
+| 36 | **Corrections pending merge** | backend THY-CORRECTIONS-670 | **STORED** | MaryAnn → Mary Ann Wright (Suzy), INDICATED; Ma Sweet discover targets; Bell era closed | Merge when UPDATEs stop timing out | — |
 | 16 | **Dashboard** | `thylora-executive-dashboard` (other repo) | Not this repo | — | — | — |
 
 ## Why the "one topic" problem kept coming back — and the fix

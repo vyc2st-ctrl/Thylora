@@ -1,10 +1,10 @@
 {
   "header": "THYLORA HEAD - SPINE FORWARD",
-  "checked_in_at": "2026-10-05T07:35:51.719Z",
+  "checked_in_at": "2026-10-05T12:47:51.632Z",
   "left_off": {
-    "commit": "a859c43",
-    "message": "Merge remote-tracking branch 'origin/claude/root-house-lineage' into claude/root-house-lineage",
-    "at": "2026-10-05T07:35:37Z",
+    "commit": "2473842",
+    "message": "Spine Forward check-in 2026-10-05T07:35Z",
+    "at": "2026-10-05T07:35:51+00:00",
     "branch": "claude/root-house-lineage"
   },
   "live_backend": {
@@ -12,8 +12,8 @@
     "detail": "add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers"
   },
   "mathematics": {
-    "lanes_total": 32,
-    "lanes_waiting_on_chairman": 25,
+    "lanes_total": 36,
+    "lanes_waiting_on_chairman": 28,
     "family_seats_named": "0 / 30",
     "family_percent_named": 0,
     "open_research_tasks": 30,
@@ -29,7 +29,7 @@
     "revenue_recorded": 0,
     "payouts_recorded": 0,
     "images_queued": 1,
-    "commits_last_7_days": 23,
+    "commits_last_7_days": 24,
     "days_since_last_commit": 0
   },
   "working": [
@@ -388,6 +388,42 @@
       "moved": "Read, not duplicated",
       "next": "Waiting on Chairman decisions listed at 651",
       "needs": "Film premise + Nation; Tamara go/amounts by Oct 8 (auction Oct 11); REE smallest unit; Bell Crossing era"
+    },
+    {
+      "n": 33,
+      "lane": "Agent precheck (670)",
+      "where": "backend THY-POLICY-AGENT-PRECHECK-670 · `CLAUDE.md` §0.8",
+      "status": "DECLARED + STORED · enforcement written, held",
+      "moved": "Queue gate trigger validated locally: rejects missing source, duplicate open question, already-answered question",
+      "next": "Apply `db/governance/0001_chairman_queue_gate.sql`",
+      "needs": "Held DDL apply"
+    },
+    {
+      "n": 34,
+      "lane": "Chairman queue dedupe",
+      "where": "backend `thylora_chairman_attention_queue`",
+      "status": "DONE",
+      "moved": "Kylee + Bell era already answered; Ma Sweet's side, name and nation are research targets; REE values are set by world people (665); payout plan added as code 14",
+      "next": "—",
+      "needs": "Only the open queue items"
+    },
+    {
+      "n": 35,
+      "lane": "Post 001 ingredient ledger",
+      "where": "backend WDR-POST-001-INGREDIENTS-670",
+      "status": "BLOCKED (by rule)",
+      "moved": "9 ingredients graded; 5 essential unresolved",
+      "next": "Pre-visual brief, caption, brand-mark check (internal)",
+      "needs": "Cast review (existing HELD item); public-site approval (existing)"
+    },
+    {
+      "n": 36,
+      "lane": "Corrections pending merge",
+      "where": "backend THY-CORRECTIONS-670",
+      "status": "STORED",
+      "moved": "MaryAnn → Mary Ann Wright (Suzy), INDICATED; Ma Sweet discover targets; Bell era closed",
+      "next": "Merge when UPDATEs stop timing out",
+      "needs": "—"
     },
     {
       "n": 16,
