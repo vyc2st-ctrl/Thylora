@@ -1,9 +1,9 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-10-05 12:47 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
+**Checked in:** 2026-10-05 12:48 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
 
 ## Where we left off
-`2473842` on `claude/root-house-lineage` · 2026-10-05T07:35:51+00:00  
-Spine Forward check-in 2026-10-05T07:35Z
+`2204f35` on `claude/root-house-lineage` · 2026-10-05T12:47:52Z  
+Agent precheck (670): queue gate migration, CLAUDE.md rule, lanes board
 
 ## Who is working
 | Name | Desk | Status | On |
@@ -41,7 +41,7 @@ Research worker last ran 2026-10-05T07:35:28.736Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 24 |
+| commits last 7 days | 25 |
 | days since last commit | 0 |
 
 ## All lanes
