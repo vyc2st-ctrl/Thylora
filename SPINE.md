@@ -2,8 +2,8 @@
 **Checked in:** 2026-10-06 18:00 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
 
 ## Where we left off
-`47cb904` on `main` · 2026-10-06T17:14:46+00:00  
-Root House worker: leads 2026-10-06
+`b67f6a6` on `claude/opp-collab-675` · 2026-10-06T18:00:40Z  
+Opportunity & Collaboration Department: custody 675, 15 lanes, held order-custody DDL
 
 ## Who is working
 | Name | Desk | Status | On |
@@ -41,7 +41,7 @@ Research worker last ran 2026-10-06T17:14:46.146Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 22 |
+| commits last 7 days | 23 |
 | days since last commit | 0 |
 
 ## All lanes
