@@ -1,7 +1,7 @@
 # THYLORA — the whole thread (Lanes Board)
 
 Updated every session, in the same commit as the work (see `CLAUDE.md` §1).
-Last update: 2026-10-04 19:26 ET · backend custody 654 / ledger 654 (this session) · branch merged to main
+Last update: 2026-10-06 ET · backend custody 675 / ledger 675 (this session) · branch claude/opp-collab-675
 
 | # | Lane | Where it lives | Status | Moved this session | Next action | Needs from Chairman |
 |---|---|---|---|---|---|---|
@@ -29,6 +29,9 @@ Last update: 2026-10-04 19:26 ET · backend custody 654 / ledger 654 (this sessi
 | 23 | **Ma Sweet (great-grandmother, came out of Canada)** | backend `genealogy_research_intake` GEN-MAT-MASWEET-001 (FAMILY_RESTRICTED) | **FAMILY_TOLD · photo received** | Recorded; nation UNVERIFIED | Census + Tennessee death-certificate tests once side and name are known | Kid Wright's mother or Hester Harris's? Her given name? |
 | 24 | **Thread sync** | backend `thylora_thread_handoff_bus` THY-HANDOFF-654-MASWEET-REE-SYNC | **POSTED** | Rule: read both heads before writes · obey ledger guard · claim lanes on the bus · proposals stay PROPOSED | Every thread reads the bus first | — |
 | 16 | **Dashboard** | `thylora-executive-dashboard` (other repo) | Not this repo | — | — | — |
+| 25 | **Opportunity & Collaboration Department** (15 lanes L01–L15) | `workrooms/WR-OPP-COLLAB-675.md` · backend `WR-OPP-COLLAB-675` | **DESIGN_ACTIVE · 15 lane cards in backend** | Custody 675 captured verbatim; 15 cards with 18 fields each; 15 custody movements; 4 gap rows; ChatGPT review (provisional) | L01 internal dry-run packet; L03 packet templates; L10 hotel checklist | Which rail is canonical for off-storefront orders; release of one offer when ready |
+| 26 | **Rail-independent orders + Cash App** | `db/opp-collab-675/` · MATH-ORDER-CUSTODY-675 (PROPOSED) | **DDL VALIDATED locally, HELD** | Live read: Stripe live account has 0 charges; Cash App Pay is turned on in Stripe but has never been used (B2C/US/USD only); Shopify has 1 witnessed sale (the Chairman's own) | Read the account's merchant category code (MCC); apply DDL only after Chairman approval | Approve DDL; choose the canonical rail |
+| 27 | **Medical-practice systems (L11)** | backend L11 · GAP-675-04 | **BLOCKED: MISSING_INPUT** | Searched custody: the Chairman's pain-practice journey is not recorded anywhere | Capture his words, then build the 10-stage map | The journey in his own words |
 
 ## Why the "one topic" problem kept coming back — and the fix
 Chat memory resets between sessions, so a promise made in chat dies with the chat.
