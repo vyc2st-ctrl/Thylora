@@ -1,7 +1,7 @@
 # THYLORA — the whole thread (Lanes Board)
 
 Updated every session, in the same commit as the work (see `CLAUDE.md` §1).
-Last update: 2026-10-06 ET · backend custody 675 / ledger 675 (this session) · branch claude/opp-collab-675
+Last update: 2026-10-06 ET · backend custody 677 / ledger 677 (this session) · branch claude/opp-collab-675
 
 | # | Lane | Where it lives | Status | Moved this session | Next action | Needs from Chairman |
 |---|---|---|---|---|---|---|
@@ -32,6 +32,10 @@ Last update: 2026-10-06 ET · backend custody 675 / ledger 675 (this session) ·
 | 25 | **Opportunity & Collaboration Department** (15 lanes L01–L15) | `workrooms/WR-OPP-COLLAB-675.md` · backend `WR-OPP-COLLAB-675` | **DESIGN_ACTIVE · 15 lane cards in backend** | Custody 675 captured verbatim; 15 cards with 18 fields each; 15 custody movements; 4 gap rows; ChatGPT review (provisional) | L01 internal dry-run packet; L03 packet templates; L10 hotel checklist | Which rail is canonical for off-storefront orders; release of one offer when ready |
 | 26 | **Rail-independent orders + Cash App** | `db/opp-collab-675/` · MATH-ORDER-CUSTODY-675 (PROPOSED) | **DDL VALIDATED locally, HELD** | Live read: Stripe live account has 0 charges; Cash App Pay is turned on in Stripe but has never been used (B2C/US/USD only); Shopify has 1 witnessed sale (the Chairman's own) | Read the account's merchant category code (MCC); apply DDL only after Chairman approval | Approve DDL; choose the canonical rail |
 | 27 | **Medical-practice systems (L11)** | backend L11 · GAP-675-04 | **BLOCKED: MISSING_INPUT** | Searched custody: the Chairman's pain-practice journey is not recorded anywhere | Capture his words, then build the 10-stage map | The journey in his own words |
+| 28 | **Expansion 676 (17 lanes + 2 recovered)** | `workrooms/WR-SPINE-EXPANSION-676.md` · backend `WR-SPINE-EXPANSION-676` | **ALL 17 MOVED · evidence key move_677** | Every task verified and written; 17 custody movements; 5 gaps; 2 proposed math rules; recipe + 675-verify recovered as tasks | Per-lane next action in the workroom file | See blockers column there |
+| 29 | **Family accounts (Loochy)** | `db/family-accounts-677/` (HELD) | **Chairman account OPEN (pending review, 0) · child accounts BLOCKED** | Custodial design validated locally; name-lock drift fixed in 2 family profiles | Apply DDL; open child accounts as pending review | IDENTITY/RIGHTS: written consent from each child's parent · LEGAL: Loochy counsel review |
+| 30 | **Veyra ↔ REE** | backend EXP676-VEYRA | **Option A recommended** | Veyra = spoken word for REE amounts; no second currency; conflict GAP-677-01 found | Chairman lock | — |
+| 31 | **THE NIGHTSTEP vessel** | backend EXP676-VESSEL · THY-VESSEL-NIGHTSTEP-001 | **CANON RECOVERED · 15-row test matrix** | Pressure-hull contradiction (GAP-677-04); "VELMORA" unsourced (GAP-677-02) | NS-001 build sheet | — |
 
 ## Why the "one topic" problem kept coming back — and the fix
 Chat memory resets between sessions, so a promise made in chat dies with the chat.

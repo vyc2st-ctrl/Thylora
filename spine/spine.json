@@ -1,19 +1,19 @@
 {
   "header": "THYLORA HEAD - SPINE FORWARD",
-  "checked_in_at": "2026-10-06T18:18:11.439Z",
+  "checked_in_at": "2026-10-06T20:43:52.175Z",
   "left_off": {
-    "commit": "47cb904",
-    "message": "Root House worker: leads 2026-10-06",
-    "at": "2026-10-06T17:14:46Z",
-    "branch": "main"
+    "commit": "22d71ad",
+    "message": "Merge origin/main into claude/opp-collab-675",
+    "at": "2026-10-06T20:43:21+00:00",
+    "branch": "claude/opp-collab-675"
   },
   "live_backend": {
     "state": "NOT_CONFIGURED",
     "detail": "add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers"
   },
   "mathematics": {
-    "lanes_total": 24,
-    "lanes_waiting_on_chairman": 18,
+    "lanes_total": 31,
+    "lanes_waiting_on_chairman": 23,
     "family_seats_named": "0 / 30",
     "family_percent_named": 0,
     "open_research_tasks": 30,
@@ -29,7 +29,7 @@
     "revenue_recorded": 0,
     "payouts_recorded": 0,
     "images_queued": 1,
-    "commits_last_7_days": 22,
+    "commits_last_7_days": 25,
     "days_since_last_commit": 0
   },
   "working": [
@@ -324,6 +324,69 @@
       "status": "Not this repo",
       "moved": "—",
       "next": "—",
+      "needs": "—"
+    },
+    {
+      "n": 25,
+      "lane": "Opportunity & Collaboration Department (15 lanes L01–L15)",
+      "where": "`workrooms/WR-OPP-COLLAB-675.md` · backend `WR-OPP-COLLAB-675`",
+      "status": "DESIGN_ACTIVE · 15 lane cards in backend",
+      "moved": "Custody 675 captured verbatim; 15 cards with 18 fields each; 15 custody movements; 4 gap rows; ChatGPT review (provisional)",
+      "next": "L01 internal dry-run packet; L03 packet templates; L10 hotel checklist",
+      "needs": "Which rail is canonical for off-storefront orders; release of one offer when ready"
+    },
+    {
+      "n": 26,
+      "lane": "Rail-independent orders + Cash App",
+      "where": "`db/opp-collab-675/` · MATH-ORDER-CUSTODY-675 (PROPOSED)",
+      "status": "DDL VALIDATED locally, HELD",
+      "moved": "Live read: Stripe live account has 0 charges; Cash App Pay is turned on in Stripe but has never been used (B2C/US/USD only); Shopify has 1 witnessed sale (the Chairman's own)",
+      "next": "Read the account's merchant category code (MCC); apply DDL only after Chairman approval",
+      "needs": "Approve DDL; choose the canonical rail"
+    },
+    {
+      "n": 27,
+      "lane": "Medical-practice systems (L11)",
+      "where": "backend L11 · GAP-675-04",
+      "status": "BLOCKED: MISSING_INPUT",
+      "moved": "Searched custody: the Chairman's pain-practice journey is not recorded anywhere",
+      "next": "Capture his words, then build the 10-stage map",
+      "needs": "The journey in his own words"
+    },
+    {
+      "n": 28,
+      "lane": "Expansion 676 (17 lanes + 2 recovered)",
+      "where": "`workrooms/WR-SPINE-EXPANSION-676.md` · backend `WR-SPINE-EXPANSION-676`",
+      "status": "ALL 17 MOVED · evidence key move_677",
+      "moved": "Every task verified and written; 17 custody movements; 5 gaps; 2 proposed math rules; recipe + 675-verify recovered as tasks",
+      "next": "Per-lane next action in the workroom file",
+      "needs": "See blockers column there"
+    },
+    {
+      "n": 29,
+      "lane": "Family accounts (Loochy)",
+      "where": "`db/family-accounts-677/` (HELD)",
+      "status": "Chairman account OPEN (pending review, 0) · child accounts BLOCKED",
+      "moved": "Custodial design validated locally; name-lock drift fixed in 2 family profiles",
+      "next": "Apply DDL; open child accounts as pending review",
+      "needs": "IDENTITY/RIGHTS: written consent from each child's parent · LEGAL: Loochy counsel review"
+    },
+    {
+      "n": 30,
+      "lane": "Veyra ↔ REE",
+      "where": "backend EXP676-VEYRA",
+      "status": "Option A recommended",
+      "moved": "Veyra = spoken word for REE amounts; no second currency; conflict GAP-677-01 found",
+      "next": "Chairman lock",
+      "needs": "—"
+    },
+    {
+      "n": 31,
+      "lane": "THE NIGHTSTEP vessel",
+      "where": "backend EXP676-VESSEL · THY-VESSEL-NIGHTSTEP-001",
+      "status": "CANON RECOVERED · 15-row test matrix",
+      "moved": "Pressure-hull contradiction (GAP-677-04); \"VELMORA\" unsourced (GAP-677-02)",
+      "next": "NS-001 build sheet",
       "needs": "—"
     }
   ],
