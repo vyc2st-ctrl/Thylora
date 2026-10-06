@@ -1,8 +1,8 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-10-06 18:00 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
+**Checked in:** 2026-10-06 18:18 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
 
 ## Where we left off
-`47cb904` on `main` · 2026-10-06T17:14:46+00:00  
+`47cb904` on `main` · 2026-10-06T17:14:46Z  
 Root House worker: leads 2026-10-06
 
 ## Who is working
@@ -24,8 +24,8 @@ Research worker last ran 2026-10-06T17:14:46.146Z · 0 leads · 0 provider error
 ## Mathematics
 | Measure | Value |
 |---|---|
-| lanes total | 27 |
-| lanes waiting on chairman | 21 |
+| lanes total | 24 |
+| lanes waiting on chairman | 18 |
 | family seats named | 0 / 30 |
 | family percent named | 0 |
 | open research tasks | 30 |
@@ -71,9 +71,6 @@ Research worker last ran 2026-10-06T17:14:46.146Z · 0 leads · 0 provider error
 | 23 | Ma Sweet (great-grandmother, came out of Canada) | FAMILY_TOLD · photo received | Census + Tennessee death-certificate tests once side and name are known | Kid Wright's mother or Hester Harris's? Her given name? |
 | 24 | Thread sync | POSTED | Every thread reads the bus first | — |
 | 16 | Dashboard | Not this repo | — | — |
-| 25 | Opportunity & Collaboration Department (15 lanes L01–L15) | DESIGN_ACTIVE · 15 lane cards in backend | L01 internal dry-run packet; L03 packet templates; L10 hotel checklist | Which rail is canonical for off-storefront orders; release of one offer when ready |
-| 26 | Rail-independent orders + Cash App | DDL VALIDATED locally, HELD | Read the account's merchant category code (MCC); apply DDL only after Chairman approval | Approve DDL; choose the canonical rail |
-| 27 | Medical-practice systems (L11) | BLOCKED: MISSING_INPUT | Capture his words, then build the 10-stage map | The journey in his own words |
 
 ## The world
 **Companies**

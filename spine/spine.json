@@ -1,10 +1,10 @@
 {
   "header": "THYLORA HEAD - SPINE FORWARD",
-  "checked_in_at": "2026-10-06T18:00:18.079Z",
+  "checked_in_at": "2026-10-06T18:18:11.439Z",
   "left_off": {
     "commit": "47cb904",
     "message": "Root House worker: leads 2026-10-06",
-    "at": "2026-10-06T17:14:46+00:00",
+    "at": "2026-10-06T17:14:46Z",
     "branch": "main"
   },
   "live_backend": {
@@ -12,8 +12,8 @@
     "detail": "add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers"
   },
   "mathematics": {
-    "lanes_total": 27,
-    "lanes_waiting_on_chairman": 21,
+    "lanes_total": 24,
+    "lanes_waiting_on_chairman": 18,
     "family_seats_named": "0 / 30",
     "family_percent_named": 0,
     "open_research_tasks": 30,
@@ -325,33 +325,6 @@
       "moved": "—",
       "next": "—",
       "needs": "—"
-    },
-    {
-      "n": 25,
-      "lane": "Opportunity & Collaboration Department (15 lanes L01–L15)",
-      "where": "`workrooms/WR-OPP-COLLAB-675.md` · backend `WR-OPP-COLLAB-675`",
-      "status": "DESIGN_ACTIVE · 15 lane cards in backend",
-      "moved": "Custody 675 captured verbatim; 15 cards with 18 fields each; 15 custody movements; 4 gap rows; ChatGPT review (provisional)",
-      "next": "L01 internal dry-run packet; L03 packet templates; L10 hotel checklist",
-      "needs": "Which rail is canonical for off-storefront orders; release of one offer when ready"
-    },
-    {
-      "n": 26,
-      "lane": "Rail-independent orders + Cash App",
-      "where": "`db/opp-collab-675/` · MATH-ORDER-CUSTODY-675 (PROPOSED)",
-      "status": "DDL VALIDATED locally, HELD",
-      "moved": "Live read: Stripe live account has 0 charges; Cash App Pay is turned on in Stripe but has never been used (B2C/US/USD only); Shopify has 1 witnessed sale (the Chairman's own)",
-      "next": "Read the account's merchant category code (MCC); apply DDL only after Chairman approval",
-      "needs": "Approve DDL; choose the canonical rail"
-    },
-    {
-      "n": 27,
-      "lane": "Medical-practice systems (L11)",
-      "where": "backend L11 · GAP-675-04",
-      "status": "BLOCKED: MISSING_INPUT",
-      "moved": "Searched custody: the Chairman's pain-practice journey is not recorded anywhere",
-      "next": "Capture his words, then build the 10-stage map",
-      "needs": "The journey in his own words"
     }
   ],
   "world": {
