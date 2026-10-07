@@ -1,9 +1,9 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-10-07 12:16 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
+**Checked in:** 2026-10-07 12:17 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
 
 ## Where we left off
-`f90358e` on `claude/opp-collab-675` · 2026-10-06T20:44:28+00:00  
-Spine Forward check-in 2026-10-06T20:44Z
+`f86f246` on `claude/opp-collab-675` · 2026-10-07T12:16:47Z  
+Investigation 001 packet + 678 corrections mirror
 
 ## Who is working
 | Name | Desk | Status | On |
@@ -41,7 +41,7 @@ Research worker last ran 2026-10-06T17:14:46.146Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 29 |
+| commits last 7 days | 30 |
 | days since last commit | 0 |
 
 ## All lanes
