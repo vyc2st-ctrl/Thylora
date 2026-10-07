@@ -1,9 +1,9 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-10-07 13:13 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
+**Checked in:** 2026-10-07 23:01 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
 
 ## Where we left off
-`1e0cc70` on `main` · 2026-10-07T05:48:58Z  
-Spine Forward check-in 2026-10-07T05:48Z
+`90a689f` on `main` · 2026-10-07T17:50:40Z  
+Root House worker: leads 2026-10-07
 
 ## Who is working
 | Name | Desk | Status | On |
@@ -19,7 +19,7 @@ Spine Forward check-in 2026-10-07T05:48Z
 | Rosa Delgado-Pryor | enslavement era | STANDING BY | — |
 | Pip | runner | STANDING BY | — |
 
-Research worker last ran 2026-10-06T17:14:46.146Z · 0 leads · 0 provider errors.
+Research worker last ran 2026-10-07T17:50:40.267Z · 0 leads · 0 provider errors.
 
 ## Mathematics
 | Measure | Value |
@@ -41,7 +41,7 @@ Research worker last ran 2026-10-06T17:14:46.146Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 24 |
+| commits last 7 days | 26 |
 | days since last commit | 0 |
 
 ## All lanes
