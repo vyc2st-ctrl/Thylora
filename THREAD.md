@@ -1,7 +1,7 @@
 # THYLORA — the whole thread (Lanes Board)
 
 Updated every session, in the same commit as the work (see `CLAUDE.md` §1).
-Last update: 2026-10-07 ET · backend custody 678 / ledger 678 (this session) · branch claude/opp-collab-675
+Last update: 2026-10-07 ET · backend custody 684 / ledger 684 (read at write time; this session wrote 680, rebased on 681–684) · branch claude/opp-collab-675
 
 | # | Lane | Where it lives | Status | Moved this session | Next action | Needs from Chairman |
 |---|---|---|---|---|---|---|
@@ -40,6 +40,10 @@ Last update: 2026-10-07 ET · backend custody 678 / ledger 678 (this session) ·
 | 33 | **Continuity + math-display gates** | backend THY-POLICY-*-678 (LOCKED) | **5 POLICIES LOCKED** | Name exclusion, identity separation, Baltimore origin, math-display gate, 9 prechecks | Add raise/lower/falsifier columns (GAP-678-05, held DDL) | — |
 | 34 | **Jordan-style serial provenance (OPP675-L16)** | backend WR-OPP-COLLAB-675 | **DESIGN_ACTIVE** | Staged evaluation → adoption → performance; no contact, no value claims | Transfer-log shape + S0 check on one concept unit | — |
 | 35 | **Passport/avatar control** | backend GAP-678-04 | **OPEN (preserved, not solved)** | Recorded by Chairman order | — | — |
+| 36 | **Execution Fabric (system-wide)** | `workrooms/WR-EXEC-FABRIC-680.md` · backend `WR-EXEC-FABRIC-680` | **2 POLICIES LOCKED · 10 FAB680 rows · DDL VALIDATED, HELD** | CAPTURED→ASSIGNED→EXECUTING→EVIDENCED→VERIFIED/BLOCKED; label ≠ execution; world personnel never execute Earth work; 9 gaps | Apply `db/execution-fabric-680` | Approve DDL; lock the GAP-680-09 reading |
+| 37 | **Blockage taxonomy** | backend THY-POLICY-BLOCKAGE-TAXONOMY-680 | **LOCKED** | Backend UP; transport intermittent; repo secrets missing; RLS silent-empty risk on 283 tables; worker dead loop | Report every failure by layer | GitHub secrets (typed into GitHub, never chat) |
+| 38 | **Autonomy worker** | `db/execution-fabric-680/WORKER_FIX.md` | **DEAD LOOP · fix spec HELD** | Last success 2026-10-02; 3 orphan runs; text counted as progress | Deploy the 7 changes after approval | Approve the function deploy |
+| 39 | **MunzyMuur + transcript-name lock** (custody 681) | backend FAB680-01 | **ASSIGNED** | Canonical; closed to contributor correction; earlier spellings marked superseded | Lock row + override list | — |
 
 ## Why the "one topic" problem kept coming back — and the fix
 Chat memory resets between sessions, so a promise made in chat dies with the chat.

@@ -1,10 +1,10 @@
 {
   "header": "THYLORA HEAD - SPINE FORWARD",
-  "checked_in_at": "2026-10-07T12:16:41.936Z",
+  "checked_in_at": "2026-10-07T15:13:04.279Z",
   "left_off": {
-    "commit": "f90358e",
-    "message": "Spine Forward check-in 2026-10-06T20:44Z",
-    "at": "2026-10-06T20:44:28+00:00",
+    "commit": "f86f246",
+    "message": "Investigation 001 packet + 678 corrections mirror",
+    "at": "2026-10-07T12:16:47+00:00",
     "branch": "claude/opp-collab-675"
   },
   "live_backend": {
@@ -12,8 +12,8 @@
     "detail": "add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers"
   },
   "mathematics": {
-    "lanes_total": 35,
-    "lanes_waiting_on_chairman": 24,
+    "lanes_total": 39,
+    "lanes_waiting_on_chairman": 27,
     "family_seats_named": "0 / 30",
     "family_percent_named": 0,
     "open_research_tasks": 30,
@@ -29,7 +29,7 @@
     "revenue_recorded": 0,
     "payouts_recorded": 0,
     "images_queued": 1,
-    "commits_last_7_days": 29,
+    "commits_last_7_days": 30,
     "days_since_last_commit": 0
   },
   "working": [
@@ -423,6 +423,42 @@
       "status": "OPEN (preserved, not solved)",
       "moved": "Recorded by Chairman order",
       "next": "—",
+      "needs": "—"
+    },
+    {
+      "n": 36,
+      "lane": "Execution Fabric (system-wide)",
+      "where": "`workrooms/WR-EXEC-FABRIC-680.md` · backend `WR-EXEC-FABRIC-680`",
+      "status": "2 POLICIES LOCKED · 10 FAB680 rows · DDL VALIDATED, HELD",
+      "moved": "CAPTURED→ASSIGNED→EXECUTING→EVIDENCED→VERIFIED/BLOCKED; label ≠ execution; world personnel never execute Earth work; 9 gaps",
+      "next": "Apply `db/execution-fabric-680`",
+      "needs": "Approve DDL; lock the GAP-680-09 reading"
+    },
+    {
+      "n": 37,
+      "lane": "Blockage taxonomy",
+      "where": "backend THY-POLICY-BLOCKAGE-TAXONOMY-680",
+      "status": "LOCKED",
+      "moved": "Backend UP; transport intermittent; repo secrets missing; RLS silent-empty risk on 283 tables; worker dead loop",
+      "next": "Report every failure by layer",
+      "needs": "GitHub secrets (typed into GitHub, never chat)"
+    },
+    {
+      "n": 38,
+      "lane": "Autonomy worker",
+      "where": "`db/execution-fabric-680/WORKER_FIX.md`",
+      "status": "DEAD LOOP · fix spec HELD",
+      "moved": "Last success 2026-10-02; 3 orphan runs; text counted as progress",
+      "next": "Deploy the 7 changes after approval",
+      "needs": "Approve the function deploy"
+    },
+    {
+      "n": 39,
+      "lane": "MunzyMuur + transcript-name lock (custody 681)",
+      "where": "backend FAB680-01",
+      "status": "ASSIGNED",
+      "moved": "Canonical; closed to contributor correction; earlier spellings marked superseded",
+      "next": "Lock row + override list",
       "needs": "—"
     }
   ],

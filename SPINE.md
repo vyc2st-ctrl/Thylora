@@ -1,9 +1,9 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-10-07 12:16 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
+**Checked in:** 2026-10-07 15:13 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
 
 ## Where we left off
-`f90358e` on `claude/opp-collab-675` · 2026-10-06T20:44:28+00:00  
-Spine Forward check-in 2026-10-06T20:44Z
+`f86f246` on `claude/opp-collab-675` · 2026-10-07T12:16:47+00:00  
+Investigation 001 packet + 678 corrections mirror
 
 ## Who is working
 | Name | Desk | Status | On |
@@ -24,8 +24,8 @@ Research worker last ran 2026-10-06T17:14:46.146Z · 0 leads · 0 provider error
 ## Mathematics
 | Measure | Value |
 |---|---|
-| lanes total | 35 |
-| lanes waiting on chairman | 24 |
+| lanes total | 39 |
+| lanes waiting on chairman | 27 |
 | family seats named | 0 / 30 |
 | family percent named | 0 |
 | open research tasks | 30 |
@@ -41,7 +41,7 @@ Research worker last ran 2026-10-06T17:14:46.146Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 29 |
+| commits last 7 days | 30 |
 | days since last commit | 0 |
 
 ## All lanes
@@ -82,6 +82,10 @@ Research worker last ran 2026-10-06T17:14:46.146Z · 0 leads · 0 provider error
 | 33 | Continuity + math-display gates | 5 POLICIES LOCKED | Add raise/lower/falsifier columns (GAP-678-05, held DDL) | — |
 | 34 | Jordan-style serial provenance (OPP675-L16) | DESIGN_ACTIVE | Transfer-log shape + S0 check on one concept unit | — |
 | 35 | Passport/avatar control | OPEN (preserved, not solved) | — | — |
+| 36 | Execution Fabric (system-wide) | 2 POLICIES LOCKED · 10 FAB680 rows · DDL VALIDATED, HELD | Apply `db/execution-fabric-680` | Approve DDL; lock the GAP-680-09 reading |
+| 37 | Blockage taxonomy | LOCKED | Report every failure by layer | GitHub secrets (typed into GitHub, never chat) |
+| 38 | Autonomy worker | DEAD LOOP · fix spec HELD | Deploy the 7 changes after approval | Approve the function deploy |
+| 39 | MunzyMuur + transcript-name lock (custody 681) | ASSIGNED | Lock row + override list | — |
 
 ## The world
 **Companies**
