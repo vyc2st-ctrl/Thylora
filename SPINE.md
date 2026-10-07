@@ -1,9 +1,9 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-10-06 20:44 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
+**Checked in:** 2026-10-07 12:16 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
 
 ## Where we left off
-`1206e9e` on `claude/opp-collab-675` · 2026-10-06T20:44:11Z  
-Merge remote spine check-in
+`f90358e` on `claude/opp-collab-675` · 2026-10-06T20:44:28+00:00  
+Spine Forward check-in 2026-10-06T20:44Z
 
 ## Who is working
 | Name | Desk | Status | On |
@@ -24,8 +24,8 @@ Research worker last ran 2026-10-06T17:14:46.146Z · 0 leads · 0 provider error
 ## Mathematics
 | Measure | Value |
 |---|---|
-| lanes total | 31 |
-| lanes waiting on chairman | 23 |
+| lanes total | 35 |
+| lanes waiting on chairman | 24 |
 | family seats named | 0 / 30 |
 | family percent named | 0 |
 | open research tasks | 30 |
@@ -41,7 +41,7 @@ Research worker last ran 2026-10-06T17:14:46.146Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 28 |
+| commits last 7 days | 29 |
 | days since last commit | 0 |
 
 ## All lanes
@@ -78,6 +78,10 @@ Research worker last ran 2026-10-06T17:14:46.146Z · 0 leads · 0 provider error
 | 29 | Family accounts (Loochy) | Chairman account OPEN (pending review, 0) · child accounts BLOCKED | Apply DDL; open child accounts as pending review | IDENTITY/RIGHTS: written consent from each child's parent · LEGAL: Loochy counsel review |
 | 30 | Veyra ↔ REE | Option A recommended | Chairman lock | — |
 | 31 | THE NIGHTSTEP vessel | CANON RECOVERED · 15-row test matrix | NS-001 build sheet | — |
+| 32 | Investigation 001 (Mexica/Aztec), Baltimore Office | 8-PAGE PACKET + 21-ROW CRITIQUE | Opening v2 with the 4 fixes; ingest Exhibit 001 | Exhibit 001 source (which museum, exact caption) |
+| 33 | Continuity + math-display gates | 5 POLICIES LOCKED | Add raise/lower/falsifier columns (GAP-678-05, held DDL) | — |
+| 34 | Jordan-style serial provenance (OPP675-L16) | DESIGN_ACTIVE | Transfer-log shape + S0 check on one concept unit | — |
+| 35 | Passport/avatar control | OPEN (preserved, not solved) | — | — |
 
 ## The world
 **Companies**

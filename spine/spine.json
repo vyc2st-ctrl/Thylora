@@ -1,10 +1,10 @@
 {
   "header": "THYLORA HEAD - SPINE FORWARD",
-  "checked_in_at": "2026-10-06T20:44:28.228Z",
+  "checked_in_at": "2026-10-07T12:16:41.936Z",
   "left_off": {
-    "commit": "1206e9e",
-    "message": "Merge remote spine check-in",
-    "at": "2026-10-06T20:44:11Z",
+    "commit": "f90358e",
+    "message": "Spine Forward check-in 2026-10-06T20:44Z",
+    "at": "2026-10-06T20:44:28+00:00",
     "branch": "claude/opp-collab-675"
   },
   "live_backend": {
@@ -12,8 +12,8 @@
     "detail": "add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers"
   },
   "mathematics": {
-    "lanes_total": 31,
-    "lanes_waiting_on_chairman": 23,
+    "lanes_total": 35,
+    "lanes_waiting_on_chairman": 24,
     "family_seats_named": "0 / 30",
     "family_percent_named": 0,
     "open_research_tasks": 30,
@@ -29,7 +29,7 @@
     "revenue_recorded": 0,
     "payouts_recorded": 0,
     "images_queued": 1,
-    "commits_last_7_days": 28,
+    "commits_last_7_days": 29,
     "days_since_last_commit": 0
   },
   "working": [
@@ -387,6 +387,42 @@
       "status": "CANON RECOVERED · 15-row test matrix",
       "moved": "Pressure-hull contradiction (GAP-677-04); \"VELMORA\" unsourced (GAP-677-02)",
       "next": "NS-001 build sheet",
+      "needs": "—"
+    },
+    {
+      "n": 32,
+      "lane": "Investigation 001 (Mexica/Aztec), Baltimore Office",
+      "where": "`workrooms/INV-001-AZTEC-PACKET.md` · backend EXP676-AZTEC packet_678",
+      "status": "8-PAGE PACKET + 21-ROW CRITIQUE",
+      "moved": "Packet written and read back; NEYRA excluded; Britain/Russia bureaus not invented",
+      "next": "Opening v2 with the 4 fixes; ingest Exhibit 001",
+      "needs": "Exhibit 001 source (which museum, exact caption)"
+    },
+    {
+      "n": 33,
+      "lane": "Continuity + math-display gates",
+      "where": "backend THY-POLICY-*-678 (LOCKED)",
+      "status": "5 POLICIES LOCKED",
+      "moved": "Name exclusion, identity separation, Baltimore origin, math-display gate, 9 prechecks",
+      "next": "Add raise/lower/falsifier columns (GAP-678-05, held DDL)",
+      "needs": "—"
+    },
+    {
+      "n": 34,
+      "lane": "Jordan-style serial provenance (OPP675-L16)",
+      "where": "backend WR-OPP-COLLAB-675",
+      "status": "DESIGN_ACTIVE",
+      "moved": "Staged evaluation → adoption → performance; no contact, no value claims",
+      "next": "Transfer-log shape + S0 check on one concept unit",
+      "needs": "—"
+    },
+    {
+      "n": 35,
+      "lane": "Passport/avatar control",
+      "where": "backend GAP-678-04",
+      "status": "OPEN (preserved, not solved)",
+      "moved": "Recorded by Chairman order",
+      "next": "—",
       "needs": "—"
     }
   ],

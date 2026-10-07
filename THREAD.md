@@ -1,7 +1,7 @@
 # THYLORA — the whole thread (Lanes Board)
 
 Updated every session, in the same commit as the work (see `CLAUDE.md` §1).
-Last update: 2026-10-06 ET · backend custody 677 / ledger 677 (this session) · branch claude/opp-collab-675
+Last update: 2026-10-07 ET · backend custody 678 / ledger 678 (this session) · branch claude/opp-collab-675
 
 | # | Lane | Where it lives | Status | Moved this session | Next action | Needs from Chairman |
 |---|---|---|---|---|---|---|
@@ -36,6 +36,10 @@ Last update: 2026-10-06 ET · backend custody 677 / ledger 677 (this session) ·
 | 29 | **Family accounts (Loochy)** | `db/family-accounts-677/` (HELD) | **Chairman account OPEN (pending review, 0) · child accounts BLOCKED** | Custodial design validated locally; name-lock drift fixed in 2 family profiles | Apply DDL; open child accounts as pending review | IDENTITY/RIGHTS: written consent from each child's parent · LEGAL: Loochy counsel review |
 | 30 | **Veyra ↔ REE** | backend EXP676-VEYRA | **Option A recommended** | Veyra = spoken word for REE amounts; no second currency; conflict GAP-677-01 found | Chairman lock | — |
 | 31 | **THE NIGHTSTEP vessel** | backend EXP676-VESSEL · THY-VESSEL-NIGHTSTEP-001 | **CANON RECOVERED · 15-row test matrix** | Pressure-hull contradiction (GAP-677-04); "VELMORA" unsourced (GAP-677-02) | NS-001 build sheet | — |
+| 32 | **Investigation 001 (Mexica/Aztec), Baltimore Office** | `workrooms/INV-001-AZTEC-PACKET.md` · backend EXP676-AZTEC packet_678 | **8-PAGE PACKET + 21-ROW CRITIQUE** | Packet written and read back; NEYRA excluded; Britain/Russia bureaus not invented | Opening v2 with the 4 fixes; ingest Exhibit 001 | Exhibit 001 source (which museum, exact caption) |
+| 33 | **Continuity + math-display gates** | backend THY-POLICY-*-678 (LOCKED) | **5 POLICIES LOCKED** | Name exclusion, identity separation, Baltimore origin, math-display gate, 9 prechecks | Add raise/lower/falsifier columns (GAP-678-05, held DDL) | — |
+| 34 | **Jordan-style serial provenance (OPP675-L16)** | backend WR-OPP-COLLAB-675 | **DESIGN_ACTIVE** | Staged evaluation → adoption → performance; no contact, no value claims | Transfer-log shape + S0 check on one concept unit | — |
+| 35 | **Passport/avatar control** | backend GAP-678-04 | **OPEN (preserved, not solved)** | Recorded by Chairman order | — | — |
 
 ## Why the "one topic" problem kept coming back — and the fix
 Chat memory resets between sessions, so a promise made in chat dies with the chat.
