@@ -33,6 +33,7 @@ for (const d of ['db/rae-link/', 'db/lineage/']) {
   try { written += (await readdir(new URL(d, root))).filter(f => /^0\d+.*\.sql$/.test(f)).length; } catch { /* none */ }
 }
 
+// This checks only the credentials visible to this GitHub Actions job; it is not the Supabase connector's project-health signal.
 async function actionsBackendReadCheck() {
   const url = process.env.THYLORA_SUPABASE_URL, key = process.env.THYLORA_SUPABASE_KEY;
   if (!url || !key) return { state: 'NOT_CONFIGURED', detail: 'GitHub Actions could not read Supabase in this run: THYLORA_SUPABASE_URL and/or THYLORA_SUPABASE_KEY is unavailable to this workflow. This does not report Supabase connector health.' };
