@@ -64,7 +64,8 @@ export function buildReport({ now = new Date(), git = {}, thread = '', family = 
     header: HEADER,
     checked_in_at: now.toISOString(),
     left_off: { commit: git.last_commit ?? null, message: git.last_message ?? null, at: git.last_commit_at ?? null, branch: git.branch ?? null },
-    live_backend: live ?? { state: 'NOT_CHECKED', detail: 'No backend credentials in this run' },
+    live_backend: { state: 'NOT_CHECKED_BY_THIS_WORKFLOW', detail: 'This GitHub report job does not measure the Supabase connector service health.' },
+    github_actions_backend_read: live ?? { state: 'NOT_CONFIGURED', detail: 'The GitHub Actions backend read was not checked in this run.' },
     mathematics,
     working,
     worker: leads ? { last_run: leads.run_at, leads: leads.leads?.length ?? 0, errors: leads.errors?.length ?? 0 } : null,
@@ -80,7 +81,7 @@ export function toMarkdown(r) {
   const row = (k, v) => `| ${k.replace(/_/g, ' ')} | ${v ?? '—'} |`;
   return [
     `# ${r.header}`,
-    `**Checked in:** ${r.checked_in_at.replace('T', ' ').slice(0, 16)} UTC · **Live backend:** ${r.live_backend.state}${r.live_backend.detail ? ` — ${r.live_backend.detail}` : ''}`,
+    `**Checked in:** ${r.checked_in_at.replace('T', ' ').slice(0, 16)} UTC · **Supabase connector health:** ${r.live_backend.state} — ${r.live_backend.detail} · **GitHub Actions backend read:** ${r.github_actions_backend_read.state}${r.github_actions_backend_read.detail ? ` — ${r.github_actions_backend_read.detail}` : ''}`,
     '',
     `## Where we left off`,
     `\`${r.left_off.commit ?? '?'}\` on \`${r.left_off.branch ?? '?'}\` · ${r.left_off.at ?? '?'}  `,
