@@ -8,8 +8,8 @@
     "branch": "main"
   },
   "live_backend": {
-    "state": "NOT_CONFIGURED",
-    "detail": "add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers"
+    "state": "NOT_CHECKED_BY_THIS_WORKFLOW",
+    "detail": "This GitHub report job does not measure the Supabase connector service health."
   },
   "mathematics": {
     "lanes_total": 24,
@@ -522,5 +522,9 @@
     "Who are your parents and four grandparents (even first names)?",
     "Can you attach the reference pictures for the first image?",
     "Earth lane: which shirt or digital product sells first? Our World: what is the REE smallest unit, and what does one hide sell for?"
-  ]
+  ],
+  "github_actions_backend_read": {
+    "state": "NOT_CONFIGURED",
+    "detail": "At the recorded 2026-10-07 23:01 UTC run, THYLORA_SUPABASE_URL and/or THYLORA_SUPABASE_KEY was unavailable to GitHub Actions. This is separate from the Supabase connector health."
+  }
 }
