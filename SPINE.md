@@ -1,5 +1,5 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-10-07 23:01 UTC · **Live backend:** NOT_CONFIGURED — add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers
+**Checked in:** 2026-10-07 23:01 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — this report job does not measure the Supabase service health · **GitHub Actions backend read:** NOT_CONFIGURED — at this recorded run, THYLORA_SUPABASE_URL and/or THYLORA_SUPABASE_KEY was unavailable to the workflow.
 
 ## Where we left off
 `90a689f` on `main` · 2026-10-07T17:50:40Z  
