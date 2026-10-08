@@ -1,9 +1,9 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-10-07 23:01 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — this report job does not measure the Supabase service health · **GitHub Actions backend read:** NOT_CONFIGURED — at this recorded run, THYLORA_SUPABASE_URL and/or THYLORA_SUPABASE_KEY was unavailable to the workflow.
+**Checked in:** 2026-10-08 01:00 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — This GitHub report job does not measure the Supabase connector service health. · **GitHub Actions backend read:** NOT_CONFIGURED — GitHub Actions could not read Supabase in this run: THYLORA_SUPABASE_URL and/or THYLORA_SUPABASE_KEY is unavailable to this workflow. This does not report Supabase connector health.
 
 ## Where we left off
-`90a689f` on `main` · 2026-10-07T17:50:40Z  
-Root House worker: leads 2026-10-07
+`61f94dc` on `main` · 2026-10-07T20:59:51-04:00  
+Document separation of connector health and Actions credentials
 
 ## Who is working
 | Name | Desk | Status | On |
@@ -41,7 +41,7 @@ Research worker last ran 2026-10-07T17:50:40.267Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 26 |
+| commits last 7 days | 32 |
 | days since last commit | 0 |
 
 ## All lanes
