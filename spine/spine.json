@@ -1,11 +1,17 @@
 {
   "header": "THYLORA HEAD - SPINE FORWARD",
-  "checked_in_at": "2026-10-08T01:00:00.296Z",
+  "checked_in_at": "2026-10-08T01:01:47.888Z",
   "left_off": {
-    "commit": "61f94dc",
-    "message": "Document separation of connector health and Actions credentials",
-    "at": "2026-10-07T20:59:51-04:00",
+    "commit": "fb9e22a",
+    "message": "Document Spine report and worker data boundaries",
+    "at": "2026-10-07T21:01:33-04:00",
     "branch": "main"
+  },
+  "data_source_boundary": {
+    "spine_report": "Computed from checked-in repository files: THREAD.md, lineage/family.json, lineage/leads/latest.json, world/registry.json, and world/image-queue.json.",
+    "root_house_worker": "Reads lineage/family.json and writes lineage/leads/*.json in this repository; it does not read or write Supabase.",
+    "supabase_probe": "Optional GitHub Actions read of department-code rows only; it does not write business or product records.",
+    "production_authority": "vyc2st-ctrl/thylora-executive-dashboard; this development/history repository is not the live dashboard source."
   },
   "live_backend": {
     "state": "NOT_CHECKED_BY_THIS_WORKFLOW",
@@ -33,7 +39,7 @@
     "revenue_recorded": 0,
     "payouts_recorded": 0,
     "images_queued": 1,
-    "commits_last_7_days": 32,
+    "commits_last_7_days": 34,
     "days_since_last_commit": 0
   },
   "working": [
