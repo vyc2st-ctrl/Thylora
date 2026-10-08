@@ -33,22 +33,22 @@ for (const d of ['db/rae-link/', 'db/lineage/']) {
   try { written += (await readdir(new URL(d, root))).filter(f => /^0\d+.*\.sql$/.test(f)).length; } catch { /* none */ }
 }
 
-async function liveCheck() {
+async function actionsBackendReadCheck() {
   const url = process.env.THYLORA_SUPABASE_URL, key = process.env.THYLORA_SUPABASE_KEY;
-  if (!url || !key) return { state: 'NOT_CONFIGURED', detail: 'add THYLORA_SUPABASE_URL / THYLORA_SUPABASE_KEY secrets for live numbers' };
+  if (!url || !key) return { state: 'NOT_CONFIGURED', detail: 'GitHub Actions could not read Supabase in this run: THYLORA_SUPABASE_URL and/or THYLORA_SUPABASE_KEY is unavailable to this workflow. This does not report Supabase connector health.' };
   try {
     const res = await fetch(`${url}/rest/v1/thylora_departments?select=department_code`, {
       headers: { apikey: key, Authorization: `Bearer ${key}`, Prefer: 'count=exact' }, signal: AbortSignal.timeout(8000) });
-    if (!res.ok) return { state: 'ERROR', detail: `HTTP ${res.status}` };
-    return { state: 'READ', detail: `${(await res.json()).length} live departments` };
-  } catch (e) { return { state: 'UNREACHABLE', detail: String(e.message ?? e) }; }
+    if (!res.ok) return { state: 'READ_ERROR', detail: `GitHub Actions Supabase read returned HTTP ${res.status}` };
+    return { state: 'READ_OK', detail: `${(await res.json()).length} departments read by this GitHub Actions run` };
+  } catch (e) { return { state: 'READ_ERROR', detail: `GitHub Actions Supabase read failed: ${String(e.message ?? e)}` }; }
 }
 
 const report = buildReport({
   now: new Date(), git, thread: await read('THREAD.md', ''), family: await json('lineage/family.json'),
   leads: await json('lineage/leads/latest.json', null), researchers: RESEARCHERS, sources: SOURCES,
   registry: await json('world/registry.json'), images: await json('world/image-queue.json'),
-  testCount, migrations: { written, applied: 0 }, live: await liveCheck()
+  testCount, migrations: { written, applied: 0 }, live: await actionsBackendReadCheck()
 });
 await writeFile(new URL('SPINE.md', root), toMarkdown(report));
 await writeFile(new URL('spine/spine.json', root), JSON.stringify(report, null, 2) + '\n');
