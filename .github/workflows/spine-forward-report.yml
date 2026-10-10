@@ -5,6 +5,8 @@ name: THYLORA HEAD — Spine Forward check-in report
 
 on:
   push:
+    branches:
+      - main
     paths-ignore:
       - 'SPINE.md'
       - 'spine/spine.json'
