@@ -30,7 +30,8 @@ test('naming people moves work to the census desk and raises the count', () => {
 
 test('nothing is estimated: no backend, no revenue, said plainly', () => {
   const r = buildReport({ thread });
-  assert.equal(r.live_backend.state, 'NOT_CHECKED');
+  assert.equal(r.live_backend.state, 'NOT_CHECKED_BY_THIS_WORKFLOW');
+  assert.match(r.live_backend.detail, /does not measure the Supabase connector service health/);
   assert.equal(r.mathematics.revenue_recorded, 0);
   assert.ok(r.questions.some(q => /REE smallest unit/.test(q)));
   const md = toMarkdown(r);
