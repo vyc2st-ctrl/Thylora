@@ -1,9 +1,9 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-10-10 11:43 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — This GitHub report job does not measure the Supabase connector service health. · **GitHub Actions backend read:** READ_OK — 68 departments; aggregate count only, no department rows read
+**Checked in:** 2026-10-10 11:45 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — This GitHub report job does not measure the Supabase connector service health. · **GitHub Actions backend read:** READ_OK — 68 departments; aggregate count only, no department rows read
 
 ## Where we left off
-`0600876` on `main` · 2026-10-10T07:43:24-04:00  
-Repair Root House scheduled test gate
+`5a14507` on `main` · 2026-10-10T07:44:51-04:00  
+Record Root House verified input bottleneck
 
 
 ## Data source boundary
@@ -25,13 +25,13 @@ Repair Root House scheduled test gate
 | Rosa Delgado-Pryor | enslavement era | STANDING BY | — |
 | Pip | runner | STANDING BY | — |
 
-Research worker last ran 2026-10-07T17:50:40.267Z · 0 leads · 0 provider errors.
+Research worker last ran 2026-10-10T11:43:36.040Z · 0 leads · 0 provider errors.
 
 ## Mathematics
 | Measure | Value |
 |---|---|
 | lanes total | 24 |
-| lanes waiting on chairman | 17 |
+| lanes waiting on chairman | 18 |
 | family seats named | 0 / 30 |
 | family percent named | 0 |
 | open research tasks | 30 |
@@ -47,17 +47,17 @@ Research worker last ran 2026-10-07T17:50:40.267Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 42 |
+| commits last 7 days | 45 |
 | days since last commit | 0 |
 
 ## All lanes
 | # | Lane | Status | Next | Needs from Chairman |
 |---|---|---|---|---|
-| 1 | Family lines (4) — FF, FM, MF, MM | BUILT · names already in backend | Plan a least-privilege intake adapter to the verified backend table; current worker reads only repo `family.json` | Approved read contract and test fixture; no GitHub secret is needed by the current worker |
+| 1 | Family lines (4) — FF, FM, MF, MM | BUILT · names already in backend | Add a private least-privilege adapter for `genealogy_research_intake`; current public-repo input is empty and sensitive names must not be copied here | Authorized private credential path and restricted test fixture; never use a public read or service-role key |
 | 2 | Canada → Memphis clue | FAMILY_TOLD, 6 tests ready | Run Test 1 on the maternal Wright/Harris line (Covington · Memphis · Mississippi) | Whose great-grandmother: the Chairman's or Eddie Ree's? |
 | 3 | Research building + people | BUILT | Upgrade art from the Chairman's two reference images | Re-attach the two pictures (not received this session) |
 | 4 | Sources ("millions") | 127 collections | Keep adding; each holds thousands–billions of records | — |
-| 5 | Backend worker | BUILT, daily schedule; last run held at stale report test | Fix expected `NOT_CHECKED_BY_THIS_WORKFLOW` value, then verify post-merge run | — |
+| 5 | Backend worker | SCHEDULE VERIFIED · run 10 passed 70/70 tests | Connect restricted backend intake through a private least-privilege path; do not publish family names | Private access approval/credential design |
 | 6 | Backend database | VALIDATED locally, not applied | Apply to `thylora-dash` | Held Chairman action |
 | 7 | Tea Table (STEEPED) | BUILT | Play it; bring back the first Elder answer | — |
 | 8 | Monster Night | LISTED | — | Age calls on R-rated picks |
@@ -110,12 +110,12 @@ Research worker last ran 2026-10-07T17:50:40.267Z · 0 leads · 0 provider error
 - **IMG-001 Root House — the first image** — QUEUED · blocked on: Chairman's two reference pictures (silhouette researchers) — not yet attached
 
 ## Questions for the Chairman
-1. Family lines (4) — FF, FM, MF, MM: Approved read contract and test fixture; no GitHub secret is needed by the current worker?
+1. Family lines (4) — FF, FM, MF, MM: Authorized private credential path and restricted test fixture; never use a public read or service-role key?
 2. Canada → Memphis clue: Whose great-grandmother: the Chairman's or Eddie Ree's??
 3. Research building + people: Re-attach the two pictures (not received this session)?
-4. Backend database: Held Chairman action?
-5. Monster Night: Age calls on R-rated picks?
-6. The Window (our TRL): Pick the name; studio, hosts?
+4. Backend worker: Private access approval/credential design?
+5. Backend database: Held Chairman action?
+6. Monster Night: Age calls on R-rated picks?
 7. Who are your parents and four grandparents (even first names)?
 8. Can you attach the reference pictures for the first image?
 9. Earth lane: which shirt or digital product sells first? Our World: what is the REE smallest unit, and what does one hide sell for?
