@@ -1,10 +1,10 @@
 {
   "header": "THYLORA HEAD - SPINE FORWARD",
-  "checked_in_at": "2026-10-10T11:29:34.262Z",
+  "checked_in_at": "2026-10-10T11:30:13.203Z",
   "left_off": {
-    "commit": "bf97187",
-    "message": "Clarify Root House worker scope",
-    "at": "2026-10-10T07:29:23-04:00",
+    "commit": "5e4143b",
+    "message": "Record least-privilege SPINE report aggregate gate",
+    "at": "2026-10-10T07:30:04-04:00",
     "branch": "fix/spine-worker-aggregate-read-gate"
   },
   "data_source_boundary": {
@@ -32,14 +32,14 @@
     "worker_leads_waiting_review": 0,
     "record_collections": 127,
     "tests_defined": 70,
-    "migrations_written": 12,
+    "migrations_written": 13,
     "migrations_applied_live": 0,
     "world_people": 14,
     "world_companies": 7,
     "revenue_recorded": 0,
     "payouts_recorded": 0,
     "images_queued": 1,
-    "commits_last_7_days": 40,
+    "commits_last_7_days": 43,
     "days_since_last_commit": 0
   },
   "working": [
