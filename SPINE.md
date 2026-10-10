@@ -1,15 +1,15 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-10-10 11:32 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — This GitHub report job does not measure the Supabase connector service health. · **GitHub Actions backend read:** READ_OK — 68 departments; aggregate count only, no department rows read
+**Checked in:** 2026-10-10 11:38 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — This GitHub report job does not measure the Supabase connector service health. · **GitHub Actions backend read:** READ_OK — 68 departments; aggregate count only, no department rows read
 
 ## Where we left off
-`08b77ae` on `main` · 2026-10-10T07:32:05-04:00  
-Fix scheduled SPINE worker aggregate read gate
+`d3fdf1d` on `main` · 2026-10-10T07:37:56-04:00  
+Correct SPINE aggregate-read source boundary
 
 
 ## Data source boundary
 - Spine report calculations use checked-in repository files; they are not a live read of all backend records.
 - Root House reads `lineage/family.json` and saves leads to `lineage/leads/` in this repository. It does not write those leads to Supabase.
-- The optional Supabase check only reads department-code rows. It does not write product, sales, or workflow records.
+- The Supabase check calls a count-only aggregate RPC for the department total. It does not read department rows or write product, sales, or workflow records.
 - The authoritative live dashboard source is `vyc2st-ctrl/thylora-executive-dashboard`; this repository is development/history.
 ## Who is working
 | Name | Desk | Status | On |
@@ -47,7 +47,7 @@ Research worker last ran 2026-10-07T17:50:40.267Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 38 |
+| commits last 7 days | 40 |
 | days since last commit | 0 |
 
 ## All lanes

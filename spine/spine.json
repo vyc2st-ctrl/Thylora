@@ -1,16 +1,16 @@
 {
   "header": "THYLORA HEAD - SPINE FORWARD",
-  "checked_in_at": "2026-10-10T11:32:16.388Z",
+  "checked_in_at": "2026-10-10T11:38:06.912Z",
   "left_off": {
-    "commit": "08b77ae",
-    "message": "Fix scheduled SPINE worker aggregate read gate",
-    "at": "2026-10-10T07:32:05-04:00",
+    "commit": "d3fdf1d",
+    "message": "Correct SPINE aggregate-read source boundary",
+    "at": "2026-10-10T07:37:56-04:00",
     "branch": "main"
   },
   "data_source_boundary": {
     "spine_report": "Computed from checked-in repository files: THREAD.md, lineage/family.json, lineage/leads/latest.json, world/registry.json, and world/image-queue.json.",
     "root_house_worker": "Reads lineage/family.json and writes lineage/leads/*.json in this repository; it does not read or write Supabase.",
-    "supabase_probe": "Optional GitHub Actions read of department-code rows only; it does not write business or product records.",
+    "supabase_probe": "GitHub Actions reads the department total through a count-only RPC; no department rows or business/product records are read or written.",
     "production_authority": "vyc2st-ctrl/thylora-executive-dashboard; this development/history repository is not the live dashboard source."
   },
   "live_backend": {
@@ -39,7 +39,7 @@
     "revenue_recorded": 0,
     "payouts_recorded": 0,
     "images_queued": 1,
-    "commits_last_7_days": 38,
+    "commits_last_7_days": 40,
     "days_since_last_commit": 0
   },
   "working": [
