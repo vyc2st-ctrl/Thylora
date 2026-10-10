@@ -10,8 +10,15 @@ on:
     - cron: '17 11 * * *'
   workflow_dispatch:
   push:
+    branches:
+      - main
     paths:
       - 'lineage/family.json'
+      - 'scripts/lineage-worker.mjs'
+      - 'lineage/lib/**'
+      - 'tests/**'
+      - 'spine/lib.js'
+      - '.github/workflows/root-house-worker.yml'
 
 permissions:
   contents: write
@@ -25,14 +32,18 @@ jobs:
         with:
           node-version: '22'
       - name: Tests
+        id: tests
         run: npm test
       - name: Run worker
+        id: worker
         run: node scripts/lineage-worker.mjs
-      - name: Describe worker scope
+      - name: Summarize worker gate
+        if: always()
         run: |
           echo "## Root House scheduled worker" >> "$GITHUB_STEP_SUMMARY"
-          echo "- Scope: repository-only lineage research." >> "$GITHUB_STEP_SUMMARY"
-          echo "- Output: candidate leads in lineage/leads/ for human review." >> "$GITHUB_STEP_SUMMARY"
+          echo "- Test gate: ${{ steps.tests.outcome }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Worker step: ${{ steps.worker.outcome }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Scope: repository-only lineage research; leads in lineage/leads/ require human review." >> "$GITHUB_STEP_SUMMARY"
           echo "- Supabase access and digital-product generation: not performed by this workflow." >> "$GITHUB_STEP_SUMMARY"
       - name: Commit leads
         run: |
