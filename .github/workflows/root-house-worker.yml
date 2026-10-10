@@ -1,8 +1,9 @@
 name: ROOT HOUSE — lineage research worker
 
-# The backend works the family lines without anyone at the screen:
-# every morning it reads lineage/family.json, searches open archives for every
-# named ancestor, and commits new leads to lineage/leads/ for desk review.
+# Repository-only research worker, separate from the Supabase report check:
+# it reads lineage/family.json, searches open archives, and commits candidate
+# leads to lineage/leads/ for review. It does not read/write Supabase or create
+# digital products.
 
 on:
   schedule:
@@ -27,6 +28,12 @@ jobs:
         run: npm test
       - name: Run worker
         run: node scripts/lineage-worker.mjs
+      - name: Describe worker scope
+        run: |
+          echo "## Root House scheduled worker" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Scope: repository-only lineage research." >> "$GITHUB_STEP_SUMMARY"
+          echo "- Output: candidate leads in lineage/leads/ for human review." >> "$GITHUB_STEP_SUMMARY"
+          echo "- Supabase access and digital-product generation: not performed by this workflow." >> "$GITHUB_STEP_SUMMARY"
       - name: Commit leads
         run: |
           git config user.name "root-house-worker"

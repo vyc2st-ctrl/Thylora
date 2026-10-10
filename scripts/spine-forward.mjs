@@ -3,8 +3,8 @@
 // Writes SPINE.md (repo root, readable by any AI with repo access) and
 // spine/spine.json (served at /spine for the dashboard and any browser).
 //
-// Optional live read: set THYLORA_SUPABASE_URL and THYLORA_SUPABASE_KEY
-// (GitHub Actions secrets) and the report counts live departments.
+// Live read: aggregate-only Supabase RPC with a public publishable key; no
+// privileged GitHub secret is required.
 import { readFile, writeFile, readdir } from 'node:fs/promises';
 import { execSync } from 'node:child_process';
 import { buildReport, toMarkdown } from '../spine/lib.js';
@@ -33,16 +33,25 @@ for (const d of ['db/rae-link/', 'db/lineage/']) {
   try { written += (await readdir(new URL(d, root))).filter(f => /^0\d+.*\.sql$/.test(f)).length; } catch { /* none */ }
 }
 
-// This checks only the credentials visible to this GitHub Actions job; it is not the Supabase connector's project-health signal.
+// Least-privilege live check: a public publishable key calls an aggregate-only
+// Supabase RPC. It never reads department rows or needs a privileged GitHub secret.
 async function actionsBackendReadCheck() {
-  const url = process.env.THYLORA_SUPABASE_URL, key = process.env.THYLORA_SUPABASE_KEY;
-  if (!url || !key) return { state: 'NOT_CONFIGURED', detail: 'GitHub Actions could not read Supabase in this run: THYLORA_SUPABASE_URL and/or THYLORA_SUPABASE_KEY is unavailable to this workflow. This does not report Supabase connector health.' };
+  const url = process.env.THYLORA_SUPABASE_URL ?? 'https://jvsdxhrfhtlgaknhjxlz.supabase.co';
+  // Publishable keys are public identifiers, not secrets. Override if rotated.
+  const key = process.env.THYLORA_SUPABASE_PUBLISHABLE_KEY ?? 'sb_publishable_ta33XJ9rtS8VljoUYw-GuA_Pi4OycpQ';
   try {
-    const res = await fetch(`${url}/rest/v1/thylora_departments?select=department_code`, {
-      headers: { apikey: key, Authorization: `Bearer ${key}`, Prefer: 'count=exact' }, signal: AbortSignal.timeout(8000) });
-    if (!res.ok) return { state: 'READ_ERROR', detail: `GitHub Actions Supabase read returned HTTP ${res.status}` };
-    return { state: 'READ_OK', detail: `${(await res.json()).length} departments read by this GitHub Actions run` };
-  } catch (e) { return { state: 'READ_ERROR', detail: `GitHub Actions Supabase read failed: ${String(e.message ?? e)}` }; }
+    const res = await fetch(`${url}/rest/v1/rpc/thylora_spine_department_count_v1`, {
+      method: 'GET',
+      headers: { apikey: key, Authorization: `Bearer ${key}`, Accept: 'application/json' },
+      signal: AbortSignal.timeout(8000)
+    });
+    if (!res.ok) return { state: 'READ_ERROR', detail: `Aggregate-only Supabase gate returned HTTP ${res.status}` };
+    const count = await res.json();
+    if (!Number.isSafeInteger(count) || count < 0) return { state: 'READ_ERROR', detail: 'Aggregate-only Supabase gate returned an invalid count' };
+    return { state: 'READ_OK', detail: `${count} departments; aggregate count only, no department rows read` };
+  } catch (e) {
+    return { state: 'READ_ERROR', detail: `Aggregate-only Supabase gate failed: ${String(e.message ?? e)}` };
+  }
 }
 
 const report = buildReport({
@@ -53,4 +62,16 @@ const report = buildReport({
 });
 await writeFile(new URL('SPINE.md', root), toMarkdown(report));
 await writeFile(new URL('spine/spine.json', root), JSON.stringify(report, null, 2) + '\n');
-console.log(`SPINE FORWARD: ${report.mathematics.researchers_working}/${report.mathematics.researchers_total} working · ${report.lanes.length} lanes · ${report.questions.length} questions · live ${report.live_backend.state}`);
+const gateSummary = [
+  '## SPINE scheduled worker — Supabase read gate',
+  '',
+  `- Result: **${report.live_backend.state}**`,
+  `- Detail: ${report.live_backend.detail}`,
+  '- Access: public publishable key + aggregate-only RPC; no service-role credential.',
+  '- Scope: this workflow publishes a SPINE health report; it does not generate or publish digital products.'
+].join('\n') + '\n';
+if (process.env.GITHUB_STEP_SUMMARY) {
+  const { appendFile } = await import('node:fs/promises');
+  await appendFile(process.env.GITHUB_STEP_SUMMARY, gateSummary);
+}
+console.log(`SPINE FORWARD: ${report.mathematics.researchers_working}/${report.mathematics.researchers_total} working · ${report.lanes.length} lanes · ${report.questions.length} questions · aggregate-only live ${report.live_backend.state}`);
