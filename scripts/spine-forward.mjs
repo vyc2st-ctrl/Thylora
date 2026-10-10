@@ -69,7 +69,7 @@ const gateSummary = [
   `- Detail: ${report.live_backend.detail}`,
   '- Access: public publishable key + aggregate-only RPC; no service-role credential.',
   '- Scope: this workflow publishes a SPINE health report; it does not generate or publish digital products.'
-].join('\\n') + '\\n';
+].join('\n') + '\n';
 if (process.env.GITHUB_STEP_SUMMARY) {
   const { appendFile } = await import('node:fs/promises');
   await appendFile(process.env.GITHUB_STEP_SUMMARY, gateSummary);
