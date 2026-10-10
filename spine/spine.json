@@ -1,10 +1,10 @@
 {
   "header": "THYLORA HEAD - SPINE FORWARD",
-  "checked_in_at": "2026-10-10T05:43:07.573Z",
+  "checked_in_at": "2026-10-10T11:32:16.388Z",
   "left_off": {
-    "commit": "c3e3a3d",
-    "message": "Spine Forward check-in 2026-10-09T22:34Z",
-    "at": "2026-10-09T22:34:09Z",
+    "commit": "08b77ae",
+    "message": "Fix scheduled SPINE worker aggregate read gate",
+    "at": "2026-10-10T07:32:05-04:00",
     "branch": "main"
   },
   "data_source_boundary": {
@@ -18,8 +18,8 @@
     "detail": "This GitHub report job does not measure the Supabase connector service health."
   },
   "github_actions_backend_read": {
-    "state": "NOT_CONFIGURED",
-    "detail": "GitHub Actions could not read Supabase in this run: THYLORA_SUPABASE_URL and/or THYLORA_SUPABASE_KEY is unavailable to this workflow. This does not report Supabase connector health."
+    "state": "READ_OK",
+    "detail": "68 departments; aggregate count only, no department rows read"
   },
   "mathematics": {
     "lanes_total": 24,
@@ -32,14 +32,14 @@
     "worker_leads_waiting_review": 0,
     "record_collections": 127,
     "tests_defined": 70,
-    "migrations_written": 12,
+    "migrations_written": 13,
     "migrations_applied_live": 0,
     "world_people": 14,
     "world_companies": 7,
     "revenue_recorded": 0,
     "payouts_recorded": 0,
     "images_queued": 1,
-    "commits_last_7_days": 41,
+    "commits_last_7_days": 38,
     "days_since_last_commit": 0
   },
   "working": [
