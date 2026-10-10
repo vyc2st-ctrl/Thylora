@@ -1,11 +1,11 @@
 {
   "header": "THYLORA HEAD - SPINE FORWARD",
-  "checked_in_at": "2026-10-10T05:43:07.573Z",
+  "checked_in_at": "2026-10-10T11:29:34.262Z",
   "left_off": {
-    "commit": "c3e3a3d",
-    "message": "Spine Forward check-in 2026-10-09T22:34Z",
-    "at": "2026-10-09T22:34:09Z",
-    "branch": "main"
+    "commit": "bf97187",
+    "message": "Clarify Root House worker scope",
+    "at": "2026-10-10T07:29:23-04:00",
+    "branch": "fix/spine-worker-aggregate-read-gate"
   },
   "data_source_boundary": {
     "spine_report": "Computed from checked-in repository files: THREAD.md, lineage/family.json, lineage/leads/latest.json, world/registry.json, and world/image-queue.json.",
@@ -18,8 +18,8 @@
     "detail": "This GitHub report job does not measure the Supabase connector service health."
   },
   "github_actions_backend_read": {
-    "state": "NOT_CONFIGURED",
-    "detail": "GitHub Actions could not read Supabase in this run: THYLORA_SUPABASE_URL and/or THYLORA_SUPABASE_KEY is unavailable to this workflow. This does not report Supabase connector health."
+    "state": "READ_OK",
+    "detail": "68 departments; aggregate count only, no department rows read"
   },
   "mathematics": {
     "lanes_total": 24,
@@ -39,7 +39,7 @@
     "revenue_recorded": 0,
     "payouts_recorded": 0,
     "images_queued": 1,
-    "commits_last_7_days": 41,
+    "commits_last_7_days": 40,
     "days_since_last_commit": 0
   },
   "working": [
