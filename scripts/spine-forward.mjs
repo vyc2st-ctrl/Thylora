@@ -58,7 +58,7 @@ const report = buildReport({
   now: new Date(), git, thread: await read('THREAD.md', ''), family: await json('lineage/family.json'),
   leads: await json('lineage/leads/latest.json', null), researchers: RESEARCHERS, sources: SOURCES,
   registry: await json('world/registry.json'), images: await json('world/image-queue.json'),
-  testCount, migrations: { written, applied: 0 }, live: await actionsBackendReadCheck()
+  testCount, migrations: { written, applied: '≥1 verified; full repo inventory not audited' }, live: await actionsBackendReadCheck()
 });
 await writeFile(new URL('SPINE.md', root), toMarkdown(report));
 await writeFile(new URL('spine/spine.json', root), JSON.stringify(report, null, 2) + '\n');
