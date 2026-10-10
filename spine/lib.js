@@ -67,7 +67,7 @@ export function buildReport({ now = new Date(), git = {}, thread = '', family = 
     data_source_boundary: {
       spine_report: 'Computed from checked-in repository files: THREAD.md, lineage/family.json, lineage/leads/latest.json, world/registry.json, and world/image-queue.json.',
       root_house_worker: 'Reads lineage/family.json and writes lineage/leads/*.json in this repository; it does not read or write Supabase.',
-      supabase_probe: 'Optional GitHub Actions read of department-code rows only; it does not write business or product records.',
+      supabase_probe: 'GitHub Actions reads the department total through a count-only RPC; no department rows or business/product records are read or written.',
       production_authority: 'vyc2st-ctrl/thylora-executive-dashboard; this development/history repository is not the live dashboard source.'
     },
     live_backend: { state: 'NOT_CHECKED_BY_THIS_WORKFLOW', detail: 'This GitHub report job does not measure the Supabase connector service health.' },
@@ -97,7 +97,7 @@ export function toMarkdown(r) {
     '## Data source boundary',
     '- Spine report calculations use checked-in repository files; they are not a live read of all backend records.',
     '- Root House reads `lineage/family.json` and saves leads to `lineage/leads/` in this repository. It does not write those leads to Supabase.',
-    '- The optional Supabase check only reads department-code rows. It does not write product, sales, or workflow records.',
+    '- The Supabase check calls a count-only aggregate RPC for the department total. It does not read department rows or write product, sales, or workflow records.',
     '- The authoritative live dashboard source is `vyc2st-ctrl/thylora-executive-dashboard`; this repository is development/history.',
     '## Who is working',
     '| Name | Desk | Status | On |', '|---|---|---|---|',
