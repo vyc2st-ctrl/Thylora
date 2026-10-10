@@ -1,9 +1,9 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-10-10 11:45 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — This GitHub report job does not measure the Supabase connector service health. · **GitHub Actions backend read:** READ_OK — 68 departments; aggregate count only, no department rows read
+**Checked in:** 2026-10-10 11:47 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — This GitHub report job does not measure the Supabase connector service health. · **GitHub Actions backend read:** READ_OK — 68 departments; aggregate count only, no department rows read
 
 ## Where we left off
-`5a14507` on `main` · 2026-10-10T07:44:51-04:00  
-Record Root House verified input bottleneck
+`da43e96` on `main` · 2026-10-10T07:47:34-04:00  
+Report verified migration evidence honestly
 
 
 ## Data source boundary
@@ -41,13 +41,13 @@ Research worker last ran 2026-10-10T11:43:36.040Z · 0 leads · 0 provider error
 | record collections | 127 |
 | tests defined | 70 |
 | migrations written | 13 |
-| migrations applied live | 0 |
+| migrations applied live | ≥1 verified; full repo inventory not audited |
 | world people | 14 |
 | world companies | 7 |
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 45 |
+| commits last 7 days | 47 |
 | days since last commit | 0 |
 
 ## All lanes
