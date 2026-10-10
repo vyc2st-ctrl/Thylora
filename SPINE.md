@@ -1,9 +1,9 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-10-10 11:38 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — This GitHub report job does not measure the Supabase connector service health. · **GitHub Actions backend read:** READ_OK — 68 departments; aggregate count only, no department rows read
+**Checked in:** 2026-10-10 11:43 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — This GitHub report job does not measure the Supabase connector service health. · **GitHub Actions backend read:** READ_OK — 68 departments; aggregate count only, no department rows read
 
 ## Where we left off
-`d3fdf1d` on `main` · 2026-10-10T07:37:56-04:00  
-Correct SPINE aggregate-read source boundary
+`0600876` on `main` · 2026-10-10T07:43:24-04:00  
+Repair Root House scheduled test gate
 
 
 ## Data source boundary
@@ -31,7 +31,7 @@ Research worker last ran 2026-10-07T17:50:40.267Z · 0 leads · 0 provider error
 | Measure | Value |
 |---|---|
 | lanes total | 24 |
-| lanes waiting on chairman | 18 |
+| lanes waiting on chairman | 17 |
 | family seats named | 0 / 30 |
 | family percent named | 0 |
 | open research tasks | 30 |
@@ -47,17 +47,17 @@ Research worker last ran 2026-10-07T17:50:40.267Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 40 |
+| commits last 7 days | 42 |
 | days since last commit | 0 |
 
 ## All lanes
 | # | Lane | Status | Next | Needs from Chairman |
 |---|---|---|---|---|
-| 1 | Family lines (4) — FF, FM, MF, MM | BUILT · names already in backend | Point Root House + worker at the backend table, not repo `family.json` | GitHub secrets so the scheduled worker can read the backend |
+| 1 | Family lines (4) — FF, FM, MF, MM | BUILT · names already in backend | Plan a least-privilege intake adapter to the verified backend table; current worker reads only repo `family.json` | Approved read contract and test fixture; no GitHub secret is needed by the current worker |
 | 2 | Canada → Memphis clue | FAMILY_TOLD, 6 tests ready | Run Test 1 on the maternal Wright/Harris line (Covington · Memphis · Mississippi) | Whose great-grandmother: the Chairman's or Eddie Ree's? |
 | 3 | Research building + people | BUILT | Upgrade art from the Chairman's two reference images | Re-attach the two pictures (not received this session) |
 | 4 | Sources ("millions") | 127 collections | Keep adding; each holds thousands–billions of records | — |
-| 5 | Backend worker | BUILT, runs daily after merge | Merge to main so the schedule runs | Merge approval |
+| 5 | Backend worker | BUILT, daily schedule; last run held at stale report test | Fix expected `NOT_CHECKED_BY_THIS_WORKFLOW` value, then verify post-merge run | — |
 | 6 | Backend database | VALIDATED locally, not applied | Apply to `thylora-dash` | Held Chairman action |
 | 7 | Tea Table (STEEPED) | BUILT | Play it; bring back the first Elder answer | — |
 | 8 | Monster Night | LISTED | — | Age calls on R-rated picks |
@@ -68,7 +68,7 @@ Research worker last ran 2026-10-07T17:50:40.267Z · 0 leads · 0 provider error
 | 13 | Shows (Bramble + Wick, Dividend Circle, Green Milk) | Development | Character bibles → pilots | Casting decisions |
 | 14 | Money (ledger, payouts, GAME-BET-001) | Built, held | Payout provider (highest-cost open decision) | Provider + legal |
 | 15 | Operating logic (ask the next question, preserve source, evidence trail, no frozen system) | Now written into every session | Keep enforcing | — |
-| 17 | Spine Forward check-in | BUILT | Script reads backend when secrets exist | GitHub Actions secrets (Chairman types them into GitHub, never into chat) |
+| 17 | Spine Forward check-in | READ_OK · aggregate-only | Keep report separate from product-task execution; build a dedicated authorized product worker | No GitHub secrets needed for this report |
 | 18 | World: people, companies, economy (Our World only) | SEEDED | Feed the spine from backend tables | — |
 | 19 | First image | QUEUED | Produce once references arrive | The two reference pictures |
 | 20 | World value chains (raise → kill → sell meat + skin → tan → make → sell) | BUILT · 1 chain, 10 steps | Name herder/butcher/tanner; record first hide sale; mark ECON-COMMODITIES PARTIAL (update timed out twice) | REE smallest unit · what one hide sells for |
@@ -110,12 +110,12 @@ Research worker last ran 2026-10-07T17:50:40.267Z · 0 leads · 0 provider error
 - **IMG-001 Root House — the first image** — QUEUED · blocked on: Chairman's two reference pictures (silhouette researchers) — not yet attached
 
 ## Questions for the Chairman
-1. Family lines (4) — FF, FM, MF, MM: GitHub secrets so the scheduled worker can read the backend?
+1. Family lines (4) — FF, FM, MF, MM: Approved read contract and test fixture; no GitHub secret is needed by the current worker?
 2. Canada → Memphis clue: Whose great-grandmother: the Chairman's or Eddie Ree's??
 3. Research building + people: Re-attach the two pictures (not received this session)?
-4. Backend worker: Merge approval?
-5. Backend database: Held Chairman action?
-6. Monster Night: Age calls on R-rated picks?
+4. Backend database: Held Chairman action?
+5. Monster Night: Age calls on R-rated picks?
+6. The Window (our TRL): Pick the name; studio, hosts?
 7. Who are your parents and four grandparents (even first names)?
 8. Can you attach the reference pictures for the first image?
 9. Earth lane: which shirt or digital product sells first? Our World: what is the REE smallest unit, and what does one hide sell for?
