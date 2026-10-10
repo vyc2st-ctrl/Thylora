@@ -29,10 +29,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Build the check-in
-        env:
-          THYLORA_SUPABASE_URL: ${{ secrets.THYLORA_SUPABASE_URL }}
-          THYLORA_SUPABASE_KEY: ${{ secrets.THYLORA_SUPABASE_KEY }}
+      - name: Build the check-in and verify the aggregate-only gate
         run: node scripts/spine-forward.mjs
       - name: Commit the report
         run: |
