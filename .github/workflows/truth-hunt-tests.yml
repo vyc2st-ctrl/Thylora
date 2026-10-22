@@ -1,0 +1,28 @@
+name: Truth Hunt verified tests
+on:
+  push:
+    paths:
+      - 'src/truth-hunt/**'
+      - 'tests/truth-hunt*.test.mjs'
+      - '.github/workflows/truth-hunt-tests.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Execute repository tests
+        run: node --test --test-reporter=tap tests/truth-hunt.test.mjs tests/truth-hunt-interactive.test.mjs | tee truth-hunt-test.log
+      - name: Attach actual test output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: truth-hunt-test-log
+          path: truth-hunt-test.log
+          if-no-files-found: error
