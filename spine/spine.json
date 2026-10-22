@@ -1,10 +1,10 @@
 {
   "header": "THYLORA HEAD - SPINE FORWARD",
-  "checked_in_at": "2026-10-22T12:40:59.431Z",
+  "checked_in_at": "2026-10-22T17:05:03.866Z",
   "left_off": {
-    "commit": "3d1d970",
-    "message": "Ensure Truth Hunt test failure propagates to CI",
-    "at": "2026-10-22T08:40:48-04:00",
+    "commit": "063e4b4",
+    "message": "Root House worker: leads 2026-10-22",
+    "at": "2026-10-22T15:54:23Z",
     "branch": "main"
   },
   "data_source_boundary": {
@@ -115,7 +115,7 @@
     }
   ],
   "worker": {
-    "last_run": "2026-10-22T11:14:55.115Z",
+    "last_run": "2026-10-22T15:54:22.974Z",
     "leads": 0,
     "errors": 0
   },

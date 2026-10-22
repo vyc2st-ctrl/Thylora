@@ -1,9 +1,9 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-10-22 12:40 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — This GitHub report job does not measure the Supabase connector service health. · **GitHub Actions backend read:** READ_OK — 68 departments; aggregate count only, no department rows read
+**Checked in:** 2026-10-22 17:05 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — This GitHub report job does not measure the Supabase connector service health. · **GitHub Actions backend read:** READ_OK — 68 departments; aggregate count only, no department rows read
 
 ## Where we left off
-`3d1d970` on `main` · 2026-10-22T08:40:48-04:00  
-Ensure Truth Hunt test failure propagates to CI
+`063e4b4` on `main` · 2026-10-22T15:54:23Z  
+Root House worker: leads 2026-10-22
 
 
 ## Data source boundary
@@ -25,7 +25,7 @@ Ensure Truth Hunt test failure propagates to CI
 | Rosa Delgado-Pryor | enslavement era | STANDING BY | — |
 | Pip | runner | STANDING BY | — |
 
-Research worker last ran 2026-10-22T11:14:55.115Z · 0 leads · 0 provider errors.
+Research worker last ran 2026-10-22T15:54:22.974Z · 0 leads · 0 provider errors.
 
 ## Mathematics
 | Measure | Value |
