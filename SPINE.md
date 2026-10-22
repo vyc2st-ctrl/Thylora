@@ -1,9 +1,9 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-10-22 11:14 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — This GitHub report job does not measure the Supabase connector service health. · **GitHub Actions backend read:** READ_OK — 68 departments; aggregate count only, no department rows read
+**Checked in:** 2026-10-22 11:31 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — This GitHub report job does not measure the Supabase connector service health. · **GitHub Actions backend read:** READ_OK — 68 departments; aggregate count only, no department rows read
 
 ## Where we left off
-`4fdcefe` on `main` · 2026-10-22T07:14:33-04:00  
-Implement interactive Truth Hunt claim selection and async decision persistence hook
+`51edc14` on `main` · 2026-10-22T07:31:25-04:00  
+Run Truth Hunt tests automatically on every source change and preserve test logs
 
 
 ## Data source boundary
@@ -25,7 +25,7 @@ Implement interactive Truth Hunt claim selection and async decision persistence 
 | Rosa Delgado-Pryor | enslavement era | STANDING BY | — |
 | Pip | runner | STANDING BY | — |
 
-Research worker last ran 2026-10-22T01:45:01.644Z · 0 leads · 0 provider errors.
+Research worker last ran 2026-10-22T11:14:55.115Z · 0 leads · 0 provider errors.
 
 ## Mathematics
 | Measure | Value |
@@ -39,7 +39,7 @@ Research worker last ran 2026-10-22T01:45:01.644Z · 0 leads · 0 provider error
 | researchers total | 10 |
 | worker leads waiting review | 0 |
 | record collections | 127 |
-| tests defined | 74 |
+| tests defined | 77 |
 | migrations written | 13 |
 | migrations applied live | ≥1 verified; full repo inventory not audited |
 | world people | 14 |
@@ -47,7 +47,7 @@ Research worker last ran 2026-10-22T01:45:01.644Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 39 |
+| commits last 7 days | 42 |
 | days since last commit | 0 |
 
 ## All lanes
