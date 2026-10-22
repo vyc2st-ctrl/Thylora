@@ -1,9 +1,9 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-10-22 04:33 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — This GitHub report job does not measure the Supabase connector service health. · **GitHub Actions backend read:** READ_OK — 68 departments; aggregate count only, no department rows read
+**Checked in:** 2026-10-22 11:14 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — This GitHub report job does not measure the Supabase connector service health. · **GitHub Actions backend read:** READ_OK — 68 departments; aggregate count only, no department rows read
 
 ## Where we left off
-`916d721` on `main` · 2026-10-22T01:45:02Z  
-Root House worker: leads 2026-10-22
+`4fdcefe` on `main` · 2026-10-22T07:14:33-04:00  
+Implement interactive Truth Hunt claim selection and async decision persistence hook
 
 
 ## Data source boundary
@@ -47,7 +47,7 @@ Research worker last ran 2026-10-22T01:45:01.644Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 37 |
+| commits last 7 days | 39 |
 | days since last commit | 0 |
 
 ## All lanes
