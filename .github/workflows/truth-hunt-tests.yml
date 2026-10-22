@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: '22'
       - name: Execute repository tests
-        run: node --test --test-reporter=tap tests/truth-hunt.test.mjs tests/truth-hunt-interactive.test.mjs | tee truth-hunt-test.log
+        run: node --test --test-reporter=tap tests/truth-hunt.test.mjs tests/truth-hunt-interactive.test.mjs > truth-hunt-test.log 2>&1
       - name: Attach actual test output
         if: always()
         uses: actions/upload-artifact@v4
