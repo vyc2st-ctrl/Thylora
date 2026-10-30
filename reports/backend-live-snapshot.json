@@ -4,7 +4,7 @@
   "ledger_head": 774,
   "worker": {
     "slug": "thylora-autonomy-worker",
-    "version": "73"
+    "version": "75"
   },
   "task_state_and_autonomy_counts": {
     "WAITING_EXTERNAL/SAFE_INTERNAL": 467,
