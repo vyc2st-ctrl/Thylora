@@ -1,0 +1,21 @@
+{
+  "schema": "thylora-backend-automated-snapshot/v1",
+  "project_ref": "jvsdxhrfhtlgaknhjxlz",
+  "ledger_head": 774,
+  "worker": {
+    "slug": "thylora-autonomy-worker",
+    "version": "73"
+  },
+  "task_state_and_autonomy_counts": {
+    "WAITING_EXTERNAL/SAFE_INTERNAL": 467,
+    "HELD/SAFE_INTERNAL": 284,
+    "COMPLETED/SAFE_INTERNAL": 74,
+    "HELD/CHAIRMAN_RESERVED": 5,
+    "WAITING_EXTERNAL/EXTERNAL_READ": 2,
+    "HELD/EXTERNAL_WRITE": 1,
+    "FAILED/SAFE_INTERNAL": 1
+  },
+  "worker_registry_counts": {},
+  "scope": "Approved nonsecret operational aggregates only; not full backend replication",
+  "secrets_included": false
+}
