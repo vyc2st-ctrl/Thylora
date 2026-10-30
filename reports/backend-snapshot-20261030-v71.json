@@ -1,0 +1,16 @@
+{
+  "schema": "thylora-backend-source-snapshot/v1",
+  "project_ref": "jvsdxhrfhtlgaknhjxlz",
+  "project_name": "thylora-dash",
+  "project_status": "ACTIVE_HEALTHY",
+  "ledger_head": 774,
+  "worker": {
+    "slug": "thylora-autonomy-worker",
+    "version": 71,
+    "deploy_sha256": "59750468fb74f82a4bdfea3d771ebf209aedae65d799a217616408dc572e8c56"
+  },
+  "source": "Supabase connector direct project, SQL ledger HEAD, Edge Function readback",
+  "scope": "Limited verified snapshot; not full backend replication",
+  "verification": "Source readback verified before commit; GitHub readback required",
+  "secrets_included": false
+}
