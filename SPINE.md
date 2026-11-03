@@ -1,9 +1,9 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-11-03 00:54 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — This GitHub report job does not measure the Supabase connector service health. · **GitHub Actions backend read:** READ_ERROR — Aggregate-only Supabase gate failed: fetch failed
+**Checked in:** 2026-11-03 14:02 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — This GitHub report job does not measure the Supabase connector service health. · **GitHub Actions backend read:** READ_ERROR — Aggregate-only Supabase gate failed: fetch failed
 
 ## Where we left off
-`4065b84` on `main` · 2026-11-02T20:48:47Z  
-Root House worker: leads 2026-11-02
+`901cb4b` on `main` · 2026-11-03T00:54:12Z  
+Spine Forward check-in 2026-11-03T00:54Z
 
 
 ## Data source boundary
@@ -47,7 +47,7 @@ Research worker last ran 2026-11-02T20:48:46.978Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 36 |
+| commits last 7 days | 35 |
 | days since last commit | 0 |
 
 ## All lanes
