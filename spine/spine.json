@@ -1,10 +1,10 @@
 {
   "header": "THYLORA HEAD - SPINE FORWARD",
-  "checked_in_at": "2026-11-03T19:33:25.048Z",
+  "checked_in_at": "2026-11-03T23:14:45.785Z",
   "left_off": {
-    "commit": "6885b6c",
-    "message": "Require one-to-one evidence review packets",
-    "at": "2026-11-03T14:33:12-05:00",
+    "commit": "a999360",
+    "message": "Spine Forward check-in 2026-11-03T19:33Z",
+    "at": "2026-11-03T19:33:25Z",
     "branch": "main"
   },
   "data_source_boundary": {
