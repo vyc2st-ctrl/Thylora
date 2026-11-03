@@ -1,10 +1,10 @@
 {
   "header": "THYLORA HEAD - SPINE FORWARD",
-  "checked_in_at": "2026-11-03T17:56:09.727Z",
+  "checked_in_at": "2026-11-03T19:20:29.780Z",
   "left_off": {
-    "commit": "7d73550",
-    "message": "Fix conveyor candidate view security",
-    "at": "2026-11-03T12:55:54-05:00",
+    "commit": "1bc5fc5",
+    "message": "Add Zenyx Thylora product take review gate",
+    "at": "2026-11-03T14:20:05-05:00",
     "branch": "main"
   },
   "data_source_boundary": {
@@ -39,7 +39,7 @@
     "revenue_recorded": 0,
     "payouts_recorded": 0,
     "images_queued": 1,
-    "commits_last_7_days": 35,
+    "commits_last_7_days": 38,
     "days_since_last_commit": 0
   },
   "working": [
@@ -115,7 +115,7 @@
     }
   ],
   "worker": {
-    "last_run": "2026-11-02T20:48:46.978Z",
+    "last_run": "2026-11-03T18:28:18.100Z",
     "leads": 0,
     "errors": 0
   },
