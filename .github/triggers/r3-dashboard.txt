@@ -1,0 +1,19 @@
+Controlled pipeline test — 2026-09-10
+
+Purpose: prove a repaired workflow actually executes, without letting it change
+dashboard-current-head.html.
+
+r3 was chosen deliberately. Its first action is to require the marker
+THY-UI-20260823-0650-R2 in dashboard-current-head.html and to refuse if it is
+absent. That marker is absent: the file carries THY-UI-20260823-0925-R5.
+
+EXPECTED RESULT: the run starts, checks out, runs Python, and exits with
+"Expected R2 release marker not found; refusing to patch a different baseline."
+The job therefore reports FAILURE, and that failure is the pass condition: it
+can only be reached by a workflow that parsed, scheduled a runner, and ran its
+own code. Before the YAML repair these workflows produced zero jobs and zero
+billable seconds, so no message like this could exist.
+
+A run that again shows zero jobs would mean the repair did not work.
+A run that reports success would mean r3 patched the dashboard, which is NOT
+what this test authorizes.
