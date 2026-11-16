@@ -1,9 +1,9 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-11-15 18:45 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — This GitHub report job does not measure the Supabase connector service health. · **GitHub Actions backend read:** READ_OK — 71 departments; aggregate count only, no department rows read
+**Checked in:** 2026-11-16 06:15 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — This GitHub report job does not measure the Supabase connector service health. · **GitHub Actions backend read:** READ_OK — 71 departments; aggregate count only, no department rows read
 
 ## Where we left off
-`5de588d` on `main` · 2026-11-15T17:46:53Z  
-Root House worker: leads 2026-11-15
+`5942202` on `main` · 2026-11-15T18:45:47Z  
+Spine Forward check-in 2026-11-15T18:45Z
 
 
 ## Data source boundary
@@ -47,7 +47,7 @@ Research worker last ran 2026-11-15T17:46:53.915Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 23 |
+| commits last 7 days | 22 |
 | days since last commit | 0 |
 
 ## All lanes
