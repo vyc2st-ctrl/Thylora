@@ -1,9 +1,9 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-11-19 07:14 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — This GitHub report job does not measure the Supabase connector service health. · **GitHub Actions backend read:** READ_OK — 76 departments; aggregate count only, no department rows read
+**Checked in:** 2026-11-19 20:28 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — This GitHub report job does not measure the Supabase connector service health. · **GitHub Actions backend read:** READ_OK — 76 departments; aggregate count only, no department rows read
 
 ## Where we left off
-`10cb68f` on `main` · 2026-11-18T20:24:24Z  
-Spine Forward check-in 2026-11-18T20:24Z
+`2be2a86` on `main` · 2026-11-19T19:29:58Z  
+Root House worker: leads 2026-11-19
 
 
 ## Data source boundary
@@ -25,7 +25,7 @@ Spine Forward check-in 2026-11-18T20:24Z
 | Rosa Delgado-Pryor | enslavement era | STANDING BY | — |
 | Pip | runner | STANDING BY | — |
 
-Research worker last ran 2026-11-18T19:25:19.642Z · 0 leads · 0 provider errors.
+Research worker last ran 2026-11-19T19:29:58.511Z · 0 leads · 0 provider errors.
 
 ## Mathematics
 | Measure | Value |
