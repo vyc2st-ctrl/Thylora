@@ -15,6 +15,17 @@ Authority: Chairman VYC. Source: `THY-USER-CANCER-MATH-DISPLAY-SKILL-20261121`; 
 4. Never invent or silently rename people, places, roles, sources, equations, product editions or evidence. Do not cross Earth / EdereAirah layers inadvertently. No images, PDF production, publication, sending, purchases or other reserved external actions without their authorization gate.
 5. Existing math registry equations remain; add new ones only as **proposed** unless canonical authority approves. A conceptual relationship must not masquerade as quantitative or medical proof.
 
+## Permanent precheck: text is not the rendered equation (HEAD 930)
+
+Failure observed repeatedly in the Cancer Patient Edition: plain prose such as `True understanding = f(Whole person, Condition, Intervention, Evidence)` inside a writing block or Markdown is **not accepted as a verified displayed mathematical equation**. A written-out `HOW TO READ` is **not** evidence that the equation was typeset.
+
+- Use actual mathematical typesetting (display math / TeX renderer, native MathML, or an equation object in the destination document) at the **exact location within the manuscript**, following the speaker's introduction. Provide a visible formula with mathematical symbols, subscripts, operators, brackets and clearly identified variables.
+- If the document editor cannot render math, prepare a compatible true equation in another supported format, and **do not** assert that it appeared inside the document until the final rendered page is inspected.
+- Always pair it immediately with full spoken words: symbols read as displayed, **plus the full meaning of each labeled variable**, in the same order. Then explain the whole connected subject and cite the evidence.
+- Keep quantitative and conceptual models distinct. A model `U_cancer = f(P,C,I,E)` is a qualitative dependence expression until `f` is defined and validated against data; do not present it as a proven clinical outcome formula.
+- Preflight must compare three separate artifacts: (1) source expression, (2) spoken readout, (3) final visible recipient-facing render; `PASS` requires all three, not merely two source strings.
+- Fail condition: text-only display, missing native equation object, missing red readout, or unknown renderer proof => `HOLD_NOT_RENDERED`. Preserve the original user's text. Do not alter a product listing or release an edition to conceal the failure.
+
 ## Mandatory visible mathematics — ALL content
 
 For **every** relevant paragraph, dialogue, scene, product, post, lesson, app, artifact or transmission:
