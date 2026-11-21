@@ -1,9 +1,9 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-11-21 19:22 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — This GitHub report job does not measure the Supabase connector service health. · **GitHub Actions backend read:** READ_OK — 76 departments; aggregate count only, no department rows read
+**Checked in:** 2026-11-21 19:32 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — This GitHub report job does not measure the Supabase connector service health. · **GitHub Actions backend read:** READ_OK — 76 departments; aggregate count only, no department rows read
 
 ## Where we left off
-`896d2af` on `main` · 2026-11-21T14:22:04-05:00  
-Add THYLORA full-spine mathematical display and readout skill
+`1787ac0` on `main` · 2026-11-21T14:32:19-05:00  
+Gate actual mathematical typesetting vs prose-only formula in cancer manuscript
 
 
 ## Data source boundary
@@ -47,7 +47,7 @@ Research worker last ran 2026-11-21T18:01:12.020Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 23 |
+| commits last 7 days | 25 |
 | days since last commit | 0 |
 
 ## All lanes
