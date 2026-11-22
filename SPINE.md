@@ -1,9 +1,9 @@
 # THYLORA HEAD - SPINE FORWARD
-**Checked in:** 2026-11-21 19:32 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — This GitHub report job does not measure the Supabase connector service health. · **GitHub Actions backend read:** READ_OK — 76 departments; aggregate count only, no department rows read
+**Checked in:** 2026-11-22 06:35 UTC · **Supabase connector health:** NOT_CHECKED_BY_THIS_WORKFLOW — This GitHub report job does not measure the Supabase connector service health. · **GitHub Actions backend read:** READ_OK — 76 departments; aggregate count only, no department rows read
 
 ## Where we left off
-`1787ac0` on `main` · 2026-11-21T14:32:19-05:00  
-Gate actual mathematical typesetting vs prose-only formula in cancer manuscript
+`3bbc4c5` on `main` · 2026-11-21T19:32:29Z  
+Spine Forward check-in 2026-11-21T19:32Z
 
 
 ## Data source boundary
@@ -47,7 +47,7 @@ Research worker last ran 2026-11-21T18:01:12.020Z · 0 leads · 0 provider error
 | revenue recorded | 0 |
 | payouts recorded | 0 |
 | images queued | 1 |
-| commits last 7 days | 25 |
+| commits last 7 days | 24 |
 | days since last commit | 0 |
 
 ## All lanes
