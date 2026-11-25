@@ -1,10 +1,10 @@
 {
   "header": "THYLORA HEAD - SPINE FORWARD",
-  "checked_in_at": "2026-11-25T08:19:47.497Z",
+  "checked_in_at": "2026-11-25T21:36:09.111Z",
   "left_off": {
-    "commit": "338c653",
-    "message": "Spine Forward check-in 2026-11-24T22:19Z",
-    "at": "2026-11-24T22:19:27Z",
+    "commit": "0193509",
+    "message": "Root House worker: leads 2026-11-25",
+    "at": "2026-11-25T20:29:29Z",
     "branch": "main"
   },
   "data_source_boundary": {
@@ -115,7 +115,7 @@
     }
   ],
   "worker": {
-    "last_run": "2026-11-24T21:18:09.315Z",
+    "last_run": "2026-11-25T20:29:29.792Z",
     "leads": 0,
     "errors": 0
   },
