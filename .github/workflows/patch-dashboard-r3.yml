@@ -3,7 +3,7 @@ name: Patch THYLORA dashboard R3
 on:
   push:
     paths:
-      - '.github/workflows/patch-dashboard-r3.yml'
+      - '.github/triggers/r3-dashboard.txt'
 
 permissions:
   contents: write

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The EdereAirah warehouse</title>
+<meta name="description" content="You are standing in the EdereAirah warehouse. Five doors. Each one says whether it is open before you walk through it.">
+<style>
+  :root{
+    --floor:#0b0c0f; --wall:#12141a; --bay:#171a22; --edge:#262b36;
+    --ink:#eceadf; --dim:#8f9aa8; --faint:#5f6875;
+    --open:#4faf7d; --held:#c99a3e; --shut:#7b8290; --brass:#c9a45c;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--floor);color:var(--ink);
+    font:16px/1.62 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+    -webkit-text-size-adjust:100%}
+  .wrap{max-width:900px;margin:0 auto;padding:0 18px 96px}
+
+  .arrive{border-bottom:1px solid var(--edge);padding:38px 0 26px;margin-bottom:8px}
+  .mark{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin:0 0 16px}
+  h1{font-size:clamp(24px,4.6vw,34px);line-height:1.2;margin:0 0 14px;font-weight:600;letter-spacing:-.01em}
+  .arrive p{margin:0;color:var(--dim);max-width:64ch}
+
+  h2.section{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--faint);
+    margin:52px 0 6px;font-weight:700}
+  p.lede{margin:0 0 22px;color:var(--dim);font-size:15px;max-width:70ch}
+
+  .doors{display:grid;gap:12px;grid-template-columns:1fr}
+  @media (min-width:720px){.doors{grid-template-columns:1fr 1fr}}
+  .door{border:1px solid var(--edge);background:var(--wall);padding:20px 20px 22px;position:relative;
+    display:flex;flex-direction:column}
+  .door.is-open{border-color:#2f5c46;background:#101913}
+  .door .num{position:absolute;top:14px;right:16px;font-size:11px;letter-spacing:.14em;color:var(--faint);
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  .door h3{margin:0 0 4px;font-size:19px;font-weight:650;letter-spacing:.01em}
+  .state{display:inline-block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;
+    border:1px solid currentColor;padding:3px 8px;margin:0 0 12px}
+  .state.o{color:var(--open)} .state.h{color:var(--held)} .state.s{color:var(--shut)}
+  .door p{margin:0 0 10px;font-size:14.5px;color:var(--dim)}
+  .door p.last{margin-bottom:0}
+  .door .go{margin-top:auto;padding-top:16px}
+  .door a.go-link{display:inline-block;border:1px solid var(--ink);color:var(--ink);text-decoration:none;
+    padding:10px 16px;font-size:14px;font-weight:600}
+  .door a.go-link:hover{background:var(--ink);color:var(--floor)}
+  .door .nogo{margin-top:auto;padding-top:16px;font-size:13px;color:var(--faint);
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+
+  .floorplan{margin-top:14px;border:1px solid var(--edge);background:var(--wall);padding:18px}
+  .row{display:flex;gap:14px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--edge);
+    flex-wrap:wrap}
+  .row:last-child{border-bottom:0;padding-bottom:0}
+  .row .dot{flex:0 0 auto;width:8px;height:8px;border-radius:50%;margin-top:7px}
+  .dot.o{background:var(--open)} .dot.h{background:var(--held)} .dot.s{background:var(--shut)}
+  .row .name{flex:1 1 240px;font-weight:600;font-size:15px}
+  .row .price{flex:0 0 auto;color:var(--dim);font-size:14px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  .row .why{flex:1 1 100%;color:var(--faint);font-size:13.5px;margin:2px 0 0;padding-left:22px}
+  .pinned{border:1px solid #2f5c46;background:#101913;padding:20px;margin-bottom:14px}
+  .pinned .state{margin-bottom:10px}
+  .pinned h3{margin:0 0 4px;font-size:21px;font-weight:650}
+  .pinned p{margin:0 0 12px;color:var(--dim);font-size:14.5px}
+  .pinned a.buy{display:inline-block;background:var(--ink);color:var(--floor);text-decoration:none;
+    padding:12px 20px;font-size:15px;font-weight:700}
+  .rotnote{margin:14px 0 0;font-size:13px;color:var(--faint)}
+
+  .states{border-left:3px solid var(--edge);padding:4px 0 4px 18px;margin:0}
+  .states dt{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-top:16px;font-weight:700}
+  .states dt:first-child{margin-top:0}
+  .states dd{margin:4px 0 0;color:var(--dim);font-size:14.5px}
+  .rule{margin:22px 0 0;padding:14px 16px;border:1px solid var(--edge);background:var(--bay);font-size:14.5px}
+
+  .vlegh{border:1px solid var(--edge);background:var(--bay);padding:20px;margin-top:14px}
+  .vlegh h3{margin:0 0 8px;font-size:17px;font-weight:650}
+  .vlegh p{margin:0 0 10px;color:var(--dim);font-size:14.5px}
+  .vlegh ul{margin:0 0 10px;padding-left:20px;color:var(--dim);font-size:14.5px}
+  .vlegh li{margin:3px 0}
+
+  .privacy{border:1px solid #3a3020;background:#14110b;padding:20px;margin-top:14px}
+  .privacy h3{margin:0 0 8px;font-size:17px;font-weight:650;color:var(--brass)}
+  .privacy p{margin:0 0 10px;color:#cfc6b2;font-size:14.5px}
+  .privacy p.last{margin-bottom:0}
+
+  footer.count{margin-top:64px;border-top:1px solid var(--edge);padding-top:20px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--faint);line-height:1.8}
+  footer.count h2{font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin:0 0 10px;
+    font-weight:700;color:var(--faint)}
+  footer.count table{border-collapse:collapse;width:100%;max-width:560px}
+  footer.count td{padding:2px 14px 2px 0;vertical-align:top}
+  footer.count td.k{white-space:nowrap}
+  .y{color:var(--open)} .n{color:#c4635b}
+  footer.count p{margin:14px 0 0;max-width:76ch}
+  a{color:var(--brass)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="arrive">
+  <p class="mark">EdereAirah &middot; ErsatzV</p>
+  <h1>You are standing in the warehouse, not on a product grid.</h1>
+  <p>There are five doors. Each one tells you whether it is open <em>before</em> you walk through it, because being walked into a door that does not open is the whole thing we are trying not to do to you. One door is open today. One is built but has nothing behind it yet. Three are not built, and say so.</p>
+</header>
+
+<h2 class="section">The five doors</h2>
+<p class="lede">A door marked shut is not coy. It means the thing behind it does not exist, and the door will say what would have to be true for it to open.</p>
+
+<div class="doors">
+
+  <section class="door is-open">
+    <span class="num">DOOR 1</span>
+    <h3>Explore</h3>
+    <span class="state o">Open</span>
+    <p>The whole floor, itemised: what can be bought today, what is priced but not open, and what has no runtime at all. Every item names who made it and what our relationship to it is.</p>
+    <p class="last">This is the honest inventory, not a storefront pitch. One item on it is purchasable.</p>
+    <div class="go"><a class="go-link" href="https://thylora-store.vercel.app">Walk the floor</a></div>
+  </section>
+
+  <section class="door">
+    <span class="num">DOOR 2</span>
+    <h3>Create</h3>
+    <span class="state h">Built &middot; nothing open</span>
+    <p>The door for anything made around something <em>you</em> send: a portrait somewhere you have never been, a card that is actually about the person, a postcard from a place that does not exist, a family book out of a box of photographs.</p>
+    <p>The path behind this door is finished and tested: you send your file, you answer a brief, you answer the consent questions, a person makes it, <strong>you see it and approve it before it counts as delivered</strong>, and you can reopen it afterwards for nothing. Deletion is real &mdash; the files leave storage, they are not merely marked.</p>
+    <p class="last">What is missing is not the path. Eight wares sit behind this door with authorized prices and <strong>none of them is open for orders</strong>, because no turnaround has been agreed for any of them. If you already ordered one, this is where it lives.</p>
+    <div class="go"><a class="go-link" href="https://thylora-submit.vercel.app">Open your order</a></div>
+  </section>
+
+  <section class="door">
+    <span class="num">DOOR 3</span>
+    <h3>Learn</h3>
+    <span class="state s">Not built</span>
+    <p>Intended as the door where the world is explained rather than sold &mdash; how EdereAirah is put together, where the Unkle Seezin trail runs, what a house is, what a ware is, and why an object here carries a record instead of a sticker.</p>
+    <p class="last">None of that is published. There is no lesson, no guide, no course and no reading room behind this door. The nearest real thing is the one finished story on the floor, and that is a story, not a syllabus.</p>
+    <div class="nogo">WOULD OPEN WHEN: a published world reference exists that a stranger can read without buying anything.</div>
+  </section>
+
+  <section class="door">
+    <span class="num">DOOR 4</span>
+    <h3>Bring something back</h3>
+    <span class="state s">Not built</span>
+    <p>The door you would leave through carrying something &mdash; an object that is yours afterwards, off the screen and in your hands. Specifications exist for these. Manufacturing does not.</p>
+    <p class="last">No Earth maker is contracted, so nothing can be printed, pressed, bound, cut, cast or shipped. We will not take money for an object that has no one to make it.</p>
+    <div class="nogo">WOULD OPEN WHEN: a named Earth maker holds a written agreement as an Authorized Earth Maker of an EdereAirah ErsatzV Brand Ware.</div>
+  </section>
+
+  <section class="door">
+    <span class="num">DOOR 5</span>
+    <h3>Build with us</h3>
+    <span class="state s">Not built</span>
+    <p>For makers, not shoppers. This warehouse is meant to carry other people's work eventually &mdash; sold, sponsored, supported or simply listed &mdash; but on stated terms and by invitation after review, not by opening a gate and letting a catalog flood in.</p>
+    <p class="last">There is no application, no seller onboarding and no partner programme. Every item on the floor today is ours, and the six states below exist so that the day this changes, you can still tell at a glance which is which.</p>
+    <div class="nogo">WOULD OPEN WHEN: the review terms are written down and a first maker has agreed to them in writing.</div>
+  </section>
+
+</div>
+
+<h2 class="section">The floor today</h2>
+<p class="lede">Fourteen things are on the floor. The purchasable one is pinned and never rotates out. The order of the rest turns over daily so that a thing you have not looked at gets a turn at the front &mdash; but rotation only moves position. It never changes whether something is open.</p>
+
+<div class="pinned">
+  <span class="state o">On sale now</span>
+  <h3>Twelve Miles for Flour &mdash; An Unkle Seezin Trail Story</h3>
+  <p>$1.99 USD, once. One short finished story, read in your browser, in a library that belongs to your email address. Nothing to install and no file to lose. Every opening is recorded against your own entitlement, so if it ever does not open, the record decides and not an opinion.</p>
+  <a class="buy" href="https://ersatzreality.myshopify.com/products/twelve-miles-for-flour-an-uncle-seezin-trail-story">Take it &mdash; $1.99</a>
+</div>
+
+<div class="floorplan" id="floorplan"></div>
+<p class="rotnote" id="rotnote"></p>
+
+<h2 class="section">Who made it, and what we are to it</h2>
+<p class="lede">A warehouse that will one day hold other people's work has to answer this on every single item, before you pay. There are six states and no others. Everything on the floor today is state one.</p>
+
+<dl class="states">
+  <dt>ErsatzV owned</dt>
+  <dd>Ours. We made it and we answer for it. <strong>All fourteen items on the floor today.</strong></dd>
+  <dt>Authorized Earth Maker</dt>
+  <dd>Made on Earth under a written agreement, as an <em>Authorized Earth Maker of an EdereAirah ErsatzV Brand Ware</em>. The design is ours, the making is theirs, and the agreement is real and named. <strong>Nobody holds this.</strong></dd>
+  <dt>Selected seller</dt>
+  <dd>Someone else's product, let in deliberately after review. Their product, their responsibility, sold here. <strong>Nobody holds this.</strong></dd>
+  <dt>Sponsored</dt>
+  <dd>Money moved to put it in front of you. Labelled on the item itself, never buried in a footer. <strong>Nothing is sponsored.</strong></dd>
+  <dt>Supported</dt>
+  <dd>We give a maker time, tools or distribution without owning or endorsing what they make. <strong>Nobody holds this.</strong></dd>
+  <dt>Listed, no endorsement</dt>
+  <dd>Present in the catalog and nothing more. <strong>Nothing is listed on these terms.</strong></dd>
+</dl>
+
+<p class="rule"><strong>Listed is not sponsored. Sold is not endorsed. A maker is not an Authorized Earth Maker.</strong> Those are three separate states with three separate records, and the item tells you which one it holds. Treating them as interchangeable is how a marketplace ends up lying to the person paying.</p>
+
+<h2 class="section">What a VLEGH is, since it will be asked</h2>
+
+<div class="vlegh">
+  <h3>Not a trading card</h3>
+  <p>A VLEGH is an EdereAirah object. Earth trading cards are a useful reference for one narrow thing &mdash; how people collect, trade and care for small objects &mdash; and for nothing else. A VLEGH is not a rarity tier with a picture on it.</p>
+  <p>Every VLEGH carries:</p>
+  <ul>
+    <li>its provenance, and its identity within the world</li>
+    <li>where it came from, and where in EdereAirah that place is</li>
+    <li>who created it, which edition it belongs to, and who made this particular one</li>
+    <li>its story, and its relationships to other objects, houses and people</li>
+    <li>its authenticity, held as a record that can be read back rather than asserted on the object</li>
+    <li>a deeper digital record that outlives the physical piece</li>
+    <li>and a physical geometry, material and visual language that is its own &mdash; not a rectangle with a border</li>
+  </ul>
+  <p style="margin-bottom:0">None of that is manufactured. The specification is the honest state of it today, and a specification is not an object. When a VLEGH can be held, it will be behind door four, with the name of the maker on it.</p>
+</div>
+
+<h2 class="section">What we do with what you send us</h2>
+
+<div class="privacy">
+  <h3>These are not preferences. They are the gates.</h3>
+  <p><strong>Private by default.</strong> Anything you send is used to make your order and nothing else. It is never published, never shown as an example, never used to train anything, and never shown to anyone outside the work.</p>
+  <p><strong>Publication consent is asked every time and the default answer is no.</strong> Saying no costs nothing and changes nothing about what you receive. For anything that may contain a child or a pregnancy, there is no yes to give at all &mdash; the option does not exist, deliberately, and the system refuses to record one.</p>
+  <p><strong>Where a child appears, a guardian has to say so themselves.</strong> Not a tickbox on someone else's behalf.</p>
+  <p><strong>Your material stays yours.</strong> Your photographs, your words and your likeness. We claim none of them and will license none of them to anyone.</p>
+  <p><strong>Deletion is real.</strong> Ask, and the files are removed from storage. Not flagged, not hidden, not soft-deleted with the bytes still sitting there. The system will not report a deletion as complete unless the storage is verified empty.</p>
+  <p class="last"><strong>No public route exists for customer imagery.</strong> There is no gallery, no showcase and no feed to end up in, because none was built. That is the strongest version of this promise available: not a policy against publishing, an absence of anywhere to publish to.</p>
+</div>
+
+<footer class="count">
+  <h2>The floor, counted &mdash; not described</h2>
+  <table>
+    <tr><td class="k">DOORS OPEN</td><td class="y">1 of 5</td><td>explore; create is built with nothing open; three are not built</td></tr>
+    <tr><td class="k">ITEMS ON THE FLOOR</td><td class="y">14</td><td>1 open, 8 made-for-you held, 3 services proposed, 2 with no runtime</td></tr>
+    <tr><td class="k">STORE RECORDS</td><td class="y">48</td><td>1 active, 47 draft</td></tr>
+    <tr><td class="k">PURCHASABLE</td><td class="y">1</td><td>one item, $1.99</td></tr>
+    <tr><td class="k">RELATIONSHIP STATES HELD</td><td class="y">1 of 6</td><td>ErsatzV owned only</td></tr>
+    <tr><td class="k">AUTHORIZED EARTH MAKERS</td><td class="n">0</td><td>nothing can be manufactured</td></tr>
+    <tr><td class="k">SUBMIT PATH</td><td class="y">BUILT</td><td>8 wares supported, tested end to end, 0 customers through it</td></tr>
+    <tr><td class="k">SIGN-IN</td><td class="y">PASS</td><td>a link token exchanges for a real session with no redirect involved</td></tr>
+    <tr><td class="k">CHECKOUT</td><td class="n">NOT PROVEN</td><td>no real buyer has completed storefront checkout</td></tr>
+    <tr><td class="k">PAYMENT</td><td class="n">UNPROVEN</td><td>real money not yet captured &mdash; 0 capture witnesses</td></tr>
+    <tr><td class="k">REACCESS</td><td class="n">0</td><td>no second opening recorded</td></tr>
+  </table>
+  <p>Store records read live at 2026-09-10T12:33Z. A row says PASS only where a record exists to back it. PAYMENT stays UNPROVEN until a genuine processor capture is witnessed: a free, discounted, draft, manual, test or rolled-back transaction is not payment and will never be shown here as one.</p>
+  <p><a href="https://ersatzreality.myshopify.com/pages/your-order">How your order reaches you</a> &middot; <a href="https://ersatzreality.myshopify.com/pages/refunds-and-cancellation">Refunds and cancellation</a> &middot; <a href="https://ersatzreality.myshopify.com/pages/terms-of-sale">Terms of sale</a> &middot; <a href="https://thylora-library.vercel.app">Your library</a></p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var FLOOR = [
+    { n:'THYLORA Celebration Card Studio', p:'$9.99', s:'h',
+      w:'Price authorized. Not open: no turnaround has been agreed. Stronger protection applies, and publication consent cannot be given at all.' },
+    { n:'Postcard From Anywhere', p:'$12.99', s:'h',
+      w:'Price authorized. Not open. The order route to it is built and linked; the agreement to make it is what is missing.' },
+    { n:'THYLORA Anywhere Portrait', p:'$24.99', s:'h',
+      w:'Price authorized. Not open. Could be made by hand today; no turnaround has been agreed.' },
+    { n:'EdereAirah MirrorWardrobe Portrait', p:'$34.99', s:'h',
+      w:'Price authorized. Not open, and further off than the others: 0 houses and 0 looks are published, so you would be choosing from an empty rail. Digital imagery only; no garment exists.' },
+    { n:'Mother, Baby and Maternity Portrait', p:'$34.99', s:'h',
+      w:'Price authorized. Not open. Stronger protection applies; publication consent cannot be given at all.' },
+    { n:'Family Portrait Worldscene', p:'$49.99', s:'h',
+      w:'Price authorized. Not open. Stronger protection applies; publication consent cannot be given at all.' },
+    { n:'My Mind Was Here Mini', p:'$49.99', s:'h',
+      w:'Price authorized. Not open: no turnaround has been agreed.' },
+    { n:'Family Image Storybook', p:'$79.99', s:'h',
+      w:'Price authorized. Not open. Nothing would be final until you had read the whole book and said yes. Stronger protection applies.' },
+    { n:'Fix My Offer', p:'$149', s:'h',
+      w:'Price proposed, not authorized. No checkout exists for it.' },
+    { n:'Business Gap Scan', p:'$199', s:'h',
+      w:'Price proposed, not authorized. No checkout exists for it.' },
+    { n:'Turn My Story Into Content', p:'$249', s:'h',
+      w:'Price proposed, not authorized. No checkout exists for it.' },
+    { n:'QYRIS Reasoning Engine', p:'not priced', s:'s',
+      w:'No runtime. Written down so the intent is on record while it is built, not announced as finished. Nothing is priced until it runs.' },
+    { n:'QYRIS Friction Gate', p:'not priced', s:'s',
+      w:'No runtime. Nothing is priced until it runs.' }
+  ];
+
+  var day = Math.floor(Date.now() / 86400000);
+  var k = ((day % FLOOR.length) + FLOOR.length) % FLOOR.length;
+  var order = FLOOR.slice(k).concat(FLOOR.slice(0, k));
+
+  var html = '';
+  for (var i = 0; i < order.length; i++){
+    var it = order[i];
+    html += '<div class="row">'
+         +  '<span class="dot ' + it.s + '"></span>'
+         +  '<span class="name">' + it.n + '</span>'
+         +  '<span class="price">' + it.p + '</span>'
+         +  '<p class="why">' + it.w + '</p>'
+         +  '</div>';
+  }
+  document.getElementById('floorplan').innerHTML = html;
+
+  document.getElementById('rotnote').textContent =
+    'Thirteen held items above, rotated to position ' + (k + 1) + ' of ' + FLOOR.length
+    + ' for today. The same thirteen are here every day and every one of them is closed to orders on every day. '
+    + 'Rotation is about which one you notice, and it is the only thing on this page that changes on its own.';
+})();
+</script>
+</body>
+</html>
